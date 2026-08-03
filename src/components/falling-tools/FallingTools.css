@@ -1,0 +1,58 @@
+.falling-tools {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none; /* clicks pass through to whatever is behind/above this layer */
+}
+
+.falling-tools__stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.falling-tool {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+  border-radius: 26%; /* square icons */
+  overflow: hidden;
+  box-shadow: 0 10px 16px -9px rgba(20, 10, 30, 0.45);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.falling-tool.is-live {
+  opacity: 1;
+}
+
+.falling-tool--pill {
+  border-radius: 999px; /* word-tag pills */
+}
+
+.falling-tool img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+/* Reduced-motion fallback: everything just appears, centered, no physics */
+.falling-tools.no-motion .falling-tools__stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.falling-tools.no-motion .falling-tool {
+  position: relative;
+  opacity: 1;
+}

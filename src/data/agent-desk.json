@@ -1,0 +1,71 @@
+{
+  "slug": "agent-desk",
+  "title": "Agent Desk",
+  "subtitle": "Accelerating customer information review and verification",
+  "tags": ["Fintech", "Internal Tool", "Workflow Optimization"],
+  "context": "Agent Desk is Best Egg's internal platform used by loan verification agents to review, approve, or reject credit applications while complying with fraud prevention and risk policies. The legacy system was fragmented and inefficient, creating high cognitive load, long processing times, and inconsistent workflows across agent roles. As the UX Designer on this initiative, I led the effort to streamline verification workflows, improve operational efficiency, and define measurable UX success metrics within a highly regulated fintech environment.",
+  "role": "Solo Designer",
+  "team": "Project Manager, Engineers",
+  "timeline": "2022.10 - 2024.5",
+  "heroImage": "/images/device-macbook-pro-3-1eb303.png",
+  "problemStatement": "Fragmented tools forced Agents to act as 'Human Middleware,' creating a 3.2 day bottleneck.",
+  "challenges": [
+    {"title": "Balancing Speed with Compliance", "desc": "Verification workflows needed to move faster without compromising fraud prevention, regulatory requirements, or auditability."},
+    {"title": "Designing for Multiple Agent Roles", "desc": "Different agent types required different levels of access, context, and decision authority within the same workflow."},
+    {"title": "Reducing Cognitive Load in High-Stakes Decisions", "desc": "Agents were making frequent, irreversible decisions under time pressure, increasing fatigue and error risk."}
+  ],
+  "featureImage": "/images/frame-427319454-27c3bf.png",
+  "features": [
+    {"title": "Centralized Application Management", "desc": "Manage loan and credit card applications in one unified workspace, with proactive alerts for potential data issues."},
+    {"title": "Manager's Menu", "desc": "Comprehensive access to customer data, reducing the need for external tools."},
+    {"title": "Verification Checklist", "desc": "All verification steps consolidated and aligned with business rules. Items update in real time and auto-resolve to \"Clear\" when complete."},
+    {"title": "Notes & History", "desc": "Always-visible note entry and access to previous records support informed decision-making."}
+  ],
+  "sections": [
+    {
+      "title": "User Interviews",
+      "text": "Through live agent shadowing, I observed how agents navigated verification workflows in real time, noting frequent context switching, manual cross-checks, and reliance on tribal knowledge. I mapped key tasks and decision paths to understand where time and attention were being lost.",
+      "list": [
+        "Agents repeatedly reviewed the same information across multiple systems",
+        "Critical data was often buried or inconsistently presented",
+        "Verification decisions slowed when agents had to manually reconcile incomplete or duplicated data"
+      ],
+      "image": "/images/user-journey-24e5ef.png"
+    },
+    {
+      "title": "User Journey",
+      "text": "I analyzed the end-to-end verification workflow to identify friction points that slowed decision-making. Key issues included manual data gathering, excessive tab switching, and repetitive verification steps—informing opportunities to streamline workflows and reduce cognitive load.",
+      "image": "/images/frame-1430105594-306436.png"
+    },
+    {
+      "title": "Iterations",
+      "text": "I explored multiple design approaches to validate how agents access information and complete verification tasks, iterating based on direct feedback",
+      "image": "/images/safari-light-e92f1f.png"
+    },
+    {
+      "title": "Design Rationale",
+      "text": "The design separates customer data and actions into a clear left–right layout, with a structured verification checklist and CTAs at the end of the workflow to enable faster, more confident decisions.",
+      "points": [
+        {"title": "Preview/Edit Mode", "desc": "Allows agents to review changes before submission, increasing confidence and reducing error risk."},
+        {"title": "Expandable Verification Checklist", "desc": "Surfaces pending tasks and progress at a glance, keeping agents oriented throughout the workflow."},
+        {"title": "Clear CTAs", "desc": "Places critical actions consistently and predictably to support efficient task execution."}
+      ],
+      "image": "/images/frame-427319474-5fe527.jpg"
+    }
+  ],
+  "results": {
+    "text": "The MVP launch received strong feedback from agents and leadership.",
+    "quote": "Agent Desk 3.0 represents a major leap forward in our verification process—transforming how agents work and unlocking better customer experiences through cross-functional collaboration.",
+    "quoteAttribution": "Leadership",
+    "bullets": [
+      "Reduced Verification Time: 3.2 days → 1.7 days",
+      "Increased Verification Rate: 80.4% → 92%",
+      "Higher agent confidence and satisfaction reported"
+    ],
+    "stats": [
+      {"value": "47%", "label": "Reduced application verification time"},
+      {"value": "11.6%", "label": "Increased verification rate"}
+    ]
+  },
+  "otherProjects": ["Unified Customer Hub", "Lending Solutions Redesign", "Nitro College"]
+}

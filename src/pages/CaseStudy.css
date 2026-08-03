@@ -1,0 +1,332 @@
+.cs-header {
+  padding: 32px 0 24px;
+  text-align: center;
+}
+
+.cs-back {
+  display: inline-block;
+  margin-bottom: 24px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--text-soft);
+}
+
+.cs-back:hover {
+  color: var(--accent);
+}
+
+.cs-header h1 {
+  font-size: 44px;
+  font-weight: 800;
+}
+
+.cs-subtitle {
+  margin: 16px auto 0;
+  max-width: 640px;
+  font-size: 18px;
+  color: var(--text-soft);
+}
+
+.cs-tags {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cs-hero-image {
+  border-radius: 20px;
+  width: 100%;
+  margin: 24px 0 8px;
+}
+
+.cs-body {
+  padding-bottom: 40px;
+}
+
+.cs-meta-block {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.cs-context {
+  font-size: 17px;
+  max-width: 760px;
+}
+
+.cs-meta-grid {
+  margin-top: 28px;
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.cs-meta-grid p:last-child {
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.cs-impact {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.cs-impact-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.cs-impact-stat {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+}
+
+.cs-impact-value {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.cs-impact-label {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--text-soft);
+}
+
+.cs-section {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.cs-section h3 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.cs-section p {
+  max-width: 780px;
+  color: var(--text-soft);
+  font-size: 16px;
+}
+
+.cs-image {
+  margin-top: 20px;
+  border-radius: 16px;
+  width: 100%;
+  border: 1px solid var(--card-border);
+}
+
+.cs-list {
+  margin-top: 16px;
+  padding-left: 20px;
+  color: var(--text-soft);
+}
+
+.cs-list li {
+  margin-bottom: 8px;
+}
+
+.cs-points {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cs-point {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.cs-point h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.cs-point p {
+  font-size: 14px;
+}
+
+.cs-gallery {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.cs-gallery img {
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+}
+
+.cs-challenge-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cs-challenge-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.cs-challenge-index {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.cs-challenge-card h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.cs-challenge-card p {
+  font-size: 14px;
+}
+
+.cs-feature-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.cs-feature-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.cs-feature-card img {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 16px;
+}
+
+.cs-feature-card h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.cs-feature-card p {
+  font-size: 14px;
+  color: var(--text-soft);
+}
+
+.cs-quote {
+  margin: 20px 0 0;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent);
+  background: var(--pill-blue-bg);
+  border-radius: 0 12px 12px 0;
+  font-style: italic;
+  color: var(--text);
+}
+
+.cs-quote cite {
+  display: block;
+  margin-top: 12px;
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+
+.cs-protected {
+  max-width: 480px;
+  margin: 40px auto 60px;
+  text-align: center;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 48px 32px;
+}
+
+.cs-protected-lock {
+  font-size: 40px;
+}
+
+.cs-protected h2 {
+  margin-top: 16px;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.cs-protected p {
+  margin-top: 12px;
+  color: var(--text-soft);
+  font-size: 15px;
+}
+
+.cs-protected .btn {
+  margin-top: 24px;
+}
+
+.cs-other {
+  padding: 40px 0 20px;
+  text-align: center;
+}
+
+.cs-other-links {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cs-other-link {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.cs-other-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .cs-header h1 {
+    font-size: 32px;
+  }
+  .cs-impact-grid,
+  .cs-challenge-grid,
+  .cs-points,
+  .cs-feature-grid {
+    grid-template-columns: 1fr;
+  }
+  .cs-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cs-meta-grid {
+    gap: 24px;
+  }
+}

@@ -1,0 +1,31 @@
+.contact-cta {
+  padding: 100px 0 60px;
+}
+
+.contact-cta-inner {
+  text-align: center;
+}
+
+.contact-cta h2 {
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.contact-cta-subtitle {
+  margin-top: 8px;
+  font-size: 18px;
+  color: var(--text-soft);
+}
+
+.contact-cta-actions {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .contact-cta h2 {
+    font-size: 28px;
+  }
+}

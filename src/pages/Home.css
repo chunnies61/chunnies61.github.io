@@ -1,0 +1,153 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 620px;
+  padding: 60px 0 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 700px;
+}
+
+.hero-title {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+  margin: 24px auto 0;
+  max-width: 620px;
+  font-size: 18px;
+  color: var(--text-soft);
+}
+
+.hero-actions {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.section {
+  padding: 72px 0;
+}
+
+.eyebrow.center,
+.section-title.center {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 800;
+  margin-top: 8px;
+  margin-bottom: 40px;
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.case-card {
+  display: block;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.case-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(54, 75, 119, 0.12);
+}
+
+.case-card-image {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: #f2f4fa;
+  overflow: hidden;
+}
+
+.case-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.case-card-lock {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  padding: 6px 8px;
+  font-size: 14px;
+}
+
+.case-card-body {
+  padding: 24px;
+}
+
+.case-card-body h3 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.case-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.case-card-desc {
+  color: var(--text-soft);
+  font-size: 15px;
+}
+
+.other-work-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.other-work-item {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  background: #fff;
+  aspect-ratio: 4 / 3;
+}
+
+.other-work-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .case-grid {
+    grid-template-columns: 1fr;
+  }
+  .other-work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-title {
+    font-size: 36px;
+  }
+  .hero {
+    min-height: 520px;
+  }
+}

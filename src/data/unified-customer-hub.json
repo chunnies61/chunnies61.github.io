@@ -1,0 +1,46 @@
+{
+  "slug": "unified-customer-hub",
+  "title": "Unified Customer Hub",
+  "subtitle": "Redesigning consumer fintech app experience for 420K users",
+  "tags": ["Fintech", "B2C", "Customer Service"],
+  "context": "Best Egg is a fintech platform offering personal loans, credit cards, and financial health tools. To improve user acquisition and enable effective cross-sell, the team set out to unify these products into a single customer servicing platform. As the lead designer, I owned the end-to-end experience — defining the platform vision and designing a cohesive system that aligned business goals with real customer needs.",
+  "role": "Lead Designer",
+  "team": "Engineering, UX Research and Product Management.",
+  "timeline": "2021.10 - 2024.6",
+  "heroImage": "/images/group-10122973-88f898.png",
+  "impactStats": [
+    {"value": "150k+", "label": "Unique users visited within the first week"},
+    {"value": "+328%", "label": "Engagement increase for the financial Health feature"},
+    {"value": "420k+", "label": "Unique users visited per month"}
+  ],
+  "problemStatement": "Best Egg needed to enable effective cross-sell across loans, credit cards, and financial health products without disrupting core servicing workflows. The challenge was balancing business growth goals with technical constraints while maintaining a clear, trusted customer experience.",
+  "challenges": [
+    {"title": "Proving Business Impact", "desc": "Aligning leadership on how a unified platform would drive acquisition and cross-sell."},
+    {"title": "Engineering Constraints", "desc": "Designing within legacy systems while maintaining a seamless user experience."},
+    {"title": "Cross-Team Alignment", "desc": "Coordinating product, marketing, and engineering on a cohesive strategy."}
+  ],
+  "features": [
+    {"title": "Customer Hub", "desc": "A centralized dashboard for managing all financial products in one place. Unifies Financial Health, Personal Loan, and Credit Card data into a single, clear view of a customer's financial status.", "image": "/images/multi-user-filled-2-8e4eec.svg"},
+    {"title": "Personal Loan", "desc": "A dedicated space for personal loan customers to manage their accounts. Allows users to view payment history, access statements, and make payments with ease", "image": "/images/wrench-filled-60e90c.svg"},
+    {"title": "Financial Health", "desc": "A dashboard that helps users understand and improve their financial health. Provides credit scores, score factors, alerts, simulations, and access to detailed credit reports", "image": "/images/tag-percentage-filled-d75c93.svg"}
+  ],
+  "featureShowcaseImage": "/images/frame-427319546-7274c3.svg",
+  "sections": [
+    {"title": "Problem Space", "text": "For multi-product users, interfaces felt disconnected, sharing little beyond branding elements like logos and colors. New product launches introduced standalone flows, further reducing cohesion, scalability, and cross-sell opportunities.", "image": "/images/group-10122972-ec7f91.svg"},
+    {"title": "Goals & Success Metrics", "text": "Build a unified dashboard to increase multi-product adoption and lift product conversion beyond the current 25% baseline. Secondary goals included driving engagement with Best Egg Financial Health (BEFH) and generating new qualified leads for card and loan applications.", "image": "/images/frame-427319547-25ac92.png"},
+    {"title": "User Research", "text": "I started by identifying key customer needs, pain points, and goals across Best Egg's existing products", "image": "/images/image-06aefa.png"},
+    {"title": "Market Research", "text": "Research indicated that customers favor integrated financial platforms with seamless mobile experiences. Leading competitors differentiate by offering cohesive ecosystems that support cross-sell and long-term engagement."},
+    {"title": "Card Sorting Workshop", "text": "The workshop revealed that core features such as Payments, Notifications, and Profile were shared across all products, while Account Details and Activity varied by account type. Based on these insights, features were organized into two groups: Overlapping Features and Account-Specific Features.", "image": "/images/card-sorting-3fc988.png"},
+    {"title": "Information Architecture", "text": "I designed a unified top-level and sub-navigation system that provides consistent access to shared features while preserving account-specific flows. This structure reduces navigation friction, shortens task completion time, and allows customers to complete key banking tasks efficiently.", "image": "/images/ia-641b91.png"},
+    {"title": "Initial Proposal", "text": "Within two weeks, I developed a proposal to illustrate the value of a unified platform and align stakeholders around a shared vision. Engineering raised concerns around development timelines and the risk of user disruption from large-scale changes.", "image": "/images/wireframes-1434a2.png"},
+    {"title": "Strategic Tradeoffs", "text": "To balance speed, risk, and long-term scalability, we focused in-house development on the highest-impact surfaces that directly influenced customer engagement and cross-sell. Maintaining the Credit Card experience on a third-party platform allowed us to meet launch timelines while minimizing engineering risk, with a clear roadmap to bring it in-house once the unified platform proved value.", "image": "/images/frame-10124511-2-fd8d34.png"},
+    {"title": "Dev Handoff", "text": "To ensure accurate account-state handling across different product combinations, I documented all possible customer scenarios and created a reference table to align engineering on implementation.", "image": "/images/screenshot-2025-01-21-at-1.50.27-am-cee5e6.png"},
+    {"title": "Design for Implementation", "text": "To support accurate and efficient implementation, I documented critical design details and edge cases to ensure consistency across teams.", "image": "/images/frame-1-05f08e.png"},
+    {"title": "Best Egg Design System", "text": "Built on the updated brand guidelines, we created the Best Egg Design System—a scalable, evolving framework with 2,000+ modular components, including typography, icons, and illustrations. The system powers consistent, responsive experiences across web and mobile and continues to evolve to support new products and business needs.", "image": "/images/screenshot-2026-01-05-at-1.07.12-am-459478.png"},
+    {"title": "Cross-Sell Opportunities", "text": "I collaborated with the marketing team to audit platform messaging and partnered with a user researcher to test the most effective ways to surface messages using UserTesting.com", "image": "/images/screenshot-2024-12-05-at-3.24.42-pm-edc5d2.png"},
+    {"title": "Key User Testing Insights", "text": "User testing showed that banners and in-feature messaging were the most effective placements, driving strong engagement and positive brand sentiment with minimal annoyance. Modals consistently underperformed and were perceived as intrusive, making them suitable only for critical alerts. Overall, matching message urgency to placement visibility was key to maximizing action while avoiding user fatigue.", "image": "/images/frame-1430105627-0e1c0b.png"},
+    {"title": "Business Impact", "text": "Launched in August 2022, the MVP reached 150K unique users and 211K sessions in its first week, driving increased engagement with Financial Health, credit score activations, and daily active usage. The hub also improved second-loan performance, expanding eligibility to 42% and achieving a 50% acceptance rate. As of early 2024, FullStory data shows 411K monthly users engaging with the Customer Hub and Personal Loan experience, with a 5% increase in second-loan offer clicks over the past 90 days.", "image": "/images/fs-2-b3ea46.png"}
+  ],
+  "deckLink": {"text": "Interested in learning more? Take a look at my presentation deck.", "cta": "View Deck", "image": "/images/deck-9e6b3d.png"},
+  "otherProjects": ["Lending Solutions Redesign", "Agent Desk", "Nitro College"]
+}

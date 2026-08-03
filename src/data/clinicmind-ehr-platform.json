@@ -1,0 +1,29 @@
+{
+  "slug": "clinicmind-ehr-platform",
+  "title": "ClinicMind EHR Platform",
+  "subtitle": "Redesigning core clinical and administrative products to reduce complexity and improve operational efficiency.",
+  "tags": ["Healthcare SaaS", "B2B", "CRM"],
+  "context": "ClinicMind is an all-in-one healthcare platform that helps practices improve patient retention, reduce provider burnout, and manage revenue across the full care lifecycle—from acquisition to billing. As the company invested in UX maturity, I joined as the second design hire to lead redesign efforts across core products including Practice Management, Patient Portal, EHR, Credentialing, and Billing, delivering more intuitive, efficient experiences for both clinical and administrative users.",
+  "role": "UX/UI Designer",
+  "team": "Product Owner*1, Engineers*7+",
+  "timeline": "2021.1 - 2021.8",
+  "heroImage": "/images/group-1-3-31b117.png",
+  "problemStatement": "With a 20-year legacy, ClinicMind's products have been built by engineers without design input, resulting in complex features, outdated interfaces, and inefficient user flows.",
+  "sections": [
+    {"title": "User Research", "text": "To understand providers' frustrations with the system, I started with discovery calls to identify their key pain points. Our primary users are physicians, but instead of focusing on patient care, they spend a significant amount of time on repetitive administrative tasks like note-taking, scheduling appointments, and dealing with insurance companies.", "image": "/images/safari-light-262759.png"},
+    {"title": "Quick Iterations", "text": "After discussing with the product owners, we decided to focus on the most impactful parts of the system, such as Care Plans and Daily Task Management. Sketches and interactive prototypes are used to gather feedback, allowing us to quickly iterate the design to better meet users' needs.", "image": "/images/20-5dbb78.svg", "image2": "/images/21-a159b1.svg"},
+    {"title": "Style Guide & Design System", "text": "Another challenge we encountered during the process was the lack of a systematic Style Guide and Component Library. With clinic-specific designs being highly complex, the team urgently needed an internal system to guide both design and implementation. I began building the design system using the Atomic Design methodology. We defined the system with clear documentation and established effective communication, enabling the team to deliver high-quality development work despite limited design resources", "image": "/images/atomic-design-graphic-ee5e60.svg", "gallery": [
+      "/images/design-system-2-03ffca.png",
+      "/images/design-system-1-e4ac09.png",
+      "/images/design-system-5-42aed5.png",
+      "/images/design-system-6-44ee81.png",
+      "/images/design-system-7-1c4ec5.png",
+      "/images/design-system-10-e4b338.png",
+      "/images/design-system-11-149717.png",
+      "/images/design-system-12-9ed6bb.png"
+    ]},
+    {"title": "Delivery", "text": "With the new style guide and design system in place, the updated appointment dashboard is noticeably cleaner and more organized.", "image": "/images/image-16-445ef6.svg"},
+    {"title": "Dev Hand-off", "text": "To ensure all details and interactions were effectively communicated, I used video demos and Figma specifications to provide the development and business teams with clear guidance on each page and interaction. During my tenure, I delivered over 30 recorded demos to clarify user flows and give stakeholders early insights into upcoming features."}
+  ],
+  "otherProjects": ["Unified Customer Hub", "Nitro College", "Agent Desk"]
+}

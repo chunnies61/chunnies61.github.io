@@ -1,0 +1,35 @@
+{
+  "slug": "nitro-college",
+  "title": "Nitro College",
+  "subtitle": "Helping students and parents plan for college with financial clarity",
+  "tags": ["Fintech", "Edutech", "B2C"],
+  "context": "As college costs rise and student loan debt continues to grow, planning for college has become increasingly complex for students and families. Sallie Mae's Nitro College was created to improve financial readiness by guiding users through college planning with clear action steps and timely reminders.",
+  "role": "Solo Designer",
+  "team": "Product Owner, Project Manager, User researchers, Consultants, Engineers",
+  "timeline": "2021.10 - 2022.6",
+  "heroImage": "/images/cover-a595ed.png",
+  "features": [
+    {"title": "Dashboard", "desc": "Provides a clear overview of a user's progress toward college financial readiness and allows easy updates to personal information. Content dynamically adjusts based on the selected college or university.", "image": "/images/chrome-dark-fb5cf2.png"},
+    {"title": "Profile", "desc": "Centralizes personal and academic information, which Nitro uses to surface relevant scholarship and funding recommendations."},
+    {"title": "Scholarships", "desc": "Delivers personalized scholarship recommendations, enabling users to explore opportunities and track progress using Liked, Applied, and Won states."},
+    {"title": "College Savings & Extra Contributions", "desc": "Supports a complete funding picture by allowing users to track college savings (including 529 accounts) and add extra contributions beyond Nitro's estimates, excluding private student loans."}
+  ],
+  "problemStatement": "Rising college costs and growing student loan debt make financial planning overwhelming for students and families. Estimating costs, navigating aid, and planning budgets are complex and often leave families unprepared. The team set out to simplify this journey by providing clear tools that help users understand costs, manage funding options, and plan with confidence for college.",
+  "challenge": {
+    "text": "The initial designs were fragmented, consisting of isolated screens that did not support complete user journeys. Without a design system or foundational patterns—such as error states and empty states—the experience lacked cohesion. The challenge was to transform these disjointed concepts into a unified, end-to-end platform that delivers a seamless and reliable user experience. I unified fragmented screens into complete journeys and established a design system to deliver a cohesive experience that improved clarity and task efficiency.",
+    "image": "/images/frame-427319519-0babba.png"
+  },
+  "sections": [
+    {"title": "Cross-Functional Collaboration", "text": "I led cross-functional alignment with product, engineering, and stakeholders using a feature canvas to define the core problem, assess feasibility, and set clear direction. This workshop turned ambiguity into decisive action and enabled the team to deliver high-impact solutions with confidence.", "image": "/images/user-flow-890268.gif"},
+    {"title": "Primary Users", "text": "We identified parents and students as the primary users of the Nitro College platform. Their distinct needs directly informed platform strategy and experience prioritization.", "image": "/images/feature-canvas-d39df0.png"},
+    {"title": "Impact vs. Effort Mapping", "text": "Working with the product manager, I evaluated features by impact and delivery effort to define the MVP scope and prioritize high-value capabilities.", "image": "/images/frame-10124517-d23e70.png"},
+    {"title": "Design System", "text": "To support scalable design, I built a design system by consolidating brand assets and adding essential elements like buttons and input fields with various states. Reusable patterns—such as College Bridge, Nitro Outlook Tooltip, and Offers—enabled teams to support multiple scenarios efficiently while maintaining a consistent, high-quality experience.", "image": "/images/impact-over-effort-mapping-61f2d3.png"},
+    {"title": "Before & After", "text": "Using the style guide and design system I built, I redesigned the initial pages. Key improvements include: Edge Case Considerations - Added empty states and error states to all pages, addressing all possible scenarios. Layout Restructuring - Restructured page layouts according to the hierarchy discussed with clients. Consistent Design - Utilized components to maintain design consistency across the platform.", "image": "/images/style-guide-ac6b80.png", "image2": "/images/before-after-1-0801a3.svg", "image3": "/images/before-after-2-d689a1.svg"},
+    {"title": "MVP Phased Launch", "text": "To create a compelling MVP, we needed to understand the challenges of the original designs, so we began our research phase focused on our MVP. Alongside this, we developed a vision that aligned with the clients' goals and established a practical timeline for completing and rolling out the MVP product, closely matching our initial forecasts.", "image": "/images/mvp-phased-launch-54a609.png"},
+    {"title": "Participants, Method & Measurement", "text": "We conducted user research on our MVP design using usertesting.com, creating 15 tasks for our testers to complete while recording the entire process. Additionally, we presented our work to a professional financial advisor at Sallie Mae, gathering their insights and feedback.", "image": "/images/participants-method-measurement-098727.png"},
+    {"title": "Findings", "text": "The results show strong usability and satisfaction scores, with room to improve NPS. Most interviewees found the product intuitive and aligned with our mission.", "image": "/images/findings-recommendations-195c90.png"},
+    {"title": "User Feedbacks", "text": "We also received a lot of helpful user feedback.", "image": "/images/user-feedbacks-070600.svg"},
+    {"title": "The Next Steps", "text": "Our next steps involve prioritizing these tasks and devising a detailed plan for post-MVP implementation. Based on the feedback received, we've outlined tasks for each feature to enhance the overall user experience. These include adding app tour prompts to familiarize users with the app, considering shared account access for students and their parents/guardians, and enabling students to monitor the status of scholarships they've applied for."}
+  ],
+  "otherProjects": ["Unified Customer Hub", "Lending Solutions Redesign", "Agent Desk"]
+}
