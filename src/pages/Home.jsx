@@ -10,7 +10,6 @@ export default function Home() {
   return (
     <>
       <section className="hero">
-        <FallingTools />
         <div className="wrap hero-inner">
           <h1 className="hero-title">{home.heroTitle}</h1>
           <p className="hero-subtitle">{home.heroSubtitle}</p>
@@ -28,6 +27,7 @@ export default function Home() {
             </a>
           </div>
         </div>
+        <FallingTools />
       </section>
 
       <section className="section">
@@ -48,10 +48,8 @@ export default function Home() {
                 <div className="case-card-body">
                   <h3>{cs.title}</h3>
                   <div className="case-card-tags">
-                    {cs.tags.map((tag, i) => (
-                      <Tag key={tag} index={i}>
-                        {tag}
-                      </Tag>
+                    {cs.tags.map((tag) => (
+                      <Tag key={tag}>{tag}</Tag>
                     ))}
                   </div>
                   <p className="case-card-desc">{cs.desc}</p>
@@ -66,9 +64,11 @@ export default function Home() {
         <div className="wrap">
           <p className="eyebrow center">{home.otherWorkEyebrow}</p>
           <h2 className="section-title center">{home.otherWorkTitle}</h2>
-          <div className="other-work-grid">
-            {home.otherWorkImages.map((src) => (
-              <div key={src} className="other-work-item">
+        </div>
+        <div className="other-work-carousel">
+          <div className="other-work-track">
+            {[...home.otherWorkImages, ...home.otherWorkImages].map((src, i) => (
+              <div key={`${src}-${i}`} className="other-work-item">
                 <img src={src} alt="" loading="lazy" />
               </div>
             ))}

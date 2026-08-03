@@ -10,23 +10,29 @@
 
 .hero-inner {
   position: relative;
-  z-index: 1;
   text-align: center;
-  max-width: 700px;
+  max-width: 900px;
 }
 
 .hero-title {
-  font-size: 56px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: var(--font-display);
+  font-size: 44px;
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.4;
   letter-spacing: -0.5px;
 }
 
 .hero-subtitle {
   margin: 24px auto 0;
   max-width: 620px;
-  font-size: 18px;
-  color: var(--text-soft);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 0.32px;
+  color: #677386;
 }
 
 .hero-actions {
@@ -54,8 +60,8 @@
 
 .case-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(2, 470px);
+  gap: 120px;
 }
 
 .case-card {
@@ -74,7 +80,8 @@
 
 .case-card-image {
   position: relative;
-  aspect-ratio: 16 / 10;
+  width: 470px;
+  height: 312px;
   background: #f2f4fa;
   overflow: hidden;
 }
@@ -117,18 +124,33 @@
   font-size: 15px;
 }
 
-.other-work-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+.other-work-carousel {
+  margin-top: 40px;
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.other-work-track {
+  display: flex;
+  width: max-content;
   gap: 16px;
+  animation: other-work-scroll 36s linear infinite;
+}
+
+.other-work-carousel:hover .other-work-track {
+  animation-play-state: paused;
 }
 
 .other-work-item {
+  flex: 0 0 auto;
+  width: 340px;
+  height: 255px;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid var(--card-border);
   background: #fff;
-  aspect-ratio: 4 / 3;
 }
 
 .other-work-item img {
@@ -137,17 +159,60 @@
   object-fit: cover;
 }
 
-@media (max-width: 900px) {
+@keyframes other-work-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .other-work-track {
+    animation: none;
+  }
+  .other-work-carousel {
+    overflow-x: auto;
+  }
+}
+
+/* Collapse to one column before two fixed-width 470px thumbnails + 120px gap could overflow the grid */
+@media (max-width: 1100px) {
   .case-grid {
     grid-template-columns: 1fr;
   }
-  .other-work-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+}
+
+@media (max-width: 900px) {
   .hero-title {
     font-size: 36px;
   }
   .hero {
     min-height: 520px;
+  }
+}
+
+/* iPad and iPhone: thumbnail fills the full width of the card, keeping the desktop aspect ratio */
+@media (max-width: 900px) {
+  .case-card-image {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    aspect-ratio: 470 / 312;
+  }
+}
+
+/* iPad: 60px vertical spacing between stacked cards */
+@media (max-width: 900px) {
+  .case-grid {
+    gap: 60px;
+  }
+}
+
+/* Mobile: 20px vertical spacing between stacked cards */
+@media (max-width: 600px) {
+  .case-grid {
+    gap: 20px;
   }
 }

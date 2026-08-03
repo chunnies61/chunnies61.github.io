@@ -15,7 +15,7 @@
   --pill-green-bg: #d3f2e4;
   --pill-green-text: #1f8a63;
   --font-display: "Bricolage Grotesque", sans-serif;
-  --font-body: "Open Sans", sans-serif;
+  --font-body: "Poppins", sans-serif;
   --font-ui: "Poppins", sans-serif;
   --max-width: 1120px;
 }
@@ -33,6 +33,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -84,8 +85,9 @@ button {
   font-family: var(--font-ui);
   font-size: 12px;
   font-weight: 500;
-  background: var(--pill-blue-bg);
-  color: var(--pill-blue-text);
+  letter-spacing: 0.48px;
+  background: #f0f1f4;
+  color: var(--text-soft);
 }
 
 .btn {

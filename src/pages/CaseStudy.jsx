@@ -60,10 +60,8 @@ export default function CaseStudy() {
           <h1>{study.title}</h1>
           <p className="cs-subtitle">{study.subtitle}</p>
           <div className="cs-tags">
-            {study.tags.map((tag, i) => (
-              <Tag key={tag} index={i}>
-                {tag}
-              </Tag>
+            {study.tags.map((tag) => (
+              <Tag key={tag}>{tag}</Tag>
             ))}
           </div>
         </div>
