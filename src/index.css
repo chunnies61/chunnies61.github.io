@@ -73,7 +73,7 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-soft);
 }
 
@@ -117,8 +117,8 @@ button {
 
 .btn-secondary {
   background: #fff;
-  color: var(--accent-dark);
-  font-weight: 700;
+  color: var(--accent);
+  font-weight: 500;
 }
 
 @media (max-width: 640px) {

@@ -1,9 +1,58 @@
 {
   "slug": "lending-solutions-redesign",
-  "title": "Lending Solutions Redesign",
-  "subtitle": "Redesigning the Lending Solutions across global private bank markets",
+  "title": "Lending Experience Redesign",
+  "subtitle": "Loan Request App 2.0 & Lending Workspace",
   "tags": ["B2B", "Loan Request App", "Lending Workspace"],
-  "protected": true,
-  "heroImage": "/images/thumbnail-a96a5d.png",
+  "context": "J.P. Morgan Private Bank serves ultra-high-net-worth clients across 140+ countries. Advisors handling lending products like Securities Based Lending and Custom Credit had to jump between disconnected tools to complete a single loan request. I led the end-to-end redesign of both the Loan Request App and the Lending Workspace, a unified hub for the bank's global lending tools.",
+  "role": "Lead Designer",
+  "team": "J.P. Morgan Private Bank — Wealth Management",
+  "heroImage": "/images/lending-laptop.png",
+  "impactStats": [
+    {"value": "30%", "label": "Reduction in ticket completion time"},
+    {"value": "EMEA → USPB", "label": "Adoption expanded across two major markets, with a reduced NIGO rate"},
+    {"value": "⭐", "label": "Positive advisor feedback at launch"}
+  ],
+  "problemStatement": "Advisors had no unified digital experience for lending — completing a single request meant jumping between disconnected tools, creating friction, errors, and manual handoffs with Credit Middle Officers. The goal was a scalable, digital-first lending workflow that cut tool-switching overhead. Advisors serve high-net-worth clients who expect fast, accurate turnaround, so any friction in the tooling became a delay felt directly by the client.",
+  "sections": [
+    {
+      "title": "Process",
+      "text": "I owned both products end-to-end, from discovery through delivery — partnering with Product Owners on user flows before any screens were defined, so design intent shaped the requirements rather than reacting to them after the fact.",
+      "image": "/images/lending-process.png"
+    },
+    {
+      "title": "Loan Request App",
+      "text": "The Loan Request App is where advisors originate and submit SBL, Custom Credit, and other loan tickets across New Deals, Amendments, and regional variants (USPB, EMEA, APAC, LatAm). The original version was a flat, linear form with no real-time feedback or conditional logic — advisors were expected to know what to fill in with no system support. The redesign breaks the request into a structured, progressive sequence with conditional logic, inline validation, and embedded guidance, so advisors can keep moving without leaving the ticket or restarting after an error.",
+      "image": "/images/lending-userflow.png"
+    },
+    {
+      "title": "Testing & Validation",
+      "text": "I built interactive prototypes with LLM-assisted tooling and partnered with a UX researcher to test directly with advisors, surfacing edge cases and workflow assumptions that stakeholder reviews alone had missed, then fed those findings back into the design.",
+      "image": "/images/lending-key-findings.png"
+    },
+    {
+      "title": "Global Markets",
+      "text": "I ran workshops with regional product owners to resolve conflicts and cover edge cases while keeping the advisor experience consistent without losing regional nuance, then delivered pixel-perfect handoff documentation across SBL, Custom Credit, and PLP variants — staying engaged through engineering standups during implementation.",
+      "image": "/images/lending-before-after.png"
+    },
+    {
+      "title": "Lending Workspace",
+      "text": "The Lending Workspace unifies every Private Bank lending tool — deal management, underwriting resources, and workflows beyond origination — into one platform. The tools already existed, but the experience didn't: capabilities were scattered with no shared entry point or consistent navigation, rewarding advisors who already knew where to look. Each domain also had its own product owner with limited cross-domain visibility, leading to conflicting priorities.",
+      "image": "/images/lending-workspace-overview.png"
+    },
+    {
+      "title": "Designing Across Competing Priorities",
+      "text": "I mapped a comprehensive information architecture across the full lending surface, and introduced a weekly design review with stakeholders across domains to align teams and surface conflicts early.",
+      "image": "/images/lending-ia.png"
+    }
+  ],
+  "results": {
+    "text": "The redesign measurably reduced friction for advisors across four global markets — cutting completion time, expanding adoption, lowering NIGO rates, and improving satisfaction at launch.",
+    "bullets": [
+      "Reduced NIGO: fewer not-in-good-order submissions via embedded tooltips and progressive disclosure, cutting advisor call-ins for support",
+      "Expanded Adoption: scaled the Loan Request App from EMEA to USPB, extending a unified origination experience across two major markets",
+      "Increased Advisor Satisfaction: positive feedback at launch credited the redesign with reducing friction and improving confidence in request completion"
+    ]
+  },
+  "reflection": "I joined by listening first — meeting triad partners, studying prior research, and learning the design system — before moving into full end-to-end ownership, gradually shifting from executing briefs to shaping them. As scope grew, I connected design decisions to measurable outcomes and got better at communicating rationale to a wide range of stakeholders without follow-up questions. The most meaningful growth was less visible: senior design is about making the team better, not just the work.",
   "otherProjects": ["Unified Customer Hub", "Agent Desk", "Nitro College"]
 }

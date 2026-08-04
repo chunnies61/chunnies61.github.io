@@ -18,10 +18,10 @@ export default function About() {
         </div>
       </section>
 
-      <section className="section fun-facts">
-        <div className="wrap">
-          <p className="eyebrow center">{about.funFactsLabel}</p>
-          <img src={about.funFactsImage} alt="Fun facts about Yichun" />
+      <section className="section fun-facts-section">
+        <div className="fun-facts-card">
+          <h2 className="fun-facts-heading">{about.funFactsLabel}</h2>
+          <img className="fun-facts-image" src={about.funFactsImage} alt="Fun facts about Yichun" />
         </div>
       </section>
 

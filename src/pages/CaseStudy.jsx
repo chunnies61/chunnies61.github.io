@@ -1,8 +1,20 @@
+import { useEffect, useState } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { getCaseStudy, caseStudies } from "../data/caseStudies";
 import Tag from "../components/Tag";
 import ContactCta from "../components/ContactCta";
 import "./CaseStudy.css";
+
+const UNLOCK_PASSWORD = "0620";
+
+function VideoPlaceholder({ className }) {
+  return (
+    <div className={"cs-video-placeholder" + (className ? " " + className : "")}>
+      <span className="cs-video-placeholder-icon">▶</span>
+      <span className="cs-video-placeholder-label">Video Placeholder</span>
+    </div>
+  );
+}
 
 function Section({ section }) {
   return (
@@ -29,6 +41,7 @@ function Section({ section }) {
       {section.image && <img className="cs-image" src={section.image} alt={section.title} loading="lazy" />}
       {section.image2 && <img className="cs-image" src={section.image2} alt="" loading="lazy" />}
       {section.image3 && <img className="cs-image" src={section.image3} alt="" loading="lazy" />}
+      {section.video && <VideoPlaceholder />}
       {section.gallery && (
         <div className="cs-gallery">
           {section.gallery.map((src) => (
@@ -44,7 +57,34 @@ export default function CaseStudy() {
   const { slug } = useParams();
   const study = getCaseStudy(slug);
 
+  const [unlocked, setUnlocked] = useState(false);
+  const [passwordInput, setPasswordInput] = useState("");
+  const [passwordError, setPasswordError] = useState(false);
+
+  useEffect(() => {
+    setPasswordInput("");
+    setPasswordError(false);
+    if (study?.protected) {
+      setUnlocked(localStorage.getItem(`unlocked:${study.slug}`) === "true");
+    } else {
+      setUnlocked(false);
+    }
+  }, [slug]);
+
   if (!study) return <Navigate to="/" replace />;
+
+  const isLocked = Boolean(study.protected && !unlocked);
+
+  function handleUnlockSubmit(e) {
+    e.preventDefault();
+    if (passwordInput === UNLOCK_PASSWORD) {
+      localStorage.setItem(`unlocked:${study.slug}`, "true");
+      setUnlocked(true);
+      setPasswordError(false);
+    } else {
+      setPasswordError(true);
+    }
+  }
 
   const otherLinks = (study.otherProjects || [])
     .map((title) => caseStudies.find((cs) => cs.title === title))
@@ -57,6 +97,7 @@ export default function CaseStudy() {
           <Link to="/" className="cs-back">
             ← Back home
           </Link>
+          <p className="eyebrow center cs-eyebrow">Case Study</p>
           <h1>{study.title}</h1>
           <p className="cs-subtitle">{study.subtitle}</p>
           <div className="cs-tags">
@@ -67,23 +108,47 @@ export default function CaseStudy() {
         </div>
       </header>
 
-      {study.heroImage && (
+      {study.heroVideo ? (
         <div className="wrap">
-          <img className="cs-hero-image" src={study.heroImage} alt={study.title} />
+          <VideoPlaceholder className="cs-hero-image" />
         </div>
+      ) : (
+        study.heroImage && (
+          <div className="wrap">
+            <img className="cs-hero-image" src={study.heroImage} alt={study.title} />
+          </div>
+        )
       )}
 
-      {study.protected ? (
+      {isLocked ? (
         <div className="wrap">
           <div className="cs-protected">
             <span className="cs-protected-lock">🔒</span>
             <h2>This case study is protected</h2>
             <p>
-              This project contains confidential client work and isn't available
-              publicly. Reach out and I'm happy to walk through it directly.
+              This project contains confidential client work. Enter the password to view
+              it, or reach out and I'm happy to walk through it directly.
             </p>
-            <a className="btn btn-primary" href="mailto:yichun.ux@gmail.com">
-              Request access
+            <form className="cs-password-form" onSubmit={handleUnlockSubmit}>
+              <input
+                type="password"
+                inputMode="numeric"
+                className="cs-password-input"
+                placeholder="Password"
+                value={passwordInput}
+                onChange={(e) => {
+                  setPasswordInput(e.target.value);
+                  setPasswordError(false);
+                }}
+                aria-label="Password"
+              />
+              <button type="submit" className="btn btn-primary">
+                Unlock
+              </button>
+            </form>
+            {passwordError && <p className="cs-password-error">Incorrect password — try again.</p>}
+            <a className="cs-protected-link" href="mailto:yichun.ux@gmail.com">
+              Or request access by email
             </a>
           </div>
         </div>
@@ -176,6 +241,7 @@ export default function CaseStudy() {
                     {f.image && <img src={f.image} alt="" loading="lazy" />}
                     <h4>{f.title}</h4>
                     <p>{f.desc}</p>
+                    {f.video && <VideoPlaceholder className="cs-feature-video" />}
                   </div>
                 ))}
               </div>
@@ -213,6 +279,13 @@ export default function CaseStudy() {
                   ))}
                 </div>
               )}
+            </div>
+          )}
+
+          {study.reflection && (
+            <div className="cs-section">
+              <h3>Reflection</h3>
+              <p>{study.reflection}</p>
             </div>
           )}
 

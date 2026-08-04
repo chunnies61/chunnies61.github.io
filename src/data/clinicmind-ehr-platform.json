@@ -8,6 +8,7 @@
   "team": "Product Owner*1, Engineers*7+",
   "timeline": "2021.1 - 2021.8",
   "heroImage": "/images/group-1-3-31b117.png",
+  "heroVideo": "/videos/clinicmind-hero.mp4",
   "problemStatement": "With a 20-year legacy, ClinicMind's products have been built by engineers without design input, resulting in complex features, outdated interfaces, and inefficient user flows.",
   "sections": [
     {"title": "User Research", "text": "To understand providers' frustrations with the system, I started with discovery calls to identify their key pain points. Our primary users are physicians, but instead of focusing on patient care, they spend a significant amount of time on repetitive administrative tasks like note-taking, scheduling appointments, and dealing with insurance companies.", "image": "/images/safari-light-262759.png"},

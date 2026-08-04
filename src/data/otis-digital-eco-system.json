@@ -3,7 +3,66 @@
   "title": "Otis Digital Eco-system",
   "subtitle": "Building a centralized digital platform for customer self-service",
   "tags": ["Property Management", "B2B2C"],
-  "protected": true,
-  "heroImage": "/images/thumbnail-5-d5b13c.png",
+  "context": "Otis clients manage complex properties globally, but the legacy infrastructure made real-time equipment monitoring nearly impossible — leading to reactive maintenance, more downtime, and customer friction. As Lead Designer, I was tasked with turning a rigid, on-premise legacy system into a scalable, cloud-native ecosystem, balancing usability against strict regulatory compliance and technical debt while directing a team of two designers.",
+  "role": "Design Lead",
+  "team": "2 UI Designers, 10+ Engineers, 1 Product Manager, 1 Project Manager",
+  "timeline": "2025.4 - 2026.4",
+  "heroImage": "/images/otis-dashboard.png",
+  "impactStats": [
+    {"value": "3x", "label": "Growth in active users"},
+    {"value": "-45%", "label": "Decrease in error rates"},
+    {"value": "-70%", "label": "Reduction in task completion time"}
+  ],
+  "problemStatement": "A fragmented legacy system prevented real-time equipment monitoring, forcing global clients into costly, reactive maintenance cycles and limiting Otis's ability to scale cloud-based services. The hypothesis: real-time health data and predictive alerts could reduce emergency repair calls by 20% and lift customer satisfaction.",
+  "challenges": [
+    {"title": "Bridging the Technical Gap", "desc": "Providing \"power user\" tools for technical experts without overwhelming non-technical stakeholders."},
+    {"title": "Design for \"High-Stakes\" Compliance", "desc": "Balancing user-centricity with rigid safety and data regulations."},
+    {"title": "Scaling for Global Diversity", "desc": "Creating a \"universal\" system that still respects local market nuances."}
+  ],
+  "sections": [
+    {
+      "title": "Process",
+      "text": "A phased approach: discovery to find quick UX wins and low-risk improvements, then validating solutions through user testing and workflow cleanup. We piloted the \"Ask Otis\" AI copilot to gather real-world feedback while defining a longer-term vision for AI-driven insights, energy prediction, and end-to-end optimization.",
+      "image": "/images/otis-process.png"
+    },
+    {
+      "title": "On-Site Discovery",
+      "text": "Contextual inquiries at high-traffic NYC sites revealed a disconnect: the team was designing for \"efficiency,\" but users were operating from \"fear.\" Property managers felt real consequence-anxiety — afraid of a catastrophic error like shutting down an entire elevator bank — so they offloaded even simple tasks to Otis engineers.",
+      "image": "/images/otis-img2411.png"
+    },
+    {
+      "title": "Defining User Archetypes",
+      "text": "Field research distilled into two personas around a core tension — action vs. oversight. Field Engineers need high-density, action-oriented workflows for rapid diagnostics; Building Managers need a guided experience built around psychological safety and confidence.",
+      "points": [
+        {"title": "Building Manager", "desc": "Non-technical daily user managing operations and tenant communication. Needs simple guided workflows, plain-language labels, and confirmation before committing changes."},
+        {"title": "Field Engineer", "desc": "Highly technical, occasional user diagnosing issues on-site. Needs real-time status, fast access to actionable data, and predictable workflows with minimal friction."}
+      ],
+      "image": "/images/otis-p2.png"
+    },
+    {
+      "title": "Mitigating Risk",
+      "text": "Rapid prototyping bridged stakeholder requirements and user needs, with iterative testing inside active sprint cycles to de-risk \"quick win\" initiatives and keep decisions grounded in real usage rather than assumptions.",
+      "image": "/images/otis-user-testing.png"
+    },
+    {
+      "title": "Testing Outcome",
+      "text": "Testing confirmed the psychological-safety focus worked — cutting task time by 70% and error rates by 45%. The platform shifted from a cumbersome chore to a high-velocity tool, giving users the confidence to handle routine maintenance without relying on Otis engineers.",
+      "image": "/images/otis-charts.png"
+    }
+  ],
+  "features": [
+    {"title": "Dashboard & AI Copilot", "desc": "A centralized dashboard with real-time service visibility, paired with the \"Ask Otis\" AI copilot to surface insights and guide next steps while keeping users in control.", "video": true},
+    {"title": "Traffic Control & Monitoring", "desc": "Modular tools for security teams and engineers to manage calls, secure floors, and schedule elevator operations in real time.", "video": true},
+    {"title": "Health & Energy", "desc": "AI-powered insights monitor elevator health and energy usage to surface early risks, predict maintenance needs, and find opportunities to cut energy consumption.", "video": true},
+    {"title": "New User Guide", "desc": "A guided onboarding experience with contextual tutorials that shorten training time and build user confidence faster.", "video": true}
+  ],
+  "results": {
+    "text": "Cloud EMS 2.0 launched in early September, modernizing elevator management across 10+ core workflows and three user roles, and automating complex edge cases to reduce operational burden.",
+    "bullets": [
+      "3x growth in active users",
+      "45% decrease in error rates",
+      "70% reduction in task completion time"
+    ]
+  },
   "otherProjects": ["Unified Customer Hub", "Agent Desk", "Nitro College"]
 }

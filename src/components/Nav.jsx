@@ -10,10 +10,11 @@ export default function Nav() {
           <img src="/images/logo-dcc224.svg" alt="Yichun logo" />
         </Link>
         <nav className="nav-links">
+          <Link to={site.nav.links[0].to}>{site.nav.links[0].label}</Link>
           <a href={site.nav.resumeUrl} target="_blank" rel="noreferrer">
             Resume
           </a>
-          {site.nav.links.map((link) => (
+          {site.nav.links.slice(1).map((link) => (
             <Link key={link.to} to={link.to}>
               {link.label}
             </Link>

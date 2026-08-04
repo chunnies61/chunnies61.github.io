@@ -16,10 +16,10 @@
   ],
   "featureImage": "/images/frame-427319454-27c3bf.png",
   "features": [
-    {"title": "Centralized Application Management", "desc": "Manage loan and credit card applications in one unified workspace, with proactive alerts for potential data issues."},
-    {"title": "Manager's Menu", "desc": "Comprehensive access to customer data, reducing the need for external tools."},
-    {"title": "Verification Checklist", "desc": "All verification steps consolidated and aligned with business rules. Items update in real time and auto-resolve to \"Clear\" when complete."},
-    {"title": "Notes & History", "desc": "Always-visible note entry and access to previous records support informed decision-making."}
+    {"title": "Centralized Application Management", "desc": "Manage loan and credit card applications in one unified workspace, with proactive alerts for potential data issues.", "video": "/videos/agent-desk-centralized-app-mgmt.mp4"},
+    {"title": "Manager's Menu", "desc": "Comprehensive access to customer data, reducing the need for external tools.", "video": "/videos/agent-desk-managers-menu.mp4"},
+    {"title": "Verification Checklist", "desc": "All verification steps consolidated and aligned with business rules. Items update in real time and auto-resolve to \"Clear\" when complete.", "video": "/videos/agent-desk-verification-checklist.mp4"},
+    {"title": "Notes & History", "desc": "Always-visible note entry and access to previous records support informed decision-making.", "video": "/videos/agent-desk-notes-history.mp4"}
   ],
   "sections": [
     {

@@ -9,10 +9,10 @@
   "timeline": "2021.10 - 2022.6",
   "heroImage": "/images/cover-a595ed.png",
   "features": [
-    {"title": "Dashboard", "desc": "Provides a clear overview of a user's progress toward college financial readiness and allows easy updates to personal information. Content dynamically adjusts based on the selected college or university.", "image": "/images/chrome-dark-fb5cf2.png"},
-    {"title": "Profile", "desc": "Centralizes personal and academic information, which Nitro uses to surface relevant scholarship and funding recommendations."},
-    {"title": "Scholarships", "desc": "Delivers personalized scholarship recommendations, enabling users to explore opportunities and track progress using Liked, Applied, and Won states."},
-    {"title": "College Savings & Extra Contributions", "desc": "Supports a complete funding picture by allowing users to track college savings (including 529 accounts) and add extra contributions beyond Nitro's estimates, excluding private student loans."}
+    {"title": "Dashboard", "desc": "Provides a clear overview of a user's progress toward college financial readiness and allows easy updates to personal information. Content dynamically adjusts based on the selected college or university.", "image": "/images/chrome-dark-fb5cf2.png", "video": "/videos/nitro-dashboard.mp4"},
+    {"title": "Profile", "desc": "Centralizes personal and academic information, which Nitro uses to surface relevant scholarship and funding recommendations.", "video": "/videos/nitro-profile.mp4"},
+    {"title": "Scholarships", "desc": "Delivers personalized scholarship recommendations, enabling users to explore opportunities and track progress using Liked, Applied, and Won states.", "video": "/videos/nitro-scholarships.mp4"},
+    {"title": "College Savings & Extra Contributions", "desc": "Supports a complete funding picture by allowing users to track college savings (including 529 accounts) and add extra contributions beyond Nitro's estimates, excluding private student loans.", "video": "/videos/nitro-college-savings.mp4"}
   ],
   "problemStatement": "Rising college costs and growing student loan debt make financial planning overwhelming for students and families. Estimating costs, navigating aid, and planning budgets are complex and often leave families unprepared. The team set out to simplify this journey by providing clear tools that help users understand costs, manage funding options, and plan with confidence for college.",
   "challenge": {
