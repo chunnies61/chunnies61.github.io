@@ -3,22 +3,6 @@
   text-align: center;
 }
 
-.cs-back {
-  display: inline-block;
-  margin-bottom: 24px;
-  font-family: var(--font-ui);
-  font-size: 14px;
-  color: var(--text-soft);
-}
-
-.cs-back:hover {
-  color: var(--accent);
-}
-
-.cs-eyebrow {
-  margin-bottom: 12px;
-}
-
 .cs-header h1 {
   font-size: 44px;
   font-weight: 700;
@@ -40,8 +24,11 @@
 }
 
 .cs-hero-image {
+  display: block;
   border-radius: 20px;
   width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   margin: 24px 0 8px;
 }
 

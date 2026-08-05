@@ -115,10 +115,6 @@ export default function CaseStudy() {
     <article className="case-study">
       <header className="cs-header">
         <div className="wrap">
-          <Link to="/" className="cs-back">
-            ← Back home
-          </Link>
-          <p className="eyebrow center cs-eyebrow">Case Study</p>
           <h1>{study.title}</h1>
           <p className="cs-subtitle">{study.subtitle}</p>
           <div className="cs-tags">

@@ -3,6 +3,18 @@
   text-align: center;
 }
 
+.cs-back {
+  display: inline-block;
+  margin-bottom: 24px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--text-soft);
+}
+
+.cs-back:hover {
+  color: var(--accent);
+}
+
 .ap-header h1 {
   font-size: 40px;
   font-weight: 700;
