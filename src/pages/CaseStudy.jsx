@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { getCaseStudy, caseStudies } from "../data/caseStudies";
-import Tag from "../components/Tag";
 import ContactCta from "../components/ContactCta";
 import "./CaseStudy.css";
 
@@ -113,18 +112,6 @@ export default function CaseStudy() {
 
   return (
     <article className="case-study">
-      <header className="cs-header">
-        <div className="wrap">
-          <h1>{study.title}</h1>
-          <p className="cs-subtitle">{study.subtitle}</p>
-          <div className="cs-tags">
-            {study.tags.map((tag) => (
-              <Tag key={tag}>{tag}</Tag>
-            ))}
-          </div>
-        </div>
-      </header>
-
       {study.heroVideo ? (
         <div className="wrap">
           <VideoPlaceholder className="cs-hero-image" />
