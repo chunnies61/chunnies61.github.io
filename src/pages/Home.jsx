@@ -8,7 +8,7 @@ import "./Home.css";
 export default function Home() {
   const { home } = site;
   return (
-    <>
+    <div className="home">
       <section className="hero">
         <div className="wrap hero-inner">
           <h1 className="hero-title">{home.heroTitle}</h1>
@@ -82,6 +82,6 @@ export default function Home() {
       </section>
 
       <ContactCta title={home.ctaTitle} subtitle={home.ctaSubtitle} />
-    </>
+    </div>
   );
 }
