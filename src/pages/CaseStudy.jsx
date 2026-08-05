@@ -122,14 +122,14 @@ export default function CaseStudy() {
         ))}
       </nav>
 
-      {study.heroVideo ? (
+      {study.heroImage ? (
         <div className="wrap">
-          <VideoPlaceholder className="cs-hero-image" />
+          <img className="cs-hero-image" src={study.heroImage} alt={study.title} />
         </div>
       ) : (
-        study.heroImage && (
+        study.heroVideo && (
           <div className="wrap">
-            <img className="cs-hero-image" src={study.heroImage} alt={study.title} />
+            <VideoPlaceholder className="cs-hero-image" />
           </div>
         )
       )}

@@ -8,7 +8,7 @@
   "team": "2 UI Designers, 10+ Engineers, 1 Product Manager, 1 Project Manager",
   "timeline": "2025.4 - 2026.4",
   "platform": "Platform placeholder",
-  "heroImage": "/images/otis-dashboard.png",
+  "heroImage": "/images/otis-thumb.png",
   "impactStats": [
     {"value": "3x", "label": "Growth in active users"},
     {"value": "-45%", "label": "Decrease in error rates"},

@@ -8,7 +8,7 @@
   "team": "Product Owner, Project Manager, User researchers, Consultants, Engineers",
   "timeline": "2021.10 - 2022.6",
   "platform": "Platform placeholder",
-  "heroImage": "/images/cover-a595ed.png",
+  "heroImage": "/images/thumbnail-4ae4a5.png",
   "features": [
     {"title": "Dashboard", "desc": "Provides a clear overview of a user's progress toward college financial readiness and allows easy updates to personal information. Content dynamically adjusts based on the selected college or university.", "image": "/images/chrome-dark-fb5cf2.png", "video": "/videos/nitro-dashboard.mp4"},
     {"title": "Profile", "desc": "Centralizes personal and academic information, which Nitro uses to surface relevant scholarship and funding recommendations.", "video": "/videos/nitro-profile.mp4"},
