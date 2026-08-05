@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import site from "../data/site.json";
 import "./Nav.css";
 
-export default function Nav() {
+export default function Nav({ white }) {
   return (
-    <header className="nav">
+    <header className={"nav" + (white ? " nav-white" : "")}>
       <div className="wrap nav-inner">
         <Link to="/" className="nav-logo">
           <img src="/images/logo-dcc224.svg" alt="Yichun logo" />
