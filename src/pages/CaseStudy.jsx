@@ -110,8 +110,18 @@ export default function CaseStudy() {
     .map((title) => caseStudies.find((cs) => cs.title === title))
     .filter(Boolean);
 
+  const indexItems = ["Index 1", "Index 2", "Index 3", "Index 4", "Index 5", "Index 6"];
+
   return (
     <article className="case-study">
+      <nav className="cs-index wrap" aria-label="Case study index">
+        {indexItems.map((label) => (
+          <span className="cs-index-item" key={label}>
+            {label}
+          </span>
+        ))}
+      </nav>
+
       {study.heroVideo ? (
         <div className="wrap">
           <VideoPlaceholder className="cs-hero-image" />
@@ -158,7 +168,7 @@ export default function CaseStudy() {
         </div>
       ) : (
         <div className="wrap cs-body">
-          {(study.role || study.team || study.timeline) && (
+          {(study.role || study.team || study.timeline || study.platform) && (
             <div className="cs-meta-row">
               {study.role && (
                 <div>
@@ -176,6 +186,12 @@ export default function CaseStudy() {
                 <div>
                   <p className="eyebrow">Team</p>
                   <p>{study.team}</p>
+                </div>
+              )}
+              {study.platform && (
+                <div>
+                  <p className="eyebrow">Platform</p>
+                  <p>{study.platform}</p>
                 </div>
               )}
             </div>

@@ -6,6 +6,7 @@
   "context": "J.P. Morgan Private Bank serves ultra-high-net-worth clients across 140+ countries. Advisors handling lending products like Securities Based Lending and Custom Credit had to jump between disconnected tools to complete a single loan request. I led the end-to-end redesign of both the Loan Request App and the Lending Workspace, a unified hub for the bank's global lending tools.",
   "role": "Lead Designer",
   "team": "J.P. Morgan Private Bank — Wealth Management",
+  "platform": "Platform placeholder",
   "heroImage": "/images/lending-laptop.png",
   "impactStats": [
     {"value": "30%", "label": "Reduction in ticket completion time"},

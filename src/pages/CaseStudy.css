@@ -2,6 +2,21 @@
   background: #ffffff;
 }
 
+.cs-index {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 28px;
+  padding: 28px 0 4px;
+}
+
+.cs-index-item {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-soft);
+}
+
 .cs-hero-image {
   display: block;
   border-radius: 20px;
@@ -81,10 +96,10 @@
 .cs-row-label {
   font-family: var(--font-ui);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #545f71;
+  color: #434c5b;
   padding-top: 3px;
 }
 
