@@ -16,10 +16,31 @@ function VideoPlaceholder({ className }) {
   );
 }
 
+function Row({ label, children }) {
+  return (
+    <div className="cs-row">
+      <div className="cs-row-label">{label}</div>
+      <div className="cs-row-content">{children}</div>
+    </div>
+  );
+}
+
+function StatGrid({ stats }) {
+  return (
+    <div className="cs-outcomes-grid">
+      {stats.map((stat) => (
+        <div className="cs-outcome-tile" key={stat.label}>
+          <p className="cs-outcome-value">{stat.value}</p>
+          <p className="cs-outcome-label">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function Section({ section }) {
   return (
-    <div className="cs-section">
-      <h3>{section.title}</h3>
+    <Row label={section.title}>
       {section.text && <p>{section.text}</p>}
       {section.list && (
         <ul className="cs-list">
@@ -49,7 +70,7 @@ function Section({ section }) {
           ))}
         </div>
       )}
-    </div>
+    </Row>
   );
 }
 
@@ -154,106 +175,104 @@ export default function CaseStudy() {
         </div>
       ) : (
         <div className="wrap cs-body">
-          {(study.role || study.team || study.timeline || study.context) && (
-            <div className="cs-meta-block">
-              {study.context && <p className="cs-context">{study.context}</p>}
-              <div className="cs-meta-grid">
-                {study.role && (
-                  <div>
-                    <p className="eyebrow">Role</p>
-                    <p>{study.role}</p>
-                  </div>
-                )}
-                {study.team && (
-                  <div>
-                    <p className="eyebrow">Team</p>
-                    <p>{study.team}</p>
-                  </div>
-                )}
-                {study.timeline && (
-                  <div>
-                    <p className="eyebrow">Timeline</p>
-                    <p>{study.timeline}</p>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-
-          {study.impactStats && (
-            <div className="cs-impact">
-              <p className="eyebrow">🌟 Measured Impact</p>
-              <div className="cs-impact-grid">
-                {study.impactStats.map((stat) => (
-                  <div className="cs-impact-stat" key={stat.label}>
-                    <p className="cs-impact-value">{stat.value}</p>
-                    <p className="cs-impact-label">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {study.problemStatement && (
-            <div className="cs-section">
-              <h3>Problem Statement</h3>
-              <p>{study.problemStatement}</p>
-            </div>
-          )}
-
-          {study.challenges && (
-            <div className="cs-section">
-              <h3>Challenges</h3>
-              <div className="cs-challenge-grid">
-                {study.challenges.map((c, i) => (
-                  <div className="cs-challenge-card" key={c.title}>
-                    <p className="cs-challenge-index">Challenge {i + 1}</p>
-                    <h4>{c.title}</h4>
-                    <p>{c.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {study.challenge && (
-            <div className="cs-section">
-              <h3>The Challenge</h3>
-              <p>{study.challenge.text}</p>
-              {study.challenge.image && (
-                <img className="cs-image" src={study.challenge.image} alt="" loading="lazy" />
+          {(study.role || study.team || study.timeline) && (
+            <div className="cs-meta-row">
+              {study.role && (
+                <div>
+                  <p className="eyebrow">Role</p>
+                  <p>{study.role}</p>
+                </div>
+              )}
+              {study.timeline && (
+                <div>
+                  <p className="eyebrow">Timeline</p>
+                  <p>{study.timeline}</p>
+                </div>
+              )}
+              {study.team && (
+                <div>
+                  <p className="eyebrow">Team</p>
+                  <p>{study.team}</p>
+                </div>
               )}
             </div>
           )}
 
+          {study.context && <Row label="Overview">{study.context}</Row>}
+
+          {study.problemStatement && <Row label="The problem">{study.problemStatement}</Row>}
+
+          {study.challenges && (
+            <Row label="Challenges">
+              <div className="cs-approach-list">
+                {study.challenges.map((c, i) => (
+                  <div className="cs-approach-item" key={c.title}>
+                    <span className="cs-approach-num">{i + 1}</span>
+                    <div>
+                      <h4>{c.title}</h4>
+                      <p>{c.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Row>
+          )}
+
+          {study.challenge && (
+            <Row label="The challenge">
+              <p>{study.challenge.text}</p>
+              {study.challenge.image && (
+                <img className="cs-image" src={study.challenge.image} alt="" loading="lazy" />
+              )}
+            </Row>
+          )}
+
+          {study.impactStats && <Row label="Outcomes"><StatGrid stats={study.impactStats} /></Row>}
+
           {study.features && (
-            <div className="cs-section">
-              <h3>Final Solution</h3>
+            <Row label="What we shipped">
               {study.featureImage && (
                 <img className="cs-image" src={study.featureImage} alt="" loading="lazy" />
               )}
               {study.featureShowcaseImage && (
                 <img className="cs-image" src={study.featureShowcaseImage} alt="" loading="lazy" />
               )}
-              <div className="cs-feature-grid">
-                {study.features.map((f) => (
-                  <div className="cs-feature-card" key={f.title}>
-                    {f.image && <img src={f.image} alt="" loading="lazy" />}
-                    <h4>{f.title}</h4>
-                    <p>{f.desc}</p>
-                    {f.video && <VideoPlaceholder className="cs-feature-video" />}
+              <div className="cs-shipped-list">
+                {study.features.map((f, i) => (
+                  <div className={"cs-shipped-item" + (i % 2 === 1 ? " is-reverse" : "")} key={f.title}>
+                    <div className="cs-shipped-text">
+                      <span className="cs-shipped-num">{String(i + 1).padStart(2, "0")}</span>
+                      <h4>{f.title}</h4>
+                      <p>{f.desc}</p>
+                    </div>
+                    <div className="cs-shipped-media">
+                      {f.video ? (
+                        <VideoPlaceholder />
+                      ) : f.image ? (
+                        <img src={f.image} alt="" loading="lazy" />
+                      ) : (
+                        <div className="cs-image-placeholder">Image Placeholder</div>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
-            </div>
+            </Row>
           )}
 
           {study.sections && study.sections.map((s) => <Section key={s.title} section={s} />)}
 
           {study.results && (
-            <div className="cs-section cs-results">
-              <h3>Results</h3>
+            <Row label="Outcomes">
               <p>{study.results.text}</p>
+              {study.results.bullets && (
+                <ul className="cs-list">
+                  {study.results.bullets.map((b) => (
+                    <li key={b}>{b}</li>
+                  ))}
+                </ul>
+              )}
+              {study.results.stats && <StatGrid stats={study.results.stats} />}
               {study.results.quote && (
                 <blockquote className="cs-quote">
                   “{study.results.quote}”
@@ -262,40 +281,22 @@ export default function CaseStudy() {
                   )}
                 </blockquote>
               )}
-              {study.results.bullets && (
-                <ul className="cs-list">
-                  {study.results.bullets.map((b) => (
-                    <li key={b}>{b}</li>
-                  ))}
-                </ul>
-              )}
-              {study.results.stats && (
-                <div className="cs-impact-grid">
-                  {study.results.stats.map((stat) => (
-                    <div className="cs-impact-stat" key={stat.label}>
-                      <p className="cs-impact-value">{stat.value}</p>
-                      <p className="cs-impact-label">{stat.label}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+            </Row>
           )}
 
           {study.reflection && (
-            <div className="cs-section">
-              <h3>Reflection</h3>
-              <p>{study.reflection}</p>
-            </div>
+            <Row label="Reflection">
+              <blockquote className="cs-quote">{study.reflection}</blockquote>
+            </Row>
           )}
 
           {study.deckLink && (
-            <div className="cs-section cs-deck">
+            <Row label="Deck">
               <p>{study.deckLink.text}</p>
               {study.deckLink.image && (
                 <img className="cs-image" src={study.deckLink.image} alt="Presentation deck" loading="lazy" />
               )}
-            </div>
+            </Row>
           )}
         </div>
       )}
