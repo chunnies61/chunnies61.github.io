@@ -74,6 +74,11 @@ export default function Home() {
             ))}
           </div>
         </div>
+        <div className="other-work-cta">
+          <Link to="/projects" className="btn btn-secondary">
+            View All
+          </Link>
+        </div>
       </section>
 
       <ContactCta title={home.ctaTitle} subtitle={home.ctaSubtitle} />

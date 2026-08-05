@@ -11,7 +11,7 @@
 
 .about-hero-text h1 {
   font-size: 40px;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
@@ -41,7 +41,7 @@
   width: 220px;
   color: #fff;
   font-size: 40px;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.15;
   text-align: left;
 }
@@ -101,7 +101,7 @@
 }
 
 .testimonial-name {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 14px;
 }
 
