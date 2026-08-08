@@ -178,7 +178,7 @@
 }
 
 .more-card {
-  flex: 0 0 360px;
+  flex: 0 0 300px;
   max-width: 80%;
   scroll-snap-align: start;
 }
@@ -273,7 +273,7 @@
     row-gap: 32px;
   }
   .more-card {
-    flex-basis: 280px;
+    flex-basis: 240px;
   }
   .more-head {
     align-items: flex-start;
