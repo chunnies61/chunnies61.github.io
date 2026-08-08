@@ -66,9 +66,9 @@
 .case-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 32px;
-  row-gap: 48px;
+  gap: 120px;
   max-width: 920px;
+  margin: 0 auto;
 }
 
 .case-card {
@@ -77,13 +77,14 @@
   border: 1px solid var(--card-border);
   border-radius: var(--radius-card);
   overflow: hidden;
+  padding: 12px;
   transition: transform 0.3s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .case-card:hover {
   transform: translateY(-3px);
   border-color: var(--accent);
-  box-shadow: 0 12px 28px rgba(20, 32, 61, 0.08);
+  box-shadow: 0 14px 34px rgba(126, 160, 255, 0.45);
 }
 
 .case-card-image {
@@ -91,6 +92,7 @@
   width: 100%;
   aspect-ratio: 470 / 312;
   background: var(--gray-50);
+  border-radius: var(--radius-media);
   overflow: hidden;
 }
 
@@ -116,7 +118,7 @@
 }
 
 .case-card-body {
-  padding: 24px;
+  padding: 16px 12px 4px;
 }
 
 .case-card-tags {
@@ -267,12 +269,17 @@
   }
 }
 
-/* Tablet and below: case studies stack to a single column */
-@media (max-width: 760px) {
+/* Below the full 920px grid width: stack case studies into one centered
+   column so the 120px desktop gap never crowds the cards. */
+@media (max-width: 920px) {
   .case-grid {
     grid-template-columns: 1fr;
-    row-gap: 32px;
+    gap: 40px;
+    max-width: 460px;
   }
+}
+
+@media (max-width: 760px) {
   .more-card {
     flex-basis: 240px;
   }

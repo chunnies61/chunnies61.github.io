@@ -41,8 +41,8 @@ export default function Home() {
 
       <section className="section">
         <div className="wrap">
-          <p className="eyebrow">{home.sectionEyebrow}</p>
-          <h2 className="section-title">{home.sectionTitle}</h2>
+          <p className="eyebrow center">{home.sectionEyebrow}</p>
+          <h2 className="section-title center">{home.sectionTitle}</h2>
           <div className="case-grid">
             {home.caseStudies.map((cs) => (
               <Link
