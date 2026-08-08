@@ -5,7 +5,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 60px 0 72px;
+  padding: var(--space-page-top) 0 var(--space-section);
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -47,7 +47,7 @@
 }
 
 .section {
-  padding: 72px 0;
+  padding: var(--space-section) 0;
 }
 
 .eyebrow.center,
@@ -59,7 +59,7 @@
   font-size: 32px;
   font-weight: 700;
   margin-top: 8px;
-  margin-bottom: 40px;
+  margin-bottom: var(--space-title-gap);
 }
 
 .case-grid {
@@ -146,7 +146,7 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 24px;
-  margin-bottom: 40px;
+  margin-bottom: var(--space-title-gap);
 }
 
 .more-title {

@@ -1,5 +1,5 @@
 .contact-cta {
-  padding: 72px 0 60px;
+  padding: var(--space-section) 0 60px;
 }
 
 .contact-cta-inner {

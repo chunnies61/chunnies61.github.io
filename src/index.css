@@ -37,6 +37,13 @@
   --radius-btn: 6px;
   --radius-media: 10px;
   --radius-card: 14px;
+
+  /* Vertical rhythm — every page uses the same three values:
+     nav -> first content, section pad (x2 = 144px between sections),
+     and section header -> its content. */
+  --space-page-top: 48px;
+  --space-section: 72px;
+  --space-title-gap: 40px;
   --max-width: 1120px;
 }
 

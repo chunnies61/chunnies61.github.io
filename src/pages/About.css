@@ -1,5 +1,5 @@
 .about-hero {
-  padding: 48px 0 24px;
+  padding: var(--space-page-top) 0 var(--space-section);
 }
 
 .about-hero-inner {

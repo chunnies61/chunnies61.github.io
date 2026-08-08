@@ -59,7 +59,7 @@ a.cs-index-item:hover {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  margin: 32px 0 8px;
+  margin: var(--space-page-top) 0 8px;
 }
 
 .cs-video-placeholder,
@@ -677,7 +677,7 @@ a.cs-index-item:hover {
 }
 
 .cs-other {
-  padding: 40px 0 20px;
+  padding: 40px 0 var(--space-section);
 }
 
 .cs-next-card {

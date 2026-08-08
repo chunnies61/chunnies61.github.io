@@ -1,5 +1,5 @@
 .ap-header {
-  padding: 32px 0 24px;
+  padding: var(--space-page-top) 0 0;
   text-align: center;
 }
 
@@ -10,7 +10,7 @@
 }
 
 .ap-list {
-  padding: 24px 0 48px;
+  padding: var(--space-title-gap) 0 var(--space-section);
 }
 
 .ap-row {
