@@ -5,8 +5,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 620px;
-  padding: 60px 0 0;
+  padding: 60px 0 72px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -147,7 +146,7 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 24px;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 
 .more-title {
@@ -263,9 +262,6 @@
 @media (max-width: 900px) {
   .hero-title {
     font-size: 36px;
-  }
-  .hero {
-    min-height: 520px;
   }
 }
 
