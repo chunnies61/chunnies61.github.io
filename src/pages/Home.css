@@ -141,6 +141,16 @@
 }
 
 /* ===== More projects ===== */
+/* Share the Case studies grid's 920px centered column so both sections
+   start on the same left edge. */
+.more-head,
+.more-scroller,
+.more-controls {
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .more-head {
   display: flex;
   align-items: flex-end;
