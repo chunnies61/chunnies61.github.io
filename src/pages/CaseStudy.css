@@ -3,11 +3,35 @@
 }
 
 .cs-index {
+  position: sticky;
+  top: 73px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  padding: 18px 0;
+  background: #ffffff;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.cs-index-back {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-soft);
+  white-space: nowrap;
+}
+
+.cs-index-back:hover {
+  color: var(--accent-dark);
+}
+
+.cs-index-items {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px 28px;
-  padding: 28px 0 4px;
+  gap: 8px 28px;
 }
 
 .cs-index-item {
@@ -15,11 +39,23 @@
   font-size: 13px;
   font-weight: 500;
   color: var(--text-soft);
+  opacity: 0.55;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+a.cs-index-item:hover {
+  opacity: 0.85;
+}
+
+.cs-index-item.is-active {
+  color: var(--text);
+  font-weight: 600;
+  opacity: 1;
 }
 
 .cs-hero-image {
   display: block;
-  border-radius: 20px;
+  border-radius: var(--radius-media);
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
@@ -35,7 +71,7 @@
   gap: 10px;
   width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: 16px;
+  border-radius: var(--radius-media);
   border: 1px dashed var(--card-border);
   background: var(--card-bg);
   color: var(--text-soft);
@@ -119,7 +155,7 @@
 
 .cs-image {
   margin-top: 20px;
-  border-radius: 16px;
+  border-radius: var(--radius-media);
   width: 100%;
   border: 1px solid var(--card-border);
 }
@@ -174,7 +210,7 @@
 .cs-card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 16px;
+  border-radius: var(--radius-card);
   padding: 20px;
 }
 .cs-card-label {
@@ -229,7 +265,7 @@
 /* Callout / design principle */
 .cs-callout {
   background: var(--pill-blue-bg);
-  border-radius: 16px;
+  border-radius: var(--radius-card);
   padding: 24px 28px;
 }
 .cs-callout-label {
@@ -270,7 +306,7 @@
 .cs-contrast-item {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 16px;
+  border-radius: var(--radius-card);
   padding: 20px;
 }
 .cs-contrast-label {
@@ -362,7 +398,7 @@
 .cs-point {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 16px;
+  border-radius: var(--radius-card);
   padding: 20px;
 }
 
@@ -385,7 +421,7 @@
 }
 
 .cs-gallery img {
-  border-radius: 12px;
+  border-radius: var(--radius-media);
   border: 1px solid var(--card-border);
 }
 
@@ -402,7 +438,7 @@
   padding: 20px;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 16px;
+  border-radius: var(--radius-card);
 }
 
 .cs-approach-num {
@@ -441,7 +477,7 @@
 
 .cs-outcome-tile {
   background: var(--pill-blue-bg);
-  border-radius: 16px;
+  border-radius: var(--radius-card);
   padding: 20px;
 }
 
@@ -514,7 +550,7 @@
 .cs-shipped-media img {
   display: block;
   width: 100%;
-  border-radius: 16px;
+  border-radius: var(--radius-media);
   border: 1px solid var(--card-border);
 }
 
@@ -549,7 +585,7 @@
   text-align: center;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 20px;
+  border-radius: var(--radius-card);
   padding: 48px 32px;
 }
 
@@ -583,7 +619,7 @@
   flex: 1;
   min-width: 0;
   padding: 12px 16px;
-  border-radius: 12px;
+  border-radius: var(--radius-btn);
   border: 1px solid var(--card-border);
   font-family: var(--font-ui);
   font-size: 15px;

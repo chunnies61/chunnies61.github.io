@@ -242,18 +242,65 @@ export default function CaseStudy() {
     .filter(Boolean);
 
   const indexItems = study.indexedSections
-    ? study.indexedSections.map((s) => s.kicker)
-    : ["Index 1", "Index 2", "Index 3", "Index 4", "Index 5", "Index 6"];
+    ? study.indexedSections.map((s) => ({ id: s.id, label: s.kicker }))
+    : ["Index 1", "Index 2", "Index 3", "Index 4", "Index 5", "Index 6"].map((label) => ({
+        id: null,
+        label,
+      }));
+
+  const [activeId, setActiveId] = useState(indexItems[0]?.id ?? null);
+
+  useEffect(() => {
+    setActiveId(indexItems[0]?.id ?? null);
+    if (!study?.indexedSections?.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveId(entry.target.id);
+        });
+      },
+      { rootMargin: "-15% 0px -70% 0px", threshold: 0 }
+    );
+
+    study.indexedSections.forEach((s) => {
+      const el = document.getElementById(s.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [slug]);
 
   return (
     <article className="case-study">
       <nav className="cs-index wrap" aria-label="Case study index">
-        {indexItems.map((label, i) => (
-          <span className="cs-index-item" key={label + i}>
-            <span className="cs-index-num">{String(i + 1).padStart(2, "0")}</span>
-            {label}
-          </span>
-        ))}
+        <Link to="/" className="cs-index-back">
+          ← Back to work
+        </Link>
+        <div className="cs-index-items">
+          {indexItems.map((item, i) => {
+            const isActive = item.id !== null && item.id === activeId;
+            const content = (
+              <>
+                <span className="cs-index-num">{String(i + 1).padStart(2, "0")}</span>
+                {item.label}
+              </>
+            );
+            return item.id ? (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className={"cs-index-item" + (isActive ? " is-active" : "")}
+              >
+                {content}
+              </a>
+            ) : (
+              <span className="cs-index-item" key={item.label + i}>
+                {content}
+              </span>
+            );
+          })}
+        </div>
       </nav>
 
       {study.heroImage ? (

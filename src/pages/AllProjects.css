@@ -76,7 +76,7 @@
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: var(--radius-media);
   border: 1px solid var(--card-border);
 }
 
