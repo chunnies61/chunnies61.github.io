@@ -37,7 +37,7 @@
   font-weight: 500;
   line-height: 1.8;
   letter-spacing: 0.32px;
-  color: #677386;
+  color: var(--gray-600);
 }
 
 .hero-actions {
@@ -89,7 +89,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 470 / 312;
-  background: #f2f4fa;
+  background: var(--gray-50);
   overflow: hidden;
 }
 
