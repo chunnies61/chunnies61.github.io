@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { getCaseStudy, caseStudies } from "../data/caseStudies";
+import site from "../data/site.json";
 import ContactCta from "../components/ContactCta";
 import "./CaseStudy.css";
 
@@ -241,6 +242,13 @@ export default function CaseStudy() {
     .map((title) => caseStudies.find((cs) => cs.title === title))
     .filter(Boolean);
 
+  const nextCaseStudy = otherLinks[0]
+    ? {
+        ...otherLinks[0],
+        ...site.home.caseStudies.find((cs) => cs.slug === otherLinks[0].slug),
+      }
+    : null;
+
   const indexItems = study.indexedSections
     ? study.indexedSections.map((s) => ({ id: s.id, label: s.kicker }))
     : ["Index 1", "Index 2", "Index 3", "Index 4", "Index 5", "Index 6"].map((label) => ({
@@ -474,16 +482,20 @@ export default function CaseStudy() {
         </div>
       )}
 
-      {otherLinks.length > 0 && (
+      {nextCaseStudy && (
         <div className="wrap cs-other">
-          <p className="eyebrow">Explore my other projects</p>
-          <div className="cs-other-links">
-            {otherLinks.map((cs) => (
-              <Link key={cs.slug} to={`/case-studies/${cs.slug}`} className="cs-other-link">
-                {cs.title}
-              </Link>
-            ))}
-          </div>
+          <p className="eyebrow">Next case study</p>
+          <Link to={`/case-studies/${nextCaseStudy.slug}`} className="cs-next-card">
+            <div className="cs-next-thumb">
+              <img src={nextCaseStudy.thumb || nextCaseStudy.heroImage} alt="" loading="lazy" />
+              {nextCaseStudy.locked && <span className="cs-next-lock">🔒</span>}
+            </div>
+            <div className="cs-next-body">
+              <h3>{nextCaseStudy.title}</h3>
+              {nextCaseStudy.desc && <p>{nextCaseStudy.desc}</p>}
+            </div>
+            <span className="cs-next-arrow" aria-hidden="true">→</span>
+          </Link>
         </div>
       )}
 

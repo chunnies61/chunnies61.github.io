@@ -678,29 +678,87 @@ a.cs-index-item:hover {
 
 .cs-other {
   padding: 40px 0 20px;
-  text-align: center;
 }
 
-.cs-other-links {
+.cs-next-card {
   margin-top: 16px;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.cs-other-link {
-  padding: 10px 20px;
-  border-radius: 999px;
+  align-items: center;
+  gap: 24px;
+  padding: 16px;
   border: 1px solid var(--card-border);
-  font-family: var(--font-ui);
-  font-size: 14px;
-  font-weight: 500;
+  border-radius: var(--radius-card);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.cs-other-link:hover {
+.cs-next-card:hover {
   border-color: var(--accent);
+  box-shadow: 0 12px 28px rgba(20, 32, 61, 0.08);
+}
+
+.cs-next-card:hover .cs-next-thumb img {
+  transform: scale(1.03);
+}
+
+.cs-next-thumb {
+  position: relative;
+  flex-shrink: 0;
+  width: 220px;
+  aspect-ratio: 470 / 312;
+  border-radius: calc(var(--radius-media) - 4px);
+  overflow: hidden;
+  background: var(--gray-50);
+}
+
+.cs-next-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.cs-next-lock {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  padding: 5px 7px;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.cs-next-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.cs-next-body h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.cs-next-body p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--text-soft);
+}
+
+.cs-next-arrow {
+  flex-shrink: 0;
+  font-size: 20px;
   color: var(--accent-dark);
+}
+
+@media (max-width: 640px) {
+  .cs-next-card {
+    flex-wrap: wrap;
+  }
+  .cs-next-thumb {
+    width: 100%;
+  }
 }
 
 @media (max-width: 900px) {
