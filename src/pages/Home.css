@@ -64,8 +64,9 @@
 
 .case-grid {
   display: grid;
-  grid-template-columns: repeat(2, 470px);
-  gap: 120px;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 32px;
+  row-gap: 56px;
 }
 
 .case-card {
@@ -84,8 +85,8 @@
 
 .case-card-image {
   position: relative;
-  width: 470px;
-  height: 312px;
+  width: 100%;
+  aspect-ratio: 470 / 312;
   background: #f2f4fa;
   overflow: hidden;
 }
@@ -110,88 +111,130 @@
   padding: 24px;
 }
 
-.case-card-body h3 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
 .case-card-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+.case-card-body h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
 }
 
 .case-card-desc {
   color: var(--text-soft);
   font-size: 15px;
+  line-height: 1.5;
 }
 
-.other-work-carousel {
-  margin-top: 40px;
-  overflow: hidden;
-  width: 100%;
-  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-}
-
-.other-work-track {
+/* ===== More projects ===== */
+.more-head {
   display: flex;
-  width: max-content;
-  gap: 16px;
-  animation: other-work-scroll 36s linear infinite;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
 }
 
-.other-work-carousel:hover .other-work-track {
-  animation-play-state: paused;
+.more-title {
+  margin-bottom: 0;
 }
 
-.other-work-item {
-  flex: 0 0 auto;
-  width: 340px;
-  height: 255px;
-  border-radius: 14px;
+.more-viewall {
+  flex-shrink: 0;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-soft);
+  white-space: nowrap;
+}
+
+.more-viewall:hover {
+  color: var(--accent);
+}
+
+.more-scroller {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.more-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.more-card {
+  flex: 0 0 360px;
+  max-width: 80%;
+  scroll-snap-align: start;
+}
+
+.more-card-media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--card-border);
   background: #fff;
 }
 
-.other-work-item img {
+.more-card-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.other-work-cta {
-  margin-top: 32px;
+.more-card-title {
+  margin-top: 14px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.more-controls {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.more-arrows {
+  display: flex;
+  gap: 12px;
+}
+
+.more-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  background: #fff;
+  color: var(--text);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-@keyframes other-work-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+.more-arrow:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .other-work-track {
-    animation: none;
-  }
-  .other-work-carousel {
-    overflow-x: auto;
-  }
-}
-
-/* Collapse to one column before two fixed-width 470px thumbnails + 120px gap could overflow the grid */
-@media (max-width: 1100px) {
-  .case-grid {
-    grid-template-columns: 1fr;
-  }
+.more-hint {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--text-soft);
 }
 
 @media (max-width: 900px) {
@@ -203,26 +246,16 @@
   }
 }
 
-/* iPad and iPhone: thumbnail fills the full width of the card, keeping the desktop aspect ratio */
-@media (max-width: 900px) {
-  .case-card-image {
-    width: 100%;
-    height: auto;
-    margin: 0;
-    aspect-ratio: 470 / 312;
-  }
-}
-
-/* iPad: 60px vertical spacing between stacked cards */
-@media (max-width: 900px) {
+/* Tablet and below: case studies stack to a single column */
+@media (max-width: 760px) {
   .case-grid {
-    gap: 60px;
+    grid-template-columns: 1fr;
+    row-gap: 32px;
   }
-}
-
-/* Mobile: 20px vertical spacing between stacked cards */
-@media (max-width: 600px) {
-  .case-grid {
-    gap: 20px;
+  .more-card {
+    flex-basis: 280px;
+  }
+  .more-head {
+    align-items: flex-start;
   }
 }

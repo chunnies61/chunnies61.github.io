@@ -23,15 +23,15 @@ export default function AllProjects() {
 
       <div className="wrap">
         <div className="ap-list">
-          {home.otherWorkImages.map((src, i) => (
-            <div className="ap-row" key={src}>
+          {home.otherWork.map((item, i) => (
+            <div className="ap-row" key={`${item.thumb}-${i}`}>
               <div className="ap-title">
                 <span className="ap-index">{String(i + 1).padStart(2, "0")}</span>
-                <h3>Project Title</h3>
+                <h3>{item.title}</h3>
               </div>
               <p className="ap-desc">Project description placeholder — details coming soon.</p>
               <div className="ap-media">
-                <img src={src} alt="" loading="lazy" />
+                <img src={item.thumb} alt="" loading="lazy" />
               </div>
               <span className="ap-link">View →</span>
             </div>

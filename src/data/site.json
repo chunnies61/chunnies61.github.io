@@ -16,25 +16,25 @@
     "sectionTitle": "Case studies",
     "caseStudies": [
       {"slug": "unified-customer-hub", "title": "Unified Customer Hub", "tags": ["Fintech", "B2C", "Customer Service"], "desc": "Designing a scalable financial servicing platform used by 420K+ users", "thumb": "/images/thumbnail-1-2a85e4.png"},
-      {"slug": "lending-solutions-redesign", "title": "Lending Solutions Redesign", "tags": ["B2B", "Loan Request App", "Lending Workspace"], "desc": "Reinventing end-to-end lending for J.P. Morgan Private Bank across four regions, three products, and two request types", "thumb": "/images/lending-thumb.png"},
+      {"slug": "lending-solutions-redesign", "title": "Lending Solutions Redesign", "tags": ["B2B", "Loan Request App", "Lending Workspace"], "desc": "Reinventing end-to-end lending for J.P. Morgan Private Bank across four regions, three products, and two request types", "thumb": "/images/lending-thumb.png", "locked": true},
       {"slug": "agent-desk", "title": "Agent Desk", "tags": ["Fintech", "Internal Tool", "Workflow Optimization"], "desc": "Accelerating customer review and verification workflows", "thumb": "/images/thumbnail-3-d54e40.png"},
-      {"slug": "otis-digital-eco-system", "title": "Otis Digital Eco-system", "tags": ["Property Management", "B2B2C"], "desc": "Building a centralized digital platform for customer self-service", "thumb": "/images/otis-thumb.png"},
+      {"slug": "otis-digital-eco-system", "title": "Otis Digital Eco-system", "tags": ["Property Management", "B2B2C"], "desc": "Building a centralized digital platform for customer self-service", "thumb": "/images/otis-thumb.png", "locked": true},
       {"slug": "nitro-college", "title": "Nitro College", "tags": ["Fintech", "Edutech", "B2C"], "desc": "Helping students and parents plan for college with financial clarity", "thumb": "/images/thumbnail-4ae4a5.png"},
       {"slug": "clinicmind-ehr-platform", "title": "ClinicMind EHR Platform", "tags": ["Healthcare SaaS", "B2B", "CRM"], "desc": "Modernizing healthcare operations with a scalable EHR system", "thumb": "/images/thumbnail-4-9d912d.png"}
     ],
     "otherWorkEyebrow": "Other things I've worked on",
     "otherWorkTitle": "More projects",
-    "otherWorkImages": [
-      "/images/other-work-6-f41415.png",
-      "/images/other-work-4-f41401.png",
-      "/images/other-work-11-f4141f.png",
-      "/images/other-work-8-1-f87600.png",
-      "/images/other-work-2-f4140b.png",
-      "/images/arconnect-85212d.png",
-      "/images/other-work-9-f41429.png",
-      "/images/other-work-image-1c22c1.png",
-      "/images/other-work-1-f4143d.png",
-      "/images/xcelenergy-dab9c6.png"
+    "otherWork": [
+      {"thumb": "/images/other-work-6-f41415.png", "title": "Savings onboarding"},
+      {"thumb": "/images/other-work-4-f41401.png", "title": "Component library"},
+      {"thumb": "/images/other-work-11-f4141f.png", "title": "Portfolio dashboard"},
+      {"thumb": "/images/other-work-8-1-f87600.png", "title": "Project title"},
+      {"thumb": "/images/other-work-2-f4140b.png", "title": "Project title"},
+      {"thumb": "/images/arconnect-85212d.png", "title": "Project title"},
+      {"thumb": "/images/other-work-9-f41429.png", "title": "Project title"},
+      {"thumb": "/images/other-work-image-1c22c1.png", "title": "Project title"},
+      {"thumb": "/images/other-work-1-f4143d.png", "title": "Project title"},
+      {"thumb": "/images/xcelenergy-dab9c6.png", "title": "Project title"}
     ],
     "ctaTitle": "Have a fun Idea?",
     "ctaSubtitle": "Let's connect!"

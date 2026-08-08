@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import site from "../data/site.json";
 import Tag from "../components/Tag";
@@ -7,6 +8,14 @@ import "./Home.css";
 
 export default function Home() {
   const { home } = site;
+  const scrollerRef = useRef(null);
+
+  function scrollProjects(direction) {
+    const el = scrollerRef.current;
+    if (!el) return;
+    el.scrollBy({ left: direction * (el.clientWidth * 0.8), behavior: "smooth" });
+  }
+
   return (
     <div className="home">
       <section className="hero">
@@ -32,8 +41,8 @@ export default function Home() {
 
       <section className="section">
         <div className="wrap">
-          <p className="eyebrow center">{home.sectionEyebrow}</p>
-          <h2 className="section-title center">{home.sectionTitle}</h2>
+          <p className="eyebrow">{home.sectionEyebrow}</p>
+          <h2 className="section-title">{home.sectionTitle}</h2>
           <div className="case-grid">
             {home.caseStudies.map((cs) => (
               <Link
@@ -43,15 +52,15 @@ export default function Home() {
               >
                 <div className="case-card-image">
                   <img src={cs.thumb} alt={cs.title} loading="lazy" />
-                  {cs.protected && <span className="case-card-lock">🔒</span>}
+                  {cs.locked && <span className="case-card-lock">🔒</span>}
                 </div>
                 <div className="case-card-body">
-                  <h3>{cs.title}</h3>
                   <div className="case-card-tags">
                     {cs.tags.map((tag) => (
                       <Tag key={tag}>{tag}</Tag>
                     ))}
                   </div>
+                  <h3>{cs.title}</h3>
                   <p className="case-card-desc">{cs.desc}</p>
                 </div>
               </Link>
@@ -62,22 +71,48 @@ export default function Home() {
 
       <section className="section">
         <div className="wrap">
-          <p className="eyebrow center">{home.otherWorkEyebrow}</p>
-          <h2 className="section-title center">{home.otherWorkTitle}</h2>
-        </div>
-        <div className="other-work-carousel">
-          <div className="other-work-track">
-            {[...home.otherWorkImages, ...home.otherWorkImages].map((src, i) => (
-              <div key={`${src}-${i}`} className="other-work-item">
-                <img src={src} alt="" loading="lazy" />
+          <div className="more-head">
+            <div>
+              <p className="eyebrow">{home.otherWorkEyebrow}</p>
+              <h2 className="section-title more-title">{home.otherWorkTitle}</h2>
+            </div>
+            <Link to="/projects" className="more-viewall">
+              View all →
+            </Link>
+          </div>
+
+          <div className="more-scroller" ref={scrollerRef}>
+            {home.otherWork.map((item, i) => (
+              <div className="more-card" key={`${item.thumb}-${i}`}>
+                <div className="more-card-media">
+                  <img src={item.thumb} alt="" loading="lazy" />
+                </div>
+                <p className="more-card-title">{item.title}</p>
               </div>
             ))}
           </div>
-        </div>
-        <div className="other-work-cta">
-          <Link to="/projects" className="btn btn-secondary">
-            View All
-          </Link>
+
+          <div className="more-controls">
+            <div className="more-arrows">
+              <button
+                type="button"
+                className="more-arrow"
+                onClick={() => scrollProjects(-1)}
+                aria-label="Scroll to previous projects"
+              >
+                ←
+              </button>
+              <button
+                type="button"
+                className="more-arrow"
+                onClick={() => scrollProjects(1)}
+                aria-label="Scroll to next projects"
+              >
+                →
+              </button>
+            </div>
+            <span className="more-hint">Scroll or drag to browse</span>
+          </div>
         </div>
       </section>
 
