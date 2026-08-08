@@ -69,7 +69,6 @@ export default function AllProjects() {
               </div>
               <p className="ap-desc">Project description placeholder — details coming soon.</p>
               <ProjectMedia images={item.images && item.images.length ? item.images : [item.thumb]} />
-              <span className="ap-link">View →</span>
             </div>
           ))}
         </div>
