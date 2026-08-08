@@ -13,6 +13,7 @@
   font-size: 40px;
   font-weight: 700;
   margin-bottom: 20px;
+  color: var(--accent-dark);
 }
 
 .about-hero-text p {
@@ -30,7 +31,7 @@
   align-items: center;
   gap: 40px;
   width: 100%;
-  background: var(--text);
+  background: var(--accent-dark);
   border-radius: 0;
   padding: 56px clamp(24px, 6vw, 120px);
   overflow: hidden;

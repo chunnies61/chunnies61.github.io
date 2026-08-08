@@ -118,9 +118,9 @@ button {
 }
 
 .btn-primary {
-  background: var(--text);
+  background: var(--accent-dark);
   color: #fff;
-  box-shadow: 0 8px 20px rgba(20, 32, 61, 0.18);
+  box-shadow: 0 8px 20px rgba(42, 79, 191, 0.22);
 }
 
 .btn-secondary {
