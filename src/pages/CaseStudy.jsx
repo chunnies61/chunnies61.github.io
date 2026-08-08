@@ -344,45 +344,29 @@ export default function CaseStudy() {
         </div>
       ) : (
         <div className="wrap cs-body">
-          {study.meta ? (
-            <div className="cs-meta-row">
-              {study.meta.map((m) => (
-                <div key={m.label}>
-                  <p className="eyebrow">{m.label}</p>
-                  <p>{m.value}</p>
+          {(() => {
+            const metaItems =
+              study.meta ||
+              [
+                study.role && { label: "Role", value: study.role },
+                study.timeline && { label: "Timeline", value: study.timeline },
+                study.team && { label: "Team", value: study.team },
+                study.platform && { label: "Platform", value: study.platform },
+              ].filter(Boolean);
+
+            return (
+              metaItems.length > 0 && (
+                <div className="cs-meta-row">
+                  {metaItems.map((m) => (
+                    <div className="cs-meta-item" key={m.label}>
+                      <span className="cs-meta-label">{m.label}</span>
+                      <span className="cs-meta-value">{m.value}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          ) : (
-            (study.role || study.team || study.timeline || study.platform) && (
-              <div className="cs-meta-row">
-                {study.role && (
-                  <div>
-                    <p className="eyebrow">Role</p>
-                    <p>{study.role}</p>
-                  </div>
-                )}
-                {study.timeline && (
-                  <div>
-                    <p className="eyebrow">Timeline</p>
-                    <p>{study.timeline}</p>
-                  </div>
-                )}
-                {study.team && (
-                  <div>
-                    <p className="eyebrow">Team</p>
-                    <p>{study.team}</p>
-                  </div>
-                )}
-                {study.platform && (
-                  <div>
-                    <p className="eyebrow">Platform</p>
-                    <p>{study.platform}</p>
-                  </div>
-                )}
-              </div>
-            )
-          )}
+              )
+            );
+          })()}
 
           {study.indexedSections &&
             study.indexedSections.map((s) => <IndexedSection key={s.id} section={s} />)}

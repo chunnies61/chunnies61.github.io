@@ -102,17 +102,44 @@ a.cs-index-item:hover {
   padding-bottom: 40px;
 }
 
-/* Meta row: role / timeline / team, directly under the hero image */
+/* Meta row: role / company / products / team — one line, evenly distributed */
 .cs-meta-row {
   display: flex;
-  gap: 48px;
-  flex-wrap: wrap;
-  padding: 32px 0;
+  justify-content: space-between;
+  padding: 24px 0;
   border-bottom: 1px solid var(--card-border);
+  overflow-x: auto;
 }
 
-.cs-meta-row p:last-child {
-  margin-top: 4px;
+.cs-meta-item {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-shrink: 0;
+  padding-left: 16px;
+  white-space: nowrap;
+}
+
+.cs-meta-item:first-child {
+  padding-left: 0;
+}
+
+.cs-meta-item + .cs-meta-item {
+  border-left: 1px solid var(--card-border);
+}
+
+.cs-meta-label {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-soft);
+  flex-shrink: 0;
+}
+
+.cs-meta-value {
+  font-size: 13px;
   font-weight: 500;
 }
 
@@ -135,7 +162,7 @@ a.cs-index-item:hover {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #434c5b;
+  color: var(--gray-800);
   padding-top: 3px;
 }
 
@@ -699,8 +726,8 @@ a.cs-index-item:hover {
   .cs-section-title {
     font-size: 22px;
   }
-  .cs-meta-row {
-    gap: 24px;
+  .cs-meta-item {
+    padding-left: 16px;
   }
   .cs-shipped-item,
   .cs-shipped-item.is-reverse {
