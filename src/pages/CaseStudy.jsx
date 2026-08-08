@@ -6,11 +6,11 @@ import "./CaseStudy.css";
 
 const UNLOCK_PASSWORD = "0620";
 
-function VideoPlaceholder({ className }) {
+function VideoPlaceholder({ className, label }) {
   return (
     <div className={"cs-video-placeholder" + (className ? " " + className : "")}>
       <span className="cs-video-placeholder-icon">▶</span>
-      <span className="cs-video-placeholder-label">Video Placeholder</span>
+      <span className="cs-video-placeholder-label">{label || "Video Placeholder"}</span>
     </div>
   );
 }
@@ -161,7 +161,14 @@ function Block({ block }) {
       );
 
     case "image":
-      return <ImagePlaceholder label={block.label} />;
+      return block.src ? (
+        <img className="cs-image" src={block.src} alt={block.label || ""} loading="lazy" />
+      ) : (
+        <ImagePlaceholder label={block.label} />
+      );
+
+    case "video":
+      return <VideoPlaceholder label={block.label} />;
 
     case "step":
       return (
