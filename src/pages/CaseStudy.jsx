@@ -280,12 +280,7 @@ export default function CaseStudy() {
         <div className="cs-index-items">
           {indexItems.map((item, i) => {
             const isActive = item.id !== null && item.id === activeId;
-            const content = (
-              <>
-                <span className="cs-index-num">{String(i + 1).padStart(2, "0")}</span>
-                {item.label}
-              </>
-            );
+            const content = item.label;
             return item.id ? (
               <a
                 key={item.id}

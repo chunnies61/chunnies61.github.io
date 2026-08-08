@@ -13,7 +13,7 @@
   "indexedSections": [
     {
       "id": "setup",
-      "kicker": "01 · The setup",
+      "kicker": "The setup",
       "title": "One brand, three strangers",
       "blocks": [
         {"type": "stats", "items": [
@@ -31,7 +31,7 @@
     },
     {
       "id": "problem",
-      "kicker": "02 · The real problem",
+      "kicker": "The real problem",
       "title": "Nobody owned \"unified\"",
       "blocks": [
         {"type": "text", "value": [
@@ -45,7 +45,7 @@
     },
     {
       "id": "move-one",
-      "kicker": "03 · Move one",
+      "kicker": "Move one",
       "title": "Show, don't tell",
       "blocks": [
         {"type": "text", "value": [
@@ -59,7 +59,7 @@
     },
     {
       "id": "move-two",
-      "kicker": "04 · Move two",
+      "kicker": "Move two",
       "title": "When engineering says \"we can't\"",
       "blocks": [
         {"type": "text", "value": [
@@ -73,7 +73,7 @@
     },
     {
       "id": "tradeoff",
-      "kicker": "05 · The tradeoff",
+      "kicker": "The tradeoff",
       "title": "One decision, three stories",
       "blocks": [
         {"type": "text", "value": [
@@ -91,7 +91,7 @@
     },
     {
       "id": "execution",
-      "kicker": "06 · Execution",
+      "kicker": "Execution",
       "title": "Systems, not screens",
       "blocks": [
         {"type": "text", "value": "Three products × ownership combinations × account states = a combinatorial explosion. Miss one state, and a user hits a blank page. So I didn't draw every screen — I built systems."},
@@ -127,7 +127,7 @@
     },
     {
       "id": "impact",
-      "kicker": "07 · Impact",
+      "kicker": "Impact",
       "title": "Impact",
       "blocks": [
         {"type": "text", "value": "Launched August 2022."},
@@ -143,7 +143,7 @@
     },
     {
       "id": "reflection",
-      "kicker": "08 · Reflection",
+      "kicker": "Reflection",
       "title": "Reflection",
       "blocks": [
         {"type": "text", "value": [

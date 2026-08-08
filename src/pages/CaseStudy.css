@@ -167,12 +167,6 @@ a.cs-index-item:hover {
 
 /* ===== Indexed sections (content-rich case studies) ===== */
 
-.cs-index-num {
-  margin-right: 6px;
-  color: var(--accent-dark);
-  font-weight: 600;
-}
-
 .cs-section-content {
   min-width: 0;
   display: flex;
