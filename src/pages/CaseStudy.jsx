@@ -73,6 +73,130 @@ function Section({ section }) {
   );
 }
 
+/* ---- Indexed-section renderer (content-rich case studies) ---- */
+
+function Paragraphs({ value }) {
+  const items = Array.isArray(value) ? value : [value];
+  return items.map((p, i) => <p key={i}>{p}</p>);
+}
+
+function ImagePlaceholder({ label }) {
+  return (
+    <div className="cs-image-placeholder">
+      <span className="cs-image-placeholder-icon">🖼</span>
+      <span>{label || "Image Placeholder"}</span>
+    </div>
+  );
+}
+
+function Block({ block }) {
+  switch (block.type) {
+    case "text":
+      return <Paragraphs value={block.value} />;
+
+    case "cards":
+      return (
+        <div className={"cs-cards cs-cards-" + (block.columns || block.items.length)}>
+          {block.items.map((item) => (
+            <div className="cs-card" key={item.title || item.label}>
+              {item.label && <span className="cs-card-label">{item.label}</span>}
+              {item.title && <h4>{item.title}</h4>}
+              <p>{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      );
+
+    case "pills":
+      return (
+        <div className="cs-pill-groups">
+          {block.groups.map((g) => (
+            <div className="cs-pill-group" key={g.label}>
+              <span className="cs-pill-group-label">{g.label}</span>
+              <span className="cs-pill-group-value">{g.value}</span>
+            </div>
+          ))}
+        </div>
+      );
+
+    case "callout":
+      return (
+        <div className="cs-callout">
+          {block.label && <span className="cs-callout-label">{block.label}</span>}
+          <p>{block.value}</p>
+        </div>
+      );
+
+    case "quote":
+      return (
+        <blockquote className="cs-quote">
+          “{block.value}”
+          {block.attribution && <cite>— {block.attribution}</cite>}
+        </blockquote>
+      );
+
+    case "contrast":
+      return (
+        <div className="cs-contrast">
+          {block.items.map((item) => (
+            <div className="cs-contrast-item" key={item.label}>
+              <span className="cs-contrast-label">{item.label}</span>
+              <p>{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      );
+
+    case "stats":
+      return (
+        <div className="cs-outcomes-grid">
+          {block.items.map((item) => (
+            <div className="cs-outcome-tile" key={item.label}>
+              {item.value && <p className="cs-outcome-value">{item.value}</p>}
+              <p className="cs-outcome-label cs-outcome-label-strong">{item.label}</p>
+              {item.desc && <p className="cs-outcome-desc">{item.desc}</p>}
+            </div>
+          ))}
+        </div>
+      );
+
+    case "image":
+      return <ImagePlaceholder label={block.label} />;
+
+    case "step":
+      return (
+        <div className="cs-step">
+          <div className="cs-step-head">
+            {block.num && <span className="cs-step-num">{block.num}</span>}
+            <h4 className="cs-step-title">{block.title}</h4>
+          </div>
+          <div className="cs-step-body">
+            {block.blocks.map((b, i) => (
+              <Block block={b} key={i} />
+            ))}
+          </div>
+        </div>
+      );
+
+    default:
+      return null;
+  }
+}
+
+function IndexedSection({ section }) {
+  return (
+    <section className="cs-row cs-section" id={section.id}>
+      <div className="cs-row-label cs-section-label">{section.kicker}</div>
+      <div className="cs-section-content">
+        <h2 className="cs-section-title">{section.title}</h2>
+        {section.blocks.map((b, i) => (
+          <Block block={b} key={i} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export default function CaseStudy() {
   const { slug } = useParams();
   const study = getCaseStudy(slug);
@@ -110,13 +234,16 @@ export default function CaseStudy() {
     .map((title) => caseStudies.find((cs) => cs.title === title))
     .filter(Boolean);
 
-  const indexItems = ["Index 1", "Index 2", "Index 3", "Index 4", "Index 5", "Index 6"];
+  const indexItems = study.indexedSections
+    ? study.indexedSections.map((s) => s.kicker)
+    : ["Index 1", "Index 2", "Index 3", "Index 4", "Index 5", "Index 6"];
 
   return (
     <article className="case-study">
       <nav className="cs-index wrap" aria-label="Case study index">
-        {indexItems.map((label) => (
-          <span className="cs-index-item" key={label}>
+        {indexItems.map((label, i) => (
+          <span className="cs-index-item" key={label + i}>
+            <span className="cs-index-num">{String(i + 1).padStart(2, "0")}</span>
             {label}
           </span>
         ))}
@@ -168,34 +295,48 @@ export default function CaseStudy() {
         </div>
       ) : (
         <div className="wrap cs-body">
-          {(study.role || study.team || study.timeline || study.platform) && (
+          {study.meta ? (
             <div className="cs-meta-row">
-              {study.role && (
-                <div>
-                  <p className="eyebrow">Role</p>
-                  <p>{study.role}</p>
+              {study.meta.map((m) => (
+                <div key={m.label}>
+                  <p className="eyebrow">{m.label}</p>
+                  <p>{m.value}</p>
                 </div>
-              )}
-              {study.timeline && (
-                <div>
-                  <p className="eyebrow">Timeline</p>
-                  <p>{study.timeline}</p>
-                </div>
-              )}
-              {study.team && (
-                <div>
-                  <p className="eyebrow">Team</p>
-                  <p>{study.team}</p>
-                </div>
-              )}
-              {study.platform && (
-                <div>
-                  <p className="eyebrow">Platform</p>
-                  <p>{study.platform}</p>
-                </div>
-              )}
+              ))}
             </div>
+          ) : (
+            (study.role || study.team || study.timeline || study.platform) && (
+              <div className="cs-meta-row">
+                {study.role && (
+                  <div>
+                    <p className="eyebrow">Role</p>
+                    <p>{study.role}</p>
+                  </div>
+                )}
+                {study.timeline && (
+                  <div>
+                    <p className="eyebrow">Timeline</p>
+                    <p>{study.timeline}</p>
+                  </div>
+                )}
+                {study.team && (
+                  <div>
+                    <p className="eyebrow">Team</p>
+                    <p>{study.team}</p>
+                  </div>
+                )}
+                {study.platform && (
+                  <div>
+                    <p className="eyebrow">Platform</p>
+                    <p>{study.platform}</p>
+                  </div>
+                )}
+              </div>
+            )
           )}
+
+          {study.indexedSections &&
+            study.indexedSections.map((s) => <IndexedSection key={s.id} section={s} />)}
 
           {study.context && <Row label="Overview">{study.context}</Row>}
 

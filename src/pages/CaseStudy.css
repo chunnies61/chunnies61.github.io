@@ -129,6 +129,208 @@
   margin-top: 0;
 }
 
+/* ===== Indexed sections (content-rich case studies) ===== */
+
+.cs-index-num {
+  margin-right: 6px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.cs-section-content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cs-section-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text);
+  max-width: 760px;
+}
+
+.cs-section-content > p {
+  max-width: 720px;
+  color: var(--text-soft);
+  font-size: 16px;
+}
+
+/* Card grid */
+.cs-cards {
+  display: grid;
+  gap: 16px;
+}
+.cs-cards-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.cs-cards-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cs-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 20px;
+}
+.cs-card-label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent-dark);
+}
+.cs-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.cs-card p {
+  font-size: 14px;
+  color: var(--text-soft);
+}
+
+/* Dimension pill groups */
+.cs-pill-groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.cs-pill-group {
+  flex: 1 1 180px;
+  background: var(--pill-blue-bg);
+  border-radius: 14px;
+  padding: 16px 18px;
+}
+.cs-pill-group-label {
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent-dark);
+}
+.cs-pill-group-value {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* Callout / design principle */
+.cs-callout {
+  background: var(--pill-blue-bg);
+  border-radius: 16px;
+  padding: 24px 28px;
+}
+.cs-callout-label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-dark);
+}
+.cs-callout p {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+/* Contrast pair */
+.cs-contrast {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.cs-contrast-item {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 20px;
+}
+.cs-contrast-label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+.cs-contrast-item p {
+  font-size: 14px;
+  color: var(--text-soft);
+}
+
+/* Outcome tile extensions */
+.cs-outcome-label-strong {
+  font-weight: 600;
+  color: var(--text);
+}
+.cs-outcome-desc {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+.cs-image-placeholder-icon {
+  font-size: 22px;
+  opacity: 0.7;
+}
+
+/* Process steps */
+.cs-step {
+  border-top: 1px solid var(--card-border);
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.cs-step:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+.cs-step-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.cs-step-num {
+  flex-shrink: 0;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+}
+.cs-step-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+.cs-step-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.cs-step-body > p {
+  max-width: 720px;
+  font-size: 15px;
+  color: var(--text-soft);
+}
+
 .cs-list {
   margin-top: 16px;
   padding-left: 20px;
@@ -447,6 +649,14 @@
   }
   .cs-outcomes-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .cs-cards-2,
+  .cs-cards-3,
+  .cs-contrast {
+    grid-template-columns: 1fr;
+  }
+  .cs-section-title {
+    font-size: 22px;
   }
   .cs-meta-row {
     gap: 24px;

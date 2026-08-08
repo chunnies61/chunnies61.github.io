@@ -1,59 +1,148 @@
 {
   "slug": "lending-solutions-redesign",
-  "title": "Lending Experience Redesign",
-  "subtitle": "Loan Request App 2.0 & Lending Workspace",
+  "title": "Lending Solutions Redesign",
+  "subtitle": "Reinventing end-to-end lending for J.P. Morgan Private Bank — one origination flow across four regions, three products, and two request types.",
   "tags": ["B2B", "Loan Request App", "Lending Workspace"],
-  "context": "J.P. Morgan Private Bank serves ultra-high-net-worth clients across 140+ countries. Advisors handling lending products like Securities Based Lending and Custom Credit had to jump between disconnected tools to complete a single loan request. I led the end-to-end redesign of both the Loan Request App and the Lending Workspace, a unified hub for the bank's global lending tools.",
-  "role": "Lead Designer",
-  "team": "J.P. Morgan Private Bank — Wealth Management",
-  "platform": "Platform placeholder",
   "heroImage": "/images/lending-thumb.png",
-  "impactStats": [
-    {"value": "30%", "label": "Reduction in ticket completion time"},
-    {"value": "EMEA → USPB", "label": "Adoption expanded across two major markets, with a reduced NIGO rate"},
-    {"value": "⭐", "label": "Positive advisor feedback at launch"}
+  "meta": [
+    {"label": "Role", "value": "Lead Designer — end-to-end owner"},
+    {"label": "Company", "value": "J.P. Morgan Private Bank, Wealth Management"},
+    {"label": "Products", "value": "Loan Request App 3.0 · Lending Workspace"},
+    {"label": "Team", "value": "Product (multi-domain POs), Engineering, UX Research, Credit Middle Office"}
   ],
-  "problemStatement": "Advisors had no unified digital experience for lending — completing a single request meant jumping between disconnected tools, creating friction, errors, and manual handoffs with Credit Middle Officers. The goal was a scalable, digital-first lending workflow that cut tool-switching overhead. Advisors serve high-net-worth clients who expect fast, accurate turnaround, so any friction in the tooling became a delay felt directly by the client.",
-  "sections": [
+  "indexedSections": [
     {
-      "title": "Process",
-      "text": "I owned both products end-to-end, from discovery through delivery — partnering with Product Owners on user flows before any screens were defined, so design intent shaped the requirements rather than reacting to them after the fact.",
-      "image": "/images/lending-process.png"
+      "id": "context",
+      "kicker": "Context",
+      "title": "A private bank running on disconnected tools",
+      "blocks": [
+        {"type": "text", "value": [
+          "J.P. Morgan Private Bank serves ultra-high-net-worth clients across 140+ countries, offering lending products like Securities-Based Lending and Custom Credit.",
+          "But behind every loan sat a broken workflow. To complete a single loan request, an Advisor had to jump between multiple disconnected applications — re-keying data, chasing manual handoffs with Credit Middle Officers, and relying on institutional memory to know what to do when.",
+          "I owned the redesign of the end-to-end lending experience, across two surfaces."
+        ]},
+        {"type": "cards", "columns": 2, "items": [
+          {"title": "Loan Request App 3.0", "desc": "The origination surface where Advisors initiate and submit SBL, Custom Credit, and PLP tickets — new deals and amendments — across USPB, EMEA, APAC, and LatAm."},
+          {"title": "Lending Workspace", "desc": "The unified hub bringing every Private Bank lending tool under one roof."}
+        ]},
+        {"type": "callout", "value": "The tools existed. The experience didn't."}
+      ]
     },
     {
-      "title": "Loan Request App",
-      "text": "The Loan Request App is where advisors originate and submit SBL, Custom Credit, and other loan tickets across New Deals, Amendments, and regional variants (USPB, EMEA, APAC, LatAm). The original version was a flat, linear form with no real-time feedback or conditional logic — advisors were expected to know what to fill in with no system support. The redesign breaks the request into a structured, progressive sequence with conditional logic, inline validation, and embedded guidance, so advisors can keep moving without leaving the ticket or restarting after an error.",
-      "image": "/images/lending-userflow.png"
+      "id": "users",
+      "kicker": "Users",
+      "title": "People with no room for internal friction",
+      "blocks": [
+        {"type": "text", "value": "My primary users were Advisors and Bankers serving UHNW clients who expect fast, accurate answers."},
+        {"type": "cards", "columns": 3, "items": [
+          {"title": "Time-starved", "desc": "Every minute with a client is high-stakes. Internal tooling friction is a direct tax on client service."},
+          {"title": "High-consequence", "desc": "A single ticket can move eight figures. An error isn't an inconvenience — it's a risk event."},
+          {"title": "Knowledge-gated", "desc": "Complex, multi-step, tool-dependent workflows that punished anyone without deep institutional knowledge."}
+        ]},
+        {"type": "callout", "label": "Design principle", "value": "Remove the friction that wastes time — keep the friction that protects the client."}
+      ]
     },
     {
-      "title": "Testing & Validation",
-      "text": "I built interactive prototypes with LLM-assisted tooling and partnered with a UX researcher to test directly with advisors, surfacing edge cases and workflow assumptions that stakeholder reviews alone had missed, then fed those findings back into the design.",
-      "image": "/images/lending-key-findings.png"
+      "id": "challenge",
+      "kicker": "The challenge",
+      "title": "A variable matrix, not a form",
+      "blocks": [
+        {"type": "text", "value": [
+          "The v1 experience was a flat, linear form: no conditional logic, no real-time feedback, no embedded guidance. Advisors were expected to already know what to fill in, when, and why.",
+          "But a loan request isn't one form — it's a combinatorial matrix."
+        ]},
+        {"type": "pills", "groups": [
+          {"label": "Region", "value": "USPB · EMEA · APAC · LatAm"},
+          {"label": "Product", "value": "SBL · Custom Credit · PLP"},
+          {"label": "Request type", "value": "New deal · Amendment"}
+        ]},
+        {"type": "text", "value": "That explodes into hundreds of possible states. Two problems compounded it."},
+        {"type": "cards", "columns": 2, "items": [
+          {"label": "Problem A", "title": "No single source of truth", "desc": "Each domain had its own Product Owner with limited cross-domain visibility — leading to conflicting requirements, overlapping asks, and three months of circular debate over whose process was the standard."},
+          {"label": "Problem B", "title": "No shared mental model", "desc": "Everyone pictured the lending space differently, so we kept arguing about fields when the real disagreement was about structure."}
+        ]}
+      ]
     },
     {
-      "title": "Global Markets",
-      "text": "I ran workshops with regional product owners to resolve conflicts and cover edge cases while keeping the advisor experience consistent without losing regional nuance, then delivered pixel-perfect handoff documentation across SBL, Custom Credit, and PLP variants — staying engaged through engineering standups during implementation.",
-      "image": "/images/lending-before-after.png"
+      "id": "process",
+      "kicker": "Process",
+      "title": "Process & design decisions",
+      "blocks": [
+        {"type": "step", "num": "4.1", "title": "Map the whole space before touching a screen", "blocks": [
+          {"type": "text", "value": [
+            "Instead of designing screens, I first built a comprehensive information architecture covering every domain, product, and region — a single holistic view of the entire lending surface.",
+            "The IA's value wasn't aesthetic. It turned invisible disagreements into visible, pointable nodes. “Whose process wins?” became “which region owns this specific node?” — a solvable question.",
+            "I designed the space first, then the screens, so every later decision had a coherent home."
+          ]},
+          {"type": "image", "label": "Information architecture — full lending surface"}
+        ]},
+        {"type": "step", "num": "4.2", "title": "Unify the skeleton, localize the organs", "blocks": [
+          {"type": "text", "value": "The hardest tension surfaced immediately: how much to unify?"},
+          {"type": "contrast", "items": [
+            {"label": "Fully global", "desc": "EMEA's mandatory compliance fields get cut. A non-negotiable red line."},
+            {"label": "Fully local", "desc": "We're back to four disconnected tools. Unification dies."}
+          ]},
+          {"type": "text", "value": "My decision: one shared flow structure, navigation, and mental model across all regions, with conditional logic dynamically injecting region-specific fields and disclosures inside each step. Advisors experience one product; the system quietly adapts underneath."},
+          {"type": "image", "label": "Shared flow with region-specific fields"}
+        ]},
+        {"type": "step", "num": "4.3", "title": "Lead by showing — a prototype that ended the debate", "blocks": [
+          {"type": "text", "value": [
+            "I could say “skeleton vs. organs,” but POs didn't buy an abstraction — they kept asking “is my field still there or not?”",
+            "So I stopped arguing and built an interactive prototype using LLM-assisted tooling. Select EMEA and the three compliance fields appear. Switch to USPB and they disappear, and the rest of the flow doesn't move."
+          ]},
+          {"type": "quote", "value": "Oh — my field wasn't deleted. It just doesn't exist in the other regions.", "attribution": "EMEA Product Owner, mid-walkthrough"},
+          {"type": "text", "value": [
+            "Three months of debate collapsed in a fifteen-minute walkthrough.",
+            "When consensus is missing and talk won't converge, a prototype isn't a deliverable — it's a decision-making instrument. It swaps “who's right” for “does this work.”"
+          ]},
+          {"type": "image", "label": "Region switcher prototype"}
+        ]},
+        {"type": "step", "num": "4.4", "title": "The friction I chose to keep", "blocks": [
+          {"type": "text", "value": "My first pass optimized for pure speed — auto-advancing, stripping confirmations. Then a senior Advisor, mid-walkthrough, said:"},
+          {"type": "quote", "value": "The seconds you saved me might let me submit a multi-million-dollar loan without ever seeing the collateral details.", "attribution": "Senior Advisor"},
+          {"type": "text", "value": "That reframed everything. In finance, some friction is a bug; some friction is a feature."},
+          {"type": "contrast", "items": [
+            {"label": "Removed — bug friction", "desc": "Re-entering data, not knowing the next step — removed via conditional logic, inline validation, and embedded guidance."},
+            {"label": "Kept & hardened — prudent friction", "desc": "A deliberate, un-skippable confirmation of key terms and collateral before submission — kept and hardened, because it carries accountability and risk control."}
+          ]},
+          {"type": "text", "value": "I demoed both in the same prototype — this step is fast on purpose, that step is slow on purpose — so Product and Compliance saw that efficiency and prudence weren't in conflict. They were being deliberately separated."},
+          {"type": "image", "label": "Confirmation step — terms & collateral"}
+        ]},
+        {"type": "step", "num": "4.5", "title": "Validation with real Advisors", "blocks": [
+          {"type": "text", "value": [
+            "I partnered with a UX Researcher to run sessions on the interactive prototypes directly with Advisors. These surfaced edge cases and workflow assumptions invisible in stakeholder reviews alone, which I synthesized back into iterative design improvements.",
+            "I then delivered pixel-perfect handoff across regional variants and product types — SBL, Custom Credit, PLP — with full edge-case and error-state coverage, and stayed embedded in engineering standups through implementation."
+          ]},
+          {"type": "image", "label": "Research session synthesis"}
+        ]}
+      ]
     },
     {
-      "title": "Lending Workspace",
-      "text": "The Lending Workspace unifies every Private Bank lending tool — deal management, underwriting resources, and workflows beyond origination — into one platform. The tools already existed, but the experience didn't: capabilities were scattered with no shared entry point or consistent navigation, rewarding advisors who already knew where to look. Each domain also had its own product owner with limited cross-domain visibility, leading to conflicting priorities.",
-      "image": "/images/lending-workspace-overview.png"
+      "id": "outcome",
+      "kicker": "Outcome",
+      "title": "Outcome",
+      "blocks": [
+        {"type": "stats", "items": [
+          {"value": "30%", "label": "reduction in ticket completion time", "desc": "Removed bug friction without touching prudent friction."},
+          {"label": "Reduced NIGO rate", "desc": "Embedded tooltips and progressive disclosure cut submission errors and Advisor call-ins."},
+          {"label": "Adoption expanded EMEA → USPB", "desc": "One unified skeleton proved it could scale across two major markets."},
+          {"label": "Positive Advisor feedback at launch", "desc": "Credited the redesign with reducing friction and improving completion confidence."}
+        ]},
+        {"type": "callout", "value": "The win wasn't trading prudence for speed — it was replacing wasted friction with necessary friction."}
+      ]
     },
     {
-      "title": "Designing Across Competing Priorities",
-      "text": "I mapped a comprehensive information architecture across the full lending surface, and introduced a weekly design review with stakeholders across domains to align teams and surface conflicts early.",
-      "image": "/images/lending-ia.png"
+      "id": "reflection",
+      "kicker": "Reflection",
+      "title": "Reflection",
+      "blocks": [
+        {"type": "text", "value": [
+          "I joined by listening first — meeting triad partners, studying existing research, immersing in the design system — before moving into end-to-end ownership.",
+          "My biggest takeaway is a decision-making mindset: when a room can't agree in the abstract, the fastest path forward isn't more debate — it's a prototype people can touch, so the solution argues for itself.",
+          "That, to me, is senior design: not just crafting the interface, but using systems thinking and prototyping to help a room of conflicting stakeholders make a decision — and knowing which friction to fight and which to defend."
+        ]}
+      ]
     }
   ],
-  "results": {
-    "text": "The redesign measurably reduced friction for advisors across four global markets — cutting completion time, expanding adoption, lowering NIGO rates, and improving satisfaction at launch.",
-    "bullets": [
-      "Reduced NIGO: fewer not-in-good-order submissions via embedded tooltips and progressive disclosure, cutting advisor call-ins for support",
-      "Expanded Adoption: scaled the Loan Request App from EMEA to USPB, extending a unified origination experience across two major markets",
-      "Increased Advisor Satisfaction: positive feedback at launch credited the redesign with reducing friction and improving confidence in request completion"
-    ]
-  },
-  "reflection": "I joined by listening first — meeting triad partners, studying prior research, and learning the design system — before moving into full end-to-end ownership, gradually shifting from executing briefs to shaping them. As scope grew, I connected design decisions to measurable outcomes and got better at communicating rationale to a wide range of stakeholders without follow-up questions. The most meaningful growth was less visible: senior design is about making the team better, not just the work.",
   "otherProjects": ["Unified Customer Hub", "Agent Desk", "Nitro College"]
 }
