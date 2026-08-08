@@ -11,7 +11,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px 28px;
-  padding: 18px 0;
+  padding: 8px 0;
   background: #ffffff;
   border-bottom: 1px solid var(--card-border);
 }
@@ -102,22 +102,20 @@ a.cs-index-item:hover {
   padding-bottom: 40px;
 }
 
-/* Meta row: role / company / products / team — one line, evenly distributed */
+/* Meta row: role / company / products / team — one row, evenly distributed columns */
 .cs-meta-row {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(var(--cs-meta-count, 4), 1fr);
   padding: 24px 0;
   border-bottom: 1px solid var(--card-border);
-  overflow-x: auto;
 }
 
 .cs-meta-item {
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
   gap: 6px;
-  flex-shrink: 0;
-  padding-left: 16px;
-  white-space: nowrap;
+  min-width: 0;
+  padding-left: 24px;
 }
 
 .cs-meta-item:first-child {
@@ -135,12 +133,13 @@ a.cs-index-item:hover {
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--text-soft);
-  flex-shrink: 0;
 }
 
 .cs-meta-value {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
+  color: var(--text);
+  line-height: 1.4;
 }
 
 /* Label-left, content-right row — the core layout unit for every section */

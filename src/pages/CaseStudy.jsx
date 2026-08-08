@@ -356,7 +356,7 @@ export default function CaseStudy() {
 
             return (
               metaItems.length > 0 && (
-                <div className="cs-meta-row">
+                <div className="cs-meta-row" style={{ "--cs-meta-count": metaItems.length }}>
                   {metaItems.map((m) => (
                     <div className="cs-meta-item" key={m.label}>
                       <span className="cs-meta-label">{m.label}</span>
