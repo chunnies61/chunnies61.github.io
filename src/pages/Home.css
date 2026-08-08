@@ -154,7 +154,7 @@
 }
 
 .more-viewall:hover {
-  color: var(--accent);
+  color: var(--accent-dark);
 }
 
 .more-scroller {
@@ -228,7 +228,7 @@
 
 .more-arrow:hover {
   border-color: var(--accent);
-  color: var(--accent);
+  color: var(--accent-dark);
 }
 
 .more-hint {

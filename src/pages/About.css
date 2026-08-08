@@ -30,7 +30,7 @@
   align-items: center;
   gap: 40px;
   width: 100%;
-  background: var(--accent);
+  background: var(--text);
   border-radius: 0;
   padding: 56px clamp(24px, 6vw, 120px);
   overflow: hidden;

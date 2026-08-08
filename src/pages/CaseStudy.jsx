@@ -121,7 +121,7 @@ function Block({ block }) {
 
     case "callout":
       return (
-        <div className="cs-callout">
+        <div className={"cs-callout" + (block.label ? " cs-callout-invert" : "")}>
           {block.label && <span className="cs-callout-label">{block.label}</span>}
           <p>{block.value}</p>
         </div>

@@ -1,13 +1,17 @@
 :root {
-  --bg: #f1f3fb;
-  --text: #364b77;
-  --text-soft: #545f71;
-  --accent: #4574e8;
-  --accent-dark: #2f56c4;
+  /* Design system — sonata-sift-41304023.figma.site
+     PRIMARY periwinkle for accents/rules/tints, PRIMARY_INK for interactive
+     text, INK for headings/body, MUTED for secondary. White grounds. */
+  --bg: #ffffff;
+  --text: #14203d;        /* INK */
+  --text-soft: #263259;   /* MUTED */
+  --accent: #7ea0ff;      /* PRIMARY — periwinkle: accents, rules, tints (never body text on white) */
+  --accent-dark: #2a4fbf; /* PRIMARY_INK — interactive text on white (AA) */
   --card-bg: #ffffff;
-  --card-border: #eceef4;
-  --pill-blue-bg: #dbe6fd;
-  --pill-blue-text: #2f56c4;
+  --card-border: rgba(20, 32, 61, 0.12);   /* HAIRLINE */
+  --pill-blue-bg: rgba(126, 160, 255, 0.22); /* TINT — wells, chips, quiet fills */
+  --pill-blue-text: #2a4fbf;
+  --tag-surface: #f0f1f4;
   --pill-pink-bg: #fbdcec;
   --pill-pink-text: #b23e79;
   --pill-yellow-bg: #fdedc0;
@@ -17,6 +21,10 @@
   --font-display: "Bricolage Grotesque", sans-serif;
   --font-body: "Poppins", sans-serif;
   --font-ui: "Poppins", sans-serif;
+  --radius-tag: 4px;
+  --radius-btn: 6px;
+  --radius-media: 10px;
+  --radius-card: 14px;
   --max-width: 1120px;
 }
 
@@ -49,7 +57,7 @@ a {
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  color: var(--accent);
+  color: var(--text);
   margin: 0;
 }
 
@@ -71,22 +79,22 @@ button {
 .eyebrow {
   font-family: var(--font-ui);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 13px;
-  font-weight: 500;
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  font-weight: 600;
   color: var(--text-soft);
 }
 
 .tag-pill {
   display: inline-flex;
   align-items: center;
-  padding: 6px 14px;
-  border-radius: 999px;
+  padding: 6px 12px;
+  border-radius: var(--radius-tag);
   font-family: var(--font-ui);
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.48px;
-  background: #f0f1f4;
+  letter-spacing: 0.02em;
+  background: var(--tag-surface);
   color: var(--text-soft);
 }
 
@@ -95,14 +103,14 @@ button {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 24px;
-  border-radius: 12px;
+  padding: 12px 22px;
+  border-radius: var(--radius-btn);
   font-family: var(--font-ui);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   border: none;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .btn:hover {
@@ -110,15 +118,20 @@ button {
 }
 
 .btn-primary {
-  background: var(--accent);
+  background: var(--text);
   color: #fff;
-  box-shadow: 0 8px 20px rgba(69, 116, 232, 0.25);
+  box-shadow: 0 8px 20px rgba(20, 32, 61, 0.18);
 }
 
 .btn-secondary {
-  background: #fff;
-  color: var(--accent);
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--text);
+  border: 1.5px solid rgba(20, 32, 61, 0.28);
   font-weight: 500;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
 }
 
 @media (max-width: 640px) {

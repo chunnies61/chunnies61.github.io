@@ -27,7 +27,7 @@
 }
 
 .nav-links a:hover {
-  color: var(--accent);
+  color: var(--accent-dark);
 }
 
 @media (max-width: 640px) {

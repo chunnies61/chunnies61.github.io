@@ -52,7 +52,7 @@
   height: 48px;
   border-radius: 999px;
   background: var(--pill-blue-bg);
-  color: var(--accent);
+  color: var(--accent-dark);
   font-size: 16px;
 }
 
@@ -133,7 +133,7 @@
 
 .cs-index-num {
   margin-right: 6px;
-  color: var(--accent);
+  color: var(--accent-dark);
   font-weight: 600;
 }
 
@@ -250,6 +250,17 @@
   color: var(--text);
 }
 
+/* Inverted principle panel (labeled callout) */
+.cs-callout-invert {
+  background: var(--text);
+}
+.cs-callout-invert .cs-callout-label {
+  color: var(--accent);
+}
+.cs-callout-invert p {
+  color: #fff;
+}
+
 /* Contrast pair */
 .cs-contrast {
   display: grid;
@@ -313,7 +324,7 @@
   font-family: var(--font-ui);
   font-size: 14px;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent-dark);
 }
 .cs-step-title {
   font-size: 18px;
@@ -606,7 +617,7 @@
 }
 
 .cs-protected-link:hover {
-  color: var(--accent);
+  color: var(--accent-dark);
 }
 
 .cs-other {
@@ -633,7 +644,7 @@
 
 .cs-other-link:hover {
   border-color: var(--accent);
-  color: var(--accent);
+  color: var(--accent-dark);
 }
 
 @media (max-width: 900px) {
