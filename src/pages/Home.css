@@ -90,7 +90,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 470 / 312;
-  background: var(--gray-100);
+  background: var(--placeholder-bg);
   border-radius: var(--radius-media);
   overflow: hidden;
 }
@@ -140,7 +140,7 @@
 }
 
 .case-card:hover .case-card-body h3 {
-  color: var(--accent-dark);
+  color: var(--accent);
 }
 
 .case-card-desc {

@@ -58,7 +58,7 @@
   border-radius: var(--radius-media);
   border: 1px solid var(--card-border);
   overflow: hidden;
-  background: var(--gray-100);
+  background: var(--placeholder-bg);
 }
 
 .ap-media-slide {
