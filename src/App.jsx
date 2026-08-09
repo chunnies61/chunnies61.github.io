@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -7,9 +7,12 @@ import CaseStudy from "./pages/CaseStudy";
 import AllProjects from "./pages/AllProjects";
 
 function App() {
+  const { pathname } = useLocation();
+  const isCaseStudy = pathname.startsWith("/case-studies/");
+
   return (
     <>
-      <Nav />
+      {!isCaseStudy && <Nav />}
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
