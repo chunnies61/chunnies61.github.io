@@ -11,7 +11,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px 28px;
-  padding: 8px 0;
+  padding: 0 0 8px;
   background: #ffffff;
   border-bottom: 1px solid var(--card-border);
 }
@@ -73,7 +73,7 @@ a.cs-index-item:hover {
   aspect-ratio: 16 / 9;
   border-radius: var(--radius-media);
   border: 1px dashed var(--card-border);
-  background: var(--card-bg);
+  background: var(--gray-100);
   color: var(--text-soft);
   font-family: var(--font-ui);
   font-size: 14px;
@@ -707,7 +707,7 @@ a.cs-index-item:hover {
   aspect-ratio: 470 / 312;
   border-radius: calc(var(--radius-media) - 4px);
   overflow: hidden;
-  background: var(--gray-50);
+  background: var(--gray-100);
 }
 
 .cs-next-thumb img {
