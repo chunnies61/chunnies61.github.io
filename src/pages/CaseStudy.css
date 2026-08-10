@@ -749,6 +749,20 @@ a.cs-index-item:hover {
 }
 
 @media (max-width: 900px) {
+  /* Hide the section index on mobile; keep the back link */
+  .cs-index-items {
+    display: none;
+  }
+  /* Stack the meta fields vertically */
+  .cs-meta-row {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
+  .cs-meta-item,
+  .cs-meta-item + .cs-meta-item {
+    padding-left: 0;
+    border-left: none;
+  }
   .cs-row {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -769,9 +783,6 @@ a.cs-index-item:hover {
   }
   .cs-section-title {
     font-size: 22px;
-  }
-  .cs-meta-item {
-    padding-left: 16px;
   }
   .cs-shipped-item,
   .cs-shipped-item.is-reverse {
