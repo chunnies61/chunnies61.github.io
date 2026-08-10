@@ -273,12 +273,6 @@
   color: var(--accent-dark);
 }
 
-.more-hint {
-  font-family: var(--font-ui);
-  font-size: 13px;
-  color: var(--text-soft);
-}
-
 @media (max-width: 900px) {
   .hero-title {
     font-size: 36px;

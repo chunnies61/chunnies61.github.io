@@ -82,7 +82,7 @@ export default function Home() {
           </div>
 
           <div className="more-scroller" ref={scrollerRef}>
-            {home.otherWork.map((item, i) => (
+            {home.otherWork.slice(0, 6).map((item, i) => (
               <div className="more-card" key={`${item.thumb}-${i}`}>
                 <div className="more-card-media">
                   <img src={item.thumb} alt="" loading="lazy" />
@@ -111,7 +111,6 @@ export default function Home() {
                 →
               </button>
             </div>
-            <span className="more-hint">Scroll or drag to browse</span>
           </div>
         </div>
       </section>
