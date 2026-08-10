@@ -74,6 +74,11 @@ export default function AllProjects() {
                 ) : (
                   <p>Project description placeholder — details coming soon.</p>
                 )}
+                {item.link && (
+                  <a className="ap-learn-more" href={item.link} target="_blank" rel="noreferrer">
+                    Learn more →
+                  </a>
+                )}
               </div>
               <ProjectMedia images={item.images && item.images.length ? item.images : [item.thumb]} />
             </div>
