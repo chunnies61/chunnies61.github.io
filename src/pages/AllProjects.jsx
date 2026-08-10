@@ -66,7 +66,13 @@ export default function AllProjects() {
               <div className="ap-title">
                 <h3>{item.title}</h3>
               </div>
-              <p className="ap-desc">Project description placeholder — details coming soon.</p>
+              <div className="ap-desc">
+                {item.desc && item.desc.length ? (
+                  item.desc.map((p, pi) => <p key={pi}>{p}</p>)
+                ) : (
+                  <p>Project description placeholder — details coming soon.</p>
+                )}
+              </div>
               <ProjectMedia images={item.images && item.images.length ? item.images : [item.thumb]} />
             </div>
           ))}

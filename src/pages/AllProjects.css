@@ -43,6 +43,11 @@
   font-family: var(--font-body);
   font-size: 14px;
   color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.ap-desc p + p {
+  margin-top: 12px;
 }
 
 .ap-media {

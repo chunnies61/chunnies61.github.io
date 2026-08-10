@@ -25,6 +25,28 @@
     "otherWorkEyebrow": "Other things I've worked on",
     "otherWorkTitle": "More projects",
     "otherWork": [
+      {
+        "thumb": "/images/sora-1.png",
+        "title": "Sora",
+        "desc": [
+          "1 in 3 women worldwide does not feel safe in her own community. Almost half have restricted where they go and how they move based on fear alone. SORA was designed to close that gap.",
+          "SORA is a women's personal safety companion named after the Latin soror — sister. Paired with Apple Watch, the app operates across four modes: Nightwalk, Daily Commute, Dating & Nights Out, and Traveling. Each mode auto-configures check-in intervals, GPS precision, alert contacts, and stealth tools. Custom modes are also available.",
+          "Core features include safe word detection — on-device voice recognition that escalates silently without touching the phone. A fake call activates instantly, simulating a real conversation — letting anyone nearby know she is not alone. A timed check-in auto-escalates to a trusted circle if not disarmed. Live location is shared with that circle only and deleted on arrival.",
+          "Alerts operate across three tiers: silent notify, audio deterrent, and emergency dispatch. SORA does not surveil. It accompanies."
+        ],
+        "images": [
+          "/images/sora-1.png",
+          "/images/sora-2.png",
+          "/images/sora-3.png",
+          "/images/sora-4.png",
+          "/images/sora-5.png",
+          "/images/sora-6.png",
+          "/images/sora-7.png",
+          "/images/sora-8.png",
+          "/images/sora-9.png",
+          "/images/sora-10.png"
+        ]
+      },
       {"thumb": "/images/other-work-6-f41415.png", "title": "Savings onboarding"},
       {"thumb": "/images/other-work-4-f41401.png", "title": "Component library"},
       {"thumb": "/images/other-work-11-f4141f.png", "title": "Portfolio dashboard"},
