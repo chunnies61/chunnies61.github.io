@@ -83,7 +83,7 @@
 .case-card:hover {
   transform: translateY(-3px);
   border-color: var(--accent);
-  box-shadow: 0 14px 34px rgba(126, 160, 255, 0.45);
+  box-shadow: 0 14px 34px rgba(69, 117, 231, 0.45);
 }
 
 .case-card-image {
