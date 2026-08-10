@@ -72,6 +72,7 @@ a.cs-index-item:hover {
   width: 100%;
   aspect-ratio: 16 / 9;
   border-radius: var(--radius-media);
+  border: 1px dotted var(--gray-300);
   background: var(--placeholder-bg);
   color: var(--text-soft);
   font-family: var(--font-ui);
