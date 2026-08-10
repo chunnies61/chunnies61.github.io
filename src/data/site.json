@@ -53,6 +53,19 @@
           "/images/pawpath-4.png"
         ]
       },
+      {
+        "thumb": "/images/afterwards-1.png",
+        "title": "Afterwards",
+        "desc": [
+          "Afterwards is a two-sided platform for what follows a death: one side lets someone organize documents, assign trusted people to tasks, and leave personal messages while still alive — the other guides the person they chose through it all, urgent matters first, at a pace calibrated for grief. It reframes end-of-life planning as anticipatory care, turning a frantic hunt for hidden documents into a final, considered act of love."
+        ],
+        "link": "https://afterwards-app.webflow.io/",
+        "images": [
+          "/images/afterwards-1.png",
+          "/images/afterwards-2.png",
+          "/images/afterwards-3.png"
+        ]
+      },
       {"thumb": "/images/other-work-6-f41415.png", "title": "Savings onboarding"},
       {"thumb": "/images/other-work-4-f41401.png", "title": "Component library"},
       {"thumb": "/images/other-work-11-f4141f.png", "title": "Portfolio dashboard"},
