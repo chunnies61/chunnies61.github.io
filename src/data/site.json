@@ -77,7 +77,16 @@
           "/images/yana-2.png"
         ]
       },
-      {"thumb": "/images/other-work-4-f41401.png", "title": "Component library"},
+      {
+        "thumb": "/images/bookworm-1.png",
+        "title": "Bookworm",
+        "desc": [
+          "Readers spend significant time immersed in books, but lack dedicated spaces to connect over shared literary tastes. Bookworm is a community platform that transforms solo reading into a shared social experience, enabling users to exchange reviews, discuss insights, and connect with fellow readers."
+        ],
+        "images": [
+          "/images/bookworm-1.png"
+        ]
+      },
       {"thumb": "/images/other-work-11-f4141f.png", "title": "Portfolio dashboard"},
       {"thumb": "/images/other-work-8-1-f87600.png", "title": "Project title"},
       {"thumb": "/images/other-work-2-f4140b.png", "title": "Project title"},
