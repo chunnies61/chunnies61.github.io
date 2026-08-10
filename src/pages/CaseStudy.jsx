@@ -422,7 +422,6 @@ export default function CaseStudy() {
                 {study.features.map((f, i) => (
                   <div className={"cs-shipped-item" + (i % 2 === 1 ? " is-reverse" : "")} key={f.title}>
                     <div className="cs-shipped-text">
-                      <span className="cs-shipped-num">{String(i + 1).padStart(2, "0")}</span>
                       <h4>{f.title}</h4>
                       <p>{f.desc}</p>
                     </div>

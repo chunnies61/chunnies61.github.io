@@ -541,15 +541,6 @@ a.cs-index-item:hover {
   min-width: 0;
 }
 
-.cs-shipped-num {
-  display: block;
-  font-family: var(--font-ui);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--text-soft);
-  margin-bottom: 8px;
-}
-
 .cs-shipped-text h4 {
   font-size: 18px;
   font-weight: 700;
