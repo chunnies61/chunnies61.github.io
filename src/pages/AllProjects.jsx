@@ -64,7 +64,6 @@ export default function AllProjects() {
           {projects.map((item, i) => (
             <div className="ap-row" key={`${item.thumb}-${i}`}>
               <div className="ap-title">
-                <span className="ap-index">{String(i + 1).padStart(2, "0")}</span>
                 <h3>{item.title}</h3>
               </div>
               <p className="ap-desc">Project description placeholder — details coming soon.</p>

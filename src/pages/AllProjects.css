@@ -32,13 +32,6 @@
   gap: 6px;
 }
 
-.ap-index {
-  font-family: var(--font-ui);
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-soft);
-}
-
 .ap-title h3 {
   font-size: 17px;
   font-weight: 700;
