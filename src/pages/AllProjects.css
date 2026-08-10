@@ -1,5 +1,6 @@
 .ap-header {
   padding: var(--space-page-top) 0 0;
+  text-align: center;
 }
 
 .ap-header h1 {
