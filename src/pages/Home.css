@@ -229,7 +229,7 @@
   font-family: var(--font-display);
   font-size: 16px;
   font-weight: 700;
-  color: var(--text);
+  color: var(--gray-700);
 }
 
 .more-controls {

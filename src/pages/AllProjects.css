@@ -35,7 +35,7 @@
 .ap-title h3 {
   font-size: 17px;
   font-weight: 700;
-  color: var(--text);
+  color: var(--gray-700);
   line-height: 1.3;
 }
 
