@@ -192,7 +192,6 @@
   gap: 24px;
   overflow-x: auto;
   scroll-snap-type: x proximity;
-  padding-bottom: 4px;
   scrollbar-width: none;
 }
 
@@ -205,12 +204,14 @@
   scroll-snap-align: start;
 }
 
+/* Match the project frame exactly so images fill the well with no
+   letterbox bands (same ratio the /projects carousel uses). */
 .more-card-media {
   width: 100%;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 2489 / 1652;
   border-radius: var(--radius-media);
   overflow: hidden;
-  background: #fff;
+  background: var(--placeholder-bg);
 }
 
 .more-card-media img {
@@ -225,7 +226,7 @@
 }
 
 .more-card-title {
-  margin-top: 14px;
+  margin-top: 12px;
   font-family: var(--font-display);
   font-size: 16px;
   font-weight: 700;
