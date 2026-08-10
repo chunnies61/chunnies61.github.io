@@ -1,6 +1,5 @@
 .ap-header {
   padding: var(--space-page-top) 0 0;
-  text-align: center;
 }
 
 .ap-header h1 {
@@ -74,25 +73,22 @@
 }
 
 .ap-media-dots {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 12px;
   display: flex;
+  justify-content: center;
   gap: 6px;
-  z-index: 1;
 }
 
 .ap-media-dots span {
   width: 5px;
   height: 5px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.55);
+  background: var(--gray-200);
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .ap-media-dots span.is-active {
-  background: #ffffff;
+  background: var(--accent);
   transform: scale(1.3);
 }
 

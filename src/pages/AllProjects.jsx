@@ -22,19 +22,21 @@ function ProjectMedia({ images }) {
 
   return (
     <div
-      className="ap-media"
+      className="ap-media-block"
       onMouseEnter={() => (pausedRef.current = true)}
       onMouseLeave={() => (pausedRef.current = false)}
     >
-      {images.map((src, i) => (
-        <img
-          key={src}
-          src={src}
-          alt=""
-          loading="lazy"
-          className={"ap-media-slide" + (i === index ? " is-active" : "")}
-        />
-      ))}
+      <div className="ap-media">
+        {images.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt=""
+            loading="lazy"
+            className={"ap-media-slide" + (i === index ? " is-active" : "")}
+          />
+        ))}
+      </div>
       {images.length > 1 && (
         <div className="ap-media-dots">
           {images.map((_, i) => (
@@ -54,7 +56,7 @@ export default function AllProjects() {
     <article className="all-projects">
       <header className="ap-header">
         <div className="wrap">
-          <p className="eyebrow center">{home.otherWorkEyebrow}</p>
+          <p className="eyebrow">{home.otherWorkEyebrow}</p>
           <h1>{home.otherWorkTitle}</h1>
         </div>
       </header>
