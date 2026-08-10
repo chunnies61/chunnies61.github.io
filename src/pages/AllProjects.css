@@ -51,7 +51,7 @@
 
 .ap-media {
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   border-radius: var(--radius-media);
   border: 1px solid var(--card-border);
   overflow: hidden;
