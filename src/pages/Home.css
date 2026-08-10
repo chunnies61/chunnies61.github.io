@@ -201,8 +201,7 @@
 }
 
 .more-card {
-  flex: 0 0 300px;
-  max-width: 80%;
+  flex: 0 0 calc((100% - 48px) / 3);
   scroll-snap-align: start;
 }
 
