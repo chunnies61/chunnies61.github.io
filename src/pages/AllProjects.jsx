@@ -6,7 +6,7 @@ import "./AllProjects.css";
 const PROJECT_LIMIT = 6;
 const SLIDE_INTERVAL_MS = 3000;
 
-function ProjectMedia({ images }) {
+function ProjectMedia({ images, ratio }) {
   const [index, setIndex] = useState(0);
   const pausedRef = useRef(false);
 
@@ -26,7 +26,7 @@ function ProjectMedia({ images }) {
       onMouseEnter={() => (pausedRef.current = true)}
       onMouseLeave={() => (pausedRef.current = false)}
     >
-      <div className="ap-media">
+      <div className="ap-media" style={ratio ? { aspectRatio: ratio } : undefined}>
         {images.map((src, i) => (
           <img
             key={src}
@@ -100,7 +100,10 @@ export default function AllProjects() {
                   </a>
                 )}
               </div>
-              <ProjectMedia images={item.images && item.images.length ? item.images : [item.thumb]} />
+              <ProjectMedia
+                images={item.images && item.images.length ? item.images : [item.thumb]}
+                ratio={item.ratio}
+              />
             </div>
           ))}
         </div>

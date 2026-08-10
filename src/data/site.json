@@ -66,7 +66,18 @@
           "/images/afterwards-3.png"
         ]
       },
-      {"thumb": "/images/other-work-6-f41415.png", "title": "Savings onboarding"},
+      {
+        "thumb": "/images/yana-1.png",
+        "title": "YANA (You Are Not Alone)",
+        "desc": [
+          "Mental health challenges affect 1 in 10 people worldwide, often in isolation. YANA makes support visible by building a safe digital community that connects users with both compassionate peers and certified mental health professionals."
+        ],
+        "ratio": "3200 / 2400",
+        "images": [
+          "/images/yana-1.png",
+          "/images/yana-2.png"
+        ]
+      },
       {"thumb": "/images/other-work-4-f41401.png", "title": "Component library"},
       {"thumb": "/images/other-work-11-f4141f.png", "title": "Portfolio dashboard"},
       {"thumb": "/images/other-work-8-1-f87600.png", "title": "Project title"},
