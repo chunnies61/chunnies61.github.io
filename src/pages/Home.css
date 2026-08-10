@@ -210,12 +210,7 @@
   aspect-ratio: 4 / 3;
   border-radius: var(--radius-media);
   overflow: hidden;
-  border: 1px solid var(--card-border);
   background: #fff;
-}
-
-.more-card-media {
-  transition: border-color 0.2s ease;
 }
 
 .more-card-media img {
@@ -223,10 +218,6 @@
   height: 100%;
   object-fit: contain;
   transition: transform 0.4s ease;
-}
-
-.more-card:hover .more-card-media {
-  border-color: var(--accent);
 }
 
 .more-card:hover .more-card-media img {
