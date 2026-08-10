@@ -87,7 +87,16 @@
           "/images/bookworm-1.png"
         ]
       },
-      {"thumb": "/images/other-work-11-f4141f.png", "title": "Portfolio dashboard"},
+      {
+        "thumb": "/images/zodiac-1.png",
+        "title": "Chinese Zodiac",
+        "desc": [
+          "Vector illustrations of the 12 Chinese zodiac animals designed for mobile emoji use."
+        ],
+        "images": [
+          "/images/zodiac-1.png"
+        ]
+      },
       {"thumb": "/images/other-work-8-1-f87600.png", "title": "Project title"},
       {"thumb": "/images/other-work-2-f4140b.png", "title": "Project title"},
       {"thumb": "/images/arconnect-85212d.png", "title": "Project title"},
