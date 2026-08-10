@@ -36,6 +36,26 @@ function ProjectMedia({ images }) {
             className={"ap-media-slide" + (i === index ? " is-active" : "")}
           />
         ))}
+        {images.length > 1 && (
+          <>
+            <button
+              type="button"
+              className="ap-media-arrow is-prev"
+              onClick={() => setIndex((i) => (i - 1 + images.length) % images.length)}
+              aria-label="Previous image"
+            >
+              ←
+            </button>
+            <button
+              type="button"
+              className="ap-media-arrow is-next"
+              onClick={() => setIndex((i) => (i + 1) % images.length)}
+              aria-label="Next image"
+            >
+              →
+            </button>
+          </>
+        )}
       </div>
       {images.length > 1 && (
         <div className="ap-media-dots">

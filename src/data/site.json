@@ -22,8 +22,8 @@
       {"slug": "nitro-college", "title": "Nitro College", "tags": ["Fintech", "Edutech", "B2C"], "desc": "Helping students and parents plan for college with financial clarity", "thumb": "/images/thumbnail-4ae4a5.png"},
       {"slug": "clinicmind-ehr-platform", "title": "ClinicMind EHR Platform", "tags": ["Healthcare SaaS", "B2B", "CRM"], "desc": "Modernizing healthcare operations with a scalable EHR system", "thumb": "/images/thumbnail-4-9d912d.png"}
     ],
-    "otherWorkEyebrow": "Other things I've worked on",
-    "otherWorkTitle": "More projects",
+    "otherWorkEyebrow": "Beyond 9-5",
+    "otherWorkTitle": "What else I'm building",
     "otherWork": [
       {
         "thumb": "/images/sora-1.png",
