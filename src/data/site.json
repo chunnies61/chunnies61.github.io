@@ -39,6 +39,20 @@
           "/images/sora-4.png"
         ]
       },
+      {
+        "thumb": "/images/pawpath-1.png",
+        "title": "PawPath",
+        "desc": [
+          "PawPath is an automated post-adoption monitoring platform that replaces manual shelter follow-up with scheduled adopter check-ins and a real-time staff dashboard. It surfaces flagged cases, declining wellbeing scores, and overdue check-ins early — so shelters can intervene before an animal is returned."
+        ],
+        "link": "https://pawpath.framer.website/",
+        "images": [
+          "/images/pawpath-1.png",
+          "/images/pawpath-2.png",
+          "/images/pawpath-3.png",
+          "/images/pawpath-4.png"
+        ]
+      },
       {"thumb": "/images/other-work-6-f41415.png", "title": "Savings onboarding"},
       {"thumb": "/images/other-work-4-f41401.png", "title": "Component library"},
       {"thumb": "/images/other-work-11-f4141f.png", "title": "Portfolio dashboard"},
