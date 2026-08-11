@@ -48,92 +48,74 @@
       ]
     },
     {
-      "id": "decision-1",
-      "kicker": "Decision 1",
-      "title": "Find the real bottleneck (it wasn't a screen)",
+      "id": "decisions",
+      "kicker": "Design decisions",
+      "title": "Five decisions that broke the tradeoff",
       "blocks": [
-        {"type": "text", "value": [
-          "With no dedicated researcher and a lean team, I used the lowest-cost, highest-signal method: live agent shadowing. Sitting beside agents on real cases, I watched them bounce across five or six systems — the legacy Agent Desktop, the internal Admin console, LoanPro, LexisNexis, raw spreadsheets — manually cross-checking the same data, leaning on tribal knowledge with no single source of truth."
+        {"type": "step", "num": "1", "title": "Find the real bottleneck (it wasn't a screen)", "blocks": [
+          {"type": "text", "value": [
+            "With no dedicated researcher and a lean team, I used the lowest-cost, highest-signal method: live agent shadowing. Sitting beside agents on real cases, I watched them bounce across five or six systems — the legacy Agent Desktop, the internal Admin console, LoanPro, LexisNexis, raw spreadsheets — manually cross-checking the same data, leaning on tribal knowledge with no single source of truth."
+          ]},
+          {"type": "image", "src": "/images/frame-427319454-27c3bf.png", "label": "The legacy reality — one verification, five systems"},
+          {"type": "quote", "value": "Opening Tab 1 for Admin, Tab 2 for LoanPro, Tab 3 for LexisNexis. I lose context every time I switch screens.", "attribution": "Verification agent, shadowing session"},
+          {"type": "quote", "value": "I have to scroll through 500+ items. I usually 'cherry-pick' the easy ones because I don't want a complex case right before lunch.", "attribution": "Verification agent, shadowing session"},
+          {"type": "text", "value": [
+            "I mapped the end-to-end journey across five stages — Triage, Review & Verification, Investigation, Decision & Documentation, Outcome — and the emotional low points lined up exactly with the system gaps: overwhelmed at review, distracted mid-investigation, anxious at close-out, unsure whether anything was missed in the scattered data."
+          ]},
+          {"type": "image", "src": "/images/user-journey-24e5ef.png", "label": "Five-stage journey map — emotion curve, verbatim quotes, and the design response per stage"},
+          {"type": "callout", "label": "The insight", "value": "The 3.2 days weren't lost inside any one screen — they were lost in the gaps between systems. Agents were literally human middleware, shuttling and reconciling data by hand."},
+          {"type": "text", "value": [
+            "So my first decision wasn't \"make a page prettier.\" It was eliminate the middleware — consolidate scattered tools and data into one unified workspace: centralized application management across loan and credit card products, plus a Manager's Menu giving comprehensive access to customer data so agents stop reaching for external tools."
+          ]},
+          {"type": "video", "label": "Centralized Application Management — one unified queue across products"},
+          {"type": "video", "label": "Manager's Menu — comprehensive customer data, no external tools"}
         ]},
-        {"type": "image", "src": "/images/frame-427319454-27c3bf.png", "label": "The legacy reality — one verification, five systems"},
-        {"type": "quote", "value": "Opening Tab 1 for Admin, Tab 2 for LoanPro, Tab 3 for LexisNexis. I lose context every time I switch screens.", "attribution": "Verification agent, shadowing session"},
-        {"type": "quote", "value": "I have to scroll through 500+ items. I usually 'cherry-pick' the easy ones because I don't want a complex case right before lunch.", "attribution": "Verification agent, shadowing session"},
-        {"type": "text", "value": [
-          "I mapped the end-to-end journey across five stages — Triage, Review & Verification, Investigation, Decision & Documentation, Outcome — and the emotional low points lined up exactly with the system gaps: overwhelmed at review, distracted mid-investigation, anxious at close-out, unsure whether anything was missed in the scattered data."
+        {"type": "step", "num": "2", "title": "Reduce load through structure, not subtraction", "blocks": [
+          {"type": "text", "value": [
+            "Here I hit a hard constraint. Agent cognitive load was brutal — but I couldn't cut information to reduce it. Compliance requires that every data point needed for verification stays visible; removing any of it risks the audit trail.",
+            "So the decision became: reduce load through structure, not subtraction."
+          ]},
+          {"type": "cards", "columns": 2, "items": [
+            {"title": "Left–right split", "desc": "Mapped to the agent's mental model: customer data (to read) on the left, actions and CTAs (to do) on the right — making the \"read, then decide\" path legible in space."},
+            {"title": "Real-time Verification Checklist", "desc": "Previously tribal rules made explicit — every step consolidated, aligned with business rules, auto-resolving each item to \"Clear\" as it completes. Pending items stay surfaced at a glance."},
+            {"title": "Notes & History, always in view", "desc": "Persistent note entry and instant access to previous records, so context never has to be re-fetched from another system."},
+            {"title": "Clear CTAs", "desc": "Critical actions placed consistently and predictably at the end of the workflow — where the decision actually happens."}
+          ]},
+          {"type": "image", "src": "/images/safari-light-e92f1f.png", "label": "The shipped workspace — data to read on the left, checklist and actions on the right"},
+          {"type": "video", "label": "Verification Checklist — items auto-resolving to \"Clear\" in real time"},
+          {"type": "video", "label": "Notes & History — always-visible notes and previous records"},
+          {"type": "text", "value": [
+            "Same information, zero removed — but the structure now carried the attention, serving both speed and accuracy at once. And because the layout is structural rather than role-specific, the same spatial logic held across agent roles with different access and decision authority — one mental model, many permission levels."
+          ]}
         ]},
-        {"type": "image", "src": "/images/user-journey-24e5ef.png", "label": "Five-stage journey map — emotion curve, verbatim quotes, and the design response per stage"},
-        {"type": "callout", "label": "The insight", "value": "The 3.2 days weren't lost inside any one screen — they were lost in the gaps between systems. Agents were literally human middleware, shuttling and reconciling data by hand."},
-        {"type": "text", "value": [
-          "So my first decision wasn't \"make a page prettier.\" It was eliminate the middleware — consolidate scattered tools and data into one unified workspace: centralized application management across loan and credit card products, plus a Manager's Menu giving comprehensive access to customer data so agents stop reaching for external tools."
+        {"type": "step", "num": "3", "title": "Design the right friction for irreversible actions", "blocks": [
+          {"type": "text", "value": [
+            "Every agent click is irreversible — an approval or rejection that decides a real person's credit outcome and carries compliance weight.",
+            "Auto-resolving checklist items felt great, but over-automation risks automation complacency — agents blindly trusting the system. So I drew a line:"
+          ]},
+          {"type": "callout", "label": "The line", "value": "Objective, checkable items auto-clear. Anything requiring human judgment must be confirmed by the agent."},
+          {"type": "text", "value": [
+            "I also added a Preview/Edit mode — a final review of changes before submission. On the surface this adds a step and fights the speed goal. My argument: in irreversible decisions, the rework and errors a preview prevents are worth far more than the two seconds it costs — slowing this one step makes the whole flow faster.",
+            "That's designing friction in the right place, inside compliance red lines that forbid one-click batch actions or skipped steps."
+          ]},
+          {"type": "image", "label": "Preview/Edit mode — final review of changes before submission"}
         ]},
-        {"type": "video", "label": "Centralized Application Management — one unified queue across products"},
-        {"type": "video", "label": "Manager's Menu — comprehensive customer data, no external tools"}
-      ]
-    },
-    {
-      "id": "decision-2",
-      "kicker": "Decision 2",
-      "title": "Reduce load through structure, not subtraction",
-      "blocks": [
-        {"type": "text", "value": [
-          "Here I hit a hard constraint. Agent cognitive load was brutal — but I couldn't cut information to reduce it. Compliance requires that every data point needed for verification stays visible; removing any of it risks the audit trail.",
-          "So the decision became: reduce load through structure, not subtraction."
+        {"type": "step", "num": "4", "title": "Help without adding noise", "blocks": [
+          {"type": "text", "value": [
+            "The unified workspace surfaces proactive alerts for potential data issues — SSN mismatches, fraud flags, duplicate applications — before agents have to hunt for them. But I designed against an obvious second-order effect: too many alerts become alert fatigue. Agents go numb and ignore them, which is more dangerous than no alerts at all.",
+            "So alerts are tiered: only high-priority anomalies that genuinely affect the verification decision interrupt the agent; lower-priority ones degrade to quiet, passive hints."
+          ]},
+          {"type": "callout", "value": "Helping is only helping if it doesn't manufacture new noise."},
+          {"type": "image", "label": "Tiered alerts — high-priority interrupts vs. quiet inline hints"}
         ]},
-        {"type": "cards", "columns": 2, "items": [
-          {"title": "Left–right split", "desc": "Mapped to the agent's mental model: customer data (to read) on the left, actions and CTAs (to do) on the right — making the \"read, then decide\" path legible in space."},
-          {"title": "Real-time Verification Checklist", "desc": "Previously tribal rules made explicit — every step consolidated, aligned with business rules, auto-resolving each item to \"Clear\" as it completes. Pending items stay surfaced at a glance."},
-          {"title": "Notes & History, always in view", "desc": "Persistent note entry and instant access to previous records, so context never has to be re-fetched from another system."},
-          {"title": "Clear CTAs", "desc": "Critical actions placed consistently and predictably at the end of the workflow — where the decision actually happens."}
-        ]},
-        {"type": "image", "src": "/images/safari-light-e92f1f.png", "label": "The shipped workspace — data to read on the left, checklist and actions on the right"},
-        {"type": "video", "label": "Verification Checklist — items auto-resolving to \"Clear\" in real time"},
-        {"type": "video", "label": "Notes & History — always-visible notes and previous records"},
-        {"type": "text", "value": [
-          "Same information, zero removed — but the structure now carried the attention, serving both speed and accuracy at once. And because the layout is structural rather than role-specific, the same spatial logic held across agent roles with different access and decision authority — one mental model, many permission levels."
+        {"type": "step", "num": "5", "title": "Define the metrics before designing, then prove it", "blocks": [
+          {"type": "text", "value": [
+            "The most senior part of the work: I didn't design on gut. Before building, I partnered with the PM to define measurable UX success metrics up front — verification time, verification rate, and agent confidence — because without pre-defined metrics, you can't prove whether a decision was right.",
+            "Then I validated with shadowing plus rapid prototypes. I built competing layout directions — a Classic single-column layout (better readability, but dense and hard to scan) versus a Segmented tabbed layout (clear workflow stages, but hides data and adds clicks) — and tested them directly with agents, iterating on real feedback rather than my assumptions. The final left–right structure took the scannability of one and the workflow clarity of the other."
+          ]},
+          {"type": "image", "src": "/images/frame-1430105594-306436.png", "label": "Layout explorations — Classic vs. Segmented, with agent-tested tradeoffs"},
+          {"type": "image", "src": "/images/frame-427319474-5fe527.jpg", "label": "Live validation — walking agents through the working build"}
         ]}
-      ]
-    },
-    {
-      "id": "decision-3",
-      "kicker": "Decision 3",
-      "title": "Design the right friction for irreversible actions",
-      "blocks": [
-        {"type": "text", "value": [
-          "Every agent click is irreversible — an approval or rejection that decides a real person's credit outcome and carries compliance weight.",
-          "Auto-resolving checklist items felt great, but over-automation risks automation complacency — agents blindly trusting the system. So I drew a line:"
-        ]},
-        {"type": "callout", "label": "The line", "value": "Objective, checkable items auto-clear. Anything requiring human judgment must be confirmed by the agent."},
-        {"type": "text", "value": [
-          "I also added a Preview/Edit mode — a final review of changes before submission. On the surface this adds a step and fights the speed goal. My argument: in irreversible decisions, the rework and errors a preview prevents are worth far more than the two seconds it costs — slowing this one step makes the whole flow faster.",
-          "That's designing friction in the right place, inside compliance red lines that forbid one-click batch actions or skipped steps."
-        ]},
-        {"type": "image", "label": "Preview/Edit mode — final review of changes before submission"}
-      ]
-    },
-    {
-      "id": "decision-4",
-      "kicker": "Decision 4",
-      "title": "Help without adding noise",
-      "blocks": [
-        {"type": "text", "value": [
-          "The unified workspace surfaces proactive alerts for potential data issues — SSN mismatches, fraud flags, duplicate applications — before agents have to hunt for them. But I designed against an obvious second-order effect: too many alerts become alert fatigue. Agents go numb and ignore them, which is more dangerous than no alerts at all.",
-          "So alerts are tiered: only high-priority anomalies that genuinely affect the verification decision interrupt the agent; lower-priority ones degrade to quiet, passive hints."
-        ]},
-        {"type": "callout", "value": "Helping is only helping if it doesn't manufacture new noise."},
-        {"type": "image", "label": "Tiered alerts — high-priority interrupts vs. quiet inline hints"}
-      ]
-    },
-    {
-      "id": "decision-5",
-      "kicker": "Decision 5",
-      "title": "Define the metrics before designing, then prove it",
-      "blocks": [
-        {"type": "text", "value": [
-          "The most senior part of the work: I didn't design on gut. Before building, I partnered with the PM to define measurable UX success metrics up front — verification time, verification rate, and agent confidence — because without pre-defined metrics, you can't prove whether a decision was right.",
-          "Then I validated with shadowing plus rapid prototypes. I built competing layout directions — a Classic single-column layout (better readability, but dense and hard to scan) versus a Segmented tabbed layout (clear workflow stages, but hides data and adds clicks) — and tested them directly with agents, iterating on real feedback rather than my assumptions. The final left–right structure took the scannability of one and the workflow clarity of the other."
-        ]},
-        {"type": "image", "src": "/images/frame-1430105594-306436.png", "label": "Layout explorations — Classic vs. Segmented, with agent-tested tradeoffs"},
-        {"type": "image", "src": "/images/frame-427319474-5fe527.jpg", "label": "Live validation — walking agents through the working build"}
       ]
     },
     {
