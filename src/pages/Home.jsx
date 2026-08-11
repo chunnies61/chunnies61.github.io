@@ -127,7 +127,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section testimonials-section">
         <div className="wrap">
           <p className="eyebrow center">{about.testimonialsEyebrow}</p>
           <h2 className="section-title center">{about.testimonialsTitle}</h2>

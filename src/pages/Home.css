@@ -337,6 +337,18 @@
   justify-self: center;
 }
 
+.testimonials-section {
+  background: var(--accent);
+}
+
+.testimonials-section .eyebrow {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.testimonials-section .section-title {
+  color: #ffffff;
+}
+
 .testimonial-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
