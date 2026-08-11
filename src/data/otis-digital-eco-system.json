@@ -1,69 +1,146 @@
 {
   "slug": "otis-digital-eco-system",
-  "title": "Otis Digital Eco-system",
-  "subtitle": "Building a centralized digital platform for customer self-service",
+  "title": "Otis Cloud EMS 2.0",
+  "subtitle": "Turning a legacy monitoring system into a proactive, cloud-native platform — by designing for fear, not just efficiency",
   "tags": ["Property Management", "B2B2C"],
-  "context": "Otis clients manage complex properties globally, but the legacy infrastructure made real-time equipment monitoring nearly impossible — leading to reactive maintenance, more downtime, and customer friction. As Lead Designer, I was tasked with turning a rigid, on-premise legacy system into a scalable, cloud-native ecosystem, balancing usability against strict regulatory compliance and technical debt while directing a team of two designers.",
-  "role": "Design Lead",
-  "team": "2 UI Designers, 10+ Engineers, 1 Product Manager, 1 Project Manager",
-  "timeline": "2025.4 - 2026.4",
-  "platform": "Platform placeholder",
   "heroImage": "/images/otis-thumb.png",
-  "impactStats": [
-    {"value": "3x", "label": "Growth in active users"},
-    {"value": "-45%", "label": "Decrease in error rates"},
-    {"value": "-70%", "label": "Reduction in task completion time"}
+  "meta": [
+    {"label": "Role", "value": "Lead Product Designer — end-to-end ownership"},
+    {"label": "Team", "value": "2 UI Designers · 10+ Engineers · 1 PM · 1 Project Manager"},
+    {"label": "Timeline", "value": "Apr 2025 – Apr 2026"},
+    {"label": "Surfaces", "value": "Dashboard · Traffic control · Health & Energy AI · Onboarding"},
+    {"label": "Recognition", "value": "Red Dot Award: Brands & Communication Design"}
   ],
-  "problemStatement": "A fragmented legacy system prevented real-time equipment monitoring, forcing global clients into costly, reactive maintenance cycles and limiting Otis's ability to scale cloud-based services. The hypothesis: real-time health data and predictive alerts could reduce emergency repair calls by 20% and lift customer satisfaction.",
-  "challenges": [
-    {"title": "Bridging the Technical Gap", "desc": "Providing \"power user\" tools for technical experts without overwhelming non-technical stakeholders."},
-    {"title": "Design for \"High-Stakes\" Compliance", "desc": "Balancing user-centricity with rigid safety and data regulations."},
-    {"title": "Scaling for Global Diversity", "desc": "Creating a \"universal\" system that still respects local market nuances."}
-  ],
-  "sections": [
+  "indexedSections": [
     {
-      "title": "Process",
-      "text": "A phased approach: discovery to find quick UX wins and low-risk improvements, then validating solutions through user testing and workflow cleanup. We piloted the \"Ask Otis\" AI copilot to gather real-world feedback while defining a longer-term vision for AI-driven insights, energy prediction, and end-to-end optimization.",
-      "image": "/images/otis-process.png"
+      "id": "setup",
+      "kicker": "The setup",
+      "title": "A slogan, not a brief",
+      "blocks": [
+        {"type": "stats", "items": [
+          {"value": "−70%", "label": "Task completion time"},
+          {"value": "−45%", "label": "Error rate"},
+          {"value": "3×", "label": "Active users", "desc": "300+ → 1,000+"},
+          {"value": "−50%", "label": "Support tickets & training time"}
+        ]},
+        {"type": "text", "value": [
+          "Otis's clients manage complex properties across global markets, but the legacy, on-premise infrastructure made it nearly impossible to monitor equipment health in real time. That opacity forced clients into reactive maintenance — waiting for elevators to fail before fixing them — driving up downtime, cost, and customer friction. The working hypothesis: real-time health data and predictive alerts could cut emergency repair calls by 20% and lift customer satisfaction.",
+          "I was brought in as Lead Designer to transform this rigid system into a cloud-native, globally scalable ecosystem. But the mandate arrived as a slogan — \"move our legacy system to the cloud, and make it scale globally.\" It sounded ambitious, yet it contained no user, no scenario, and no definition of success. \"Cloud\" is a technical action, not a user need. If I'd opened Figma and started drawing dashboards, I'd have been designing on behalf of a goal nobody had actually defined.",
+          "So my first move wasn't visual. It was to turn the slogan back into a question that could be answered."
+        ]},
+        {"type": "cards", "columns": 3, "items": [
+          {"label": "Constraint 1", "title": "Bridging the technical gap", "desc": "\"Power user\" tools for technical experts — without overwhelming non-technical stakeholders."},
+          {"label": "Constraint 2", "title": "High-stakes compliance", "desc": "User-centricity inside rigid safety and data regulations."},
+          {"label": "Constraint 3", "title": "Global diversity", "desc": "A \"universal\" system that still respects local market nuances."}
+        ]}
+      ]
     },
     {
-      "title": "On-Site Discovery",
-      "text": "Contextual inquiries at high-traffic NYC sites revealed a disconnect: the team was designing for \"efficiency,\" but users were operating from \"fear.\" Property managers felt real consequence-anxiety — afraid of a catastrophic error like shutting down an entire elevator bank — so they offloaded even simple tasks to Otis engineers.",
-      "image": "/images/otis-img2411.png"
+      "id": "discovery",
+      "kicker": "Discovery",
+      "title": "Four moves from slogan to problem",
+      "blocks": [
+        {"type": "step", "num": "1", "title": "Strip the solution back to the problem", "blocks": [
+          {"type": "text", "value": [
+            "When I aligned with the business and PM, the \"requirement\" was crisp and specific: \"We need a real-time monitoring dashboard.\" Classic solution-as-requirement. So instead of taking the order, I traced it back with a few whys: Why real-time monitoring? Because clients can't see equipment health. Why is that a problem? Because if they can't see it, they can only fix elevators after they break — reactive maintenance: expensive, disruptive, and a constant source of complaints."
+          ]},
+          {"type": "contrast", "items": [
+            {"label": "What they asked for", "desc": "\"Build us a real-time monitoring dashboard.\""},
+            {"label": "The actual problem", "desc": "Clients are trapped in a reactive firefighting model — and can't move to proactive prevention."}
+          ]},
+          {"type": "text", "value": "That single reframe — from \"build a dashboard\" to \"move clients from reactive firefighting to proactive prevention\" — set the direction for everything that followed."},
+          {"type": "image", "label": "5-whys trace — from \"we need a dashboard\" down to \"trapped in reactive firefighting\""}
+        ]},
+        {"type": "step", "num": "2", "title": "Go to the field — every need I had was second-hand", "blocks": [
+          {"type": "text", "value": [
+            "Before committing, I hit the brakes on one realization: every \"user need\" I had was second-hand. The information reaching HQ in New York had been relayed through sales, support, and engineering — several layers of distortion. The users described in a conference room and the ones standing in an actual machine room could easily be two different people. I couldn't even follow their vocabulary — car call, hall call, group dispatch.",
+            "With no dedicated researcher and a lean team (me + 2 UI designers), a months-long study was off the table. So I chose the lowest-cost path to the highest-fidelity truth: on-site contextual inquiry at several high-traffic properties in NYC — standing behind users, watching them operate the system for real."
+          ]},
+          {"type": "image", "src": "/images/otis-img2411.png", "label": "Field visit — the front-desk workstation at One Columbus Circle, where the legacy system actually lives"}
+        ]},
+        {"type": "step", "num": "3", "title": "The insight: efficiency vs. fear", "blocks": [
+          {"type": "text", "value": [
+            "The field flipped our assumptions. Everyone — myself included — had assumed users wanted efficiency, to go faster. What I actually saw was that non-technical building managers were operating in fear.",
+            "One manager stuck with me. For a trivial operation, he'd rather phone an Otis engineer than press the button himself. When I asked why, he said:"
+          ]},
+          {"type": "quote", "value": "I'm afraid I'll shut down every elevator in the building.", "attribution": "Building manager, on-site contextual inquiry"},
+          {"type": "text", "value": "That was the moment. We were designing for efficiency — but users were stuck in fear. I named it consequence anxiety: the dread of an irreversible, catastrophic mistake. That anxiety made them offload even the simplest tasks to engineers — which meant our backend usage data was a false positive. The real pain point was invisible in the data; it only surfaced on-site."},
+          {"type": "callout", "label": "The trap", "value": "Usage data looked healthy because engineers were doing the work managers feared to touch. The metric wasn't measuring adoption — it was measuring avoidance."}
+        ]},
+        {"type": "step", "num": "4", "title": "Translate emotion into shippable requirements", "blocks": [
+          {"type": "text", "value": [
+            "The hard part: fear doesn't fit in a PRD, and engineers can't sprint-plan an emotion. So my final discovery move was to translate the feeling into concrete, testable design requirements. I codified \"users operate in fear\" into a design principle — psychological safety before efficiency — and broke it into three things engineering could actually build and validate:"
+          ]},
+          {"type": "cards", "columns": 3, "items": [
+            {"title": "Strong confirmation", "desc": "High-consequence, irreversible actions require explicit, informed confirmation."},
+            {"title": "Safe defaults", "desc": "The risky path is the deliberate one — never the accidental one."},
+            {"title": "Plain-language labels", "desc": "Jargon like \"car call\" replaced with words a non-expert understands — field testing showed unlabeled car vs. hall call types caused pure guesswork."}
+          ]},
+          {"type": "text", "value": "To hold the team to one axis, I defined two lean personas around the core tension — Action vs. Oversight:"},
+          {"type": "cards", "columns": 2, "items": [
+            {"label": "Action", "title": "Field Engineer", "desc": "Highly technical, occasional user diagnosing issues on-site. Needs real-time status, high-density actionable data, and predictable workflows with minimal friction."},
+            {"label": "Oversight", "title": "Building Manager", "desc": "Non-technical daily user managing operations and tenant communication. Needs guided workflows, plain-language labels, and confirmation before committing changes."}
+          ]},
+          {"type": "callout", "value": "For the first time, the business goals — cloud, adoption, cost reduction — and the user goal — don't let me make a catastrophic mistake — were aligned into a single definition of success."}
+        ]}
+      ]
     },
     {
-      "title": "Defining User Archetypes",
-      "text": "Field research distilled into two personas around a core tension — action vs. oversight. Field Engineers need high-density, action-oriented workflows for rapid diagnostics; Building Managers need a guided experience built around psychological safety and confidence.",
-      "points": [
-        {"title": "Building Manager", "desc": "Non-technical daily user managing operations and tenant communication. Needs simple guided workflows, plain-language labels, and confirmation before committing changes."},
-        {"title": "Field Engineer", "desc": "Highly technical, occasional user diagnosing issues on-site. Needs real-time status, fast access to actionable data, and predictable workflows with minimal friction."}
-      ],
-      "image": "/images/otis-p2.png"
+      "id": "execution",
+      "kicker": "Execution",
+      "title": "From insight to a shippable system",
+      "blocks": [
+        {"type": "text", "value": "With the problem correctly framed, execution followed a phased, de-risked path: discovery and quick wins first — low-risk UX improvements to build stakeholder confidence — then validation and workflow cleanup, then beta and a longer-term AI vision."},
+        {"type": "image", "src": "/images/otis-process.png", "label": "Four phases — Discovery & Research, Testing & Validation, Beta Test & Launch, Future Vision"},
+        {"type": "cards", "columns": 2, "items": [
+          {"title": "Dashboard & AI Copilot", "desc": "Real-time service visibility, with the \"Ask Otis\" copilot surfacing insights and guiding next steps while keeping users in control."},
+          {"title": "Traffic Control & Monitoring", "desc": "Modular tools for security teams and engineers to manage calls, secure floors, and schedule elevator operations in real time."},
+          {"title": "Health & Energy", "desc": "AI-powered insights that surface early risks, predict maintenance needs, and cut energy consumption."},
+          {"title": "New User Guide", "desc": "Guided onboarding with contextual tutorials that shorten training time and build confidence faster."}
+        ]},
+        {"type": "image", "src": "/images/otis-dashboard.png", "label": "Cloud EMS dashboard — plain-language labels, safe defaults, Ask Otis one click away"},
+        {"type": "video", "label": "\"Ask Otis\" AI Copilot — guided insights in context"},
+        {"type": "text", "value": "With my two UI designers I extended the design system with the reusable pieces the old platform never had — a full charting library and a plain-spoken empty-state and iconography set — so \"safe and legible\" scaled beyond the screens I touched personally."},
+        {"type": "image", "src": "/images/otis-charts.png", "label": "Design system — charting library built for the new analytics surfaces"},
+        {"type": "image", "src": "/images/otis-empty-states.png", "label": "Design system — empty states in plain language"},
+        {"type": "text", "value": "Then I proved the reframe: confirmation-and-default patterns tested against the consequence-anxiety hypothesis with real users, inside active sprint cycles — decisions grounded in measured performance, not assumptions."},
+        {"type": "image", "src": "/images/otis-user-testing.png", "label": "Remote usability sessions on the Cloud EMS prototype"},
+        {"type": "image", "src": "/images/otis-screenshot.png", "label": "Before/after results board — completion time, completion rate, and errors per task, with pain-point notes"},
+        {"type": "stats", "items": [
+          {"value": "6.4 → 1.2", "label": "Avg errors", "desc": "Task: discover the security feature"},
+          {"value": "67% → 92%", "label": "Completion rate", "desc": "Task: securing floors"},
+          {"value": "3m 25s → 63s", "label": "Completion time", "desc": "Task: set schedule"}
+        ]}
+      ]
     },
     {
-      "title": "Mitigating Risk",
-      "text": "Rapid prototyping bridged stakeholder requirements and user needs, with iterative testing inside active sprint cycles to de-risk \"quick win\" initiatives and keep decisions grounded in real usage rather than assumptions.",
-      "image": "/images/otis-user-testing.png"
+      "id": "results",
+      "kicker": "The results",
+      "title": "From dreaded chore to daily tool",
+      "blocks": [
+        {"type": "stats", "items": [
+          {"value": "−70%", "label": "Task completion time"},
+          {"value": "−45%", "label": "Error rate"},
+          {"value": "3×", "label": "Active users", "desc": "300+ → 1,000+"},
+          {"value": "−50%", "label": "Support tickets & training time"}
+        ]},
+        {"type": "text", "value": [
+          "Cloud EMS 2.0 launched in early September — modernizing elevator management across 10+ core workflows and three user roles, and automating complex edge cases to reduce operational burden.",
+          "Beyond the numbers, the real shift was behavioral: building managers began operating the system themselves, no longer defaulting to Otis engineers for routine work. The platform went from a dreaded chore to a high-velocity tool — and earned a Red Dot Award. The success became the mandate for my next strategic initiative: reimagining enterprise security controls."
+        ]}
+      ]
     },
     {
-      "title": "Testing Outcome",
-      "text": "Testing confirmed the psychological-safety focus worked — cutting task time by 70% and error rates by 45%. The platform shifted from a cumbersome chore to a high-velocity tool, giving users the confidence to handle routine maintenance without relying on Otis engineers.",
-      "image": "/images/otis-charts.png"
+      "id": "takeaway",
+      "kicker": "The takeaway",
+      "title": "The real requirement isn't in the doc",
+      "blocks": [
+        {"type": "text", "value": [
+          "The most valuable lesson: the real requirement is rarely in the requirements doc — it lives in the behavior users won't say out loud, or don't even notice themselves."
+        ]},
+        {"type": "callout", "value": "My job is to dig the real requirement out of the ambiguity, translate it into something a whole team can build against, and align everyone to it."}
+      ]
     }
   ],
-  "features": [
-    {"title": "Dashboard & AI Copilot", "desc": "A centralized dashboard with real-time service visibility, paired with the \"Ask Otis\" AI copilot to surface insights and guide next steps while keeping users in control.", "video": true},
-    {"title": "Traffic Control & Monitoring", "desc": "Modular tools for security teams and engineers to manage calls, secure floors, and schedule elevator operations in real time.", "video": true},
-    {"title": "Health & Energy", "desc": "AI-powered insights monitor elevator health and energy usage to surface early risks, predict maintenance needs, and find opportunities to cut energy consumption.", "video": true},
-    {"title": "New User Guide", "desc": "A guided onboarding experience with contextual tutorials that shorten training time and build user confidence faster.", "video": true}
-  ],
-  "results": {
-    "text": "Cloud EMS 2.0 launched in early September, modernizing elevator management across 10+ core workflows and three user roles, and automating complex edge cases to reduce operational burden.",
-    "bullets": [
-      "3x growth in active users",
-      "45% decrease in error rates",
-      "70% reduction in task completion time"
-    ]
-  },
   "otherProjects": ["Unified Customer Hub", "Agent Desk", "Nitro College"]
 }
