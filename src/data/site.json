@@ -2,7 +2,7 @@
   "nav": {
     "logoText": "yichun",
     "resumeUrl": "/yichun-liu-resume.pdf",
-    "links": [{"label": "Home", "to": "/"}, {"label": "About", "to": "/about"}]
+    "links": [{"label": "Home", "to": "/"}, {"label": "About", "to": "/#about"}]
   },
   "contact": {
     "email": "yichun.ux@gmail.com",
