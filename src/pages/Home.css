@@ -298,7 +298,7 @@
   margin-top: var(--space-title-gap);
   scroll-margin-top: 88px;
   background: var(--accent);
-  border-radius: 0;
+  border-radius: 24px 24px 0 0;
 }
 
 .about-hero-inner {
@@ -329,7 +329,7 @@
 
 .testimonials-section {
   background: var(--accent);
-  border-radius: 0;
+  border-radius: 0 0 24px 24px;
   margin-bottom: var(--space-title-gap);
 }
 
