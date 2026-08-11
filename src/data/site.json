@@ -20,7 +20,7 @@
       {"slug": "agent-desk", "title": "Agent Desk", "tags": ["Fintech", "Internal Tool", "Workflow Optimization"], "desc": "Accelerating customer review and verification workflows", "thumb": "/images/thumbnail-3-d54e40.png"},
       {"slug": "otis-digital-eco-system", "title": "Otis Cloud EMS 2.0", "tags": ["Property Management", "B2B2C"], "desc": "Turning a legacy monitoring system into a proactive, cloud-native platform — by designing for fear, not just efficiency", "thumb": "/images/otis-thumb.png", "locked": true},
       {"slug": "nitro-college", "title": "Nitro College", "tags": ["Fintech", "Edutech", "B2C"], "desc": "Turning scattered screens into an end-to-end platform — by delivering a system, not just pages", "thumb": "/images/thumbnail-4ae4a5.png"},
-      {"slug": "clinicmind-ehr-platform", "title": "ClinicMind EHR Platform", "tags": ["Healthcare SaaS", "B2B", "CRM"], "desc": "Modernizing healthcare operations with a scalable EHR system", "thumb": "/images/thumbnail-4-9d912d.png"}
+      {"slug": "clinicmind-ehr-platform", "title": "ClinicMind EHR Platform", "tags": ["Healthcare SaaS", "B2B", "CRM"], "desc": "Building design influence from zero in a 20-year, engineer-led healthcare platform", "thumb": "/images/thumbnail-4-9d912d.png"}
     ],
     "otherWorkEyebrow": "Beyond 9-5",
     "otherWorkTitle": "What else I'm building",

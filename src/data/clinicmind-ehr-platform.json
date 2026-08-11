@@ -1,31 +1,113 @@
 {
   "slug": "clinicmind-ehr-platform",
   "title": "ClinicMind EHR Platform",
-  "subtitle": "Redesigning core clinical and administrative products to reduce complexity and improve operational efficiency.",
+  "subtitle": "Building design influence from zero — in a 20-year, engineer-led organization where design had no seat at the table",
   "tags": ["Healthcare SaaS", "B2B", "CRM"],
-  "context": "ClinicMind is an all-in-one healthcare platform that helps practices improve patient retention, reduce provider burnout, and manage revenue across the full care lifecycle—from acquisition to billing. As the company invested in UX maturity, I joined as the second design hire to lead redesign efforts across core products including Practice Management, Patient Portal, EHR, Credentialing, and Billing, delivering more intuitive, efficient experiences for both clinical and administrative users.",
-  "role": "UX/UI Designer",
-  "team": "Product Owner*1, Engineers*7+",
-  "timeline": "2021.1 - 2021.8",
-  "platform": "Platform placeholder",
   "heroImage": "/images/thumbnail-4-9d912d.png",
   "heroVideo": "/videos/clinicmind-hero.mp4",
-  "problemStatement": "With a 20-year legacy, ClinicMind's products have been built by engineers without design input, resulting in complex features, outdated interfaces, and inefficient user flows.",
-  "sections": [
-    {"title": "User Research", "text": "To understand providers' frustrations with the system, I started with discovery calls to identify their key pain points. Our primary users are physicians, but instead of focusing on patient care, they spend a significant amount of time on repetitive administrative tasks like note-taking, scheduling appointments, and dealing with insurance companies.", "image": "/images/safari-light-262759.png"},
-    {"title": "Quick Iterations", "text": "After discussing with the product owners, we decided to focus on the most impactful parts of the system, such as Care Plans and Daily Task Management. Sketches and interactive prototypes are used to gather feedback, allowing us to quickly iterate the design to better meet users' needs.", "image": "/images/20-5dbb78.svg", "image2": "/images/21-a159b1.svg"},
-    {"title": "Style Guide & Design System", "text": "Another challenge we encountered during the process was the lack of a systematic Style Guide and Component Library. With clinic-specific designs being highly complex, the team urgently needed an internal system to guide both design and implementation. I began building the design system using the Atomic Design methodology. We defined the system with clear documentation and established effective communication, enabling the team to deliver high-quality development work despite limited design resources", "image": "/images/atomic-design-graphic-ee5e60.svg", "gallery": [
-      "/images/design-system-2-03ffca.png",
-      "/images/design-system-1-e4ac09.png",
-      "/images/design-system-5-42aed5.png",
-      "/images/design-system-6-44ee81.png",
-      "/images/design-system-7-1c4ec5.png",
-      "/images/design-system-10-e4b338.png",
-      "/images/design-system-11-149717.png",
-      "/images/design-system-12-9ed6bb.png"
-    ]},
-    {"title": "Delivery", "text": "With the new style guide and design system in place, the updated appointment dashboard is noticeably cleaner and more organized.", "image": "/images/image-16-445ef6.svg"},
-    {"title": "Dev Hand-off", "text": "To ensure all details and interactions were effectively communicated, I used video demos and Figma specifications to provide the development and business teams with clear guidance on each page and interaction. During my tenure, I delivered over 30 recorded demos to clarify user flows and give stakeholders early insights into upcoming features."}
+  "meta": [
+    {"label": "Role", "value": "UX/UI Designer — second design hire"},
+    {"label": "Team", "value": "1 Product Owner · 7+ Engineers"},
+    {"label": "Timeline", "value": "Jan – Aug 2021"},
+    {"label": "Surfaces", "value": "Practice Management · Patient Portal · EHR · Credentialing · Billing"},
+    {"label": "Highlights", "value": "Vericle Design System from scratch · 30+ dev-handoff demos"}
+  ],
+  "indexedSections": [
+    {
+      "id": "setup",
+      "kicker": "The setup",
+      "title": "A room where design didn't get a vote",
+      "blocks": [
+        {"type": "stats", "items": [
+          {"value": "20 yrs", "label": "Engineer-led legacy", "desc": "Every product decision made without design"},
+          {"value": "2nd", "label": "Design hire", "desc": "Design was a newborn function"},
+          {"value": "5", "label": "Core products", "desc": "PM · Portal · EHR · Credentialing · Billing"},
+          {"value": "30+", "label": "Recorded demos", "desc": "The team's shared source of truth"}
+        ]},
+        {"type": "text", "value": [
+          "ClinicMind is an all-in-one healthcare SaaS platform that helps practices improve patient retention, reduce provider burnout, and manage revenue across the full care lifecycle. As the company began investing in UX maturity, I joined as the second designer to lead redesign across five core products — for both clinical and administrative users.",
+          "With a 20-year legacy, every product decision had been made by engineers. Design was a newborn function. On day one I faced not a design problem but a trust deficit: no authority, no inherited collaboration process, and no language to prove design was useful.",
+          "I knew that opening Figma and restyling buttons would only brand me \"the person who makes things pretty.\""
+        ]},
+        {"type": "callout", "value": "Before pushing any design, I had to earn the right to be heard."},
+        {"type": "image", "src": "/images/safari-light-262759.png", "label": "ClinicMind's platform — a 20-year, all-in-one healthcare SaaS"}
+      ]
+    },
+    {
+      "id": "moves",
+      "kicker": "The moves",
+      "title": "Four moves to earn the room",
+      "blocks": [
+        {"type": "step", "num": "1", "title": "Make the team see a problem they'd stopped noticing", "blocks": [
+          {"type": "text", "value": [
+            "The first hard battle: engineers couldn't feel the problem. The system was complex and the flows convoluted — but after 20 years, that was just \"how it is.\" You can't push a problem people can't see.",
+            "So I didn't argue about design. I ran discovery calls with our core users — physicians — even though their time is scarce and hard to get. I surfaced one fact with real impact: our doctors spend a huge share of their day not on patient care, but on note-taking, scheduling, and fighting with insurance companies.",
+            "I brought that back untouched. I didn't say \"your design is bad.\" I said:"
+          ]},
+          {"type": "quote", "value": "Our physicians spend half their day away from patients.", "attribution": "How I reframed the problem to the team"},
+          {"type": "text", "value": "That turned an abstract \"UX issue\" into a human and business problem the team couldn't ignore — and for the first time, engineering saw it. That's the translation work: turning the doctor's language into language engineers act on."},
+          {"type": "image", "label": "Where a physician's day actually goes — discovery-call synthesis"}
+        ]},
+        {"type": "step", "num": "2", "title": "Sell \"slow down to speed up\" to a team hungry to ship", "blocks": [
+          {"type": "text", "value": [
+            "Next I pushed a harder sell: stop piling on features — build a design system first.",
+            "Deeply counter-intuitive at the time: the team wanted output, and I was asking to invest in a foundation with no short-term deliverable — in a clinical, regulated domain where I had to learn the vocabulary as I went. My argument wasn't \"it'll look better.\" It was ROI math: with one or two designers against 7+ engineers, negotiating every page from scratch means we never catch up; with an Atomic Design component library and clear documentation, every feature becomes assembly, and engineering has something concrete to build against."
+          ]},
+          {"type": "callout", "value": "Slow down once, so everyone moves faster afterward. Framed as ROI — not taste — the product owner bought in."},
+          {"type": "image", "src": "/images/atomic-design-graphic-ee5e60.svg", "label": "Atomic Design — the methodology behind the Vericle Design System"},
+          {"type": "image", "src": "/images/design-system-2-03ffca.png", "label": "Vericle Design System — color foundations"},
+          {"type": "image", "src": "/images/design-system-5-42aed5.png", "label": "Effects and radii — specified on real dialog components"},
+          {"type": "image", "src": "/images/design-system-7-1c4ec5.png", "label": "Spacing specs applied to real EHR components — Encounters and Vitals"}
+        ]},
+        {"type": "step", "num": "3", "title": "Turn \"talked about\" into \"seen\"", "blocks": [
+          {"type": "text", "value": [
+            "What actually accelerated collaboration was changing how the team communicated. With no prototypes or specs, everything lived in words — and everyone pictured something different, so reviews spun in misunderstanding. So I did two high-leverage things:"
+          ]},
+          {"type": "cards", "columns": 2, "items": [
+            {"label": "Artifacts over words", "title": "Prototypes replace description", "desc": "Sketches and interactive prototypes gave every review one shared artifact to argue over — instead of five imagined versions."},
+            {"label": "Produce once, reuse endlessly", "title": "30+ recorded demos", "desc": "Every page and interaction walked through on video, paired with Figma specs — always available to dev and business teams."}
+          ]},
+          {"type": "text", "value": "The demos let stakeholders see upcoming features early, turning them from passive recipients of a surprise change into co-builders. Alignment shifted from repeated debate to everyone aligning against the same visible truth."},
+          {"type": "image", "src": "/images/20-5dbb78.svg", "label": "From sketch to shared artifact"},
+          {"type": "image", "src": "/images/21-a159b1.svg", "label": "Interactive prototypes — the thing everyone points at"},
+          {"type": "video", "label": "One of the 30+ recorded demo walkthroughs"}
+        ]},
+        {"type": "step", "num": "4", "title": "The finish line is a 1:1 build, not an approved mock", "blocks": [
+          {"type": "text", "value": [
+            "My definition of \"driving design\" was never \"the mock got approved\" — it was \"the design shipped exactly as intended.\"",
+            "Previously, engineers implemented from their own interpretation, and the result drifted far from the design. Now, with the design system as a shared language and 30+ demos plus Figma specs as precise handoff, engineering could finally match my intent down to the interactions."
+          ]},
+          {"type": "callout", "value": "Communication stopped being a one-off handoff and became a continuously closing loop."},
+          {"type": "image", "label": "Design vs. built — side by side, 1:1"}
+        ]}
+      ]
+    },
+    {
+      "id": "impact",
+      "kicker": "Impact",
+      "title": "Design, embedded in the team's daily work",
+      "blocks": [
+        {"type": "cards", "columns": 2, "items": [
+          {"title": "A design system from scratch", "desc": "The Vericle Design System, built on Atomic Design with clear documentation — the team's shared language."},
+          {"title": "30+ demos as shared memory", "desc": "A reusable library that became the team's source of truth for every flow and interaction."},
+          {"title": "Cleaner core interfaces", "desc": "Key surfaces like the appointment dashboard became noticeably cleaner and more organized."},
+          {"title": "Reliable, high-quality shipping", "desc": "For the first time, high-fidelity implementation landed consistently despite minimal design resources."}
+        ]},
+        {"type": "image", "src": "/images/image-16-445ef6.svg", "label": "The redesigned appointment dashboard — cleaner and more organized"},
+        {"type": "text", "value": "The real result wasn't how well I designed — it was that I made communication itself a team capability."}
+      ]
+    },
+    {
+      "id": "takeaway",
+      "kicker": "The takeaway",
+      "title": "Let everyone see the same truth",
+      "blocks": [
+        {"type": "text", "value": [
+          "In a place with no design culture, a designer's biggest output isn't mockups — it's getting the whole team to start thinking in terms of design. Not through authority, but by letting everyone see the same truth."
+        ]},
+        {"type": "callout", "value": "Advocating for design quality across teams starts before you have any formal power — and building that influence from the ground up is where I'm at my best."}
+      ]
+    }
   ],
   "otherProjects": ["Unified Customer Hub", "Nitro College", "Agent Desk"]
 }
