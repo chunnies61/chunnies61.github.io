@@ -67,8 +67,6 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 100px;
-  max-width: 920px;
-  margin: 0 auto;
 }
 
 .case-card {
@@ -153,16 +151,6 @@
 }
 
 /* ===== More projects ===== */
-/* Share the Case studies grid's 920px centered column so both sections
-   start on the same left edge. */
-.more-head,
-.more-scroller,
-.more-controls {
-  max-width: 920px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .more-head {
   display: flex;
   align-items: flex-end;
@@ -307,13 +295,15 @@
 /* ===== About (merged from the standalone About page) ===== */
 .about-hero {
   padding: var(--space-section) 0;
+  margin-top: var(--space-title-gap);
   scroll-margin-top: 88px;
   background: var(--accent);
+  border-radius: 24px;
 }
 
 .about-hero-inner {
   display: grid;
-  grid-template-columns: 1.6fr 0.4fr;
+  grid-template-columns: 1.3fr 0.7fr;
   gap: 48px;
   align-items: center;
 }
@@ -333,12 +323,14 @@
 .about-hero-image {
   border-radius: var(--radius-media);
   width: 100%;
-  max-width: 220px;
+  max-width: 340px;
   justify-self: center;
 }
 
 .testimonials-section {
   background: var(--accent);
+  border-radius: 24px;
+  margin-bottom: var(--space-title-gap);
 }
 
 .testimonials-section .eyebrow {
