@@ -116,10 +116,15 @@ a.cs-index-item:hover {
   gap: 6px;
   min-width: 0;
   padding-left: 24px;
+  padding-right: 24px;
 }
 
 .cs-meta-item:first-child {
   padding-left: 0;
+}
+
+.cs-meta-item:last-child {
+  padding-right: 0;
 }
 
 .cs-meta-item + .cs-meta-item {
@@ -762,6 +767,7 @@ a.cs-index-item:hover {
   .cs-meta-item,
   .cs-meta-item + .cs-meta-item {
     padding-left: 0;
+    padding-right: 0;
     border-left: none;
   }
   .cs-row {
