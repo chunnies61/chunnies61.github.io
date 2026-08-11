@@ -315,17 +315,20 @@
   grid-template-columns: 1.2fr 0.8fr;
   gap: 48px;
   align-items: center;
+  background: var(--accent);
+  border-radius: var(--radius-card);
+  padding: var(--space-title-gap);
 }
 
 .about-hero-text h2 {
   font-size: 40px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: var(--accent-dark);
+  color: #ffffff;
 }
 
 .about-hero-text p {
-  color: var(--text-soft);
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: 16px;
 }
 
