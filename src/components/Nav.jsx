@@ -11,14 +11,14 @@ export default function Nav() {
         </Link>
         <nav className="nav-links">
           <Link to={site.nav.links[0].to}>{site.nav.links[0].label}</Link>
-          <a href={site.nav.resumeUrl} target="_blank" rel="noreferrer">
-            Resume
-          </a>
           {site.nav.links.slice(1).map((link) => (
             <Link key={link.to} to={link.to}>
               {link.label}
             </Link>
           ))}
+          <a href={site.nav.resumeUrl} target="_blank" rel="noreferrer">
+            Resume
+          </a>
         </nav>
       </div>
     </header>
