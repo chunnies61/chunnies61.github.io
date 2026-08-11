@@ -138,14 +138,15 @@ button {
 }
 
 .btn-primary {
-  background: var(--accent-dark);
+  background: var(--accent);
   color: #fff;
-  box-shadow: 0 8px 20px rgba(42, 79, 191, 0.22);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(69, 117, 231, 0.25);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--text);
+  color: var(--accent);
   border: none;
   font-weight: 500;
 }

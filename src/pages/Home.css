@@ -41,6 +41,7 @@
 
 .hero-actions {
   margin-top: 32px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
   gap: 16px;
@@ -251,7 +252,7 @@
   border-radius: 999px;
   border: 1px solid var(--card-border);
   background: #fff;
-  color: var(--text);
+  color: var(--accent);
   font-size: 16px;
   cursor: pointer;
   display: flex;
