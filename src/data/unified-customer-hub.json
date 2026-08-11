@@ -1,7 +1,7 @@
 {
   "slug": "unified-customer-hub",
   "title": "Unified Customer Hub",
-  "subtitle": "One brand, three strangers — unifying Best Egg's loans, credit cards, and financial health into a single trusted platform",
+  "subtitle": "Turning three disconnected fintech products into one platform — and 420K+ monthly users",
   "tags": ["Fintech", "B2C", "Customer Service"],
   "heroImage": "/images/thumbnail-1-2a85e4.png",
   "meta": [
@@ -105,14 +105,14 @@
         {"type": "step", "num": "6.2", "title": "A messaging framework, not one-off designs", "blocks": [
           {"type": "text", "value": [
             "With Marketing and a researcher, I tested cross-sell placements on UserTesting. The finding was sharp: banners and in-feature messaging performed best with minimal annoyance; modals felt intrusive and belonged only to critical alerts.",
-            "I didn't spend the insight and move on — I codified it into a reusable \"message urgency ↔ placement\" mapping. Every product line and every engineer could place messages by rule, instead of coming back to ask me."
+            "I didn't spend the insight and move on — I codified it into a reusable \"message urgency ↔ placement\" mapping: what level of message, in which placement, with what motion intensity. Every product line and every engineer could place messages by rule, instead of coming back to ask me — turning a one-off design into a self-serve system."
           ]},
           {"type": "image", "src": "/images/frame-1430105627-0e1c0b.png", "label": "Message urgency ↔ placement mapping"}
         ]},
         {"type": "step", "num": "6.3", "title": "Empty states as first-class citizens", "blocks": [
           {"type": "text", "value": [
             "A brand-new user with no loan and no data can't meet a blank dashboard — that blank IS their first impression. So every module got a designed empty state. Financial Health with no data became a gently animated \"activate your credit score\" invitation.",
-            "Motion turned an awkward void into a delightful nudge — numbers ticking up, cards easing in — so \"nothing here yet\" read as \"everything's about to begin.\""
+            "Motion turned an awkward void into a delightful nudge — numbers ticking up, cards easing in — so \"nothing here yet\" read as \"everything's about to begin.\" These micro-interactions later entered the design spec, keeping the motion language consistent across web and mobile."
           ]},
           {"type": "video", "label": "Empty state motion — Financial Health activation"}
         ]},
