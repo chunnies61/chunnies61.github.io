@@ -125,10 +125,8 @@ export default function Home() {
           </div>
           <img className="about-hero-image" src={about.headerImage} alt="" />
         </div>
-      </section>
 
-      <section className="section testimonials-section">
-        <div className="wrap">
+        <div className="wrap testimonials-inner">
           <p className="eyebrow center">{about.testimonialsEyebrow}</p>
           <h2 className="section-title center">{about.testimonialsTitle}</h2>
           <div className="testimonial-grid">

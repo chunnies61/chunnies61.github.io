@@ -292,13 +292,13 @@
   }
 }
 
-/* ===== About (merged from the standalone About page) ===== */
+/* ===== About + testimonials (merged into one primary-color section) ===== */
 .about-hero {
   padding: var(--space-section) 0;
-  margin-top: var(--space-title-gap);
+  margin: var(--space-title-gap) 0;
   scroll-margin-top: 88px;
   background: var(--accent);
-  border-radius: 24px 24px 0 0;
+  border-radius: 24px;
 }
 
 .about-hero-inner {
@@ -327,17 +327,15 @@
   justify-self: center;
 }
 
-.testimonials-section {
-  background: var(--accent);
-  border-radius: 0 0 24px 24px;
-  margin-bottom: var(--space-title-gap);
+.testimonials-inner {
+  margin-top: var(--space-section);
 }
 
-.testimonials-section .eyebrow {
+.testimonials-inner .eyebrow {
   color: rgba(255, 255, 255, 0.75);
 }
 
-.testimonials-section .section-title {
+.testimonials-inner .section-title {
   color: #ffffff;
 }
 
