@@ -1,72 +1,168 @@
 {
   "slug": "agent-desk",
   "title": "Agent Desk",
-  "subtitle": "Accelerating customer information review and verification",
+  "subtitle": "Making two opposing metrics win at once — speed and compliance — in a high-stakes fintech verification workflow",
   "tags": ["Fintech", "Internal Tool", "Workflow Optimization"],
-  "context": "Agent Desk is Best Egg's internal platform used by loan verification agents to review, approve, or reject credit applications while complying with fraud prevention and risk policies. The legacy system was fragmented and inefficient, creating high cognitive load, long processing times, and inconsistent workflows across agent roles. As the UX Designer on this initiative, I led the effort to streamline verification workflows, improve operational efficiency, and define measurable UX success metrics within a highly regulated fintech environment.",
-  "role": "Solo Designer",
-  "team": "Project Manager, Engineers",
-  "timeline": "2022.10 - 2024.5",
-  "platform": "Platform placeholder",
   "heroImage": "/images/thumbnail-3-d54e40.png",
-  "problemStatement": "Fragmented tools forced Agents to act as 'Human Middleware,' creating a 3.2 day bottleneck.",
-  "challenges": [
-    {"title": "Balancing Speed with Compliance", "desc": "Verification workflows needed to move faster without compromising fraud prevention, regulatory requirements, or auditability."},
-    {"title": "Designing for Multiple Agent Roles", "desc": "Different agent types required different levels of access, context, and decision authority within the same workflow."},
-    {"title": "Reducing Cognitive Load in High-Stakes Decisions", "desc": "Agents were making frequent, irreversible decisions under time pressure, increasing fatigue and error risk."}
+  "meta": [
+    {"label": "Role", "value": "Solo Product Designer — end-to-end ownership"},
+    {"label": "Team", "value": "1 Product Manager · Engineers"},
+    {"label": "Timeline", "value": "Oct 2022 – May 2024"},
+    {"label": "Platform", "value": "Internal web platform — regulated fintech"}
   ],
-  "featureImage": "/images/frame-427319454-27c3bf.png",
-  "features": [
-    {"title": "Centralized Application Management", "desc": "Manage loan and credit card applications in one unified workspace, with proactive alerts for potential data issues.", "video": "/videos/agent-desk-centralized-app-mgmt.mp4"},
-    {"title": "Manager's Menu", "desc": "Comprehensive access to customer data, reducing the need for external tools.", "video": "/videos/agent-desk-managers-menu.mp4"},
-    {"title": "Verification Checklist", "desc": "All verification steps consolidated and aligned with business rules. Items update in real time and auto-resolve to \"Clear\" when complete.", "video": "/videos/agent-desk-verification-checklist.mp4"},
-    {"title": "Notes & History", "desc": "Always-visible note entry and access to previous records support informed decision-making.", "video": "/videos/agent-desk-notes-history.mp4"}
-  ],
-  "sections": [
+  "indexedSections": [
     {
-      "title": "User Interviews",
-      "text": "Through live agent shadowing, I observed how agents navigated verification workflows in real time, noting frequent context switching, manual cross-checks, and reliance on tribal knowledge. I mapped key tasks and decision paths to understand where time and attention were being lost.",
-      "list": [
-        "Agents repeatedly reviewed the same information across multiple systems",
-        "Critical data was often buried or inconsistently presented",
-        "Verification decisions slowed when agents had to manually reconcile incomplete or duplicated data"
-      ],
-      "image": "/images/user-journey-24e5ef.png"
+      "id": "setup",
+      "kicker": "The setup",
+      "title": "Human middleware, at 3.2 days per application",
+      "blocks": [
+        {"type": "stats", "items": [
+          {"value": "−47%", "label": "Verification time", "desc": "3.2 days → 1.7 days"},
+          {"value": "+11.6%", "label": "Verification rate", "desc": "80.4% → 92%"},
+          {"value": "↑", "label": "Agent confidence", "desc": "Higher satisfaction reported"}
+        ]},
+        {"type": "text", "value": [
+          "Agent Desk is Best Egg's internal platform where verification agents approve or reject credit applications — personal loans, credit cards, and secured auto loans — while staying inside fraud-prevention and compliance rules. Decisions here are irreversible, and they land on real people's credit outcomes.",
+          "The legacy system was fragmented and inconsistent across agent roles, forcing agents to act as \"human middleware\" — a 3.2-day bottleneck per application. As the solo designer, I owned the effort end-to-end: streamlining the workflow, defining measurable UX success metrics, and shipping inside a heavily regulated environment."
+        ]},
+        {"type": "cards", "columns": 3, "items": [
+          {"label": "Constraint 1", "title": "Speed vs. compliance", "desc": "Workflows had to move faster without compromising fraud prevention, regulatory requirements, or auditability."},
+          {"label": "Constraint 2", "title": "Multiple agent roles", "desc": "Different agent types needed different levels of access, context, and decision authority inside the same workflow."},
+          {"label": "Constraint 3", "title": "Irreversible decisions", "desc": "Agents made frequent, irreversible calls under time pressure — fatigue and error risk compounded each other."}
+        ]}
+      ]
     },
     {
-      "title": "User Journey",
-      "text": "I analyzed the end-to-end verification workflow to identify friction points that slowed decision-making. Key issues included manual data gathering, excessive tab switching, and repetitive verification steps—informing opportunities to streamline workflows and reduce cognitive load.",
-      "image": "/images/frame-1430105594-306436.png"
+      "id": "tension",
+      "kicker": "The tension",
+      "title": "Two metrics that fight each other",
+      "blocks": [
+        {"type": "contrast", "items": [
+          {"label": "Business wanted speed", "desc": "A single application took 3.2 days — a massive bottleneck."},
+          {"label": "Risk wanted rigor", "desc": "Verification rate sat at ~80% — too many valid applications weren't clearing."}
+        ]},
+        {"type": "text", "value": [
+          "The trap: these metrics are naturally opposed. Push agents to go faster and they get sloppy — verification rate drops. Tell them to slow down and scrutinize — time climbs. Most teams pick one."
+        ]},
+        {"type": "callout", "label": "The harder brief", "value": "Can both opposing metrics improve at the same time? That constraint ruled out brute force — more people, more time — and forced the solution to come from design decisions themselves."}
+      ]
     },
     {
-      "title": "Iterations",
-      "text": "I explored multiple design approaches to validate how agents access information and complete verification tasks, iterating based on direct feedback",
-      "image": "/images/safari-light-e92f1f.png"
+      "id": "decision-1",
+      "kicker": "Decision 1",
+      "title": "Find the real bottleneck (it wasn't a screen)",
+      "blocks": [
+        {"type": "text", "value": [
+          "With no dedicated researcher and a lean team, I used the lowest-cost, highest-signal method: live agent shadowing. Sitting beside agents on real cases, I watched them bounce across five or six systems — the legacy Agent Desktop, the internal Admin console, LoanPro, LexisNexis, raw spreadsheets — manually cross-checking the same data, leaning on tribal knowledge with no single source of truth."
+        ]},
+        {"type": "image", "src": "/images/frame-427319454-27c3bf.png", "label": "The legacy reality — one verification, five systems"},
+        {"type": "quote", "value": "Opening Tab 1 for Admin, Tab 2 for LoanPro, Tab 3 for LexisNexis. I lose context every time I switch screens.", "attribution": "Verification agent, shadowing session"},
+        {"type": "quote", "value": "I have to scroll through 500+ items. I usually 'cherry-pick' the easy ones because I don't want a complex case right before lunch.", "attribution": "Verification agent, shadowing session"},
+        {"type": "text", "value": [
+          "I mapped the end-to-end journey across five stages — Triage, Review & Verification, Investigation, Decision & Documentation, Outcome — and the emotional low points lined up exactly with the system gaps: overwhelmed at review, distracted mid-investigation, anxious at close-out, unsure whether anything was missed in the scattered data."
+        ]},
+        {"type": "image", "src": "/images/user-journey-24e5ef.png", "label": "Five-stage journey map — emotion curve, verbatim quotes, and the design response per stage"},
+        {"type": "callout", "label": "The insight", "value": "The 3.2 days weren't lost inside any one screen — they were lost in the gaps between systems. Agents were literally human middleware, shuttling and reconciling data by hand."},
+        {"type": "text", "value": [
+          "So my first decision wasn't \"make a page prettier.\" It was eliminate the middleware — consolidate scattered tools and data into one unified workspace: centralized application management across loan and credit card products, plus a Manager's Menu giving comprehensive access to customer data so agents stop reaching for external tools."
+        ]},
+        {"type": "video", "label": "Centralized Application Management — one unified queue across products"},
+        {"type": "video", "label": "Manager's Menu — comprehensive customer data, no external tools"}
+      ]
     },
     {
-      "title": "Design Rationale",
-      "text": "The design separates customer data and actions into a clear left–right layout, with a structured verification checklist and CTAs at the end of the workflow to enable faster, more confident decisions.",
-      "points": [
-        {"title": "Preview/Edit Mode", "desc": "Allows agents to review changes before submission, increasing confidence and reducing error risk."},
-        {"title": "Expandable Verification Checklist", "desc": "Surfaces pending tasks and progress at a glance, keeping agents oriented throughout the workflow."},
-        {"title": "Clear CTAs", "desc": "Places critical actions consistently and predictably to support efficient task execution."}
-      ],
-      "image": "/images/frame-427319474-5fe527.jpg"
+      "id": "decision-2",
+      "kicker": "Decision 2",
+      "title": "Reduce load through structure, not subtraction",
+      "blocks": [
+        {"type": "text", "value": [
+          "Here I hit a hard constraint. Agent cognitive load was brutal — but I couldn't cut information to reduce it. Compliance requires that every data point needed for verification stays visible; removing any of it risks the audit trail.",
+          "So the decision became: reduce load through structure, not subtraction."
+        ]},
+        {"type": "cards", "columns": 2, "items": [
+          {"title": "Left–right split", "desc": "Mapped to the agent's mental model: customer data (to read) on the left, actions and CTAs (to do) on the right — making the \"read, then decide\" path legible in space."},
+          {"title": "Real-time Verification Checklist", "desc": "Previously tribal rules made explicit — every step consolidated, aligned with business rules, auto-resolving each item to \"Clear\" as it completes. Pending items stay surfaced at a glance."},
+          {"title": "Notes & History, always in view", "desc": "Persistent note entry and instant access to previous records, so context never has to be re-fetched from another system."},
+          {"title": "Clear CTAs", "desc": "Critical actions placed consistently and predictably at the end of the workflow — where the decision actually happens."}
+        ]},
+        {"type": "image", "src": "/images/safari-light-e92f1f.png", "label": "The shipped workspace — data to read on the left, checklist and actions on the right"},
+        {"type": "video", "label": "Verification Checklist — items auto-resolving to \"Clear\" in real time"},
+        {"type": "video", "label": "Notes & History — always-visible notes and previous records"},
+        {"type": "text", "value": [
+          "Same information, zero removed — but the structure now carried the attention, serving both speed and accuracy at once. And because the layout is structural rather than role-specific, the same spatial logic held across agent roles with different access and decision authority — one mental model, many permission levels."
+        ]}
+      ]
+    },
+    {
+      "id": "decision-3",
+      "kicker": "Decision 3",
+      "title": "Design the right friction for irreversible actions",
+      "blocks": [
+        {"type": "text", "value": [
+          "Every agent click is irreversible — an approval or rejection that decides a real person's credit outcome and carries compliance weight.",
+          "Auto-resolving checklist items felt great, but over-automation risks automation complacency — agents blindly trusting the system. So I drew a line:"
+        ]},
+        {"type": "callout", "label": "The line", "value": "Objective, checkable items auto-clear. Anything requiring human judgment must be confirmed by the agent."},
+        {"type": "text", "value": [
+          "I also added a Preview/Edit mode — a final review of changes before submission. On the surface this adds a step and fights the speed goal. My argument: in irreversible decisions, the rework and errors a preview prevents are worth far more than the two seconds it costs — slowing this one step makes the whole flow faster.",
+          "That's designing friction in the right place, inside compliance red lines that forbid one-click batch actions or skipped steps."
+        ]},
+        {"type": "image", "label": "Preview/Edit mode — final review of changes before submission"}
+      ]
+    },
+    {
+      "id": "decision-4",
+      "kicker": "Decision 4",
+      "title": "Help without adding noise",
+      "blocks": [
+        {"type": "text", "value": [
+          "The unified workspace surfaces proactive alerts for potential data issues — SSN mismatches, fraud flags, duplicate applications — before agents have to hunt for them. But I designed against an obvious second-order effect: too many alerts become alert fatigue. Agents go numb and ignore them, which is more dangerous than no alerts at all.",
+          "So alerts are tiered: only high-priority anomalies that genuinely affect the verification decision interrupt the agent; lower-priority ones degrade to quiet, passive hints."
+        ]},
+        {"type": "callout", "value": "Helping is only helping if it doesn't manufacture new noise."},
+        {"type": "image", "label": "Tiered alerts — high-priority interrupts vs. quiet inline hints"}
+      ]
+    },
+    {
+      "id": "decision-5",
+      "kicker": "Decision 5",
+      "title": "Define the metrics before designing, then prove it",
+      "blocks": [
+        {"type": "text", "value": [
+          "The most senior part of the work: I didn't design on gut. Before building, I partnered with the PM to define measurable UX success metrics up front — verification time, verification rate, and agent confidence — because without pre-defined metrics, you can't prove whether a decision was right.",
+          "Then I validated with shadowing plus rapid prototypes. I built competing layout directions — a Classic single-column layout (better readability, but dense and hard to scan) versus a Segmented tabbed layout (clear workflow stages, but hides data and adds clicks) — and tested them directly with agents, iterating on real feedback rather than my assumptions. The final left–right structure took the scannability of one and the workflow clarity of the other."
+        ]},
+        {"type": "image", "src": "/images/frame-1430105594-306436.png", "label": "Layout explorations — Classic vs. Segmented, with agent-tested tradeoffs"},
+        {"type": "image", "src": "/images/frame-427319474-5fe527.jpg", "label": "Live validation — walking agents through the working build"}
+      ]
+    },
+    {
+      "id": "results",
+      "kicker": "The results",
+      "title": "Both opposing metrics improved — together",
+      "blocks": [
+        {"type": "stats", "items": [
+          {"value": "47%", "label": "Reduced application verification time", "desc": "3.2 days → 1.7 days"},
+          {"value": "11.6%", "label": "Increased verification rate", "desc": "80.4% → 92%"}
+        ]},
+        {"type": "text", "value": [
+          "The MVP launch received strong feedback from agents and leadership, with higher agent confidence and satisfaction reported.",
+          "Crucially, the two opposing metrics improved together — with distinct causal drivers: the unified workspace and explicit checklist removed cross-system shuttling (driving speed), while Preview/Edit and tiered alerts reduced misjudgment (driving verification rate)."
+        ]},
+        {"type": "quote", "value": "Agent Desk 3.0 represents a major leap forward in our verification process — transforming how agents work and unlocking better customer experiences through cross-functional collaboration.", "attribution": "Leadership"}
+      ]
+    },
+    {
+      "id": "takeaway",
+      "kicker": "The takeaway",
+      "title": "Put friction in the right place",
+      "blocks": [
+        {"type": "text", "value": [
+          "The work I'm proudest of wasn't making a screen look good — it was finding, inside a pile of conflicting constraints (speed vs. compliance, lower load vs. can't-hide-data, automation vs. can't-blindly-trust), the one structure where everyone wins at once."
+        ]},
+        {"type": "callout", "value": "Frictionless finance was never about deleting friction — it's about putting friction in the right place."}
+      ]
     }
   ],
-  "results": {
-    "text": "The MVP launch received strong feedback from agents and leadership.",
-    "quote": "Agent Desk 3.0 represents a major leap forward in our verification process—transforming how agents work and unlocking better customer experiences through cross-functional collaboration.",
-    "quoteAttribution": "Leadership",
-    "bullets": [
-      "Reduced Verification Time: 3.2 days → 1.7 days",
-      "Increased Verification Rate: 80.4% → 92%",
-      "Higher agent confidence and satisfaction reported"
-    ],
-    "stats": [
-      {"value": "47%", "label": "Reduced application verification time"},
-      {"value": "11.6%", "label": "Increased verification rate"}
-    ]
-  },
   "otherProjects": ["Unified Customer Hub", "Lending Solutions Redesign", "Nitro College"]
 }
