@@ -1,13 +1,14 @@
 {
   "slug": "lending-solutions-redesign",
   "title": "Lending Solutions Redesign",
-  "subtitle": "Reinventing end-to-end lending for J.P. Morgan Private Bank — one origination flow across four regions, three products, and two request types.",
+  "subtitle": "Reinventing end-to-end lending for J.P. Morgan Private Bank — and proving it worked by building the validation loop myself.",
   "tags": ["B2B", "Loan Request App", "Lending Workspace"],
   "heroImage": "/images/lending-thumb.png",
   "meta": [
     {"label": "Role", "value": "Lead Designer — end-to-end owner"},
     {"label": "Company", "value": "J.P. Morgan Private Bank, Wealth Management"},
     {"label": "Products", "value": "Loan Request App 3.0 · Lending Workspace"},
+    {"label": "Markets", "value": "USPB · EMEA · APAC · LatAm"},
     {"label": "Team", "value": "Product (multi-domain POs), Engineering, UX Research, Credit Middle Office"}
   ],
   "indexedSections": [
@@ -25,6 +26,7 @@
           {"title": "Loan Request App 3.0", "desc": "The origination surface where Advisors initiate and submit SBL, Custom Credit, and PLP tickets — new deals and amendments — across USPB, EMEA, APAC, and LatAm."},
           {"title": "Lending Workspace", "desc": "The unified hub bringing every Private Bank lending tool under one roof."}
         ]},
+        {"type": "image", "src": "/images/lending-workspace-overview.png", "label": "Lending Workspace — deal journey, prospects, portfolio health, and insights in one place"},
         {"type": "callout", "value": "The tools existed. The experience didn't."}
       ]
     },
@@ -39,6 +41,7 @@
           {"title": "High-consequence", "desc": "A single ticket can move eight figures. An error isn't an inconvenience — it's a risk event."},
           {"title": "Knowledge-gated", "desc": "Complex, multi-step, tool-dependent workflows that punished anyone without deep institutional knowledge."}
         ]},
+        {"type": "image", "src": "/images/lending-persona.png", "label": "Two primary users — ~500 Client Advisors and ~900 Bankers across the Private Bank"},
         {"type": "callout", "label": "Design principle", "value": "Remove the friction that wastes time — keep the friction that protects the client."}
       ]
     },
@@ -56,6 +59,7 @@
           {"label": "Product", "value": "SBL · Custom Credit · PLP"},
           {"label": "Request type", "value": "New deal · Amendment"}
         ]},
+        {"type": "image", "src": "/images/lending-data.png", "label": "What the old flow cost — NIGO returns, mid-flow restarts, and manual CMO handoffs"},
         {"type": "text", "value": "That explodes into hundreds of possible states. Two problems compounded it."},
         {"type": "cards", "columns": 2, "items": [
           {"label": "Problem A", "title": "No single source of truth", "desc": "Each domain had its own Product Owner with limited cross-domain visibility — leading to conflicting requirements, overlapping asks, and three months of circular debate over whose process was the standard."},
@@ -65,7 +69,7 @@
     },
     {
       "id": "process",
-      "kicker": "Process",
+      "kicker": "Design",
       "title": "Process & design decisions",
       "blocks": [
         {"type": "step", "num": "4.1", "title": "Map the whole space before touching a screen", "blocks": [
@@ -74,7 +78,7 @@
             "The IA's value wasn't aesthetic. It turned invisible disagreements into visible, pointable nodes. “Whose process wins?” became “which region owns this specific node?” — a solvable question.",
             "I designed the space first, then the screens, so every later decision had a coherent home."
           ]},
-          {"type": "image", "label": "Information architecture — full lending surface"}
+          {"type": "image", "src": "/images/lending-ia.png", "label": "Information architecture — the full Lending Workspace surface"}
         ]},
         {"type": "step", "num": "4.2", "title": "Unify the skeleton, localize the organs", "blocks": [
           {"type": "text", "value": "The hardest tension surfaced immediately: how much to unify?"},
@@ -83,7 +87,7 @@
             {"label": "Fully local", "desc": "We're back to four disconnected tools. Unification dies."}
           ]},
           {"type": "text", "value": "My decision: one shared flow structure, navigation, and mental model across all regions, with conditional logic dynamically injecting region-specific fields and disclosures inside each step. Advisors experience one product; the system quietly adapts underneath."},
-          {"type": "image", "label": "Shared flow with region-specific fields"}
+          {"type": "image", "src": "/images/lending-frames.png", "label": "One skeleton, regional organs — the same flow across EMEA, APAC, LatAm, and USPB"}
         ]},
         {"type": "step", "num": "4.3", "title": "Lead by showing — a prototype that ended the debate", "blocks": [
           {"type": "text", "value": [
@@ -95,7 +99,7 @@
             "Three months of debate collapsed in a fifteen-minute walkthrough.",
             "When consensus is missing and talk won't converge, a prototype isn't a deliverable — it's a decision-making instrument. It swaps “who's right” for “does this work.”"
           ]},
-          {"type": "image", "label": "Region switcher prototype"}
+          {"type": "image", "src": "/images/lending-screenshot.png", "label": "The debate, in artifact form — every stakeholder's “is my field still there?” annotated on one screen"}
         ]},
         {"type": "step", "num": "4.4", "title": "The friction I chose to keep", "blocks": [
           {"type": "text", "value": "My first pass optimized for pure speed — auto-advancing, stripping confirmations. Then a senior Advisor, mid-walkthrough, said:"},
@@ -108,19 +112,69 @@
           {"type": "text", "value": "I demoed both in the same prototype — this step is fast on purpose, that step is slow on purpose — so Product and Compliance saw that efficiency and prudence weren't in conflict. They were being deliberately separated."},
           {"type": "image", "label": "Confirmation step — terms & collateral"}
         ]},
-        {"type": "step", "num": "4.5", "title": "Validation with real Advisors", "blocks": [
+        {"type": "step", "num": "4.5", "title": "Deliver 1:1, to the last variant", "blocks": [
+          {"type": "text", "value": "I delivered pixel-perfect handoff across regional variants and product types — SBL, Custom Credit, PLP — with full edge-case and error-state coverage, and stayed embedded in engineering standups through implementation."}
+        ]}
+      ]
+    },
+    {
+      "id": "proof",
+      "kicker": "The proof",
+      "title": "Proving it worked, with nothing to measure against",
+      "blocks": [
+        {"type": "text", "value": [
+          "After launch, my first priority was to prove the redesign actually helped. I hit a wall immediately: the old version had launched with no success definition — no instrumentation, no baseline to compare against. And the hard data I needed — NIGO rate, completion time — was scattered across compliance, ops, and regional systems I couldn't directly access."
+        ]},
+        {"type": "callout", "value": "I had a product I believed was better — and no evidence to prove it. Step one of validation wasn't analysis; it was building the entire practice of validation from scratch."},
+        {"type": "step", "num": "5.1", "title": "Never mistake a passed review for validation", "blocks": [
           {"type": "text", "value": [
-            "I partnered with a UX Researcher to run sessions on the interactive prototypes directly with Advisors. These surfaced edge cases and workflow assumptions invisible in stakeholder reviews alone, which I synthesized back into iterative design improvements.",
-            "I then delivered pixel-perfect handoff across regional variants and product types — SBL, Custom Credit, PLP — with full edge-case and error-state coverage, and stayed embedded in engineering standups through implementation."
+            "Reviews are attended by POs and leadership — not the Advisors filling tickets every day. Approved ≠ usable. The real problems hide in the edge cases a review room never sees.",
+            "So I built my own loop: high-fidelity interactive prototypes built with LLM-assisted tooling, and sessions run with a UX researcher directly with Advisors. I was deliberate about one risk — LLM prototypes look so polished that testers tend to \"play along\" and report false ease. So we never asked \"does this feel usable?\" We gave real tasks and watched where they stalled, where they reached for the phone."
           ]},
-          {"type": "image", "label": "Research session synthesis"}
+          {"type": "cards", "columns": 2, "items": [
+            {"label": "Task-based", "title": "Loan Request App", "desc": "Measured completion time and error points on real origination tasks."},
+            {"label": "Navigation-based", "title": "Lending Workspace", "desc": "Tested findability: can you find it, and does your mental map match ours?"}
+          ]},
+          {"type": "text", "value": "Eleven real Advisors surfaced a pile of stall points no one had raised in review."},
+          {"type": "image", "src": "/images/lending-key-findings.png", "label": "Key findings — centralization wins but calls persist, risk collaboration belongs in-workflow, high-value features went undiscovered"}
+        ]},
+        {"type": "step", "num": "5.2", "title": "Translate “the Advisor got stuck” into numbers the bank accepts", "blocks": [
+          {"type": "text", "value": [
+            "A real tension followed: I had vivid qualitative insight, but the bank's stakeholders trust numbers. \"Advisors stall at the collateral step\" carried no weight on its own.",
+            "So I translated qualitative into quantitative — structuring every stall point by three dimensions:"
+          ]},
+          {"type": "cards", "columns": 3, "items": [
+            {"label": "Frequency", "title": "% of Advisors who hit it", "desc": "How widespread is this stall point across sessions?"},
+            {"label": "Cost", "title": "Extra time it burns", "desc": "Average minutes lost per occurrence."},
+            {"label": "Consequence", "title": "Call-ins it triggers", "desc": "How often it escalates into a phone call for help."}
+          ]},
+          {"type": "text", "value": "I even structured the soft \"Advisors like it\" launch feedback into a trackable satisfaction signal rather than leaving it at \"feels good.\" A UX problem became a problem with frequency, cost, and consequence — and stakeholders could finally act on it."}
+        ]},
+        {"type": "step", "num": "5.3", "title": "Attribute the gains rigorously", "blocks": [
+          {"type": "text", "value": [
+            "When completion time genuinely dropped, I didn't rush to claim credit — because \"−30%\" is exactly the kind of number that invites \"how do you know it was the design?\" It could come from process change, training, or sample differences.",
+            "So I separated cause from effect. We'd changed many things at once — conditional logic, inline validation, embedded guidance, progressive disclosure — and in validation I mapped which stall point each design decision resolved."
+          ]},
+          {"type": "cards", "columns": 2, "items": [
+            {"label": "Lagging vs. leading", "title": "Proxy metrics first", "desc": "NIGO only shows up after real submissions clear review — so Advisor call-ins and first-pass submission rate read the trend early."},
+            {"label": "Comparable data", "title": "One definition, four regions", "desc": "Each market defined a \"successful submission\" differently — I standardized the definition before comparing anything."}
+          ]},
+          {"type": "callout", "value": "The resulting −30% holds up under questioning — it isn't a flattering coincidence."}
+        ]},
+        {"type": "step", "num": "5.4", "title": "A retro that points to what's next", "blocks": [
+          {"type": "callout", "value": "The value of a retro isn't proving “I was right” — it's answering “what's next.”"},
+          {"type": "text", "value": [
+            "Many reviews stop at \"metrics hit, project shipped.\" I turned the validation findings into roadmap input: which edge cases earn a place in the next iteration, negotiated with engineering and regional POs.",
+            "And bigger — the testing exposed a clearer opportunity: the real friction isn't only in the Advisor's screens. It lives in the manual back-and-forth between Advisors and Credit Middle Officers, and in where AI could further streamline guidance. One retro became the starting point for the next body of work."
+          ]},
+          {"type": "image", "src": "/images/lending-userflow.png", "label": "The Advisor ↔ CMO state map — happy and unhappy paths, where the manual back-and-forth lives"}
         ]}
       ]
     },
     {
       "id": "outcome",
       "kicker": "Outcome",
-      "title": "Outcome",
+      "title": "Numbers that hold up under questioning",
       "blocks": [
         {"type": "stats", "items": [
           {"value": "30%", "label": "reduction in ticket completion time", "desc": "Removed bug friction without touching prudent friction."},
@@ -128,6 +182,8 @@
           {"label": "Adoption expanded EMEA → USPB", "desc": "One unified skeleton proved it could scale across two major markets."},
           {"label": "Positive Advisor feedback at launch", "desc": "Credited the redesign with reducing friction and improving completion confidence."}
         ]},
+        {"type": "image", "src": "/images/lending-before-after.png", "label": "Before / after — the v1 flat form vs. Loan Request 3.0"},
+        {"type": "text", "value": "These numbers were believed because they sat on a validation chain I built myself — with cause cleanly separated from effect."},
         {"type": "callout", "value": "The win wasn't trading prudence for speed — it was replacing wasted friction with necessary friction."}
       ]
     },
@@ -139,7 +195,8 @@
         {"type": "text", "value": [
           "I joined by listening first — meeting triad partners, studying existing research, immersing in the design system — before moving into end-to-end ownership.",
           "My biggest takeaway is a decision-making mindset: when a room can't agree in the abstract, the fastest path forward isn't more debate — it's a prototype people can touch, so the solution argues for itself.",
-          "That, to me, is senior design: not just crafting the interface, but using systems thinking and prototyping to help a room of conflicting stakeholders make a decision — and knowing which friction to fight and which to defend."
+          "And the work doesn't end at shipping: a designer has to prove the work works, in a way that convinces people who don't trust design. With no baseline and unreachable data, I learned to build the validation loop myself, translate qualitative into quantitative, attribute gains rigorously, and turn a retro into a roadmap.",
+          "That, to me, is senior design: crafting the interface, helping a room of conflicting stakeholders make a decision, knowing which friction to fight and which to defend — and owning every decision with data."
         ]}
       ]
     }
