@@ -334,7 +334,7 @@
 }
 
 .testimonial-card {
-  background: rgba(241, 243, 251, 0.7);
+  background: rgba(241, 243, 251, 0.6);
   border-radius: var(--radius-card);
   padding: 28px;
   display: flex;
