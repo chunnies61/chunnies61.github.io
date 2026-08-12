@@ -128,7 +128,6 @@
     {
       "id": "impact",
       "kicker": "Impact",
-      "title": "Impact",
       "blocks": [
         {"type": "text", "value": "Launched August 2022."},
         {"type": "stats", "items": [
@@ -138,17 +137,6 @@
           {"value": "+5%", "label": "Second-loan offer clicks, trailing 90 days"}
         ]},
         {"type": "image", "src": "/images/fs-2-b3ea46.png", "label": "Final product — desktop and mobile"}
-      ]
-    },
-    {
-      "id": "reflection",
-      "kicker": "Reflection",
-      "title": "Reflection",
-      "blocks": [
-        {"type": "text", "value": [
-          "If I keep one takeaway: the real deliverable wasn't the dashboard. It was a system that lets \"unified\" and \"extensible\" keep happening — an account-state map that aligned everyone, a self-serve messaging framework, and a design system that grows new products.",
-          "That's the same problem shape behind any great point-of-sale experience: collapsing fragmented seller and buyer journeys into shared surfaces, leading with prototypes, and leaving room for AI and whatever ships next."
-        ]}
       ]
     }
   ],
