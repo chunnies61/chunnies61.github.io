@@ -240,7 +240,7 @@ function IndexedSection({ section }) {
     >
       <div className="cs-row-label cs-section-label">{section.kicker}</div>
       <div className="cs-section-content">
-        <h2 className="cs-section-title">{section.title}</h2>
+        {section.title && <h2 className="cs-section-title">{section.title}</h2>}
         {section.blocks.map((b, i) => (
           <Block block={b} key={i} />
         ))}
