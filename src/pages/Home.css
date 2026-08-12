@@ -292,7 +292,7 @@
   }
 }
 
-/* ===== About + testimonials (merged into one primary-color section) ===== */
+/* ===== About (merged from the standalone About page) ===== */
 .about-hero {
   padding: var(--space-section) 0;
   margin: var(--space-title-gap) 0;
@@ -325,18 +325,6 @@
   width: 100%;
   max-width: 340px;
   justify-self: center;
-}
-
-.testimonials-inner {
-  margin-top: var(--space-section);
-}
-
-.testimonials-inner .eyebrow {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.testimonials-inner .section-title {
-  color: #ffffff;
 }
 
 .testimonial-grid {
