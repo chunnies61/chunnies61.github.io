@@ -110,10 +110,10 @@
   },
   "about": {
     "headerImage": "/images/giffycanvas-10499f.gif",
-    "heading": "Welcome to my space👋",
+    "heading": "Welcome",
     "paragraphs": [
-      "I'm Yichun (ee-CHUN), a Product Designer with 7+ years of experience. I started in finance before moving into design, where I found the intersection of business thinking, creativity, and empathy — working across consumer products and B2B SaaS with teams at BCG, Sallie Mae, and Best Egg.",
-      "Today I'm a Senior UX Designer at J.P. Morgan Private Bank, leading lending solutions and mentoring other designers. I use AI tools to prototype faster and turn research into decisions."
+      "I'm Yichun (ee-CHUN) — a Product Designer who started in finance and never quite left the numbers behind. Seven-plus years in, I still think in spreadsheets before I think in wireframes, which turns out to be a decent superpower for turning messy business problems into interfaces people actually want to use. I've carried that lens across consumer products and B2B SaaS, working with teams at BCG, Sallie Mae, and Best Egg.",
+      "These days I'm a Senior UX Designer at J.P. Morgan Private Bank, leading lending solutions and mentoring the next wave of designers. My newest tool isn't a stylus — it's AI, which I lean on to prototype faster and turn messy research into decisions worth shipping."
     ],
     "funFactsImage": "/images/fun-facts-c5d06e.png",
     "funFactsLabel": "Fun facts about me",
