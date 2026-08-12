@@ -765,6 +765,10 @@ a.cs-index-item:hover {
   padding-bottom: var(--space-section);
 }
 
+.cs-other .eyebrow {
+  margin-left: 200px; /* aligns with the body column (160px label + 40px gap) used throughout the page */
+}
+
 .cs-next-card {
   margin-top: 16px;
   margin-left: 200px; /* aligns with the body column (160px label + 40px gap) used throughout the page */
@@ -867,7 +871,8 @@ a.cs-index-item:hover {
     grid-template-columns: 1fr;
     gap: 12px;
   }
-  .cs-next-card {
+  .cs-next-card,
+  .cs-other .eyebrow {
     margin-left: 0;
   }
   .cs-points {
