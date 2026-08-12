@@ -297,7 +297,7 @@
   padding: var(--space-section) 0;
   margin: var(--space-title-gap) 0;
   scroll-margin-top: 88px;
-  background: var(--accent);
+  background: #6b21a8;
   border-radius: 24px;
 }
 
