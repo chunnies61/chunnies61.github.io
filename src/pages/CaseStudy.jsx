@@ -327,7 +327,7 @@ export default function CaseStudy() {
     <article className={"case-study case-study--" + study.slug}>
       <nav className="cs-index wrap" aria-label="Case study index">
         <Link to="/" className="cs-index-back">
-          ← Back to work
+          ← All work
         </Link>
         <div className="cs-index-items">
           {indexItems.map((item, i) => {
