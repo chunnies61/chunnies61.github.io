@@ -76,9 +76,24 @@ function Section({ section }) {
 
 /* ---- Indexed-section renderer (content-rich case studies) ---- */
 
+function renderHighlighted(text) {
+  const parts = text.split(/(==.+?==)/g);
+  if (parts.length === 1) return text;
+  return parts.map((part, i) => {
+    const match = part.match(/^==(.+)==$/);
+    return match ? (
+      <mark className="cs-highlight" key={i}>
+        {match[1]}
+      </mark>
+    ) : (
+      part
+    );
+  });
+}
+
 function Paragraphs({ value }) {
   const items = Array.isArray(value) ? value : [value];
-  return items.map((p, i) => <p key={i}>{p}</p>);
+  return items.map((p, i) => <p key={i}>{renderHighlighted(p)}</p>);
 }
 
 function ImagePlaceholder({ label }) {
@@ -97,7 +112,13 @@ function Block({ block }) {
 
     case "cards":
       return (
-        <div className={"cs-cards cs-cards-" + (block.columns || block.items.length)}>
+        <div
+          className={
+            "cs-cards cs-cards-" +
+            (block.columns || block.items.length) +
+            (block.variant ? " cs-cards--" + block.variant : "")
+          }
+        >
           {block.items.map((item) => (
             <div className="cs-card" key={item.title || item.label}>
               {item.label && <span className="cs-card-label">{item.label}</span>}
@@ -105,6 +126,14 @@ function Block({ block }) {
               <p>{item.desc}</p>
             </div>
           ))}
+        </div>
+      );
+
+    case "honest-note":
+      return (
+        <div className="cs-honest-note">
+          <span className="cs-honest-note-label">Honest note</span>
+          <p>{renderHighlighted(block.value)}</p>
         </div>
       );
 
@@ -124,7 +153,7 @@ function Block({ block }) {
       return (
         <div className={"cs-callout" + (block.label ? " cs-callout-invert" : "")}>
           {block.label && <span className="cs-callout-label">{block.label}</span>}
-          <p>{block.value}</p>
+          <p>{renderHighlighted(block.value)}</p>
         </div>
       );
 
@@ -176,7 +205,7 @@ function Block({ block }) {
         <div className="cs-step">
           <div className="cs-step-head">
             {block.num && <span className="cs-step-num">{block.num}</span>}
-            <h4 className="cs-step-title">{block.title}</h4>
+            <h4 className="cs-step-title">{renderHighlighted(block.title)}</h4>
           </div>
           <div className="cs-step-body">
             {block.blocks.map((b, i) => (
@@ -193,7 +222,10 @@ function Block({ block }) {
 
 function IndexedSection({ section }) {
   return (
-    <section className="cs-row cs-section" id={section.id}>
+    <section
+      className={"cs-row cs-section" + (section.variant ? " cs-section--" + section.variant : "")}
+      id={section.id}
+    >
       <div className="cs-row-label cs-section-label">{section.kicker}</div>
       <div className="cs-section-content">
         <h2 className="cs-section-title">{section.title}</h2>
@@ -280,7 +312,7 @@ export default function CaseStudy() {
   }, [slug]);
 
   return (
-    <article className="case-study">
+    <article className={"case-study case-study--" + study.slug}>
       <nav className="cs-index wrap" aria-label="Case study index">
         <Link to="/" className="cs-index-back">
           ← Back to work

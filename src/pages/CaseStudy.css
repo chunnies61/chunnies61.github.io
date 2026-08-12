@@ -237,6 +237,13 @@ a.cs-index-item:hover {
   border-radius: var(--radius-card);
   padding: 20px;
 }
+
+/* Opt-in tint for a specific cards block — set "variant": "tinted"
+   on that block so other card grids are unaffected. */
+.cs-cards--tinted .cs-card {
+  background: #f1f3fb;
+  border-color: transparent;
+}
 .cs-card-label {
   display: block;
   margin-bottom: 8px;
@@ -286,6 +293,31 @@ a.cs-index-item:hover {
   color: var(--text);
 }
 
+/* Highlighter marker effect for inline emphasis — layered angled gradients
+   read as a hand-drawn ink stroke instead of a flat digital rectangle. */
+.cs-highlight {
+  color: #1a1a1a;
+  padding: 0.02em 0.05em 0;
+  background-image: linear-gradient(
+      104deg,
+      rgba(255, 231, 133, 0) 0.9%,
+      rgba(255, 231, 133, 0.85) 2.4%,
+      rgba(255, 231, 133, 0.7) 5.8%,
+      rgba(255, 231, 133, 0.7) 93%,
+      rgba(255, 231, 133, 0.6) 96%,
+      rgba(255, 231, 133, 0) 98%
+    ),
+    linear-gradient(
+      183deg,
+      rgba(255, 231, 133, 0) 0%,
+      rgba(255, 231, 133, 0.65) 22%,
+      rgba(255, 231, 133, 0.6) 32%,
+      rgba(255, 231, 133, 0) 48%
+    );
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
 /* Callout / design principle */
 .cs-callout {
   background: var(--pill-blue-bg);
@@ -321,6 +353,11 @@ a.cs-index-item:hover {
   color: #fff;
 }
 
+/* Agent Desk — dark callout captions use the marker yellow; body stays white */
+.case-study--agent-desk .cs-callout-invert .cs-callout-label {
+  color: #ffe785;
+}
+
 /* Contrast pair */
 .cs-contrast {
   display: grid;
@@ -332,6 +369,11 @@ a.cs-index-item:hover {
   border: 1px solid var(--card-border);
   border-radius: var(--radius-card);
   padding: 20px;
+}
+
+/* Agent Desk — contrast pairs filled with gray-100 at 50% */
+.case-study--agent-desk .cs-contrast-item {
+  background: rgba(217, 221, 229, 0.5);
 }
 .cs-contrast-label {
   display: block;
@@ -385,6 +427,48 @@ a.cs-index-item:hover {
   font-size: 14px;
   font-weight: 600;
   color: var(--accent-dark);
+}
+
+/* Opt-in badge treatment for step numbers — bordered circle + flat offset
+   shadow, in the page's own ink color. Only applies where a section sets
+   "variant": "badge-steps", so other case studies are unaffected. */
+.cs-section--badge-steps .cs-step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--text);
+  background: #ffe785;
+  box-shadow: 2px 2px 0 var(--text);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text);
+}
+.cs-section--badge-steps .cs-step {
+  padding-top: 28px;
+}
+
+/* Honest note — a quieter aside for acknowledging a real tradeoff or
+   limitation, deliberately understated next to the callout block. */
+.cs-honest-note {
+  border-left: 2px solid var(--gray-300);
+  padding: 2px 0 2px 16px;
+}
+.cs-honest-note-label {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-soft);
+  margin-bottom: 4px;
+}
+.cs-honest-note p {
+  font-style: italic;
+  color: var(--text-soft);
 }
 .cs-step-title {
   font-size: 18px;

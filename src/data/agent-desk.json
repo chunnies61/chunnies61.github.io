@@ -5,7 +5,7 @@
   "tags": ["Fintech", "Internal Tool", "Workflow Optimization"],
   "heroImage": "/images/thumbnail-3-d54e40.png",
   "meta": [
-    {"label": "Role", "value": "Solo Product Designer — end-to-end ownership"},
+    {"label": "Role", "value": "Solo Product Designer"},
     {"label": "Team", "value": "1 Product Manager · Engineers"},
     {"label": "Timeline", "value": "Oct 2022 – May 2024"},
     {"label": "Platform", "value": "Internal web platform — regulated fintech"}
@@ -16,16 +16,11 @@
       "kicker": "The setup",
       "title": "Human middleware, at 3.2 days per application",
       "blocks": [
-        {"type": "stats", "items": [
-          {"value": "−47%", "label": "Verification time", "desc": "3.2 days → 1.7 days"},
-          {"value": "+11.6%", "label": "Verification rate", "desc": "80.4% → 92%"},
-          {"value": "↑", "label": "Agent confidence", "desc": "Higher satisfaction reported"}
-        ]},
         {"type": "text", "value": [
-          "Agent Desk is Best Egg's internal platform where verification agents approve or reject credit applications — personal loans, credit cards, and secured auto loans — while staying inside fraud-prevention and compliance rules. Decisions here are irreversible, and they land on real people's credit outcomes.",
+          "==Agent Desk is Best Egg's internal platform where verification agents approve or reject credit applications — personal loans, credit cards, and secured auto loans== — while staying inside fraud-prevention and compliance rules. Decisions here are irreversible, and they land on real people's credit outcomes.",
           "The legacy system was fragmented and inconsistent across agent roles, forcing agents to act as \"human middleware\" — a 3.2-day bottleneck per application. As the solo designer, I owned the effort end-to-end: streamlining the workflow, defining measurable UX success metrics, and shipping inside a heavily regulated environment."
         ]},
-        {"type": "cards", "columns": 3, "items": [
+        {"type": "cards", "columns": 3, "variant": "tinted", "items": [
           {"label": "Constraint 1", "title": "Speed vs. compliance", "desc": "Workflows had to move faster without compromising fraud prevention, regulatory requirements, or auditability."},
           {"label": "Constraint 2", "title": "Multiple agent roles", "desc": "Different agent types needed different levels of access, context, and decision authority inside the same workflow."},
           {"label": "Constraint 3", "title": "Irreversible decisions", "desc": "Agents made frequent, irreversible calls under time pressure — fatigue and error risk compounded each other."}
@@ -51,8 +46,9 @@
       "id": "decisions",
       "kicker": "Design decisions",
       "title": "Five decisions that broke the tradeoff",
+      "variant": "badge-steps",
       "blocks": [
-        {"type": "step", "num": "1", "title": "Find the real bottleneck (it wasn't a screen)", "blocks": [
+        {"type": "step", "num": "1", "title": "==Find the real bottleneck (it wasn't a screen)==", "blocks": [
           {"type": "text", "value": [
             "With no dedicated researcher and a lean team, I used the lowest-cost, highest-signal method: live agent shadowing. Sitting beside agents on real cases, I watched them bounce across five or six systems — the legacy Agent Desktop, the internal Admin console, LoanPro, LexisNexis, raw spreadsheets — manually cross-checking the same data, leaning on tribal knowledge with no single source of truth."
           ]},
@@ -70,7 +66,7 @@
           {"type": "video", "label": "Centralized Application Management — one unified queue across products"},
           {"type": "video", "label": "Manager's Menu — comprehensive customer data, no external tools"}
         ]},
-        {"type": "step", "num": "2", "title": "Reduce load through structure, not subtraction", "blocks": [
+        {"type": "step", "num": "2", "title": "==Reduce load through structure, not subtraction==", "blocks": [
           {"type": "text", "value": [
             "Here I hit a hard constraint. Agent cognitive load was brutal — but I couldn't cut information to reduce it. Compliance requires that every data point needed for verification stays visible; removing any of it risks the audit trail.",
             "So the decision became: reduce load through structure, not subtraction."
@@ -88,7 +84,7 @@
             "Same information, zero removed — but the structure now carried the attention, serving both speed and accuracy at once. And because the layout is structural rather than role-specific, the same spatial logic held across agent roles with different access and decision authority — one mental model, many permission levels."
           ]}
         ]},
-        {"type": "step", "num": "3", "title": "Design the right friction for irreversible actions", "blocks": [
+        {"type": "step", "num": "3", "title": "==Design the right friction for irreversible actions==", "blocks": [
           {"type": "text", "value": [
             "Every agent click is irreversible — an approval or rejection that decides a real person's credit outcome and carries compliance weight.",
             "Auto-resolving checklist items felt great, but over-automation risks automation complacency — agents blindly trusting the system. So I drew a line:"
@@ -98,17 +94,19 @@
             "I also added a Preview/Edit mode — a final review of changes before submission. On the surface this adds a step and fights the speed goal. My argument: in irreversible decisions, the rework and errors a preview prevents are worth far more than the two seconds it costs — slowing this one step makes the whole flow faster.",
             "That's designing friction in the right place, inside compliance red lines that forbid one-click batch actions or skipped steps."
           ]},
-          {"type": "image", "label": "Preview/Edit mode — final review of changes before submission"}
+          {"type": "image", "label": "Preview/Edit mode — final review of changes before submission"},
+          {"type": "honest-note", "value": "Preview/Edit only works if the agent actually reads it — nothing forces genuine attention, only presence. It lowers the error rate; it doesn't guarantee it to zero."}
         ]},
-        {"type": "step", "num": "4", "title": "Help without adding noise", "blocks": [
+        {"type": "step", "num": "4", "title": "==Help without adding noise==", "blocks": [
           {"type": "text", "value": [
             "The unified workspace surfaces proactive alerts for potential data issues — SSN mismatches, fraud flags, duplicate applications — before agents have to hunt for them. But I designed against an obvious second-order effect: too many alerts become alert fatigue. Agents go numb and ignore them, which is more dangerous than no alerts at all.",
             "So alerts are tiered: only high-priority anomalies that genuinely affect the verification decision interrupt the agent; lower-priority ones degrade to quiet, passive hints."
           ]},
           {"type": "callout", "value": "Helping is only helping if it doesn't manufacture new noise."},
-          {"type": "image", "label": "Tiered alerts — high-priority interrupts vs. quiet inline hints"}
+          {"type": "image", "label": "Tiered alerts — high-priority interrupts vs. quiet inline hints"},
+          {"type": "honest-note", "value": "The tier boundary is a judgment call, not a formula — set it too loose and noise creeps back in; too strict and a real signal gets silently downgraded."}
         ]},
-        {"type": "step", "num": "5", "title": "Define the metrics before designing, then prove it", "blocks": [
+        {"type": "step", "num": "5", "title": "==Define the metrics before designing, then prove it==", "blocks": [
           {"type": "text", "value": [
             "The most senior part of the work: I didn't design on gut. Before building, I partnered with the PM to define measurable UX success metrics up front — verification time, verification rate, and agent confidence — because without pre-defined metrics, you can't prove whether a decision was right.",
             "Then I validated with shadowing plus rapid prototypes. I built competing layout directions — a Classic single-column layout (better readability, but dense and hard to scan) versus a Segmented tabbed layout (clear workflow stages, but hides data and adds clicks) — and tested them directly with agents, iterating on real feedback rather than my assumptions. The final left–right structure took the scannability of one and the workflow clarity of the other."
