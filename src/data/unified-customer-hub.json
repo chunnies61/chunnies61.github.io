@@ -135,7 +135,6 @@
           {"value": "150K / 211K", "label": "Unique users / sessions, first week"},
           {"value": "+328%", "label": "Financial Health engagement"},
           {"value": "411K+", "label": "Monthly users by early 2024 (FullStory)"},
-          {"value": "42% / 50%", "label": "Second-loan eligibility / acceptance"},
           {"value": "+5%", "label": "Second-loan offer clicks, trailing 90 days"}
         ]},
         {"type": "image", "src": "/images/fs-2-b3ea46.png", "label": "Final product — desktop and mobile"}
