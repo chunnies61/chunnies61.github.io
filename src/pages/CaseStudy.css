@@ -232,7 +232,7 @@ a.cs-index-item:hover {
 }
 
 .cs-card {
-  background: var(--card-bg);
+  background: #f0f1f4;
   border: 1px solid var(--card-border);
   border-radius: var(--radius-card);
   padding: 20px;
@@ -320,7 +320,7 @@ a.cs-index-item:hover {
 
 /* Callout / design principle */
 .cs-callout {
-  background: var(--pill-blue-bg);
+  background: #f0f1f4;
   border-radius: var(--radius-card);
   padding: 24px 28px;
 }
@@ -365,15 +365,10 @@ a.cs-index-item:hover {
   gap: 16px;
 }
 .cs-contrast-item {
-  background: var(--card-bg);
+  background: #f0f1f4;
   border: 1px solid var(--card-border);
   border-radius: var(--radius-card);
   padding: 20px;
-}
-
-/* Agent Desk — contrast pairs filled with gray-100 at 50% */
-.case-study--agent-desk .cs-contrast-item {
-  background: rgba(217, 221, 229, 0.5);
 }
 .cs-contrast-label {
   display: block;
@@ -583,7 +578,7 @@ a.cs-index-item:hover {
 }
 
 .cs-outcome-tile {
-  background: var(--pill-blue-bg);
+  background: #f0f1f4;
   border-radius: var(--radius-card);
   padding: 20px;
 }
@@ -653,11 +648,14 @@ a.cs-index-item:hover {
 
 .cs-quote {
   margin: 0;
-  padding: 20px 24px;
-  border-left: 3px solid var(--accent);
-  background: var(--pill-blue-bg);
+  padding: 24px 28px;
+  border-left: 3px solid var(--card-border);
+  background: #f0f1f4;
   border-radius: 0 12px 12px 0;
-  font-style: italic;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.35;
   color: var(--text);
 }
 
@@ -669,8 +667,18 @@ a.cs-index-item:hover {
 
 .cs-quote cite {
   display: block;
-  margin-top: 12px;
+  margin-top: 16px;
   font-style: normal;
+}
+.cs-quote-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+.cs-quote-role {
+  display: block;
+  margin-top: 2px;
   font-size: 13px;
   font-weight: 500;
   color: var(--text-soft);
@@ -754,11 +762,13 @@ a.cs-index-item:hover {
 }
 
 .cs-other {
-  padding: 40px 0 var(--space-section);
+  padding-top: 40px;
+  padding-bottom: var(--space-section);
 }
 
 .cs-next-card {
   margin-top: 16px;
+  margin-left: 200px; /* aligns with the body column (160px label + 40px gap) used throughout the page */
   display: flex;
   align-items: center;
   gap: 24px;
@@ -857,6 +867,9 @@ a.cs-index-item:hover {
   .cs-row {
     grid-template-columns: 1fr;
     gap: 12px;
+  }
+  .cs-next-card {
+    margin-left: 0;
   }
   .cs-points {
     grid-template-columns: 1fr;

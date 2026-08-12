@@ -7,6 +7,18 @@ import "./CaseStudy.css";
 
 const UNLOCK_PASSWORD = "0620";
 
+function QuoteAttribution({ value }) {
+  if (!value) return null;
+  const splitAt = value.indexOf(",");
+  if (splitAt === -1) return <cite className="cs-quote-name">{value}</cite>;
+  return (
+    <cite>
+      <span className="cs-quote-name">{value.slice(0, splitAt)}</span>
+      <span className="cs-quote-role">{value.slice(splitAt + 1).trim()}</span>
+    </cite>
+  );
+}
+
 function VideoPlaceholder({ className, label }) {
   return (
     <div className={"cs-video-placeholder" + (className ? " " + className : "")}>
@@ -161,7 +173,7 @@ function Block({ block }) {
       return (
         <blockquote className="cs-quote">
           “{block.value}”
-          {block.attribution && <cite>— {block.attribution}</cite>}
+          <QuoteAttribution value={block.attribution} />
         </blockquote>
       );
 
@@ -488,9 +500,7 @@ export default function CaseStudy() {
               {study.results.quote && (
                 <blockquote className="cs-quote">
                   “{study.results.quote}”
-                  {study.results.quoteAttribution && (
-                    <cite>— {study.results.quoteAttribution}</cite>
-                  )}
+                  <QuoteAttribution value={study.results.quoteAttribution} />
                 </blockquote>
               )}
             </Row>
