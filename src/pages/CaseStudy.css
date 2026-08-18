@@ -190,6 +190,10 @@ a.cs-index-item:hover {
   width: 100%;
 }
 
+.cs-image--square {
+  border-radius: 0;
+}
+
 .cs-row-content > .cs-image:first-child,
 .cs-row-content > .cs-video-placeholder:first-child {
   margin-top: 0;

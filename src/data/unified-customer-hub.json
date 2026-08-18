@@ -34,7 +34,7 @@
           "That vacuum, I decided, was exactly where design should step in. Only design could take an abstract word and turn it into something everyone could point at."
         ]},
         {"type": "callout", "label": "Framing question", "value": "How might we unify loans, cards, and financial health into one trusted platform — without disrupting core workflows or overloading a legacy stack?"},
-        {"type": "image", "src": "/images/stakeholder-tension-map.png", "label": "Stakeholder tension map — three product lines, three KPI sets, and an unowned \"Unified?\" in the middle"}
+        {"type": "image", "src": "/images/stakeholder-tension-map.png", "variant": "square", "label": "Stakeholder tension map — three product lines, three KPI sets, and an unowned \"Unified?\" in the middle"}
       ]
     },
     {

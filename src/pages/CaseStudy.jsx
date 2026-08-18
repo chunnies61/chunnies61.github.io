@@ -204,7 +204,12 @@ function Block({ block }) {
 
     case "image":
       return block.src ? (
-        <img className="cs-image" src={block.src} alt={block.label || ""} loading="lazy" />
+        <img
+          className={"cs-image" + (block.variant ? " cs-image--" + block.variant : "")}
+          src={block.src}
+          alt={block.label || ""}
+          loading="lazy"
+        />
       ) : (
         <ImagePlaceholder label={block.label} />
       );
