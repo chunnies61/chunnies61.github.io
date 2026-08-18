@@ -79,8 +79,7 @@
           {"label": "To Engineering", "title": "Feasible and safe", "desc": "This avoids the riskiest migration and keeps you on schedule."},
           {"label": "To business & leadership", "title": "Results first", "desc": "The surfaces we ship first are exactly where cross-sell converts. We'll see data fastest."},
           {"label": "To design", "title": "The vision, protected", "desc": "Keeping card third-party protects the vision. We validate the platform first, then earn the right to bring it home."}
-        ]},
-        {"type": "image", "src": "/images/frame-10124511-2-fd8d34.png", "label": "Phased roadmap — ship core surfaces, stitch in card, bring it home later"}
+        ]}
       ]
     },
     {
