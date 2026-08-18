@@ -62,7 +62,7 @@
           "In a working session with Engineering and PM, I enumerated every account state — single-product, loan + card, card + financial health, past-due, pending activation, missing data — into one account-state reference table.",
           "Laid out, it made something obvious: only a handful of high-frequency shared surfaces were truly interconnected. Everything else was account-specific and didn't need to move at once."
         ]},
-        {"type": "image", "src": "/images/screenshot-2025-01-21-at-1.50.27-am-cee5e6.png", "label": "Account-state reference table"}
+        {"type": "image", "src": "/images/account-state-reference-table.png", "variant": "square", "label": "Account-state reference table"}
       ]
     },
     {
