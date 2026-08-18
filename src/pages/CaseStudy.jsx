@@ -202,6 +202,36 @@ function Block({ block }) {
         </div>
       );
 
+    case "priority-grid":
+      return (
+        <div className="cs-priority-grid">
+          {block.columns.map((col) => (
+            <div className="cs-priority-col" key={col.label}>
+              <span className="cs-priority-col-label">{col.label}</span>
+              <div className="cs-priority-col-rows">
+                {col.rows.map((row, i) =>
+                  typeof row === "string" ? (
+                    <p
+                      className={"cs-priority-row" + (col.emphasis ? " cs-priority-row--strong" : "")}
+                      key={i}
+                    >
+                      {row}
+                    </p>
+                  ) : (
+                    <span
+                      className={"cs-priority-pill cs-priority-pill--" + row.status}
+                      key={i}
+                    >
+                      {row.text}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+
     case "image":
       return block.src ? (
         <img

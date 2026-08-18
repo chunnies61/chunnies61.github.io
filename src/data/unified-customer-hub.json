@@ -74,6 +74,23 @@
           "The call: keep Credit Card on the third-party platform for now. Focus in-house effort on the highest-impact surfaces — unified dashboard, Loan, Financial Health. Stitch the card in through an integration layer. Bring it home later, once the platform proved its value.",
           "The hard part: this plan was imperfect for everyone. So I told three stories for one decision."
         ]},
+        {"type": "priority-grid", "columns": [
+          {"label": "Priority", "rows": [
+            {"status": "keep", "text": "Must have"},
+            {"status": "keep", "text": "Must have"},
+            {"status": "cut", "text": "Scope cut"}
+          ]},
+          {"label": "In-house scope", "emphasis": true, "rows": [
+            "Unified dashboard",
+            "Financial Health & Loan",
+            "Credit Card"
+          ]},
+          {"label": "Why", "rows": [
+            "One place customers land to see everything — no more three-strangers experience.",
+            "The highest-frequency surfaces, and where cross-sell actually converts.",
+            "Migrating it risked 6+ months and breaking live servicing. Kept external, revisited later."
+          ]}
+        ]},
         {"type": "cards", "columns": 3, "items": [
           {"label": "To Engineering", "title": "Feasible and safe", "desc": "This avoids the riskiest migration and keeps you on schedule."},
           {"label": "To business & leadership", "title": "Results first", "desc": "The surfaces we ship first are exactly where cross-sell converts. We'll see data fastest."},
