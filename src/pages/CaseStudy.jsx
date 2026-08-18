@@ -202,6 +202,33 @@ function Block({ block }) {
         </div>
       );
 
+    case "surface-showcase":
+      return (
+        <div className="cs-surface-showcase">
+          {block.items.map((item, i) => (
+            <div
+              className={"cs-surface-row" + (i % 2 === 1 ? " cs-surface-row--reverse" : "")}
+              key={item.title}
+            >
+              <div className="cs-surface-media">
+                <video
+                  className="cs-surface-video"
+                  src={item.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              </div>
+              <div className="cs-surface-text">
+                <h4>{item.title}</h4>
+                <p>{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+
     case "image":
       return block.src ? (
         <img

@@ -90,10 +90,10 @@
       "blocks": [
         {"type": "text", "value": "Three products × ownership combinations × account states = a combinatorial explosion. Miss one state, and a user hits a blank page. So I didn't draw every screen — I built systems."},
         {"type": "step", "num": "6.1", "title": "The shipped surfaces", "blocks": [
-          {"type": "cards", "columns": 3, "items": [
-            {"title": "Customer Hub", "desc": "A centralized dashboard unifying Financial Health, Personal Loan, and Credit Card data into a single, clear view of a customer's financial status."},
-            {"title": "Personal Loan", "desc": "A dedicated space to view payment history, access statements, and make payments with ease."},
-            {"title": "Financial Health", "desc": "Credit scores, score factors, alerts, simulations, and access to detailed credit reports."}
+          {"type": "surface-showcase", "items": [
+            {"title": "Customer Hub", "desc": "A centralized dashboard unifying Financial Health, Personal Loan, and Credit Card data into a single, clear view of a customer's financial status.", "video": "/videos/customer-hub.mov"},
+            {"title": "Personal Loan", "desc": "A dedicated space to view payment history, access statements, and make payments with ease.", "video": "/videos/personal-loan.mp4"},
+            {"title": "Financial Health", "desc": "Credit scores, score factors, alerts, simulations, and access to detailed credit reports.", "video": "/videos/financial-health.mp4"}
           ]}
         ]},
         {"type": "step", "num": "6.2", "title": "A messaging framework, not one-off designs", "blocks": [
