@@ -101,6 +101,7 @@
             "I didn't spend the insight and move on — I codified it into a reusable \"message urgency ↔ placement\" mapping: what level of message, in which placement, with what motion intensity. Every product line and every engineer could place messages by rule, instead of coming back to ask me — turning a one-off design into a self-serve system."
           ]},
           {"type": "image", "src": "/images/message-placement-diagram.svg", "variant": "spaced-top", "label": "Message urgency ↔ placement mapping"},
+          {"type": "callout", "label": "Key user testing insights", "value": "We tested 20 message-placement combinations across 527 users. Banners and in-feature messaging won on engagement and sentiment; modals felt intrusive and were reserved for critical alerts."},
           {"type": "image", "src": "/images/message-placement-matrix.png", "label": "Placement × message type effectiveness matrix"}
         ]},
         {"type": "step", "num": "6.3", "title": "Designing for products that didn't exist yet", "blocks": [
