@@ -63,8 +63,10 @@
           {"type": "text", "value": [
             "So my first decision wasn't \"make a page prettier.\" It was eliminate the middleware — consolidate scattered tools and data into one unified workspace: centralized application management across loan and credit card products, plus a Manager's Menu giving comprehensive access to customer data so agents stop reaching for external tools."
           ]},
-          {"type": "video", "label": "Centralized Application Management — one unified queue across products"},
-          {"type": "video", "label": "Manager's Menu — comprehensive customer data, no external tools"}
+          {"type": "surface-showcase", "alternate": false, "items": [
+            {"title": "Centralized Application Management", "desc": "Manage loan and credit card applications in one unified workspace, with proactive alerts for potential data issues.", "video": "/videos/centralized-application-management.mp4"},
+            {"title": "Manager's Menu", "desc": "Comprehensive access to customer data, reducing the need for external tools.", "video": "/videos/managers-menu.mp4"}
+          ]}
         ]},
         {"type": "step", "num": "2", "title": "==Reduce load through structure, not subtraction==", "blocks": [
           {"type": "text", "value": [
@@ -78,8 +80,10 @@
             {"title": "Clear CTAs", "desc": "Critical actions placed consistently and predictably at the end of the workflow — where the decision actually happens."}
           ]},
           {"type": "image", "src": "/images/safari-light-e92f1f.png", "label": "The shipped workspace — data to read on the left, checklist and actions on the right"},
-          {"type": "video", "label": "Verification Checklist — items auto-resolving to \"Clear\" in real time"},
-          {"type": "video", "label": "Notes & History — always-visible notes and previous records"},
+          {"type": "surface-showcase", "alternate": false, "items": [
+            {"title": "Verification Checklist", "desc": "All verification steps consolidated and aligned with business rules. Items update in real time and auto-resolve to \"Clear\" when complete.", "video": "/videos/verification-checklist.mp4"},
+            {"title": "Notes & History", "desc": "Always-visible note entry and access to previous records support informed decision-making.", "video": "/videos/notes-and-history.mp4"}
+          ]},
           {"type": "text", "value": [
             "Same information, zero removed — but the structure now carried the attention, serving both speed and accuracy at once. And because the layout is structural rather than role-specific, the same spatial logic held across agent roles with different access and decision authority — one mental model, many permission levels."
           ]}

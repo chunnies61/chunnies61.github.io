@@ -202,12 +202,13 @@ function Block({ block }) {
         </div>
       );
 
-    case "surface-showcase":
+    case "surface-showcase": {
+      const alternate = block.alternate !== false;
       return (
-        <div className="cs-surface-showcase">
+        <div className={"cs-surface-showcase" + (alternate ? "" : " cs-surface-showcase--wide")}>
           {block.items.map((item, i) => (
             <div
-              className={"cs-surface-row" + (i % 2 === 1 ? " cs-surface-row--reverse" : "")}
+              className={"cs-surface-row" + ((alternate ? i % 2 === 1 : true) ? " cs-surface-row--reverse" : "")}
               key={item.title}
             >
               <div className="cs-surface-media">
@@ -228,6 +229,7 @@ function Block({ block }) {
           ))}
         </div>
       );
+    }
 
     case "image":
       return block.src ? (

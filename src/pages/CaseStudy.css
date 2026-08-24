@@ -344,6 +344,24 @@ a.cs-index-item:hover {
   }
 }
 
+/* Wide variant — fixed description-left/video-right order, sized for
+   landscape desktop-app recordings rather than portrait phone clips. */
+.cs-surface-showcase--wide {
+  margin-left: 0;
+  margin-right: 0;
+  gap: 40px;
+}
+
+.cs-surface-showcase--wide .cs-surface-media {
+  flex: 1.3;
+  max-width: none;
+}
+
+.cs-surface-showcase--wide .cs-surface-text {
+  flex: 1;
+  max-width: 320px;
+}
+
 /* Dimension pill groups */
 .cs-pill-groups {
   display: flex;
