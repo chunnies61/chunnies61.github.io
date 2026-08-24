@@ -515,6 +515,13 @@ a.cs-index-item:hover {
   padding-top: 28px;
 }
 
+/* Opt-in tinted background for an entire section — set
+   "variant": "tinted" on that section so others are unaffected. */
+.cs-section--tinted {
+  background: #f2f4f8;
+  border-bottom: none;
+}
+
 /* Honest note — a quieter aside for acknowledging a real tradeoff or
    limitation, deliberately understated next to the callout block. */
 .cs-honest-note {

@@ -116,6 +116,7 @@
     {
       "id": "impact",
       "kicker": "Impact",
+      "variant": "tinted",
       "blocks": [
         {"type": "stats", "items": [
           {"value": "150K / 211K", "label": "Unique users / sessions, first week"},
