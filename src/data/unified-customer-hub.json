@@ -116,13 +116,14 @@
       "id": "impact",
       "kicker": "Impact",
       "blocks": [
-        {"type": "text", "value": "Launched August 2022."},
+        {"type": "text", "value": "Launched August 2022. The gains showed up immediately and kept compounding. In the first week, credit score activation post-login rose 94% and Financial Health daily active users more than doubled — proof the unified entry point was doing exactly what it was designed to do: get customers to the products that mattered before they even asked. On the revenue side, second-loan eligibility climbed to 42% (vs. 35% on the legacy servicing site) with a 50% acceptance rate, and the leads chart told the same story more slowly: the Hub's share of second-loan leads crept up week over week until, by mid-August, it had overtaken the legacy channel outright."},
         {"type": "stats", "items": [
           {"value": "150K / 211K", "label": "Unique users / sessions, first week"},
           {"value": "+328%", "label": "Financial Health engagement"},
           {"value": "411K+", "label": "Monthly users by early 2024 (FullStory)"},
           {"value": "+5%", "label": "Second-loan offer clicks, trailing 90 days"}
         ]},
+        {"type": "image", "src": "/images/customer-hub-launch-emails.png", "label": "Launch announcement and early-results readout to the team"},
         {"type": "image", "src": "/images/fs-2-b3ea46.png", "label": "Final product — desktop and mobile"}
       ]
     }
