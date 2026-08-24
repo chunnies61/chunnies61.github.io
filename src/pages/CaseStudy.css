@@ -203,6 +203,10 @@ a.cs-index-item:hover {
   padding: 48px;
 }
 
+.cs-image--outlined {
+  border: 1px solid var(--card-border);
+}
+
 .cs-image + .cs-image {
   margin-top: 48px;
 }
