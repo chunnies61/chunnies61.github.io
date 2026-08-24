@@ -103,19 +103,12 @@
           {"type": "image", "src": "/images/message-placement-diagram.svg", "variant": "spaced-top", "label": "Message urgency ↔ placement mapping"},
           {"type": "image", "src": "/images/message-placement-matrix.png", "label": "Placement × message type effectiveness matrix"}
         ]},
-        {"type": "step", "num": "6.3", "title": "Empty states as first-class citizens", "blocks": [
-          {"type": "text", "value": [
-            "A brand-new user with no loan and no data can't meet a blank dashboard — that blank IS their first impression. So every module got a designed empty state. Financial Health with no data became a gently animated \"activate your credit score\" invitation.",
-            "Motion turned an awkward void into a delightful nudge — numbers ticking up, cards easing in — so \"nothing here yet\" read as \"everything's about to begin.\" These micro-interactions later entered the design spec, keeping the motion language consistent across web and mobile."
-          ]},
-          {"type": "video", "label": "Empty state motion — Financial Health activation"}
-        ]},
-        {"type": "step", "num": "6.4", "title": "Designing for products that didn't exist yet", "blocks": [
+        {"type": "step", "num": "6.3", "title": "Designing for products that didn't exist yet", "blocks": [
           {"type": "text", "value": [
             "Best Egg keeps launching products. If each spun up its own flow, we'd slide right back into fragmentation. So the Best Egg Design System — 2,000+ modular components — was built to be pluggable: navigation, shared modules, and the messaging framework all reserved insertion points for future products.",
             "I wasn't delivering a platform. I was delivering a platform that could grow new products — the same extensibility that later made room for smarter, AI-driven personalization. An extensible architecture is the prerequisite for embracing whatever ships next."
           ]},
-          {"type": "image", "src": "/images/screenshot-2026-01-05-at-1.07.12-am-459478.png", "label": "Best Egg Design System — 2,000+ modular components"}
+          {"type": "image", "src": "/images/best-egg-design-system.png", "label": "Best Egg Design System — 2,000+ modular components"}
         ]}
       ]
     },
