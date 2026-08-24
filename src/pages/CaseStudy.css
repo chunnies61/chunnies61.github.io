@@ -194,6 +194,10 @@ a.cs-index-item:hover {
   border-radius: 0;
 }
 
+.cs-image + .cs-image {
+  margin-top: 48px;
+}
+
 .cs-row-content > .cs-image:first-child,
 .cs-row-content > .cs-video-placeholder:first-child {
   margin-top: 0;
@@ -236,7 +240,7 @@ a.cs-index-item:hover {
 }
 
 .cs-card {
-  background: #f0f1f4;
+  background: rgba(240, 241, 244, 0.5);
   border-radius: var(--radius-card);
   padding: 20px;
 }
@@ -380,7 +384,7 @@ a.cs-index-item:hover {
 
 /* Callout / design principle */
 .cs-callout {
-  background: #f0f1f4;
+  background: rgba(240, 241, 244, 0.5);
   border-radius: var(--radius-card);
   padding: 24px 28px;
 }
@@ -425,7 +429,7 @@ a.cs-index-item:hover {
   gap: 16px;
 }
 .cs-contrast-item {
-  background: #f0f1f4;
+  background: rgba(240, 241, 244, 0.5);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-card);
   padding: 20px;
@@ -638,7 +642,7 @@ a.cs-index-item:hover {
 }
 
 .cs-outcome-tile {
-  background: #f0f1f4;
+  background: rgba(240, 241, 244, 0.5);
   border-radius: var(--radius-card);
   padding: 20px;
 }
@@ -710,11 +714,11 @@ a.cs-index-item:hover {
   margin: 0;
   padding: 24px 28px;
   border-left: 3px solid var(--card-border);
-  background: #f0f1f4;
+  background: rgba(240, 241, 244, 0.5);
   border-radius: 0 12px 12px 0;
   font-style: normal;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 16px;
   line-height: 1.35;
   color: var(--text);
 }
