@@ -100,7 +100,7 @@
             "With Marketing and a researcher, I tested cross-sell placements on UserTesting. The finding was sharp: banners and in-feature messaging performed best with minimal annoyance; modals felt intrusive and belonged only to critical alerts.",
             "I didn't spend the insight and move on — I codified it into a reusable \"message urgency ↔ placement\" mapping: what level of message, in which placement, with what motion intensity. Every product line and every engineer could place messages by rule, instead of coming back to ask me — turning a one-off design into a self-serve system."
           ]},
-          {"type": "image", "src": "/images/message-placement-diagram.svg", "variant": "spaced-top", "label": "Message urgency ↔ placement mapping"},
+          {"type": "image", "src": "/images/message-types-placements.png", "variant": "spaced-top", "label": "4 message types × 5 placement options"},
           {"type": "text", "value": "Key user testing insights: we tested 20 message-placement combinations across 527 users. Banners and in-feature messaging won on engagement and sentiment; modals felt intrusive and were reserved for critical alerts."},
           {"type": "image", "src": "/images/message-placement-matrix.png", "label": "Placement × message type effectiveness matrix"}
         ]},
