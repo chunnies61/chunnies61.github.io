@@ -732,7 +732,7 @@ a.cs-index-item:hover {
   background: rgba(240, 241, 244, 0.5);
   border-radius: 0 12px 12px 0;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 16px;
   line-height: 1.35;
   color: var(--text);

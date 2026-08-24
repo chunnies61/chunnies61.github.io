@@ -344,6 +344,7 @@
 
 .testimonial-quote {
   font-size: 15px;
+  font-weight: 600;
   color: var(--text-soft);
   margin-bottom: 24px;
 }
