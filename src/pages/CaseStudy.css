@@ -278,7 +278,7 @@ a.cs-index-item:hover {
 .cs-surface-row {
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: 88px;
 }
 
 .cs-surface-row--reverse {
