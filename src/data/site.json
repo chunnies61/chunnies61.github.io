@@ -15,7 +15,7 @@
     "sectionEyebrow": "Selected Work",
     "sectionTitle": "Case studies",
     "caseStudies": [
-      {"slug": "unified-customer-hub", "title": "Unified Customer Hub", "tags": ["Fintech", "B2C", "Customer Service"], "desc": "Turning three disconnected fintech products into one platform — and 420K+ monthly users", "thumb": "/images/thumbnail-1-2a85e4.png"},
+      {"slug": "unified-customer-hub", "title": "Unified Customer Hub", "tags": ["Fintech", "B2C", "Customer Service"], "desc": "Turning three disconnected fintech products into one platform — and 420K+ monthly users", "thumb": "/images/unified-customer-hub-homepage-thumb.png"},
       {"slug": "lending-solutions-redesign", "title": "Lending Solutions Redesign", "tags": ["B2B", "Loan Request App", "Lending Workspace"], "desc": "Reinventing end-to-end lending for J.P. Morgan Private Bank — and proving it worked by building the validation loop myself", "thumb": "/images/lending-thumb.png", "locked": true},
       {"slug": "agent-desk", "title": "Agent Desk", "tags": ["Fintech", "Internal Tool", "Workflow Optimization"], "desc": "Accelerating customer review and verification workflows", "thumb": "/images/thumbnail-3-d54e40.png"},
       {"slug": "otis-digital-eco-system", "title": "Otis Cloud EMS 2.0", "tags": ["Property Management", "B2B2C"], "desc": "Turning a legacy monitoring system into a proactive, cloud-native platform — by designing for fear, not just efficiency", "thumb": "/images/otis-thumb.png", "locked": true},
