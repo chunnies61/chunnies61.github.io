@@ -281,6 +281,8 @@ a.cs-index-item:hover {
   display: flex;
   flex-direction: column;
   gap: 56px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .cs-surface-row {
