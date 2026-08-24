@@ -194,6 +194,10 @@ a.cs-index-item:hover {
   border-radius: 0;
 }
 
+.cs-image--spaced-top {
+  margin-top: 56px;
+}
+
 .cs-image + .cs-image {
   margin-top: 48px;
 }
