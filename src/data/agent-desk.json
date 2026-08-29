@@ -53,8 +53,8 @@
             "With no dedicated researcher and a lean team, I used the lowest-cost, highest-signal method: live agent shadowing. Sitting beside agents on real cases, I watched them bounce across five or six systems — the legacy Agent Desktop, the internal Admin console, LoanPro, LexisNexis, raw spreadsheets — manually cross-checking the same data, leaning on tribal knowledge with no single source of truth."
           ]},
           {"type": "image", "src": "/images/frame-427319454-27c3bf.png", "label": "The legacy reality — one verification, five systems"},
-          {"type": "quote", "value": "Opening Tab 1 for Admin, Tab 2 for LoanPro, Tab 3 for LexisNexis. I lose context every time I switch screens.", "attribution": "Verification agent, shadowing session"},
-          {"type": "quote", "value": "I have to scroll through 500+ items. I usually 'cherry-pick' the easy ones because I don't want a complex case right before lunch.", "attribution": "Verification agent, shadowing session"},
+          {"type": "quote", "value": "Opening Tab 1 for Admin, Tab 2 for LoanPro, Tab 3 for LexisNexis. I lose context every time I switch screens.", "attribution": "Verification agent, shadowing session", "avatar": "agent"},
+          {"type": "quote", "value": "I have to scroll through 500+ items. I usually 'cherry-pick' the easy ones because I don't want a complex case right before lunch.", "attribution": "Verification agent, shadowing session", "avatar": "agent"},
           {"type": "text", "value": [
             "I mapped the end-to-end journey across five stages — Triage, Review & Verification, Investigation, Decision & Documentation, Outcome — and the emotional low points lined up exactly with the system gaps: overwhelmed at review, distracted mid-investigation, anxious at close-out, unsure whether anything was missed in the scattered data."
           ]},
@@ -79,7 +79,6 @@
             {"title": "Notes & History, always in view", "desc": "Persistent note entry and instant access to previous records, so context never has to be re-fetched from another system."},
             {"title": "Clear CTAs", "desc": "Critical actions placed consistently and predictably at the end of the workflow — where the decision actually happens."}
           ]},
-          {"type": "image", "src": "/images/safari-light-e92f1f.png", "label": "The shipped workspace — data to read on the left, checklist and actions on the right"},
           {"type": "surface-showcase", "alternate": false, "items": [
             {"title": "Verification Checklist", "desc": "All verification steps consolidated and aligned with business rules. Items update in real time and auto-resolve to \"Clear\" when complete.", "video": "/videos/verification-checklist.mp4"},
             {"title": "Notes & History", "desc": "Always-visible note entry and access to previous records support informed decision-making.", "video": "/videos/notes-and-history.mp4"}
@@ -115,8 +114,7 @@
             "The most senior part of the work: I didn't design on gut. Before building, I partnered with the PM to define measurable UX success metrics up front — verification time, verification rate, and agent confidence — because without pre-defined metrics, you can't prove whether a decision was right.",
             "Then I validated with shadowing plus rapid prototypes. I built competing layout directions — a Classic single-column layout (better readability, but dense and hard to scan) versus a Segmented tabbed layout (clear workflow stages, but hides data and adds clicks) — and tested them directly with agents, iterating on real feedback rather than my assumptions. The final left–right structure took the scannability of one and the workflow clarity of the other."
           ]},
-          {"type": "image", "src": "/images/frame-1430105594-306436.png", "label": "Layout explorations — Classic vs. Segmented, with agent-tested tradeoffs"},
-          {"type": "image", "src": "/images/frame-427319474-5fe527.jpg", "label": "Live validation — walking agents through the working build"}
+          {"type": "image", "src": "/images/frame-1430105594-306436.png", "label": "Layout explorations — Classic vs. Segmented, with agent-tested tradeoffs"}
         ]}
       ]
     },
@@ -133,7 +131,7 @@
           "The MVP launch received strong feedback from agents and leadership, with higher agent confidence and satisfaction reported.",
           "Crucially, the two opposing metrics improved together — with distinct causal drivers: the unified workspace and explicit checklist removed cross-system shuttling (driving speed), while Preview/Edit and tiered alerts reduced misjudgment (driving verification rate)."
         ]},
-        {"type": "quote", "value": "Agent Desk 3.0 represents a major leap forward in our verification process — transforming how agents work and unlocking better customer experiences through cross-functional collaboration.", "attribution": "Leadership"}
+        {"type": "quote", "value": "Agent Desk 3.0 represents a major leap forward in our verification process — transforming how agents work and unlocking better customer experiences through cross-functional collaboration.", "attribution": "Leadership", "avatar": "leadership"}
       ]
     },
     {

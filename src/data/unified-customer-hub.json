@@ -47,7 +47,7 @@
           "In the review, I didn't argue we should unify. I let stakeholders click it themselves."
         ]},
         {"type": "video", "label": "Prototype walkthrough — loan → credit score → cross-sell"},
-        {"type": "quote", "value": "Oh — so THAT's what cross-sell looks like.", "attribution": "Executive stakeholder, live prototype review"},
+        {"type": "quote", "value": "Oh — so THAT's what cross-sell looks like.", "attribution": "Executive stakeholder, live prototype review", "avatar": "executive"},
         {"type": "text", "value": "The vision finally had a shape. And I became the de-facto driver of a project that never had an owner."}
       ]
     },

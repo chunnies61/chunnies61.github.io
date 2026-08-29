@@ -781,6 +781,54 @@ a.cs-index-item:hover {
   color: var(--text-soft);
 }
 
+.cs-quote-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+.cs-quote-footer cite {
+  margin-top: 0;
+}
+
+.cs-quote-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.cs-quote-avatar svg {
+  width: 18px;
+  height: 18px;
+}
+.cs-quote-avatar--agent {
+  background: var(--pill-blue-bg);
+  color: var(--pill-blue-text);
+}
+.cs-quote-avatar--leadership {
+  background: var(--pill-yellow-bg);
+  color: var(--pill-yellow-text);
+}
+.cs-quote-avatar--executive {
+  background: var(--pill-yellow-bg);
+  color: var(--pill-yellow-text);
+}
+.cs-quote-avatar--product-owner {
+  background: var(--pill-green-bg);
+  color: var(--pill-green-text);
+}
+.cs-quote-avatar--advisor {
+  background: var(--pill-pink-bg);
+  color: var(--pill-pink-text);
+}
+.cs-quote-avatar--building-manager {
+  background: var(--pill-blue-bg);
+  color: var(--pill-blue-text);
+}
+
 .cs-protected {
   max-width: 480px;
   margin: 40px auto 60px;

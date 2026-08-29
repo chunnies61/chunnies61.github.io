@@ -63,7 +63,7 @@
             "The field flipped our assumptions. Everyone — myself included — had assumed users wanted efficiency, to go faster. What I actually saw was that non-technical building managers were operating in fear.",
             "One manager stuck with me. For a trivial operation, he'd rather phone an Otis engineer than press the button himself. When I asked why, he said:"
           ]},
-          {"type": "quote", "value": "I'm afraid I'll shut down every elevator in the building.", "attribution": "Building manager, on-site contextual inquiry"},
+          {"type": "quote", "value": "I'm afraid I'll shut down every elevator in the building.", "attribution": "Building manager, on-site contextual inquiry", "avatar": "building-manager"},
           {"type": "text", "value": "That was the moment. We were designing for efficiency — but users were stuck in fear. I named it consequence anxiety: the dread of an irreversible, catastrophic mistake. That anxiety made them offload even the simplest tasks to engineers — which meant our backend usage data was a false positive. The real pain point was invisible in the data; it only surfaced on-site."},
           {"type": "callout", "label": "The trap", "value": "Usage data looked healthy because engineers were doing the work managers feared to touch. The metric wasn't measuring adoption — it was measuring avoidance."}
         ]},

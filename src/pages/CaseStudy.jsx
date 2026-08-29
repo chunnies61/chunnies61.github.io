@@ -7,15 +7,56 @@ import "./CaseStudy.css";
 
 const UNLOCK_PASSWORD = "0620";
 
-function QuoteAttribution({ value }) {
+const PERSONA_ICONS = {
+  agent: (
+    <path d="M4 13v-1a6 6 0 0 1 12 0v1M3 13h2v5H4a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1Zm14 0h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-5ZM8 18a2 2 0 0 0 2 2h2" />
+  ),
+  leadership: (
+    <path d="M6 4h8v4a4 4 0 0 1-8 0V4ZM4 5H2v2a3 3 0 0 0 3 3M18 5h2v2a3 3 0 0 0-3 3M10 12v3M7 20h6M8.5 15h5l.5 5h-6l.5-5Z" />
+  ),
+  executive: (
+    <path d="M4 9h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1Zm3 0V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M2 13h18" />
+  ),
+  "product-owner": (
+    <path d="M10 2a8 8 0 1 0 8 8M10 2a8 8 0 0 1 8 8M10 2v16M2 10h16M4.5 5.5c2 1.5 9 1.5 11 0M4.5 14.5c2-1.5 9-1.5 11 0" />
+  ),
+  advisor: (
+    <path d="M2 11l3-3 3 2 3-4 3 2 3-3M6 11v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6" />
+  ),
+  "building-manager": (
+    <path d="M5 20V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v15M13 20v-8h4a1 1 0 0 1 1 1v7M8 7h1M8 10h1M8 13h1M11 7h1M11 10h1M11 13h1M3 20h16" />
+  ),
+};
+
+function PersonaAvatar({ type }) {
+  if (!type || !PERSONA_ICONS[type]) return null;
+  return (
+    <span className={"cs-quote-avatar cs-quote-avatar--" + type}>
+      <svg viewBox="0 0 20 22" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        {PERSONA_ICONS[type]}
+      </svg>
+    </span>
+  );
+}
+
+function QuoteAttribution({ value, avatar }) {
   if (!value) return null;
   const splitAt = value.indexOf(",");
-  if (splitAt === -1) return <cite className="cs-quote-name">{value}</cite>;
+  const cite =
+    splitAt === -1 ? (
+      <cite className="cs-quote-name">{value}</cite>
+    ) : (
+      <cite>
+        <span className="cs-quote-name">{value.slice(0, splitAt)}</span>
+        <span className="cs-quote-role">{value.slice(splitAt + 1).trim()}</span>
+      </cite>
+    );
+  if (!avatar) return cite;
   return (
-    <cite>
-      <span className="cs-quote-name">{value.slice(0, splitAt)}</span>
-      <span className="cs-quote-role">{value.slice(splitAt + 1).trim()}</span>
-    </cite>
+    <div className="cs-quote-footer">
+      <PersonaAvatar type={avatar} />
+      {cite}
+    </div>
   );
 }
 
@@ -173,7 +214,7 @@ function Block({ block }) {
       return (
         <blockquote className="cs-quote">
           “{block.value}”
-          <QuoteAttribution value={block.attribution} />
+          <QuoteAttribution value={block.attribution} avatar={block.avatar} />
         </blockquote>
       );
 

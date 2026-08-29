@@ -93,7 +93,7 @@
             "I could say “skeleton vs. organs,” but POs didn't buy an abstraction — they kept asking “is my field still there or not?”",
             "So I stopped arguing and built an interactive prototype using LLM-assisted tooling. Select EMEA and the three compliance fields appear. Switch to USPB and they disappear, and the rest of the flow doesn't move."
           ]},
-          {"type": "quote", "value": "Oh — my field wasn't deleted. It just doesn't exist in the other regions.", "attribution": "EMEA Product Owner, mid-walkthrough"},
+          {"type": "quote", "value": "Oh — my field wasn't deleted. It just doesn't exist in the other regions.", "attribution": "EMEA Product Owner, mid-walkthrough", "avatar": "product-owner"},
           {"type": "text", "value": [
             "Three months of debate collapsed in a fifteen-minute walkthrough.",
             "When consensus is missing and talk won't converge, a prototype isn't a deliverable — it's a decision-making instrument. It swaps “who's right” for “does this work.”"
@@ -102,7 +102,7 @@
         ]},
         {"type": "step", "num": "4.4", "title": "The friction I chose to keep", "blocks": [
           {"type": "text", "value": "My first pass optimized for pure speed — auto-advancing, stripping confirmations. Then a senior Advisor, mid-walkthrough, said:"},
-          {"type": "quote", "value": "The seconds you saved me might let me submit a multi-million-dollar loan without ever seeing the collateral details.", "attribution": "Senior Advisor"},
+          {"type": "quote", "value": "The seconds you saved me might let me submit a multi-million-dollar loan without ever seeing the collateral details.", "attribution": "Senior Advisor", "avatar": "advisor"},
           {"type": "text", "value": "That reframed everything. In finance, some friction is a bug; some friction is a feature."},
           {"type": "contrast", "items": [
             {"label": "Removed — bug friction", "desc": "Re-entering data, not knowing the next step — removed via conditional logic, inline validation, and embedded guidance."},
