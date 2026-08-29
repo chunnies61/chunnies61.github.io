@@ -53,8 +53,6 @@
             "With no dedicated researcher and a lean team, I used the lowest-cost, highest-signal method: live agent shadowing. Sitting beside agents on real cases, I watched them bounce across five or six systems — the legacy Agent Desktop, the internal Admin console, LoanPro, LexisNexis, raw spreadsheets — manually cross-checking the same data, leaning on tribal knowledge with no single source of truth."
           ]},
           {"type": "image", "src": "/images/frame-427319454-27c3bf.png", "label": "The legacy reality — one verification, five systems"},
-          {"type": "quote", "value": "Opening Tab 1 for Admin, Tab 2 for LoanPro, Tab 3 for LexisNexis. I lose context every time I switch screens.", "attribution": "Verification agent, shadowing session", "avatar": "agent"},
-          {"type": "quote", "value": "I have to scroll through 500+ items. I usually 'cherry-pick' the easy ones because I don't want a complex case right before lunch.", "attribution": "Verification agent, shadowing session", "avatar": "agent"},
           {"type": "text", "value": [
             "I mapped the end-to-end journey across five stages — Triage, Review & Verification, Investigation, Decision & Documentation, Outcome — and the emotional low points lined up exactly with the system gaps: overwhelmed at review, distracted mid-investigation, anxious at close-out, unsure whether anything was missed in the scattered data."
           ]},
@@ -103,7 +101,6 @@
             "The Manager's Menu gave agents comprehensive access to customer data — the same consolidation logic as decision one, but for the manager tier. That raised a harder question than \"what's in the workspace\": should every agent see everything in it? Compliance said no. Different agent types carry different decision authority, and access has to match it exactly, not loosely.",
             "So I designed permissions as a first-class layer of the workspace, not a settings-page afterthought. Junior verification agents get the baseline workspace — application data, checklist, notes. Managers layer the Manager's Menu on top: cross-account visibility, override authority, and the tools to unblock a case an agent can't resolve alone. Same interface, same mental model, different ceiling."
           ]},
-          {"type": "callout", "value": "Comprehensive access is only safe when it's scoped — otherwise \"centralized\" just means \"exposed.\""},
           {"type": "surface-showcase", "alternate": false, "items": [
             {"title": "Manager's Menu", "desc": "Comprehensive access to customer data, reducing the need for external tools.", "video": "/videos/managers-menu.mp4"}
           ]},
@@ -118,7 +115,8 @@
       "blocks": [
         {"type": "stats", "items": [
           {"value": "47%", "label": "Reduced application verification time", "desc": "3.2 days → 1.7 days"},
-          {"value": "11.6%", "label": "Increased verification rate", "desc": "80.4% → 92%"}
+          {"value": "11.6%", "label": "Increased verification rate", "desc": "80.4% → 92%"},
+          {"value": "↑", "label": "Agent confidence & satisfaction", "desc": "Reported higher post-launch, against the pre-defined UX metric"}
         ]},
         {"type": "text", "value": [
           "The MVP launch received strong feedback from agents and leadership, with higher agent confidence and satisfaction reported.",
