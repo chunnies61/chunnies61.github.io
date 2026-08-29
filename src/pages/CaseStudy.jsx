@@ -208,7 +208,7 @@ function Block({ block }) {
         <div className={"cs-surface-showcase" + (alternate ? "" : " cs-surface-showcase--wide")}>
           {block.items.map((item, i) => (
             <div
-              className={"cs-surface-row" + ((alternate ? i % 2 === 1 : true) ? " cs-surface-row--reverse" : "")}
+              className={"cs-surface-row" + (alternate && i % 2 === 1 ? " cs-surface-row--reverse" : "")}
               key={item.title}
             >
               <div className="cs-surface-media">
