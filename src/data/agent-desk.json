@@ -45,7 +45,7 @@
     {
       "id": "decisions",
       "kicker": "Design decisions",
-      "title": "Five decisions that broke the tradeoff",
+      "title": "Four decisions that broke the tradeoff",
       "variant": "badge-steps",
       "blocks": [
         {"type": "step", "num": "1", "title": "==Find the real bottleneck (it wasn't a screen)==", "blocks": [
@@ -62,10 +62,6 @@
           {"type": "callout", "label": "The insight", "value": "The 3.2 days weren't lost inside any one screen — they were lost in the gaps between systems. Agents were literally human middleware, shuttling and reconciling data by hand."},
           {"type": "text", "value": [
             "So my first decision wasn't \"make a page prettier.\" It was eliminate the middleware — consolidate scattered tools and data into one unified workspace: centralized application management across loan and credit card products, plus a Manager's Menu giving comprehensive access to customer data so agents stop reaching for external tools."
-          ]},
-          {"type": "surface-showcase", "alternate": false, "items": [
-            {"title": "Centralized Application Management", "desc": "Manage loan and credit card applications in one unified workspace, with proactive alerts for potential data issues.", "video": "/videos/centralized-application-management.mp4"},
-            {"title": "Manager's Menu", "desc": "Comprehensive access to customer data, reducing the need for external tools.", "video": "/videos/managers-menu.mp4"}
           ]}
         ]},
         {"type": "step", "num": "2", "title": "==Reduce load through structure, not subtraction==", "blocks": [
@@ -81,7 +77,7 @@
           ]},
           {"type": "surface-showcase", "alternate": false, "items": [
             {"title": "Verification Checklist", "desc": "All verification steps consolidated and aligned with business rules. Items update in real time and auto-resolve to \"Clear\" when complete.", "video": "/videos/verification-checklist.mp4"},
-            {"title": "Notes & History", "desc": "Always-visible note entry and access to previous records support informed decision-making.", "video": "/videos/notes-and-history.mp4"}
+            {"title": "Notes & History", "desc": "Always-visible note entry and access to previous records support informed decision-making.", "video": "/videos/notes-and-history.mp4", "reverse": true}
           ]},
           {"type": "text", "value": [
             "Same information, zero removed — but the structure now carried the attention, serving both speed and accuracy at once. And because the layout is structural rather than role-specific, the same spatial logic held across agent roles with different access and decision authority — one mental model, many permission levels."
@@ -97,24 +93,21 @@
             "I also added a Preview/Edit mode — a final review of changes before submission. On the surface this adds a step and fights the speed goal. My argument: in irreversible decisions, the rework and errors a preview prevents are worth far more than the two seconds it costs — slowing this one step makes the whole flow faster.",
             "That's designing friction in the right place, inside compliance red lines that forbid one-click batch actions or skipped steps."
           ]},
-          {"type": "image", "label": "Preview/Edit mode — final review of changes before submission"},
+          {"type": "surface-showcase", "alternate": false, "items": [
+            {"title": "Centralized Application Management", "desc": "Manage loan and credit card applications in one unified workspace, with proactive alerts for potential data issues.", "video": "/videos/centralized-application-management.mp4"}
+          ]},
           {"type": "honest-note", "value": "Preview/Edit only works if the agent actually reads it — nothing forces genuine attention, only presence. It lowers the error rate; it doesn't guarantee it to zero."}
         ]},
-        {"type": "step", "num": "4", "title": "==Help without adding noise==", "blocks": [
+        {"type": "step", "num": "4", "title": "==Grant access by role, not by default==", "blocks": [
           {"type": "text", "value": [
-            "The unified workspace surfaces proactive alerts for potential data issues — SSN mismatches, fraud flags, duplicate applications — before agents have to hunt for them. But I designed against an obvious second-order effect: too many alerts become alert fatigue. Agents go numb and ignore them, which is more dangerous than no alerts at all.",
-            "So alerts are tiered: only high-priority anomalies that genuinely affect the verification decision interrupt the agent; lower-priority ones degrade to quiet, passive hints."
+            "The Manager's Menu gave agents comprehensive access to customer data — the same consolidation logic as decision one, but for the manager tier. That raised a harder question than \"what's in the workspace\": should every agent see everything in it? Compliance said no. Different agent types carry different decision authority, and access has to match it exactly, not loosely.",
+            "So I designed permissions as a first-class layer of the workspace, not a settings-page afterthought. Junior verification agents get the baseline workspace — application data, checklist, notes. Managers layer the Manager's Menu on top: cross-account visibility, override authority, and the tools to unblock a case an agent can't resolve alone. Same interface, same mental model, different ceiling."
           ]},
-          {"type": "callout", "value": "Helping is only helping if it doesn't manufacture new noise."},
-          {"type": "image", "label": "Tiered alerts — high-priority interrupts vs. quiet inline hints"},
-          {"type": "honest-note", "value": "The tier boundary is a judgment call, not a formula — set it too loose and noise creeps back in; too strict and a real signal gets silently downgraded."}
-        ]},
-        {"type": "step", "num": "5", "title": "==Define the metrics before designing, then prove it==", "blocks": [
-          {"type": "text", "value": [
-            "The most senior part of the work: I didn't design on gut. Before building, I partnered with the PM to define measurable UX success metrics up front — verification time, verification rate, and agent confidence — because without pre-defined metrics, you can't prove whether a decision was right.",
-            "Then I validated with shadowing plus rapid prototypes. I built competing layout directions — a Classic single-column layout (better readability, but dense and hard to scan) versus a Segmented tabbed layout (clear workflow stages, but hides data and adds clicks) — and tested them directly with agents, iterating on real feedback rather than my assumptions. The final left–right structure took the scannability of one and the workflow clarity of the other."
+          {"type": "callout", "value": "Comprehensive access is only safe when it's scoped — otherwise \"centralized\" just means \"exposed.\""},
+          {"type": "surface-showcase", "alternate": false, "items": [
+            {"title": "Manager's Menu", "desc": "Comprehensive access to customer data, reducing the need for external tools.", "video": "/videos/managers-menu.mp4"}
           ]},
-          {"type": "image", "src": "/images/frame-1430105594-306436.png", "label": "Layout explorations — Classic vs. Segmented, with agent-tested tradeoffs"}
+          {"type": "honest-note", "value": "Role boundaries were set with Compliance, not measured — there's no dataset proving the exact right cutoff between \"agent\" and \"manager\" access, only a defensible one."}
         ]}
       ]
     },
@@ -129,7 +122,7 @@
         ]},
         {"type": "text", "value": [
           "The MVP launch received strong feedback from agents and leadership, with higher agent confidence and satisfaction reported.",
-          "Crucially, the two opposing metrics improved together — with distinct causal drivers: the unified workspace and explicit checklist removed cross-system shuttling (driving speed), while Preview/Edit and tiered alerts reduced misjudgment (driving verification rate)."
+          "Crucially, the two opposing metrics improved together — with distinct causal drivers: the unified workspace and explicit checklist removed cross-system shuttling (driving speed), while Preview/Edit and role-scoped access reduced misjudgment (driving verification rate)."
         ]},
         {"type": "quote", "value": "Agent Desk 3.0 represents a major leap forward in our verification process — transforming how agents work and unlocking better customer experiences through cross-functional collaboration.", "attribution": "Leadership", "avatar": "leadership"}
       ]
