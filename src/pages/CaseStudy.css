@@ -296,17 +296,12 @@ a.cs-index-item:hover {
 
 .cs-surface-row {
   display: flex;
-  align-items: center;
-  gap: 88px;
-}
-
-.cs-surface-row--reverse {
-  flex-direction: row-reverse;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .cs-surface-media {
-  flex: 0 0 70%;
-  max-width: 70%;
+  width: 100%;
 }
 
 .cs-surface-video {
@@ -316,8 +311,7 @@ a.cs-index-item:hover {
 }
 
 .cs-surface-text {
-  flex: 0 0 30%;
-  max-width: 30%;
+  width: 100%;
   min-width: 0;
 }
 
@@ -335,18 +329,8 @@ a.cs-index-item:hover {
   color: var(--text-soft);
 }
 
-@media (max-width: 760px) {
-  .cs-surface-row,
-  .cs-surface-row--reverse {
-    flex-direction: column;
-  }
-  .cs-surface-media {
-    max-width: 100%;
-  }
-}
-
-/* Wide variant — fixed description-left/video-right order, sized for
-   landscape desktop-app recordings rather than portrait phone clips. */
+/* Wide variant — used for landscape desktop-app recordings rather than
+   portrait phone clips; both stack the same as the base variant. */
 .cs-surface-showcase--wide {
   margin-left: 0;
   margin-right: 0;
