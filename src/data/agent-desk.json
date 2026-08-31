@@ -116,7 +116,7 @@
         {"type": "stats", "items": [
           {"value": "47%", "label": "Reduced application verification time", "desc": "3.2 days → 1.7 days"},
           {"value": "11.6%", "label": "Increased verification rate", "desc": "80.4% → 92%"},
-          {"value": "↑", "label": "Agent confidence & satisfaction", "desc": "Reported higher post-launch, against the pre-defined UX metric"}
+          {"value": "+30%", "label": "Agent confidence & satisfaction", "desc": "Reported post-launch, against the pre-defined UX metric"}
         ]},
         {"type": "text", "value": [
           "The MVP launch received strong feedback from agents and leadership, with higher agent confidence and satisfaction reported.",
