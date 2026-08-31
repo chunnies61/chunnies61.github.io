@@ -449,6 +449,13 @@ a.cs-index-item:hover {
   border-radius: var(--radius-card);
   padding: 20px;
 }
+.cs-contrast-emoji {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 22px;
+  line-height: 1;
+}
+
 .cs-contrast-label {
   display: block;
   margin-bottom: 8px;

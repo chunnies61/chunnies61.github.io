@@ -33,8 +33,8 @@
       "title": "Two metrics that fight each other",
       "blocks": [
         {"type": "contrast", "items": [
-          {"label": "Business wanted speed", "desc": "A single application took 3.2 days — a massive bottleneck."},
-          {"label": "Risk wanted rigor", "desc": "Verification rate sat at ~80% — too many valid applications weren't clearing."}
+          {"emoji": "⚡", "label": "Business wanted speed", "desc": "A single application took 3.2 days — a massive bottleneck."},
+          {"emoji": "🔍", "label": "Risk wanted rigor", "desc": "Verification rate sat at ~80% — too many valid applications weren't clearing."}
         ]},
         {"type": "text", "value": [
           "The trap: these metrics are naturally opposed. Push agents to go faster and they get sloppy — verification rate drops. Tell them to slow down and scrutinize — time climbs. Most teams pick one."

@@ -224,6 +224,7 @@ function Block({ block }) {
         <div className="cs-contrast">
           {block.items.map((item) => (
             <div className="cs-contrast-item" key={item.label}>
+              {item.emoji && <span className="cs-contrast-emoji">{item.emoji}</span>}
               <span className="cs-contrast-label">{item.label}</span>
               <p>{item.desc}</p>
             </div>
