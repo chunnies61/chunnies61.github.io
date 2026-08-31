@@ -124,17 +124,6 @@
         ]},
         {"type": "quote", "value": "Agent Desk 3.0 represents a major leap forward in our verification process — transforming how agents work and unlocking better customer experiences through cross-functional collaboration.", "attribution": "Leadership", "avatar": "leadership"}
       ]
-    },
-    {
-      "id": "takeaway",
-      "kicker": "The takeaway",
-      "title": "Put friction in the right place",
-      "blocks": [
-        {"type": "text", "value": [
-          "The work I'm proudest of wasn't making a screen look good — it was finding, inside a pile of conflicting constraints (speed vs. compliance, lower load vs. can't-hide-data, automation vs. can't-blindly-trust), the one structure where everyone wins at once."
-        ]},
-        {"type": "callout", "value": "Frictionless finance was never about deleting friction — it's about putting friction in the right place."}
-      ]
     }
   ],
   "otherProjects": ["Unified Customer Hub", "Lending Solutions Redesign", "Nitro College"]
