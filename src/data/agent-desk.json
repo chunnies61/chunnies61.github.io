@@ -69,7 +69,7 @@
           ]},
           {"type": "cards", "columns": 3, "items": [
             {"emoji": "↔️", "title": "Left–right split", "desc": "Mapped to the agent's mental model: customer data (to read) on the left, actions and CTAs (to do) on the right — making the \"read, then decide\" path legible in space."},
-            {"emoji": "✅", "title": "Verification Checklist & Clear CTAs", "desc": "Tribal rules made explicit — every step consolidated, aligned with business rules, auto-resolving each item to \"Clear\" as it completes. Critical actions stay placed consistently at the end of the workflow, where the decision actually happens."},
+            {"emoji": "✅", "title": "Verification Checklist & Clear CTAs", "desc": "Tribal rules made explicit — steps auto-resolve to \"Clear\" as they complete, and critical actions sit predictably at the end of the workflow."},
             {"emoji": "📝", "title": "Notes & History, always in view", "desc": "Persistent note entry and instant access to previous records, so context never has to be re-fetched from another system."}
           ]},
           {"type": "surface-showcase", "alternate": false, "items": [
