@@ -186,7 +186,7 @@ function Block({ block }) {
     case "honest-note":
       return (
         <div className="cs-honest-note">
-          <span className="cs-honest-note-label">Honest note</span>
+          <span className="cs-honest-note-label">{block.label || "Honest note"}</span>
           <p>{renderHighlighted(block.value)}</p>
         </div>
       );

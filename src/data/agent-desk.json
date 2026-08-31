@@ -57,7 +57,7 @@
             "I mapped the end-to-end journey across five stages — Triage, Review & Verification, Investigation, Decision & Documentation, Outcome — and the emotional low points lined up exactly with the system gaps: overwhelmed at review, distracted mid-investigation, anxious at close-out, unsure whether anything was missed in the scattered data."
           ]},
           {"type": "image", "src": "/images/user-journey-24e5ef.png", "label": "Five-stage journey map — emotion curve, verbatim quotes, and the design response per stage"},
-          {"type": "callout", "label": "The insight", "value": "The 3.2 days weren't lost inside any one screen — they were lost in the gaps between systems. Agents were literally human middleware, shuttling and reconciling data by hand."},
+          {"type": "honest-note", "label": "The insight", "value": "The 3.2 days weren't lost inside any one screen — they were lost in the gaps between systems. Agents were literally human middleware, shuttling and reconciling data by hand."},
           {"type": "text", "value": [
             "So my first decision wasn't \"make a page prettier.\" It was eliminate the middleware — consolidate scattered tools and data into one unified workspace: centralized application management across loan and credit card products, plus a Manager's Menu giving comprehensive access to customer data so agents stop reaching for external tools."
           ]}
