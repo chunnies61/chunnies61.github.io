@@ -68,10 +68,10 @@
             "So the decision became: reduce load through structure, not subtraction."
           ]},
           {"type": "cards", "columns": 2, "items": [
-            {"title": "Left–right split", "desc": "Mapped to the agent's mental model: customer data (to read) on the left, actions and CTAs (to do) on the right — making the \"read, then decide\" path legible in space."},
-            {"title": "Real-time Verification Checklist", "desc": "Previously tribal rules made explicit — every step consolidated, aligned with business rules, auto-resolving each item to \"Clear\" as it completes. Pending items stay surfaced at a glance."},
-            {"title": "Notes & History, always in view", "desc": "Persistent note entry and instant access to previous records, so context never has to be re-fetched from another system."},
-            {"title": "Clear CTAs", "desc": "Critical actions placed consistently and predictably at the end of the workflow — where the decision actually happens."}
+            {"emoji": "↔️", "title": "Left–right split", "desc": "Mapped to the agent's mental model: customer data (to read) on the left, actions and CTAs (to do) on the right — making the \"read, then decide\" path legible in space."},
+            {"emoji": "✅", "title": "Real-time Verification Checklist", "desc": "Previously tribal rules made explicit — every step consolidated, aligned with business rules, auto-resolving each item to \"Clear\" as it completes. Pending items stay surfaced at a glance."},
+            {"emoji": "📝", "title": "Notes & History, always in view", "desc": "Persistent note entry and instant access to previous records, so context never has to be re-fetched from another system."},
+            {"emoji": "🎯", "title": "Clear CTAs", "desc": "Critical actions placed consistently and predictably at the end of the workflow — where the decision actually happens."}
           ]},
           {"type": "surface-showcase", "alternate": false, "items": [
             {"title": "Verification Checklist", "desc": "All verification steps consolidated and aligned with business rules. Items update in real time and auto-resolve to \"Clear\" when complete.", "video": "/videos/verification-checklist.mp4"},

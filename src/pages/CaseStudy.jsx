@@ -174,6 +174,7 @@ function Block({ block }) {
         >
           {block.items.map((item) => (
             <div className="cs-card" key={item.title || item.label}>
+              {item.emoji && <span className="cs-card-emoji">{item.emoji}</span>}
               {item.label && <span className="cs-card-label">{item.label}</span>}
               {item.title && <h4>{item.title}</h4>}
               <p>{item.desc}</p>
