@@ -445,7 +445,6 @@ a.cs-index-item:hover {
 }
 .cs-contrast-item {
   background: rgba(240, 241, 244, 0.5);
-  border: 1px solid var(--card-border);
   border-radius: var(--radius-card);
   padding: 20px;
 }
