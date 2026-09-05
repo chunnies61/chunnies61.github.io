@@ -5,11 +5,10 @@
   "tags": ["Property Management", "B2B2C"],
   "heroImage": "/images/otis-thumb.png",
   "meta": [
-    {"label": "Role", "value": "Lead Product Designer — end-to-end ownership"},
+    {"label": "Role", "value": "Lead Product Designer"},
     {"label": "Team", "value": "2 UI Designers · 10+ Engineers · 1 PM · 1 Project Manager"},
     {"label": "Timeline", "value": "Apr 2025 – Apr 2026"},
-    {"label": "Surfaces", "value": "Dashboard · Traffic control · Health & Energy AI · Onboarding"},
-    {"label": "Recognition", "value": "Red Dot Award: Brands & Communication Design"}
+    {"label": "Recognition", "value": "2026 Red Dot Award: Brands & Communication Design"}
   ],
   "indexedSections": [
     {
@@ -20,13 +19,13 @@
         {"type": "stats", "items": [
           {"value": "−70%", "label": "Task completion time"},
           {"value": "−45%", "label": "Error rate"},
-          {"value": "3×", "label": "Active users", "desc": "300+ → 1,000+"},
+          {"value": "Millions", "label": "Active users", "desc": "10+ → millions of users"},
           {"value": "−50%", "label": "Support tickets & training time"}
         ]},
         {"type": "text", "value": [
-          "Otis's clients manage complex properties across global markets, but the legacy, on-premise infrastructure made it nearly impossible to monitor equipment health in real time. That opacity forced clients into reactive maintenance — waiting for elevators to fail before fixing them — driving up downtime, cost, and customer friction. The working hypothesis: real-time health data and predictive alerts could cut emergency repair calls by 20% and lift customer satisfaction.",
-          "I was brought in as Lead Designer to transform this rigid system into a cloud-native, globally scalable ecosystem. But the mandate arrived as a slogan — \"move our legacy system to the cloud, and make it scale globally.\" It sounded ambitious, yet it contained no user, no scenario, and no definition of success. \"Cloud\" is a technical action, not a user need. If I'd opened Figma and started drawing dashboards, I'd have been designing on behalf of a goal nobody had actually defined.",
-          "So my first move wasn't visual. It was to turn the slogan back into a question that could be answered."
+          "Otis's clients manage complex properties worldwide, but legacy on-premise infrastructure made real-time equipment monitoring nearly impossible. That opacity forced reactive maintenance — waiting for elevators to fail before fixing them — driving up downtime, cost, and friction. The hypothesis: real-time health data and predictive alerts could cut emergency repair calls by 20% and lift satisfaction.",
+          "I was brought in as Lead Designer to move this rigid system to a cloud-native, globally scalable ecosystem. But the mandate arrived as a slogan — \"move our legacy system to the cloud, and make it scale globally\" — with no user, no scenario, and no definition of success. \"Cloud\" is a technical action, not a user need.",
+          "So my first move wasn't visual. It was turning the slogan back into a question that could be answered."
         ]},
         {"type": "cards", "columns": 3, "items": [
           {"label": "Constraint 1", "title": "Bridging the technical gap", "desc": "\"Power user\" tools for technical experts — without overwhelming non-technical stakeholders."},
