@@ -645,6 +645,20 @@ a.cs-index-item:hover {
   font-size: 13px;
   color: var(--text-soft);
 }
+.cs-award-logo {
+  display: block;
+  width: 167px;
+  height: 96px;
+}
+
+/* Opt-in gray section band */
+.cs-section--gray {
+  background: var(--gray-100);
+  border-bottom: none;
+  border-radius: var(--radius-card);
+  padding-left: 28px;
+  padding-right: 28px;
+}
 
 /* Auto-rotating slideshow — cross-fades one image at a time */
 .cs-slideshow {

@@ -320,6 +320,16 @@ function Block({ block }) {
       );
 
     case "award":
+      if (block.logo) {
+        return (
+          <img
+            className="cs-award-logo"
+            src={block.logo}
+            alt={block.title || "Award"}
+            loading="lazy"
+          />
+        );
+      }
       return (
         <div className="cs-award">
           <span className="cs-award-dot" aria-hidden="true" />

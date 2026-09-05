@@ -123,6 +123,7 @@
       "id": "design-system",
       "kicker": "Design system",
       "title": "Scaling \"safe and legible\" beyond my own screens",
+      "variant": "gray",
       "blocks": [
         {"type": "text", "value": "With my two UI designers I extended the design system with the reusable pieces the old platform never had — a full charting library and a plain-spoken empty-state and iconography set — so \"safe and legible\" scaled beyond the screens I touched personally, and every new surface the team shipped inherited the same guardrails."},
         {"type": "slideshow", "images": [
@@ -138,6 +139,7 @@
       "kicker": "The results",
       "title": "From dreaded chore to daily tool",
       "blocks": [
+        {"type": "award", "logo": "/images/red-dot-award-2026.svg", "title": "2026 Red Dot Award — Brands & Communication Design"},
         {"type": "stats", "items": [
           {"value": "−70%", "label": "Task completion time"},
           {"value": "−45%", "label": "Error rate"},
@@ -147,8 +149,7 @@
         {"type": "text", "value": [
           "Cloud EMS 2.0 launched in early September — modernizing elevator management across 10+ core workflows and three user roles, and automating complex edge cases to reduce operational burden.",
           "Beyond the numbers, the real shift was behavioral: building managers began operating the system themselves, no longer defaulting to Otis engineers for routine work. The platform went from a dreaded chore to a high-velocity tool. The success became the mandate for my next strategic initiative: reimagining enterprise security controls."
-        ]},
-        {"type": "award", "title": "2026 Red Dot Award", "subtitle": "Brands & Communication Design"}
+        ]}
       ]
     }
   ],
