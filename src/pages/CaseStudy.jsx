@@ -247,6 +247,34 @@ function Block({ block }) {
         </ol>
       );
 
+    case "phases":
+      return (
+        <div className="cs-phases">
+          {block.steps.map((s) => (
+            <div className="cs-phase" key={s.num}>
+              <span className="cs-phase-num">{s.num}</span>
+              <h4 className="cs-phase-title">{s.title}</h4>
+              <ul className="cs-phase-points">
+                {s.points.map((p, i) => (
+                  <li key={i}>{p}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      );
+
+    case "award":
+      return (
+        <div className="cs-award">
+          <span className="cs-award-dot" aria-hidden="true" />
+          <div className="cs-award-text">
+            <strong>{block.title}</strong>
+            {block.subtitle && <span>{block.subtitle}</span>}
+          </div>
+        </div>
+      );
+
     case "contrast":
       return (
         <div className={"cs-contrast" + (block.variant ? " cs-contrast--" + block.variant : "")}>

@@ -96,18 +96,19 @@
       "title": "From insight to a shippable system",
       "blocks": [
         {"type": "text", "value": "With the problem correctly framed, execution followed a phased, de-risked path: discovery and quick wins first — low-risk UX improvements to build stakeholder confidence — then validation and workflow cleanup, then beta and a longer-term AI vision."},
-        {"type": "image", "src": "/images/otis-process.png", "label": "Four phases — Discovery & Research, Testing & Validation, Beta Test & Launch, Future Vision"},
-        {"type": "cards", "columns": 2, "items": [
-          {"emoji": "🤖", "title": "Dashboard & AI Copilot", "desc": "Real-time service visibility, with the \"Ask Otis\" copilot surfacing insights and guiding next steps while keeping users in control."},
-          {"emoji": "🚦", "title": "Traffic Control & Monitoring", "desc": "Modular tools for security teams and engineers to manage calls, secure floors, and schedule elevator operations in real time."},
-          {"emoji": "🔋", "title": "Health & Energy", "desc": "AI-powered insights that surface early risks, predict maintenance needs, and cut energy consumption."},
-          {"emoji": "🧭", "title": "New User Guide", "desc": "Guided onboarding with contextual tutorials that shorten training time and build confidence faster."}
+        {"type": "phases", "steps": [
+          {"num": "1", "title": "Discovery & Research", "points": ["Identify UX quick wins", "Prioritize low-risk improvements"]},
+          {"num": "2", "title": "Testing & Validation", "points": ["User testing and workflow cleanup", "Introduce \"Ask Otis\" AI Copilot"]},
+          {"num": "3", "title": "Beta Test & Launch", "points": ["Pilot rollout", "Feedback-driven iteration"]},
+          {"num": "4", "title": "Future Vision", "points": ["AI insights and energy prediction", "Cost optimization across touchpoints"]}
         ]},
         {"type": "image", "src": "/images/otis-dashboard.png", "label": "Cloud EMS dashboard — plain-language labels, safe defaults, Ask Otis one click away"},
-        {"type": "video", "label": "\"Ask Otis\" AI Copilot — guided insights in context"},
-        {"type": "text", "value": "With my two UI designers I extended the design system with the reusable pieces the old platform never had — a full charting library and a plain-spoken empty-state and iconography set — so \"safe and legible\" scaled beyond the screens I touched personally."},
-        {"type": "image", "src": "/images/otis-charts.png", "label": "Design system — charting library built for the new analytics surfaces"},
-        {"type": "image", "src": "/images/otis-empty-states.png", "label": "Design system — empty states in plain language"},
+        {"type": "surface-showcase", "alternate": false, "items": [
+          {"title": "Dashboard & AI Copilot", "desc": "A centralized dashboard providing real-time service visibility, paired with the \"Ask Otis\" AI Copilot to surface insights and guide next steps while keeping users in control.", "video": "/videos/otis-dashboard-copilot.mp4"},
+          {"title": "Traffic Control & Monitoring", "desc": "Modular tools that let security teams and engineers manage calls, secure floors, and schedule elevator operations in real time.", "video": "/videos/otis-traffic-control.mp4"},
+          {"title": "Health & Energy", "desc": "AI-powered insights monitor elevator health and energy usage to surface early risks, predict maintenance needs, and optimize energy consumption.", "video": "/videos/otis-health-energy.mp4"},
+          {"title": "New User Guide", "desc": "A guided onboarding experience with contextual tutorials that shorten training time and build user confidence faster.", "video": "/videos/otis-user-guide.mp4"}
+        ]},
         {"type": "text", "value": "Then I proved the reframe: confirmation-and-default patterns tested against the consequence-anxiety hypothesis with real users, inside active sprint cycles — decisions grounded in measured performance, not assumptions."},
         {"type": "image", "src": "/images/otis-user-testing.png", "label": "Remote usability sessions on the Cloud EMS prototype"},
         {"type": "image", "src": "/images/otis-screenshot.png", "label": "Before/after results board — completion time, completion rate, and errors per task, with pain-point notes"},
@@ -116,6 +117,16 @@
           {"value": "67% → 92%", "label": "Completion rate", "desc": "Task: securing floors"},
           {"value": "3m 25s → 63s", "label": "Completion time", "desc": "Task: set schedule"}
         ]}
+      ]
+    },
+    {
+      "id": "design-system",
+      "kicker": "Design system",
+      "title": "Scaling \"safe and legible\" beyond my own screens",
+      "blocks": [
+        {"type": "text", "value": "With my two UI designers I extended the design system with the reusable pieces the old platform never had — a full charting library and a plain-spoken empty-state and iconography set — so \"safe and legible\" scaled beyond the screens I touched personally, and every new surface the team shipped inherited the same guardrails."},
+        {"type": "image", "src": "/images/otis-charts.png", "label": "Design system — charting library built for the new analytics surfaces"},
+        {"type": "image", "src": "/images/otis-empty-states.png", "label": "Design system — empty states in plain language"}
       ]
     },
     {
@@ -131,19 +142,9 @@
         ]},
         {"type": "text", "value": [
           "Cloud EMS 2.0 launched in early September — modernizing elevator management across 10+ core workflows and three user roles, and automating complex edge cases to reduce operational burden.",
-          "Beyond the numbers, the real shift was behavioral: building managers began operating the system themselves, no longer defaulting to Otis engineers for routine work. The platform went from a dreaded chore to a high-velocity tool — and earned a Red Dot Award. The success became the mandate for my next strategic initiative: reimagining enterprise security controls."
-        ]}
-      ]
-    },
-    {
-      "id": "takeaway",
-      "kicker": "The takeaway",
-      "title": "The real requirement isn't in the doc",
-      "blocks": [
-        {"type": "text", "value": [
-          "The most valuable lesson: the real requirement is rarely in the requirements doc — it lives in the behavior users won't say out loud, or don't even notice themselves."
+          "Beyond the numbers, the real shift was behavioral: building managers began operating the system themselves, no longer defaulting to Otis engineers for routine work. The platform went from a dreaded chore to a high-velocity tool. The success became the mandate for my next strategic initiative: reimagining enterprise security controls."
         ]},
-        {"type": "callout", "value": "My job is to dig the real requirement out of the ambiguity, translate it into something a whole team can build against, and align everyone to it."}
+        {"type": "award", "title": "2026 Red Dot Award", "subtitle": "Brands & Communication Design"}
       ]
     }
   ],
