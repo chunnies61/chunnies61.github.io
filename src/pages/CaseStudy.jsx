@@ -158,6 +158,61 @@ function ImagePlaceholder({ label }) {
   );
 }
 
+const SLIDESHOW_INTERVAL_MS = 3000;
+
+function Slideshow({ images, interval = SLIDESHOW_INTERVAL_MS }) {
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (images.length <= 1 || paused) return;
+    const reduce =
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return;
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % images.length);
+    }, interval);
+    return () => clearInterval(id);
+  }, [images.length, interval, paused]);
+
+  return (
+    <div
+      className="cs-slideshow"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <div className="cs-slideshow-frame">
+        {images.map((src, i) => (
+          <img
+            key={src}
+            className={"cs-slideshow-img" + (i === index ? " is-active" : "")}
+            src={src}
+            alt=""
+            loading="eager"
+            aria-hidden={i !== index}
+          />
+        ))}
+      </div>
+      {images.length > 1 && (
+        <div className="cs-slideshow-dots" role="tablist">
+          {images.map((src, i) => (
+            <button
+              key={src}
+              type="button"
+              className={"cs-slideshow-dot" + (i === index ? " is-active" : "")}
+              aria-label={`Show slide ${i + 1}`}
+              aria-selected={i === index}
+              onClick={() => setIndex(i)}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function Block({ block }) {
   switch (block.type) {
     case "text":
@@ -274,6 +329,9 @@ function Block({ block }) {
           </div>
         </div>
       );
+
+    case "slideshow":
+      return <Slideshow images={block.images} interval={block.interval} />;
 
     case "contrast":
       return (

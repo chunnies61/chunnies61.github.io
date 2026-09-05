@@ -125,8 +125,12 @@
       "title": "Scaling \"safe and legible\" beyond my own screens",
       "blocks": [
         {"type": "text", "value": "With my two UI designers I extended the design system with the reusable pieces the old platform never had — a full charting library and a plain-spoken empty-state and iconography set — so \"safe and legible\" scaled beyond the screens I touched personally, and every new surface the team shipped inherited the same guardrails."},
-        {"type": "image", "src": "/images/otis-charts.png", "label": "Design system — charting library built for the new analytics surfaces"},
-        {"type": "image", "src": "/images/otis-empty-states.png", "label": "Design system — empty states in plain language"}
+        {"type": "slideshow", "images": [
+          "/images/otis-ds-charts-1.png",
+          "/images/otis-ds-charts-2.png",
+          "/images/otis-ds-empty-states.png",
+          "/images/otis-ds-elevator-animation.gif"
+        ]}
       ]
     },
     {

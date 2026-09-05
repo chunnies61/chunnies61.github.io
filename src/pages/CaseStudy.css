@@ -645,6 +645,56 @@ a.cs-index-item:hover {
   color: var(--text-soft);
 }
 
+/* Auto-rotating slideshow — cross-fades one image at a time */
+.cs-slideshow {
+  margin-top: 40px;
+}
+.cs-slideshow-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 12 / 7;
+  border-radius: var(--radius-media);
+  overflow: hidden;
+  background: var(--placeholder-bg);
+}
+.cs-slideshow-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.cs-slideshow-img.is-active {
+  opacity: 1;
+}
+.cs-slideshow-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+.cs-slideshow-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: var(--card-border);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.cs-slideshow-dot.is-active {
+  background: var(--accent);
+  transform: scale(1.2);
+}
+@media (prefers-reduced-motion: reduce) {
+  .cs-slideshow-img {
+    transition: none;
+  }
+}
+
 /* Outcome tile extensions */
 .cs-outcome-label-strong {
   font-weight: 600;
