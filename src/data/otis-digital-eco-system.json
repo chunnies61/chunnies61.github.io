@@ -70,7 +70,7 @@
           ]},
           {"type": "quote", "value": "I'm afraid I'll shut down every elevator in the building.", "attribution": "Building manager, on-site contextual inquiry", "avatar": "building-manager"},
           {"type": "text", "value": "That was the moment. We were designing for efficiency — but users were stuck in fear. I named it consequence anxiety: the dread of an irreversible, catastrophic mistake. That anxiety made them offload even the simplest tasks to engineers — which meant our backend usage data was a false positive. The real pain point was invisible in the data; it only surfaced on-site."},
-          {"type": "callout", "label": "The trap", "variant": "light-blue", "value": "Usage data looked healthy because engineers were doing the work managers feared to touch. The metric wasn't measuring adoption — it was measuring avoidance."}
+          {"type": "callout", "label": "The trap", "value": "Usage data looked healthy because engineers were doing the work managers feared to touch. The metric wasn't measuring adoption — it was measuring avoidance."}
         ]},
         {"type": "step", "num": "4", "title": "Translate emotion into shippable requirements", "blocks": [
           {"type": "text", "value": [
@@ -108,12 +108,6 @@
           {"title": "Traffic Control & Monitoring", "desc": "Modular tools that let security teams and engineers manage calls, secure floors, and schedule elevator operations in real time.", "video": "/videos/otis-traffic-control.mp4"},
           {"title": "Health & Energy", "desc": "AI-powered insights monitor elevator health and energy usage to surface early risks, predict maintenance needs, and optimize energy consumption.", "video": "/videos/otis-health-energy.mp4"},
           {"title": "New User Guide", "desc": "A guided onboarding experience with contextual tutorials that shorten training time and build user confidence faster.", "video": "/videos/otis-user-guide.mp4"}
-        ]},
-        {"type": "text", "value": "Then I proved the reframe: confirmation-and-default patterns tested against the consequence-anxiety hypothesis with real users, inside active sprint cycles — decisions grounded in measured performance, not assumptions."},
-        {"type": "stats", "items": [
-          {"value": "6.4 → 1.2", "label": "Avg errors", "desc": "Task: discover the security feature"},
-          {"value": "67% → 92%", "label": "Completion rate", "desc": "Task: securing floors"},
-          {"value": "3m 25s → 63s", "label": "Completion time", "desc": "Task: set schedule"}
         ]}
       ]
     },
