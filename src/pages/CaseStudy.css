@@ -431,12 +431,13 @@ a.cs-index-item:hover {
   color: var(--text);
 }
 
-/* Inverted principle panel — purple 700 card with light text */
+/* Inverted principle panel — primary accent card (matches the root-problem
+   node) with light text */
 .cs-callout-invert {
-  background: #7e22ce;
+  background: var(--accent);
 }
 .cs-callout-invert .cs-callout-label {
-  color: #e9d5ff;
+  color: rgba(255, 255, 255, 0.85);
 }
 .cs-callout-invert p {
   color: #fff;
