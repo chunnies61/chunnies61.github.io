@@ -28,9 +28,9 @@
           "So my first move wasn't visual. It was turning the slogan back into a question that could be answered."
         ]},
         {"type": "cards", "columns": 3, "items": [
-          {"label": "Constraint 1", "title": "Bridging the technical gap", "desc": "\"Power user\" tools for technical experts — without overwhelming non-technical stakeholders."},
-          {"label": "Constraint 2", "title": "High-stakes compliance", "desc": "User-centricity inside rigid safety and data regulations."},
-          {"label": "Constraint 3", "title": "Global diversity", "desc": "A \"universal\" system that still respects local market nuances."}
+          {"emoji": "🌉", "label": "Constraint 1", "title": "Bridging the technical gap", "desc": "\"Power user\" tools for technical experts — without overwhelming non-technical stakeholders."},
+          {"emoji": "🛡️", "label": "Constraint 2", "title": "High-stakes compliance", "desc": "User-centricity inside rigid safety and data regulations."},
+          {"emoji": "🌍", "label": "Constraint 3", "title": "Global diversity", "desc": "A \"universal\" system that still respects local market nuances."}
         ]}
       ]
     },
@@ -43,12 +43,18 @@
           {"type": "text", "value": [
             "When I aligned with the business and PM, the \"requirement\" was crisp and specific: \"We need a real-time monitoring dashboard.\" Classic solution-as-requirement. So instead of taking the order, I traced it back with a few whys: Why real-time monitoring? Because clients can't see equipment health. Why is that a problem? Because if they can't see it, they can only fix elevators after they break — reactive maintenance: expensive, disruptive, and a constant source of complaints."
           ]},
-          {"type": "contrast", "items": [
-            {"label": "What they asked for", "desc": "\"Build us a real-time monitoring dashboard.\""},
-            {"label": "The actual problem", "desc": "Clients are trapped in a reactive firefighting model — and can't move to proactive prevention."}
+          {"type": "contrast", "variant": "accent", "items": [
+            {"emoji": "🗣️", "label": "What they asked for", "desc": "\"Build us a real-time monitoring dashboard.\""},
+            {"emoji": "🎯", "label": "The actual problem", "desc": "Clients are trapped in a reactive firefighting model — and can't move to proactive prevention."}
           ]},
           {"type": "text", "value": "That single reframe — from \"build a dashboard\" to \"move clients from reactive firefighting to proactive prevention\" — set the direction for everything that followed."},
-          {"type": "image", "label": "5-whys trace — from \"we need a dashboard\" down to \"trapped in reactive firefighting\""}
+          {"type": "whys", "steps": [
+            {"label": "The ask", "text": "\"We need a real-time monitoring dashboard.\""},
+            {"label": "Why?", "text": "Clients can't see equipment health in real time."},
+            {"label": "Why does that matter?", "text": "They only find out about failures after an elevator has already broken."},
+            {"label": "Why is that bad?", "text": "Every fix becomes reactive — expensive, disruptive, and a constant source of complaints."},
+            {"label": "The root problem", "text": "Clients are trapped in reactive firefighting, unable to move to proactive prevention.", "root": true}
+          ]}
         ]},
         {"type": "step", "num": "2", "title": "Go to the field — every need I had was second-hand", "blocks": [
           {"type": "text", "value": [
@@ -64,23 +70,23 @@
           ]},
           {"type": "quote", "value": "I'm afraid I'll shut down every elevator in the building.", "attribution": "Building manager, on-site contextual inquiry", "avatar": "building-manager"},
           {"type": "text", "value": "That was the moment. We were designing for efficiency — but users were stuck in fear. I named it consequence anxiety: the dread of an irreversible, catastrophic mistake. That anxiety made them offload even the simplest tasks to engineers — which meant our backend usage data was a false positive. The real pain point was invisible in the data; it only surfaced on-site."},
-          {"type": "callout", "label": "The trap", "value": "Usage data looked healthy because engineers were doing the work managers feared to touch. The metric wasn't measuring adoption — it was measuring avoidance."}
+          {"type": "callout", "label": "The trap", "variant": "light-blue", "value": "Usage data looked healthy because engineers were doing the work managers feared to touch. The metric wasn't measuring adoption — it was measuring avoidance."}
         ]},
         {"type": "step", "num": "4", "title": "Translate emotion into shippable requirements", "blocks": [
           {"type": "text", "value": [
             "The hard part: fear doesn't fit in a PRD, and engineers can't sprint-plan an emotion. So my final discovery move was to translate the feeling into concrete, testable design requirements. I codified \"users operate in fear\" into a design principle — psychological safety before efficiency — and broke it into three things engineering could actually build and validate:"
           ]},
           {"type": "cards", "columns": 3, "items": [
-            {"title": "Strong confirmation", "desc": "High-consequence, irreversible actions require explicit, informed confirmation."},
-            {"title": "Safe defaults", "desc": "The risky path is the deliberate one — never the accidental one."},
-            {"title": "Plain-language labels", "desc": "Jargon like \"car call\" replaced with words a non-expert understands — field testing showed unlabeled car vs. hall call types caused pure guesswork."}
+            {"emoji": "⚠️", "title": "Strong confirmation", "desc": "High-consequence, irreversible actions require explicit, informed confirmation."},
+            {"emoji": "🛟", "title": "Safe defaults", "desc": "The risky path is the deliberate one — never the accidental one."},
+            {"emoji": "🏷️", "title": "Plain-language labels", "desc": "Jargon like \"car call\" replaced with words a non-expert understands — field testing showed unlabeled car vs. hall call types caused pure guesswork."}
           ]},
           {"type": "text", "value": "To hold the team to one axis, I defined two lean personas around the core tension — Action vs. Oversight:"},
           {"type": "cards", "columns": 2, "items": [
-            {"label": "Action", "title": "Field Engineer", "desc": "Highly technical, occasional user diagnosing issues on-site. Needs real-time status, high-density actionable data, and predictable workflows with minimal friction."},
-            {"label": "Oversight", "title": "Building Manager", "desc": "Non-technical daily user managing operations and tenant communication. Needs guided workflows, plain-language labels, and confirmation before committing changes."}
+            {"image": "/images/otis-persona-field-engineer.png", "label": "Action", "title": "Field Engineer", "desc": "Highly technical, occasional user diagnosing issues on-site. Needs real-time status, high-density actionable data, and predictable workflows with minimal friction."},
+            {"image": "/images/otis-persona-building-manager.png", "label": "Oversight", "title": "Building Manager", "desc": "Non-technical daily user managing operations and tenant communication. Needs guided workflows, plain-language labels, and confirmation before committing changes."}
           ]},
-          {"type": "callout", "value": "For the first time, the business goals — cloud, adoption, cost reduction — and the user goal — don't let me make a catastrophic mistake — were aligned into a single definition of success."}
+          {"type": "callout", "invert": true, "value": "For the first time, the business goals — cloud, adoption, cost reduction — and the user goal — don't let me make a catastrophic mistake — were aligned into a single definition of success."}
         ]}
       ]
     },
@@ -92,10 +98,10 @@
         {"type": "text", "value": "With the problem correctly framed, execution followed a phased, de-risked path: discovery and quick wins first — low-risk UX improvements to build stakeholder confidence — then validation and workflow cleanup, then beta and a longer-term AI vision."},
         {"type": "image", "src": "/images/otis-process.png", "label": "Four phases — Discovery & Research, Testing & Validation, Beta Test & Launch, Future Vision"},
         {"type": "cards", "columns": 2, "items": [
-          {"title": "Dashboard & AI Copilot", "desc": "Real-time service visibility, with the \"Ask Otis\" copilot surfacing insights and guiding next steps while keeping users in control."},
-          {"title": "Traffic Control & Monitoring", "desc": "Modular tools for security teams and engineers to manage calls, secure floors, and schedule elevator operations in real time."},
-          {"title": "Health & Energy", "desc": "AI-powered insights that surface early risks, predict maintenance needs, and cut energy consumption."},
-          {"title": "New User Guide", "desc": "Guided onboarding with contextual tutorials that shorten training time and build confidence faster."}
+          {"emoji": "🤖", "title": "Dashboard & AI Copilot", "desc": "Real-time service visibility, with the \"Ask Otis\" copilot surfacing insights and guiding next steps while keeping users in control."},
+          {"emoji": "🚦", "title": "Traffic Control & Monitoring", "desc": "Modular tools for security teams and engineers to manage calls, secure floors, and schedule elevator operations in real time."},
+          {"emoji": "🔋", "title": "Health & Energy", "desc": "AI-powered insights that surface early risks, predict maintenance needs, and cut energy consumption."},
+          {"emoji": "🧭", "title": "New User Guide", "desc": "Guided onboarding with contextual tutorials that shorten training time and build confidence faster."}
         ]},
         {"type": "image", "src": "/images/otis-dashboard.png", "label": "Cloud EMS dashboard — plain-language labels, safe defaults, Ask Otis one click away"},
         {"type": "video", "label": "\"Ask Otis\" AI Copilot — guided insights in context"},

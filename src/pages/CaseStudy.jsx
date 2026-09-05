@@ -174,6 +174,14 @@ function Block({ block }) {
         >
           {block.items.map((item) => (
             <div className="cs-card" key={item.title || item.label}>
+              {item.image && (
+                <img
+                  className="cs-card-avatar"
+                  src={item.image}
+                  alt={item.title || item.label || ""}
+                  loading="lazy"
+                />
+              )}
               {item.emoji && <span className="cs-card-emoji">{item.emoji}</span>}
               {item.label && <span className="cs-card-label">{item.label}</span>}
               {item.title && <h4>{item.title}</h4>}
@@ -203,13 +211,21 @@ function Block({ block }) {
         </div>
       );
 
-    case "callout":
+    case "callout": {
+      const invert = block.label || block.invert;
       return (
-        <div className={"cs-callout" + (block.label ? " cs-callout-invert" : "")}>
+        <div
+          className={
+            "cs-callout" +
+            (invert ? " cs-callout-invert" : "") +
+            (block.variant ? " cs-callout--" + block.variant : "")
+          }
+        >
           {block.label && <span className="cs-callout-label">{block.label}</span>}
           <p>{renderHighlighted(block.value)}</p>
         </div>
       );
+    }
 
     case "quote":
       return (
@@ -219,9 +235,21 @@ function Block({ block }) {
         </blockquote>
       );
 
+    case "whys":
+      return (
+        <ol className="cs-whys">
+          {block.steps.map((s, i) => (
+            <li className={"cs-why" + (s.root ? " cs-why--root" : "")} key={i}>
+              <span className="cs-why-label">{s.label}</span>
+              <p className="cs-why-text">{s.text}</p>
+            </li>
+          ))}
+        </ol>
+      );
+
     case "contrast":
       return (
-        <div className="cs-contrast">
+        <div className={"cs-contrast" + (block.variant ? " cs-contrast--" + block.variant : "")}>
           {block.items.map((item) => (
             <div className="cs-contrast-item" key={item.label}>
               {item.emoji && <span className="cs-contrast-emoji">{item.emoji}</span>}

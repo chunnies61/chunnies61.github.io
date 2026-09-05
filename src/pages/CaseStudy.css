@@ -271,6 +271,16 @@ a.cs-index-item:hover {
   line-height: 1;
 }
 
+/* Persona avatar — round portrait at the top of a card */
+.cs-card-avatar {
+  display: block;
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  object-fit: cover;
+  margin-bottom: 14px;
+}
+
 .cs-card-label {
   display: block;
   margin-bottom: 8px;
@@ -421,15 +431,20 @@ a.cs-index-item:hover {
   color: var(--text);
 }
 
-/* Inverted principle panel (labeled callout) */
+/* Inverted principle panel — purple 700 card with light text */
 .cs-callout-invert {
-  background: var(--text);
+  background: #7e22ce;
 }
 .cs-callout-invert .cs-callout-label {
-  color: var(--accent);
+  color: #e9d5ff;
 }
 .cs-callout-invert p {
   color: #fff;
+}
+
+/* Optional light-blue body text on an invert callout */
+.cs-callout--light-blue.cs-callout-invert p {
+  color: #bfdbfe;
 }
 
 /* Agent Desk — dark callout captions use the marker yellow; body stays white */
@@ -463,9 +478,68 @@ a.cs-index-item:hover {
   font-weight: 600;
   color: var(--text);
 }
+/* Accent variant — primary-blue labels */
+.cs-contrast--accent .cs-contrast-label {
+  color: var(--accent);
+}
 .cs-contrast-item p {
   font-size: 14px;
   color: var(--text-soft);
+}
+
+/* 5-whys trace — vertical chain from ask down to root problem */
+.cs-whys {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  max-width: 620px;
+}
+.cs-why {
+  position: relative;
+  background: rgba(240, 241, 244, 0.5);
+  border-radius: var(--radius-card);
+  padding: 16px 20px;
+}
+.cs-why + .cs-why {
+  margin-top: 38px;
+}
+.cs-why + .cs-why::before {
+  content: "↓";
+  position: absolute;
+  top: -31px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent);
+}
+.cs-why-label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+.cs-why-text {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--text);
+}
+.cs-why--root {
+  background: var(--accent);
+}
+.cs-why--root .cs-why-label {
+  color: rgba(255, 255, 255, 0.85);
+}
+.cs-why--root .cs-why-text {
+  color: #fff;
 }
 
 /* Outcome tile extensions */
