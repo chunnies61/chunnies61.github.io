@@ -61,7 +61,7 @@
             "Before committing, I hit the brakes on one realization: every \"user need\" I had was second-hand. The information reaching HQ in New York had been relayed through sales, support, and engineering — several layers of distortion. The users described in a conference room and the ones standing in an actual machine room could easily be two different people. I couldn't even follow their vocabulary — car call, hall call, group dispatch.",
             "With no dedicated researcher and a lean team (me + 2 UI designers), a months-long study was off the table. So I chose the lowest-cost path to the highest-fidelity truth: on-site contextual inquiry at several high-traffic properties in NYC — standing behind users, watching them operate the system for real."
           ]},
-          {"type": "image", "src": "/images/otis-img2411.png", "label": "Field visit — the front-desk workstation at One Columbus Circle, where the legacy system actually lives"}
+          {"type": "image", "src": "/images/otis-img2411.png", "variant": "w80", "label": "Field visit — the front-desk workstation at One Columbus Circle, where the legacy system actually lives"}
         ]},
         {"type": "step", "num": "3", "title": "The insight: efficiency vs. fear", "blocks": [
           {"type": "text", "value": [
