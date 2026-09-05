@@ -194,6 +194,26 @@ function Slideshow({ images, interval = SLIDESHOW_INTERVAL_MS }) {
             aria-hidden={i !== index}
           />
         ))}
+        {images.length > 1 && (
+          <>
+            <button
+              type="button"
+              className="cs-slideshow-nav cs-slideshow-nav--prev"
+              aria-label="Previous slide"
+              onClick={() => setIndex((i) => (i - 1 + images.length) % images.length)}
+            >
+              ‹
+            </button>
+            <button
+              type="button"
+              className="cs-slideshow-nav cs-slideshow-nav--next"
+              aria-label="Next slide"
+              onClick={() => setIndex((i) => (i + 1) % images.length)}
+            >
+              ›
+            </button>
+          </>
+        )}
       </div>
       {images.length > 1 && (
         <div className="cs-slideshow-dots" role="tablist">
@@ -327,16 +347,16 @@ function Block({ block }) {
               className="cs-award-logo"
               src={block.logo}
               alt={block.title || "Award"}
-              loading="lazy"
             />
           ) : (
-            <>
-              <span className="cs-award-dot" aria-hidden="true" />
-              <div className="cs-award-text">
-                <strong>{block.title}</strong>
-                {block.subtitle && <span>{block.subtitle}</span>}
-              </div>
-            </>
+            <span className="cs-award-dot" aria-hidden="true" />
+          )}
+          {(block.title || block.subtitle || block.desc) && (
+            <div className="cs-award-text">
+              {block.title && <strong>{block.title}</strong>}
+              {block.subtitle && <span>{block.subtitle}</span>}
+              {block.desc && <p>{block.desc}</p>}
+            </div>
           )}
         </div>
       );

@@ -102,7 +102,6 @@
           {"num": "3", "title": "Beta Test & Launch", "points": ["Pilot rollout", "Feedback-driven iteration"]},
           {"num": "4", "title": "Future Vision", "points": ["AI insights and energy prediction", "Cost optimization across touchpoints"]}
         ]},
-        {"type": "image", "src": "/images/otis-dashboard.png", "label": "Cloud EMS dashboard — plain-language labels, safe defaults, Ask Otis one click away"},
         {"type": "surface-showcase", "layout": "split", "alternate": false, "items": [
           {"title": "Dashboard & AI Copilot", "desc": "A centralized dashboard providing real-time service visibility, paired with the \"Ask Otis\" AI Copilot to surface insights and guide next steps while keeping users in control.", "video": "/videos/otis-dashboard-copilot.mp4"},
           {"title": "Traffic Control & Monitoring", "desc": "Modular tools that let security teams and engineers manage calls, secure floors, and schedule elevator operations in real time.", "video": "/videos/otis-traffic-control.mp4"},
@@ -141,7 +140,7 @@
           "Cloud EMS 2.0 launched in early September — modernizing elevator management across 10+ core workflows and three user roles, and automating complex edge cases to reduce operational burden.",
           "Beyond the numbers, the real shift was behavioral: building managers began operating the system themselves, no longer defaulting to Otis engineers for routine work. The platform went from a dreaded chore to a high-velocity tool. The success became the mandate for my next strategic initiative: reimagining enterprise security controls."
         ]},
-        {"type": "award", "logo": "/images/red-dot-award-2026.svg", "title": "2026 Red Dot Award — Brands & Communication Design"}
+        {"type": "award", "logo": "/images/red-dot-winner-2026.png", "title": "2026 Red Dot Award — Brands & Communication Design", "desc": "Cloud EMS 2.0 was named a winner in the 2026 Red Dot Award: Brands & Communication Design — one of the world's most respected recognitions for design quality."}
       ]
     }
   ],
