@@ -103,15 +103,13 @@
           {"num": "4", "title": "Future Vision", "points": ["AI insights and energy prediction", "Cost optimization across touchpoints"]}
         ]},
         {"type": "image", "src": "/images/otis-dashboard.png", "label": "Cloud EMS dashboard — plain-language labels, safe defaults, Ask Otis one click away"},
-        {"type": "surface-showcase", "alternate": false, "items": [
+        {"type": "surface-showcase", "layout": "split", "alternate": false, "items": [
           {"title": "Dashboard & AI Copilot", "desc": "A centralized dashboard providing real-time service visibility, paired with the \"Ask Otis\" AI Copilot to surface insights and guide next steps while keeping users in control.", "video": "/videos/otis-dashboard-copilot.mp4"},
           {"title": "Traffic Control & Monitoring", "desc": "Modular tools that let security teams and engineers manage calls, secure floors, and schedule elevator operations in real time.", "video": "/videos/otis-traffic-control.mp4"},
           {"title": "Health & Energy", "desc": "AI-powered insights monitor elevator health and energy usage to surface early risks, predict maintenance needs, and optimize energy consumption.", "video": "/videos/otis-health-energy.mp4"},
           {"title": "New User Guide", "desc": "A guided onboarding experience with contextual tutorials that shorten training time and build user confidence faster.", "video": "/videos/otis-user-guide.mp4"}
         ]},
         {"type": "text", "value": "Then I proved the reframe: confirmation-and-default patterns tested against the consequence-anxiety hypothesis with real users, inside active sprint cycles — decisions grounded in measured performance, not assumptions."},
-        {"type": "image", "src": "/images/otis-user-testing.png", "label": "Remote usability sessions on the Cloud EMS prototype"},
-        {"type": "image", "src": "/images/otis-screenshot.png", "label": "Before/after results board — completion time, completion rate, and errors per task, with pain-point notes"},
         {"type": "stats", "items": [
           {"value": "6.4 → 1.2", "label": "Avg errors", "desc": "Task: discover the security feature"},
           {"value": "67% → 92%", "label": "Completion rate", "desc": "Task: securing floors"},
@@ -123,7 +121,7 @@
       "id": "design-system",
       "kicker": "Design system",
       "title": "Scaling \"safe and legible\" beyond my own screens",
-      "variant": "gray",
+      "variant": "fullbleed",
       "blocks": [
         {"type": "text", "value": "With my two UI designers I extended the design system with the reusable pieces the old platform never had — a full charting library and a plain-spoken empty-state and iconography set — so \"safe and legible\" scaled beyond the screens I touched personally, and every new surface the team shipped inherited the same guardrails."},
         {"type": "slideshow", "images": [
@@ -139,7 +137,6 @@
       "kicker": "The results",
       "title": "From dreaded chore to daily tool",
       "blocks": [
-        {"type": "award", "logo": "/images/red-dot-award-2026.svg", "title": "2026 Red Dot Award — Brands & Communication Design"},
         {"type": "stats", "items": [
           {"value": "−70%", "label": "Task completion time"},
           {"value": "−45%", "label": "Error rate"},
@@ -149,7 +146,8 @@
         {"type": "text", "value": [
           "Cloud EMS 2.0 launched in early September — modernizing elevator management across 10+ core workflows and three user roles, and automating complex edge cases to reduce operational burden.",
           "Beyond the numbers, the real shift was behavioral: building managers began operating the system themselves, no longer defaulting to Otis engineers for routine work. The platform went from a dreaded chore to a high-velocity tool. The success became the mandate for my next strategic initiative: reimagining enterprise security controls."
-        ]}
+        ]},
+        {"type": "award", "logo": "/images/red-dot-award-2026.svg", "title": "2026 Red Dot Award — Brands & Communication Design"}
       ]
     }
   ],

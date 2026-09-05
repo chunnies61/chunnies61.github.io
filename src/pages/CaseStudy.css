@@ -317,6 +317,35 @@ a.cs-index-item:hover {
   gap: 20px;
 }
 
+/* Split variant — description on the left, video on the right (old-case-study layout) */
+.cs-surface-showcase--split {
+  gap: 40px;
+  margin-left: 0;
+  margin-right: 0;
+}
+.cs-surface-showcase--split .cs-surface-row {
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 48px;
+}
+.cs-surface-showcase--split .cs-surface-media {
+  flex: 0 0 58%;
+  max-width: 58%;
+}
+.cs-surface-showcase--split .cs-surface-text {
+  flex: 1;
+}
+@media (max-width: 760px) {
+  .cs-surface-showcase--split .cs-surface-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .cs-surface-showcase--split .cs-surface-media {
+    flex: none;
+    max-width: 100%;
+  }
+}
+
 .cs-surface-media {
   width: 100%;
 }
@@ -543,25 +572,33 @@ a.cs-index-item:hover {
   color: #fff;
 }
 
-/* Phase timeline — numbered nodes on a gradient rail */
+/* Phase timeline — numbered nodes joined by gradient connectors */
 .cs-phases {
-  position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 28px;
 }
-.cs-phases::before {
+.cs-phase {
+  position: relative;
+}
+/* connector from this node's centre to the next node's centre */
+.cs-phase:not(:last-child)::before {
   content: "";
   position: absolute;
   top: 15px;
-  left: calc(12.5% - 4px);
-  right: calc(12.5% - 4px);
+  left: 16px;
+  width: calc(100% + 28px);
   height: 3px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent-dark), #b23e79);
 }
-.cs-phase {
-  position: relative;
+.cs-phase:nth-child(1)::before {
+  background: linear-gradient(90deg, #2a4fbf, #5749a8);
+}
+.cs-phase:nth-child(2)::before {
+  background: linear-gradient(90deg, #5749a8, #854490);
+}
+.cs-phase:nth-child(3)::before {
+  background: linear-gradient(90deg, #854490, #b23e79);
 }
 .cs-phase-num {
   position: relative;
@@ -572,12 +609,20 @@ a.cs-index-item:hover {
   width: 32px;
   height: 32px;
   border-radius: 999px;
-  background: var(--accent-dark);
   color: #fff;
   font-family: var(--font-ui);
   font-size: 14px;
   font-weight: 700;
   margin-bottom: 16px;
+}
+.cs-phase:nth-child(1) .cs-phase-num {
+  background: #2a4fbf;
+}
+.cs-phase:nth-child(2) .cs-phase-num {
+  background: #5749a8;
+}
+.cs-phase:nth-child(3) .cs-phase-num {
+  background: #854490;
 }
 .cs-phase:nth-child(4) .cs-phase-num {
   background: #b23e79;
@@ -604,7 +649,7 @@ a.cs-index-item:hover {
   .cs-phases {
     grid-template-columns: 1fr 1fr;
   }
-  .cs-phases::before {
+  .cs-phase:not(:last-child)::before {
     display: none;
   }
 }
@@ -651,13 +696,13 @@ a.cs-index-item:hover {
   height: 96px;
 }
 
-/* Opt-in gray section band */
-.cs-section--gray {
-  background: var(--gray-100);
+/* Full-bleed tinted section band — background bleeds edge-to-edge while the
+   content stays aligned with the page. Uses the outcome-tile fill. */
+.cs-section--fullbleed {
+  background: rgba(240, 241, 244, 0.5);
+  box-shadow: 0 0 0 100vmax rgba(240, 241, 244, 0.5);
+  clip-path: inset(0 -100vmax);
   border-bottom: none;
-  border-radius: var(--radius-card);
-  padding-left: 28px;
-  padding-right: 28px;
 }
 
 /* Auto-rotating slideshow — cross-fades one image at a time */

@@ -320,23 +320,24 @@ function Block({ block }) {
       );
 
     case "award":
-      if (block.logo) {
-        return (
-          <img
-            className="cs-award-logo"
-            src={block.logo}
-            alt={block.title || "Award"}
-            loading="lazy"
-          />
-        );
-      }
       return (
         <div className="cs-award">
-          <span className="cs-award-dot" aria-hidden="true" />
-          <div className="cs-award-text">
-            <strong>{block.title}</strong>
-            {block.subtitle && <span>{block.subtitle}</span>}
-          </div>
+          {block.logo ? (
+            <img
+              className="cs-award-logo"
+              src={block.logo}
+              alt={block.title || "Award"}
+              loading="lazy"
+            />
+          ) : (
+            <>
+              <span className="cs-award-dot" aria-hidden="true" />
+              <div className="cs-award-text">
+                <strong>{block.title}</strong>
+                {block.subtitle && <span>{block.subtitle}</span>}
+              </div>
+            </>
+          )}
         </div>
       );
 
@@ -372,7 +373,13 @@ function Block({ block }) {
     case "surface-showcase": {
       const alternate = block.alternate !== false;
       return (
-        <div className={"cs-surface-showcase" + (alternate ? "" : " cs-surface-showcase--wide")}>
+        <div
+          className={
+            "cs-surface-showcase" +
+            (alternate ? "" : " cs-surface-showcase--wide") +
+            (block.layout === "split" ? " cs-surface-showcase--split" : "")
+          }
+        >
           {block.items.map((item, i) => (
             <div
               className={
