@@ -322,8 +322,8 @@ a.cs-index-item:hover {
 }
 
 /* Split variant — description on the left, video on the right (old-case-study layout) */
-.cs-surface-showcase--split {
-  gap: 40px;
+.cs-surface-showcase.cs-surface-showcase--split {
+  gap: 60px;
   margin-top: 40px;
   margin-left: 0;
   margin-right: 0;
