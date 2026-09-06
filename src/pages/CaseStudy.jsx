@@ -397,7 +397,8 @@ function Block({ block }) {
           className={
             "cs-surface-showcase" +
             (alternate ? "" : " cs-surface-showcase--wide") +
-            (block.layout === "split" ? " cs-surface-showcase--split" : "")
+            (block.layout?.startsWith("split") ? " cs-surface-showcase--split" : "") +
+            (block.layout === "split-portrait" ? " cs-surface-showcase--portrait" : "")
           }
         >
           {block.items.map((item, i) => (

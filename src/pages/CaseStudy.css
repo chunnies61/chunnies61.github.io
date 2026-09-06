@@ -344,10 +344,19 @@ a.cs-index-item:hover {
 .cs-surface-showcase--split .cs-surface-text {
   flex: 1;
 }
+/* Portrait variant — narrow media column for phone-shaped recordings */
+.cs-surface-showcase--portrait .cs-surface-media {
+  flex: 0 0 26%;
+  max-width: 26%;
+}
 @media (max-width: 760px) {
   .cs-surface-showcase--split .cs-surface-row {
     flex-direction: column;
     gap: 20px;
+  }
+  .cs-surface-showcase--portrait .cs-surface-media {
+    flex: none;
+    max-width: 60%;
   }
   .cs-surface-showcase--split .cs-surface-media {
     flex: none;
