@@ -444,7 +444,17 @@ function Block({ block }) {
       );
 
     case "video":
-      return <VideoPlaceholder label={block.label} />;
+      if (!block.src) return <VideoPlaceholder label={block.label} />;
+      return (
+        <video
+          className={"cs-video" + (block.variant ? " cs-video--" + block.variant : "")}
+          src={block.src}
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+      );
 
     case "step":
       return (
