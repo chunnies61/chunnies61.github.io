@@ -96,11 +96,6 @@
           "We validated the delivered experience on usertesting.com: 20-minute recorded sessions across up to 15 real tasks — 10 parents and guardians on desktop, 10 returning undergraduates on mobile — measured with SUS, NPS, CSAT, and mission-alignment surveys, plus hour-long moderated demo reviews with three Sallie Mae financial-aid advisors."
         ]},
         {"type": "image", "src": "/images/participants-method-measurement-098727.png", "label": "Participants, method & measurement"},
-        {"type": "stats", "items": [
-          {"value": "74.6", "label": "SUS", "desc": "Above the 68 goal"},
-          {"value": "78", "label": "CSAT", "desc": "Against a goal of 80"},
-          {"value": "28", "label": "NPS", "desc": "Flagged as the area to improve"}
-        ]},
         {"type": "image", "src": "/images/findings-recommendations-195c90.png", "label": "Findings — usability and satisfaction scorecards"},
         {"type": "text", "value": [
           "Most participants found the product intuitive and aligned with the mission, and the advisors endorsed it. NPS was the honest signal — it shaped the post-MVP plan: an app tour, shared parent/student account access, and scholarship status tracking, all of which the design-system foundation could absorb without a rebuild.",
