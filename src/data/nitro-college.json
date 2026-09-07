@@ -52,10 +52,6 @@
           {"type": "text", "value": [
             "The platform serves two primary users — parents and students — with different goals, financial literacy, and priorities. Rather than build two interfaces (unmaintainable for one designer), I made one system adapt."
           ]},
-          {"type": "cards", "columns": 2, "items": [
-            {"emoji": "🖥️", "title": "Adaptive Dashboard", "desc": "Content adjusts to the selected college — so the layout had to hold data-rich, data-sparse, and data-missing states, not one tidy sample."},
-            {"emoji": "🏆", "title": "Scholarships as a state system", "desc": "Liked / Applied / Won — one predictable language that reads the same to a parent or a student."}
-          ]},
           {"type": "personas", "items": [
             {"name": "Alex", "role": "The student", "meta": ["17 years old", "NYC, New York", "12th-grade senior in high school"],
              "goals": [
