@@ -15,11 +15,6 @@
       "kicker": "The setup",
       "title": "A box of puzzle pieces, not a picture",
       "blocks": [
-        {"type": "stats", "items": [
-          {"value": "74.6", "label": "System Usability Score", "desc": "Above the 68 goal"},
-          {"value": "78", "label": "CSAT", "desc": "Across a 15-task study"},
-          {"value": "✓", "label": "Advisor endorsement", "desc": "Sallie Mae financial-aid advisors"}
-        ]},
         {"type": "text", "value": [
           "College costs and student-loan debt keep climbing, and planning for them has become overwhelming for families. Sallie Mae's Nitro College set out to guide families through it with clear action steps and timely reminders. I joined as the solo designer, owning execution end-to-end.",
           "What I inherited wasn't a product — it was a box of puzzle pieces. Each screen looked fine alone, but Dashboard to Profile to Scholarships didn't add up to a journey. And underneath there was no foundation: no design system, no button or input states, and none of the error and empty states real users hit every day.",
