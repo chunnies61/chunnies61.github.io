@@ -68,8 +68,7 @@
             "The result was deliberately scoped but experientially complete — not feature-full and half-finished. And because the foundation was a design system, post-MVP additions — shared parent/student account access, scholarship status tracking — could grow on top of it instead of forcing a rebuild."
           ]},
           {"type": "image", "src": "/images/feature-canvas-d39df0.png", "label": "Feature-canvas workshop — Dashboard & Bridge, Outlook, Help, Shared Accounts, Recommendation Engine, Authentication"},
-          {"type": "image", "src": "/images/impact-over-effort-mapping-61f2d3.png", "label": "Impact vs. Effort — where the MVP line was drawn"},
-          {"type": "image", "src": "/images/mvp-phased-launch-54a609.png", "label": "Phased launch — internal pilot → feedback & fixes → 10–20k-user beta → full 1.0"}
+          {"type": "image", "src": "/images/impact-over-effort-mapping-61f2d3.png", "label": "Impact vs. Effort — where the MVP line was drawn"}
         ]}
       ]
     },
