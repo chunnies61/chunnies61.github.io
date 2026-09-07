@@ -34,8 +34,8 @@
             "I consolidated scattered brand assets into one style guide, defined base components with all their states, and abstracted reusable patterns: College Bridge, Nitro Outlook Tooltip, Offers.",
             "The hard part was calibrating abstraction — too abstract and a pattern is unusable, too shallow and it fits one page. My rule: serve at least three real scenarios, or I'd abstracted at the wrong level. After that, every new page became assembly — faster, and consistent by construction."
           ]},
-          {"type": "callout", "label": "The math I sold the team", "value": "Two extra weeks up front doubled delivery speed and consistency on every page after. Solo, there is no other sustainable way."},
-          {"type": "image", "src": "/images/style-guide-ac6b80.png", "label": "The style guide — colors, typography, full UI palette, and buttons in every state"}
+          {"type": "image", "src": "/images/style-guide-ac6b80.png", "label": "The style guide — colors, typography, full UI palette, and buttons in every state"},
+          {"type": "callout", "label": "The math I sold the team", "value": "Two extra weeks up front doubled delivery speed and consistency on every page after. Solo, there is no other sustainable way."}
         ]},
         {"type": "step", "num": "2", "title": "Treat the least glamorous work as the quality bar", "blocks": [
           {"type": "text", "value": "Then I did what many skip: completing every edge case. The original designs drew only the \"happy path.\" Real users live in the unhappy ones — no data yet, a failed load, zero scholarship matches — and the old screens dropped straight into blank pages."},
