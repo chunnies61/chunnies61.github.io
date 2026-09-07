@@ -18,9 +18,9 @@
         {"type": "text", "value": "College costs and student-loan debt keep climbing, and planning for them has become overwhelming for families. Sallie Mae's Nitro College set out to guide families through it with clear action steps and timely reminders. I joined as the solo designer, owning execution end-to-end."},
         {"type": "image", "src": "/images/nitro-marketing-site.png", "label": "Nitro College by Sallie Mae — the brand families arrived through, before a planning platform existed behind it"},
         {"type": "text", "value": "What I inherited wasn't a product — it was a box of puzzle pieces. Each screen looked fine alone, but Dashboard to Profile to Scholarships didn't add up to a journey. And underneath there was no foundation: no design system, no button or input states, and none of the error and empty states real users hit every day."},
+        {"type": "image", "src": "/images/user-flow-890268.gif", "label": "The end-to-end journey the scattered screens had to add up to"},
         {"type": "text", "value": "As the only designer, I knew polishing screens one by one would only produce nicer puzzle pieces."},
-        {"type": "callout", "label": "The delivery goal", "value": "Not to ship pages — to ship one end-to-end journey on a foundation that could keep scaling."},
-        {"type": "image", "src": "/images/user-flow-890268.gif", "label": "The end-to-end journey the scattered screens had to add up to"}
+        {"type": "callout", "label": "The delivery goal", "value": "Not to ship pages — to ship one end-to-end journey on a foundation that could keep scaling."}
       ]
     },
     {
