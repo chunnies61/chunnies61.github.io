@@ -57,7 +57,7 @@
             {"title": "Scholarships as a state system", "desc": "Liked / Applied / Won — one predictable language that reads the same to a parent or a student."}
           ]},
           {"type": "image", "src": "/images/frame-10124517-d23e70.png", "label": "Two primary users — Alex, 17, high-school senior · Jean, 48, single mom of two"},
-          {"type": "callout", "value": "Commonality lives in the shared system; difference is handled by dynamic content — consistency and personalization solved at different layers."}
+          {"type": "callout", "label": "Where the split lives", "value": "Commonality lives in the shared system; difference is handled by dynamic content — consistency and personalization solved at different layers."}
         ]},
         {"type": "step", "num": "4", "title": "Ship \"complete,\" not \"everything\"", "blocks": [
           {"type": "text", "value": [
@@ -112,7 +112,7 @@
         {"type": "text", "value": [
           "Delivery quality isn't set by the brightest screen — it's set by the consistency of the system, the completeness of the edge cases, and the discipline of scope."
         ]},
-        {"type": "callout", "value": "A high bar of execution and frictionless finance live precisely in the details others skip — and those details are where I'm most exacting."}
+        {"type": "callout", "label": "What I take with me", "value": "A high bar of execution and frictionless finance live precisely in the details others skip — and those details are where I'm most exacting."}
       ]
     }
   ],

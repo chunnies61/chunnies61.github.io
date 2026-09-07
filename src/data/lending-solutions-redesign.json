@@ -26,7 +26,7 @@
           {"title": "Lending Workspace", "desc": "The unified hub bringing every Private Bank lending tool under one roof."}
         ]},
         {"type": "image", "src": "/images/lending-workspace-overview.png", "label": "Lending Workspace — deal journey, prospects, portfolio health, and insights in one place"},
-        {"type": "callout", "value": "The tools existed. The experience didn't."}
+        {"type": "callout", "label": "The gap", "value": "The tools existed. The experience didn't."}
       ]
     },
     {
@@ -124,7 +124,7 @@
         {"type": "text", "value": [
           "After launch, my first priority was to prove the redesign actually helped. I hit a wall immediately: the old version had launched with no success definition — no instrumentation, no baseline to compare against. And the hard data I needed — NIGO rate, completion time — was scattered across compliance, ops, and regional systems I couldn't directly access."
         ]},
-        {"type": "callout", "value": "I had a product I believed was better — and no evidence to prove it. Step one of validation wasn't analysis; it was building the entire practice of validation from scratch."},
+        {"type": "callout", "label": "The honest starting point", "value": "I had a product I believed was better — and no evidence to prove it. Step one of validation wasn't analysis; it was building the entire practice of validation from scratch."},
         {"type": "step", "num": "5.1", "title": "Never mistake a passed review for validation", "blocks": [
           {"type": "text", "value": [
             "Reviews are attended by POs and leadership — not the Advisors filling tickets every day. Approved ≠ usable. The real problems hide in the edge cases a review room never sees.",
@@ -158,10 +158,10 @@
             {"label": "Lagging vs. leading", "title": "Proxy metrics first", "desc": "NIGO only shows up after real submissions clear review — so Advisor call-ins and first-pass submission rate read the trend early."},
             {"label": "Comparable data", "title": "One definition, four regions", "desc": "Each market defined a \"successful submission\" differently — I standardized the definition before comparing anything."}
           ]},
-          {"type": "callout", "value": "The resulting −30% holds up under questioning — it isn't a flattering coincidence."}
+          {"type": "callout", "label": "Why the number holds", "value": "The resulting −30% holds up under questioning — it isn't a flattering coincidence."}
         ]},
         {"type": "step", "num": "5.4", "title": "A retro that points to what's next", "blocks": [
-          {"type": "callout", "value": "The value of a retro isn't proving “I was right” — it's answering “what's next.”"},
+          {"type": "callout", "label": "What a retro is for", "value": "The value of a retro isn't proving “I was right” — it's answering “what's next.”"},
           {"type": "text", "value": [
             "Many reviews stop at \"metrics hit, project shipped.\" I turned the validation findings into roadmap input: which edge cases earn a place in the next iteration, negotiated with engineering and regional POs.",
             "And bigger — the testing exposed a clearer opportunity: the real friction isn't only in the Advisor's screens. It lives in the manual back-and-forth between Advisors and Credit Middle Officers, and in where AI could further streamline guidance. One retro became the starting point for the next body of work."
@@ -183,7 +183,7 @@
         ]},
         {"type": "image", "src": "/images/lending-before-after.png", "label": "Before / after — the v1 flat form vs. Loan Request 3.0"},
         {"type": "text", "value": "These numbers were believed because they sat on a validation chain I built myself — with cause cleanly separated from effect."},
-        {"type": "callout", "value": "The win wasn't trading prudence for speed — it was replacing wasted friction with necessary friction."}
+        {"type": "callout", "label": "The real win", "value": "The win wasn't trading prudence for speed — it was replacing wasted friction with necessary friction."}
       ]
     },
     {

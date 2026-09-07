@@ -86,7 +86,7 @@
             {"image": "/images/otis-persona-field-engineer.png", "label": "Action", "title": "Field Engineer", "desc": "Highly technical, occasional user diagnosing issues on-site. Needs real-time status, high-density actionable data, and predictable workflows with minimal friction."},
             {"image": "/images/otis-persona-building-manager.png", "label": "Oversight", "title": "Building Manager", "desc": "Non-technical daily user managing operations and tenant communication. Needs guided workflows, plain-language labels, and confirmation before committing changes."}
           ]},
-          {"type": "callout", "invert": true, "value": "For the first time, the business goals — cloud, adoption, cost reduction — and the user goal — don't let me make a catastrophic mistake — were aligned into a single definition of success."}
+          {"type": "callout", "label": "The alignment", "value": "For the first time, the business goals — cloud, adoption, cost reduction — and the user goal — don't let me make a catastrophic mistake — were aligned into a single definition of success."}
         ]}
       ]
     },

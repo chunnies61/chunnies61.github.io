@@ -29,7 +29,7 @@
           "With a 20-year legacy, every product decision had been made by engineers. Design was a newborn function. On day one I faced not a design problem but a trust deficit: no authority, no inherited collaboration process, and no language to prove design was useful.",
           "I knew that opening Figma and restyling buttons would only brand me \"the person who makes things pretty.\""
         ]},
-        {"type": "callout", "value": "Before pushing any design, I had to earn the right to be heard."},
+        {"type": "callout", "label": "The real first problem", "value": "Before pushing any design, I had to earn the right to be heard."},
         {"type": "image", "src": "/images/safari-light-262759.png", "label": "ClinicMind's platform — a 20-year, all-in-one healthcare SaaS"}
       ]
     },
@@ -53,7 +53,7 @@
             "Next I pushed a harder sell: stop piling on features — build a design system first.",
             "Deeply counter-intuitive at the time: the team wanted output, and I was asking to invest in a foundation with no short-term deliverable — in a clinical, regulated domain where I had to learn the vocabulary as I went. My argument wasn't \"it'll look better.\" It was ROI math: with one or two designers against 7+ engineers, negotiating every page from scratch means we never catch up; with an Atomic Design component library and clear documentation, every feature becomes assembly, and engineering has something concrete to build against."
           ]},
-          {"type": "callout", "value": "Slow down once, so everyone moves faster afterward. Framed as ROI — not taste — the product owner bought in."},
+          {"type": "callout", "label": "The argument that landed", "value": "Slow down once, so everyone moves faster afterward. Framed as ROI — not taste — the product owner bought in."},
           {"type": "image", "src": "/images/atomic-design-graphic-ee5e60.svg", "label": "Atomic Design — the methodology behind the Vericle Design System"},
           {"type": "text", "value": "The system itself: color foundations, typography, effects and radii, spacing, and the component library — each specified on real EHR surfaces rather than in the abstract, so engineering had something concrete to build against."},
           {"type": "slideshow", "images": [
@@ -86,7 +86,7 @@
             "My definition of \"driving design\" was never \"the mock got approved\" — it was \"the design shipped exactly as intended.\"",
             "Previously, engineers implemented from their own interpretation, and the result drifted far from the design. Now, with the design system as a shared language and 30+ demos plus Figma specs as precise handoff, engineering could finally match my intent down to the interactions."
           ]},
-          {"type": "callout", "value": "Communication stopped being a one-off handoff and became a continuously closing loop."}
+          {"type": "callout", "label": "What actually changed", "value": "Communication stopped being a one-off handoff and became a continuously closing loop."}
         ]}
       ]
     },
@@ -114,7 +114,7 @@
         {"type": "text", "value": [
           "In a place with no design culture, a designer's biggest output isn't mockups — it's getting the whole team to start thinking in terms of design. Not through authority, but by letting everyone see the same truth."
         ]},
-        {"type": "callout", "value": "Advocating for design quality across teams starts before you have any formal power — and building that influence from the ground up is where I'm at my best."}
+        {"type": "callout", "label": "What I take with me", "value": "Advocating for design quality across teams starts before you have any formal power — and building that influence from the ground up is where I'm at my best."}
       ]
     }
   ],
