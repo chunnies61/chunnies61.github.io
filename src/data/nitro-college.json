@@ -75,15 +75,15 @@
       "kicker": "The deliverables",
       "title": "What the assembled system delivered",
       "blocks": [
+        {"type": "text", "value": "Set against the screens I inherited, the difference is structural rather than cosmetic: layouts rebuilt to the hierarchy we agreed with the client, edge cases filled in, and every page assembled from the same components."},
+        {"type": "image", "src": "/images/before-after-1-0801a3.svg", "variant": "square", "label": "Before / after — layout restructured on the new system"},
+        {"type": "image", "src": "/images/before-after-2-d689a1.svg", "variant": "square", "label": "Before / after — edge cases and hierarchy completed"},
         {"type": "surface-showcase", "layout": "split-portrait", "alternate": false, "items": [
           {"title": "Dashboard", "desc": "A clear overview of progress toward college financial readiness, with content that adjusts to the selected college or university.", "video": "/videos/nitro-dashboard.mp4"},
           {"title": "Profile", "desc": "Centralizes the personal and academic information Nitro uses to surface scholarship and funding recommendations.", "video": "/videos/nitro-profile.mp4"},
           {"title": "Scholarships", "desc": "Personalized scholarship recommendations, with progress tracked through Liked, Applied, and Won states.", "video": "/videos/nitro-scholarships.mp4"},
           {"title": "College Savings & Extra Contributions", "desc": "A complete funding picture — college savings including 529 accounts, plus contributions beyond Nitro's estimates.", "video": "/videos/nitro-college-savings.mp4"}
-        ]},
-        {"type": "text", "value": "Set against the screens I inherited, the difference is structural rather than cosmetic: layouts rebuilt to the hierarchy we agreed with the client, edge cases filled in, and every page assembled from the same components."},
-        {"type": "image", "src": "/images/before-after-1-0801a3.svg", "variant": "square", "label": "Before / after — layout restructured on the new system"},
-        {"type": "image", "src": "/images/before-after-2-d689a1.svg", "variant": "square", "label": "Before / after — edge cases and hierarchy completed"}
+        ]}
       ]
     },
     {
