@@ -47,7 +47,7 @@
             {"label": "Fate 2", "title": "No data", "desc": "An empty state with guidance: what this is, and what to do next."},
             {"label": "Fate 3", "title": "Bad data", "desc": "An error state that speaks plain language instead of dead-ending."}
           ]},
-          {"type": "callout", "value": "A product's reliability lives in its most awkward screen, not its prettiest. For an anxious parent using a financial product, those boundary moments are where trust is won or lost."},
+          {"type": "text", "value": "A product's reliability lives in its most awkward screen, not its prettiest. For an anxious parent using a financial product, those boundary moments are where trust is won or lost."},
           {"type": "image", "src": "/images/frame-427319519-0babba.png", "label": "The gap audit — empty states and missing screens flagged across College Savings and Extra Contributions"},
           {"type": "image", "src": "/images/before-after-1-0801a3.svg", "label": "Before / after — layout restructured on the new system"},
           {"type": "image", "src": "/images/before-after-2-d689a1.svg", "label": "Before / after — edge cases and hierarchy completed"}
