@@ -78,6 +78,7 @@
         {"type": "text", "value": "Set against the screens I inherited, the difference is structural rather than cosmetic: layouts rebuilt to the hierarchy we agreed with the client, edge cases filled in, and every page assembled from the same components."},
         {"type": "image", "src": "/images/before-after-1-0801a3.svg", "variant": "square", "label": "Before / after — layout restructured on the new system"},
         {"type": "image", "src": "/images/before-after-2-d689a1.svg", "variant": "square", "label": "Before / after — edge cases and hierarchy completed"},
+        {"type": "text", "value": "What shipped was one connected journey across four surfaces, not four destinations. Each was assembled from the system rather than drawn from scratch, and each carries the full set of data states behind the happy path."},
         {"type": "surface-showcase", "layout": "split-portrait", "alternate": false, "items": [
           {"title": "Dashboard", "desc": "A clear overview of progress toward college financial readiness, with content that adjusts to the selected college or university.", "video": "/videos/nitro-dashboard.mp4"},
           {"title": "Profile", "desc": "Centralizes the personal and academic information Nitro uses to surface scholarship and funding recommendations.", "video": "/videos/nitro-profile.mp4"},
