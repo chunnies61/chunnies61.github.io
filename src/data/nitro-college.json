@@ -53,10 +53,33 @@
             "The platform serves two primary users — parents and students — with different goals, financial literacy, and priorities. Rather than build two interfaces (unmaintainable for one designer), I made one system adapt."
           ]},
           {"type": "cards", "columns": 2, "items": [
-            {"emoji": "🎛️", "title": "Adaptive Dashboard", "desc": "Content adjusts to the selected college — so the layout had to hold data-rich, data-sparse, and data-missing states, not one tidy sample."},
+            {"emoji": "🖥️", "title": "Adaptive Dashboard", "desc": "Content adjusts to the selected college — so the layout had to hold data-rich, data-sparse, and data-missing states, not one tidy sample."},
             {"emoji": "🏆", "title": "Scholarships as a state system", "desc": "Liked / Applied / Won — one predictable language that reads the same to a parent or a student."}
           ]},
-          {"type": "image", "src": "/images/frame-10124517-d23e70.png", "label": "Two primary users — Alex, 17, high-school senior · Jean, 48, single mom of two"},
+          {"type": "personas", "items": [
+            {"name": "Alex", "role": "The student", "meta": ["17 years old", "NYC, New York", "12th-grade senior in high school"],
+             "goals": [
+               "Secure financial aid through scholarships and loans while minimizing debt.",
+               "Effectively plan and manage college expenses with parental support.",
+               "Balance academic responsibilities with financial planning for a smooth transition to college."
+             ],
+             "pains": [
+               "Overwhelmed by the complexity of financial aid, scholarships, and loan options, with limited credible resources.",
+               "Lacks clear guidance on balancing financial planning with academics.",
+               "Worried about missing critical application deadlines for lack of organization."
+             ]},
+            {"name": "Jean", "role": "The parent", "meta": ["48 years old, single mom of 2 HS students", "Brownsville, Texas", "Senior manager at an insurance firm"],
+             "goals": [
+               "Find the best financial aid options to cover college costs while maintaining financial stability.",
+               "Support her children's education planning while allowing them independence in decision-making.",
+               "Stay organized and informed throughout the process to avoid last-minute stress."
+             ],
+             "pains": [
+               "Overwhelmed by the complexity of financial aid processes and the lack of clear, trustworthy information.",
+               "Struggles to balance work, parenting, and staying actively involved in college financial planning.",
+               "Concerned about making informed decisions and ensuring financial stability while covering education costs."
+             ]}
+          ]},
           {"type": "callout", "label": "Where the split lives", "value": "Commonality lives in the shared system; difference is handled by dynamic content — consistency and personalization solved at different layers."}
         ]},
         {"type": "step", "num": "4", "title": "Ship \"complete,\" not \"everything\"", "blocks": [

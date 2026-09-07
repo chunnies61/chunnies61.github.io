@@ -461,6 +461,124 @@ a.cs-index-item:hover {
   -webkit-box-decoration-break: clone;
 }
 
+/* Persona pair — coded persona cards (avatar monogram, meta, goals, pains) */
+.cs-personas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.cs-persona {
+  background: rgba(240, 241, 244, 0.5);
+  border-radius: var(--radius-card);
+  padding: 24px;
+}
+
+.cs-persona-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cs-persona-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: var(--accent-dark);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.cs-persona-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.cs-persona-role {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-dark);
+}
+
+.cs-persona-meta {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--card-border);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  list-style: none;
+}
+
+.cs-persona-meta li {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-soft);
+}
+
+.cs-persona-lists {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cs-persona-lists h5 {
+  margin-bottom: 8px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gray-800);
+}
+
+.cs-persona-lists ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style: none;
+}
+
+.cs-persona-lists li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+.cs-persona-lists li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+@media (max-width: 760px) {
+  .cs-personas {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Callout / design principle — one accent panel for every callout, labelled
    or not (.cs-callout-invert is kept as an alias for existing markup) */
 .cs-callout {
