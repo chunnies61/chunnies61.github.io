@@ -273,38 +273,22 @@ function Block({ block }) {
             <article className="cs-persona" key={p.name}>
               <header className="cs-persona-head">
                 <span className="cs-persona-avatar" aria-hidden="true">
-                  {p.name.charAt(0)}
+                  {p.emoji}
                 </span>
                 <div>
                   <h4 className="cs-persona-name">{p.name}</h4>
                   {p.role && <span className="cs-persona-role">{p.role}</span>}
                 </div>
               </header>
-              {p.meta && (
-                <ul className="cs-persona-meta">
-                  {p.meta.map((m) => (
-                    <li key={m}>{m}</li>
-                  ))}
-                </ul>
-              )}
-              <div className="cs-persona-lists">
-                <section>
-                  <h5>Goals</h5>
-                  <ul>
-                    {p.goals.map((g) => (
-                      <li key={g}>{g}</li>
-                    ))}
-                  </ul>
-                </section>
-                <section>
-                  <h5>Pain points</h5>
-                  <ul>
-                    {p.pains.map((x) => (
-                      <li key={x}>{x}</li>
-                    ))}
-                  </ul>
-                </section>
-              </div>
+              {p.facts && <p className="cs-persona-facts">{p.facts}</p>}
+              <dl className="cs-persona-fields">
+                {p.fields.map((f) => (
+                  <div className="cs-persona-field" key={f.label}>
+                    <dt>{f.label}</dt>
+                    <dd>{f.value}</dd>
+                  </div>
+                ))}
+              </dl>
             </article>
           ))}
         </div>

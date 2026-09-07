@@ -53,28 +53,16 @@
             "The platform serves two primary users — parents and students — with different goals, financial literacy, and priorities. Rather than build two interfaces (unmaintainable for one designer), I made one system adapt."
           ]},
           {"type": "personas", "items": [
-            {"name": "Alex", "role": "The student", "meta": ["17 years old", "NYC, New York", "12th-grade senior in high school"],
-             "goals": [
-               "Secure financial aid through scholarships and loans while minimizing debt.",
-               "Effectively plan and manage college expenses with parental support.",
-               "Balance academic responsibilities with financial planning for a smooth transition to college."
-             ],
-             "pains": [
-               "Overwhelmed by the complexity of financial aid, scholarships, and loan options, with limited credible resources.",
-               "Lacks clear guidance on balancing financial planning with academics.",
-               "Worried about missing critical application deadlines for lack of organization."
-             ]},
-            {"name": "Jean", "role": "The parent", "meta": ["48 years old, single mom of 2 HS students", "Brownsville, Texas", "Senior manager at an insurance firm"],
-             "goals": [
-               "Find the best financial aid options to cover college costs while maintaining financial stability.",
-               "Support her children's education planning while allowing them independence in decision-making.",
-               "Stay organized and informed throughout the process to avoid last-minute stress."
-             ],
-             "pains": [
-               "Overwhelmed by the complexity of financial aid processes and the lack of clear, trustworthy information.",
-               "Struggles to balance work, parenting, and staying actively involved in college financial planning.",
-               "Concerned about making informed decisions and ensuring financial stability while covering education costs."
-             ]}
+            {"emoji": "🎓", "name": "Alex", "role": "The student", "facts": "17 · NYC, New York · 12th-grade senior", "fields": [
+              {"label": "Behaviors", "value": "Researches aid on his phone between classes, and juggles applications and deadlines alongside coursework."},
+              {"label": "Needs & pain points", "value": "Wants scholarships and loans that minimize debt — but the options are scattered across sources he can't verify, and deadlines slip for lack of one place to track them."},
+              {"label": "What the design does", "value": "Liked / Applied / Won status tracking, plain-language labels, and empty states that say what to do next instead of dead-ending."}
+            ]},
+            {"emoji": "👩", "name": "Jean", "role": "The parent", "facts": "48 · Brownsville, Texas · senior manager, single mom of two", "fields": [
+              {"label": "Behaviors", "value": "Plans in short evening sessions around work, and wants to stay involved while leaving the decisions to her kids."},
+              {"label": "Needs & pain points", "value": "Needs one trustworthy picture of what college will cost and how it is covered — the aid process is opaque, and she is anxious about deciding without it."},
+              {"label": "What the design does", "value": "A dashboard that adapts to the selected college, plus 529 and extra-contribution tracking, so the full funding picture stays in one view."}
+            ]}
           ]},
           {"type": "callout", "label": "Where the split lives", "value": "Commonality lives in the shared system; difference is handled by dynamic content — consistency and personalization solved at different layers."}
         ]},
