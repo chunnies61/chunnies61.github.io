@@ -53,8 +53,8 @@
             "The platform serves two primary users — parents and students — with different goals, financial literacy, and priorities. Rather than build two interfaces (unmaintainable for one designer), I made one system adapt."
           ]},
           {"type": "cards", "columns": 2, "items": [
-            {"emoji": "\ud83d\udcca", "title": "Adaptive Dashboard", "desc": "Content adjusts to the selected college — so the layout had to hold data-rich, data-sparse, and data-missing states, not one tidy sample."},
-            {"emoji": "\ud83c\udfc6", "title": "Scholarships as a state system", "desc": "Liked / Applied / Won — one predictable language that reads the same to a parent or a student."}
+            {"emoji": "🎛️", "title": "Adaptive Dashboard", "desc": "Content adjusts to the selected college — so the layout had to hold data-rich, data-sparse, and data-missing states, not one tidy sample."},
+            {"emoji": "🏆", "title": "Scholarships as a state system", "desc": "Liked / Applied / Won — one predictable language that reads the same to a parent or a student."}
           ]},
           {"type": "image", "src": "/images/frame-10124517-d23e70.png", "label": "Two primary users — Alex, 17, high-school senior · Jean, 48, single mom of two"},
           {"type": "callout", "label": "Where the split lives", "value": "Commonality lives in the shared system; difference is handled by dynamic content — consistency and personalization solved at different layers."}
