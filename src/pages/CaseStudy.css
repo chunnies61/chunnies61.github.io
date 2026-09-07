@@ -461,9 +461,10 @@ a.cs-index-item:hover {
   -webkit-box-decoration-break: clone;
 }
 
-/* Callout / design principle */
+/* Callout / design principle — one accent panel for every callout, labelled
+   or not (.cs-callout-invert is kept as an alias for existing markup) */
 .cs-callout {
-  background: rgba(217, 221, 229, 0.7);
+  background: var(--accent-dark);
   border-radius: var(--radius-card);
   padding: 24px 28px;
 }
@@ -475,35 +476,23 @@ a.cs-index-item:hover {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--accent-dark);
+  color: rgba(255, 255, 255, 0.85);
 }
 .cs-callout p {
   font-family: var(--font-display);
   font-size: 20px;
   font-weight: 700;
   line-height: 1.3;
-  color: var(--text);
-}
-
-/* Inverted principle panel — primary accent card (matches the root-problem
-   node) with light text */
-.cs-callout-invert {
-  background: var(--accent-dark);
-}
-.cs-callout-invert .cs-callout-label {
-  color: rgba(255, 255, 255, 0.85);
-}
-.cs-callout-invert p {
   color: #fff;
 }
 
-/* Optional light-blue body text on an invert callout */
-.cs-callout--light-blue.cs-callout-invert p {
+/* Optional light-blue body text on a callout */
+.cs-callout--light-blue p {
   color: #bfdbfe;
 }
 
-/* Agent Desk — dark callout captions use the marker yellow; body stays white */
-.case-study--agent-desk .cs-callout-invert .cs-callout-label {
+/* Agent Desk — callout captions use the marker yellow; body stays white */
+.case-study--agent-desk .cs-callout-label {
   color: #ffe785;
 }
 
