@@ -47,8 +47,8 @@
             {"label": "Fate 3", "title": "Bad data", "desc": "An error state that speaks plain language instead of dead-ending."}
           ]},
           {"type": "text", "value": "A product's reliability lives in its most awkward screen, not its prettiest. For an anxious parent using a financial product, those boundary moments are where trust is won or lost."},
-          {"type": "image", "src": "/images/before-after-1-0801a3.svg", "label": "Before / after — layout restructured on the new system"},
-          {"type": "image", "src": "/images/before-after-2-d689a1.svg", "label": "Before / after — edge cases and hierarchy completed"}
+          {"type": "image", "src": "/images/before-after-1-0801a3.svg", "variant": "square", "label": "Before / after — layout restructured on the new system"},
+          {"type": "image", "src": "/images/before-after-2-d689a1.svg", "variant": "square", "label": "Before / after — edge cases and hierarchy completed"}
         ]},
         {"type": "step", "num": "3", "title": "One adaptive system for two different users", "blocks": [
           {"type": "text", "value": [
