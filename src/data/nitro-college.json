@@ -73,8 +73,8 @@
       ]
     },
     {
-      "id": "journey",
-      "kicker": "The journey",
+      "id": "deliverables",
+      "kicker": "The deliverables",
       "title": "What the assembled system delivered",
       "blocks": [
         {"type": "surface-showcase", "layout": "split-portrait", "alternate": false, "items": [
