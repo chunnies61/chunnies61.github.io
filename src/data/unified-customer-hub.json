@@ -38,6 +38,21 @@
       ]
     },
     {
+      "id": "research",
+      "kicker": "The groundwork",
+      "title": "What's actually shared, and what isn't",
+      "blocks": [
+        {"type": "text", "value": "Before I could show anyone a unified platform, I had to know what \"unified\" could even mean. I started with the customers — what they need across loans, cards, and financial health, and where the split experience was costing them."},
+        {"type": "image", "src": "/images/frame-427319547-25ac92.png", "label": "User needs and pain points across Best Egg's existing products"},
+        {"type": "text", "value": "The market said the same thing from the other side: customers favour integrated financial platforms with a seamless mobile experience, and the competitors pulling ahead were running a cohesive ecosystem rather than a set of products."},
+        {"type": "image", "src": "/images/image-06aefa.png", "label": "Market scan — how competing platforms handle multi-product servicing"},
+        {"type": "text", "value": "Then I ran a card-sorting workshop to settle the question structurally, and it split the feature set cleanly in two: Payments, Notifications, and Profile were shared by every product, while Account Details and Activity varied by account type. Overlapping features on one side, account-specific on the other."},
+        {"type": "image", "src": "/images/card-sorting-3fc988.png", "label": "Card sorting — features grouped into overlapping and account-specific sets"},
+        {"type": "text", "value": "That split became the architecture: one top-level and sub-navigation system giving consistent access to the shared features while preserving each account's own flows — less navigation friction, shorter task completion, and a single place to do the banking work."},
+        {"type": "image", "src": "/images/ia-641b91.png", "label": "Information architecture — Customer Hub across Personal Loan, Credit Card, Financial Health, Offers, Profile, and Notifications"}
+      ]
+    },
+    {
       "id": "move-one",
       "kicker": "Move one",
       "title": "Show, don't tell",
@@ -46,7 +61,9 @@
           "Instead of pitching a deck, I spent two weeks building a clickable, high-fidelity prototype — a real flow: pay off a loan, jump to your credit score, land on a cross-sell entry point, seamlessly.",
           "In the review, I didn't argue we should unify. I let stakeholders click it themselves."
         ]},
-        {"type": "video", "label": "Prototype walkthrough — loan → credit score → cross-sell"},
+        {"type": "image", "src": "/images/group-10122972-ec7f91.svg", "label": "The vision — three separate product surfaces resolving into one Customer Hub"},
+        {"type": "image", "src": "/images/wireframes-1434a2.png", "label": "The two-week proposal — desktop and mobile flows end to end"},
+        {"type": "video", "src": "/videos/customer-hub-prototype.mp4", "label": "Prototype walkthrough — loan → credit score → cross-sell"},
         {"type": "quote", "value": "Oh — so THAT's what cross-sell looks like.", "attribution": "Executive stakeholder, live prototype review", "avatar": "executive"},
         {"type": "text", "value": "The vision finally had a shape. And I became the de-facto driver of a project that never had an owner."}
       ]
@@ -93,7 +110,9 @@
             {"title": "Customer Hub", "desc": "A centralized dashboard unifying Financial Health, Personal Loan, and Credit Card data into a single, clear view of a customer's financial status.", "video": "/videos/customer-hub.mov"},
             {"title": "Personal Loan", "desc": "A dedicated space to view payment history, access statements, and make payments with ease.", "video": "/videos/personal-loan.mp4"},
             {"title": "Financial Health", "desc": "Credit scores, score factors, alerts, simulations, and access to detailed credit reports.", "video": "/videos/financial-health.mp4"}
-          ]}
+          ]},
+          {"type": "text", "value": "Shipping them accurately meant documenting the details that get lost in handoff — responsive behaviour, edge cases, and the exact treatment of each module across desktop and mobile."},
+          {"type": "image", "src": "/images/screenshot-2025-01-21-at-1.50.27-am-cee5e6.png", "label": "Design for implementation — the Hub dashboard specified across desktop and mobile"}
         ]},
         {"type": "step", "num": "6.2", "title": "A messaging framework, not one-off designs", "blocks": [
           {"type": "text", "value": [
