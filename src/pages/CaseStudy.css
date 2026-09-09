@@ -2,18 +2,12 @@
   background: #ffffff;
 }
 
-.cs-index {
+.cs-topbar {
   position: sticky;
   top: 0;
   z-index: 50;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px 28px;
   padding: 20px 0;
   background: #ffffff;
-  border-bottom: 1px solid var(--card-border);
 }
 
 .cs-index-back {
@@ -28,27 +22,52 @@
   color: var(--accent-dark);
 }
 
+/* On-this-page rail — sticky vertical index beside the body */
+.cs-index-inner {
+  position: sticky;
+  top: 88px;
+}
+
+.cs-index-eyebrow {
+  margin-bottom: 8px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+
+.cs-index-title {
+  margin-bottom: 16px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text);
+}
+
 .cs-index-items {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px 28px;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .cs-index-item {
   font-family: var(--font-ui);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
+  line-height: 1.35;
   color: var(--text-soft);
-  opacity: 0.55;
+  opacity: 0.7;
   transition: opacity 0.15s ease, color 0.15s ease;
 }
 
 a.cs-index-item:hover {
-  opacity: 0.85;
+  opacity: 1;
+  color: var(--accent-dark);
 }
 
 .cs-index-item.is-active {
-  color: var(--text);
+  color: var(--accent-dark);
   font-weight: 600;
   opacity: 1;
 }
@@ -165,7 +184,49 @@ a.cs-index-item:hover {
 }
 
 .cs-body {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 40px;
   padding-bottom: 40px;
+}
+
+/* Stretch the rail to the full body height so the inner block can stick */
+.cs-index {
+  align-self: stretch;
+}
+
+.cs-body-main {
+  min-width: 0;
+}
+
+/* Indexed section — single column now that the rail carries the navigation */
+.cs-section {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.cs-section:last-child {
+  border-bottom: none;
+}
+
+.cs-section-kicker {
+  margin-bottom: 10px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gray-800);
+}
+
+@media (max-width: 1040px) {
+  .cs-body {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .cs-index {
+    display: none;
+  }
 }
 
 /* Meta row: role / company / products / team — one row, evenly distributed columns */

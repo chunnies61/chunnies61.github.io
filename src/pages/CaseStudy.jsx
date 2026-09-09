@@ -508,12 +508,14 @@ function Block({ block }) {
 function IndexedSection({ section }) {
   return (
     <section
-      className={"cs-row cs-section" + (section.variant ? " cs-section--" + section.variant : "")}
+      className={"cs-section" + (section.variant ? " cs-section--" + section.variant : "")}
       id={section.id}
     >
-      <div className="cs-row-label cs-section-label">{section.kicker}</div>
       <div className="cs-section-content">
-        {section.title && <h2 className="cs-section-title">{section.title}</h2>}
+        <header className="cs-section-head">
+          <p className="cs-section-kicker">{section.kicker}</p>
+          {section.title && <h2 className="cs-section-title">{section.title}</h2>}
+        </header>
         {section.blocks.map((b, i) => (
           <Block block={b} key={i} />
         ))}
@@ -598,30 +600,11 @@ export default function CaseStudy() {
 
   return (
     <article className={"case-study case-study--" + study.slug}>
-      <nav className="cs-index wrap" aria-label="Case study index">
+      <div className="cs-topbar wrap">
         <Link to="/" className="cs-index-back">
           ← All work
         </Link>
-        <div className="cs-index-items">
-          {indexItems.map((item, i) => {
-            const isActive = item.id !== null && item.id === activeId;
-            const content = item.label;
-            return item.id ? (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                className={"cs-index-item" + (isActive ? " is-active" : "")}
-              >
-                {content}
-              </a>
-            ) : (
-              <span className="cs-index-item" key={item.label + i}>
-                {content}
-              </span>
-            );
-          })}
-        </div>
-      </nav>
+      </div>
 
       <header className="cs-header">
         <div className="cs-header-panel">
@@ -674,6 +657,32 @@ export default function CaseStudy() {
         </div>
       ) : (
         <div className="wrap cs-body">
+          <nav className="cs-index" aria-label="On this page">
+            <div className="cs-index-inner">
+              <p className="cs-index-eyebrow">On this page</p>
+              <p className="cs-index-title">{study.title}</p>
+              <div className="cs-index-items">
+                {indexItems.map((item, i) => {
+                  const isActive = item.id !== null && item.id === activeId;
+                  return item.id ? (
+                    <a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      className={"cs-index-item" + (isActive ? " is-active" : "")}
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <span className="cs-index-item" key={item.label + i}>
+                      {item.label}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+          </nav>
+
+          <div className="cs-body-main">
           {(() => {
             const metaItems =
               study.meta ||
@@ -798,6 +807,7 @@ export default function CaseStudy() {
               )}
             </Row>
           )}
+          </div>
         </div>
       )}
 
