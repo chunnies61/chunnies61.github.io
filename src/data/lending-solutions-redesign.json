@@ -1,202 +1,192 @@
 {
   "slug": "lending-solutions-redesign",
-  "title": "Lending Solutions Redesign",
-  "subtitle": "Reinventing end-to-end lending for J.P. Morgan Private Bank — and proving it worked by building the validation loop myself.",
+  "title": "Making the Invisible Ownable",
+  "subtitle": "Redesigning loan origination in the J.P. Morgan Global Private Bank",
   "tags": ["B2B", "Loan Request App", "Lending Workspace"],
   "heroImage": "/images/lending-thumb.png",
   "meta": [
-    {"label": "Role", "value": "Lead Designer — end-to-end owner"},
-    {"label": "Company", "value": "J.P. Morgan Private Bank, Wealth Management"},
-    {"label": "Products", "value": "Loan Request App 3.0 · Lending Workspace"},
-    {"label": "Team", "value": "Product (multi-domain POs), Engineering, UX Research, Credit Middle Office"}
+    {"label": "Role", "value": "Lead Product Designer — discovery to delivery"},
+    {"label": "Team", "value": "Self-driven · 4 POs · Engineering · Credit Risk · Middle Office"},
+    {"label": "Products", "value": "Loan Request App · Lending Workspace"},
+    {"label": "Duration", "value": "~2 quarters"}
   ],
   "indexedSections": [
     {
       "id": "context",
       "kicker": "Context",
-      "title": "A private bank running on disconnected tools",
+      "title": "Two products, one origination journey",
       "blocks": [
         {"type": "text", "value": [
-          "J.P. Morgan Private Bank serves ultra-high-net-worth clients across 140+ countries with lending products like Securities-Based Lending and Custom Credit.",
-          "But behind every loan sat a broken workflow. A single request meant jumping between disconnected applications — re-keying data, chasing manual handoffs with Credit Middle Officers, and relying on institutional memory.",
-          "I owned the end-to-end lending redesign, across two surfaces."
+          "The Global Private Bank spans USPB — 55 U.S. markets — and IPB across APAC, EMEA and LatAm: 1,000+ advisors, clients in 140+ countries, nine languages, 30+ regulators. Lending is one product line inside that footprint, used by client-facing and credit teams in every region.",
+          "I own two of its surfaces. The Loan Request App is the workflow where lenders apply for a loan on behalf of their clients. The Lending Workspace is the daily hub where lenders reach every other tool and workflow."
         ]},
         {"type": "cards", "columns": 2, "items": [
-          {"title": "Loan Request App 3.0", "desc": "The origination surface where Advisors submit SBL, Custom Credit, and PLP tickets — new deals and amendments — across USPB, EMEA, APAC, and LatAm."},
-          {"title": "Lending Workspace", "desc": "The hub bringing every Private Bank lending tool under one roof."}
+          {"emoji": "📝", "label": "Where a deal starts", "title": "Loan Request App", "desc": "The intake workflow — client and facility, loan details, review — for SBL, Custom Credit and PLP tickets across USPB, EMEA, APAC and LatAm."},
+          {"emoji": "🗂️", "label": "Where lenders live all day", "title": "Lending Workspace", "desc": "The hub tying together Deal Journey, Portfolio Health, Insights, Doc QC, Collateral Tools, Margin Call, Book Simulation, ILM and Approvals."}
         ]},
-        {"type": "image", "src": "/images/lending-workspace-overview.png", "label": "Lending Workspace — deal journey, prospects, portfolio health, and insights in one place"},
-        {"type": "callout", "label": "The gap", "value": "The tools existed. The experience didn't."}
+        {"type": "image", "src": "/images/lending-after.png", "label": "Loan Request App — the Client & facility step where a deal begins"},
+        {"type": "image", "src": "/images/lending-workspace-overview.png", "label": "Lending Workspace — the daily hub"},
+        {"type": "text", "value": "My users sit along the whole chain: Bankers, SC Advisors, Lender Specialists, Credit Risk and Middle Office, senior and junior."}
       ]
     },
     {
-      "id": "users",
-      "kicker": "Users",
-      "title": "People with no room for internal friction",
-      "blocks": [
-        {"type": "text", "value": "My primary users were Advisors and Bankers serving UHNW clients who expect fast answers."},
-        {"type": "cards", "columns": 3, "items": [
-          {"title": "Time-starved", "desc": "Every client minute is high-stakes. Tooling friction is a direct tax on client service."},
-          {"title": "High-consequence", "desc": "A single ticket can move eight figures. An error isn't an inconvenience, it's a risk event."},
-          {"title": "Knowledge-gated", "desc": "Complex, multi-step, tool-dependent workflows that punished anyone without deep institutional knowledge."}
-        ]},
-        {"type": "image", "src": "/images/lending-persona.png", "label": "Two primary users — ~500 Client Advisors and ~900 Bankers across the Private Bank"},
-        {"type": "callout", "label": "Design principle", "value": "Remove the friction that wastes time. Keep the friction that protects the client."}
-      ]
-    },
-    {
-      "id": "challenge",
-      "kicker": "The challenge",
-      "title": "A variable matrix, not a form",
+      "id": "brief",
+      "kicker": "The brief",
+      "title": "The brief, and why it was wrong",
       "blocks": [
         {"type": "text", "value": [
-          "The v1 experience was a flat, linear form: no conditional logic, no real-time feedback, no guidance. Advisors were expected to already know what to fill in, when, and why.",
-          "But a loan request isn't a form — it's a combinatorial matrix."
+          "I was given a narrow mandate: the intake form is bad, clean up the Loan Request App to reduce rework. The trigger was a recurring complaint from Lender Specialists."
         ]},
-        {"type": "pills", "groups": [
-          {"label": "Region", "value": "USPB · EMEA · APAC · LatAm"},
-          {"label": "Product", "value": "SBL · Custom Credit · PLP"},
-          {"label": "Request type", "value": "New deal · Amendment"}
-        ]},
-        {"type": "image", "src": "/images/lending-data.png", "label": "What the old flow cost — NIGO returns, mid-flow restarts, and manual CMO handoffs"},
-        {"type": "text", "value": "That explodes into hundreds of states. Two problems compounded it."},
-        {"type": "cards", "columns": 2, "items": [
-          {"label": "Problem A", "title": "No single source of truth", "desc": "Each domain had its own Product Owner with limited cross-domain visibility — producing conflicting requirements, overlapping asks, and three months of circular debate over whose process was standard."},
-          {"label": "Problem B", "title": "No shared mental model", "desc": "Everyone pictured the lending space differently, so we argued about fields when the disagreement was structural."}
-        ]}
+        {"type": "quote", "value": "Half my loan requests bounce back. I redo them two or three times before Credit even looks.", "attribution": "Lender Specialist", "avatar": "advisor"},
+        {"type": "text", "value": "The business read this as a UI problem. My first job was to test that assumption before designing anything."},
+        {"type": "callout", "label": "The reframe", "value": "The form wasn't ugly. It was collecting the Banker's information but being measured against Credit's requirements — a handoff mismatch, not a UI mismatch."}
       ]
     },
     {
-      "id": "process",
-      "kicker": "Design",
-      "title": "Process & design decisions",
-      "blocks": [
-        {"type": "step", "num": "4.1", "title": "Map the whole space before touching a screen", "blocks": [
-          {"type": "text", "value": [
-            "Instead of designing screens, I built an information architecture covering every domain, product, and region — one holistic view of the entire lending surface.",
-            "The IA's value wasn't aesthetic. It turned invisible disagreements into pointable nodes. “Whose process wins?” became “which region owns this node?” — a solvable question.",
-            "I designed the space first, then the screens, so every later decision had a home."
-          ]},
-          {"type": "image", "src": "/images/lending-ia.png", "label": "Information architecture — the full Lending Workspace surface"}
-        ]},
-        {"type": "step", "num": "4.2", "title": "Unify the skeleton, localize the organs", "blocks": [
-          {"type": "text", "value": "The hardest tension surfaced immediately: how much to unify?"},
-          {"type": "contrast", "items": [
-            {"label": "Fully global", "desc": "EMEA's mandatory compliance fields get cut. A non-negotiable red line."},
-            {"label": "Fully local", "desc": "We're back to four disconnected tools. Unification dies."}
-          ]},
-          {"type": "text", "value": "My decision: one shared flow, navigation, and mental model across all regions, with conditional logic injecting region-specific fields and disclosures inside each step. Advisors experience one product; the system adapts underneath."},
-          {"type": "image", "src": "/images/lending-frames.png", "label": "One skeleton, regional organs — the same flow across EMEA, APAC, LatAm, and USPB"}
-        ]},
-        {"type": "step", "num": "4.3", "title": "Lead by showing — a prototype that ended the debate", "blocks": [
-          {"type": "text", "value": [
-            "I could say “skeleton vs. organs,” but POs didn't buy abstractions — they kept asking “is my field still there?”",
-            "So I stopped arguing and built an interactive prototype with LLM-assisted tooling. Select EMEA and the three compliance fields appear. Switch to USPB and they disappear — the rest of the flow doesn't move."
-          ]},
-          {"type": "quote", "value": "Oh — my field wasn't deleted. It just doesn't exist in other regions.", "attribution": "EMEA Product Owner, mid-walkthrough", "avatar": "product-owner"},
-          {"type": "text", "value": [
-            "Three months of debate collapsed in a fifteen-minute walkthrough.",
-            "When consensus is missing and talk won't converge, a prototype isn't a deliverable — it's a decision instrument. It swaps “who's right” for “does this work.”"
-          ]},
-          {"type": "image", "src": "/images/lending-screenshot.png", "label": "The debate, in artifact form — every stakeholder's “is my field still there?” annotated on one screen"}
-        ]},
-        {"type": "step", "num": "4.4", "title": "The friction I chose to keep", "blocks": [
-          {"type": "text", "value": "My first pass optimized for pure speed — auto-advancing, stripping confirmations. Then a senior Advisor said:"},
-          {"type": "quote", "value": "The seconds you saved me might let me submit a multi-million-dollar loan without seeing the collateral.", "attribution": "Senior Advisor", "avatar": "advisor"},
-          {"type": "text", "value": "That reframed everything. In finance, some friction is a bug; some is a feature."},
-          {"type": "contrast", "items": [
-            {"label": "Removed — bug friction", "desc": "Re-entering data, not knowing the next step — removed by conditional logic, inline validation, and guidance."},
-            {"label": "Kept & hardened — prudent friction", "desc": "A deliberate, un-skippable confirmation of terms and collateral before submission — kept and hardened, because it carries accountability and risk control."}
-          ]},
-          {"type": "text", "value": "I demoed both in one prototype — this step fast on purpose, that step slow on purpose — so Product and Compliance saw that efficiency and prudence weren't in conflict, just deliberately separated."},
-          {"type": "image", "label": "Confirmation step — terms & collateral"}
-        ]},
-        {"type": "step", "num": "4.5", "title": "Deliver 1:1, to the last variant", "blocks": [
-          {"type": "text", "value": "I delivered pixel-perfect handoff across regional variants and product types — SBL, Custom Credit, PLP — with full edge-case and error-state coverage, and stayed in engineering standups through implementation."}
-        ]}
-      ]
-    },
-    {
-      "id": "proof",
-      "kicker": "The proof",
-      "title": "Proving it worked, with nothing to measure against",
+      "id": "discovery",
+      "kicker": "Discovery",
+      "title": "Mapping a workflow nobody owned end to end",
       "blocks": [
         {"type": "text", "value": [
-          "After launch, my first priority was proving the redesign helped. I hit a wall immediately: v1 had shipped with no success definition — no instrumentation, no baseline. And the hard data I needed, NIGO rate and completion time, was scattered across compliance, ops, and regional systems I couldn't access."
+          "When I tried to map the current state I hit two gaps at once. No single person could describe the full origination chain — each role saw only their own segment and assumed the next one worked fine. And more fundamentally, my workspace had no shared source of truth to begin with: no documented information architecture, no defined personas. Everyone was designing and prioritising against their own mental model of who the user is and how the product is structured.",
+          "So before I could fix the workflow, I had to build the foundation nobody had built."
         ]},
-        {"type": "callout", "label": "The honest starting point", "value": "I had a product I believed was better — and no evidence to prove it. Step one of validation wasn't analysis; it was building the entire practice of validation from scratch."},
-        {"type": "step", "num": "5.1", "title": "Never mistake a passed review for validation", "blocks": [
-          {"type": "text", "value": [
-            "Reviews are attended by POs and leadership, not the Advisors filling tickets daily. Approved ≠ usable. The real problems hide in edge cases a review room never sees.",
-            "So I built my own loop: high-fidelity prototypes made with LLM-assisted tooling, tested with Advisors alongside a UX researcher. One risk needed care — LLM prototypes look so polished that testers \"play along\" and report false ease. So we never asked \"does this feel usable?\" We gave real tasks and watched where they stalled, where they reached for the phone."
-          ]},
+        {"type": "step", "num": "1", "title": "Build the missing source of truth", "blocks": [
+          {"type": "text", "value": "I interviewed lenders and domain owners across roles — embedding in advisor check-ins and morning meetings to reach client-facing users who are otherwise hard to pin down — and synthesised what I learned into two reference artefacts."},
           {"type": "cards", "columns": 2, "items": [
-            {"label": "Task-based", "title": "Loan Request App", "desc": "Measured completion time and error points on real origination tasks."},
-            {"label": "Navigation-based", "title": "Lending Workspace", "desc": "Tested findability: can you find it, and does your mental map match ours"}
+            {"emoji": "🗺️", "title": "Lending Workspace IA", "desc": "A top-to-bottom, current-state map of the navigation hierarchy: L1 products, L2 apps, their sub-tabs and page-level controls. The first time anyone could see the whole system on one screen."},
+            {"emoji": "👥", "title": "Lending personas", "desc": "Role-based personas across the journey — Banker, SC Advisor, Lender Specialist, Credit Risk, Middle Office, senior and junior variants — capturing goals, jobs to be done and pain points in the apps they actually use."}
           ]},
-          {"type": "text", "value": "Eleven real Advisors surfaced stall points no one had raised in review."},
-          {"type": "image", "src": "/images/lending-key-findings.png", "label": "Key findings — centralization wins but calls persist, risk collaboration belongs in-workflow, high-value features went undiscovered"}
+          {"type": "image", "src": "/images/lending-ia.png", "label": "The Lending Workspace information architecture — the whole hierarchy on one screen"},
+          {"type": "image", "src": "/images/lending-persona.png", "label": "Lending personas — goals, activities and frustrations per role"},
+          {"type": "callout", "label": "Impact beyond my project", "value": "Both artefacts became a de-facto source of truth. The design team and product owners started referencing them in their own reviews and roadmaps — scaffolding for my discovery turned into shared infrastructure for the group."}
         ]},
-        {"type": "step", "num": "5.2", "title": "Translate “the Advisor got stuck” into numbers the bank accepts", "blocks": [
-          {"type": "text", "value": [
-            "A tension followed: I had vivid qualitative insight, but the bank's stakeholders trust numbers. \"Advisors stall at the collateral step\" carried no weight alone.",
-            "So I translated qualitative into quantitative, structuring every stall point on three dimensions:"
-          ]},
+        {"type": "step", "num": "2", "title": "Trace one real deal", "blocks": [
+          {"type": "text", "value": "With that shared map in place I could finally isolate where the rework happened. Instead of more one-on-one interviews, I put one person from each role in a room with a single anonymised loan request — a real-estate investor leveraging existing assets for a line of credit to acquire a new property — printed as a physical timeline on the wall."},
+          {"type": "quote", "value": "Don't describe your job. Trace this specific deal, and put a red dot every time you had to stop and ask someone a question.", "attribution": "The workshop instruction"},
+          {"type": "image", "src": "/images/lending-userflow.png", "label": "The deal timeline with every stop-and-ask marked — the dots clustered at the same three seams"},
+          {"type": "text", "value": "The red dots clustered at the same three seams every time. The most consistent: requests arriving at Credit missing collateral and entity details the Banker was never asked for at intake — the asset basis and ownership structure Credit needs to size a securities- or property-backed facility."},
+          {"type": "image", "src": "/images/lending-data.png", "label": "What the seams cost — not-in-good-order submissions, mid-flow restarts, and manual handoffs"},
+          {"type": "honest-note", "label": "The baseline", "value": "To size the problem before designing, I ran a lightweight manual audit with Middle Office: 40 recent loan requests, ~60% bounced at least once, with the top two reasons matching two of the three seams. That number became my north star."}
+        ]}
+      ]
+    },
+    {
+      "id": "alignment",
+      "kicker": "Alignment",
+      "title": "Manufacturing an owner for an unowned problem",
+      "blocks": [
+        {"type": "text", "value": [
+          "The workflow spanned four teams across USPB and IPB, each region with its own regulators and its own roadmap. The products were disconnected because every product owner was so specialised: each owned a narrow slice deeply, with little visibility into the seams between slices. No one had authority over the whole chain, so \"fix the intake\" became a hot potato — the Loan Request App PO called it a Credit problem, Credit called it an intake problem."
+        ]},
+        {"type": "step", "num": "1", "title": "Make the problem impossible to pass along", "blocks": [
+          {"type": "text", "value": "I turned the red-dot findings into a one-page Rework Map: three seams, the cost of each, and the two teams that touched it. Then I booked one 45-minute review with all four POs and the Credit Risk lead together — a meeting that had never happened, because they had only ever met pairwise."},
+          {"type": "image", "label": "The Rework Map — three seams, cost per seam, owning teams on a single page"},
+          {"type": "text", "value": "Seeing the same three seams, quantified, in front of everyone at once made the potato impossible to pass. The Credit lead said the unlocking line:"},
+          {"type": "quote", "value": "If we just told them what we needed up front, we'd stop bouncing these.", "attribution": "Credit Risk lead", "avatar": "leadership"},
+          {"type": "callout", "label": "What that bought me", "value": "A de-facto sponsor by evidence, not org chart."}
+        ]},
+        {"type": "step", "num": "2", "title": "Make alignment a habit, not a meeting", "blocks": [
+          {"type": "text", "value": "Because the teams were specialised and spread across regions — a live pilot was already running across USPB, EMEA and APAC — a single workshop wouldn't hold them together. So I built three lightweight recurring rituals."},
           {"type": "cards", "columns": 3, "items": [
-            {"label": "Frequency", "title": "% of Advisors who hit it", "desc": "How widespread is this stall point across sessions?"},
-            {"label": "Cost", "title": "Extra time it burns", "desc": "Average minutes lost per occurrence."},
-            {"label": "Consequence", "title": "Call-ins it triggers", "desc": "How often it escalates into a phone call for help."}
+            {"emoji": "🚪", "title": "Design office hours", "desc": "An open standing slot where any PO could bring a question, a request or a half-formed idea. One predictable door to knock on, and cross-team dependencies surfaced before they hardened into conflicts."},
+            {"emoji": "📣", "title": "Socialised decisions", "desc": "I circulated the why behind each decision, not just the final screens, so no one was surprised in review. Shared rationale, not just shared artefacts."},
+            {"emoji": "🔧", "title": "Refinement calls", "desc": "I sat in on engineering refinement across initiatives, catching feasibility issues and cross-initiative overlaps in real time instead of after something had been built the wrong way."}
           ]},
-          {"type": "text", "value": "I even structured the soft \"Advisors like it\" feedback into a trackable satisfaction signal. A UX problem became a problem with frequency, cost, and consequence — and stakeholders could act on it."}
+          {"type": "callout", "label": "Why it worked", "value": "In a specialised, multi-region org, alignment isn't a document — it's presence. Consistently reachable, consistently transparent, consistently present where the work got scoped, I became the connective tissue between owners each optimising their own slice."}
         ]},
-        {"type": "step", "num": "5.3", "title": "Attribute the gains rigorously", "blocks": [
+        {"type": "step", "num": "3", "title": "Bring design upstream of the roadmap", "blocks": [
           {"type": "text", "value": [
-            "When completion time dropped, I didn't rush to claim credit — \"−30%\" is the number that invites \"how do you know it was the design?\" It could come from process change, training, or sample differences.",
-            "So I separated cause from effect. We'd changed many things at once — conditional logic, inline validation, embedded guidance, progressive disclosure — so in validation I mapped which stall point each decision resolved."
+            "The rituals kept day-to-day teams in sync, but they couldn't resolve the bigger fracture: the POs had no alignment on prioritisation across the portfolio. Every owner could defend their own slice, but no one could sequence the whole roadmap — initiation, fulfilment, monitoring, servicing, Workspace, data and shared services were all competing, un-normalised and un-sequenced.",
+            "Leadership convened a three-day in-person portfolio workshop at the Ohio HQ, and I travelled there as the only design representative in the room, alongside POs, journey owners, data, architecture and risk leads. Over three days we drove a single working artefact from initiative to epic to feature to persona to job-to-be-done to journey, routing, owner, dependency, size, sequence and change impact."
           ]},
-          {"type": "cards", "columns": 2, "items": [
-            {"label": "Lagging vs. leading", "title": "Proxy metrics first", "desc": "NIGO only shows up after submissions clear review — so call-ins and first-pass rate read the trend early."},
-            {"label": "Comparable data", "title": "One definition, four regions", "desc": "Each market defined \"successful submission\" differently — I standardized it before comparing anything."}
+          {"type": "image", "label": "Three days at HQ as the only designer in the room"},
+          {"type": "text", "value": "My role wasn't to take notes. It was to bring the design perspective into decisions that were otherwise about inventory, sizing and sequencing."},
+          {"type": "cards", "columns": 3, "items": [
+            {"emoji": "🔭", "title": "Showed concrete futures", "desc": "I presented three explorations of the Loan Request App side by side so leadership could evaluate directions concretely, not abstractly. The agenda literally read: use Yichun's prototypes as reference points."},
+            {"emoji": "🧭", "title": "Anchored in personas", "desc": "My IA and personas became the shared language for defining every feature's persona, journey and routing — keeping the conversation tied to user outcomes rather than system boundaries."},
+            {"emoji": "🧱", "title": "Shaped the Workspace model", "desc": "Persona-based views, work queues, and the list → action → launch → context → return pattern that would make the portfolio feel like one experience instead of ten apps."}
           ]},
-          {"type": "callout", "label": "Why the number holds", "value": "The resulting −30% holds up under questioning. It isn't a flattering coincidence."}
-        ]},
-        {"type": "step", "num": "5.4", "title": "A retro that points to what's next", "blocks": [
-          {"type": "callout", "label": "What a retro is for", "value": "The value of a retro isn't proving “I was right.” It's answering “what's next.”"},
-          {"type": "text", "value": [
-            "Many reviews stop at \"metrics hit, project shipped.\" I turned the findings into roadmap input: which edge cases earn the next iteration, negotiated with engineering and regional POs.",
-            "And the testing exposed a bigger opportunity: the real friction isn't only in the Advisor's screens. It lives in the manual back-and-forth with Credit Middle Officers, and in where AI could streamline guidance. One retro started the next body of work."
+          {"type": "text", "value": "The three explorations I put in front of them:"},
+          {"type": "cards", "columns": 3, "items": [
+            {"label": "Exploration 1", "title": "One Request, Any Deal", "desc": "A single unified request with no SBL-versus-Custom fork — the split that caused mis-routed intake in the first place."},
+            {"label": "Exploration 2", "title": "AI Application Agent", "desc": "Fill the request by chatting: the system drafts the ticket from conversation rather than from a form."},
+            {"label": "Exploration 3", "title": "Collateral-First Builder", "desc": "Start from the client's assets; line size, rate and covenant headroom recalculate live as collateral changes."}
           ]},
-          {"type": "image", "src": "/images/lending-userflow.png", "label": "The Advisor ↔ CMO state map — happy and unhappy paths, where the manual back-and-forth lives"}
+          {"type": "image", "label": "The three future-vision proposals, side by side"},
+          {"type": "callout", "label": "Why it mattered", "value": "As the single design voice at the portfolio table, I moved design upstream of prioritisation — helping leadership choose which direction to invest in, rather than being handed a sequenced backlog to decorate. Design became an input to the roadmap, not an output of it."}
         ]}
+      ]
+    },
+    {
+      "id": "decision",
+      "kicker": "The decision",
+      "title": "Assisted, not automated",
+      "blocks": [
+        {"type": "text", "value": "Of the three proposals the boldest was the AI Application Agent — auto-populate and auto-size the whole request from a chat. The business loved it: fewer fields, faster. But prototype testing with two Lender Specialists exposed a trust wall."},
+        {"type": "quote", "value": "If the system sizes it and it's wrong, it's still my name on the deal. I'll just redo it by hand to be safe.", "attribution": "Lender Specialist, prototype testing", "avatar": "advisor"},
+        {"type": "callout", "label": "The trap", "value": "Full automation would have recreated the exact rework it was meant to remove."},
+        {"type": "text", "value": "So I combined the strengths instead. One Request, Any Deal became the backbone, killing the fork that caused mis-routed intake. I borrowed the Collateral-First Builder's live recalculation to surface borrowing capacity early. And I treated the AI agent as an assist, not an autopilot — three moves designed for trust:"},
+        {"type": "cards", "columns": 3, "items": [
+          {"emoji": "🔍", "label": "Transparency", "title": "Provenance on every value", "desc": "Every pre-filled or AI-suggested value carries a provenance chip: source system and as-of date."},
+          {"emoji": "✍️", "label": "Reversibility", "title": "The human keeps the pen", "desc": "One-click override with a required reason. Nothing the system proposes is beyond the user's reach."},
+          {"emoji": "➡️", "label": "Context flows forward", "title": "Explained, not suspicious", "desc": "Override reasons travel with the request to Credit, so an adjusted number arrives with its rationale attached."}
+        ]},
+        {"type": "image", "label": "A pre-filled field with its provenance chip, and the override-with-reason interaction"},
+        {"type": "callout", "label": "The rationale I'd defend in any review", "value": "In lending, accountability is personal and non-delegable. The cost-effective choice wasn't the most automated proposal — it was the one that made automation transparent and reversible, so it earned trust instead of demanding it."}
+      ]
+    },
+    {
+      "id": "delivery",
+      "kicker": "Delivery",
+      "title": "Driving to ship without formal authority",
+      "blocks": [
+        {"type": "text", "value": "No PO ran cover. I led discovery, aligned four teams, made the design calls and drove to build with no authority over any of them. What carried it was leading with artefacts rather than opinions."},
+        {"type": "cards", "columns": 2, "items": [
+          {"emoji": "🖱️", "title": "Prototypes, not specs", "desc": "Clickable prototypes surfaced real feasibility. When Engineering flagged that one collateral field lived in a system they couldn't read in real time, I didn't fight it — I scoped v1 to the two seams we could fix and parked the third with written rationale."},
+          {"emoji": "📊", "title": "Every trade-off anchored to the baseline", "desc": "Six in ten requests get redone, and we can prevent most of it upstream. That line from the 40-request audit carried the initiative through prioritisation whenever opinions competed."}
+        ]},
+        {"type": "image", "src": "/images/lending-before-after.png", "label": "Before and after — Credit's acceptance rules moved upstream into the Banker's intake moment"},
+        {"type": "image", "src": "/images/lending-key-findings.png", "label": "What testing told us to build, and what to fix in the copy"},
+        {"type": "text", "value": "The regional variants shipped on one shared skeleton, with conditional logic injecting what each market required rather than forking the product."},
+        {"type": "image", "src": "/images/lending-frames.png", "label": "One skeleton, four markets — USPB, EMEA, APAC and LatAm variants"}
       ]
     },
     {
       "id": "outcome",
       "kicker": "Outcome",
-      "title": "Numbers that hold up under questioning",
+      "title": "Rework down, the right personas adopting",
       "blocks": [
         {"type": "stats", "items": [
-          {"value": "30%", "label": "reduction in ticket completion time", "desc": "Removed bug friction without touching prudent friction."},
-          {"label": "Reduced NIGO rate", "desc": "Embedded tooltips and progressive disclosure cut errors and Advisor call-ins."},
-          {"label": "Adoption expanded EMEA → USPB", "desc": "One unified skeleton, proved across two major markets."},
-          {"label": "Positive Advisor feedback at launch", "desc": "Credited the redesign with reducing friction and improving completion confidence."}
+          {"value": "~22%", "label": "New-ticket NIGO rate", "desc": "Against a ~60% discovery baseline"},
+          {"value": "~24%", "label": "Overall adoption", "desc": "USPB scorecard, still mid-pilot"},
+          {"value": "~190", "label": "Weekly active users", "desc": "19-week average, peak 307"},
+          {"value": "3", "label": "Regions in pilot", "desc": "USPB · EMEA · APAC"}
         ]},
-        {"type": "image", "src": "/images/lending-before-after.png", "label": "Before / after — the v1 flat form vs. Loan Request 3.0"},
-        {"type": "text", "value": "These numbers were believed because they sat on a validation chain I built myself, cause cleanly separated from effect."},
-        {"type": "callout", "label": "The real win", "value": "The win wasn't trading prudence for speed. It was replacing wasted friction with necessary friction."}
+        {"type": "text", "value": [
+          "Validate-at-source intake shipped into the Loan Request App with provenance chips and reason-coded overrides, and is now in multi-region pilot across USPB, EMEA and APAC.",
+          "NIGO — not in good order — is the firm's term for exactly the bounce-back rework I set out to reduce, which makes it the metric that most directly reflects the work. Measured against my discovery baseline of ~60% of requests bouncing at least once, ~22% is a substantial cut in first-pass rework. It's a programme-level result the redesign contributed to, alongside process and training changes."
+        ]},
+        {"type": "honest-note", "label": "What the usage mix confirms", "value": "A 19-week average of ~190 weekly active users, led by Lenders (43.8%), Analysts (16.9%) and Credit Middle Office (16.3%) — the exact roles, in the exact priority order, the personas were built around."},
+        {"type": "image", "label": "The pilot scorecard — NIGO, adoption, and the weekly-active role mix"},
+        {"type": "text", "value": "The Lending Workspace became a more coherent daily hub along the way: the Deal Journey Tracker now integrates the eCQ credit-questionnaire workflow and has onboarded IPB SBL and Custom deals, giving end-to-end visibility across the seams I mapped in discovery. And the IA map and personas remain a source of truth the design team and product owners still reference."},
+        {"type": "image", "src": "/images/lending-laptop.png", "label": "The shipped Loan Request App"}
       ]
     },
     {
       "id": "reflection",
       "kicker": "Reflection",
-      "title": "Reflection",
+      "title": "Ownership problems in a design costume",
       "blocks": [
-        {"type": "text", "value": [
-          "I joined by listening first — meeting triad partners, studying existing research, learning the design system — before taking end-to-end ownership.",
-          "My biggest takeaway is a decision-making mindset: when a room can't agree in the abstract, the fastest path forward isn't more debate — it's a prototype people can touch, so the solution argues itself.",
-          "And the work doesn't end at shipping: a designer has to prove it works, to people who don't trust design. With no baseline and unreachable data, I built the validation loop myself, translated qualitative into quantitative, attributed gains rigorously, and turned a retro into a roadmap.",
-          "That, to me, is senior design: crafting the interface, helping conflicting stakeholders decide, knowing which friction to fight and which to defend — and owning every decision with data."
-        ]}
+        {"type": "callout", "label": "The takeaway", "value": "The hardest problems in a large organisation usually aren't design problems — they're ownership problems wearing a design costume. My contribution was making an unowned, invisible workflow visible and shared enough that the right decision became obvious to everyone at once."},
+        {"type": "text", "value": "Three moves proved repeatable beyond this project."},
+        {"type": "cards", "columns": 3, "items": [
+          {"emoji": "🧱", "label": "Move 1", "title": "When there's no shared source of truth, build it", "desc": "The IA and personas I created outlived the initiative and now anchor how the team designs and prioritises."},
+          {"emoji": "🎯", "label": "Move 2", "title": "When a problem has no owner, make it undeniable in a shared room", "desc": "Then keep it aligned through presence — office hours, socialised decisions, refinement calls — rather than hunting for authority that doesn't exist."},
+          {"emoji": "🔭", "label": "Move 3", "title": "When the portfolio can't agree on priority, bring design upstream", "desc": "Future-vision prototypes gave leadership something concrete to decide against, turning design into an input to the roadmap rather than an output of it."}
+        ]},
+        {"type": "honest-note", "label": "What I'm still watching", "value": "Adoption is real but early, and I treat the numbers honestly. When Workspace showed a −10.8% week-over-week dip in active users I didn't wave it away — the open question is whether it's seasonality or an access-provisioning issue, and it's exactly the kind of signal I want instrumented rather than guessed."},
+        {"type": "text", "value": "What I'd do differently: wire real telemetry into the two targeted intake seams from day one, so NIGO improvement can be attributed cleanly to the design change, and so the parked third seam has quantified evidence ready when it comes up for prioritisation — rather than relying on a manual audit."}
       ]
     }
   ],
