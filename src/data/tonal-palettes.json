@@ -1,0 +1,271 @@
+{
+  "tones": [
+    0,
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    95,
+    99,
+    100
+  ],
+  "roles": {
+    "light": [
+      {
+        "role": "Primary",
+        "tone": 40
+      },
+      {
+        "role": "On Primary",
+        "tone": 100
+      },
+      {
+        "role": "Primary Container",
+        "tone": 90
+      },
+      {
+        "role": "On Primary Container",
+        "tone": 10
+      },
+      {
+        "role": "Inverse Primary",
+        "tone": 80
+      }
+    ],
+    "dark": [
+      {
+        "role": "Primary",
+        "tone": 80
+      },
+      {
+        "role": "On Primary",
+        "tone": 20
+      },
+      {
+        "role": "Primary Container",
+        "tone": 30
+      },
+      {
+        "role": "On Primary Container",
+        "tone": 90
+      },
+      {
+        "role": "Inverse Primary",
+        "tone": 40
+      }
+    ],
+    "neutralLight": [
+      {
+        "role": "Surface",
+        "tone": 99
+      },
+      {
+        "role": "On Surface",
+        "tone": 10
+      },
+      {
+        "role": "Surface Variant",
+        "tone": 90
+      },
+      {
+        "role": "On Surface Variant",
+        "tone": 30
+      },
+      {
+        "role": "Outline",
+        "tone": 50
+      }
+    ],
+    "neutralDark": [
+      {
+        "role": "Surface",
+        "tone": 10
+      },
+      {
+        "role": "On Surface",
+        "tone": 90
+      },
+      {
+        "role": "Surface Variant",
+        "tone": 30
+      },
+      {
+        "role": "On Surface Variant",
+        "tone": 80
+      },
+      {
+        "role": "Outline",
+        "tone": 60
+      }
+    ]
+  },
+  "palettes": [
+    {
+      "key": "primary",
+      "name": "Primary",
+      "token": "accent",
+      "hex": "#4575e7",
+      "note": "Periwinkle — accents, rules, tints",
+      "hct": {
+        "h": 271,
+        "c": 62,
+        "t": 51.6
+      },
+      "tones": {
+        "0": "#000000",
+        "10": "#001849",
+        "20": "#002b74",
+        "30": "#003fa3",
+        "40": "#1e57c8",
+        "50": "#4071e3",
+        "60": "#5d8bff",
+        "70": "#8aa8ff",
+        "80": "#b3c5ff",
+        "90": "#dae2ff",
+        "95": "#eef0ff",
+        "99": "#fefbff",
+        "100": "#ffffff"
+      }
+    },
+    {
+      "key": "primary-ink",
+      "name": "Primary Ink",
+      "token": "accent-dark",
+      "hex": "#2a4fbf",
+      "note": "Interactive text on white (AA)",
+      "hct": {
+        "h": 274.7,
+        "c": 60.6,
+        "t": 37.6
+      },
+      "tones": {
+        "0": "#000000",
+        "10": "#001550",
+        "20": "#002780",
+        "30": "#0c3bad",
+        "40": "#3155c5",
+        "50": "#4e6fe0",
+        "60": "#698afc",
+        "70": "#90a7ff",
+        "80": "#b6c4ff",
+        "90": "#dce1ff",
+        "95": "#eff0ff",
+        "99": "#fefbff",
+        "100": "#ffffff"
+      }
+    },
+    {
+      "key": "neutral",
+      "name": "Neutral",
+      "token": "gray-900",
+      "hex": "#333945",
+      "note": "Cool slate — text and surfaces",
+      "hct": {
+        "h": 262.4,
+        "c": 12,
+        "t": 23.9
+      },
+      "tones": {
+        "0": "#000000",
+        "10": "#161c27",
+        "20": "#2b313c",
+        "30": "#414753",
+        "40": "#585e6b",
+        "50": "#717785",
+        "60": "#8b919f",
+        "70": "#a5abba",
+        "80": "#c1c6d6",
+        "90": "#dde2f2",
+        "95": "#ecf0ff",
+        "99": "#fdfbff",
+        "100": "#ffffff"
+      }
+    },
+    {
+      "key": "pink",
+      "name": "Pink",
+      "token": "pill-pink-text",
+      "hex": "#b23e79",
+      "note": "Pill pair — pink",
+      "hct": {
+        "h": 354.3,
+        "c": 62,
+        "t": 44.6
+      },
+      "tones": {
+        "0": "#000000",
+        "10": "#3d0023",
+        "20": "#63003c",
+        "30": "#851755",
+        "40": "#a4326d",
+        "50": "#c34c87",
+        "60": "#e265a1",
+        "70": "#ff82bb",
+        "80": "#ffb0d0",
+        "90": "#ffd8e6",
+        "95": "#ffecf1",
+        "99": "#fffbff",
+        "100": "#ffffff"
+      }
+    },
+    {
+      "key": "yellow",
+      "name": "Yellow",
+      "token": "pill-yellow-text",
+      "hex": "#92710e",
+      "note": "Pill pair — yellow",
+      "hct": {
+        "h": 88.5,
+        "c": 41.6,
+        "t": 49.4
+      },
+      "tones": {
+        "0": "#000000",
+        "10": "#251a00",
+        "20": "#3e2e00",
+        "30": "#5a4400",
+        "40": "#775a00",
+        "50": "#947210",
+        "60": "#b08c2c",
+        "70": "#cda644",
+        "80": "#eac25c",
+        "90": "#ffdf97",
+        "95": "#ffefd1",
+        "99": "#fffbff",
+        "100": "#ffffff"
+      }
+    },
+    {
+      "key": "green",
+      "name": "Green",
+      "token": "pill-green-text",
+      "hex": "#1f8a63",
+      "note": "Pill pair — green",
+      "hct": {
+        "h": 165.8,
+        "c": 44.6,
+        "t": 51.1
+      },
+      "tones": {
+        "0": "#000000",
+        "10": "#002114",
+        "20": "#003825",
+        "30": "#005137",
+        "40": "#006c4b",
+        "50": "#1a8760",
+        "60": "#3ea279",
+        "70": "#5bbd92",
+        "80": "#77d9ac",
+        "90": "#94f6c7",
+        "95": "#beffdd",
+        "99": "#f4fff6",
+        "100": "#ffffff"
+      }
+    }
+  ]
+}

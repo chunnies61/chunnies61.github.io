@@ -1,4 +1,5 @@
 import Tag from "../components/Tag";
+import tonal from "../data/tonal-palettes.json";
 import "./StyleGuide.css";
 
 const NEUTRALS = [
@@ -91,6 +92,83 @@ export default function StyleGuide() {
             {ROLES.map((r) => (
               <Swatch key={r.token} token={r.token} note={r.note} />
             ))}
+          </div>
+        </Block>
+
+        <Block
+          title="Tonal palettes"
+          note="Each source colour expanded into the 13-step M3 HCT tonal scale. Tone is perceptual lightness — 0 is black, 100 is white — so the same tone reads at the same weight across every palette."
+        >
+          <div className="sg-tonals">
+            {tonal.palettes.map((p) => (
+              <div className="sg-tonal" key={p.key}>
+                <div className="sg-tonal-head">
+                  <strong>{p.name}</strong>
+                  <code>
+                    --{p.token} · {p.hex} · HCT {p.hct.h} / {p.hct.c} / {p.hct.t}
+                  </code>
+                  <span className="sg-swatch-note">{p.note}</span>
+                </div>
+                <div className="sg-tonal-ramp">
+                  {tonal.tones.map((t) => (
+                    <div className="sg-tone" key={t}>
+                      <div
+                        className="sg-tone-chip"
+                        style={{
+                          background: p.tones[t],
+                          color: t >= 60 ? "#000" : "#fff",
+                        }}
+                      >
+                        {t}
+                      </div>
+                      <code>{p.tones[t]}</code>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Block>
+
+        <Block
+          title="Role mapping"
+          note="Which tone each M3 role takes from its palette. Accent roles read from an accent palette; surface roles read from the neutral one."
+        >
+          <div className="sg-roles">
+            {[
+              ["Accent roles — light", tonal.roles.light, "primary"],
+              ["Accent roles — dark", tonal.roles.dark, "primary"],
+              ["Surface roles — light", tonal.roles.neutralLight, "neutral"],
+              ["Surface roles — dark", tonal.roles.neutralDark, "neutral"],
+            ].map(([heading, rows, paletteKey]) => {
+              const pal = tonal.palettes.find((x) => x.key === paletteKey);
+              return (
+                <div className="sg-role-group" key={heading}>
+                  <h3>{heading}</h3>
+                  <table className="sg-role-table">
+                    <tbody>
+                      {rows.map((r) => (
+                        <tr key={r.role}>
+                          <td>
+                            <span
+                              className="sg-role-dot"
+                              style={{ background: pal.tones[r.tone] }}
+                            />
+                          </td>
+                          <td>{r.role}</td>
+                          <td>
+                            <code>Tone {r.tone}</code>
+                          </td>
+                          <td>
+                            <code>{pal.tones[r.tone]}</code>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              );
+            })}
           </div>
         </Block>
 
