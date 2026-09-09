@@ -623,7 +623,7 @@ export default function CaseStudy() {
         </div>
       </nav>
 
-      <header className="wrap cs-header">
+      <header className="cs-header">
         <div className="cs-header-panel">
           <div className="cs-header-copy">
             {study.tags && study.tags.length > 0 && (

@@ -60,14 +60,18 @@ a.cs-index-item:hover {
   grid-template-columns: 1fr 1fr;
   gap: 8px;
   align-items: stretch;
+  width: 100%;
 }
 
 .cs-header-panel {
   display: flex;
   align-items: center;
   background: #f1f3fb;
-  border-radius: 24px;
-  padding: 48px;
+  border-radius: 0 24px 24px 0;
+  padding: clamp(28px, 4vw, 64px);
+  /* Line the copy up with the page's content column, so the header reads as
+     part of the same grid as the body below it. */
+  padding-left: max(24px, calc((100vw - var(--max-width)) / 2 + 24px));
   min-width: 0;
 }
 
@@ -103,21 +107,24 @@ a.cs-index-item:hover {
   height: 100%;
   min-height: 100%;
   object-fit: cover;
-  border-radius: 24px;
+  border-radius: 24px 0 0 24px;
   margin: 0;
 }
 
 @media (max-width: 860px) {
   .cs-header {
     grid-template-columns: 1fr;
+    gap: 0;
   }
   .cs-header-panel {
-    padding: 32px 24px;
+    border-radius: 0;
+    padding: 32px 24px 36px;
   }
   .cs-hero-image {
     height: auto;
     min-height: 0;
     aspect-ratio: 16 / 9;
+    border-radius: 0;
   }
 }
 
