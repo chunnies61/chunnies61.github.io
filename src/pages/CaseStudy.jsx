@@ -558,12 +558,15 @@ export default function CaseStudy() {
     .map((title) => caseStudies.find((cs) => cs.title === title))
     .filter(Boolean);
 
-  const nextCaseStudy = otherLinks[0]
-    ? {
-        ...otherLinks[0],
-        ...site.home.caseStudies.find((cs) => cs.slug === otherLinks[0].slug),
-      }
-    : null;
+  const currentIndex = caseStudies.findIndex((cs) => cs.slug === slug);
+  const withHomeMeta = (cs) =>
+    cs && { ...cs, ...site.home.caseStudies.find((h) => h.slug === cs.slug) };
+  const prevCaseStudy = withHomeMeta(currentIndex > 0 ? caseStudies[currentIndex - 1] : null);
+  const nextCaseStudy = withHomeMeta(
+    currentIndex >= 0 && currentIndex < caseStudies.length - 1
+      ? caseStudies[currentIndex + 1]
+      : null
+  );
 
   const indexItems = study.indexedSections
     ? study.indexedSections.map((s) => ({ id: s.id, label: s.kicker }))
@@ -861,21 +864,35 @@ export default function CaseStudy() {
         </div>
       )}
 
-      {nextCaseStudy && (
-        <div className="wrap cs-other">
-          <p className="eyebrow">Next case study</p>
-          <Link to={`/case-studies/${nextCaseStudy.slug}`} className="cs-next-card">
-            <div className="cs-next-thumb">
-              <img src={nextCaseStudy.thumb || nextCaseStudy.heroImage} alt="" loading="lazy" />
-              {nextCaseStudy.locked && <span className="cs-next-lock">🔒</span>}
-            </div>
-            <div className="cs-next-body">
-              <h3>{nextCaseStudy.title}</h3>
-              {nextCaseStudy.desc && <p>{nextCaseStudy.desc}</p>}
-            </div>
-            <span className="cs-next-arrow" aria-hidden="true">→</span>
-          </Link>
-        </div>
+      {(prevCaseStudy || nextCaseStudy) && (
+        <nav className="wrap cs-pager" aria-label="Case study pagination">
+          {prevCaseStudy ? (
+            <Link
+              to={`/case-studies/${prevCaseStudy.slug}`}
+              className="cs-pager-card cs-pager-card--prev"
+            >
+              <span className="cs-pager-label">
+                <span aria-hidden="true">←</span> Previous
+              </span>
+              <span className="cs-pager-title">{prevCaseStudy.title}</span>
+            </Link>
+          ) : (
+            <span className="cs-pager-empty" aria-hidden="true" />
+          )}
+          {nextCaseStudy ? (
+            <Link
+              to={`/case-studies/${nextCaseStudy.slug}`}
+              className="cs-pager-card cs-pager-card--next"
+            >
+              <span className="cs-pager-label">
+                Up next <span aria-hidden="true">→</span>
+              </span>
+              <span className="cs-pager-title">{nextCaseStudy.title}</span>
+            </Link>
+          ) : (
+            <span className="cs-pager-empty" aria-hidden="true" />
+          )}
+        </nav>
       )}
 
       <ContactCta />

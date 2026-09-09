@@ -1517,94 +1517,58 @@ a.cs-index-item:hover {
   color: var(--accent-dark);
 }
 
-.cs-other {
+/* Bottom pagination — Previous on the left, Up next on the right */
+.cs-pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
   padding-top: 40px;
   padding-bottom: var(--space-section);
 }
 
-.cs-other .eyebrow {
-  margin-left: 200px; /* aligns with the body column (160px label + 40px gap) used throughout the page */
-}
-
-.cs-next-card {
-  margin-top: 16px;
-  margin-left: 200px; /* aligns with the body column (160px label + 40px gap) used throughout the page */
+.cs-pager-card {
   display: flex;
-  align-items: center;
-  gap: 24px;
-  padding: 16px;
-  border: 1px solid var(--card-border);
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px 28px;
   border-radius: var(--radius-card);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: #f1f3fb;
+  transition: background 0.15s ease;
 }
 
-.cs-next-card:hover {
-  border-color: var(--accent);
-  box-shadow: 0 12px 28px rgba(20, 32, 61, 0.08);
+.cs-pager-card:hover {
+  background: #e6eaf7;
 }
 
-.cs-next-card:hover .cs-next-thumb img {
-  transform: scale(1.03);
+.cs-pager-card--next {
+  align-items: flex-start;
 }
 
-.cs-next-thumb {
-  position: relative;
-  flex-shrink: 0;
-  width: 220px;
-  aspect-ratio: 470 / 312;
-  border-radius: calc(var(--radius-media) - 4px);
-  overflow: hidden;
-  background: var(--placeholder-bg);
-}
-
-.cs-next-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.cs-next-lock {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 999px;
-  padding: 5px 7px;
-  font-size: 13px;
-  line-height: 1;
-}
-
-.cs-next-body {
-  flex: 1;
-  min-width: 0;
-}
-
-.cs-next-body h3 {
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.cs-next-body p {
-  margin-top: 6px;
+.cs-pager-label {
+  font-family: var(--font-ui);
   font-size: 14px;
+  font-weight: 500;
   color: var(--text-soft);
 }
 
-.cs-next-arrow {
-  flex-shrink: 0;
+.cs-pager-title {
+  font-family: var(--font-display);
   font-size: 20px;
-  color: var(--accent-dark);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text);
 }
 
-@media (max-width: 640px) {
-  .cs-next-card {
-    flex-wrap: wrap;
+.cs-pager-empty {
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .cs-pager {
+    grid-template-columns: 1fr;
   }
-  .cs-next-thumb {
-    width: 100%;
+  .cs-pager-empty {
+    display: none;
   }
 }
 
@@ -1627,10 +1591,6 @@ a.cs-index-item:hover {
   .cs-row {
     grid-template-columns: 1fr;
     gap: 12px;
-  }
-  .cs-next-card,
-  .cs-other .eyebrow {
-    margin-left: 0;
   }
   .cs-points {
     grid-template-columns: 1fr;

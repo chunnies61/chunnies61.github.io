@@ -1,7 +1,7 @@
 {
   "slug": "unified-customer-hub",
   "title": "Unified Customer Hub",
-  "subtitle": "Turning three disconnected fintech products into one platform — and 420K+ monthly users",
+  "subtitle": "Turning three disconnected fintech products into one platform, and 420K+ monthly users",
   "tags": ["Fintech", "B2C", "Customer Service"],
   "heroImage": "/images/thumbnail-1-2a85e4.png",
   "meta": [
@@ -17,8 +17,8 @@
       "title": "One brand, three strangers",
       "blocks": [
         {"type": "text", "value": [
-          "Best Egg offered personal loans, credit cards, and financial-health tools. On paper, one brand. In reality, three products that shared a logo and a color — and almost nothing else.",
-          "The business wanted to grow through cross-sell: turn a loan customer into a card customer, nudge a card user to watch their credit score. But the products never spoke to each other, and neither did the experiences. Every new launch shipped as its own island, quietly eroding cohesion and every cross-sell opportunity with it."
+          "Best Egg offered personal loans, credit cards, and financial-health tools. On paper, one brand. In reality, three products sharing a logo and a color and almost nothing else.",
+          "The business wanted to grow through cross-sell: turn a loan customer into a card customer, nudge a card user to watch their credit score. But the products never spoke to each other, and neither did the experiences. Every launch shipped as its own island, eroding cohesion and every cross-sell opportunity with it."
         ]},
         {"type": "image", "src": "/images/problem-space.svg", "label": "Before — shared branding, nothing else"}
       ]
@@ -30,10 +30,10 @@
       "blocks": [
         {"type": "text", "value": [
           "The obvious problem was fragmentation. The real one was quieter: no one owned the word \"unified.\"",
-          "Each product line had its own PM, its own KPIs, its own roadmap. Everyone agreed unification mattered — then nothing moved. The vision floated, and no one was there to catch it.",
-          "That vacuum, I decided, was exactly where design should step in. Only design could take an abstract word and turn it into something everyone could point at."
+          "Each product line had its own PM, KPIs, and roadmap. Everyone agreed unification mattered — then nothing moved. The vision floated, and no one caught it.",
+          "That vacuum was exactly where design should step in. Only design could turn an abstract word into something everyone could point at."
         ]},
-        {"type": "callout", "label": "Framing question", "value": "How might we unify loans, cards, and financial health into one trusted platform — without disrupting core workflows or overloading a legacy stack?"},
+        {"type": "callout", "label": "Framing question", "value": "How might we unify loans, cards, and financial health into one trusted platform, without disrupting core workflows or overloading a legacy stack?"},
         {"type": "image", "src": "/images/stakeholder-tension-map.png", "variant": "square", "label": "Stakeholder tension map — three product lines, three KPI sets, and an unowned \"Unified?\" in the middle"}
       ]
     },
@@ -42,13 +42,13 @@
       "kicker": "The groundwork",
       "title": "What's actually shared, and what isn't",
       "blocks": [
-        {"type": "text", "value": "Before I could show anyone a unified platform, I had to know what \"unified\" could even mean. I started with the customers — what they need across loans, cards, and financial health, and where the split experience was costing them."},
+        {"type": "text", "value": "Before I could show anyone a unified platform, I had to know what \"unified\" could mean. I started with the customers: what they need across loans, cards, and financial health, and where the split experience cost them."},
         {"type": "image", "src": "/images/frame-427319547-25ac92.png", "label": "User needs and pain points across Best Egg's existing products"},
-        {"type": "text", "value": "The market said the same thing from the other side: customers favour integrated financial platforms with a seamless mobile experience, and the competitors pulling ahead were running a cohesive ecosystem rather than a set of products."},
+        {"type": "text", "value": "The market said the same from the other side: customers favour integrated platforms with a seamless mobile experience, and the competitors pulling ahead ran a cohesive ecosystem rather than a set of products."},
         {"type": "image", "src": "/images/image-06aefa.png", "label": "Market scan — how competing platforms handle multi-product servicing"},
-        {"type": "text", "value": "Then I ran a card-sorting workshop to settle the question structurally, and it split the feature set cleanly in two: Payments, Notifications, and Profile were shared by every product, while Account Details and Activity varied by account type. Overlapping features on one side, account-specific on the other."},
+        {"type": "text", "value": "Then a card-sorting workshop settled the question structurally, splitting the feature set in two: Payments, Notifications, and Profile were shared by every product, while Account Details and Activity varied by account type."},
         {"type": "image", "src": "/images/card-sorting-3fc988.png", "label": "Card sorting — features grouped into overlapping and account-specific sets"},
-        {"type": "text", "value": "That split became the architecture: one top-level and sub-navigation system giving consistent access to the shared features while preserving each account's own flows — less navigation friction, shorter task completion, and a single place to do the banking work."},
+        {"type": "text", "value": "That split became the architecture: one top-level and sub-navigation system giving consistent access to shared features while preserving each account's own flows — less friction, shorter tasks, one place to do the banking work."},
         {"type": "image", "src": "/images/ia-641b91.png", "label": "Information architecture — Customer Hub across Personal Loan, Credit Card, Financial Health, Offers, Profile, and Notifications"}
       ]
     },
@@ -58,14 +58,14 @@
       "title": "Show, don't tell",
       "blocks": [
         {"type": "text", "value": [
-          "Instead of pitching a deck, I spent two weeks building a clickable, high-fidelity prototype — a real flow: pay off a loan, jump to your credit score, land on a cross-sell entry point, seamlessly.",
+          "Instead of pitching a deck, I spent two weeks building a clickable, high-fidelity prototype of a real flow: pay off a loan, jump to your credit score, land on a cross-sell entry point.",
           "In the review, I didn't argue we should unify. I let stakeholders click it themselves."
         ]},
         {"type": "image", "src": "/images/group-10122972-ec7f91.svg", "label": "The vision — three separate product surfaces resolving into one Customer Hub"},
         {"type": "image", "src": "/images/wireframes-1434a2.png", "label": "The two-week proposal — desktop and mobile flows end to end"},
         {"type": "video", "src": "/videos/customer-hub-prototype.mp4", "label": "Prototype walkthrough — loan → credit score → cross-sell"},
         {"type": "quote", "value": "Oh — so THAT's what cross-sell looks like.", "attribution": "Executive stakeholder, live prototype review", "avatar": "executive"},
-        {"type": "text", "value": "The vision finally had a shape. And I became the de-facto driver of a project that never had an owner."}
+        {"type": "text", "value": "The vision finally had a shape — and I became the de-facto driver of a project that never had an owner."}
       ]
     },
     {
@@ -74,10 +74,10 @@
       "title": "When engineering says \"we can't\"",
       "blocks": [
         {"type": "text", "value": [
-          "Engineering pushed back hard. Credit Card ran on a third-party platform. Migrating it in-house meant 6+ months and a real risk of breaking live servicing flows. The vision was beautiful — and, right now, unbuildable.",
+          "Engineering pushed back hard. Credit Card ran on a third-party platform; migrating it in-house meant 6+ months and real risk to live servicing flows. The vision was beautiful, and unbuildable.",
           "I didn't debate feasibility. I mapped complexity with them.",
-          "In a working session with Engineering and PM, I enumerated every account state — single-product, loan + card, card + financial health, past-due, pending activation, missing data — into one account-state reference table.",
-          "Laid out, it made something obvious: only a handful of high-frequency shared surfaces were truly interconnected. Everything else was account-specific and didn't need to move at once."
+          "In a session with Engineering and PM, I enumerated every account state — single-product, loan + card, card + financial health, past-due, pending activation, missing data — into one reference table.",
+          "Laid out, it made something obvious: only a handful of high-frequency shared surfaces were truly interconnected. Everything else was account-specific and could wait."
         ]},
         {"type": "image", "src": "/images/account-state-reference-table.png", "variant": "square", "label": "Account-state reference table"}
       ]
@@ -88,14 +88,14 @@
       "title": "One decision, three stories",
       "blocks": [
         {"type": "text", "value": [
-          "The call: keep Credit Card on the third-party platform for now. Focus in-house effort on the highest-impact surfaces — unified dashboard, Loan, Financial Health. Stitch the card in through an integration layer. Bring it home later, once the platform proved its value.",
-          "The hard part: this plan was imperfect for everyone. So I told three stories for one decision."
+          "The call: keep Credit Card third-party for now, focus in-house effort on the highest-impact surfaces — unified dashboard, Loan, Financial Health — and stitch the card in through an integration layer. Bring it home once the platform proved its value.",
+          "The plan was imperfect for everyone. So I told three stories for one decision."
         ]},
-        {"type": "text", "value": "Same decision, three narratives. That's what moving a project forward really means — not making everyone love the same reason, but letting everyone nod from the angle they care about."},
+        {"type": "text", "value": "Same decision, three narratives. That's what moving a project forward means — not making everyone love the same reason, but letting everyone nod from the angle they care about."},
         {"type": "cards", "columns": 3, "items": [
-          {"label": "To Engineering", "title": "Feasible and safe", "desc": "This avoids the riskiest migration and keeps you on schedule."},
-          {"label": "To business & leadership", "title": "Results first", "desc": "The surfaces we ship first are exactly where cross-sell converts. We'll see data fastest."},
-          {"label": "To design", "title": "The vision, protected", "desc": "Keeping card third-party protects the vision. We validate the platform first, then earn the right to bring it home."}
+          {"label": "To Engineering", "title": "Feasible and safe", "desc": "This avoids the riskiest migration and keeps you on schedule"},
+          {"label": "To business & leadership", "title": "Results first", "desc": "The surfaces we ship first are where cross-sell converts. We'll see data fastest."},
+          {"label": "To design", "title": "The vision, protected", "desc": "Keeping card third-party protects the vision: validate the platform first, then earn the right to bring it home."}
         ]}
       ]
     },
@@ -104,29 +104,29 @@
       "kicker": "Execution",
       "title": "Systems, not screens",
       "blocks": [
-        {"type": "text", "value": "Three products × ownership combinations × account states = a combinatorial explosion. Miss one state, and a user hits a blank page. So I didn't draw every screen — I built systems."},
+        {"type": "text", "value": "Three products × ownership combinations × account states = combinatorial explosion. Miss one state and a user hits a blank page. So I didn't draw screens — I built systems."},
         {"type": "step", "num": "6.1", "title": "The shipped surfaces", "blocks": [
           {"type": "surface-showcase", "layout": "split-portrait", "alternate": false, "items": [
-            {"label": "Customer Hub", "title": "A centralized dashboard for managing all financial products in one place", "desc": "Unifies Financial Health, Personal Loan, and Credit Card data into a single, clear view of a customer's financial status.", "video": "/videos/customer-hub.mov"},
-            {"label": "Personal Loan", "title": "A dedicated space for personal loan customers to manage their accounts", "desc": "Allows users to view payment history, access statements, and make payments with ease.", "video": "/videos/personal-loan.mp4"},
-            {"label": "Financial Health", "title": "A dashboard that helps users understand and improve their financial health", "desc": "Provides credit scores, score factors, alerts, simulations, and access to detailed credit reports.", "video": "/videos/financial-health.mp4"}
+            {"label": "Customer Hub", "title": "A centralized dashboard for managing all financial products in one place", "desc": "Unifies Financial Health, Personal Loan, and Credit Card data into one clear view of a customer's finances.", "video": "/videos/customer-hub.mov"},
+            {"label": "Personal Loan", "title": "A dedicated space for loan customers to manage their accounts", "desc": "View payment history, access statements, and make payments with ease.", "video": "/videos/personal-loan.mp4"},
+            {"label": "Financial Health", "title": "A dashboard that helps users understand and improve their financial health", "desc": "Credit scores, score factors, alerts, simulations, and detailed credit reports.", "video": "/videos/financial-health.mp4"}
           ]},
-          {"type": "text", "value": "Shipping them accurately meant documenting the details that get lost in handoff — responsive behaviour, edge cases, and the exact treatment of each module across desktop and mobile."},
+          {"type": "text", "value": "Shipping them accurately meant documenting what gets lost in handoff — responsive behaviour, edge cases, and each module's exact treatment across desktop and mobile."},
           {"type": "image", "src": "/images/screenshot-2025-01-21-at-1.50.27-am-cee5e6.png", "label": "Design for implementation — the Hub dashboard specified across desktop and mobile"}
         ]},
         {"type": "step", "num": "6.2", "title": "A messaging framework, not one-off designs", "blocks": [
           {"type": "text", "value": [
-            "With Marketing and a researcher, I tested cross-sell placements on UserTesting. The finding was sharp: banners and in-feature messaging performed best with minimal annoyance; modals felt intrusive and belonged only to critical alerts.",
-            "I didn't spend the insight and move on — I codified it into a reusable \"message urgency ↔ placement\" mapping: what level of message, in which placement, with what motion intensity. Every product line and every engineer could place messages by rule, instead of coming back to ask me — turning a one-off design into a self-serve system."
+            "With Marketing and a researcher, I tested cross-sell placements on UserTesting. The finding was sharp: banners and in-feature messaging performed best with minimal annoyance, while modals felt intrusive and belonged only to critical alerts.",
+            "I didn't spend the insight and move on — I codified it into a reusable \"message urgency ↔ placement\" mapping: what level of message, in which placement, at what motion intensity. Every product line and engineer could place messages by rule instead of asking me, turning a one-off design into a self-serve system."
           ]},
           {"type": "image", "src": "/images/message-types-placements.png", "variant": "spaced-top", "label": "4 message types × 5 placement options"},
-          {"type": "text", "value": "Key user testing insights: we tested 20 message-placement combinations across 527 users. Banners and in-feature messaging won on engagement and sentiment; modals felt intrusive and were reserved for critical alerts."},
+          {"type": "text", "value": "We tested 20 message-placement combinations across 527 users. Banners and in-feature messaging won on engagement and sentiment; modals were reserved for critical alerts."},
           {"type": "image", "src": "/images/message-placement-matrix.png", "label": "Placement × message type effectiveness matrix"}
         ]},
         {"type": "step", "num": "6.3", "title": "Designing for products that didn't exist yet", "blocks": [
           {"type": "text", "value": [
-            "Best Egg keeps launching products. If each spun up its own flow, we'd slide right back into fragmentation. So the Best Egg Design System — 2,000+ modular components — was built to be pluggable: navigation, shared modules, and the messaging framework all reserved insertion points for future products.",
-            "I wasn't delivering a platform. I was delivering a platform that could grow new products — the same extensibility that later made room for smarter, AI-driven personalization. An extensible architecture is the prerequisite for embracing whatever ships next."
+            "Best Egg keeps launching products. If each spun up its own flow, we'd slide back into fragmentation. So the Best Egg Design System — 2,000+ modular components — was built pluggable: navigation, shared modules, and the messaging framework all reserved insertion points for future products.",
+            "I wasn't delivering a platform. I was delivering a platform that could grow new products — the same extensibility that later made room for AI-driven personalization, and the prerequisite for whatever ships next."
           ]},
           {"type": "image", "src": "/images/best-egg-design-system.png", "label": "Best Egg Design System — 2,000+ modular components"}
         ]}
@@ -142,10 +142,10 @@
           {"value": "411K+", "label": "Monthly users by early 2024 (FullStory)"},
           {"value": "+5%", "label": "Second-loan offer clicks, trailing 90 days"}
         ]},
-        {"type": "text", "value": "Launched August 2022. The gains showed up immediately and kept compounding. In the first week, credit score activation post-login rose 94% and Financial Health daily active users more than doubled — proof the unified entry point was doing exactly what it was designed to do: get customers to the products that mattered before they even asked."},
+        {"type": "text", "value": "Launched August 2022. The gains showed up immediately and kept compounding: in the first week, credit score activation post-login rose 94% and Financial Health daily active users more than doubled — proof the unified entry point was doing its job, getting customers to the products that mattered before they asked."},
         {"type": "image", "src": "/images/customer-hub-launch-emails.png", "variant": "framed", "label": "Launch announcement and early-results readout to the team"},
         {"type": "image", "src": "/images/fs-2-b3ea46.png", "variant": "outlined", "label": "Final product — desktop and mobile"},
-        {"type": "text", "value": "On the revenue side, second-loan eligibility climbed to 42% (vs. 35% on the legacy servicing site) with a 50% acceptance rate, and the leads chart told the same story more slowly: the Hub's share of second-loan leads crept up week over week until, by mid-August, it had overtaken the legacy channel outright."}
+        {"type": "text", "value": "On revenue, second-loan eligibility climbed to 42% (vs. 35% on the legacy servicing site) at a 50% acceptance rate, and the leads chart told the same story more slowly: the Hub's share crept up week over week until, by mid-August, it had overtaken the legacy channel outright."}
       ]
     }
   ],
