@@ -627,7 +627,7 @@ export default function CaseStudy() {
             {study.tags && study.tags.length > 0 && (
               <p className="cs-header-eyebrow">{study.tags.join(" · ")}</p>
             )}
-            <h1 className="cs-header-title">{study.title}</h1>
+            <h2 className="cs-header-title">{study.title}</h2>
             {study.subtitle && <p className="cs-header-subtitle">{study.subtitle}</p>}
           </div>
         </div>
@@ -674,7 +674,6 @@ export default function CaseStudy() {
         <div className="wrap cs-body">
           <nav className="cs-index" aria-label="Case studies">
             <div className="cs-index-inner">
-              <p className="cs-index-eyebrow">Case studies</p>
               <ul className="cs-index-list">
                 {caseStudies.map((cs) => {
                   const isCurrent = cs.slug === study.slug;

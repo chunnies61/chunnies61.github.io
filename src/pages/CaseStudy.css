@@ -3,9 +3,8 @@
 }
 
 .cs-topbar {
-  position: sticky;
-  top: 0;
-  z-index: 50;
+  display: flex;
+  justify-content: flex-end;
   padding: 20px 0;
   background: #ffffff;
 }
@@ -63,7 +62,7 @@
 }
 
 .cs-index-group-title:hover {
-  color: var(--accent-dark);
+  color: var(--text);
 }
 
 .cs-index-group.is-current .cs-index-group-title {
@@ -93,25 +92,25 @@
   margin-left: 2px;
 }
 
+/* Item states follow the reference: hover darkens the ink, the selected
+   item switches to the display face at the darkest ink. No fills, no rules. */
 .cs-index-item {
   font-family: var(--font-ui);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.35;
   color: var(--text-soft);
-  opacity: 0.7;
-  transition: opacity 0.15s ease, color 0.15s ease;
+  transition: color 0.15s ease;
 }
 
 a.cs-index-item:hover {
-  opacity: 1;
-  color: var(--accent-dark);
+  color: var(--text);
 }
 
 .cs-index-item.is-active {
-  color: var(--accent-dark);
-  font-weight: 600;
-  opacity: 1;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text);
 }
 
 /* Page header — tinted copy panel beside the hero, equal halves */
@@ -148,17 +147,16 @@ a.cs-index-item:hover {
 .cs-header-title {
   margin-bottom: 12px;
   font-family: var(--font-display);
-  font-size: clamp(32px, 3.6vw, 52px);
+  font-size: 26px;
   font-weight: 700;
-  line-height: 1.09;
-  letter-spacing: -1px;
+  line-height: 1.25;
   color: var(--text);
 }
 
 .cs-header-subtitle {
   font-family: var(--font-ui);
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.6;
   color: var(--text-soft);
 }
@@ -227,14 +225,21 @@ a.cs-index-item:hover {
 
 .cs-body {
   display: grid;
-  grid-template-columns: 160px 1fr;
+  grid-template-columns: 1fr 160px;
   gap: 40px;
   padding-bottom: 40px;
 }
 
-/* Stretch the rail to the full body height so the inner block can stick */
+/* Rail sits to the right of the content, stretched so the inner block sticks */
 .cs-index {
+  grid-column: 2;
+  grid-row: 1;
   align-self: stretch;
+}
+
+.cs-body-main {
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .cs-body-main {
@@ -258,6 +263,9 @@ a.cs-index-item:hover {
   }
   .cs-index {
     display: none;
+  }
+  .cs-body-main {
+    grid-column: 1;
   }
 }
 
