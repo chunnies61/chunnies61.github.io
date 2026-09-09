@@ -4,8 +4,10 @@
 }
 
 .ap-header h1 {
-  font-size: 40px;
+  font-size: clamp(32px, 3.6vw, 52px);
   font-weight: 700;
+  line-height: 1.09;
+  letter-spacing: -1px;
   margin-top: 8px;
 }
 

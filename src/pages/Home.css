@@ -21,22 +21,21 @@
   max-width: 900px;
   margin: 0 auto;
   font-family: var(--font-display);
-  font-size: 44px;
+  font-size: clamp(32px, 3.6vw, 52px);
   font-weight: 700;
-  line-height: 1.4;
-  letter-spacing: -0.5px;
-  color: var(--accent-dark);
+  line-height: 1.09;
+  letter-spacing: -1px;
+  color: var(--text);
 }
 
 .hero-subtitle {
   margin: 24px auto 0;
   max-width: 620px;
   font-family: var(--font-ui);
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.8;
-  letter-spacing: 0.32px;
-  color: var(--gray-600);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-soft);
 }
 
 .hero-actions {
@@ -245,12 +244,6 @@
 .more-arrow:hover {
   border-color: var(--accent);
   color: var(--accent-dark);
-}
-
-@media (max-width: 900px) {
-  .hero-title {
-    font-size: 36px;
-  }
 }
 
 /* Below the full 920px grid width: stack case studies into one centered
