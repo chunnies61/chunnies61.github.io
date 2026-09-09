@@ -450,6 +450,7 @@ function Block({ block }) {
                 />
               </div>
               <div className="cs-surface-text">
+                {item.label && <span className="cs-surface-label">{item.label}</span>}
                 <h4>{item.title}</h4>
                 <p>{item.desc}</p>
               </div>

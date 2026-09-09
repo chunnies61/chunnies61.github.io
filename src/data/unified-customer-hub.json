@@ -106,10 +106,10 @@
       "blocks": [
         {"type": "text", "value": "Three products × ownership combinations × account states = a combinatorial explosion. Miss one state, and a user hits a blank page. So I didn't draw every screen — I built systems."},
         {"type": "step", "num": "6.1", "title": "The shipped surfaces", "blocks": [
-          {"type": "surface-showcase", "items": [
-            {"title": "Customer Hub", "desc": "A centralized dashboard unifying Financial Health, Personal Loan, and Credit Card data into a single, clear view of a customer's financial status.", "video": "/videos/customer-hub.mov"},
-            {"title": "Personal Loan", "desc": "A dedicated space to view payment history, access statements, and make payments with ease.", "video": "/videos/personal-loan.mp4"},
-            {"title": "Financial Health", "desc": "Credit scores, score factors, alerts, simulations, and access to detailed credit reports.", "video": "/videos/financial-health.mp4"}
+          {"type": "surface-showcase", "layout": "split-portrait", "alternate": false, "items": [
+            {"label": "Customer Hub", "title": "A centralized dashboard for managing all financial products in one place", "desc": "Unifies Financial Health, Personal Loan, and Credit Card data into a single, clear view of a customer's financial status.", "video": "/videos/customer-hub.mov"},
+            {"label": "Personal Loan", "title": "A dedicated space for personal loan customers to manage their accounts", "desc": "Allows users to view payment history, access statements, and make payments with ease.", "video": "/videos/personal-loan.mp4"},
+            {"label": "Financial Health", "title": "A dashboard that helps users understand and improve their financial health", "desc": "Provides credit scores, score factors, alerts, simulations, and access to detailed credit reports.", "video": "/videos/financial-health.mp4"}
           ]},
           {"type": "text", "value": "Shipping them accurately meant documenting the details that get lost in handoff — responsive behaviour, edge cases, and the exact treatment of each module across desktop and mobile."},
           {"type": "image", "src": "/images/screenshot-2025-01-21-at-1.50.27-am-cee5e6.png", "label": "Design for implementation — the Hub dashboard specified across desktop and mobile"}
