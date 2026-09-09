@@ -7,8 +7,8 @@ import './FallingTools.css';
 const CFG = {
   iconSizeDesktop: 56,
   iconSizeMobile: 44,
-  tagHeightDesktop: 40, // pill tags: width = height × aspect
-  tagHeightMobile: 30,
+  tagHeightDesktop: 34, // pill tags: width = height × aspect
+  tagHeightMobile: 26,
   mobileBreakpoint: 560,
   gravity: 1,
   restitution: 0.45, // bounciness, 0–1
