@@ -55,23 +55,24 @@ a.cs-index-item:hover {
 
 /* Page header — tinted copy panel beside the hero, equal halves */
 .cs-header {
-  margin-top: var(--space-page-top);
+  margin: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  gap: 20px;
   align-items: stretch;
-  width: 100%;
+  min-height: clamp(340px, 32vw, 520px);
 }
 
 .cs-header-panel {
   display: flex;
   align-items: center;
   background: #f1f3fb;
-  border-radius: 0 24px 24px 0;
+  border-radius: 24px;
   padding: clamp(28px, 4vw, 64px);
   /* Line the copy up with the page's content column, so the header reads as
-     part of the same grid as the body below it. */
-  padding-left: max(24px, calc((100vw - var(--max-width)) / 2 + 24px));
+     part of the same grid as the body below it (the panel already sits 20px
+     in from the viewport edge). */
+  padding-left: max(24px, calc((100vw - var(--max-width)) / 2 + 4px));
   min-width: 0;
 }
 
@@ -107,24 +108,22 @@ a.cs-index-item:hover {
   height: 100%;
   min-height: 100%;
   object-fit: cover;
-  border-radius: 24px 0 0 24px;
+  border-radius: 24px;
   margin: 0;
 }
 
 @media (max-width: 860px) {
   .cs-header {
     grid-template-columns: 1fr;
-    gap: 0;
+    min-height: 0;
   }
   .cs-header-panel {
-    border-radius: 0;
-    padding: 32px 24px 36px;
+    padding: 36px 24px 40px;
   }
   .cs-hero-image {
     height: auto;
     min-height: 0;
     aspect-ratio: 16 / 9;
-    border-radius: 0;
   }
 }
 
