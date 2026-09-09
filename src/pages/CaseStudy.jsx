@@ -512,10 +512,7 @@ function IndexedSection({ section }) {
       id={section.id}
     >
       <div className="cs-section-content">
-        <header className="cs-section-head">
-          <p className="cs-section-kicker">{section.kicker}</p>
-          {section.title && <h2 className="cs-section-title">{section.title}</h2>}
-        </header>
+        {section.title && <h2 className="cs-section-title">{section.title}</h2>}
         {section.blocks.map((b, i) => (
           <Block block={b} key={i} />
         ))}
@@ -576,6 +573,24 @@ export default function CaseStudy() {
       }));
 
   const [activeId, setActiveId] = useState(indexItems[0]?.id ?? null);
+  const [openSlugs, setOpenSlugs] = useState([slug]);
+
+  useEffect(() => {
+    setOpenSlugs([slug]);
+  }, [slug]);
+
+  // Follow a #section hash when arriving from another case study's index.
+  useEffect(() => {
+    const hash = window.location.hash.slice(1);
+    if (!hash) return;
+    const el = document.getElementById(hash);
+    if (el) el.scrollIntoView();
+  }, [slug]);
+
+  const toggleGroup = (s) =>
+    setOpenSlugs((open) =>
+      open.includes(s) ? open.filter((x) => x !== s) : [...open, s]
+    );
 
   useEffect(() => {
     setActiveId(indexItems[0]?.id ?? null);
@@ -657,28 +672,64 @@ export default function CaseStudy() {
         </div>
       ) : (
         <div className="wrap cs-body">
-          <nav className="cs-index" aria-label="On this page">
+          <nav className="cs-index" aria-label="Case studies">
             <div className="cs-index-inner">
-              <p className="cs-index-eyebrow">On this page</p>
-              <p className="cs-index-title">{study.title}</p>
-              <div className="cs-index-items">
-                {indexItems.map((item, i) => {
-                  const isActive = item.id !== null && item.id === activeId;
-                  return item.id ? (
-                    <a
-                      key={item.id}
-                      href={`#${item.id}`}
-                      className={"cs-index-item" + (isActive ? " is-active" : "")}
+              <p className="cs-index-eyebrow">Case studies</p>
+              <ul className="cs-index-list">
+                {caseStudies.map((cs) => {
+                  const isCurrent = cs.slug === study.slug;
+                  const isOpen = openSlugs.includes(cs.slug);
+                  const sections = cs.indexedSections || [];
+                  return (
+                    <li
+                      className={"cs-index-group" + (isCurrent ? " is-current" : "")}
+                      key={cs.slug}
                     >
-                      {item.label}
-                    </a>
-                  ) : (
-                    <span className="cs-index-item" key={item.label + i}>
-                      {item.label}
-                    </span>
+                      <button
+                        type="button"
+                        className="cs-index-group-title"
+                        aria-expanded={isOpen}
+                        onClick={() => toggleGroup(cs.slug)}
+                      >
+                        <span>{cs.title}</span>
+                        {sections.length > 0 && (
+                          <span
+                            className={"cs-index-caret" + (isOpen ? " is-open" : "")}
+                            aria-hidden="true"
+                          >
+                            ▾
+                          </span>
+                        )}
+                      </button>
+                      {isOpen && sections.length > 0 && (
+                        <div className="cs-index-items">
+                          {sections.map((sec) =>
+                            isCurrent ? (
+                              <a
+                                key={sec.id}
+                                href={`#${sec.id}`}
+                                className={
+                                  "cs-index-item" + (sec.id === activeId ? " is-active" : "")
+                                }
+                              >
+                                {sec.kicker}
+                              </a>
+                            ) : (
+                              <Link
+                                key={sec.id}
+                                to={`/case-studies/${cs.slug}#${sec.id}`}
+                                className="cs-index-item"
+                              >
+                                {sec.kicker}
+                              </Link>
+                            )
+                          )}
+                        </div>
+                      )}
+                    </li>
                   );
                 })}
-              </div>
+              </ul>
             </div>
           </nav>
 
