@@ -623,6 +623,16 @@ export default function CaseStudy() {
         </div>
       </nav>
 
+      <header className="wrap cs-header">
+        <div className="cs-header-panel">
+          {study.tags && study.tags.length > 0 && (
+            <p className="cs-header-eyebrow">{study.tags.join(" · ")}</p>
+          )}
+          <h1 className="cs-header-title">{study.title}</h1>
+          {study.subtitle && <p className="cs-header-subtitle">{study.subtitle}</p>}
+        </div>
+      </header>
+
       {study.heroImage ? (
         <div className="wrap">
           <img className="cs-hero-image" src={study.heroImage} alt={study.title} />

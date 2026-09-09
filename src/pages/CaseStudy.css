@@ -53,13 +53,61 @@ a.cs-index-item:hover {
   opacity: 1;
 }
 
+/* Page header — tinted panel carrying eyebrow, display title and subtitle,
+   with the hero sitting flush beneath it */
+.cs-header {
+  margin-top: var(--space-page-top);
+}
+
+.cs-header-panel {
+  background: #f1f3fb;
+  border-radius: 24px;
+  padding: 56px;
+}
+
+.cs-header-eyebrow {
+  margin-bottom: 16px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-soft);
+}
+
+.cs-header-title {
+  margin-bottom: 12px;
+  font-family: var(--font-display);
+  font-size: clamp(38px, 5.6vw, 72px);
+  font-weight: 700;
+  line-height: 1.09;
+  letter-spacing: -1px;
+  color: var(--text);
+}
+
+.cs-header-subtitle {
+  max-width: 760px;
+  font-family: var(--font-ui);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-soft);
+}
+
+@media (max-width: 760px) {
+  .cs-header-panel {
+    padding: 32px 24px;
+  }
+  .cs-header-subtitle {
+    font-size: 17px;
+  }
+}
+
 .cs-hero-image {
   display: block;
-  border-radius: var(--radius-media);
+  border-radius: 24px;
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  margin: var(--space-page-top) 0 8px;
+  margin: 8px 0 0;
 }
 
 .cs-video-placeholder,
