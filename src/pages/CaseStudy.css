@@ -641,7 +641,7 @@ a.cs-index-item:hover {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: rgba(255, 255, 255, 0.85);
+  color: #ffe785;
 }
 .cs-callout p {
   font-family: var(--font-display);
@@ -656,10 +656,6 @@ a.cs-index-item:hover {
   color: #bfdbfe;
 }
 
-/* Agent Desk — callout captions use the marker yellow; body stays white */
-.case-study--agent-desk .cs-callout-label {
-  color: #ffe785;
-}
 
 /* Contrast pair */
 .cs-contrast {
