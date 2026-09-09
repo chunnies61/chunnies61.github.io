@@ -1,5 +1,6 @@
 import Tag from "../components/Tag";
 import tonal from "../data/tonal-palettes.json";
+import typeScale from "../data/type-scale.json";
 import "./StyleGuide.css";
 
 const NEUTRALS = [
@@ -32,15 +33,6 @@ const PILLS = [
   { name: "Green", bg: "pill-green-bg", fg: "pill-green-text" },
 ];
 
-const TYPE = [
-  { label: "Page header title — h2", cls: "sg-t-section", spec: "Bricolage 26px / 700 / 1.25" },
-  { label: "Section title — h2", cls: "sg-t-section", spec: "Bricolage 26px / 700 / 1.25" },
-  { label: "Step title — h4", cls: "sg-t-step", spec: "Bricolage 18px / 700" },
-  { label: "Body", cls: "sg-t-body", spec: "Poppins 16px / 400 / 1.6 / --text-soft" },
-  { label: "Header subtitle", cls: "sg-t-subtitle", spec: "Poppins 16px / 500 / 1.6 / --text-soft" },
-  { label: "Small / caption", cls: "sg-t-small", spec: "Poppins 14px / 500 / --text-soft" },
-  { label: "Eyebrow", cls: "sg-t-eyebrow", spec: "Poppins 11–13px / 600 / uppercase / 0.05em" },
-];
 
 const RADII = ["radius-tag", "radius-btn", "radius-media", "radius-card"];
 const SPACING = ["space-page-top", "space-section", "space-title-gap"];
@@ -189,18 +181,62 @@ export default function StyleGuide() {
           </div>
         </Block>
 
-        <Block title="Type scale">
-          <div className="sg-type">
-            {TYPE.map((t) => (
-              <div className="sg-type-row" key={t.label}>
-                <div className="sg-type-meta">
-                  <strong>{t.label}</strong>
-                  <code>{t.spec}</code>
-                </div>
-                <p className={t.cls}>The quick brown fox jumps over the lazy dog</p>
+        <Block
+          title="Type scale"
+          note="The Material Design 3 scale — 15 roles across Display, Headline, Title, Body and Label. MD3 sizes, line-heights and letter-spacings; our families and weights. Every role ships as a class in src/index.css."
+        >
+          {typeScale.groups.map((g) => (
+            <div className="sg-type-group" key={g.name}>
+              <div className="sg-type-group-head">
+                <h3>{g.name}</h3>
+                <code>
+                  {g.family} · {g.weight}
+                </code>
+                <span className="sg-swatch-note">{g.use}</span>
               </div>
-            ))}
-          </div>
+              <table className="sg-type-table">
+                <thead>
+                  <tr>
+                    <th>Role</th>
+                    <th>Size</th>
+                    <th>Line height</th>
+                    <th>Tracking</th>
+                    <th>Weight</th>
+                    <th>Class</th>
+                    <th>Specimen</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {g.roles.map((r) => (
+                    <tr key={r.role}>
+                      <td className="sg-type-role">{r.role}</td>
+                      <td>{r.size}px</td>
+                      <td>{r.lineHeight}px</td>
+                      <td>{r.letterSpacing === 0 ? "0" : `${r.letterSpacing}px`}</td>
+                      <td>{g.weight}</td>
+                      <td>
+                        <code>.{r.class}</code>
+                      </td>
+                      <td>
+                        <span
+                          className="sg-specimen"
+                          style={{
+                            fontFamily: `var(${g.familyToken})`,
+                            fontSize: r.size,
+                            lineHeight: `${r.lineHeight}px`,
+                            letterSpacing: `${r.letterSpacing}px`,
+                            fontWeight: g.weight,
+                          }}
+                        >
+                          Design that ships
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ))}
         </Block>
 
         <Block title="Radii">

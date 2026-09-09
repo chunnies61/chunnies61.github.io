@@ -160,3 +160,124 @@ button {
     --max-width: 100%;
   }
 }
+
+/* ===== Material Design 3 type scale =====
+   15 roles. MD3 sizes, line-heights and letter-spacings; this site's
+   families and weights — Bricolage Grotesque 700 for Display and Headline,
+   Poppins 500 for Title, Body and Label.
+   Source of truth: src/data/type-scale.json — change both together. */
+
+/* Display — Hero moments and page headers. Sparingly — one per screen. */
+.md-display-large {
+  font-family: var(--font-display);
+  font-size: 57px;
+  line-height: 64px;
+  letter-spacing: -0.25px;
+  font-weight: 700;
+}
+.md-display-medium {
+  font-family: var(--font-display);
+  font-size: 45px;
+  line-height: 52px;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+.md-display-small {
+  font-family: var(--font-display);
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+/* Headline — Section headings — the level a reader scans to find their place. */
+.md-headline-large {
+  font-family: var(--font-display);
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+.md-headline-medium {
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+.md-headline-small {
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+/* Title — Card, panel and list-item headings — shorter than a headline, heavier than body. */
+.md-title-large {
+  font-family: var(--font-ui);
+  font-size: 22px;
+  line-height: 28px;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+.md-title-medium {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  font-weight: 500;
+}
+.md-title-small {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  font-weight: 500;
+}
+
+/* Body — Running prose. Body Large is the default reading size. */
+.md-body-large {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+.md-body-medium {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  font-weight: 500;
+}
+.md-body-small {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  font-weight: 500;
+}
+
+/* Label — Buttons, tabs, eyebrows, captions — text attached to a control or a thing. */
+.md-label-large {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  font-weight: 500;
+}
+.md-label-medium {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+.md-label-small {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
