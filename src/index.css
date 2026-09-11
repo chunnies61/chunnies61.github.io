@@ -172,7 +172,7 @@ button {
   font-family: var(--font-display);
   font-size: 56px;
   line-height: 64px;
-  letter-spacing: -0.25px;
+  letter-spacing: 0;
   font-weight: 700;
 }
 .md-display-medium {

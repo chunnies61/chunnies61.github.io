@@ -8,7 +8,7 @@
       "weight": 700,
       "use": "Hero moments and page headers. Sparingly — one per screen.",
       "roles": [
-        { "role": "Display Large", "class": "md-display-large", "size": 56, "lineHeight": 64, "letterSpacing": -0.25 },
+        { "role": "Display Large", "class": "md-display-large", "size": 56, "lineHeight": 64, "letterSpacing": 0 },
         { "role": "Display Medium", "class": "md-display-medium", "size": 45, "lineHeight": 52, "letterSpacing": 0 },
         { "role": "Display Small", "class": "md-display-small", "size": 36, "lineHeight": 44, "letterSpacing": 0 }
       ]
