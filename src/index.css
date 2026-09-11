@@ -163,7 +163,7 @@ button {
 
 /* ===== Material Design 3 type scale =====
    15 roles. MD3 sizes, line-heights and letter-spacings; this site's
-   families and weights — Bricolage Grotesque 700 for Display and Headline,
+   families and weights — Bricolage Grotesque 800 for Display, 700 for Headline,
    Poppins 500 for Title, Body and Label.
    Source of truth: src/data/type-scale.json — change both together. */
 
@@ -173,21 +173,21 @@ button {
   font-size: 56px;
   line-height: 64px;
   letter-spacing: 0;
-  font-weight: 700;
+  font-weight: 800;
 }
 .md-display-medium {
   font-family: var(--font-display);
   font-size: 45px;
   line-height: 52px;
   letter-spacing: 0;
-  font-weight: 700;
+  font-weight: 800;
 }
 .md-display-small {
   font-family: var(--font-display);
   font-size: 36px;
   line-height: 44px;
   letter-spacing: 0;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 /* Headline — Section headings — the level a reader scans to find their place. */

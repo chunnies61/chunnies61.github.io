@@ -1,11 +1,11 @@
 {
-  "note": "Material Design 3 type scale, 15 roles. Sizes, line-heights and letter-spacings are the MD3 values. Weights and families are this site's: Bricolage Grotesque 700 for Display and Headline, Poppins 500 for Title, Body and Label. Mirrored as .md-* classes in src/index.css — change both together.",
+  "note": "Material Design 3 type scale, 15 roles. Sizes, line-heights and letter-spacings are the MD3 values. Weights and families are this site's: Bricolage Grotesque 800 for Display, 700 for Headline, Poppins 500 for Title, Body and Label. Mirrored as .md-* classes in src/index.css — change both together.",
   "groups": [
     {
       "name": "Display",
       "family": "Bricolage Grotesque",
       "familyToken": "--font-display",
-      "weight": 700,
+      "weight": 800,
       "use": "Hero moments and page headers. Sparingly — one per screen.",
       "roles": [
         { "role": "Display Large", "class": "md-display-large", "size": 56, "lineHeight": 64, "letterSpacing": 0 },
