@@ -109,9 +109,7 @@
             {"label": "Customer Hub", "title": "A centralized dashboard for managing all financial products in one place", "desc": "Unifies Financial Health, Personal Loan, and Credit Card data into one clear view of a customer's finances.", "video": "/videos/customer-hub.mov"},
             {"label": "Personal Loan", "title": "A dedicated space for loan customers to manage their accounts", "desc": "View payment history, access statements, and make payments with ease.", "video": "/videos/personal-loan.mp4"},
             {"label": "Financial Health", "title": "A dashboard that helps users understand and improve their financial health", "desc": "Credit scores, score factors, alerts, simulations, and detailed credit reports.", "video": "/videos/financial-health.mp4"}
-          ]},
-          {"type": "text", "value": "Shipping them accurately meant documenting what gets lost in handoff — responsive behaviour, edge cases, and each module's exact treatment across desktop and mobile."},
-          {"type": "image", "src": "/images/screenshot-2025-01-21-at-1.50.27-am-cee5e6.png", "label": "Design for implementation — the Hub dashboard specified across desktop and mobile"}
+          ]}
         ]},
         {"type": "step", "num": "6.2", "title": "A messaging framework, not one-off designs", "blocks": [
           {"type": "text", "value": [
