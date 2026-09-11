@@ -1307,9 +1307,7 @@ a.cs-index-item:focus-visible {
 .cs-quote {
   margin: 0;
   padding: 24px 28px;
-  border-left: 3px solid var(--card-border);
-  background: rgba(240, 241, 244, 0.5);
-  border-radius: 0 12px 12px 0;
+  border-left: 3px solid #4e6fe0; /* Primary Ink, tone 50 */
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
