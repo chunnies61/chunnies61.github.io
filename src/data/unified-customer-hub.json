@@ -63,7 +63,6 @@
           "In the review, I didn't argue we should unify. I let stakeholders click it themselves."
         ]},
         {"type": "image", "src": "/images/wireframes-1434a2.png", "label": "The two-week proposal — desktop and mobile flows end to end"},
-        {"type": "video", "src": "/videos/customer-hub-prototype.mp4", "label": "Prototype walkthrough — loan → credit score → cross-sell"},
         {"type": "text", "value": "The vision finally had a shape — and I became the de-facto driver of a project that never had an owner."}
       ]
     },
@@ -92,9 +91,9 @@
         ]},
         {"type": "text", "value": "Progress isn't everyone loving the same reason — it's each person nodding from their own angle."},
         {"type": "cards", "columns": 3, "items": [
-          {"label": "To Engineering", "title": "Feasible and safe", "desc": "Skips the riskiest migration and keeps you on schedule."},
-          {"label": "To business & leadership", "title": "Results first", "desc": "We ship first where cross-sell converts, so data arrives fastest."},
-          {"label": "To design", "title": "The vision, protected", "desc": "Prove the platform first, then earn the right to bring card home."}
+          {"emoji": "🛠️", "label": "To Engineering", "title": "Feasible and safe", "desc": "Skips the riskiest migration and keeps you on schedule."},
+          {"emoji": "📈", "label": "To business & leadership", "title": "Results first", "desc": "We ship first where cross-sell converts, so data arrives fastest."},
+          {"emoji": "🎨", "label": "To design", "title": "The vision, protected", "desc": "Prove the platform first, then earn the right to bring card home."}
         ]}
       ]
     },
@@ -109,7 +108,8 @@
             {"label": "Customer Hub", "title": "A centralized dashboard for managing all financial products in one place", "desc": "Unifies Financial Health, Personal Loan, and Credit Card data into one clear view of a customer's finances.", "video": "/videos/customer-hub.mov"},
             {"label": "Personal Loan", "title": "A dedicated space for loan customers to manage their accounts", "desc": "View payment history, access statements, and make payments with ease.", "video": "/videos/personal-loan.mp4"},
             {"label": "Financial Health", "title": "A dashboard that helps users understand and improve their financial health", "desc": "Credit scores, score factors, alerts, simulations, and detailed credit reports.", "video": "/videos/financial-health.mp4"}
-          ]}
+          ]},
+          {"type": "video", "src": "/videos/customer-hub-prototype.mp4", "label": "Prototype walkthrough — loan → credit score → cross-sell"}
         ]},
         {"type": "step", "num": "6.2", "title": "A messaging framework, not one-off designs", "blocks": [
           {"type": "text", "value": [
