@@ -108,7 +108,7 @@ a.cs-index-item.is-active:hover {
 /* Type comes from .md-display-medium; only spacing and colour live here */
 .cs-header-title {
   margin-bottom: 12px;
-  color: var(--gray-700);
+  color: var(--gray-800);
 }
 
 /* Type comes from .md-title-small; only colour lives here */
@@ -205,6 +205,8 @@ a.cs-index-item.is-active:hover {
 .cs-section {
   padding: 40px 0;
   border-bottom: 1px solid var(--card-border);
+  /* Index jumps land below the 72px sticky site nav */
+  scroll-margin-top: 72px;
 }
 
 .cs-section:last-child {
