@@ -66,6 +66,8 @@ a.cs-index-item:focus-visible {
 
 .cs-index-item.is-active {
   color: #1e57c8; /* Primary, tone 40 — the M3 light Primary role */
+  /* Inset ring so the outline adds no size and the list doesn't shift */
+  box-shadow: inset 0 0 0 1px #1e57c8;
 }
 
 /* a.cs-index-item:hover outranks .is-active, so keep the selected ink on hover */
