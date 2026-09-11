@@ -31,7 +31,7 @@
     },
     {
       "id": "brief",
-      "kicker": "The brief",
+      "kicker": "The problem",
       "title": "The brief, and why it was wrong",
       "blocks": [
         {"type": "text", "value": [
