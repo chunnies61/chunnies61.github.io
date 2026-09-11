@@ -102,18 +102,18 @@ a.cs-index-item.is-active:hover {
   font-family: var(--font-ui);
   font-size: 14px;
   font-weight: 500;
-  color: var(--gray-900);
+  color: var(--gray-600);
 }
 
 /* Type comes from .md-display-medium; only spacing and colour live here */
 .cs-header-title {
   margin-bottom: 12px;
-  color: var(--gray-900);
+  color: var(--gray-700);
 }
 
 /* Type comes from .md-title-small; only colour lives here */
 .cs-header-subtitle {
-  color: var(--gray-900);
+  color: var(--gray-600);
 }
 
 .cs-hero-image {
