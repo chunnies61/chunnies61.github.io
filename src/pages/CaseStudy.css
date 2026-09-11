@@ -473,14 +473,24 @@ a.cs-index-item.is-active:hover {
   flex: 0 0 26%;
   max-width: 26%;
 }
+/* Phone-recording showcases: description copy runs 20% narrower than its column */
+.cs-surface-showcase--portrait .cs-surface-text > * {
+  max-width: 80%;
+}
 @media (max-width: 760px) {
-  .cs-surface-showcase--split .cs-surface-row {
+  /* :nth-child(odd) outranks the plain row selector, so restate it here or
+     odd rows stay side by side on phones and squeeze their text to 0px */
+  .cs-surface-showcase--split .cs-surface-row,
+  .cs-surface-showcase--split .cs-surface-row:nth-child(odd) {
     flex-direction: column;
     gap: 20px;
   }
   .cs-surface-showcase--portrait .cs-surface-media {
     flex: none;
     max-width: 60%;
+  }
+  .cs-surface-showcase--portrait .cs-surface-text > * {
+    max-width: none;
   }
   .cs-surface-showcase--split .cs-surface-media {
     flex: none;
