@@ -73,10 +73,10 @@
       "title": "When engineering says \"we can't\"",
       "blocks": [
         {"type": "text", "value": [
-          "Engineering pushed back hard. Credit Card ran on a third-party platform; migrating it in-house meant 6+ months and real risk to live servicing flows. The vision was beautiful, and unbuildable.",
-          "I didn't debate feasibility. I mapped complexity with them.",
-          "In a session with Engineering and PM, I enumerated every account state — single-product, loan + card, card + financial health, past-due, pending activation, missing data — into one reference table.",
-          "Laid out, it made something obvious: only a handful of high-frequency shared surfaces were truly interconnected. Everything else was account-specific and could wait."
+          "Engineering pushed back: bringing the third-party Credit Card in-house meant 6+ months and risk to live servicing — the vision was unbuildable.",
+          "I didn't debate it; I mapped the complexity with them.",
+          "With Engineering and PM, I charted every account state — single, multi-product, past-due, pending activation, missing data — in one table.",
+          "Only a few high-frequency shared surfaces were truly interconnected; the rest could wait."
         ]},
         {"type": "image", "src": "/images/account-state-reference-table.png", "variant": "square", "label": "Account-state reference table"}
       ]
@@ -87,10 +87,10 @@
       "title": "One decision, three stories",
       "blocks": [
         {"type": "text", "value": [
-          "The call: keep Credit Card third-party for now, focus in-house effort on the highest-impact surfaces — unified dashboard, Loan, Financial Health — and stitch the card in through an integration layer. Bring it home once the platform proved its value.",
-          "The plan was imperfect for everyone. So I told three stories for one decision."
+          "The call: keep Credit Card third-party, build the dashboard, Loan and Financial Health in-house, and stitch the card in until the platform proved its value.",
+          "It was imperfect for everyone, so I told one decision three ways."
         ]},
-        {"type": "text", "value": "Same decision, three narratives. That's what moving a project forward means — not making everyone love the same reason, but letting everyone nod from the angle they care about."},
+        {"type": "text", "value": "Progress isn't everyone loving the same reason — it's each person nodding from their own angle."},
         {"type": "cards", "columns": 3, "items": [
           {"label": "To Engineering", "title": "Feasible and safe", "desc": "Skips the riskiest migration and keeps you on schedule."},
           {"label": "To business & leadership", "title": "Results first", "desc": "We ship first where cross-sell converts, so data arrives fastest."},
@@ -115,8 +115,8 @@
         ]},
         {"type": "step", "num": "6.2", "title": "A messaging framework, not one-off designs", "blocks": [
           {"type": "text", "value": [
-            "With Marketing and a researcher, I tested cross-sell placements on UserTesting. The finding was sharp: banners and in-feature messaging performed best with minimal annoyance, while modals felt intrusive and belonged only to critical alerts.",
-            "I didn't spend the insight and move on — I codified it into a reusable \"message urgency ↔ placement\" mapping: what level of message, in which placement, at what motion intensity. Every product line and engineer could place messages by rule instead of asking me, turning a one-off design into a self-serve system."
+            "With Marketing and a researcher, I tested cross-sell placements on UserTesting: banners and in-feature messages worked best; modals felt intrusive, fit only for critical alerts.",
+            "I codified that into a reusable \"message urgency ↔ placement\" map — which message, where, at what motion intensity — so any team could place messages by rule, not by asking me."
           ]},
           {"type": "image", "src": "/images/message-types-placements.png", "variant": "spaced-top", "label": "4 message types × 5 placement options"},
           {"type": "text", "value": "We tested 20 message-placement combinations across 527 users. Banners and in-feature messaging won on engagement and sentiment; modals were reserved for critical alerts."},
@@ -124,8 +124,8 @@
         ]},
         {"type": "step", "num": "6.3", "title": "Designing for products that didn't exist yet", "blocks": [
           {"type": "text", "value": [
-            "Best Egg keeps launching products. If each spun up its own flow, we'd slide back into fragmentation. So the Best Egg Design System — 2,000+ modular components — was built pluggable: navigation, shared modules, and the messaging framework all reserved insertion points for future products.",
-            "I wasn't delivering a platform. I was delivering a platform that could grow new products — the same extensibility that later made room for AI-driven personalization, and the prerequisite for whatever ships next."
+            "Best Egg keeps launching products, so the Best Egg Design System — 2,000+ modular components — was built pluggable, reserving room in navigation, shared modules and messaging for what comes next.",
+            "The platform could grow new products — the same extensibility that later enabled AI-driven personalization."
           ]},
           {"type": "image", "src": "/images/best-egg-design-system.png", "label": "Best Egg Design System — 2,000+ modular components"}
         ]}
