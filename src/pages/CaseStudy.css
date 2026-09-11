@@ -38,7 +38,7 @@
    (on-surface at 8%) and a touch darker when pressed (10%); keyboard focus
    draws a 2px ink ring with an inset white hairline; the selected item
    keeps the same type and turns Primary, with no fill. */
-/* Type comes from .md-title-medium in every state; selection is shown by colour alone */
+/* Type comes from .md-label-medium in every state; selection is shown by colour alone */
 .cs-index-item {
   display: block;
   padding: 8px 16px;
