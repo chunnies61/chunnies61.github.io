@@ -37,8 +37,8 @@
 /* Item states follow the M3 reference index: the pill fills on hover
    (on-surface at 8%) and a touch darker when pressed (10%); keyboard focus
    draws a 2px ink ring with an inset white hairline; the selected item
-   switches to the display face at the darkest ink, with no fill. */
-/* Type comes from .md-title-medium; the selected state swaps in the display face */
+   keeps the same type and turns Primary, with no fill. */
+/* Type comes from .md-title-medium in every state; selection is shown by colour alone */
 .cs-index-item {
   display: block;
   padding: 8px 16px;
@@ -65,8 +65,6 @@ a.cs-index-item:focus-visible {
 }
 
 .cs-index-item.is-active {
-  font-family: var(--font-display);
-  font-weight: 700;
   color: #1e57c8; /* Primary, tone 40 — the M3 light Primary role */
 }
 
