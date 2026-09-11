@@ -147,7 +147,6 @@
           {"emoji": "📊", "title": "Every trade-off anchored to the baseline", "desc": "\"Six in ten requests get redone, and we can prevent most of it upstream\" carried the initiative whenever opinions competed."}
         ]},
         {"type": "image", "src": "/images/lending-before-after.png", "label": "Before and after — Credit's acceptance rules moved upstream into the Banker's intake moment"},
-        {"type": "image", "src": "/images/lending-key-findings.png", "label": "What testing told us to build, and what to fix in the copy"},
         {"type": "text", "value": "The regional variants shipped on one shared skeleton, with conditional logic injecting what each market required rather than forking the product."},
         {"type": "image", "src": "/images/lending-frames.png", "label": "One skeleton, four markets — USPB, EMEA, APAC and LatAm variants"}
       ]
