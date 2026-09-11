@@ -72,8 +72,8 @@
             "What actually accelerated collaboration was changing how the team communicated. With no prototypes or specs, everything lived in words — everyone pictured something different, and reviews spun. So I did two high-leverage things:"
           ]},
           {"type": "cards", "columns": 2, "items": [
-            {"label": "Artifacts over words", "title": "Prototypes replace description", "desc": "Sketches and prototypes gave every review one shared artifact to argue over, instead of five imagined versions."},
-            {"label": "Produce once, reuse endlessly", "title": "30+ recorded demos", "desc": "Every page and interaction walked through on video with Figma specs — always available to dev and business teams."}
+            {"label": "Artifacts over words", "title": "Prototypes replace description", "desc": "One shared artifact per review, instead of five imagined versions."},
+            {"label": "Produce once, reuse endlessly", "title": "30+ recorded demos", "desc": "Every page and interaction on video with Figma specs, open to dev and business."}
           ]},
           {"type": "text", "value": "With the product owners, we aimed that effort at the highest-impact parts of the system — Care Plans and Daily Task Management — where sketches and prototypes let us gather feedback and iterate fast."},
           {"type": "image", "src": "/images/20-5dbb78.svg", "label": "From sketch to shared artifact"},
@@ -96,10 +96,10 @@
       "title": "Design, embedded in the team's daily work",
       "blocks": [
         {"type": "cards", "columns": 2, "items": [
-          {"title": "A design system from scratch", "desc": "Built on Atomic Design with clear documentation — the team's shared language."},
-          {"title": "30+ demos as shared memory", "desc": "A reusable library, and the team's source of truth for every flow and interaction."},
-          {"title": "Cleaner core interfaces", "desc": "Key surfaces like the appointment dashboard became cleaner and more organized."},
-          {"title": "Reliable, high-quality shipping", "desc": "High-fidelity implementation landed consistently despite minimal design resources."}
+          {"title": "A design system from scratch", "desc": "Atomic Design, clearly documented — the team's shared language."},
+          {"title": "30+ demos as shared memory", "desc": "The team's source of truth for every flow and interaction."},
+          {"title": "Cleaner core interfaces", "desc": "Surfaces like the appointment dashboard got cleaner and better organized."},
+          {"title": "Reliable, high-quality shipping", "desc": "High-fidelity builds landed consistently on minimal design resources."}
         ]},
         {"type": "text", "value": "With the style guide and design system in place, the appointment dashboard is noticeably cleaner and more organized."},
         {"type": "video", "src": "/videos/clinicmind-hero.mp4", "label": "The redesigned appointment dashboard — cleaner and more organized"},

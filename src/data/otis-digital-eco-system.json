@@ -28,9 +28,9 @@
           "So my first move wasn't visual. It was turning the slogan back into an answerable question."
         ]},
         {"type": "cards", "columns": 3, "items": [
-          {"emoji": "🌉", "label": "Constraint 1", "title": "Bridging the technical gap", "desc": "\"Power user\" tools for experts, without overwhelming non-technical stakeholders."},
-          {"emoji": "🛡️", "label": "Constraint 2", "title": "High-stakes compliance", "desc": "User-centricity inside rigid safety and data regulation."},
-          {"emoji": "🌍", "label": "Constraint 3", "title": "Global diversity", "desc": "A universal system that still respects local market nuance."}
+          {"emoji": "🌉", "label": "Constraint 1", "title": "Bridging the technical gap", "desc": "Expert tools that don't overwhelm non-technical users."},
+          {"emoji": "🛡️", "label": "Constraint 2", "title": "High-stakes compliance", "desc": "Usability inside strict safety and data rules."},
+          {"emoji": "🌍", "label": "Constraint 3", "title": "Global diversity", "desc": "One global system that respects local nuance."}
         ]}
       ]
     },
@@ -68,7 +68,7 @@
             "The field flipped our assumptions. Everyone, myself included, had assumed users wanted efficiency. What I saw was non-technical building managers operating in fear.",
             "One manager stuck with me. For a trivial operation he'd phone an Otis engineer rather than press the button himself. Why?"
           ]},
-          {"type": "quote", "value": "I'm afraid I'll shut down every elevator in the building.", "attribution": "Building manager, on-site contextual inquiry", "avatar": "building-manager"},
+          {"type": "quote", "value": "I'm afraid I'll shut down every elevator in the building.", "attribution": "Building manager, on-site contextual inquiry"},
           {"type": "text", "value": "That was the moment. We were designing for efficiency; users were stuck in fear. I named it consequence anxiety: the dread of an irreversible, catastrophic mistake. It made them offload even simple tasks to engineers — which meant our usage data was a false positive. The real pain point was invisible in the data, and only surfaced on-site."},
           {"type": "callout", "label": "The trap", "value": "Usage data looked healthy because engineers did the work managers feared to touch. The metric wasn't measuring adoption — it was measuring avoidance."}
         ]},
@@ -77,14 +77,14 @@
             "The hard part: fear doesn't fit in a PRD, and engineers can't sprint-plan an emotion. So my final discovery move was translating the feeling into testable requirements. I codified \"users operate in fear\" into a principle — psychological safety before efficiency — and broke it into three things engineering could build and validate:"
           ]},
           {"type": "cards", "columns": 3, "items": [
-            {"emoji": "⚠️", "title": "Strong confirmation", "desc": "High-consequence, irreversible actions require explicit confirmation."},
-            {"emoji": "🛟", "title": "Safe defaults", "desc": "The risky path is the deliberate one, never the accidental one."},
-            {"emoji": "🏷️", "title": "Plain-language labels", "desc": "Jargon like \"car call\" replaced with words a non-expert understands — field testing showed unlabeled call types caused pure guesswork."}
+            {"emoji": "⚠️", "title": "Strong confirmation", "desc": "Irreversible, high-stakes actions need explicit confirmation."},
+            {"emoji": "🛟", "title": "Safe defaults", "desc": "The risky path is always deliberate, never accidental."},
+            {"emoji": "🏷️", "title": "Plain-language labels", "desc": "Jargon like \"car call\" swapped for plain words — unlabeled call types caused guesswork in testing."}
           ]},
           {"type": "text", "value": "To hold the team to one axis, I defined two lean personas around the core tension:"},
           {"type": "cards", "columns": 2, "items": [
-            {"image": "/images/otis-persona-field-engineer.png", "label": "Action", "title": "Field Engineer", "desc": "Highly technical, occasional user diagnosing issues on-site. Needs real-time status, dense actionable data, and predictable, low-friction workflows."},
-            {"image": "/images/otis-persona-building-manager.png", "label": "Oversight", "title": "Building Manager", "desc": "Non-technical daily user managing operations and tenants. Needs guided workflows, plain-language labels, and confirmation before committing."}
+            {"image": "/images/otis-persona-field-engineer.png", "label": "Action", "title": "Field Engineer", "desc": "Technical, occasional user fixing issues on-site. Needs real-time status, dense data and low-friction flows."},
+            {"image": "/images/otis-persona-building-manager.png", "label": "Oversight", "title": "Building Manager", "desc": "Non-technical daily user running operations and tenants. Needs guidance, plain labels and confirmation before committing."}
           ]},
           {"type": "callout", "label": "The alignment", "value": "For the first time the business goals — cloud, adoption, cost reduction — and the user goal — don't let me make a catastrophic mistake — shared one definition of success."}
         ]}

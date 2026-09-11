@@ -42,9 +42,9 @@
           {"type": "image", "src": "/images/frame-427319519-0babba.png", "variant": "square", "label": "The gap audit — empty states and missing screens flagged across College Savings and Extra Contributions"},
           {"type": "text", "value": "So I ran every page through the three fates of data:"},
           {"type": "cards", "columns": 3, "items": [
-            {"label": "Fate 1", "title": "Has data", "desc": "The happy path, and the only state the original designs drew."},
-            {"label": "Fate 2", "title": "No data", "desc": "An empty state with guidance: what this is, what to do next."},
-            {"label": "Fate 3", "title": "Bad data", "desc": "An error state in plain language instead of a dead end."}
+            {"label": "Fate 1", "title": "Has data", "desc": "The happy path — the only state originally drawn."},
+            {"label": "Fate 2", "title": "No data", "desc": "Guidance on what this is and what to do next."},
+            {"label": "Fate 3", "title": "Bad data", "desc": "A plain-language error, not a dead end."}
           ]},
           {"type": "text", "value": "A product's reliability lives in its most awkward screen, not its prettiest. For an anxious parent, those boundary moments are where trust is won or lost."}
         ]},

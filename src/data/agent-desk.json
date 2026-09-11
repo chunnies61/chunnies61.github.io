@@ -21,9 +21,9 @@
           "The legacy system was fragmented across agent roles, forcing agents to act as \"human middleware\" — a 3.2-day bottleneck per application. As the solo designer, I owned it end-to-end: the workflow, the UX success metrics, and shipping inside a heavily regulated environment."
         ]},
         {"type": "cards", "columns": 3, "variant": "tinted", "items": [
-          {"label": "Constraint 1", "title": "Speed vs. compliance", "desc": "Workflows had to move faster without compromising fraud prevention, regulation, or auditability."},
-          {"label": "Constraint 2", "title": "Multiple agent roles", "desc": "Different agent types needed different access and authority in the same workflow."},
-          {"label": "Constraint 3", "title": "Irreversible decisions", "desc": "Agents made frequent irreversible calls under time pressure — fatigue and error risk compounded."}
+          {"label": "Constraint 1", "title": "Speed vs. compliance", "desc": "Move faster without weakening fraud prevention, regulation or auditability."},
+          {"label": "Constraint 2", "title": "Multiple agent roles", "desc": "Agent types needed different access and authority in one workflow."},
+          {"label": "Constraint 3", "title": "Irreversible decisions", "desc": "Frequent irreversible calls under time pressure, where fatigue compounds error."}
         ]}
       ]
     },
@@ -68,9 +68,9 @@
             "So the decision became: reduce load through structure, not subtraction."
           ]},
           {"type": "cards", "columns": 3, "items": [
-            {"emoji": "↔️", "title": "Left–right split", "desc": "Mapped to the agent's mental model: data to read on the left, actions to take on the right — making \"read, then decide\" legible in space."},
-            {"emoji": "✅", "title": "Verification Checklist & Clear CTAs", "desc": "Tribal rules made explicit — steps auto-resolve to \"Clear\" as they complete, and critical actions sit predictably at the end."},
-            {"emoji": "📝", "title": "Notes & History, always in view", "desc": "Persistent notes and instant access to previous records, so context is never re-fetched from another system."}
+            {"emoji": "↔️", "title": "Left–right split", "desc": "Data to read on the left, actions on the right — \"read, then decide\" made spatial."},
+            {"emoji": "✅", "title": "Verification Checklist & Clear CTAs", "desc": "Tribal rules made explicit: steps auto-resolve to \"Clear\", and critical actions sit at the end."},
+            {"emoji": "📝", "title": "Notes & History, always in view", "desc": "Persistent notes and past records, so context never comes from another system."}
           ]},
           {"type": "surface-showcase", "alternate": false, "items": [
             {"title": "Verification Checklist", "desc": "Every verification step consolidated and aligned with business rules, updating in real time and auto-resolving to \"Clear\".", "video": "/videos/verification-checklist.mp4"},
@@ -121,7 +121,7 @@
           "The MVP launch drew strong feedback from agents and leadership, with higher reported confidence and satisfaction.",
           "Crucially, the two opposing metrics improved together, with distinct drivers: the unified workspace and explicit checklist removed cross-system shuttling (speed), while Preview/Edit and role-scoped access reduced misjudgment (verification rate)."
         ]},
-        {"type": "quote", "value": "Agent Desk 3.0 is a major leap forward in our verification process — transforming how agents work and unlocking better customer experiences.", "attribution": "Leadership", "avatar": "leadership"}
+        {"type": "quote", "value": "Agent Desk 3.0 is a major leap forward in our verification process — transforming how agents work and unlocking better customer experiences.", "attribution": "Leadership"}
       ]
     }
   ],

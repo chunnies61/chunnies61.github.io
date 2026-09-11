@@ -64,7 +64,7 @@
         {"type": "image", "src": "/images/group-10122972-ec7f91.svg", "label": "The vision — three separate product surfaces resolving into one Customer Hub"},
         {"type": "image", "src": "/images/wireframes-1434a2.png", "label": "The two-week proposal — desktop and mobile flows end to end"},
         {"type": "video", "src": "/videos/customer-hub-prototype.mp4", "label": "Prototype walkthrough — loan → credit score → cross-sell"},
-        {"type": "quote", "value": "Oh — so THAT's what cross-sell looks like.", "attribution": "Executive stakeholder, live prototype review", "avatar": "executive"},
+        {"type": "quote", "value": "Oh — so THAT's what cross-sell looks like.", "attribution": "Executive stakeholder, live prototype review"},
         {"type": "text", "value": "The vision finally had a shape — and I became the de-facto driver of a project that never had an owner."}
       ]
     },
@@ -93,9 +93,9 @@
         ]},
         {"type": "text", "value": "Same decision, three narratives. That's what moving a project forward means — not making everyone love the same reason, but letting everyone nod from the angle they care about."},
         {"type": "cards", "columns": 3, "items": [
-          {"label": "To Engineering", "title": "Feasible and safe", "desc": "This avoids the riskiest migration and keeps you on schedule"},
-          {"label": "To business & leadership", "title": "Results first", "desc": "The surfaces we ship first are where cross-sell converts. We'll see data fastest."},
-          {"label": "To design", "title": "The vision, protected", "desc": "Keeping card third-party protects the vision: validate the platform first, then earn the right to bring it home."}
+          {"label": "To Engineering", "title": "Feasible and safe", "desc": "Skips the riskiest migration and keeps you on schedule."},
+          {"label": "To business & leadership", "title": "Results first", "desc": "We ship first where cross-sell converts, so data arrives fastest."},
+          {"label": "To design", "title": "The vision, protected", "desc": "Prove the platform first, then earn the right to bring card home."}
         ]}
       ]
     },
