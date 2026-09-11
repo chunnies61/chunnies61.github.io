@@ -93,7 +93,7 @@
             {"emoji": "📣", "title": "Socialised decisions", "desc": "I shared the why behind each decision, not just the screens, so reviews held no surprises."},
             {"emoji": "🔧", "title": "Refinement calls", "desc": "Sitting in on refinement caught feasibility issues and overlaps before anything was built wrong."}
           ]},
-          {"type": "callout", "label": "Why it worked", "value": "In a specialised, multi-region org, alignment isn't a document — it's presence. By staying reachable, transparent and in the rooms where work got scoped, I became the connective tissue between owners optimising their own slices."}
+          {"type": "callout", "label": "Why it worked", "value": "Alignment isn't a document — it's presence. Staying reachable and in the rooms where work was scoped made me the link between siloed owners."}
         ]},
         {"type": "step", "num": "3", "title": "Bring design upstream of the roadmap", "blocks": [
           {"type": "text", "value": [
@@ -114,7 +114,7 @@
             {"label": "Exploration 3", "title": "Collateral-First Builder", "desc": "Start from the client's assets; line size, rate and covenant headroom update live."}
           ]},
           {"type": "image", "label": "The three future-vision proposals, side by side"},
-          {"type": "callout", "label": "Why it mattered", "value": "As the single design voice at the portfolio table, I moved design upstream of prioritisation — helping leadership choose which direction to invest in, rather than being handed a sequenced backlog to decorate. Design became an input to the roadmap, not an output of it."}
+          {"type": "callout", "label": "Why it mattered", "value": "The only designer at the portfolio table, I helped leadership pick a direction instead of handing design a backlog to decorate. Design became a roadmap input, not an output."}
         ]}
       ]
     },
@@ -133,7 +133,7 @@
           {"emoji": "➡️", "label": "Context flows forward", "title": "Explained, not suspicious", "desc": "Override reasons travel to Credit, so adjusted numbers arrive explained."}
         ]},
         {"type": "image", "label": "A pre-filled field with its provenance chip, and the override-with-reason interaction"},
-        {"type": "callout", "label": "The rationale I'd defend in any review", "value": "In lending, accountability is personal and non-delegable. The cost-effective choice wasn't the most automated proposal — it was the one that made automation transparent and reversible, so it earned trust instead of demanding it."}
+        {"type": "callout", "label": "The rationale I'd defend in any review", "value": "In lending, accountability is personal. The best choice wasn't maximum automation but transparent, reversible automation — trust earned, not demanded."}
       ]
     },
     {
