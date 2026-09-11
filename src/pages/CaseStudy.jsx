@@ -779,31 +779,45 @@ export default function CaseStudy() {
 
       {(prevCaseStudy || nextCaseStudy) && (
         <nav className="wrap cs-pager" aria-label="Case study pagination">
-          {prevCaseStudy ? (
-            <Link
-              to={`/case-studies/${prevCaseStudy.slug}`}
-              className="cs-pager-card cs-pager-card--prev"
-            >
-              <span className="cs-pager-label">
-                <span aria-hidden="true">←</span> Previous
-              </span>
-              <span className="cs-pager-title">{prevCaseStudy.title}</span>
-            </Link>
-          ) : (
-            <span className="cs-pager-empty" aria-hidden="true" />
-          )}
-          {nextCaseStudy ? (
-            <Link
-              to={`/case-studies/${nextCaseStudy.slug}`}
-              className="cs-pager-card cs-pager-card--next"
-            >
-              <span className="cs-pager-label">
-                Up next <span aria-hidden="true">→</span>
-              </span>
-              <span className="cs-pager-title">{nextCaseStudy.title}</span>
-            </Link>
-          ) : (
-            <span className="cs-pager-empty" aria-hidden="true" />
+          {[
+            ["prev", prevCaseStudy],
+            ["next", nextCaseStudy],
+          ].map(([dir, cs]) =>
+            cs ? (
+              <Link
+                key={dir}
+                to={`/case-studies/${cs.slug}`}
+                className={"cs-pager-card cs-pager-card--" + dir}
+              >
+                <span className="cs-pager-thumb">
+                  <img src={cs.thumb || cs.heroImage} alt="" loading="lazy" />
+                  {cs.locked && (
+                    <span className="cs-pager-lock" aria-label="Password protected">
+                      🔒
+                    </span>
+                  )}
+                </span>
+                <span className="cs-pager-body">
+                  <span className="cs-pager-label">
+                    {dir === "prev" ? (
+                      <>
+                        <span aria-hidden="true">←</span> Previous
+                      </>
+                    ) : (
+                      <>
+                        Up next <span aria-hidden="true">→</span>
+                      </>
+                    )}
+                  </span>
+                  <span className="cs-pager-title">{cs.title}</span>
+                  {(cs.desc || cs.subtitle) && (
+                    <span className="cs-pager-desc">{cs.desc || cs.subtitle}</span>
+                  )}
+                </span>
+              </Link>
+            ) : (
+              <span key={dir} className="cs-pager-empty" aria-hidden="true" />
+            )
           )}
         </nav>
       )}
