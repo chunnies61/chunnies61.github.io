@@ -680,7 +680,7 @@ a.cs-index-item:focus-visible {
 /* Callout / design principle — one accent panel for every callout, labelled
    or not (.cs-callout-invert is kept as an alias for existing markup) */
 .cs-callout {
-  background: var(--accent-dark);
+  background: #1e57c8; /* Primary, tone 40 */
   border-radius: var(--radius-card);
   padding: 24px 28px;
 }
