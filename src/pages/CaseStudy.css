@@ -67,7 +67,12 @@ a.cs-index-item:focus-visible {
 .cs-index-item.is-active {
   font-family: var(--font-display);
   font-weight: 700;
-  color: var(--text);
+  color: #1e57c8; /* Primary, tone 40 — the M3 light Primary role */
+}
+
+/* a.cs-index-item:hover outranks .is-active, so keep the selected ink on hover */
+a.cs-index-item.is-active:hover {
+  color: #1e57c8;
 }
 
 /* Page header — tinted copy panel beside the hero, equal halves */
