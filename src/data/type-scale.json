@@ -53,7 +53,7 @@
       "name": "Label",
       "family": "Poppins",
       "familyToken": "--font-ui",
-      "weight": 500,
+      "weight": 600,
       "use": "Buttons, tabs, eyebrows, captions — text attached to a control or a thing.",
       "roles": [
         { "role": "Label Large", "class": "md-label-large", "size": 14, "lineHeight": 20, "letterSpacing": 0.1 },
