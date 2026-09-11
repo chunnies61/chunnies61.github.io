@@ -1311,7 +1311,7 @@ a.cs-index-item.is-active:hover {
 
 .cs-quote {
   margin: 0;
-  padding: 24px 28px;
+  padding: 0 28px;
   border-left: 3px solid #4e6fe0; /* Primary Ink, tone 50 */
   font-style: normal;
   font-weight: 500;
