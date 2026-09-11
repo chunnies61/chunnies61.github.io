@@ -574,12 +574,6 @@ export default function CaseStudy() {
 
   return (
     <article className={"case-study case-study--" + study.slug}>
-      <div className="cs-topbar wrap">
-        <Link to="/" className="cs-index-back">
-          ← All work
-        </Link>
-      </div>
-
       <header className="cs-header">
         <div className="cs-header-panel">
           <div className="cs-header-copy">

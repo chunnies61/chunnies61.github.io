@@ -2,25 +2,6 @@
   background: #ffffff;
 }
 
-.cs-topbar {
-  display: flex;
-  justify-content: flex-start;
-  padding: 20px 0;
-  background: #ffffff;
-}
-
-.cs-index-back {
-  font-family: var(--font-ui);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-soft);
-  white-space: nowrap;
-}
-
-.cs-index-back:hover {
-  color: var(--accent-dark);
-}
-
 /* On-this-page rail — sticky vertical index beside the body */
 .cs-index-inner {
   position: sticky;

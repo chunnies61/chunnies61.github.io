@@ -6,7 +6,12 @@ export default function Nav() {
   return (
     <header className="nav">
       <div className="wrap nav-inner">
-        <Link to="/" className="nav-logo">
+        <Link
+          to="/"
+          className="nav-logo"
+          aria-label="Home"
+          onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "auto" })}
+        >
           <img src="/images/logo-dcc224.svg" alt="Yichun logo" />
         </Link>
         <nav className="nav-links">
