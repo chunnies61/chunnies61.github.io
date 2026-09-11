@@ -123,12 +123,12 @@ a.cs-index-item:hover {
   min-height: clamp(340px, 32vw, 520px);
 }
 
-/* Copy sits in the centre of the panel, both axes */
+/* Copy block sits in the centre of the panel, both axes; text stays left-aligned */
 .cs-header-panel {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  text-align: left;
   background: #f1f3fb;
   border-radius: 24px;
   padding: clamp(28px, 4vw, 64px);
