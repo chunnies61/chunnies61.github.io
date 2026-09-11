@@ -170,7 +170,7 @@ button {
 /* Display — Hero moments and page headers. Sparingly — one per screen. */
 .md-display-large {
   font-family: var(--font-display);
-  font-size: 57px;
+  font-size: 56px;
   line-height: 64px;
   letter-spacing: -0.25px;
   font-weight: 700;
