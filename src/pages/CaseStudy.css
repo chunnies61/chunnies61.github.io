@@ -1501,11 +1501,11 @@ a.cs-index-item.is-active:hover {
   color: var(--text);
 }
 
-/* One-sentence project description, capped at three lines */
+/* One-sentence project description, capped at two lines */
 .cs-pager-desc {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   overflow: hidden;
   font-family: var(--font-ui);
   font-size: 14px;

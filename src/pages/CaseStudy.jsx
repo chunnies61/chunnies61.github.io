@@ -810,8 +810,8 @@ export default function CaseStudy() {
                     )}
                   </span>
                   <span className="cs-pager-title">{cs.title}</span>
-                  {(cs.desc || cs.subtitle) && (
-                    <span className="cs-pager-desc">{cs.desc || cs.subtitle}</span>
+                  {(cs.summary || cs.desc || cs.subtitle) && (
+                    <span className="cs-pager-desc">{cs.summary || cs.desc || cs.subtitle}</span>
                   )}
                 </span>
               </Link>
