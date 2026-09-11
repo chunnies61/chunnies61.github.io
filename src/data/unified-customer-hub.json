@@ -64,7 +64,6 @@
         ]},
         {"type": "image", "src": "/images/wireframes-1434a2.png", "label": "The two-week proposal — desktop and mobile flows end to end"},
         {"type": "video", "src": "/videos/customer-hub-prototype.mp4", "label": "Prototype walkthrough — loan → credit score → cross-sell"},
-        {"type": "quote", "value": "Oh — so THAT's what cross-sell looks like.", "attribution": "Executive stakeholder, live prototype review"},
         {"type": "text", "value": "The vision finally had a shape — and I became the de-facto driver of a project that never had an owner."}
       ]
     },
