@@ -27,25 +27,44 @@
   top: 88px;
 }
 
+/* Pills hang 16px into the gutter so the label text stays on the rail edge */
 .cs-index-items {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  margin-left: -16px;
 }
 
-/* Item states follow the reference: hover darkens the ink, the selected
-   item switches to the display face at the darkest ink. No fills, no rules. */
+/* Item states follow the M3 reference index: the pill fills on hover
+   (on-surface at 8%) and a touch darker when pressed (10%); keyboard focus
+   draws a 2px ink ring with an inset white hairline; the selected item
+   switches to the display face at the darkest ink, with no fill. */
 .cs-index-item {
+  display: block;
+  padding: 8px 16px;
+  border-radius: 18px;
   font-family: var(--font-ui);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 1.35;
+  line-height: 20px;
   color: var(--text-soft);
-  transition: color 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 a.cs-index-item:hover {
+  background: rgba(51, 57, 69, 0.08);
   color: var(--text);
+}
+
+a.cs-index-item:active {
+  background: rgba(51, 57, 69, 0.1);
+}
+
+a.cs-index-item:focus-visible {
+  margin: -2px;
+  border: 2px solid var(--text);
+  border-radius: 20px;
+  outline: 0;
+  box-shadow: inset 0 0 0 2px #ffffff;
 }
 
 .cs-index-item.is-active {
