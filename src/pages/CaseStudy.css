@@ -359,6 +359,19 @@ a.cs-index-item.is-active:hover {
   gap: 24px;
 }
 
+/* Section caption — the index label repeated above each section's content.
+   Type comes from .md-label-medium; set in caps. */
+.cs-section-head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cs-section-caption {
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
 .cs-section-title {
   font-family: var(--font-display);
   font-size: 26px;

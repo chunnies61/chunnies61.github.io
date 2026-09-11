@@ -474,7 +474,12 @@ function IndexedSection({ section }) {
       id={section.id}
     >
       <div className="cs-section-content">
-        {section.title && <h2 className="cs-section-title">{section.title}</h2>}
+        <header className="cs-section-head">
+          {section.kicker && (
+            <p className="cs-section-caption md-label-medium">{section.kicker}</p>
+          )}
+          {section.title && <h2 className="cs-section-title">{section.title}</h2>}
+        </header>
         {section.blocks.map((b, i) => (
           <Block block={b} key={i} />
         ))}
