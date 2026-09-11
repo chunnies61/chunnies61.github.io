@@ -38,14 +38,11 @@
    (on-surface at 8%) and a touch darker when pressed (10%); keyboard focus
    draws a 2px ink ring with an inset white hairline; the selected item
    switches to the display face at the darkest ink, with no fill. */
+/* Type comes from .md-title-medium; the selected state swaps in the display face */
 .cs-index-item {
   display: block;
   padding: 8px 16px;
   border-radius: 18px;
-  font-family: var(--font-ui);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
   color: var(--text-soft);
   transition: background-color 0.15s ease, color 0.15s ease;
 }

@@ -672,12 +672,12 @@ export default function CaseStudy() {
                     <a
                       key={item.id}
                       href={`#${item.id}`}
-                      className={"cs-index-item" + (item.id === activeId ? " is-active" : "")}
+                      className={"cs-index-item md-title-medium" + (item.id === activeId ? " is-active" : "")}
                     >
                       {item.label}
                     </a>
                   ) : (
-                    <span className="cs-index-item" key={item.label + i}>
+                    <span className="cs-index-item md-title-medium" key={item.label + i}>
                       {item.label}
                     </span>
                   )
