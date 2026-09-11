@@ -631,7 +631,7 @@ export default function CaseStudy() {
               <p className="cs-header-eyebrow">{study.tags.join(" · ")}</p>
             )}
             <h2 className="cs-header-title md-display-medium">{study.title}</h2>
-            {study.subtitle && <p className="cs-header-subtitle">{study.subtitle}</p>}
+            {study.subtitle && <p className="cs-header-subtitle md-title-small">{study.subtitle}</p>}
           </div>
         </div>
         {study.heroImage ? (
