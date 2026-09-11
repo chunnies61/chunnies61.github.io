@@ -630,7 +630,7 @@ export default function CaseStudy() {
             {study.tags && study.tags.length > 0 && (
               <p className="cs-header-eyebrow">{study.tags.join(" · ")}</p>
             )}
-            <h2 className="cs-header-title">{study.title}</h2>
+            <h2 className="cs-header-title md-display-large">{study.title}</h2>
             {study.subtitle && <p className="cs-header-subtitle">{study.subtitle}</p>}
           </div>
         </div>
