@@ -181,7 +181,7 @@ a.cs-index-item.is-active:hover {
 .cs-body {
   display: grid;
   grid-template-columns: 1fr 160px;
-  gap: 40px;
+  gap: 80px; /* pills hang 16px into this, so ~64px reads between text and index */
   padding-bottom: 40px;
 }
 
