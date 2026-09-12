@@ -1,3 +1,3 @@
 export default function Tag({ children }) {
-  return <span className="tag-pill">{children}</span>;
+  return <span className="tag-pill md-label-medium">{children}</span>;
 }

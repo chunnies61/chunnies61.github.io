@@ -22,7 +22,7 @@ export default function Nav() {
             </Link>
           ))}
           <a href={site.nav.resumeUrl} target="_blank" rel="noreferrer">
-            Resume
+            CV
           </a>
         </nav>
       </div>

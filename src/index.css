@@ -105,15 +105,12 @@ button {
   color: var(--text-soft);
 }
 
+/* Type comes from .md-label-medium on the element; only the chrome here. */
 .tag-pill {
   display: inline-flex;
   align-items: center;
   padding: 6px 12px;
   border-radius: var(--radius-tag);
-  font-family: var(--font-ui);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
   background: var(--tag-surface);
   color: var(--text-soft);
 }
@@ -263,21 +260,21 @@ button {
 .md-label-large {
   font-family: var(--font-ui);
   font-size: 14px;
-  line-height: 20px;
+  line-height: 22.4px; /* 160% */
   letter-spacing: 0.1px;
   font-weight: 600;
 }
 .md-label-medium {
   font-family: var(--font-ui);
   font-size: 12px;
-  line-height: 16px;
+  line-height: 19.2px; /* 160% */
   letter-spacing: 0.5px;
   font-weight: 600;
 }
 .md-label-small {
   font-family: var(--font-ui);
   font-size: 11px;
-  line-height: 16px;
+  line-height: 17.6px; /* 160% */
   letter-spacing: 0.5px;
   font-weight: 600;
 }
