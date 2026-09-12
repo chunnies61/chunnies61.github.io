@@ -319,7 +319,17 @@ function Block({ block }) {
                 {p.fields.map((f) => (
                   <div className="cs-persona-field" key={f.label}>
                     <dt>{f.label}</dt>
-                    <dd>{f.value}</dd>
+                    <dd>
+                      {f.items ? (
+                        <ul className="cs-persona-list">
+                          {f.items.map((item, i) => (
+                            <li key={i}>{item}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        f.value
+                      )}
+                    </dd>
                   </div>
                 ))}
               </dl>

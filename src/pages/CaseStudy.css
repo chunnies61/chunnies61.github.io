@@ -572,6 +572,18 @@ a.cs-index-item.is-active:hover {
   }
 }
 
+/* Nitro's phone recordings run 10% larger than the shared portrait size (26% -> 28.6%) */
+.case-study--nitro-college .cs-surface-showcase--portrait .cs-surface-media {
+  flex: 0 0 28.6%;
+  max-width: 28.6%;
+}
+@media (max-width: 760px) {
+  .case-study--nitro-college .cs-surface-showcase--portrait .cs-surface-media {
+    flex: none;
+    max-width: 100%;
+  }
+}
+
 /* Customer Hub's phone recordings run 21% larger than the shared portrait size
    on desktop (26% -> 28.6% -> 31.5%, two 10% steps) */
 .case-study--unified-customer-hub .cs-surface-showcase--portrait .cs-surface-media {
@@ -760,7 +772,7 @@ a.cs-index-item.is-active:hover {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--gray-800);
+  color: var(--accent-dark);
 }
 
 .cs-persona-field dd {
@@ -768,6 +780,30 @@ a.cs-index-item.is-active:hover {
   font-size: 14px;
   line-height: 1.5;
   color: var(--text-soft);
+}
+
+/* Bulleted field contents — dots in the same ink as the field label */
+.cs-persona-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.cs-persona-list li {
+  position: relative;
+  padding-left: 16px;
+}
+.cs-persona-list li::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--accent-dark);
 }
 
 @media (max-width: 760px) {
@@ -1625,7 +1661,7 @@ a.cs-index-item.is-active:hover {
   font-family: var(--font-ui);
   font-size: 14px;
   font-weight: 500;
-  color: var(--text-soft);
+  color: var(--accent-dark);
 }
 
 .cs-pager-title {

@@ -3,12 +3,29 @@
   "title": "Nitro College",
   "subtitle": "Turning scattered screens into an end-to-end platform, by delivering a system, not pages",
   "summary": "Turning scattered screens into one end-to-end college planning platform",
-  "tags": ["Fintech", "Edutech", "B2C"],
+  "tags": [
+    "Fintech",
+    "Edutech",
+    "B2C"
+  ],
   "heroImage": "/images/thumbnail-4ae4a5.png",
   "meta": [
-    {"label": "Role", "value": "Solo Product Designer — end-to-end ownership"},
-    {"label": "Team", "value": "Product Owner · Project Manager · User Researchers · Consultants · Engineers"},
-    {"label": "Timeline", "value": "Oct 2021 – Jun 2022"}
+    {
+      "label": "Role",
+      "value": "Solo Product Designer — end-to-end ownership"
+    },
+    {
+      "label": "Team",
+      "value": "Product Owner · Project Manager · User Researchers · Consultants · Engineers"
+    },
+    {
+      "label": "Timeline",
+      "value": "Oct 2021 – Jun 2022"
+    },
+    {
+      "label": "Platform",
+      "value": "Web & Mobile"
+    }
   ],
   "indexedSections": [
     {
@@ -16,12 +33,33 @@
       "kicker": "The setup",
       "title": "A box of puzzle pieces, not a picture",
       "blocks": [
-        {"type": "text", "value": "College costs and student-loan debt keep climbing, and planning has become overwhelming for families. Sallie Mae's Nitro College set out to guide them through it with clear action steps and timely reminders. I joined as the solo designer, owning execution end-to-end."},
-        {"type": "image", "src": "/images/nitro-marketing-site.png", "label": "Nitro College by Sallie Mae — the brand families arrived through, before a planning platform existed behind it"},
-        {"type": "text", "value": "What I inherited wasn't a product — it was a box of puzzle pieces. Each screen looked fine alone, but Dashboard to Profile to Scholarships didn't add up to a journey. And underneath there was no foundation: no design system, no component states, none of the error and empty states real users hit."},
-        {"type": "image", "src": "/images/user-flow-890268.gif", "label": "The end-to-end journey the scattered screens had to add up to"},
-        {"type": "text", "value": "As the only designer, polishing screens one by one would only produce nicer puzzle pieces."},
-        {"type": "callout", "label": "The delivery goal", "value": "Not to ship pages, but one end-to-end journey on a foundation that could keep scaling."}
+        {
+          "type": "text",
+          "value": "College costs and student-loan debt keep climbing, and planning has become overwhelming for families. Sallie Mae's Nitro College set out to guide them through it with clear action steps and timely reminders. I joined as the solo designer, owning execution end-to-end."
+        },
+        {
+          "type": "image",
+          "src": "/images/nitro-marketing-site.png",
+          "label": "Nitro College by Sallie Mae — the brand families arrived through, before a planning platform existed behind it"
+        },
+        {
+          "type": "text",
+          "value": "What I inherited wasn't a product — it was a box of puzzle pieces. Each screen looked fine alone, but Dashboard to Profile to Scholarships didn't add up to a journey. And underneath there was no foundation: no design system, no component states, none of the error and empty states real users hit."
+        },
+        {
+          "type": "image",
+          "src": "/images/user-flow-890268.gif",
+          "label": "The end-to-end journey the scattered screens had to add up to"
+        },
+        {
+          "type": "text",
+          "value": "As the only designer, polishing screens one by one would only produce nicer puzzle pieces."
+        },
+        {
+          "type": "callout",
+          "label": "The delivery goal",
+          "value": "Not to ship pages, but one end-to-end journey on a foundation that could keep scaling."
+        }
       ]
     },
     {
@@ -29,53 +67,166 @@
       "kicker": "Design decisions",
       "title": "Four decisions that turned pieces into a product",
       "blocks": [
-        {"type": "step", "num": "1", "title": "Build the foundation before the surface", "blocks": [
-          {"type": "text", "value": [
-            "With business screens under pressure, I made a counter-intuitive call: pause and build the design system first. As one person guarding consistency across dozens of screens, manual pixel-matching would drift. I needed the system to hold consistency, not my discipline.",
-            "I consolidated scattered brand assets into one style guide, defined base components with every state, and abstracted reusable patterns: College Bridge, Nitro Outlook Tooltip, Offers.",
-            "The hard part was calibrating abstraction — too abstract and a pattern is unusable, too shallow and it fits one page. My rule: serve at least three real scenarios, or I'd abstracted wrong. After that, every new page became assembly."
-          ]},
-          {"type": "image", "src": "/images/style-guide-ac6b80.png", "label": "The style guide — colors, typography, full UI palette, and buttons in every state"},
-          {"type": "callout", "label": "The math I sold the team", "value": "Two extra weeks up front doubled delivery speed and consistency on every page after. Solo, there's no other sustainable way."}
-        ]},
-        {"type": "step", "num": "2", "title": "Treat the least glamorous work as the quality bar", "blocks": [
-          {"type": "text", "value": "Then I did what many skip: completing every edge case. The original designs drew only the \"happy path.\" Real users live in the unhappy ones — no data, a failed load, zero matches — and the old screens dropped into blank pages."},
-          {"type": "image", "src": "/images/frame-427319519-0babba.png", "variant": "square", "label": "The gap audit — empty states and missing screens flagged across College Savings and Extra Contributions"},
-          {"type": "text", "value": "So I ran every page through the three fates of data:"},
-          {"type": "cards", "columns": 3, "items": [
-            {"label": "Fate 1", "title": "Has data", "desc": "The happy path — the only state originally drawn."},
-            {"label": "Fate 2", "title": "No data", "desc": "Guidance on what this is and what to do next."},
-            {"label": "Fate 3", "title": "Bad data", "desc": "A plain-language error, not a dead end."}
-          ]},
-          {"type": "text", "value": "A product's reliability lives in its most awkward screen, not its prettiest. For an anxious parent, those boundary moments are where trust is won or lost."}
-        ]},
-        {"type": "step", "num": "3", "title": "One adaptive system for two different users", "blocks": [
-          {"type": "text", "value": [
-            "The platform serves two primary users — parents and students — with different goals, financial literacy, and priorities. Rather than build two interfaces, unmaintainable for one designer, I made one system adapt."
-          ]},
-          {"type": "personas", "items": [
-            {"emoji": "🎓", "name": "Alex", "role": "The student", "facts": "17 · NYC, New York · 12th-grade senior", "fields": [
-              {"label": "Behaviors", "value": "Researches aid on his phone between classes, juggling applications and deadlines alongside coursework."},
-              {"label": "Needs & pain points", "value": "Wants scholarships and loans that minimize debt, but the options are scattered across sources he can't verify, and deadlines slip for want of one place to track them."},
-              {"label": "What the design does", "value": "Liked / Applied / Won tracking, plain-language labels, and empty states that say what to do next instead of dead-ending."}
-            ]},
-            {"emoji": "👩", "name": "Jean", "role": "The parent", "facts": "48 · Brownsville, Texas · senior manager, single mom of two", "fields": [
-              {"label": "Behaviors", "value": "Plans in short evening sessions around work, staying involved while leaving decisions to her kids."},
-              {"label": "Needs & pain points", "value": "Needs one trustworthy picture of what college costs and how it's covered — the aid process is opaque, and she's anxious about deciding without it."},
-              {"label": "What the design does", "value": "A dashboard that adapts to the selected college, plus 529 and contribution tracking, so the funding picture stays in one view."}
-            ]}
-          ]},
-          {"type": "callout", "label": "Where the split lives", "value": "Commonality lives in the shared system; difference is handled by dynamic content — consistency and personalization at different layers."}
-        ]},
-        {"type": "step", "num": "4", "title": "Ship \"complete,\" not \"everything\"", "blocks": [
-          {"type": "text", "value": [
-            "Finally, scope. Nine months solo — I couldn't build every feature. But an MVP's value isn't how much it does; it's whether it closes a loop.",
-            "I led a cross-functional feature-canvas workshop to pin down each feature's problem, value, and feasibility. Then, with the PM, Impact vs. Effort mapping cut low-value work and protected the core path: understand costs → find aid → plan funding.",
-            "The result was deliberately scoped but experientially complete, not feature-full and half-finished. And because the foundation was a design system, post-MVP additions could grow on top of it rather than force a rebuild."
-          ]},
-          {"type": "image", "src": "/images/feature-canvas-d39df0.png", "label": "Feature-canvas workshop — Dashboard & Bridge, Outlook, Help, Shared Accounts, Recommendation Engine, Authentication"},
-          {"type": "image", "src": "/images/impact-over-effort-mapping-61f2d3.png", "label": "Impact vs. Effort — where the MVP line was drawn"}
-        ]}
+        {
+          "type": "step",
+          "num": "1",
+          "title": "Build the foundation before the surface",
+          "blocks": [
+            {
+              "type": "text",
+              "value": [
+                "With business screens under pressure, I made a counter-intuitive call: pause and build the design system first. As one person guarding consistency across dozens of screens, manual pixel-matching would drift. I needed the system to hold consistency, not my discipline.",
+                "I consolidated scattered brand assets into one style guide, defined base components with every state, and abstracted reusable patterns: College Bridge, Nitro Outlook Tooltip, Offers.",
+                "The hard part was calibrating abstraction — too abstract and a pattern is unusable, too shallow and it fits one page. My rule: serve at least three real scenarios, or I'd abstracted wrong. After that, every new page became assembly."
+              ]
+            },
+            {
+              "type": "image",
+              "src": "/images/style-guide-ac6b80.png",
+              "label": "The style guide — colors, typography, full UI palette, and buttons in every state"
+            },
+            {
+              "type": "callout",
+              "label": "The math I sold the team",
+              "value": "Two extra weeks up front doubled delivery speed and consistency on every page after. Solo, there's no other sustainable way."
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "num": "2",
+          "title": "Treat the least glamorous work as the quality bar",
+          "blocks": [
+            {
+              "type": "text",
+              "value": "Then I did what many skip: completing every edge case. The original designs drew only the \"happy path.\" Real users live in the unhappy ones — no data, a failed load, zero matches — and the old screens dropped into blank pages."
+            },
+            {
+              "type": "image",
+              "src": "/images/frame-427319519-0babba.png",
+              "variant": "square",
+              "label": "The gap audit — empty states and missing screens flagged across College Savings and Extra Contributions"
+            },
+            {
+              "type": "text",
+              "value": "So I ran every page through the three fates of data. Has data is the happy path — the only state originally drawn. No data gets guidance on what the page is and what to do next. Bad data gets a plain-language error, not a dead end."
+            },
+            {
+              "type": "text",
+              "value": "A product's reliability lives in its most awkward screen, not its prettiest. For an anxious parent, those boundary moments are where trust is won or lost."
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "num": "3",
+          "title": "One adaptive system for two different users",
+          "blocks": [
+            {
+              "type": "text",
+              "value": [
+                "The platform serves two primary users — parents and students — with different goals, financial literacy, and priorities. Rather than build two interfaces, unmaintainable for one designer, I made one system adapt."
+              ]
+            },
+            {
+              "type": "personas",
+              "items": [
+                {
+                  "emoji": "🎓",
+                  "name": "Alex",
+                  "role": "The student",
+                  "facts": "17 · NYC, New York · 12th-grade senior",
+                  "fields": [
+                    {
+                      "label": "Behaviors",
+                      "items": [
+                        "Researches aid on his phone between classes",
+                        "Juggles applications and deadlines alongside coursework"
+                      ]
+                    },
+                    {
+                      "label": "Needs & pain points",
+                      "items": [
+                        "Wants scholarships and loans that minimise debt",
+                        "Options scattered across sources he can't verify",
+                        "Deadlines slip for want of one place to track them"
+                      ]
+                    },
+                    {
+                      "label": "What the design does",
+                      "items": [
+                        "Liked / Applied / Won scholarship tracking",
+                        "Plain-language labels",
+                        "Empty states that say what to do next, not dead-end"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "emoji": "👩",
+                  "name": "Jean",
+                  "role": "The parent",
+                  "facts": "48 · Brownsville, Texas · senior manager, single mom of two",
+                  "fields": [
+                    {
+                      "label": "Behaviors",
+                      "items": [
+                        "Plans in short evening sessions around work",
+                        "Stays involved while leaving decisions to her kids"
+                      ]
+                    },
+                    {
+                      "label": "Needs & pain points",
+                      "items": [
+                        "Needs one trustworthy picture of costs and coverage",
+                        "The aid process is opaque",
+                        "Anxious about deciding without it"
+                      ]
+                    },
+                    {
+                      "label": "What the design does",
+                      "items": [
+                        "A dashboard that adapts to the selected college",
+                        "529 and contribution tracking",
+                        "The whole funding picture in one view"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "callout",
+              "label": "Where the split lives",
+              "value": "Commonality lives in the shared system; difference is handled by dynamic content — consistency and personalization at different layers."
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "num": "4",
+          "title": "Ship \"complete,\" not \"everything\"",
+          "blocks": [
+            {
+              "type": "text",
+              "value": [
+                "Finally, scope. Nine months solo — I couldn't build every feature. But an MVP's value isn't how much it does; it's whether it closes a loop.",
+                "I led a cross-functional feature-canvas workshop to pin down each feature's problem, value, and feasibility. Then, with the PM, Impact vs. Effort mapping cut low-value work and protected the core path: understand costs → find aid → plan funding.",
+                "The result was deliberately scoped but experientially complete, not feature-full and half-finished. And because the foundation was a design system, post-MVP additions could grow on top of it rather than force a rebuild."
+              ]
+            },
+            {
+              "type": "image",
+              "src": "/images/feature-canvas-d39df0.png",
+              "label": "Feature-canvas workshop — Dashboard & Bridge, Outlook, Help, Shared Accounts, Recommendation Engine, Authentication"
+            },
+            {
+              "type": "image",
+              "src": "/images/impact-over-effort-mapping-61f2d3.png",
+              "label": "Impact vs. Effort — where the MVP line was drawn"
+            }
+          ]
+        }
       ]
     },
     {
@@ -83,16 +234,53 @@
       "kicker": "The deliverables",
       "title": "What the assembled system delivered",
       "blocks": [
-        {"type": "text", "value": "Set against the screens I inherited, the difference is structural, not cosmetic: layouts rebuilt to the hierarchy agreed with the client, edge cases filled in, every page assembled from the same components."},
-        {"type": "image", "src": "/images/before-after-1-0801a3.svg", "variant": "square", "label": "Before / after — layout restructured on the new system"},
-        {"type": "image", "src": "/images/before-after-2-d689a1.svg", "variant": "square", "label": "Before / after — edge cases and hierarchy completed"},
-        {"type": "text", "value": "What shipped was one connected journey across four surfaces, not four destinations. Each was assembled from the system rather than drawn from scratch, and each carries the full set of data states behind the happy path."},
-        {"type": "surface-showcase", "layout": "split-portrait", "alternate": false, "items": [
-          {"title": "Dashboard", "desc": "A clear overview of progress toward college financial readiness, adjusting to the selected college.", "video": "/videos/nitro-dashboard.mp4"},
-          {"title": "Profile", "desc": "Centralizes the personal and academic information behind Nitro's scholarship and funding recommendations.", "video": "/videos/nitro-profile.mp4"},
-          {"title": "Scholarships", "desc": "Personalized scholarship recommendations, tracked through Liked, Applied, and Won states.", "video": "/videos/nitro-scholarships.mp4"},
-          {"title": "College Savings & Extra Contributions", "desc": "A complete funding picture — college savings including 529s, plus contributions beyond Nitro's estimates.", "video": "/videos/nitro-college-savings.mp4"}
-        ]}
+        {
+          "type": "text",
+          "value": "Set against the screens I inherited, the difference is structural, not cosmetic: layouts rebuilt to the hierarchy agreed with the client, edge cases filled in, every page assembled from the same components."
+        },
+        {
+          "type": "image",
+          "src": "/images/before-after-1-0801a3.svg",
+          "variant": "square",
+          "label": "Before / after — layout restructured on the new system"
+        },
+        {
+          "type": "image",
+          "src": "/images/before-after-2-d689a1.svg",
+          "variant": "square",
+          "label": "Before / after — edge cases and hierarchy completed"
+        },
+        {
+          "type": "text",
+          "value": "What shipped was one connected journey across four surfaces, not four destinations. Each was assembled from the system rather than drawn from scratch, and each carries the full set of data states behind the happy path."
+        },
+        {
+          "type": "surface-showcase",
+          "layout": "split-portrait",
+          "alternate": false,
+          "items": [
+            {
+              "title": "Dashboard",
+              "desc": "A clear overview of progress toward college financial readiness, adjusting to the selected college.",
+              "video": "/videos/nitro-dashboard.mp4"
+            },
+            {
+              "title": "Profile",
+              "desc": "Centralizes the personal and academic information behind Nitro's scholarship and funding recommendations.",
+              "video": "/videos/nitro-profile.mp4"
+            },
+            {
+              "title": "Scholarships",
+              "desc": "Personalized scholarship recommendations, tracked through Liked, Applied, and Won states.",
+              "video": "/videos/nitro-scholarships.mp4"
+            },
+            {
+              "title": "College Savings & Extra Contributions",
+              "desc": "A complete funding picture — college savings including 529s, plus contributions beyond Nitro's estimates.",
+              "video": "/videos/nitro-college-savings.mp4"
+            }
+          ]
+        }
       ]
     },
     {
@@ -100,16 +288,34 @@
       "kicker": "Validation",
       "title": "Tested with real families, reviewed by real advisors",
       "blocks": [
-        {"type": "text", "value": [
-          "We validated on usertesting.com: 20-minute recorded sessions across up to 15 tasks — 10 parents and guardians on desktop, 10 returning undergraduates on mobile — measured with SUS, NPS, CSAT, and mission-alignment surveys, plus moderated reviews with three Sallie Mae financial-aid advisors."
-        ]},
-        {"type": "image", "src": "/images/participants-method-measurement-098727.png", "label": "Participants, method & measurement"},
-        {"type": "image", "src": "/images/findings-recommendations-195c90.png", "label": "Findings — usability and satisfaction scorecards"},
-        {"type": "text", "value": [
-          "Most participants found the product intuitive and aligned with the mission, and the advisors endorsed it. NPS was the honest signal, shaping the post-MVP plan: an app tour, shared parent/student access, and scholarship tracking — all absorbable without a rebuild.",
-          "I delivered not a design version, but an extensible system and a complete journey."
-        ]},
-        {"type": "image", "src": "/images/user-feedbacks-070600.svg", "label": "What participants said"}
+        {
+          "type": "text",
+          "value": [
+            "We validated on usertesting.com: 20-minute recorded sessions across up to 15 tasks — 10 parents and guardians on desktop, 10 returning undergraduates on mobile — measured with SUS, NPS, CSAT, and mission-alignment surveys, plus moderated reviews with three Sallie Mae financial-aid advisors."
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/images/participants-method-measurement-098727.png",
+          "label": "Participants, method & measurement"
+        },
+        {
+          "type": "image",
+          "src": "/images/findings-recommendations-195c90.png",
+          "label": "Findings — usability and satisfaction scorecards"
+        },
+        {
+          "type": "text",
+          "value": [
+            "Most participants found the product intuitive and aligned with the mission, and the advisors endorsed it. NPS was the honest signal, shaping the post-MVP plan: an app tour, shared parent/student access, and scholarship tracking — all absorbable without a rebuild.",
+            "I delivered not a design version, but an extensible system and a complete journey."
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/images/user-feedbacks-070600.svg",
+          "label": "What participants said"
+        }
       ]
     },
     {
@@ -117,12 +323,23 @@
       "kicker": "The takeaway",
       "title": "Quality is set by the least glamorous details",
       "blocks": [
-        {"type": "text", "value": [
-          "Delivery quality isn't set by the brightest screen. It's set by the consistency of the system, the completeness of the edge cases, and the discipline of scope."
-        ]},
-        {"type": "callout", "label": "What I take with me", "value": "A high bar of execution lives precisely in the details others skip — and those details are where I'm most exacting."}
+        {
+          "type": "text",
+          "value": [
+            "Delivery quality isn't set by the brightest screen. It's set by the consistency of the system, the completeness of the edge cases, and the discipline of scope."
+          ]
+        },
+        {
+          "type": "callout",
+          "label": "What I take with me",
+          "value": "A high bar of execution lives precisely in the details others skip — and those details are where I'm most exacting."
+        }
       ]
     }
   ],
-  "otherProjects": ["Unified Customer Hub", "Lending Solutions Redesign", "Agent Desk"]
+  "otherProjects": [
+    "Unified Customer Hub",
+    "Lending Solutions Redesign",
+    "Agent Desk"
+  ]
 }
