@@ -20,7 +20,7 @@
         {"type": "stats", "items": [
           {"value": "−70%", "label": "Task completion time"},
           {"value": "−45%", "label": "Error rate"},
-          {"value": "Millions", "label": "Active users", "desc": "10+ → millions of users"},
+          {"value": "Millions", "label": "Active users", "desc": "Pilot → millions of users"},
           {"value": "−50%", "label": "Support tickets & training time"}
         ]},
         {"type": "text", "value": [
@@ -51,10 +51,10 @@
           {"type": "text", "value": "That single reframe — from \"build a dashboard\" to \"move clients from reactive firefighting to proactive prevention\" — set the direction for everything after."},
           {"type": "whys", "steps": [
             {"label": "The ask", "text": "\"We need a real-time monitoring dashboard.\""},
-            {"label": "Why?", "text": "Clients can't see equipment health in real time."},
-            {"label": "Why does that matter?", "text": "They only find out about failures after an elevator has already broken."},
-            {"label": "Why is that bad?", "text": "Every fix becomes reactive — expensive, disruptive, and a constant source of complaints."},
-            {"label": "The root problem", "text": "Clients are trapped in reactive firefighting, unable to move to proactive prevention.", "root": true}
+            {"label": "Why?", "text": "Clients can't see equipment health live."},
+            {"label": "Why does that matter?", "text": "They learn of failures only after a breakdown."},
+            {"label": "Why is that bad?", "text": "Every fix is reactive: expensive, disruptive, complaint-generating."},
+            {"label": "The root problem", "text": "Clients are stuck firefighting, never preventing.", "root": true}
           ]}
         ]},
         {"type": "step", "num": "2", "title": "Go to the field — every need I had was second-hand", "blocks": [
@@ -98,10 +98,10 @@
       "blocks": [
         {"type": "text", "value": "With the problem framed, execution followed a phased, de-risked path: discovery and quick wins first — low-risk UX improvements to build stakeholder confidence — then validation and workflow cleanup, then beta and a longer-term AI vision."},
         {"type": "phases", "steps": [
-          {"num": "1", "title": "Discovery & Research", "points": ["Identify UX quick wins", "Prioritize low-risk improvements"]},
-          {"num": "2", "title": "Testing & Validation", "points": ["User testing and workflow cleanup", "Introduce \"Ask Otis\" AI Copilot"]},
-          {"num": "3", "title": "Beta Test & Launch", "points": ["Pilot rollout", "Feedback-driven iteration"]},
-          {"num": "4", "title": "Future Vision", "points": ["AI insights and energy prediction", "Cost optimization across touchpoints"]}
+          {"num": "1", "icon": "search", "title": "Discovery & Research", "points": ["Identify UX quick wins", "Prioritize low-risk improvements"]},
+          {"num": "2", "icon": "flask", "title": "Testing & Validation", "points": ["User testing and workflow cleanup", "Introduce \"Ask Otis\" AI Copilot"]},
+          {"num": "3", "icon": "flag", "title": "Beta Test & Launch", "points": ["Pilot rollout", "Feedback-driven iteration"]},
+          {"num": "4", "icon": "sparkle", "title": "Future Vision", "points": ["AI insights and energy prediction", "Cost optimization across touchpoints"]}
         ]},
         {"type": "surface-showcase", "layout": "split", "alternate": false, "items": [
           {"title": "Dashboard & AI Copilot", "desc": "A centralized dashboard for real-time service visibility, paired with the \"Ask Otis\" AI Copilot to surface insights and guide next steps while keeping users in control.", "video": "/videos/otis-dashboard-copilot.mp4"},
