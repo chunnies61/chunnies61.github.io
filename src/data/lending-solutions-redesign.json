@@ -106,7 +106,7 @@
             "The rituals kept teams in sync, but not the bigger fracture: no alignment on portfolio priority. Every owner could defend their slice; no one could sequence the roadmap across initiation, fulfilment, monitoring, servicing, Workspace, data and shared services.",
             "Leadership called a three-day portfolio workshop at the Ohio HQ, and I attended as the only designer, alongside POs, journey owners, data, architecture and risk. Together we took one working artefact from initiative through epic, feature, persona, job-to-be-done and journey to routing, owner, dependency, size, sequence and change impact."
           ]},
-          {"type": "image", "label": "Three days at HQ as the only designer in the room"},
+          {"type": "image", "src": "/images/lending-hq-workshop.jpg", "label": "Three days at HQ as the only designer in the room"},
           {"type": "text", "value": "My role wasn't to take notes. It was to bring the design perspective into decisions that were otherwise about inventory, sizing and sequencing."},
           {"type": "cards", "columns": 3, "items": [
             {"emoji": "🔭", "title": "Showed concrete futures", "desc": "Three Loan Request App explorations side by side — the agenda named my prototypes as reference points."},

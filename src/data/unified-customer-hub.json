@@ -109,6 +109,7 @@
             {"label": "Personal Loan", "title": "A dedicated space for loan customers to manage their accounts", "desc": "View payment history, access statements, and make payments with ease.", "video": "/videos/personal-loan.mp4"},
             {"label": "Financial Health", "title": "A dashboard that helps users understand and improve their financial health", "desc": "Credit scores, score factors, alerts, simulations, and detailed credit reports.", "video": "/videos/financial-health.mp4"}
           ]},
+          {"type": "text", "value": "All three surfaces are one responsive system, not a mobile product with a separate desktop twin. The same components reflow from phone to desktop, so a customer who switches devices mid-task keeps the same layout logic and the same mental model."},
           {"type": "video", "src": "/videos/customer-hub-prototype.mp4", "label": "Prototype walkthrough — loan → credit score → cross-sell"}
         ]},
         {"type": "step", "num": "6.2", "title": "A messaging framework, not one-off designs", "blocks": [
