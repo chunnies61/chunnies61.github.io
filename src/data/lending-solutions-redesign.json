@@ -67,7 +67,12 @@
           {"type": "quote", "value": "Don't describe your job. Trace this specific deal, and put a red dot every time you had to stop and ask someone a question.", "attribution": "The workshop instruction"},
           {"type": "image", "src": "/images/lending-userflow.png", "label": "The deal timeline with every stop-and-ask marked — the dots clustered at the same three seams"},
           {"type": "text", "value": "The red dots clustered at the same three seams every time. The most consistent: requests arriving at Credit missing collateral and entity details the Banker was never asked for at intake — the asset basis and ownership structure Credit needs to size a securities- or property-backed facility."},
-          {"type": "image", "src": "/images/lending-data.png", "label": "What the seams cost — not-in-good-order submissions, mid-flow restarts, and manual handoffs"},
+          {"type": "cards", "columns": 3, "variant": "centered", "items": [
+            {"icon": "alert", "title": "NIGO", "desc": "Not-in-good-order submissions returned downstream"},
+            {"icon": "restart", "title": "Restart", "desc": "Errors mid-flow forced Advisors to start over"},
+            {"icon": "exchange", "title": "Handoffs", "desc": "Manual back-and-forth with Credit Middle Office"}
+          ]},
+          {"type": "text", "value": "Advisors had to already know what to do — the system rewarded institutional knowledge and penalised anyone without it."},
           {"type": "honest-note", "label": "The baseline", "value": "Before designing, I audited 40 recent loan requests with Middle Office: ~60% bounced at least once, and the top two reasons matched two of the three seams. That number became my north star."}
         ]}
       ]

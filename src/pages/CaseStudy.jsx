@@ -195,6 +195,52 @@ function Slideshow({ images, interval = SLIDESHOW_INTERVAL_MS }) {
   );
 }
 
+/* Inline icon primitives for cards — 24px grid, stroke-based, inherit currentColor.
+   Use "icon" on a card item instead of "emoji" when the mark should scale and
+   theme with the text rather than render as a platform emoji glyph. */
+const CARD_ICONS = {
+  alert: (
+    <>
+      <path d="M10.3 3.9 1.8 18.5A2 2 0 0 0 3.5 21.5h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z" />
+      <path d="M12 9v4.5" />
+      <path d="M12 17.5h.01" />
+    </>
+  ),
+  restart: (
+    <>
+      <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+      <path d="M3 3v5h5" />
+    </>
+  ),
+  exchange: (
+    <>
+      <path d="M8 3 4 7l4 4" />
+      <path d="M4 7h16" />
+      <path d="m16 13 4 4-4 4" />
+      <path d="M20 17H4" />
+    </>
+  ),
+};
+
+function CardIcon({ name }) {
+  const glyph = CARD_ICONS[name];
+  if (!glyph) return null;
+  return (
+    <span className="cs-card-icon" aria-hidden="true">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        {glyph}
+      </svg>
+    </span>
+  );
+}
+
 function Block({ block }) {
   switch (block.type) {
     case "text":
@@ -219,6 +265,7 @@ function Block({ block }) {
                   loading="lazy"
                 />
               )}
+              {item.icon && <CardIcon name={item.icon} />}
               {item.emoji && <span className="cs-card-emoji">{item.emoji}</span>}
               {item.label && <span className="cs-card-label">{item.label}</span>}
               {item.title && <h4>{item.title}</h4>}

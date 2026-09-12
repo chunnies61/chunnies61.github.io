@@ -399,6 +399,64 @@ a.cs-index-item.is-active:hover {
   line-height: 1;
 }
 
+/* Inline SVG mark — a tinted chip so the icon reads at any size and follows
+   the type colour instead of a platform emoji's own palette. */
+.cs-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  background: rgba(30, 87, 200, 0.1);
+  color: #1e57c8;
+}
+.cs-card-icon svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+/* Centred variant — icon over title over one line of supporting copy. */
+.cs-cards--centered .cs-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* Narrower sides than a default card so a long hyphenated term
+     ("Not-in-good-order submissions") stays on one line at desktop width. */
+  padding: 28px 16px;
+}
+.cs-cards--centered .cs-card h4 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.cs-cards--centered .cs-card p {
+  text-wrap: balance;
+}
+
+/* These cards are compact enough to stay three across on tablet, where the
+   shared card grid would otherwise stack them into full-width strips. */
+@media (max-width: 900px) {
+  .cs-cards--centered.cs-cards-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .cs-cards--centered .cs-card {
+    padding: 24px 12px;
+  }
+}
+@media (max-width: 640px) {
+  .cs-cards--centered.cs-cards-3 {
+    grid-template-columns: 1fr;
+  }
+  .cs-cards--centered .cs-card {
+    padding: 24px 20px;
+  }
+}
+
 /* Persona avatar — round portrait at the top of a card */
 .cs-card-avatar {
   display: block;
