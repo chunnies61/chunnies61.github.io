@@ -556,10 +556,11 @@ a.cs-index-item.is-active:hover {
   }
 }
 
-/* Customer Hub's phone recordings run 10% larger than the shared portrait size on desktop */
+/* Customer Hub's phone recordings run 21% larger than the shared portrait size
+   on desktop (26% -> 28.6% -> 31.5%, two 10% steps) */
 .case-study--unified-customer-hub .cs-surface-showcase--portrait .cs-surface-media {
-  flex: 0 0 28.6%;
-  max-width: 28.6%;
+  flex: 0 0 31.5%;
+  max-width: 31.5%;
 }
 @media (max-width: 760px) {
   /* On phones the shared split rule already lets media fill the row; keep that */

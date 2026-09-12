@@ -18,12 +18,12 @@
   --text: var(--gray-900);      /* primary text & headings */
   --text-soft: var(--gray-700); /* secondary text, captions */
   --accent: #4575e7;      /* PRIMARY — accents, rules, tints (never body text on white) */
-  --accent-dark: #2a4fbf; /* PRIMARY_INK — interactive text on white (AA) */
+  --accent-dark: #1e57c8; /* MD3 Primary 40 — primary buttons and interactive text on white (6.5:1) */
   --card-bg: #ffffff;
   --card-border: rgba(51, 57, 69, 0.14);   /* HAIRLINE — gray-900 @ 14% */
   --placeholder-bg: rgba(217, 221, 229, 0.1); /* TINT — image/media placeholders — gray-100 @ 10% */
   --pill-blue-bg: rgba(69, 117, 231, 0.22); /* TINT — wells, chips, quiet fills */
-  --pill-blue-text: #2a4fbf;
+  --pill-blue-text: var(--accent-dark);
   --tag-surface: var(--gray-50);
   --pill-pink-bg: #fbdcec;
   --pill-pink-text: #b23e79;
@@ -138,21 +138,21 @@ button {
 }
 
 .btn-primary {
-  background: var(--accent);
+  background: var(--accent-dark);
   color: #fff;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(69, 117, 231, 0.25);
+  box-shadow: 0 8px 20px rgba(30, 87, 200, 0.25);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--accent);
+  color: var(--accent-dark);
   border: none;
   font-weight: 500;
 }
 
 .btn-secondary:hover {
-  color: var(--accent-dark);
+  color: var(--accent);
 }
 
 @media (max-width: 640px) {
