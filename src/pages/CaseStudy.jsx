@@ -416,7 +416,7 @@ function Block({ block }) {
 
     case "stats":
       return (
-        <div className="cs-outcomes-grid">
+        <div className={"cs-outcomes-grid cs-outcomes-" + block.items.length}>
           {block.items.map((item) => (
             <div className="cs-outcome-tile" key={item.label}>
               {item.value && <p className="cs-outcome-value">{item.value}</p>}

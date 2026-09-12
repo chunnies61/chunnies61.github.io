@@ -21,7 +21,7 @@ export default function Home() {
       <section className="hero">
         <div className="wrap hero-inner">
           <h1 className="hero-title">{home.heroTitle}</h1>
-          <p className="hero-subtitle">{home.heroSubtitle}</p>
+          <p className="hero-subtitle md-label-large">{home.heroSubtitle}</p>
           <div className="hero-actions">
             <a className="btn btn-primary" href={`mailto:${site.contact.email}`}>
               Email

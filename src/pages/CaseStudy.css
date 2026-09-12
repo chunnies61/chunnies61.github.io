@@ -1312,10 +1312,18 @@ a.cs-index-item.is-active:hover {
 }
 
 /* Outcomes — tinted stat tiles */
+/* One equal column per stat, so any count fills the row rather than
+   leaving an empty track at the end of a fixed four-column grid. */
 .cs-outcomes-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
+}
+.cs-outcomes-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.cs-outcomes-3 {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .cs-outcome-tile {
@@ -1394,7 +1402,7 @@ a.cs-index-item.is-active:hover {
   font-style: italic;
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.35;
+  line-height: 1.6;
   color: var(--text);
 }
 
