@@ -52,7 +52,6 @@ export default function Home() {
               >
                 <div className="case-card-image">
                   <img src={cs.thumb} alt={cs.title} loading="lazy" />
-                  {cs.locked && <span className="case-card-lock">🔒</span>}
                 </div>
                 <div className="case-card-body">
                   <div className="case-card-tags">

@@ -1546,17 +1546,6 @@ a.cs-index-item.is-active:hover {
   transform: scale(1.03);
 }
 
-.cs-pager-lock {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  padding: 4px 6px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.9);
-  font-size: 11px;
-  line-height: 1;
-}
-
 .cs-pager-body {
   display: flex;
   flex-direction: column;

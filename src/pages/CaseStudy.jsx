@@ -837,11 +837,6 @@ export default function CaseStudy() {
               >
                 <span className="cs-pager-thumb">
                   <img src={cs.thumb || cs.heroImage} alt="" loading="lazy" />
-                  {cs.locked && (
-                    <span className="cs-pager-lock" aria-label="Password protected">
-                      🔒
-                    </span>
-                  )}
                 </span>
                 <span className="cs-pager-body">
                   <span className="cs-pager-label">
