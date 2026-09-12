@@ -98,16 +98,16 @@
       "blocks": [
         {"type": "text", "value": "With the problem framed, execution followed a phased, de-risked path: discovery and quick wins first — low-risk UX improvements to build stakeholder confidence — then validation and workflow cleanup, then beta and a longer-term AI vision."},
         {"type": "phases", "steps": [
-          {"num": "1", "icon": "search", "title": "Discovery & Research", "points": ["Identify UX quick wins", "Prioritize low-risk improvements"]},
-          {"num": "2", "icon": "flask", "title": "Testing & Validation", "points": ["User testing and workflow cleanup", "Introduce \"Ask Otis\" AI Copilot"]},
-          {"num": "3", "icon": "flag", "title": "Beta Test & Launch", "points": ["Pilot rollout", "Feedback-driven iteration"]},
-          {"num": "4", "icon": "sparkle", "title": "Future Vision", "points": ["AI insights and energy prediction", "Cost optimization across touchpoints"]}
+          {"num": "1", "emoji": "🔍", "title": "Discovery & Research", "points": ["Identify UX quick wins", "Prioritize low-risk improvements"]},
+          {"num": "2", "emoji": "🧪", "title": "Testing & Validation", "points": ["User testing and workflow cleanup", "Introduce \"Ask Otis\" AI Copilot"]},
+          {"num": "3", "emoji": "🚀", "title": "Beta Test & Launch", "points": ["Pilot rollout", "Feedback-driven iteration"]},
+          {"num": "4", "emoji": "✨", "title": "Future Vision", "points": ["AI insights and energy prediction", "Cost optimization across touchpoints"]}
         ]},
         {"type": "surface-showcase", "layout": "split", "alternate": false, "items": [
-          {"title": "Dashboard & AI Copilot", "desc": "A centralized dashboard for real-time service visibility, paired with the \"Ask Otis\" AI Copilot to surface insights and guide next steps while keeping users in control.", "video": "/videos/otis-dashboard-copilot.mp4"},
-          {"title": "Traffic Control & Monitoring", "desc": "Modular tools letting security teams and engineers manage calls, secure floors, and schedule operations in real time.", "video": "/videos/otis-traffic-control.mp4"},
-          {"title": "Health & Energy", "desc": "AI-powered insights monitor elevator health and energy use to surface early risks, predict maintenance, and cut consumption.", "video": "/videos/otis-health-energy.mp4"},
-          {"title": "New User Guide", "desc": "Guided onboarding with contextual tutorials that shorten training time and build confidence faster.", "video": "/videos/otis-user-guide.mp4"}
+          {"title": "Dashboard & AI Copilot", "desc": "Real-time service visibility, with the \"Ask Otis\" AI Copilot surfacing insights while users stay in control.", "video": "/videos/otis-dashboard-copilot.mp4"},
+          {"title": "Traffic Control & Monitoring", "desc": "Modular tools to manage calls, secure floors, and schedule operations live.", "video": "/videos/otis-traffic-control.mp4"},
+          {"title": "Health & Energy", "desc": "AI insights on health and energy — early risks, predicted maintenance, lower consumption.", "video": "/videos/otis-health-energy.mp4"},
+          {"title": "New User Guide", "desc": "Contextual tutorials that shorten training and build confidence.", "video": "/videos/otis-user-guide.mp4"}
         ]}
       ]
     },

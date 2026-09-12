@@ -220,31 +220,6 @@ const CARD_ICONS = {
       <path d="M20 17H4" />
     </>
   ),
-  search: (
-    <>
-      <circle cx="11" cy="11" r="7" />
-      <path d="m20 20-3.6-3.6" />
-    </>
-  ),
-  flask: (
-    <>
-      <path d="M9 3h6" />
-      <path d="M10 3v6.6L4.8 18a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3L14 9.6V3" />
-      <path d="M7.4 15h9.2" />
-    </>
-  ),
-  flag: (
-    <>
-      <path d="M4.5 21V3.5" />
-      <path d="M4.5 4h12.8l-2.4 4 2.4 4H4.5" />
-    </>
-  ),
-  sparkle: (
-    <>
-      <path d="m11 3 1.8 4.9L17.7 9.7l-4.9 1.8L11 16.4 9.2 11.5 4.3 9.7l4.9-1.8Z" />
-      <path d="m18.5 14.6.9 2.4 2.4.9-2.4.9-.9 2.4-.9-2.4-2.4-.9 2.4-.9Z" />
-    </>
-  ),
 };
 
 function CardIcon({ name, className = "cs-card-icon" }) {
@@ -400,10 +375,11 @@ function Block({ block }) {
           {block.steps.map((s) => (
             <div className="cs-phase" key={s.num}>
               <div className="cs-phase-rail">
-                <span className="cs-phase-num">{s.num}</span>
+                <span className="cs-phase-node" aria-hidden="true">
+                  {s.emoji}
+                </span>
               </div>
               <div className="cs-phase-card">
-                {s.icon && <CardIcon name={s.icon} className="cs-phase-icon" />}
                 <h4 className="cs-phase-title">{s.title}</h4>
                 <ul className="cs-phase-points">
                   {s.points.map((p, i) => (
