@@ -30,7 +30,7 @@
   "indexedSections": [
     {
       "id": "setup",
-      "kicker": "The setup",
+      "kicker": "Context",
       "title": "A box of puzzle pieces, not a picture",
       "blocks": [
         {
@@ -231,7 +231,7 @@
     },
     {
       "id": "deliverables",
-      "kicker": "The deliverables",
+      "kicker": "Delivery",
       "title": "What the assembled system delivered",
       "blocks": [
         {
@@ -320,7 +320,7 @@
     },
     {
       "id": "takeaway",
-      "kicker": "The takeaway",
+      "kicker": "Reflection",
       "title": "Quality is set by the least glamorous details",
       "blocks": [
         {

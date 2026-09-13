@@ -31,7 +31,7 @@
   "indexedSections": [
     {
       "id": "setup",
-      "kicker": "The setup",
+      "kicker": "Context",
       "title": "A room where design didn't get a vote",
       "blocks": [
         {
@@ -56,7 +56,7 @@
     },
     {
       "id": "moves",
-      "kicker": "The moves",
+      "kicker": "Stakeholder alignment",
       "title": "Four moves to earn the room",
       "blocks": [
         {
@@ -215,7 +215,7 @@
     },
     {
       "id": "impact",
-      "kicker": "Impact",
+      "kicker": "Outcome",
       "title": "Design, embedded in the team's daily work",
       "blocks": [
         {
@@ -256,7 +256,7 @@
     },
     {
       "id": "takeaway",
-      "kicker": "The takeaway",
+      "kicker": "Reflection",
       "title": "Let everyone see the same truth",
       "blocks": [
         {
