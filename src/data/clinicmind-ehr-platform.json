@@ -104,30 +104,6 @@
               "type": "callout",
               "label": "The argument that landed",
               "value": "Slow down once, so everyone moves faster after. Framed as ROI, not taste, the product owner bought in."
-            },
-            {
-              "type": "image",
-              "src": "/images/atomic-design-graphic-ee5e60.svg",
-              "label": "Atomic Design — the methodology behind the Vericle Design System",
-              "variant": "framed"
-            },
-            {
-              "type": "text",
-              "value": "The system itself: color, typography, effects and radii, spacing, and the component library — each specified on real EHR surfaces rather than in the abstract, so engineering had something concrete to build against."
-            },
-            {
-              "type": "slideshow",
-              "images": [
-                "/images/design-system-2-03ffca.png",
-                "/images/design-system-1-e4ac09.png",
-                "/images/design-system-5-42aed5.png",
-                "/images/design-system-6-44ee81.png",
-                "/images/design-system-7-1c4ec5.png",
-                "/images/design-system-10-e4b338.png",
-                "/images/design-system-11-149717.png",
-                "/images/design-system-12-9ed6bb.png"
-              ],
-              "variant": "grid"
             }
           ]
         },
@@ -203,6 +179,37 @@
               "value": "Communication stopped being a one-off handoff and became a continuously closing loop."
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "design-system",
+      "kicker": "Design system",
+      "title": "One system, so every page became assembly",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "/images/atomic-design-graphic-ee5e60.svg",
+          "label": "Atomic Design — the methodology behind the Vericle Design System",
+          "variant": "padded"
+        },
+        {
+          "type": "text",
+          "value": "The system itself: color, typography, effects and radii, spacing, and the component library — each specified on real EHR surfaces rather than in the abstract, so engineering had something concrete to build against."
+        },
+        {
+          "type": "slideshow",
+          "images": [
+            "/images/design-system-2-03ffca.png",
+            "/images/design-system-1-e4ac09.png",
+            "/images/design-system-5-42aed5.png",
+            "/images/design-system-6-44ee81.png",
+            "/images/design-system-7-1c4ec5.png",
+            "/images/design-system-10-e4b338.png",
+            "/images/design-system-11-149717.png",
+            "/images/design-system-12-9ed6bb.png"
+          ],
+          "variant": "grid"
         }
       ]
     },

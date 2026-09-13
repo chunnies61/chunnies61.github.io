@@ -318,6 +318,11 @@ a.cs-index-item.is-active:hover {
   padding: 48px;
 }
 
+/* Same breathing room as --framed, but on the page's own ground */
+.cs-image--padded {
+  padding: 48px;
+}
+
 .cs-image--outlined {
   border: 1px solid var(--card-border);
 }
