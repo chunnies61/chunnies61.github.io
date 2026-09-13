@@ -320,7 +320,7 @@ a.cs-index-item.is-active:hover {
 
 /* Generous breathing room, on the page's own ground rather than --framed's fill */
 .cs-image--padded {
-  padding: 88px;
+  padding: 48px;
 }
 @media (max-width: 760px) {
   .cs-image--padded {
