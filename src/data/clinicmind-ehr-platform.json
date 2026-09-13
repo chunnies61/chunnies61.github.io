@@ -213,7 +213,7 @@
       "blocks": [
         {
           "type": "cards",
-          "columns": 2,
+          "columns": 3,
           "items": [
             {
               "emoji": "🧱",
@@ -224,11 +224,6 @@
               "emoji": "📼",
               "title": "30+ demos as shared memory",
               "desc": "The team's source of truth for every flow and interaction."
-            },
-            {
-              "emoji": "✨",
-              "title": "Cleaner core interfaces",
-              "desc": "Surfaces like the appointment dashboard got cleaner and better organized."
             },
             {
               "emoji": "📦",
