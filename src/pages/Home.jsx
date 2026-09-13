@@ -21,7 +21,7 @@ export default function Home() {
       <section className="hero">
         <div className="wrap hero-inner">
           <h1 className="hero-title">{home.heroTitle}</h1>
-          <p className="hero-subtitle md-body-large">{home.heroSubtitle}</p>
+          <p className="hero-subtitle md-body-medium">{home.heroSubtitle}</p>
           <div className="hero-actions">
             <a className="btn btn-primary" href={`mailto:${site.contact.email}`}>
               Email
@@ -59,8 +59,8 @@ export default function Home() {
                       <Tag key={tag}>{tag}</Tag>
                     ))}
                   </div>
-                  <h3>{cs.title}</h3>
-                  <p className="case-card-desc md-title-medium">{cs.desc}</p>
+                  <h3 className="md-headline-small">{cs.title}</h3>
+                  <p className="case-card-desc md-body-medium">{cs.desc}</p>
                 </div>
               </Link>
             ))}
