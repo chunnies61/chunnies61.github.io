@@ -15,13 +15,20 @@ export default function Nav() {
           <img src="/images/logo-dcc224.svg" alt="Yichun logo" />
         </Link>
         <nav className="nav-links">
-          <Link to={site.nav.links[0].to}>{site.nav.links[0].label}</Link>
+          <Link className="md-label-large" to={site.nav.links[0].to}>
+            {site.nav.links[0].label}
+          </Link>
           {site.nav.links.slice(1).map((link) => (
-            <Link key={link.to} to={link.to}>
+            <Link className="md-label-large" key={link.to} to={link.to}>
               {link.label}
             </Link>
           ))}
-          <a href={site.nav.resumeUrl} target="_blank" rel="noreferrer">
+          <a
+            className="md-label-large"
+            href={site.nav.resumeUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
             CV
           </a>
         </nav>

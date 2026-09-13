@@ -96,27 +96,27 @@
       "family": "Poppins",
       "familyToken": "--font-ui",
       "weight": 500,
-      "use": "Running prose. Body Large is the default reading size.",
+      "use": "Running prose. Body Large is the default reading size. Line height runs 160% of the size.",
       "roles": [
         {
           "role": "Body Large",
           "class": "md-body-large",
           "size": 16,
-          "lineHeight": 24,
+          "lineHeight": 25.6,
           "letterSpacing": 0.5
         },
         {
           "role": "Body Medium",
           "class": "md-body-medium",
           "size": 14,
-          "lineHeight": 20,
+          "lineHeight": 22.4,
           "letterSpacing": 0.25
         },
         {
           "role": "Body Small",
           "class": "md-body-small",
           "size": 12,
-          "lineHeight": 16,
+          "lineHeight": 19.2,
           "letterSpacing": 0.4
         }
       ]

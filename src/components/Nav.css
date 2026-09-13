@@ -16,13 +16,11 @@
   height: 32px;
 }
 
+/* Type comes from .md-label-large on each link; only layout and colour here. */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 32px;
-  font-family: var(--font-ui);
-  font-weight: 500;
-  font-size: 15px;
   color: var(--text);
 }
 
@@ -33,6 +31,5 @@
 @media (max-width: 640px) {
   .nav-links {
     gap: 16px;
-    font-size: 13px;
   }
 }
