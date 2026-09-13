@@ -16,12 +16,13 @@
   height: 32px;
 }
 
-/* Type comes from .md-label-large on each link; only layout and colour here. */
+/* Type comes from .md-label-large on each link; only layout and colour here.
+   Neutral 60 from the tonal palettes (src/data/tonal-palettes.json). */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 32px;
-  color: var(--text);
+  color: #8b919f;
 }
 
 .nav-links a:hover {
