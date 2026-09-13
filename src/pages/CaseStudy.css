@@ -318,9 +318,14 @@ a.cs-index-item.is-active:hover {
   padding: 48px;
 }
 
-/* Same breathing room as --framed, but on the page's own ground */
+/* Generous breathing room, on the page's own ground rather than --framed's fill */
 .cs-image--padded {
-  padding: 48px;
+  padding: 88px;
+}
+@media (max-width: 760px) {
+  .cs-image--padded {
+    padding: 32px;
+  }
 }
 
 .cs-image--outlined {
