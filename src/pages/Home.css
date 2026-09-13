@@ -116,12 +116,9 @@
   color: var(--accent);
 }
 
+/* Type comes from .md-title-medium on the element; only colour here. */
 .case-card-desc {
-  font-family: var(--font-ui);
-  font-weight: 400;
   color: var(--text-soft);
-  font-size: 14px;
-  line-height: 1.5;
 }
 
 /* ===== More projects ===== */

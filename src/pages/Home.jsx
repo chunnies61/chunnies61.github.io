@@ -60,7 +60,7 @@ export default function Home() {
                     ))}
                   </div>
                   <h3>{cs.title}</h3>
-                  <p className="case-card-desc">{cs.desc}</p>
+                  <p className="case-card-desc md-title-medium">{cs.desc}</p>
                 </div>
               </Link>
             ))}
