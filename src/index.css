@@ -168,21 +168,21 @@ button {
 .md-display-large {
   font-family: var(--font-display);
   font-size: 56px;
-  line-height: 64px;
+  line-height: 89.6px; /* 160% */
   letter-spacing: 0;
   font-weight: 800;
 }
 .md-display-medium {
   font-family: var(--font-display);
   font-size: 45px;
-  line-height: 52px;
+  line-height: 72px; /* 160% */
   letter-spacing: 0;
   font-weight: 800;
 }
 .md-display-small {
   font-family: var(--font-display);
   font-size: 36px;
-  line-height: 44px;
+  line-height: 57.6px; /* 160% */
   letter-spacing: 0;
   font-weight: 800;
 }
@@ -191,21 +191,21 @@ button {
 .md-headline-large {
   font-family: var(--font-display);
   font-size: 32px;
-  line-height: 40px;
+  line-height: 51.2px; /* 160% */
   letter-spacing: 0;
   font-weight: 700;
 }
 .md-headline-medium {
   font-family: var(--font-display);
   font-size: 28px;
-  line-height: 36px;
+  line-height: 44.8px; /* 160% */
   letter-spacing: 0;
   font-weight: 700;
 }
 .md-headline-small {
   font-family: var(--font-display);
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 22px;
+  line-height: 35.2px; /* 160% */
   letter-spacing: 0;
   font-weight: 700;
 }
@@ -214,21 +214,21 @@ button {
 .md-title-large {
   font-family: var(--font-ui);
   font-size: 22px;
-  line-height: 28px;
+  line-height: 35.2px; /* 160% */
   letter-spacing: 0;
   font-weight: 500;
 }
 .md-title-medium {
   font-family: var(--font-ui);
   font-size: 16px;
-  line-height: 24px;
+  line-height: 25.6px; /* 160% */
   letter-spacing: 0.15px;
   font-weight: 500;
 }
 .md-title-small {
   font-family: var(--font-ui);
   font-size: 14px;
-  line-height: 20px;
+  line-height: 22.4px; /* 160% */
   letter-spacing: 0.1px;
   font-weight: 500;
 }

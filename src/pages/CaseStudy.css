@@ -363,11 +363,8 @@ a.cs-index-item.is-active:hover {
   color: #1e57c8;
 }
 
+/* Type comes from .md-headline-small on the element; only colour and measure here. */
 .cs-section-title {
-  font-family: var(--font-display);
-  font-size: 26px;
-  font-weight: 700;
-  line-height: 1.25;
   color: var(--text);
   max-width: 760px;
 }
@@ -842,11 +839,8 @@ a.cs-index-item.is-active:hover {
   letter-spacing: 0.05em;
   color: #ffe785;
 }
+/* Type comes from .md-headline-small on the element; only colour here. */
 .cs-callout p {
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.3;
   color: #fff;
 }
 
@@ -1754,9 +1748,6 @@ a.cs-index-item.is-active:hover {
   .cs-cards-3,
   .cs-contrast {
     grid-template-columns: 1fr;
-  }
-  .cs-section-title {
-    font-size: 22px;
   }
   .cs-shipped-item,
   .cs-shipped-item.is-reverse {

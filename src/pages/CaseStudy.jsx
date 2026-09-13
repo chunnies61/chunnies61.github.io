@@ -344,7 +344,7 @@ function Block({ block }) {
           }
         >
           {block.label && <span className="cs-callout-label">{block.label}</span>}
-          <p>{renderHighlighted(block.value)}</p>
+          <p className="md-headline-small">{renderHighlighted(block.value)}</p>
         </div>
       );
     }
@@ -549,7 +549,9 @@ function IndexedSection({ section }) {
           {section.kicker && (
             <p className="cs-section-caption md-label-medium">{section.kicker}</p>
           )}
-          {section.title && <h2 className="cs-section-title">{section.title}</h2>}
+          {section.title && (
+            <h2 className="cs-section-title md-headline-small">{section.title}</h2>
+          )}
         </header>
         {section.blocks.map((b, i) => (
           <Block block={b} key={i} />

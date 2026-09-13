@@ -1,32 +1,32 @@
 {
-  "note": "Material Design 3 type scale, 15 roles. Sizes, line-heights and letter-spacings are the MD3 values. Weights and families are this site's: Bricolage Grotesque 800 for Display, 700 for Headline, Poppins 500 for Title, Body and Label. Mirrored as .md-* classes in src/index.css — change both together.",
+  "note": "Material Design 3 type scale, 15 roles. Sizes, line-heights and letter-spacings are the MD3 values. Weights and families are this site's: Bricolage Grotesque 800 for Display, 700 for Headline, Poppins 500 for Title, Body and Label. Line height is 160% of the size for every role. Mirrored as .md-* classes in src/index.css — change both together.",
   "groups": [
     {
       "name": "Display",
       "family": "Bricolage Grotesque",
       "familyToken": "--font-display",
       "weight": 800,
-      "use": "Hero moments and page headers. Sparingly — one per screen.",
+      "use": "Hero moments and page headers. Sparingly — one per screen. Line height runs 160% of the size.",
       "roles": [
         {
           "role": "Display Large",
           "class": "md-display-large",
           "size": 56,
-          "lineHeight": 64,
+          "lineHeight": 89.6,
           "letterSpacing": 0
         },
         {
           "role": "Display Medium",
           "class": "md-display-medium",
           "size": 45,
-          "lineHeight": 52,
+          "lineHeight": 72.0,
           "letterSpacing": 0
         },
         {
           "role": "Display Small",
           "class": "md-display-small",
           "size": 36,
-          "lineHeight": 44,
+          "lineHeight": 57.6,
           "letterSpacing": 0
         }
       ]
@@ -36,27 +36,27 @@
       "family": "Bricolage Grotesque",
       "familyToken": "--font-display",
       "weight": 700,
-      "use": "Section headings — the level a reader scans to find their place.",
+      "use": "Section headings — the level a reader scans to find their place. Line height runs 160% of the size.",
       "roles": [
         {
           "role": "Headline Large",
           "class": "md-headline-large",
           "size": 32,
-          "lineHeight": 40,
+          "lineHeight": 51.2,
           "letterSpacing": 0
         },
         {
           "role": "Headline Medium",
           "class": "md-headline-medium",
           "size": 28,
-          "lineHeight": 36,
+          "lineHeight": 44.8,
           "letterSpacing": 0
         },
         {
           "role": "Headline Small",
           "class": "md-headline-small",
-          "size": 24,
-          "lineHeight": 32,
+          "size": 22,
+          "lineHeight": 35.2,
           "letterSpacing": 0
         }
       ]
@@ -66,27 +66,27 @@
       "family": "Poppins",
       "familyToken": "--font-ui",
       "weight": 500,
-      "use": "Card, panel and list-item headings — shorter than a headline, heavier than body.",
+      "use": "Card, panel and list-item headings — shorter than a headline, heavier than body. Line height runs 160% of the size.",
       "roles": [
         {
           "role": "Title Large",
           "class": "md-title-large",
           "size": 22,
-          "lineHeight": 28,
+          "lineHeight": 35.2,
           "letterSpacing": 0
         },
         {
           "role": "Title Medium",
           "class": "md-title-medium",
           "size": 16,
-          "lineHeight": 24,
+          "lineHeight": 25.6,
           "letterSpacing": 0.15
         },
         {
           "role": "Title Small",
           "class": "md-title-small",
           "size": 14,
-          "lineHeight": 20,
+          "lineHeight": 22.4,
           "letterSpacing": 0.1
         }
       ]
