@@ -27,12 +27,11 @@
   color: var(--accent-dark);
 }
 
-/* Type comes from .md-label-large on the element; only layout and colour here.
-   Neutral 30 from the tonal palettes (src/data/tonal-palettes.json). */
+/* Type comes from .md-body-large on the element; only layout and colour here. */
 .hero-subtitle {
   margin: 24px auto 0;
   max-width: 620px;
-  color: #414753;
+  color: var(--gray-700);
 }
 
 .hero-actions {
