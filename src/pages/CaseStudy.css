@@ -1340,6 +1340,22 @@ a.cs-index-item.is-active:hover {
   font-size: 14px;
 }
 
+/* Slideshow, laid open — every slide visible at once instead of one at a time */
+.cs-slides-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.cs-slides-grid img {
+  width: 100%;
+  border-radius: var(--radius-media);
+}
+@media (max-width: 760px) {
+  .cs-slides-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .cs-gallery {
   margin-top: 20px;
   display: grid;

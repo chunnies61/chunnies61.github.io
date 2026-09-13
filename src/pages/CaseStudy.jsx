@@ -415,6 +415,14 @@ function Block({ block }) {
       );
 
     case "slideshow":
+      if (block.variant === "grid")
+        return (
+          <div className="cs-slides-grid">
+            {block.images.map((src) => (
+              <img key={src} src={src} alt="" loading="lazy" />
+            ))}
+          </div>
+        );
       return <Slideshow images={block.images} interval={block.interval} />;
 
     case "contrast":
