@@ -1230,7 +1230,7 @@ a.cs-index-item.is-active:hover {
 /* Process steps */
 .cs-step {
   border-top: 1px solid var(--card-border);
-  padding-top: 24px;
+  padding-top: 28px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -1241,36 +1241,28 @@ a.cs-index-item.is-active:hover {
 }
 .cs-step-head {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 12px;
 }
+/* Step number badge — bordered circle with a flat offset shadow, in the
+   page's own ink. Shared by every numbered step across the case studies;
+   min-width keeps single digits circular while "6.1" relaxes into a pill. */
 .cs-step-num {
   flex-shrink: 0;
-  font-family: var(--font-ui);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--accent-dark);
-}
-
-/* Opt-in badge treatment for step numbers — bordered circle + flat offset
-   shadow, in the page's own ink color. Only applies where a section sets
-   "variant": "badge-steps", so other case studies are unaffected. */
-.cs-section--badge-steps .cs-step-num {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
+  min-width: 32px;
   height: 32px;
-  border-radius: 50%;
+  padding: 0 8px;
+  border-radius: 999px;
   border: 2px solid var(--text);
   background: #ffe785;
   box-shadow: 2px 2px 0 var(--text);
+  font-family: var(--font-ui);
   font-size: 14px;
   font-weight: 800;
   color: var(--text);
-}
-.cs-section--badge-steps .cs-step {
-  padding-top: 28px;
 }
 
 /* Honest note — a quieter aside for acknowledging a real tradeoff or

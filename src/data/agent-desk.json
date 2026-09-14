@@ -100,7 +100,6 @@
       "id": "decisions",
       "kicker": "Design decisions",
       "title": "Four decisions that broke the tradeoff",
-      "variant": "badge-steps",
       "blocks": [
         {
           "type": "step",
