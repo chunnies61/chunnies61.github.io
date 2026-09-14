@@ -288,7 +288,7 @@ export default function StyleGuide() {
           <div className="sg-samples">
             <div className="cs-callout">
               <span className="cs-callout-label">Callout label</span>
-              <p>Accent-dark panel, white body text, yellow label.</p>
+              <p className="md-body-large">Accent-dark panel, white body text, yellow label.</p>
             </div>
 
             <div className="cs-cards cs-cards-3">

@@ -65,7 +65,7 @@
     },
     {
       "id": "tension",
-      "kicker": "The problem",
+      "kicker": "The Problem",
       "title": "Two metrics that fight each other",
       "blocks": [
         {
@@ -98,7 +98,7 @@
     },
     {
       "id": "decisions",
-      "kicker": "Design decisions",
+      "kicker": "Design Decisions",
       "title": "Four decisions that broke the tradeoff",
       "blocks": [
         {

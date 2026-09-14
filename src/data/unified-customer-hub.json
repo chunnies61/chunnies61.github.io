@@ -49,7 +49,7 @@
     },
     {
       "id": "problem",
-      "kicker": "The problem",
+      "kicker": "The Problem",
       "title": "Nobody owned \"unified\"",
       "blocks": [
         {
@@ -118,7 +118,7 @@
     },
     {
       "id": "move-one",
-      "kicker": "Stakeholder alignment",
+      "kicker": "Stakeholder Alignment",
       "title": "Show, don't tell",
       "blocks": [
         {
@@ -163,7 +163,7 @@
     },
     {
       "id": "tradeoff",
-      "kicker": "Design decisions",
+      "kicker": "Design Decisions",
       "title": "One decision, three stories",
       "blocks": [
         {

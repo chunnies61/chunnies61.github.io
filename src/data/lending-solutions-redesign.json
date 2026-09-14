@@ -76,7 +76,7 @@
     },
     {
       "id": "brief",
-      "kicker": "The problem",
+      "kicker": "The Problem",
       "title": "The brief, and why it was wrong",
       "blocks": [
         {
@@ -215,7 +215,7 @@
     },
     {
       "id": "alignment",
-      "kicker": "Stakeholder alignment",
+      "kicker": "Stakeholder Alignment",
       "title": "Manufacturing an owner for an unowned problem",
       "blocks": [
         {
@@ -372,7 +372,7 @@
     },
     {
       "id": "decision",
-      "kicker": "Design decisions",
+      "kicker": "Design Decisions",
       "title": "Assisted, not automated",
       "blocks": [
         {
