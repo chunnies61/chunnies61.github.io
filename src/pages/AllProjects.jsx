@@ -77,7 +77,7 @@ export default function AllProjects() {
       <header className="ap-header">
         <div className="wrap">
           <p className="eyebrow">{home.otherWorkEyebrow}</p>
-          <h1>{home.otherWorkTitle}</h1>
+          <h1 className="md-display-small">{home.otherWorkTitle}</h1>
         </div>
       </header>
 
@@ -86,7 +86,7 @@ export default function AllProjects() {
           {projects.map((item, i) => (
             <div className="ap-row" key={`${item.thumb}-${i}`}>
               <div className="ap-title">
-                <h3>{item.title}</h3>
+                <h3 className="md-headline-medium">{item.title}</h3>
               </div>
               <div className="ap-desc">
                 {item.desc && item.desc.length ? (

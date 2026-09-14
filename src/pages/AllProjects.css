@@ -3,12 +3,10 @@
   text-align: center;
 }
 
+/* Type comes from .md-display-small; Neutral 10 is the page's darkest ink. */
 .ap-header h1 {
-  font-size: clamp(32px, 3.6vw, 52px);
-  font-weight: 700;
-  line-height: 1.09;
-  letter-spacing: -1px;
   margin-top: 8px;
+  color: #161c27;
 }
 
 .ap-list {
@@ -34,11 +32,9 @@
   gap: 6px;
 }
 
+/* Type comes from .md-headline-medium; same Neutral 10 ink as the page title. */
 .ap-title h3 {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--gray-700);
-  line-height: 1.3;
+  color: #161c27;
 }
 
 .ap-desc {
