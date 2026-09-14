@@ -110,10 +110,12 @@
   },
   "about": {
     "headerImage": "/images/giffycanvas-10499f.gif",
-    "heading": "Hello from my corner of the internet 👋",
+    "heading": "I take on the problems nobody owns",
     "paragraphs": [
-      "I'm Yichun — it rhymes with \"ee-CHUN,\" and a practice run is very much allowed. I came to design from finance, which left me with a habit I've never shaken: before I ask whether a screen looks right, I want to know what it costs, what it earns, and who has to defend it on Monday. Seven years, a lot of consumer apps and B2B SaaS, and good teams at BCG, Sallie Mae, and Best Egg later, that habit is still the most useful thing I brought with me.",
-      "These days I'm a Senior UX Designer at J.P. Morgan Private Bank, leading lending solutions — the quiet, deeply satisfying work of teaching a loan request to behave. I mentor the designers around me, and I lean on AI to prototype quickly and turn a messy pile of research into something a team can actually decide on."
+      "I'm Yichun — it rhymes with \"ee-CHUN.\" I started out in finance and came to design sideways, which turned out to be the useful way in. Seven years later the finance habit hasn't gone anywhere: before I ask whether a screen looks right, I want to know what it costs, what it earns, and who has to defend it on Monday.",
+      "The work has mostly been in the industries people call complicated — healthcare, lending, student finance, elevator operations. I joined ClinicMind as its second designer ever and built the design system a 20-year, engineer-led platform had never had. At Sallie Mae I was the only designer on Nitro College, turning scattered screens into one end-to-end journey. At Best Egg I pulled three separate fintech products into a single hub now used by 420K+ people a month. Otis Cloud EMS 2.0, which I led, won a 2026 Red Dot Award.",
+      "Today I'm a Senior UX Designer at J.P. Morgan Private Bank, leading lending solutions for a private bank serving clients in 140+ countries — the quiet, deeply satisfying work of teaching a loan request to behave. I mentor the designers around me, and I lean on AI to prototype quickly and turn a messy pile of research into something a team can actually decide on.",
+      "The thread through all of it: I like the problems that sit between teams, where nobody is quite in charge and everyone is waiting for someone else to move. I'm usually happy to be that someone."
     ],
     "funFactsImage": "/images/fun-facts-c5d06e.png",
     "funFactsLabel": "Fun facts about me",
