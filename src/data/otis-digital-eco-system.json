@@ -101,7 +101,8 @@
             {
               "type": "text",
               "value": [
-                "When I aligned with the business and PM, the \"requirement\" was crisp: \"We need a real-time monitoring dashboard.\" Classic solution-as-requirement. So instead of taking the order, I traced it back with a few whys: Why real-time monitoring? Clients can't see equipment health. Why does that matter? Because unseen, elevators only get fixed after they break — reactive maintenance: expensive, disruptive, a constant source of complaints."
+                "When I aligned with the business and PM, the \"requirement\" was crisp: \"We need a real-time monitoring dashboard.\" Classic solution-as-requirement. So instead of taking the order, I traced it back.",
+                "Why a real-time dashboard? Because clients can't see equipment health live. Why does that matter? Because they only learn of a failure after a breakdown. Why is that bad? Because every fix is then reactive: expensive, disruptive, and a constant source of complaints. Five questions in, the root problem had nothing to do with a dashboard. Clients were stuck firefighting and never preventing, and that reframe set the direction for everything after."
               ]
             },
             {
@@ -117,36 +118,6 @@
                   "emoji": "🎯",
                   "label": "The actual problem",
                   "desc": "Clients are trapped in a reactive firefighting model — and can't move to proactive prevention."
-                }
-              ]
-            },
-            {
-              "type": "text",
-              "value": "That single reframe — from \"build a dashboard\" to \"move clients from reactive firefighting to proactive prevention\" — set the direction for everything after."
-            },
-            {
-              "type": "whys",
-              "steps": [
-                {
-                  "label": "The ask",
-                  "text": "\"We need a real-time monitoring dashboard.\""
-                },
-                {
-                  "label": "Why?",
-                  "text": "Clients can't see equipment health live."
-                },
-                {
-                  "label": "Why does that matter?",
-                  "text": "They learn of failures only after a breakdown."
-                },
-                {
-                  "label": "Why is that bad?",
-                  "text": "Every fix is reactive: expensive, disruptive, complaint-generating."
-                },
-                {
-                  "label": "The root problem",
-                  "text": "Clients are stuck firefighting, never preventing.",
-                  "root": true
                 }
               ]
             }

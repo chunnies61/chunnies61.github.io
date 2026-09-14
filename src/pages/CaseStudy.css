@@ -568,7 +568,12 @@ a.cs-index-item.is-active:hover {
 .case-study--otis-digital-eco-system .cs-surface-showcase--split {
   gap: 96px;
 }
-.case-study--otis-digital-eco-system .cs-surface-showcase--split .cs-surface-row {
+/* Otis keeps every row the same way round: video left, copy right.
+   Both selectors are needed because the base :nth-child(odd) rule outranks
+   a single .cs-surface-row selector. */
+.case-study--otis-digital-eco-system .cs-surface-showcase--split .cs-surface-row,
+.case-study--otis-digital-eco-system .cs-surface-showcase--split .cs-surface-row:nth-child(odd) {
+  flex-direction: row;
   gap: 28px;
 }
 .case-study--otis-digital-eco-system .cs-surface-showcase--split .cs-surface-media {
@@ -576,6 +581,12 @@ a.cs-index-item.is-active:hover {
   max-width: 75.4%;
 }
 @media (max-width: 760px) {
+  /* Restate at this weight, or the desktop row rule above wins on phones */
+  .case-study--otis-digital-eco-system .cs-surface-showcase--split .cs-surface-row,
+  .case-study--otis-digital-eco-system .cs-surface-showcase--split .cs-surface-row:nth-child(odd) {
+    flex-direction: column;
+    gap: 20px;
+  }
   .case-study--otis-digital-eco-system .cs-surface-showcase--split .cs-surface-media {
     flex: none;
     max-width: 100%;
