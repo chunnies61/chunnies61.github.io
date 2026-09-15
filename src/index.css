@@ -24,7 +24,10 @@
   --placeholder-bg: rgba(217, 221, 229, 0.1); /* TINT — image/media placeholders — gray-100 @ 10% */
   --pill-blue-bg: rgba(69, 117, 231, 0.22); /* TINT — wells, chips, quiet fills */
   --pill-blue-text: var(--accent-dark);
-  --tag-surface: var(--gray-50);
+  /* SURFACE TINT — the quiet fill behind cards, tiles and panels.
+     MD3 Primary 99 from src/data/tonal-palettes.json. */
+  --surface-tint: #fefbff;
+  --tag-surface: var(--surface-tint);
   --pill-pink-bg: #fbdcec;
   --pill-pink-text: #b23e79;
   --pill-yellow-bg: #fdedc0;

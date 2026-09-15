@@ -297,7 +297,7 @@ export default function StyleGuide() {
                   <span className="cs-card-emoji">✦</span>
                   <span className="cs-card-label">Label</span>
                   <h4>{t}</h4>
-                  <p>Tinted card on rgba(240, 241, 244, 0.5).</p>
+                  <p>Tinted card on var(--surface-tint).</p>
                 </div>
               ))}
             </div>
