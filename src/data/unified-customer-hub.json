@@ -155,9 +155,9 @@
         },
         {
           "type": "image",
-          "src": "/images/account-state-reference-table.png",
+          "src": "/images/customer-hub-engineering-pushback.png",
           "variant": "square",
-          "label": "Account-state reference table"
+          "label": "The initial design, and the pushback it met from engineering"
         }
       ]
     },
