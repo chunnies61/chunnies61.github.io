@@ -66,6 +66,15 @@ a.cs-index-item.is-active:hover {
   min-height: clamp(340px, 32vw, 520px);
 }
 
+/* Visual order is image-left, copy-right; the DOM keeps the title first so
+   screen readers and crawlers still meet the heading before the artwork. */
+.cs-hero-image {
+  order: 1;
+}
+.cs-header-panel {
+  order: 2;
+}
+
 /* Copy block sits in the centre of the panel, both axes; text stays left-aligned */
 .cs-header-panel {
   display: flex;
@@ -112,6 +121,13 @@ a.cs-index-item.is-active:hover {
   .cs-header {
     grid-template-columns: 1fr;
     min-height: 0;
+  }
+  /* Stacked, the copy reads first again */
+  .cs-header-panel {
+    order: 1;
+  }
+  .cs-hero-image {
+    order: 2;
   }
   .cs-header-panel {
     padding: 36px 24px 40px;
