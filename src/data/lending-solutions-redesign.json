@@ -109,8 +109,8 @@
         {
           "type": "text",
           "value": [
-            "When I tried to map the current state I hit two gaps at once. No single person could describe the full origination chain — each role saw only their own segment and assumed the next one worked fine. And more fundamentally, my workspace had no shared source of truth to begin with: no documented information architecture, no defined personas. Everyone was designing and prioritising against their own mental model of who the user is and how the product is structured.",
-            "So before I could fix the workflow, I had to build the foundation nobody had built."
+            "Mapping the current state hit two gaps at once. No one could describe the full origination chain — each role saw its own segment and assumed the next worked fine. And there was nothing to map against: no documented IA, no personas. Everyone designed against their own mental model of the product.",
+            "So before fixing the workflow, I had to build the foundation nobody had built."
           ]
         },
         {
@@ -120,7 +120,7 @@
           "blocks": [
             {
               "type": "text",
-              "value": "I interviewed lenders and domain owners across roles — embedding in advisor check-ins and morning meetings to reach client-facing users who are otherwise hard to pin down — and synthesised what I learned into two reference artefacts."
+              "value": "I interviewed lenders and domain owners across every role, embedding in check-ins and morning meetings to reach the client-facing ones, and synthesised two artefacts."
             },
             {
               "type": "cards",
@@ -221,7 +221,7 @@
         {
           "type": "text",
           "value": [
-            "The workflow spanned four teams across USPB and IPB, each with its own regulators and roadmap. Every PO owned a narrow slice deeply but couldn't see the seams between slices, and no one owned the whole chain — so \"fix the intake\" became a hot potato: the Loan Request App PO called it a Credit problem, Credit called it an intake problem."
+            "The workflow spanned four teams across USPB and IPB, each with its own regulators and roadmap. Every PO owned a slice deeply; nobody owned the seams. \"Fix the intake\" became a hot potato: Loan Request App called it Credit's problem, Credit called it intake's."
           ]
         },
         {
@@ -231,7 +231,7 @@
           "blocks": [
             {
               "type": "text",
-              "value": "I turned the red-dot findings into a one-page Rework Map: three seams, the cost of each, and the two teams that touched it. Then I booked one 45-minute review with all four POs and the Credit Risk lead together — a meeting that had never happened, because they had only ever met pairwise."
+              "value": "The red-dot findings became a one-page Rework Map: three seams, their cost, the teams on either side. Then 45 minutes with every PO and the Credit Risk lead in one room — they had only ever met pairwise."
             },
             {
               "type": "image",
@@ -298,8 +298,8 @@
             {
               "type": "text",
               "value": [
-                "The rituals kept teams in sync, but not the bigger fracture: no alignment on portfolio priority. Every owner could defend their slice; no one could sequence the roadmap across initiation, fulfilment, monitoring, servicing, Workspace, data and shared services.",
-                "Leadership called a three-day portfolio workshop at the Ohio HQ, and I attended as the only designer, alongside POs, journey owners, data, architecture and risk. Together we took one working artefact from initiative through epic, feature, persona, job-to-be-done and journey to routing, owner, dependency, size, sequence and change impact."
+                "The rituals kept teams in sync but left the bigger fracture untouched: every owner could defend their slice, nobody could sequence across all of them.",
+                "Leadership called a three-day portfolio workshop at the Ohio HQ. I went as the only designer among POs, journey owners, data, architecture and risk, walking one artefact from initiative through to owner, dependency and sequence."
               ]
             },
             {
@@ -391,7 +391,7 @@
         },
         {
           "type": "text",
-          "value": "So I combined the strengths instead. One Request, Any Deal became the backbone, killing the fork that caused mis-routed intake. I borrowed the Collateral-First Builder's live recalculation to surface borrowing capacity early. And I treated the AI agent as an assist, not an autopilot — three moves designed for trust:"
+          "value": "I combined them. One Request, Any Deal became the backbone, killing the fork behind mis-routed intake; Collateral-First's live recalculation surfaced capacity early; the AI agent became an assist, not an autopilot — three moves for trust:"
         },
         {
           "type": "cards",
@@ -444,12 +444,12 @@
             {
               "emoji": "🖱️",
               "title": "Prototypes, not specs",
-              "desc": "Prototypes exposed real feasibility. When one collateral field proved unreadable in real time, I scoped v1 to the two fixable seams and parked the third, in writing."
+              "desc": "One collateral field proved unreadable live, so v1 shipped the two fixable seams and parked the third in writing."
             },
             {
               "emoji": "📊",
               "title": "Every trade-off anchored to the baseline",
-              "desc": "\"Six in ten requests get redone, and we can prevent most of it upstream\" carried the initiative whenever opinions competed."
+              "desc": "\"Six in ten get redone, and we can prevent it upstream\" settled every argument."
             }
           ]
         },
@@ -502,8 +502,8 @@
         {
           "type": "text",
           "value": [
-            "Validate-at-source intake shipped into the Loan Request App with provenance chips and reason-coded overrides, and is now in multi-region pilot across USPB, EMEA and APAC.",
-            "NIGO — not in good order — is the firm's term for exactly the bounce-back rework I set out to reduce, which makes it the metric that most directly reflects the work. Measured against my discovery baseline of ~60% of requests bouncing at least once, ~22% is a substantial cut in first-pass rework. It's a programme-level result the redesign contributed to, alongside process and training changes."
+            "Validate-at-source intake shipped with provenance chips and reason-coded overrides, now in pilot across USPB, EMEA and APAC.",
+            "NIGO — not in good order — is the firm's own term for the bounce-back rework I set out to reduce. Against my ~60% discovery baseline, ~22% is a real cut in first-pass rework — a programme-level result the redesign contributed to, alongside process and training changes."
           ]
         },
         {
@@ -517,7 +517,7 @@
         },
         {
           "type": "text",
-          "value": "The Lending Workspace became a more coherent daily hub along the way: the Deal Journey Tracker now integrates the eCQ credit-questionnaire workflow and has onboarded IPB SBL and Custom deals, giving end-to-end visibility across the seams I mapped in discovery. And the IA map and personas remain a source of truth the design team and product owners still reference."
+          "value": "The Workspace gained coherence too: the Deal Journey Tracker now integrates the eCQ credit questionnaire and has onboarded IPB SBL and Custom deals — end-to-end visibility across the seams I mapped. The IA and personas are still the team's source of truth."
         },
         {
           "type": "image",
@@ -534,7 +534,7 @@
         {
           "type": "callout",
           "label": "The takeaway",
-          "value": "The hardest problems in a large organisation usually aren't design problems — they're ownership problems wearing a design costume. My contribution was making an unowned, invisible workflow visible and shared enough that the right decision became obvious to everyone at once."
+          "value": "The hardest problems here weren't design problems — they were ownership problems in a design costume. My job was making the invisible visible until the right call was obvious."
         },
         {
           "type": "text",
