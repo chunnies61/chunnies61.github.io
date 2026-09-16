@@ -119,7 +119,9 @@ export default function Home() {
           <div className="about-hero-text">
             <h2>{about.heading}</h2>
             {about.paragraphs.map((p, i) => (
-              <p key={i}>{p}</p>
+              <p className="md-body-medium" key={i}>
+                {p}
+              </p>
             ))}
           </div>
           <img className="about-hero-image" src={about.headerImage} alt="" />

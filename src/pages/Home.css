@@ -279,6 +279,7 @@
   color: #ffffff;
 }
 
+/* Type comes from .md-body-medium on the element; only colour and spacing here. */
 .about-hero-text p {
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: 16px;
