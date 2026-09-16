@@ -96,7 +96,7 @@ export default function AllProjects() {
                 )}
                 {item.link && (
                   <a className="ap-learn-more" href={item.link} target="_blank" rel="noreferrer">
-                    Learn more →
+                    View website →
                   </a>
                 )}
               </div>
