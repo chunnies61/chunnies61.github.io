@@ -32,9 +32,21 @@
   gap: 6px;
 }
 
-/* Type comes from .md-headline-medium; same Neutral 20 ink as the page title. */
+/* Type comes from .md-headline-small; same Neutral 20 ink as the page title. */
 .ap-title h3 {
   color: #2b313c;
+}
+
+/* Recognition badge — sits under the title, reads as a label not a heading. */
+.ap-award {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: var(--radius-tag);
+  background: var(--pill-yellow-bg);
+  color: var(--pill-yellow-text);
 }
 
 .ap-desc {

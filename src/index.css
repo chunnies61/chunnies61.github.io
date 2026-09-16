@@ -24,8 +24,9 @@
   --placeholder-bg: rgba(217, 221, 229, 0.1); /* TINT — image/media placeholders — gray-100 @ 10% */
   --pill-blue-bg: rgba(69, 117, 231, 0.22); /* TINT — wells, chips, quiet fills */
   --pill-blue-text: var(--accent-dark);
-  /* SURFACE TINT — the quiet fill behind cards, tiles and panels. */
-  --surface-tint: var(--gray-50);
+  /* SURFACE TINT — the quiet fill behind cards, tiles and panels.
+     Gray 50 at 80% — slightly lightened, so the tint sits just off white. */
+  --surface-tint: color-mix(in srgb, var(--gray-50) 80%, transparent);
   --tag-surface: var(--surface-tint);
   --pill-pink-bg: #fbdcec;
   --pill-pink-text: #b23e79;

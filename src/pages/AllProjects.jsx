@@ -86,7 +86,8 @@ export default function AllProjects() {
           {projects.map((item, i) => (
             <div className="ap-row" key={`${item.thumb}-${i}`}>
               <div className="ap-title">
-                <h3 className="md-headline-medium">{item.title}</h3>
+                <h3 className="md-headline-small">{item.title}</h3>
+                {item.award && <p className="ap-award md-label-medium">{item.award}</p>}
               </div>
               <div className="ap-desc">
                 {item.desc && item.desc.length ? (

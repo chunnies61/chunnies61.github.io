@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Tag from "../components/Tag";
 import tonal from "../data/tonal-palettes.json";
 import typeScale from "../data/type-scale.json";
@@ -47,9 +48,15 @@ function Swatch({ token, note }) {
   );
 }
 
+/* Section ids come from the heading text, so the index below can never name a
+   section this page doesn't have — both read from the same string. */
+function slug(title) {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
 function Block({ title, children, note }) {
   return (
-    <section className="sg-block">
+    <section className="sg-block" id={slug(title)}>
       <h2>{title}</h2>
       {note && <p className="sg-note">{note}</p>}
       {children}
@@ -58,6 +65,36 @@ function Block({ title, children, note }) {
 }
 
 export default function StyleGuide() {
+  // The index is read back out of the rendered page rather than kept as its own
+  // list, so adding a <Block> is all it takes to add an index entry.
+  const [items, setItems] = useState([]);
+  const [activeId, setActiveId] = useState(null);
+
+  // Follow a #section hash on arrival (react-router doesn't scroll to it).
+  useEffect(() => {
+    const hash = window.location.hash.slice(1);
+    if (!hash) return;
+    const el = document.getElementById(hash);
+    if (el) el.scrollIntoView();
+  }, []);
+
+  useEffect(() => {
+    const blocks = Array.from(document.querySelectorAll(".sg-body-main .sg-block"));
+    setItems(blocks.map((el) => ({ id: el.id, label: el.querySelector("h2").textContent })));
+    setActiveId(blocks[0]?.id ?? null);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveId(entry.target.id);
+        });
+      },
+      { rootMargin: "-15% 0px -70% 0px", threshold: 0 }
+    );
+    blocks.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <article className="style-guide">
       <div className="wrap">
@@ -70,7 +107,26 @@ export default function StyleGuide() {
             actually using.
           </p>
         </header>
+      </div>
 
+      <div className="wrap sg-body">
+        <nav className="sg-index" aria-label="On this page">
+          <div className="sg-index-inner">
+            <div className="sg-index-items">
+              {items.map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className={"sg-index-item md-label-medium" + (item.id === activeId ? " is-active" : "")}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </nav>
+
+        <div className="sg-body-main">
         <Block title="Neutral ramp" note="Cool slate, LCH-consistent (Material 50–900, hue ~270).">
           <div className="sg-swatches">
             {NEUTRALS.map((t) => (
@@ -324,6 +380,7 @@ export default function StyleGuide() {
             </blockquote>
           </div>
         </Block>
+        </div>
       </div>
     </article>
   );
