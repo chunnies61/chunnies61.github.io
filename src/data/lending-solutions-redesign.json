@@ -36,8 +36,8 @@
         {
           "type": "text",
           "value": [
-            "The Global Private Bank spans USPB — 55 U.S. markets — and IPB across APAC, EMEA and LatAm: 1,000+ advisors, clients in 140+ countries, nine languages, 30+ regulators. Lending is one product line inside that footprint, used by client-facing and credit teams in every region.",
-            "I own two of its surfaces. The Loan Request App is the workflow where lenders apply for a loan on behalf of their clients. The Lending Workspace is the daily hub where lenders reach every other tool and workflow."
+            "The Global Private Bank spans USPB — 55 U.S. markets — and IPB across APAC, EMEA and LatAm: 1,000+ advisors, clients in 140+ countries, nine languages, 30+ regulators. Lending is one product line inside that footprint.",
+            "I own two of its surfaces."
           ]
         },
         {
@@ -70,7 +70,7 @@
         },
         {
           "type": "text",
-          "value": "My users sit along the whole chain: Bankers, SC Advisors, Lender Specialists, Credit Risk and Middle Office, senior and junior."
+          "value": "My users sit along the whole chain: Bankers, SC Advisors, Lender Specialists, Credit Risk and Middle Office."
         }
       ]
     },
@@ -82,7 +82,7 @@
         {
           "type": "text",
           "value": [
-            "I was given a narrow mandate: the intake form is bad, clean up the Loan Request App to reduce rework. The trigger was a recurring complaint from Lender Specialists."
+            "The mandate was narrow: the intake form is bad, clean it up to reduce rework. It came from a recurring Lender Specialist complaint."
           ]
         },
         {
@@ -92,7 +92,7 @@
         },
         {
           "type": "text",
-          "value": "The business read this as a UI problem. My first job was to test that assumption before designing anything."
+          "value": "The business read this as a UI problem. My first job was to test that assumption."
         },
         {
           "type": "callout",
@@ -129,29 +129,29 @@
                 {
                   "emoji": "🗺️",
                   "title": "Lending Workspace IA",
-                  "desc": "A current-state map from L1 products down to page controls — the whole system on one screen for the first time."
+                  "desc": "L1 products down to page controls — the whole system on one screen for the first time."
                 },
                 {
                   "emoji": "👥",
                   "title": "Lending personas",
-                  "desc": "Goals, jobs to be done and pain points for every role, from Banker to Middle Office, senior and junior."
+                  "desc": "Goals, jobs to be done and pain points for every role, Banker to Middle Office."
                 }
               ]
             },
             {
               "type": "image",
               "src": "/images/lending-ia.png",
-              "label": "The Lending Workspace information architecture — the whole hierarchy on one screen"
+              "label": "The Lending Workspace information architecture"
             },
             {
               "type": "image",
               "src": "/images/lending-persona.png",
-              "label": "Lending personas — goals, activities and frustrations per role"
+              "label": "Lending personas"
             },
             {
               "type": "callout",
               "label": "Impact beyond my project",
-              "value": "Both artefacts became the team's source of truth — designers and POs now cite them in their own reviews and roadmaps."
+              "value": "Both became the team's source of truth — designers and POs cite them in their own reviews and roadmaps."
             }
           ]
         },
@@ -162,7 +162,7 @@
           "blocks": [
             {
               "type": "text",
-              "value": "With that shared map in place I could finally isolate where the rework happened. Instead of more one-on-one interviews, I put one person from each role in a room with a single anonymised loan request — a real-estate investor leveraging existing assets for a line of credit to acquire a new property — printed as a physical timeline on the wall."
+              "value": "With the map in place I could isolate where rework happened. Instead of more interviews, I put one person from each role in a room with one anonymised deal — a real-estate investor borrowing against existing assets to buy a property — printed as a timeline on the wall."
             },
             {
               "type": "quote",
@@ -172,11 +172,11 @@
             {
               "type": "image",
               "src": "/images/lending-userflow.png",
-              "label": "The deal timeline with every stop-and-ask marked — the dots clustered at the same three seams"
+              "label": "The deal timeline, with every stop-and-ask marked"
             },
             {
               "type": "text",
-              "value": "The red dots clustered at the same three seams every time. The most consistent: requests arriving at Credit missing collateral and entity details the Banker was never asked for at intake — the asset basis and ownership structure Credit needs to size a securities- or property-backed facility."
+              "value": "The dots clustered at the same three seams every time. The most consistent: requests reaching Credit without the collateral and entity details the Banker was never asked for — the asset basis and ownership structure needed to size the facility."
             },
             {
               "type": "cards",
@@ -207,7 +207,7 @@
             {
               "type": "honest-note",
               "label": "The baseline",
-              "value": "Before designing, I audited 40 recent loan requests with Middle Office: ~60% bounced at least once, and the top two reasons matched two of the three seams. That number became my north star."
+              "value": "I audited 40 recent loan requests with Middle Office: ~60% bounced at least once, and the top two reasons matched two of the three seams."
             }
           ]
         }
@@ -235,11 +235,11 @@
             },
             {
               "type": "image",
-              "label": "The Rework Map — three seams, cost per seam, owning teams on a single page"
+              "label": "The Rework Map"
             },
             {
               "type": "text",
-              "value": "Seeing the same three seams, quantified, in front of everyone at once made the potato impossible to pass. The Credit lead said the unlocking line:"
+              "value": "Quantified, in front of everyone at once, the potato became impossible to pass:"
             },
             {
               "type": "quote",
@@ -260,7 +260,7 @@
           "blocks": [
             {
               "type": "text",
-              "value": "Because the teams were specialised and spread across regions — a live pilot was already running across USPB, EMEA and APAC — a single workshop wouldn't hold them together. So I built three lightweight recurring rituals."
+              "value": "Specialised teams spread across regions — with a pilot already live in USPB, EMEA and APAC — wouldn't stay aligned off one workshop. So I built three recurring rituals."
             },
             {
               "type": "cards",
@@ -286,7 +286,7 @@
             {
               "type": "callout",
               "label": "Why it worked",
-              "value": "Alignment isn't a document — it's presence. Staying reachable and in the rooms where work was scoped made me the link between siloed owners."
+              "value": "Alignment isn't a document — it's presence. Being in the rooms where work got scoped made me the link between siloed owners."
             }
           ]
         },
@@ -305,11 +305,7 @@
             {
               "type": "image",
               "src": "/images/lending-hq-workshop.jpg",
-              "label": "Three days at HQ as the only designer in the room"
-            },
-            {
-              "type": "text",
-              "value": "My role wasn't to take notes. It was to bring the design perspective into decisions that were otherwise about inventory, sizing and sequencing."
+              "label": "Three days at the Ohio HQ"
             },
             {
               "type": "cards",
@@ -318,7 +314,7 @@
                 {
                   "emoji": "🔭",
                   "title": "Showed concrete futures",
-                  "desc": "Three Loan Request App explorations side by side — the agenda named my prototypes as reference points."
+                  "desc": "The agenda named my prototypes as the reference points for the discussion."
                 },
                 {
                   "emoji": "🧭",
@@ -328,7 +324,7 @@
                 {
                   "emoji": "🧱",
                   "title": "Shaped the Workspace model",
-                  "desc": "Persona views, work queues and a list → action → launch → context → return pattern — one experience, not ten apps."
+                  "desc": "Persona views, work queues, and a list → action → launch → return pattern — one experience, not ten apps."
                 }
               ]
             },
@@ -364,7 +360,7 @@
             {
               "type": "callout",
               "label": "Why it mattered",
-              "value": "The only designer at the portfolio table, I helped leadership pick a direction instead of handing design a backlog to decorate. Design became a roadmap input, not an output."
+              "value": "The only designer at the portfolio table, I helped leadership pick a direction instead of handing design a backlog to decorate."
             }
           ]
         }
@@ -377,7 +373,7 @@
       "blocks": [
         {
           "type": "text",
-          "value": "Of the three proposals the boldest was the AI Application Agent — auto-populate and auto-size the whole request from a chat. The business loved it: fewer fields, faster. But prototype testing with two Lender Specialists exposed a trust wall."
+          "value": "The boldest proposal was the AI Application Agent: auto-populate and auto-size the whole request from a chat. The business loved it. Prototype testing with two Lender Specialists hit a trust wall."
         },
         {
           "type": "quote",
@@ -419,7 +415,7 @@
         },
         {
           "type": "image",
-          "label": "A pre-filled field with its provenance chip, and the override-with-reason interaction"
+          "label": "A provenance chip, and the override-with-reason interaction"
         },
         {
           "type": "callout",
@@ -435,7 +431,7 @@
       "blocks": [
         {
           "type": "text",
-          "value": "No PO ran cover. I led discovery, aligned four teams, made the design calls and drove to build with no authority over any of them. What carried it was leading with artefacts rather than opinions."
+          "value": "No PO ran cover — I drove to build with authority over none of the four teams. What carried it was artefacts, not opinions."
         },
         {
           "type": "cards",
@@ -460,12 +456,12 @@
         },
         {
           "type": "text",
-          "value": "The regional variants shipped on one shared skeleton, with conditional logic injecting what each market required rather than forking the product."
+          "value": "Regional variants shipped on one skeleton, with conditional logic injecting what each market required rather than forking the product."
         },
         {
           "type": "image",
           "src": "/images/lending-frames.png",
-          "label": "One skeleton, four markets — USPB, EMEA, APAC and LatAm variants"
+          "label": "One skeleton, four markets"
         }
       ]
     },
@@ -502,14 +498,14 @@
         {
           "type": "text",
           "value": [
-            "Validate-at-source intake shipped with provenance chips and reason-coded overrides, now in pilot across USPB, EMEA and APAC.",
-            "NIGO — not in good order — is the firm's own term for the bounce-back rework I set out to reduce. Against my ~60% discovery baseline, ~22% is a real cut in first-pass rework — a programme-level result the redesign contributed to, alongside process and training changes."
+            "Validate-at-source intake shipped with provenance chips and reason-coded overrides.",
+            "NIGO — not in good order — is the firm's own term for the bounce-back rework I set out to reduce, which makes it the metric closest to the work. It's a programme-level result the redesign contributed to, alongside process and training changes."
           ]
         },
         {
           "type": "honest-note",
           "label": "What the usage mix confirms",
-          "value": "A 19-week average of ~190 weekly active users, led by Lenders (43.8%), Analysts (16.9%) and Credit Middle Office (16.3%) — the exact roles, in the exact priority order, the personas were built around."
+          "value": "Lenders (43.8%), Analysts (16.9%) and Credit Middle Office (16.3%) — the exact roles, in the exact order, the personas were built around."
         },
         {
           "type": "image",
@@ -567,11 +563,11 @@
         {
           "type": "honest-note",
           "label": "What I'm still watching",
-          "value": "Adoption is real but early, and I treat the numbers honestly. When Workspace showed a −10.8% week-over-week dip in active users I didn't wave it away — the open question is whether it's seasonality or an access-provisioning issue, and it's exactly the kind of signal I want instrumented rather than guessed."
+          "value": "Adoption is real but early. When Workspace dipped −10.8% week over week I didn't wave it away — seasonality or access provisioning is still an open question, and exactly the kind of signal I want instrumented rather than guessed."
         },
         {
           "type": "text",
-          "value": "What I'd do differently: wire real telemetry into the two targeted intake seams from day one, so NIGO improvement can be attributed cleanly to the design change, and so the parked third seam has quantified evidence ready when it comes up for prioritisation — rather than relying on a manual audit."
+          "value": "What I'd do differently: wire telemetry into the two targeted seams from day one, so NIGO improvement attributes cleanly to the design change and the parked third seam has evidence ready when it comes up for prioritisation."
         }
       ]
     }
