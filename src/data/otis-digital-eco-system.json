@@ -241,47 +241,9 @@
       "blocks": [
         {
           "type": "text",
-          "value": "With the problem framed, execution followed a phased, de-risked path: discovery and quick wins first — low-risk UX improvements to build stakeholder confidence — then validation and workflow cleanup, then beta and a longer-term AI vision."
-        },
-        {
-          "type": "phases",
-          "steps": [
-            {
-              "num": "1",
-              "emoji": "🔍",
-              "title": "Discovery & Research",
-              "points": [
-                "Identify UX quick wins",
-                "Prioritize low-risk improvements"
-              ]
-            },
-            {
-              "num": "2",
-              "emoji": "🧪",
-              "title": "Testing & Validation",
-              "points": [
-                "User testing and workflow cleanup",
-                "Introduce \"Ask Otis\" AI Copilot"
-              ]
-            },
-            {
-              "num": "3",
-              "emoji": "🚀",
-              "title": "Beta Test & Launch",
-              "points": [
-                "Pilot rollout",
-                "Feedback-driven iteration"
-              ]
-            },
-            {
-              "num": "4",
-              "emoji": "✨",
-              "title": "Future Vision",
-              "points": [
-                "AI insights and energy prediction",
-                "Cost optimization across touchpoints"
-              ]
-            }
+          "value": [
+            "With the problem framed, execution followed a phased, de-risked path.",
+            "Discovery and research came first: find the UX quick wins, and prioritise the low-risk improvements that would build stakeholder confidence. Testing and validation followed, with user testing, a workflow cleanup, and the introduction of the \"Ask Otis\" AI Copilot. Then beta test and launch: a pilot rollout, then feedback-driven iteration. The fourth phase is still ahead, a future vision of AI insights, energy prediction, and cost optimisation across touchpoints."
           ]
         },
         {
