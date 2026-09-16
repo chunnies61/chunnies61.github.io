@@ -453,6 +453,12 @@ a.cs-index-item.is-active:hover {
      ("Not-in-good-order submissions") stays on one line at desktop width. */
   padding: 28px 16px;
 }
+/* The emoji stands where the 44px icon chip used to, so it carries a little
+   more size than in a left-aligned card to hold the same visual weight. */
+.cs-cards--centered .cs-card-emoji {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
 .cs-cards--centered .cs-card h4 {
   font-size: 20px;
   margin-bottom: 8px;

@@ -23,8 +23,8 @@
       "value": "Loan Request App · Lending Workspace"
     },
     {
-      "label": "Duration",
-      "value": "~2 quarters"
+      "label": "Timeline",
+      "value": "Apr 2026 – Present"
     }
   ],
   "indexedSections": [
@@ -184,17 +184,17 @@
               "variant": "centered",
               "items": [
                 {
-                  "icon": "alert",
+                  "emoji": "⚠️",
                   "title": "NIGO",
                   "desc": "Not-in-good-order submissions returned downstream"
                 },
                 {
-                  "icon": "restart",
+                  "emoji": "🔄",
                   "title": "Restart",
                   "desc": "Errors mid-flow forced Advisors to start over"
                 },
                 {
-                  "icon": "exchange",
+                  "emoji": "🤝",
                   "title": "Handoffs",
                   "desc": "Manual back-and-forth with Credit Middle Office"
                 }
