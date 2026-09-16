@@ -3,10 +3,10 @@
   text-align: center;
 }
 
-/* Type comes from .md-display-small; Neutral 10 is the page's darkest ink. */
+/* Type comes from .md-display-small; Neutral 20 is the page's darkest ink. */
 .ap-header h1 {
   margin-top: 8px;
-  color: #161c27;
+  color: #2b313c;
 }
 
 .ap-list {
@@ -32,9 +32,9 @@
   gap: 6px;
 }
 
-/* Type comes from .md-headline-medium; same Neutral 10 ink as the page title. */
+/* Type comes from .md-headline-medium; same Neutral 20 ink as the page title. */
 .ap-title h3 {
-  color: #161c27;
+  color: #2b313c;
 }
 
 .ap-desc {
