@@ -87,7 +87,14 @@ export default function AllProjects() {
             <div className="ap-row" key={`${item.thumb}-${i}`}>
               <div className="ap-title">
                 <h3 className="md-headline-small">{item.title}</h3>
-                {item.award && <p className="ap-award md-label-medium">{item.award}</p>}
+                {item.award && (
+                  <img
+                    className="ap-award"
+                    src={item.award.image}
+                    alt={item.award.alt}
+                    loading="lazy"
+                  />
+                )}
               </div>
               <div className="ap-desc">
                 {item.desc && item.desc.length ? (

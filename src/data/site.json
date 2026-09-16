@@ -28,7 +28,10 @@
       {
         "thumb": "/images/sora-1.png",
         "title": "Sora",
-        "award": "🏆 Red Dot Winner 2026",
+        "award": {
+          "image": "/images/reddot-winner-2026.svg",
+          "alt": "Red Dot Winner 2026"
+        },
         "desc": [
           "SORA is a women's personal safety companion paired with Apple Watch, offering mode-based protection, safe-word detection, and trusted-circle check-ins for the 1 in 3 women worldwide who don't feel safe in their own community. SORA does not surveil — it accompanies."
         ],
@@ -43,7 +46,10 @@
       {
         "thumb": "/images/pawpath-1.png",
         "title": "PawPath",
-        "award": "🏆 Red Dot Winner 2026",
+        "award": {
+          "image": "/images/reddot-winner-2026.svg",
+          "alt": "Red Dot Winner 2026"
+        },
         "desc": [
           "PawPath is an automated post-adoption monitoring platform that replaces manual shelter follow-up with scheduled adopter check-ins and a real-time staff dashboard. It surfaces flagged cases, declining wellbeing scores, and overdue check-ins early — so shelters can intervene before an animal is returned."
         ],
@@ -60,7 +66,10 @@
       {
         "thumb": "/images/afterwards-cover.png",
         "title": "Afterwards",
-        "award": "🏆 Red Dot Winner 2026",
+        "award": {
+          "image": "/images/reddot-winner-2026.svg",
+          "alt": "Red Dot Winner 2026"
+        },
         "desc": [
           "Afterwards is a two-sided platform for what follows a death: one side lets someone organize documents, assign trusted people to tasks, and leave personal messages while still alive — the other guides the person they chose through it all, urgent matters first, at a pace calibrated for grief. It reframes end-of-life planning as anticipatory care, turning a frantic hunt for hidden documents into a final, considered act of love."
         ],

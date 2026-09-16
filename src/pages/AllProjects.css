@@ -37,16 +37,19 @@
   color: #2b313c;
 }
 
-/* Recognition badge — sits under the title, reads as a label not a heading. */
+/* The official Red Dot label, used per the 2026 Label Guide: no change to its
+   structure, form or typography, and never below the 10 mm minimum signet
+   diameter — the signet is ~28% of the label's width, so 150px keeps it clear. */
 .ap-award {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  align-self: flex-start;
-  padding: 4px 10px;
-  border-radius: var(--radius-tag);
-  background: var(--pill-yellow-bg);
-  color: var(--pill-yellow-text);
+  width: 150px;
+  height: auto;
+  margin-top: 4px;
+}
+
+@media (max-width: 900px) {
+  .ap-award {
+    width: 136px;
+  }
 }
 
 .ap-desc {
