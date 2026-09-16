@@ -344,7 +344,7 @@ function Block({ block }) {
           }
         >
           {block.label && <span className="cs-callout-label">{block.label}</span>}
-          <p className="md-body-large">{renderHighlighted(block.value)}</p>
+          <p className="md-headline-small">{renderHighlighted(block.value)}</p>
         </div>
       );
     }

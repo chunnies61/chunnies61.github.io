@@ -867,7 +867,7 @@ a.cs-index-item.is-active:hover {
   letter-spacing: 0.05em;
   color: #ffe785;
 }
-/* Type comes from .md-body-large on the element — same as the style guide
+/* Type comes from .md-headline-small on the element — same as the style guide
    sample, so the two cannot drift. Only colour lives here. */
 .cs-callout p {
   color: #fff;
