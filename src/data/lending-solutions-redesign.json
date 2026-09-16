@@ -48,13 +48,13 @@
               "emoji": "📝",
               "label": "Where a deal starts",
               "title": "Loan Request App",
-              "desc": "Intake for SBL, Custom Credit and PLP tickets across USPB, EMEA, APAC and LatAm."
+              "desc": "SBL, Custom Credit and PLP tickets, across four regions."
             },
             {
               "emoji": "🗂️",
               "label": "Where lenders live all day",
               "title": "Lending Workspace",
-              "desc": "The hub for Deal Journey, Portfolio Health, Doc QC, Collateral Tools, Approvals and more."
+              "desc": "Deal Journey, Portfolio Health, Doc QC, Approvals and more."
             }
           ]
         },
@@ -129,12 +129,12 @@
                 {
                   "emoji": "🗺️",
                   "title": "Lending Workspace IA",
-                  "desc": "L1 products down to page controls — the whole system on one screen for the first time."
+                  "desc": "L1 products down to page controls, on one screen."
                 },
                 {
                   "emoji": "👥",
                   "title": "Lending personas",
-                  "desc": "Goals, jobs to be done and pain points for every role, Banker to Middle Office."
+                  "desc": "Goals, jobs and pain points for every role."
                 }
               ]
             },
@@ -269,17 +269,17 @@
                 {
                   "emoji": "🚪",
                   "title": "Design office hours",
-                  "desc": "One open door for any PO's question or idea, surfacing dependencies before they became conflicts."
+                  "desc": "Any PO's question, before it became a conflict."
                 },
                 {
                   "emoji": "📣",
                   "title": "Socialised decisions",
-                  "desc": "I shared the why behind each decision, not just the screens, so reviews held no surprises."
+                  "desc": "The why behind each decision, not just the screens."
                 },
                 {
                   "emoji": "🔧",
                   "title": "Refinement calls",
-                  "desc": "Sitting in on refinement caught feasibility issues and overlaps before anything was built wrong."
+                  "desc": "Feasibility issues caught before anything got built wrong."
                 }
               ]
             },
@@ -314,17 +314,17 @@
                 {
                   "emoji": "🔭",
                   "title": "Showed concrete futures",
-                  "desc": "The agenda named my prototypes as the reference points for the discussion."
+                  "desc": "The agenda named my prototypes as reference points."
                 },
                 {
                   "emoji": "🧭",
                   "title": "Anchored in personas",
-                  "desc": "My IA and personas framed every feature's persona, journey and routing — outcomes over system boundaries."
+                  "desc": "Every feature framed by persona and journey, not system boundary."
                 },
                 {
                   "emoji": "🧱",
                   "title": "Shaped the Workspace model",
-                  "desc": "Persona views, work queues, and a list → action → launch → return pattern — one experience, not ten apps."
+                  "desc": "Persona views and work queues — one experience, not ten apps."
                 }
               ]
             },
@@ -339,17 +339,17 @@
                 {
                   "label": "Exploration 1",
                   "title": "One Request, Any Deal",
-                  "desc": "One request, no SBL-vs-Custom fork — the split behind mis-routed intake."
+                  "desc": "No SBL-vs-Custom fork — the split behind mis-routed intake."
                 },
                 {
                   "label": "Exploration 2",
                   "title": "AI Application Agent",
-                  "desc": "Fill the request by chatting; the system drafts the ticket from the conversation."
+                  "desc": "Chat, and the system drafts the ticket."
                 },
                 {
                   "label": "Exploration 3",
                   "title": "Collateral-First Builder",
-                  "desc": "Start from the client's assets; line size, rate and covenant headroom update live."
+                  "desc": "Start from assets; size, rate and headroom update live."
                 }
               ]
             },
@@ -397,19 +397,19 @@
               "emoji": "🔍",
               "label": "Transparency",
               "title": "Provenance on every value",
-              "desc": "Every pre-filled or AI value shows its source system and as-of date."
+              "desc": "Every value shows its source system and as-of date."
             },
             {
               "emoji": "✍️",
               "label": "Reversibility",
               "title": "The human keeps the pen",
-              "desc": "One-click override with a required reason — the user can change anything."
+              "desc": "One-click override, with a required reason."
             },
             {
               "emoji": "➡️",
               "label": "Context flows forward",
               "title": "Explained, not suspicious",
-              "desc": "Override reasons travel to Credit, so adjusted numbers arrive explained."
+              "desc": "Override reasons travel to Credit with the numbers."
             }
           ]
         },
@@ -440,12 +440,12 @@
             {
               "emoji": "🖱️",
               "title": "Prototypes, not specs",
-              "desc": "One collateral field proved unreadable live, so v1 shipped the two fixable seams and parked the third in writing."
+              "desc": "An unreadable collateral field — v1 shipped two seams, parked the third."
             },
             {
               "emoji": "📊",
-              "title": "Every trade-off anchored to the baseline",
-              "desc": "\"Six in ten get redone, and we can prevent it upstream\" settled every argument."
+              "title": "Anchored to the baseline",
+              "desc": "\"Six in ten get redone\" settled every argument."
             }
           ]
         },
@@ -544,19 +544,19 @@
               "emoji": "🧱",
               "label": "Move 1",
               "title": "When there's no source of truth, build it",
-              "desc": "My IA and personas outlived the initiative and still anchor how the team works."
+              "desc": "My IA and personas still anchor how the team works."
             },
             {
               "emoji": "🎯",
               "label": "Move 2",
               "title": "When no one owns a problem, make it undeniable",
-              "desc": "Then hold alignment through presence, not authority you don't have."
+              "desc": "Then hold it through presence, not authority."
             },
             {
               "emoji": "🔭",
               "label": "Move 3",
               "title": "When priority stalls, bring design upstream",
-              "desc": "Future-vision prototypes gave leadership something to decide against — design as roadmap input, not output."
+              "desc": "Prototypes gave leadership something to decide against."
             }
           ]
         },
