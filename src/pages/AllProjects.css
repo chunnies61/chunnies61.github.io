@@ -32,9 +32,10 @@
   gap: 6px;
 }
 
-/* Type comes from .md-headline-small; same Neutral 20 ink as the page title. */
+/* Type comes from .md-headline-small; Neutral 30 ink, matching the same
+   project titles in the homepage scroller. */
 .ap-title h3 {
-  color: #2b313c;
+  color: var(--gray-800);
 }
 
 /* The official Red Dot label, used per the 2026 Label Guide: no change to its
