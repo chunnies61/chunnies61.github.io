@@ -5,6 +5,12 @@
 .cs-pt {
   display: flex;
   flex-direction: column;
+  border: 1px solid var(--cs-pt-line);
+  border-radius: 20px;
+  background: var(--bg);
+  /* clip, not hidden: it rounds the corners without creating a scroll
+     container, so the tab bar can still stick under the nav */
+  overflow: clip;
 
   /* One-pager ink: outlined white boxes on a firmer line than the page
      hairline, so the sheet reads as a document. */
@@ -14,66 +20,94 @@
   --cs-pt-hl-b: #ffd8e6;
 }
 
-/* --- Tab strip ---------------------------------------------------------
-   MD3 primary tabs: label centred, Primary ink and a 3px indicator on the
-   selected tab. Sticks under the 72px site nav so a reader deep in a long
+/* --- Tab bar -----------------------------------------------------------
+   A segmented persona chooser: each tab carries its persona's portrait
+   emoji and name on a tinted track, and the selected one lifts onto white
+   in Primary. Sticks under the 72px site nav so a reader deep in a long
    sheet can still switch persona. */
-.cs-pt-tabs {
+.cs-pt-bar {
   position: sticky;
   top: 72px;
   z-index: 10;
-  display: grid;
-  grid-template-columns: repeat(var(--cs-pt-count, 4), minmax(0, 1fr));
+  padding: 10px;
   background: var(--bg);
-  border-bottom: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--cs-pt-line);
+}
+
+/* Tabs size to their names and share the spare width, so "Credit Risk &
+   Analysis" gets the room it needs instead of an ellipsis. */
+.cs-pt-tabs {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 12px;
+  background: var(--gray-50);
 }
 
 .cs-pt-tab {
-  position: relative;
-  padding: 14px 12px 16px;
-  border: 0;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 9px;
   background: transparent;
   color: var(--text-soft);
-  text-align: center;
   cursor: pointer;
-  transition: color 0.15s ease, background-color 0.15s ease;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
-.cs-pt-tab::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -1px;
-  width: 0;
-  height: 3px;
-  border-radius: 3px 3px 0 0;
-  background: var(--accent-dark);
-  transform: translateX(-50%);
-  transition: width 0.2s ease;
+/* Portraits stay grey until their persona is hovered or chosen */
+.cs-pt-tab-avatar {
+  flex: none;
+  font-size: 18px;
+  line-height: 1;
+  filter: grayscale(1);
+  opacity: 0.55;
+  transition: filter 0.15s ease, opacity 0.15s ease;
+}
+
+.cs-pt-tab-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .cs-pt-tab:hover {
   color: var(--text);
-  background: rgba(51, 57, 69, 0.04);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.cs-pt-tab:hover .cs-pt-tab-avatar {
+  filter: grayscale(0.2);
+  opacity: 0.9;
 }
 
 .cs-pt-tab.is-active {
   color: var(--accent-dark);
+  background: var(--bg);
+  border-color: var(--cs-pt-line);
+  box-shadow: 0 1px 2px rgba(20, 32, 61, 0.06), 0 2px 8px rgba(20, 32, 61, 0.06);
 }
 
-.cs-pt-tab.is-active::after {
-  width: calc(100% - 24px);
+.cs-pt-tab.is-active .cs-pt-tab-avatar {
+  filter: none;
+  opacity: 1;
 }
 
 .cs-pt-tab:focus-visible {
   outline: 2px solid var(--text);
-  outline-offset: -4px;
-  border-radius: 8px;
+  outline-offset: 2px;
 }
 
 /* --- Panel ------------------------------------------------------------- */
 .cs-pt-panel {
-  padding-top: 24px;
+  padding: 20px;
   outline: none;
 }
 
@@ -81,10 +115,11 @@
   display: none;
 }
 
+/* Inset, so the component's clipped edge can't cut the ring off */
 .cs-pt-panel:focus-visible {
   outline: 2px solid var(--text);
-  outline-offset: 8px;
-  border-radius: 8px;
+  outline-offset: -6px;
+  border-radius: 20px;
 }
 
 /* --- Sheet --------------------------------------------------------------
@@ -127,11 +162,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 4 / 3;
+  width: 80px;
+  aspect-ratio: 1;
   border: 1px solid var(--cs-pt-line);
   border-radius: var(--radius-card);
   background: var(--surface-tint);
-  font-size: 64px;
+  font-size: 40px;
   line-height: 1;
 }
 
@@ -335,47 +371,6 @@
   color: var(--text);
 }
 
-/* Job framework table — the future-state column in Primary */
-.cs-pt-table-wrap {
-  overflow-x: auto;
-}
-
-.cs-pt-table {
-  width: 100%;
-  border-collapse: collapse;
-  color: var(--text-soft);
-}
-
-.cs-pt-table thead th {
-  padding: 0 14px 6px 0;
-  text-align: left;
-  color: var(--text-soft);
-  border-bottom: 1px solid var(--card-border);
-}
-
-.cs-pt-table tbody th,
-.cs-pt-table td {
-  padding: 6px 14px 6px 0;
-  text-align: left;
-  vertical-align: top;
-  border-bottom: 1px solid var(--card-border);
-}
-
-.cs-pt-table tbody tr:last-child th,
-.cs-pt-table tbody tr:last-child td {
-  border-bottom: none;
-}
-
-.cs-pt-table tbody th {
-  width: 22%;
-  font-weight: 600;
-  color: var(--text);
-}
-
-.cs-pt-table td:last-child {
-  color: var(--accent-dark);
-}
-
 /* Review journey — five stages with a connecting rule */
 .cs-pt-journey {
   display: grid;
@@ -482,16 +477,12 @@
     grid-template-columns: 192px minmax(0, 1fr);
     gap: 16px;
   }
-  .cs-pt-portrait {
-    font-size: 56px;
-  }
 }
 
-/* --- Phone: profile becomes a header, everything stacks ----------------- */
-@media (max-width: 760px) {
-  /* Four names won't fit side by side — the strip scrolls instead */
+/* --- Narrow: the four names need ~750px side by side, so below that the
+   track scrolls sideways rather than truncating them --------------------- */
+@media (max-width: 840px) {
   .cs-pt-tabs {
-    display: flex;
     overflow-x: auto;
     scrollbar-width: none;
     scroll-snap-type: x proximity;
@@ -501,16 +492,22 @@
   }
   .cs-pt-tab {
     flex: 0 0 auto;
-    padding-inline: 16px;
-    white-space: nowrap;
+    padding-inline: 12px;
     scroll-snap-align: start;
   }
-  .cs-pt-tab.is-active::after {
-    width: calc(100% - 32px);
+  .cs-pt-tab-name {
+    overflow: visible;
+  }
+}
+
+/* --- Phone: profile becomes a header, everything stacks ----------------- */
+@media (max-width: 760px) {
+  .cs-pt-bar {
+    padding: 8px;
   }
 
   .cs-pt-panel {
-    padding-top: 24px;
+    padding: 16px;
   }
 
   .cs-pt-sheet {
@@ -525,13 +522,13 @@
   /* Portrait beside the name, like a contact card */
   .cs-pt-profile {
     display: grid;
-    grid-template-columns: 72px minmax(0, 1fr);
+    grid-template-columns: 56px minmax(0, 1fr);
     column-gap: 16px;
     align-items: center;
   }
   .cs-pt-portrait {
-    aspect-ratio: 1;
-    font-size: 36px;
+    width: 56px;
+    font-size: 28px;
   }
   .cs-pt-id {
     margin-top: 0;
@@ -591,50 +588,5 @@
   }
   .cs-pt-map-arrow {
     text-align: left;
-  }
-
-  /* Table rows become small labelled blocks */
-  .cs-pt-table thead {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
-  }
-  .cs-pt-table,
-  .cs-pt-table tbody,
-  .cs-pt-table tr,
-  .cs-pt-table th,
-  .cs-pt-table td {
-    display: block;
-    width: auto;
-  }
-  .cs-pt-table tr {
-    padding: 12px 0;
-    border-bottom: 1px solid var(--card-border);
-  }
-  .cs-pt-table tbody tr:first-child {
-    padding-top: 0;
-  }
-  .cs-pt-table tbody tr:last-child {
-    padding-bottom: 0;
-    border-bottom: none;
-  }
-  .cs-pt-table tbody th,
-  .cs-pt-table td {
-    padding: 0;
-    border-bottom: none;
-  }
-  .cs-pt-table tbody th {
-    margin-bottom: 4px;
-  }
-  .cs-pt-table td + td {
-    margin-top: 2px;
-  }
-  .cs-pt-table td::before {
-    content: attr(data-label) ": ";
-    font-weight: 600;
-    color: var(--text-soft);
   }
 }

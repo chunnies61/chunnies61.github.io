@@ -69,40 +69,6 @@ function SectionBody({ section: s }) {
         </div>
       );
 
-    case "table":
-      return (
-        <div className="cs-pt-table-wrap">
-          <table className="cs-pt-table md-body-small">
-            <thead>
-              <tr>
-                {s.columns.map((c) => (
-                  <th scope="col" className="md-label-small" key={c}>
-                    {c}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {s.rows.map((row) => (
-                <tr key={row[0]}>
-                  {row.map((cell, ci) =>
-                    ci === 0 ? (
-                      <th scope="row" key={ci}>
-                        {cell}
-                      </th>
-                    ) : (
-                      <td data-label={s.columns[ci]} key={ci}>
-                        {cell}
-                      </td>
-                    )
-                  )}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      );
-
     case "journey":
       return (
         <ol className="cs-pt-journey">
@@ -230,6 +196,7 @@ export default function PersonaTabs({ personas, label }) {
   const [active, setActive] = useState(0);
   const baseId = useId();
   const rootRef = useRef(null);
+  const barRef = useRef(null);
   const stripRef = useRef(null);
   const tabRefs = useRef([]);
 
@@ -240,19 +207,24 @@ export default function PersonaTabs({ personas, label }) {
     if (focus && tab) tab.focus({ preventScroll: true });
 
     // Narrow screens scroll the tab strip sideways — keep the chosen tab in it.
+    // The strip snaps to each tab's start edge, so scroll to exactly that
+    // edge: any in-between offset would just snap back to where it was.
     if (strip && tab) {
       const left = tab.offsetLeft;
       const right = left + tab.offsetWidth;
-      if (left < strip.scrollLeft) strip.scrollLeft = left - 16;
-      else if (right > strip.scrollLeft + strip.clientWidth)
-        strip.scrollLeft = right - strip.clientWidth + 16;
+      const outOfView = left < strip.scrollLeft || right > strip.scrollLeft + strip.clientWidth;
+      if (outOfView) {
+        const pad = parseFloat(getComputedStyle(strip).paddingLeft) || 0;
+        strip.scrollLeft = left - pad;
+      }
     }
 
     // Panels run long. If the reader switches tabs from partway down one, the
     // strip is stuck under the nav — bring the new persona in from its name.
     const root = rootRef.current;
-    if (root && strip) {
-      const stickyTop = parseFloat(getComputedStyle(strip).top) || 0;
+    const bar = barRef.current;
+    if (root && bar) {
+      const stickyTop = parseFloat(getComputedStyle(bar).top) || 0;
       const top = root.getBoundingClientRect().top;
       if (top < stickyTop) {
         const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -280,30 +252,34 @@ export default function PersonaTabs({ personas, label }) {
 
   return (
     <div className="cs-pt" ref={rootRef}>
-      <div
-        className="cs-pt-tabs"
-        role="tablist"
-        aria-label={label}
-        ref={stripRef}
-        onKeyDown={onKeyDown}
-        style={{ "--cs-pt-count": personas.length }}
-      >
-        {personas.map((p, i) => (
-          <button
-            key={p.id}
-            ref={(el) => (tabRefs.current[i] = el)}
-            type="button"
-            role="tab"
-            id={`${baseId}-tab-${p.id}`}
-            aria-selected={i === active}
-            aria-controls={`${baseId}-panel-${p.id}`}
-            tabIndex={i === active ? 0 : -1}
-            className={"cs-pt-tab md-title-small" + (i === active ? " is-active" : "")}
-            onClick={() => select(i)}
-          >
-            {p.name}
-          </button>
-        ))}
+      <div className="cs-pt-bar" ref={barRef}>
+        <div
+          className="cs-pt-tabs"
+          role="tablist"
+          aria-label={label}
+          ref={stripRef}
+          onKeyDown={onKeyDown}
+        >
+          {personas.map((p, i) => (
+            <button
+              key={p.id}
+              ref={(el) => (tabRefs.current[i] = el)}
+              type="button"
+              role="tab"
+              id={`${baseId}-tab-${p.id}`}
+              aria-selected={i === active}
+              aria-controls={`${baseId}-panel-${p.id}`}
+              tabIndex={i === active ? 0 : -1}
+              className={"cs-pt-tab" + (i === active ? " is-active" : "")}
+              onClick={() => select(i)}
+            >
+              <span className="cs-pt-tab-avatar" aria-hidden="true">
+                {p.avatar}
+              </span>
+              <span className="cs-pt-tab-name md-label-large">{p.name}</span>
+            </button>
+          ))}
+        </div>
       </div>
 
       {personas.map((p, i) => (

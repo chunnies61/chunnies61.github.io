@@ -266,49 +266,6 @@
                       ]
                     },
                     {
-                      "title": "Day-to-Day · Job Framework",
-                      "note": "Job → today's pattern → future state",
-                      "kind": "table",
-                      "wide": true,
-                      "columns": [
-                        "Job",
-                        "Today's pattern",
-                        "Future state"
-                      ],
-                      "rows": [
-                        [
-                          "View",
-                          "Scope / Standard / Customize",
-                          "Save & recall; Standard design by persona"
-                        ],
-                        [
-                          "Review",
-                          "Return / Counter / Edit",
-                          "Close / abandon; Bulk → return"
-                        ],
-                        [
-                          "Approve",
-                          "Approve / Reject",
-                          "Bulk approve; Bulk reject (state-aware)"
-                        ],
-                        [
-                          "Research",
-                          "Seek and find / Analyze",
-                          "Curate / recommend; Push; Aggregate; Chat"
-                        ],
-                        [
-                          "Start / Create",
-                          "(none today)",
-                          "Chat; Initiate; Launch / navigate to tool"
-                        ],
-                        [
-                          "Enrich",
-                          "Disposition / Compare",
-                          "Task Mgmt; Augment"
-                        ]
-                      ]
-                    },
-                    {
                       "title": "Technology Needs",
                       "kind": "list",
                       "items": [
