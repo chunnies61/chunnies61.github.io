@@ -279,6 +279,7 @@
             {
               "type": "persona-tabs",
               "title": "Lending personas",
+              "intro": "Four roles carry a loan from first conversation to funding, and each needed something different from the same workspace. Switch tabs to compare their goals, pain points and daily work side by side.",
               "label": "Lending personas — one tab per role",
               "personas": [
                 {

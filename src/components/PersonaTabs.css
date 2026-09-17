@@ -31,6 +31,11 @@
   color: var(--text);
 }
 
+/* Sits 8px under the heading rather than the step's 16px block gap */
+.cs-pt-heading + .cs-pt-intro {
+  margin-top: -8px;
+}
+
 /* --- Tab bar -----------------------------------------------------------
    A persona chooser: each tab carries its persona's portrait emoji and
    name, and the selected one lifts onto a white chip in Primary. Sticks under the 72px site nav so a reader deep in a long

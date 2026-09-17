@@ -525,7 +525,12 @@ function Block({ block }) {
 
     case "persona-tabs":
       return (
-        <PersonaTabs personas={block.personas} label={block.label} title={block.title} />
+        <PersonaTabs
+          personas={block.personas}
+          label={block.label}
+          title={block.title}
+          intro={block.intro}
+        />
       );
 
     case "step":

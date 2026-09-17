@@ -187,7 +187,7 @@ function Persona({ persona: p }) {
   );
 }
 
-export default function PersonaTabs({ personas, label, title }) {
+export default function PersonaTabs({ personas, label, title, intro }) {
   const [active, setActive] = useState(0);
   const baseId = useId();
   const rootRef = useRef(null);
@@ -252,6 +252,8 @@ export default function PersonaTabs({ personas, label, title }) {
           {title}
         </h5>
       )}
+      {/* A plain <p> straight in the step body takes the step's paragraph style */}
+      {intro && <p className="cs-pt-intro">{intro}</p>}
       <div className="cs-pt" ref={rootRef}>
         <div className="cs-pt-bar" ref={barRef}>
           <div
