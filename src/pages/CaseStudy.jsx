@@ -3,6 +3,7 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import { getCaseStudy, caseStudies } from "../data/caseStudies";
 import site from "../data/site.json";
 import ContactCta from "../components/ContactCta";
+import PersonaTabs from "../components/PersonaTabs";
 import "./CaseStudy.css";
 
 const UNLOCK_PASSWORD = "0620";
@@ -517,6 +518,9 @@ function Block({ block }) {
           playsInline
         />
       );
+
+    case "persona-tabs":
+      return <PersonaTabs personas={block.personas} label={block.label} />;
 
     case "step":
       return (

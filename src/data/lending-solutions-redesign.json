@@ -149,6 +149,855 @@
               "label": "Lending personas"
             },
             {
+              "type": "persona-tabs",
+              "label": "Lending personas — one tab per role",
+              "personas": [
+                {
+                  "id": "lender-specialist",
+                  "name": "Lender Specialist",
+                  "role": "Reviews, structures, and executes lending decisions across the client portfolio",
+                  "quote": "I turn client borrowing needs into well-structured, risk-sound deals—then drive them to close.",
+                  "summary": "Analytical, risk-conscious lending specialist balancing portfolio maintenance with origination and execution across 5+ internal teams.",
+                  "traits": [
+                    "Analytical",
+                    "Risk-Conscious",
+                    "Strategic",
+                    "Solution-Oriented",
+                    "Collaborative Specialist"
+                  ],
+                  "stats": [
+                    {
+                      "label": "Clients served",
+                      "value": "~30 – 100+",
+                      "note": "families / individuals (varies by book size and seniority)"
+                    }
+                  ],
+                  "sections": [
+                    {
+                      "emoji": "🎯",
+                      "title": "Goals",
+                      "kind": "list",
+                      "items": [
+                        {
+                          "label": "Align wealth strategies",
+                          "text": "deliver tailored lending advice that supports client liquidity and wealth goals."
+                        },
+                        {
+                          "label": "Drive business growth",
+                          "text": "expand loan originations while maintaining portfolio health."
+                        },
+                        {
+                          "label": "Ensure risk compliance",
+                          "text": "maintain zero-error portfolio management and adhere to credit / risk controls."
+                        }
+                      ]
+                    },
+                    {
+                      "emoji": "😣",
+                      "title": "Frustrations / Pain Points",
+                      "kind": "list",
+                      "items": [
+                        {
+                          "label": "System fragmentation",
+                          "text": "switching across 10+ disparate tools / apps to gather complete loan and client data."
+                        },
+                        {
+                          "label": "Admin & reporting burden",
+                          "text": "high volume of internal presentations and updates taking time away from clients."
+                        },
+                        {
+                          "label": "Execution friction",
+                          "text": "navigating siloed internal handoffs between risk, legal, and operational teams."
+                        }
+                      ]
+                    },
+                    {
+                      "emoji": "🚀",
+                      "title": "Motivations",
+                      "kind": "list",
+                      "items": [
+                        {
+                          "label": "Business results",
+                          "text": "achieve strong performance in Risk-Adjusted Revenue and positive Net Flows."
+                        },
+                        {
+                          "label": "Strategic impact",
+                          "text": "solve complex financial challenges for high-net-worth clients."
+                        },
+                        {
+                          "label": "Career advancement",
+                          "text": "transition from operational maintenance toward high-touch client origination."
+                        }
+                      ]
+                    },
+                    {
+                      "emoji": "🧑‍🤝‍🧑",
+                      "title": "Seniority Dynamics",
+                      "kind": "list",
+                      "items": [
+                        {
+                          "label": "Junior lender",
+                          "text": "Focuses heavily on portfolio maintenance, daily monitoring (margin calls / excesses), administrative setup, and execution."
+                        },
+                        {
+                          "label": "Senior lender",
+                          "text": "Focuses primarily on prospecting, client strategy, origination, and internal management reporting."
+                        }
+                      ]
+                    },
+                    {
+                      "emoji": "📋",
+                      "title": "Common Scenarios & Daily Activities",
+                      "kind": "list",
+                      "wide": true,
+                      "items": [
+                        {
+                          "label": "Portfolio maintenance & risk monitoring",
+                          "text": "Check overnight market movements first thing to identify margin calls or loan excesses. Coordinate with Bankers, Investors, and Client Services to notify clients and establish cure plans for margin deficiencies."
+                        },
+                        {
+                          "label": "Origination & prospecting",
+                          "text": "Partner with Bankers and Investors to identify new borrowing opportunities within existing client books. Meet with clients / prospects to gauge appetite for debt and evaluate how lending fits their liquidity goals."
+                        },
+                        {
+                          "label": "Deal execution",
+                          "text": "Drive approved loans through internal setup, document execution, and system booking. Serve as the single point of contact across 5+ internal teams (Credit Risk, Underwriting, Legal, Middle Office) during execution."
+                        },
+                        {
+                          "label": "Internal operations & reporting",
+                          "text": "Prepare pipeline presentations, portfolio updates, and risk reviews for management."
+                        }
+                      ]
+                    },
+                    {
+                      "emoji": "🗓️",
+                      "title": "Day-to-Day · Job Framework",
+                      "note": "Job → today's pattern → future state",
+                      "kind": "table",
+                      "wide": true,
+                      "columns": [
+                        "Job",
+                        "Today's pattern",
+                        "Future state"
+                      ],
+                      "rows": [
+                        [
+                          "View",
+                          "Scope / Standard / Customize",
+                          "Save & recall; Standard design by persona"
+                        ],
+                        [
+                          "Review",
+                          "Return / Counter / Edit",
+                          "Close / abandon; Bulk → return"
+                        ],
+                        [
+                          "Approve",
+                          "Approve / Reject",
+                          "Bulk approve; Bulk reject (state-aware)"
+                        ],
+                        [
+                          "Research",
+                          "Seek and find / Analyze",
+                          "Curate / recommend; Push; Aggregate; Chat"
+                        ],
+                        [
+                          "Start / Create",
+                          "(none today)",
+                          "Chat; Initiate; Launch / navigate to tool"
+                        ],
+                        [
+                          "Enrich",
+                          "Disposition / Compare",
+                          "Task Mgmt; Augment"
+                        ]
+                      ]
+                    },
+                    {
+                      "emoji": "💡",
+                      "title": "Technology Needs",
+                      "kind": "list",
+                      "items": [
+                        "A unified dashboard / workspace consolidating loan data, alerts, and collateral views",
+                        "Real-time automated margin call and covenant tracking",
+                        "Streamlined execution workflows connecting front-office origination with middle-office booking"
+                      ]
+                    },
+                    {
+                      "emoji": "🧩",
+                      "title": "Top Connect Apps",
+                      "kind": "pills",
+                      "items": [
+                        "Lending Workspace",
+                        "Loan Request App",
+                        "Loan Pricing Tool",
+                        "Pipeline",
+                        "Collateral",
+                        "Scorecards"
+                      ]
+                    },
+                    {
+                      "emoji": "🛠️",
+                      "title": "Tools / Software",
+                      "kind": "groups",
+                      "items": [
+                        {
+                          "label": "Primary Platform",
+                          "items": [
+                            "Lending Workspace"
+                          ]
+                        },
+                        {
+                          "label": "Risk & Portfolio Tools",
+                          "items": [
+                            "Scorecards",
+                            "Collateral Insights",
+                            "LRA"
+                          ]
+                        },
+                        {
+                          "label": "Capital & Credit Systems",
+                          "items": [
+                            "Vessa",
+                            "Treasury applications"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "emoji": "🤝",
+                      "title": "Collaborators",
+                      "kind": "groups",
+                      "items": [
+                        {
+                          "label": "Front Office",
+                          "items": [
+                            "Banker (Quarterback)",
+                            "Investor",
+                            "Client Services"
+                          ]
+                        },
+                        {
+                          "label": "Risk & Credit",
+                          "items": [
+                            "Credit Risk Officers",
+                            "Underwriting / Credit Analysis"
+                          ]
+                        },
+                        {
+                          "label": "Execution & Legal",
+                          "items": [
+                            "Internal Legal Team",
+                            "Credit Middle Office",
+                            "Collateral Team",
+                            "Covenant Team",
+                            "Credit Risk Support Team"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "client-advisor",
+                  "name": "Client Advisor",
+                  "role": "Manages HNW client relationships across the full balance sheet",
+                  "quote": "I take care of all my clients' financial needs—deepening trust and being genuinely helpful.",
+                  "summary": "Persistent, client-loyal advisor managing wealth and all financial needs across banking, credit, investments, and planning.",
+                  "traits": [
+                    "Persistent",
+                    "Loyal to Client",
+                    "Detail Oriented",
+                    "Reliable Team Player"
+                  ],
+                  "stats": [
+                    {
+                      "label": "Client Advisors (US PB)",
+                      "value": "~500",
+                      "note": "across the U.S. Private Bank"
+                    },
+                    {
+                      "label": "Clients served",
+                      "value": "~40 – 450",
+                      "note": "families / individuals (depends on region)"
+                    }
+                  ],
+                  "sections": [
+                    {
+                      "emoji": "👤",
+                      "title": "Role",
+                      "kind": "pills",
+                      "wide": true,
+                      "text": "Works with HNW families across their balance sheet, managing wealth and taking care of all financial needs and planning across:",
+                      "items": [
+                        "Banking",
+                        "Credit",
+                        "Education",
+                        "Estates",
+                        "Investments",
+                        "Line of Credit",
+                        "Mortgage",
+                        "Private Equity",
+                        "Retirement",
+                        "Trust"
+                      ]
+                    },
+                    {
+                      "emoji": "🎯",
+                      "title": "Goals",
+                      "kind": "text",
+                      "text": "Grow revenue by increasing deposits, investments, and lending opportunities — deepening existing relationships and bringing in new clients by converting prospects. Advisors have a sense of urgency and want to be genuinely helpful and trusted for their solutions."
+                    },
+                    {
+                      "emoji": "😣",
+                      "title": "Frustrations / Pain Points",
+                      "kind": "list",
+                      "items": [
+                        "Streamlining conversion from prospect to client",
+                        "Processes to update client information still being refined",
+                        "Technology improvements help, but Account Opening / KYC remains a pain point"
+                      ]
+                    },
+                    {
+                      "emoji": "🚀",
+                      "title": "Motivations",
+                      "note": "Client Advisors are measured by",
+                      "kind": "list",
+                      "items": [
+                        "Revenue growth, client referrals",
+                        "Flows: deposits, investments, credit",
+                        "New client points > $5MM+"
+                      ]
+                    },
+                    {
+                      "emoji": "🏢",
+                      "title": "Organization",
+                      "kind": "list",
+                      "items": [
+                        {
+                          "label": "Market Manager",
+                          "text": "Client Advisor Team Lead → Client Advisor, with Associate CA support."
+                        },
+                        {
+                          "label": "Specialists (shared / partnered)",
+                          "text": "Investment Professionals, Analysts (shared), Lending Advisor, Wealth Advisor, Trust Officer."
+                        }
+                      ]
+                    },
+                    {
+                      "emoji": "📋",
+                      "title": "Common Scenarios & Daily Activities",
+                      "kind": "list",
+                      "wide": true,
+                      "items": [
+                        {
+                          "label": "Deepening relationships — high touch",
+                          "text": "Maintain a pulse on clients; deepen relationships with market updates and targeted business events."
+                        },
+                        {
+                          "label": "Money movement",
+                          "text": "Between accounts, wires, and short-term liquidity needs (checking, savings, brokerage); place trades (several per day), reinvest cash, and follow up with IPs, CS, and other advisors."
+                        },
+                        {
+                          "label": "Money management decisions",
+                          "text": "Recommend money movement tailored to client needs — e.g., open or borrow against a line of credit, sell investments."
+                        },
+                        {
+                          "label": "New account open / administrative",
+                          "text": "Authorize accounts for new clients via KYC and account-opening paperwork; check for existing Chase relationships to facilitate LOB account transfers to JPM."
+                        },
+                        {
+                          "label": "Prospecting support",
+                          "text": "Leverage client relationships, the Chase network, CPAs, and attorneys to identify prospects."
+                        },
+                        {
+                          "label": "Consult other advisors",
+                          "text": "Utilize Wealth Strategists, Wealth Advisors, Trust Advisors, Lending Advisors, and other specialists for items requiring more expertise."
+                        }
+                      ]
+                    },
+                    {
+                      "emoji": "🔁",
+                      "title": "Frequent Activities",
+                      "kind": "list",
+                      "wide": true,
+                      "columns": 2,
+                      "items": [
+                        "Engage with clients via calls / meetings",
+                        "Record / post call notes",
+                        "Create investment proposals and portfolios",
+                        "Always prospecting for new opportunities"
+                      ]
+                    },
+                    {
+                      "emoji": "💡",
+                      "title": "Technology Needs",
+                      "kind": "list",
+                      "items": [
+                        "Bank investments · CD ladders",
+                        "Simplify account opening (KYC)",
+                        "Client-ready templates to quickly send reports",
+                        "Improved client-details process to prevent docs being sent to wrong addresses",
+                        "Track wire transfers within Connect"
+                      ]
+                    },
+                    {
+                      "emoji": "🧩",
+                      "title": "Top Connect Apps",
+                      "kind": "pills",
+                      "items": [
+                        "Advisor Dashboard",
+                        "Brokerage",
+                        "MyBook",
+                        "Client Exchange CaseView",
+                        "COB US to approved KYC / Account Opening",
+                        "Conversations",
+                        "FSD",
+                        "Review Accounts in Canvas"
+                      ]
+                    },
+                    {
+                      "emoji": "🛠️",
+                      "title": "Tools / Software",
+                      "kind": "pills",
+                      "items": [
+                        "Connect / Workstation",
+                        "Outlook",
+                        "Excel",
+                        "PowerPoint",
+                        "Word",
+                        "FSD",
+                        "Eikon",
+                        "ScoreCard"
+                      ]
+                    },
+                    {
+                      "emoji": "🤝",
+                      "title": "Collaborators",
+                      "kind": "pills",
+                      "items": [
+                        "Analysts",
+                        "Business Bankers",
+                        "Client Services (CS)",
+                        "Core Portfolio Team",
+                        "Credit Team",
+                        "Investment Professionals (IP)",
+                        "Mortgage Advisors",
+                        "Solutions Team",
+                        "Trust Advisor",
+                        "Wealth Advisor"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "credit-risk",
+                  "name": "Credit Risk & Analysis",
+                  "role": "Reviews and approves credit risk decisions within policy and appetite",
+                  "quote": "My job is to enable good business—consistently, defensibly, and within policy.",
+                  "summary": "Independent credit approver making disciplined, consistent, defensible decisions—without becoming the bottleneck.",
+                  "traits": [
+                    "Independent-minded",
+                    "Detail-driven",
+                    "Consistent",
+                    "Healthy skeptic",
+                    "Fairness-oriented",
+                    "Calm under pressure",
+                    "Strong writer"
+                  ],
+                  "stats": [
+                    {
+                      "label": "Active queue",
+                      "value": "~20–60",
+                      "note": "new, renewals, escalations"
+                    },
+                    {
+                      "label": "Time split",
+                      "value": "Review + alignment + rationale"
+                    },
+                    {
+                      "label": "High-friction",
+                      "value": "Rushed",
+                      "note": "missing data, unclear versions"
+                    }
+                  ],
+                  "sections": [
+                    {
+                      "emoji": "👤",
+                      "title": "Role",
+                      "kind": "text",
+                      "wide": true,
+                      "text": "Reviews and approves credit risk decisions, ensures adherence to policy and risk appetite, sets/monitors conditions, and documents rationale for audit and consistency."
+                    },
+                    {
+                      "emoji": "🎯",
+                      "title": "Goals",
+                      "kind": "list",
+                      "items": [
+                        "Make timely, consistent decisions using complete, current information",
+                        "Surface key risks early to avoid late-stage rework",
+                        "Ensure conditions and exceptions are clear, owned, and evidenced",
+                        "Maintain a clean audit trail without slowing execution unnecessarily"
+                      ]
+                    },
+                    {
+                      "emoji": "😣",
+                      "title": "Frustrations / Pain Points",
+                      "kind": "list",
+                      "items": [
+                        "Data and documents scattered across multiple systems and emails",
+                        "Unclear \"current version\" of terms, statements, collateral details",
+                        "Conditional approvals not operationalized—ownership is ambiguous",
+                        "Repeated status pings pull time away from review work",
+                        "Late changes force re-review and create \"moving goalposts\" perception"
+                      ]
+                    },
+                    {
+                      "emoji": "🚀",
+                      "title": "Motivations",
+                      "kind": "list",
+                      "items": [
+                        "Protect the firm and clients through disciplined risk management",
+                        "Avoid \"policy by escalation\" and inconsistent outcomes",
+                        "Reduce avoidable fire drills from poor intake or unclear ownership"
+                      ]
+                    },
+                    {
+                      "emoji": "🏢",
+                      "title": "Organization",
+                      "kind": "text",
+                      "text": "Reports into PB Credit Risk / Risk Management. Operates with independence while partnering closely with the business."
+                    },
+                    {
+                      "emoji": "🔁",
+                      "title": "Behaviors · Common Scenarios / Daily Activities",
+                      "kind": "list",
+                      "wide": true,
+                      "items": [
+                        {
+                          "label": "Initial review",
+                          "text": "Assess borrower/structure/collateral, identify gaps."
+                        },
+                        {
+                          "label": "Iterate",
+                          "text": "Advise on structure changes to align with appetite."
+                        },
+                        {
+                          "label": "Decisioning",
+                          "text": "Approve/decline/recommend with conditions."
+                        },
+                        {
+                          "label": "Exceptions",
+                          "text": "Evaluate and route exception requests with rationale."
+                        },
+                        {
+                          "label": "Re-review",
+                          "text": "Confirm conditions met before closing/funding."
+                        }
+                      ]
+                    },
+                    {
+                      "emoji": "🗺️",
+                      "title": "Review Journey",
+                      "kind": "journey",
+                      "wide": true,
+                      "items": [
+                        {
+                          "title": "Receive in Queue",
+                          "text": "New, renewal, or escalation arrives.",
+                          "mood": "Prioritizing"
+                        },
+                        {
+                          "title": "Initial Review",
+                          "text": "Assess borrower/structure/collateral; find gaps.",
+                          "mood": "Skeptical"
+                        },
+                        {
+                          "title": "Iterate / Advise",
+                          "text": "Align structure to risk appetite.",
+                          "mood": "Engaged"
+                        },
+                        {
+                          "title": "Decision",
+                          "text": "Approve / decline with conditions + rationale.",
+                          "mood": "Decisive"
+                        },
+                        {
+                          "title": "Re-review",
+                          "text": "Confirm conditions met before close/fund.",
+                          "mood": "Assured"
+                        }
+                      ]
+                    },
+                    {
+                      "emoji": "✅",
+                      "title": "Jobs to be Done",
+                      "kind": "list",
+                      "wide": true,
+                      "items": [
+                        "When picking up my queue, I want clear priority and aging signals, so I can decide what matters first.",
+                        "When reviewing, I want all data and the current version in one place, so I can decide with confidence.",
+                        "When setting conditions, I want them owned and tracked, so approvals get operationalized.",
+                        "When terms change, I want to be notified of the impact, so I can re-review efficiently."
+                      ]
+                    },
+                    {
+                      "emoji": "💡",
+                      "title": "Technology Needs",
+                      "kind": "list",
+                      "items": [
+                        "Role-based queue with priority signals and aging/SLA visibility",
+                        "Structured capture of key risk drivers (LTV, liquidity, concentration)",
+                        "Automatic flags for missing items or policy misalignment",
+                        "Condition management with verification workflow and evidence links",
+                        "Decision log with version history and who-changed-what visibility"
+                      ]
+                    },
+                    {
+                      "emoji": "🧩",
+                      "title": "Top Connect Apps",
+                      "kind": "pills",
+                      "items": [
+                        "Risk review queue",
+                        "Policy / requirement engine",
+                        "Conditions + exceptions",
+                        "Evidence vault",
+                        "Decision log / audit"
+                      ]
+                    },
+                    {
+                      "emoji": "🛠️",
+                      "title": "Tools / Software",
+                      "note": "today",
+                      "kind": "pills",
+                      "items": [
+                        "Email + calendar",
+                        "Calls",
+                        "Internal credit/risk platforms",
+                        "Document repositories",
+                        "Excel / Word memos"
+                      ]
+                    },
+                    {
+                      "emoji": "🤝",
+                      "title": "Collaborators",
+                      "kind": "pills",
+                      "items": [
+                        "Lender",
+                        "Banker / RM",
+                        "CRS Ops",
+                        "Prelim Ops",
+                        "Policy / portfolio",
+                        "Legal / Documentation"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "middle-office",
+                  "name": "Middle Office & Ops",
+                  "role": "CRS · Prelim Team · Doc Prep & QC — intake to close, clean and audit-ready",
+                  "quote": "I keep the workspace record clean, complete, and audit-ready end to end—so deals close right the first time.",
+                  "summary": "The operational backbone across servicing, closing readiness, and documentation—moving requests from intake to completion right-first-time, and ensuring what gets executed matches what was approved.",
+                  "traits": [
+                    "Process-oriented",
+                    "Highly detail-oriented",
+                    "Checklist-driven",
+                    "Control-focused",
+                    "Organized",
+                    "Strong follow-up",
+                    "Calm under pressure"
+                  ],
+                  "stats": [],
+                  "sections": [
+                    {
+                      "emoji": "👤",
+                      "title": "Role",
+                      "kind": "list",
+                      "wide": true,
+                      "text": "Operational execution and controls partner spanning three functions:",
+                      "items": [
+                        {
+                          "label": "CRS",
+                          "text": "moving requests from intake to completion accurately and compliantly"
+                        },
+                        {
+                          "label": "Prelim Team",
+                          "text": "preparing and validating closing/funding readiness so execution matches approval"
+                        },
+                        {
+                          "label": "Doc Prep & QC",
+                          "text": "preparing, validating, and quality-checking documentation so deals close cleanly and withstand audit scrutiny"
+                        }
+                      ],
+                      "columns": 3
+                    },
+                    {
+                      "emoji": "🎯",
+                      "title": "Goals",
+                      "kind": "list",
+                      "items": [
+                        "Process requests right-first-time — reduce rework and downstream breaks",
+                        "Keep work moving with clear status, ownership, and SLAs",
+                        "Ensure clean setup / closing readiness (conditions, docs, collateral)",
+                        "Produce accurate, complete, consistent docs aligned to the final approved structure",
+                        "Maintain a defensible audit trail — what issued, when, to whom, with approvals"
+                      ]
+                    },
+                    {
+                      "emoji": "😣",
+                      "title": "Frustrations / Pain Points",
+                      "kind": "list",
+                      "items": [
+                        "Status lives in multiple places (dashboard + SharePoint + tickets + email) → \"which is current?\"",
+                        "Intake inconsistency creates repeated re-asks for the same fields/docs",
+                        "Version drift: terms evolve but proposal, UCC/CGS, and doc artifacts don't always update",
+                        "Conditions tracked inconsistently; evidence not linked to conditions/approvals",
+                        "Incomplete signer/entity info and manual re-keying across tools increase error risk",
+                        "Interrupt-driven work with limited transparency on \"why this is urgent\""
+                      ]
+                    },
+                    {
+                      "emoji": "🚀",
+                      "title": "Motivations",
+                      "kind": "list",
+                      "items": [
+                        "Be viewed as the dependable, precise \"ops quarterback\"",
+                        "Ship clean, audit-ready records and documents first time — zero defects reaching execution",
+                        "Keep funding timelines predictable without compromising controls",
+                        "Protect client experience by preventing \"re-sign\" moments and last-minute escalations"
+                      ]
+                    },
+                    {
+                      "emoji": "🏢",
+                      "title": "Organization",
+                      "kind": "text",
+                      "text": "Reports into PB Loan Ops / Credit Operations. Typically downstream from decisioning and upstream from funding execution, partnering closely with the business."
+                    },
+                    {
+                      "emoji": "📋",
+                      "title": "Common Scenarios & Daily Activities",
+                      "kind": "list",
+                      "wide": true,
+                      "items": [
+                        {
+                          "label": "Triage & validate intake",
+                          "text": "Check completeness, routing, and priority of incoming work; claim tickets and request missing info/documents."
+                        },
+                        {
+                          "label": "Track & communicate status",
+                          "text": "Track case/deal status, update stakeholders, and support mailbox workflows (incl. FinCEN-related processes)."
+                        },
+                        {
+                          "label": "Build & validate proposals",
+                          "text": "Assemble proposal components aligned to approvals; confirm required artifacts are present."
+                        },
+                        {
+                          "label": "Collateral / UCC checks & conditions",
+                          "text": "Perform checks, store evidence, and manage condition readiness for next steps."
+                        },
+                        {
+                          "label": "Build & QC doc packages",
+                          "text": "Translate approved terms into packages; QC entity, signers, capacity, collateral descriptions, and legal language."
+                        },
+                        {
+                          "label": "Signature logistics & evidence",
+                          "text": "Coordinate and track documents through completion; validate executed docs are stored for controls/audit."
+                        }
+                      ]
+                    },
+                    {
+                      "emoji": "⚙️",
+                      "title": "Ops Problems → Unified Workflow Solutions",
+                      "kind": "mapping",
+                      "wide": true,
+                      "items": [
+                        {
+                          "problem": "SharePoint + dashboard + tickets + inbox = fragmented truth",
+                          "solution": "One canonical status + task engine that references SharePoint/Dealworks artifacts, but makes workflow state authoritative."
+                        },
+                        {
+                          "problem": "UCC/CGS evidence stored, but not linked to readiness/conditions",
+                          "solution": "Evidence objects (e.g., \"UCC search result\") attachable to conditions, approvals, and closing checklists."
+                        },
+                        {
+                          "problem": "ICRD proposal creation disconnected from intake completeness",
+                          "solution": "Intake gates ensuring required fields/docs exist before proposal build, plus auto-population where possible."
+                        },
+                        {
+                          "problem": "Workhub tickets manage work, but don't convey \"why it matters\"",
+                          "solution": "Role-based queue with client impact, deadlines, and dependency-aware routing plus smart escalations."
+                        }
+                      ]
+                    },
+                    {
+                      "emoji": "💡",
+                      "title": "Technology Needs",
+                      "kind": "list",
+                      "items": [
+                        "Single validated intake with required fields + smart validation by request type",
+                        "Unified status timeline (stage, owner, blocker, next action, SLA clock)",
+                        "Single \"deal dossier\": latest terms, proposal, artifacts, UCC/CGS, conditions, approvals",
+                        "Condition management with owner, due date, evidence links, and re-review triggers",
+                        "\"Final approved terms\" snapshot (locked) feeding doc generation + automated QC flags",
+                        "Doc status tracker (drafted → issued → in signature → executed → archived) with change diffs",
+                        "Central repository for executed docs + evidence, linked to deal & approval history"
+                      ]
+                    },
+                    {
+                      "emoji": "🧩",
+                      "title": "Top Connect Apps",
+                      "kind": "pills",
+                      "items": [
+                        "Lending Workspace",
+                        "Credit Decision",
+                        "Proposal Build",
+                        "Conditions + exceptions",
+                        "Doc Prep",
+                        "QC",
+                        "Collateral",
+                        "Evidence vault",
+                        "Case"
+                      ]
+                    },
+                    {
+                      "emoji": "🛠️",
+                      "title": "Tools / Software",
+                      "note": "today",
+                      "kind": "pills",
+                      "items": [
+                        "Prelim & CRE Dashboard",
+                        "SharePoint",
+                        "Workhub",
+                        "Dealworks (CGS/UCC)",
+                        "ICRD",
+                        "Wolters Kluwer (UCC)",
+                        "Collateral 360",
+                        "CCA",
+                        "Outlook",
+                        "Teams",
+                        "FinCEN workflow / mailbox",
+                        "Excel / Word"
+                      ]
+                    },
+                    {
+                      "emoji": "🤝",
+                      "title": "Collaborators",
+                      "kind": "pills",
+                      "items": [
+                        "Lenders",
+                        "Risk / Credit Officers",
+                        "Banker / RM",
+                        "Legal / Documentation",
+                        "Client Service",
+                        "Second-line Risk"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
               "type": "callout",
               "label": "Impact beyond my project",
               "value": "Both became the team's source of truth — designers and POs cite them in their own reviews and roadmaps."
