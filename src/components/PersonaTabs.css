@@ -34,7 +34,7 @@
   top: 72px;
   z-index: 10;
   padding: 10px;
-  background: var(--cs-pt-surface);
+  background: var(--bg);
   border-bottom: 1px solid var(--cs-pt-line);
 }
 
