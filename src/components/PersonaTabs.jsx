@@ -130,7 +130,7 @@ function Persona({ persona: p }) {
         </div>
 
         <div className="cs-pt-id">
-          <h5 className="cs-pt-name md-title-large">{p.name}</h5>
+          <h5 className="cs-pt-name md-headline-small">{p.name}</h5>
           <p className="cs-pt-role md-body-small">{p.role}</p>
         </div>
 
