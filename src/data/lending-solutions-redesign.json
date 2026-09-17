@@ -1022,8 +1022,51 @@
           "value": "Lenders (43.8%), Analysts (16.9%) and Credit Middle Office (16.3%) — the exact roles, in the exact order, the personas were built around."
         },
         {
-          "type": "image",
-          "label": "The pilot scorecard — NIGO, adoption, and the weekly-active role mix"
+          "type": "scorecard",
+          "title": "The pilot scorecard",
+          "caption": "NIGO, adoption, and the weekly-active role mix",
+          "nigo": {
+            "label": "New-ticket NIGO rate",
+            "unit": "%",
+            "baseline": {
+              "label": "Discovery baseline",
+              "value": 60
+            },
+            "current": {
+              "label": "Pilot",
+              "value": 22
+            },
+            "note": "Lower is better"
+          },
+          "adoption": {
+            "label": "Overall adoption",
+            "value": 24,
+            "note": "USPB scorecard, still mid-pilot"
+          },
+          "roleMix": {
+            "label": "Weekly active users",
+            "value": 190,
+            "note": "19-week average, peak 307",
+            "segments": [
+              {
+                "name": "Lenders",
+                "value": 43.8
+              },
+              {
+                "name": "Analysts",
+                "value": 16.9
+              },
+              {
+                "name": "Credit Middle Office",
+                "value": 16.3
+              },
+              {
+                "name": "Other roles",
+                "value": 23.0,
+                "other": true
+              }
+            ]
+          }
         },
         {
           "type": "text",

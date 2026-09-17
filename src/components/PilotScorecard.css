@@ -1,0 +1,440 @@
+/* ===== Pilot scorecard =====
+   Chart colours were run through the dataviz validator against this card's
+   white surface: Primary 40 / orange / aqua pass every adjacent gate (worst
+   CVD ΔE 9.2, normal-vision 27.6). Aqua sits under 3:1 on white, so every
+   value is also printed in the legend and the table view.
+   Type comes from the .md-* role on each element; this file holds colour,
+   spacing and layout only. */
+
+.cs-sc {
+  --cs-sc-surface: #ffffff;
+  --cs-sc-line: var(--gray-200);
+  --cs-sc-grid: var(--gray-100);
+  --cs-sc-s1: #1e57c8;          /* Primary 40 */
+  --cs-sc-s2: #eb6834;          /* orange */
+  --cs-sc-s3: #1baf7a;          /* aqua */
+  --cs-sc-other: var(--gray-300); /* de-emphasis */
+  --cs-sc-track: #dae2ff;       /* Primary 90 — same ramp as the meter fill */
+
+  position: relative;
+  margin: 0;
+  padding: 20px;
+  border: 1px solid var(--cs-sc-line);
+  border-radius: 20px;
+  background: var(--cs-sc-surface);
+}
+
+/* --- Head ---------------------------------------------------------------- */
+.cs-sc-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-bottom: 20px;
+}
+
+.cs-sc-head figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cs-sc-title {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.cs-sc-caption {
+  color: var(--text-soft);
+}
+
+.cs-sc-toggle {
+  padding: 5px 12px;
+  border: 1px solid var(--cs-sc-line);
+  border-radius: 999px;
+  background: var(--cs-sc-surface);
+  color: var(--accent-dark);
+  cursor: pointer;
+}
+
+.cs-sc-toggle:hover {
+  background: var(--gray-50);
+}
+
+.cs-sc-toggle:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+/* --- Panels -------------------------------------------------------------- */
+.cs-sc-panels {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.cs-sc-panel {
+  min-width: 0;
+  padding: 16px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--gray-50) 50%, #ffffff);
+}
+
+.cs-sc-panel.is-wide {
+  grid-column: 1 / -1;
+}
+
+.cs-sc-label {
+  margin: 0;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Stat value — the site's UI sans, proportional figures */
+.cs-sc-value {
+  margin: 4px 0 0;
+  font-family: var(--font-ui);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.cs-sc-note {
+  margin: 2px 0 0;
+  color: var(--text-soft);
+}
+
+/* A 0–100% scale shared by the dumbbell and the meter */
+.cs-sc-scale {
+  position: relative;
+  margin-top: 40px;
+  padding-bottom: 22px;
+}
+
+.cs-sc-ticks {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 16px;
+  color: var(--text-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.cs-sc-ticks span {
+  position: absolute;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.cs-sc-ticks span:first-child {
+  transform: none;
+}
+
+.cs-sc-ticks span:last-child {
+  transform: translateX(-100%);
+}
+
+/* Dumbbell */
+.cs-sc-track {
+  position: relative;
+  height: 2px;
+  margin: 7px 0 11px;
+  border-radius: 2px;
+  background: var(--cs-sc-grid);
+}
+
+.cs-sc-span {
+  position: absolute;
+  top: 0;
+  height: 2px;
+  background: var(--cs-sc-other);
+}
+
+.cs-sc-dot-wrap {
+  position: absolute;
+  top: 8px;
+  width: 0;
+}
+
+.cs-sc-dot-label {
+  position: absolute;
+  bottom: 14px;
+  white-space: nowrap;
+  color: var(--text);
+}
+
+/* Baseline label runs right from its dot, pilot label runs left, so the two
+   never meet over the span between them */
+.cs-sc-dot-wrap.is-baseline .cs-sc-dot-label {
+  left: -6px;
+  color: var(--text-soft);
+}
+
+.cs-sc-dot-wrap.is-current .cs-sc-dot-label {
+  right: -6px;
+}
+
+/* 24px hit target around a 12px dot */
+.cs-sc-hit {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  cursor: default;
+}
+
+.cs-sc-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  box-shadow: 0 0 0 2px var(--cs-sc-surface);
+  transition: transform 0.15s ease;
+}
+
+.is-baseline .cs-sc-dot {
+  background: var(--cs-sc-other);
+}
+
+.is-current .cs-sc-dot {
+  background: var(--cs-sc-s1);
+}
+
+.cs-sc-hit:hover .cs-sc-dot,
+.cs-sc-hit:focus-visible .cs-sc-dot {
+  transform: scale(1.25);
+}
+
+.cs-sc-hit:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 0;
+}
+
+/* Meter — fill and track from the same blue ramp */
+.cs-sc-meter {
+  position: relative;
+  height: 12px;
+  margin: 2px 0 10px;
+  border-radius: 999px;
+  background: var(--cs-sc-track);
+}
+
+.cs-sc-meter-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 999px;
+  background: var(--cs-sc-s1);
+}
+
+.cs-sc-meter-fill:hover {
+  filter: brightness(1.12);
+}
+
+.cs-sc-meter-fill:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+/* Role mix */
+.cs-sc-mix-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-bottom: 14px;
+}
+
+.cs-sc-mix-title {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+/* 20px bar; the 2px surface gap separates segments, square at the start,
+   rounded at the far end */
+.cs-sc-stack {
+  display: flex;
+  gap: 2px;
+  height: 20px;
+}
+
+.cs-sc-seg {
+  flex-grow: 0;
+  flex-shrink: 1;
+  min-width: 2px;
+  transition: filter 0.15s ease;
+}
+
+.cs-sc-seg:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.cs-sc-seg:hover {
+  filter: brightness(1.12);
+}
+
+.cs-sc-seg:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.is-s1 {
+  background: var(--cs-sc-s1);
+}
+
+.is-s2 {
+  background: var(--cs-sc-s2);
+}
+
+.is-s3 {
+  background: var(--cs-sc-s3);
+}
+
+.is-other {
+  background: var(--cs-sc-other);
+}
+
+/* Legend — always shown, and it carries every value */
+.cs-sc-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text-soft);
+}
+
+.cs-sc-legend li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cs-sc-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.cs-sc-legend-value {
+  font-weight: 600;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- Tooltip -------------------------------------------------------------- */
+.cs-sc-tip {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--text);
+  color: #ffffff;
+  white-space: nowrap;
+  transform: translate(-50%, calc(-100% - 8px));
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(20, 32, 61, 0.18);
+}
+
+.cs-sc-tip span {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* --- Table view ----------------------------------------------------------- */
+.cs-sc-table-wrap {
+  overflow-x: auto;
+}
+
+.cs-sc-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text);
+}
+
+.cs-sc-table th,
+.cs-sc-table td {
+  padding: 8px 12px 8px 0;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--cs-sc-grid);
+}
+
+.cs-sc-table thead th {
+  font-weight: 600;
+  color: var(--text-soft);
+  border-bottom-color: var(--cs-sc-line);
+}
+
+.cs-sc-table tbody th {
+  font-weight: 500;
+}
+
+.cs-sc-table .is-num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Dumbbell key — only shown where the labels beside the dots won't fit */
+.cs-sc-dumbbell-key {
+  display: none;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text-soft);
+}
+
+.cs-sc-dumbbell-key li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cs-sc-dumbbell-key strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.cs-sc-dumbbell-key .cs-sc-dot {
+  width: 10px;
+  height: 10px;
+  box-shadow: none;
+}
+
+/* --- Phone ---------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .cs-sc {
+    padding: 16px;
+  }
+  .cs-sc-panels {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .cs-sc-dot-label {
+    display: none;
+  }
+  .cs-sc-dumbbell-key {
+    display: flex;
+  }
+  /* no labels above the dots, so the scale needs less headroom */
+  .cs-sc-panel:first-child .cs-sc-scale {
+    margin-top: 24px;
+  }
+}
