@@ -178,6 +178,12 @@
                   "name": "Overview",
                   "pages": [
                     "Single dashboard"
+                  ],
+                  "personas": [
+                    "Banker",
+                    "Lender",
+                    "Risk",
+                    "Ops"
                   ]
                 },
                 {
@@ -185,6 +191,12 @@
                   "pages": [
                     "Deal Journey",
                     "Facility Enrichment"
+                  ],
+                  "personas": [
+                    "Banker",
+                    "Lender",
+                    "Risk",
+                    "Ops"
                   ]
                 },
                 {
@@ -197,6 +209,12 @@
                     "Covenants",
                     "Delinquency",
                     "Informational Items"
+                  ],
+                  "personas": [
+                    "Banker",
+                    "Lender",
+                    "Risk",
+                    "Ops"
                   ]
                 },
                 {
@@ -205,12 +223,20 @@
                     "Lending Analytics",
                     "Collateral Insights",
                     "IPO Lending"
+                  ],
+                  "personas": [
+                    "Banker",
+                    "Lender",
+                    "Risk"
                   ]
                 },
                 {
                   "name": "Doc QC",
                   "pages": [
                     "Outside Counsel QC Viewer"
+                  ],
+                  "personas": [
+                    "Ops"
                   ]
                 },
                 {
@@ -221,12 +247,21 @@
                     "LV Tool",
                     "Uploads & Reports",
                     "Maintenance"
+                  ],
+                  "personas": [
+                    "Lender",
+                    "Risk",
+                    "Ops"
                   ]
                 },
                 {
                   "name": "Margin Call",
                   "pages": [
                     "Single view"
+                  ],
+                  "personas": [
+                    "Banker",
+                    "Lender"
                   ]
                 },
                 {
@@ -237,16 +272,26 @@
                     "Position View",
                     "Summary View",
                     "Collateral Studio"
+                  ],
+                  "personas": [
+                    "Banker",
+                    "Lender"
                   ]
                 },
                 {
                   "name": "ILM",
-                  "pages": []
+                  "pages": [],
+                  "personas": []
                 },
                 {
                   "name": "Approvals",
                   "pages": [
                     "Pledge Liquidity"
+                  ],
+                  "personas": [
+                    "Lender",
+                    "Risk",
+                    "Ops"
                   ]
                 }
               ],

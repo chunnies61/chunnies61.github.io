@@ -114,9 +114,23 @@
   background: var(--cs-ia-on-bg);
 }
 
-.cs-ia-filter-option:disabled {
-  cursor: not-allowed;
-  opacity: 0.55;
+.cs-ia-filter-option:not(.is-active) {
+  color: var(--cs-ia-on-bg-soft);
+}
+
+.cs-ia-filter-option:not(.is-active):hover {
+  color: var(--cs-ia-on-bg);
+}
+
+.cs-ia-filter-option:focus-visible {
+  outline: 2px solid var(--cs-ia-on-bg);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.cs-ia-filter-count {
+  margin: 2px 0 0;
+  color: var(--cs-ia-on-bg-soft);
 }
 
 .cs-ia-filter-note {
