@@ -139,14 +139,15 @@
   border-bottom: 1px solid var(--cs-pt-line);
 }
 
-/* The profile column stretches to the grid's height and closes on a rule
-   level with the last row of boxes — the reference sheet's sidebar does the
-   same, so a shorter profile reads as a framed column, not a gap. */
+/* Both columns end level, whichever is taller. A shorter profile stretches
+   and closes on a rule beside the last row of boxes, as the reference
+   sheet's sidebar does; a shorter grid shares the spare height across its
+   rows rather than leaving a gap under the last one. */
 .cs-pt-grid {
   grid-column: 2;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-content: start;
+  align-content: stretch;
   gap: 10px;
 }
 

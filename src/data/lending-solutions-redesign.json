@@ -144,11 +144,6 @@
               "label": "The Lending Workspace information architecture"
             },
             {
-              "type": "image",
-              "src": "/images/lending-persona.png",
-              "label": "Lending personas"
-            },
-            {
               "type": "persona-tabs",
               "label": "Lending personas — one tab per role",
               "personas": [
@@ -262,16 +257,6 @@
                           "label": "Internal operations & reporting",
                           "text": "Prepare pipeline presentations, portfolio updates, and risk reviews for management."
                         }
-                      ],
-                      "span": true
-                    },
-                    {
-                      "title": "Technology Needs",
-                      "kind": "list",
-                      "items": [
-                        "A unified dashboard / workspace consolidating loan data, alerts, and collateral views",
-                        "Real-time automated margin call and covenant tracking",
-                        "Streamlined execution workflows connecting front-office origination with middle-office booking"
                       ],
                       "span": true
                     },
@@ -448,18 +433,6 @@
                       "span": true
                     },
                     {
-                      "title": "Technology Needs",
-                      "kind": "list",
-                      "items": [
-                        "Bank investments · CD ladders",
-                        "Simplify account opening (KYC)",
-                        "Client-ready templates to quickly send reports",
-                        "Improved client-details process to prevent docs being sent to wrong addresses",
-                        "Track wire transfers within Connect"
-                      ],
-                      "span": true
-                    },
-                    {
                       "title": "Tools / Software",
                       "kind": "pills",
                       "items": [
@@ -604,18 +577,6 @@
                       "span": true
                     },
                     {
-                      "title": "Technology Needs",
-                      "kind": "list",
-                      "items": [
-                        "Role-based queue with priority signals and aging/SLA visibility",
-                        "Structured capture of key risk drivers (LTV, liquidity, concentration)",
-                        "Automatic flags for missing items or policy misalignment",
-                        "Condition management with verification workflow and evidence links",
-                        "Decision log with version history and who-changed-what visibility"
-                      ],
-                      "span": true
-                    },
-                    {
                       "title": "Tools / Software",
                       "note": "today",
                       "kind": "pills",
@@ -744,20 +705,6 @@
                           "label": "Signature logistics & evidence",
                           "text": "Coordinate and track documents through completion; validate executed docs are stored for controls/audit."
                         }
-                      ],
-                      "span": true
-                    },
-                    {
-                      "title": "Technology Needs",
-                      "kind": "list",
-                      "items": [
-                        "Single validated intake with required fields + smart validation by request type",
-                        "Unified status timeline (stage, owner, blocker, next action, SLA clock)",
-                        "Single \"deal dossier\": latest terms, proposal, artifacts, UCC/CGS, conditions, approvals",
-                        "Condition management with owner, due date, evidence links, and re-review triggers",
-                        "\"Final approved terms\" snapshot (locked) feeding doc generation + automated QC flags",
-                        "Doc status tracker (drafted → issued → in signature → executed → archived) with change diffs",
-                        "Central repository for executed docs + evidence, linked to deal & approval history"
                       ],
                       "span": true
                     },
