@@ -55,7 +55,9 @@ export default function IAMap({ block }) {
                 </button>
               ))}
             </div>
-            <p className="cs-ia-filter-note md-body-small">{personaFilter.note}</p>
+            {personaFilter.note && (
+              <p className="cs-ia-filter-note md-body-small">{personaFilter.note}</p>
+            )}
           </div>
         )}
       </header>
