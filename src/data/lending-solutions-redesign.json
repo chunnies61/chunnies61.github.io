@@ -245,7 +245,6 @@
                     {
                       "title": "Common Scenarios & Daily Activities",
                       "kind": "list",
-                      "wide": true,
                       "items": [
                         {
                           "label": "Portfolio maintenance & risk monitoring",
@@ -263,7 +262,8 @@
                           "label": "Internal operations & reporting",
                           "text": "Prepare pipeline presentations, portfolio updates, and risk reviews for management."
                         }
-                      ]
+                      ],
+                      "span": true
                     },
                     {
                       "title": "Technology Needs",
@@ -272,19 +272,8 @@
                         "A unified dashboard / workspace consolidating loan data, alerts, and collateral views",
                         "Real-time automated margin call and covenant tracking",
                         "Streamlined execution workflows connecting front-office origination with middle-office booking"
-                      ]
-                    },
-                    {
-                      "title": "Top Connect Apps",
-                      "kind": "pills",
-                      "items": [
-                        "Lending Workspace",
-                        "Loan Request App",
-                        "Loan Pricing Tool",
-                        "Pipeline",
-                        "Collateral",
-                        "Scorecards"
-                      ]
+                      ],
+                      "span": true
                     },
                     {
                       "title": "Tools / Software",
@@ -430,7 +419,6 @@
                     {
                       "title": "Common Scenarios & Daily Activities",
                       "kind": "list",
-                      "wide": true,
                       "items": [
                         {
                           "label": "Deepening relationships — high touch",
@@ -456,19 +444,8 @@
                           "label": "Consult other advisors",
                           "text": "Utilize Wealth Strategists, Wealth Advisors, Trust Advisors, Lending Advisors, and other specialists for items requiring more expertise."
                         }
-                      ]
-                    },
-                    {
-                      "title": "Frequent Activities",
-                      "kind": "list",
-                      "wide": true,
-                      "columns": 2,
-                      "items": [
-                        "Engage with clients via calls / meetings",
-                        "Record / post call notes",
-                        "Create investment proposals and portfolios",
-                        "Always prospecting for new opportunities"
-                      ]
+                      ],
+                      "span": true
                     },
                     {
                       "title": "Technology Needs",
@@ -479,21 +456,8 @@
                         "Client-ready templates to quickly send reports",
                         "Improved client-details process to prevent docs being sent to wrong addresses",
                         "Track wire transfers within Connect"
-                      ]
-                    },
-                    {
-                      "title": "Top Connect Apps",
-                      "kind": "pills",
-                      "items": [
-                        "Advisor Dashboard",
-                        "Brokerage",
-                        "MyBook",
-                        "Client Exchange CaseView",
-                        "COB US to approved KYC / Account Opening",
-                        "Conversations",
-                        "FSD",
-                        "Review Accounts in Canvas"
-                      ]
+                      ],
+                      "span": true
                     },
                     {
                       "title": "Tools / Software",
@@ -523,6 +487,18 @@
                         "Solutions Team",
                         "Trust Advisor",
                         "Wealth Advisor"
+                      ]
+                    },
+                    {
+                      "title": "Frequent Activities",
+                      "kind": "list",
+                      "wide": true,
+                      "columns": 2,
+                      "items": [
+                        "Engage with clients via calls / meetings",
+                        "Record / post call notes",
+                        "Create investment proposals and portfolios",
+                        "Always prospecting for new opportunities"
                       ]
                     }
                   ]
@@ -603,7 +579,6 @@
                     {
                       "title": "Behaviors · Common Scenarios / Daily Activities",
                       "kind": "list",
-                      "wide": true,
                       "items": [
                         {
                           "label": "Initial review",
@@ -625,50 +600,8 @@
                           "label": "Re-review",
                           "text": "Confirm conditions met before closing/funding."
                         }
-                      ]
-                    },
-                    {
-                      "title": "Review Journey",
-                      "kind": "journey",
-                      "wide": true,
-                      "items": [
-                        {
-                          "title": "Receive in Queue",
-                          "text": "New, renewal, or escalation arrives.",
-                          "mood": "Prioritizing"
-                        },
-                        {
-                          "title": "Initial Review",
-                          "text": "Assess borrower/structure/collateral; find gaps.",
-                          "mood": "Skeptical"
-                        },
-                        {
-                          "title": "Iterate / Advise",
-                          "text": "Align structure to risk appetite.",
-                          "mood": "Engaged"
-                        },
-                        {
-                          "title": "Decision",
-                          "text": "Approve / decline with conditions + rationale.",
-                          "mood": "Decisive"
-                        },
-                        {
-                          "title": "Re-review",
-                          "text": "Confirm conditions met before close/fund.",
-                          "mood": "Assured"
-                        }
-                      ]
-                    },
-                    {
-                      "title": "Jobs to be Done",
-                      "kind": "list",
-                      "wide": true,
-                      "items": [
-                        "When picking up my queue, I want clear priority and aging signals, so I can decide what matters first.",
-                        "When reviewing, I want all data and the current version in one place, so I can decide with confidence.",
-                        "When setting conditions, I want them owned and tracked, so approvals get operationalized.",
-                        "When terms change, I want to be notified of the impact, so I can re-review efficiently."
-                      ]
+                      ],
+                      "span": true
                     },
                     {
                       "title": "Technology Needs",
@@ -679,18 +612,8 @@
                         "Automatic flags for missing items or policy misalignment",
                         "Condition management with verification workflow and evidence links",
                         "Decision log with version history and who-changed-what visibility"
-                      ]
-                    },
-                    {
-                      "title": "Top Connect Apps",
-                      "kind": "pills",
-                      "items": [
-                        "Risk review queue",
-                        "Policy / requirement engine",
-                        "Conditions + exceptions",
-                        "Evidence vault",
-                        "Decision log / audit"
-                      ]
+                      ],
+                      "span": true
                     },
                     {
                       "title": "Tools / Software",
@@ -796,7 +719,6 @@
                     {
                       "title": "Common Scenarios & Daily Activities",
                       "kind": "list",
-                      "wide": true,
                       "items": [
                         {
                           "label": "Triage & validate intake",
@@ -822,30 +744,8 @@
                           "label": "Signature logistics & evidence",
                           "text": "Coordinate and track documents through completion; validate executed docs are stored for controls/audit."
                         }
-                      ]
-                    },
-                    {
-                      "title": "Ops Problems → Unified Workflow Solutions",
-                      "kind": "mapping",
-                      "wide": true,
-                      "items": [
-                        {
-                          "problem": "SharePoint + dashboard + tickets + inbox = fragmented truth",
-                          "solution": "One canonical status + task engine that references SharePoint/Dealworks artifacts, but makes workflow state authoritative."
-                        },
-                        {
-                          "problem": "UCC/CGS evidence stored, but not linked to readiness/conditions",
-                          "solution": "Evidence objects (e.g., \"UCC search result\") attachable to conditions, approvals, and closing checklists."
-                        },
-                        {
-                          "problem": "ICRD proposal creation disconnected from intake completeness",
-                          "solution": "Intake gates ensuring required fields/docs exist before proposal build, plus auto-population where possible."
-                        },
-                        {
-                          "problem": "Workhub tickets manage work, but don't convey \"why it matters\"",
-                          "solution": "Role-based queue with client impact, deadlines, and dependency-aware routing plus smart escalations."
-                        }
-                      ]
+                      ],
+                      "span": true
                     },
                     {
                       "title": "Technology Needs",
@@ -858,22 +758,8 @@
                         "\"Final approved terms\" snapshot (locked) feeding doc generation + automated QC flags",
                         "Doc status tracker (drafted → issued → in signature → executed → archived) with change diffs",
                         "Central repository for executed docs + evidence, linked to deal & approval history"
-                      ]
-                    },
-                    {
-                      "title": "Top Connect Apps",
-                      "kind": "pills",
-                      "items": [
-                        "Lending Workspace",
-                        "Credit Decision",
-                        "Proposal Build",
-                        "Conditions + exceptions",
-                        "Doc Prep",
-                        "QC",
-                        "Collateral",
-                        "Evidence vault",
-                        "Case"
-                      ]
+                      ],
+                      "span": true
                     },
                     {
                       "title": "Tools / Software",

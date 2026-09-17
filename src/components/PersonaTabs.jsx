@@ -6,8 +6,9 @@ import "./PersonaTabs.css";
    the selected tab sits in the Tab order.
 
    Each persona is laid out as a one-pager: a profile column (portrait, name,
-   quote, key attributes) beside a grid of titled boxes, with the long-form
-   detail — scenarios, journeys, frameworks — running full width beneath.
+   quote, key attributes) beside a grid of titled boxes. Sections marked
+   "span" run across both grid columns; any marked "wide" run full width
+   beneath the sheet.
    Every persona uses the same box order, so switching tabs compares like
    with like. */
 
@@ -44,7 +45,7 @@ function SectionBody({ section: s }) {
       // Wide lists run up to four across (5 and 6 items take three) so the
       // long-form rows stay short.
       const n = s.items.length;
-      const cols = s.columns || (s.wide ? (n <= 4 ? n : 3) : 1);
+      const cols = s.columns || (s.wide ? (n <= 4 ? n : 3) : s.span ? 2 : 1);
       return (
         <ul className="cs-pt-list md-body-small" style={{ "--cs-pt-cols": cols }}>
           {s.items.map((item, i) => (
@@ -69,45 +70,21 @@ function SectionBody({ section: s }) {
         </div>
       );
 
-    case "journey":
-      return (
-        <ol className="cs-pt-journey">
-          {s.items.map((step, i) => (
-            <li className="cs-pt-journey-step" key={step.title}>
-              <span className="cs-pt-journey-num md-label-small" aria-hidden="true">
-                {i + 1}
-              </span>
-              <strong className="cs-pt-journey-title md-label-large">{step.title}</strong>
-              <span className="cs-pt-journey-text md-body-small">{step.text}</span>
-              <span className="cs-pt-mood md-label-small">{step.mood}</span>
-            </li>
-          ))}
-        </ol>
-      );
-
-    case "mapping":
-      return (
-        <ul className="cs-pt-map md-body-small">
-          {s.items.map((row) => (
-            <li className="cs-pt-map-row" key={row.problem}>
-              <span className="cs-pt-map-problem">{row.problem}</span>
-              <span className="cs-pt-map-arrow" aria-hidden="true">
-                →
-              </span>
-              <span className="cs-pt-map-solution">{row.solution}</span>
-            </li>
-          ))}
-        </ul>
-      );
-
     default:
       return null;
   }
 }
 
-function Box({ section: s }) {
+function Box({ section: s, altStripe = false }) {
   return (
-    <div className={"cs-pt-box" + (s.wide ? " is-wide" : "")}>
+    <div
+      className={
+        "cs-pt-box" +
+        (s.wide ? " is-wide" : "") +
+        (s.span ? " is-span" : "") +
+        (altStripe ? " is-alt" : "")
+      }
+    >
       <div className="cs-pt-box-head">
         <h6 className="cs-pt-box-title md-label-large">{s.title}</h6>
         {s.note && <p className="cs-pt-note md-body-small">{s.note}</p>}
@@ -123,6 +100,27 @@ function Box({ section: s }) {
 function Persona({ persona: p }) {
   const grid = p.sections.filter((s) => !s.wide);
   const detail = p.sections.filter((s) => s.wide);
+
+  // Checkerboard the title stripes across the right column. Spanning boxes
+  // take a whole row, which nth-child can't see, so walk the rows here.
+  let row = 0;
+  let col = 0;
+  const altStripe = grid.map((s) => {
+    if (s.span) {
+      if (col) {
+        row += 1;
+        col = 0;
+      }
+      return row++ % 2 === 1;
+    }
+    const alt = (row + col) % 2 === 1;
+    col += 1;
+    if (col === 2) {
+      row += 1;
+      col = 0;
+    }
+    return alt;
+  });
 
   return (
     <div className="cs-pt-sheet">
@@ -176,8 +174,8 @@ function Persona({ persona: p }) {
       </div>
 
       <div className="cs-pt-grid">
-        {grid.map((s) => (
-          <Box section={s} key={s.title} />
+        {grid.map((s, i) => (
+          <Box section={s} altStripe={altStripe[i]} key={s.title} />
         ))}
       </div>
 
