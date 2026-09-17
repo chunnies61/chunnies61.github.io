@@ -135,14 +135,10 @@
   grid-column: 1;
   display: flex;
   flex-direction: column;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--cs-pt-line);
 }
 
-/* Both columns end level, whichever is taller. A shorter profile stretches
-   and closes on a rule beside the last row of boxes, as the reference
-   sheet's sidebar does; a shorter grid shares the spare height across its
-   rows rather than leaving a gap under the last one. */
+/* When the profile is the taller column, the grid shares the spare height
+   across its rows rather than leaving a gap under the last one. */
 .cs-pt-grid {
   grid-column: 2;
   display: grid;
@@ -172,12 +168,8 @@
   line-height: 1;
 }
 
-/* Name sits between two rules, as on a printed persona sheet */
 .cs-pt-id {
   margin-top: 12px;
-  padding: 8px 0;
-  border-top: 1px solid var(--cs-pt-line);
-  border-bottom: 1px solid var(--cs-pt-line);
 }
 
 /* index.css only resets h1–h4, so this h5 would otherwise keep the
