@@ -170,6 +170,7 @@
                   ],
                   "sections": [
                     {
+                      "emoji": "🎯",
                       "title": "Goals",
                       "kind": "list",
                       "items": [
@@ -185,9 +186,11 @@
                           "label": "Ensure risk compliance",
                           "text": "maintain zero-error portfolio management and adhere to credit / risk controls."
                         }
-                      ]
+                      ],
+                      "bullets": true
                     },
                     {
+                      "emoji": "😣",
                       "title": "Frustrations / Pain Points",
                       "kind": "list",
                       "items": [
@@ -203,9 +206,11 @@
                           "label": "Execution friction",
                           "text": "navigating siloed internal handoffs between risk, legal, and operational teams."
                         }
-                      ]
+                      ],
+                      "bullets": true
                     },
                     {
+                      "emoji": "🚀",
                       "title": "Motivations",
                       "kind": "list",
                       "items": [
@@ -221,9 +226,11 @@
                           "label": "Career advancement",
                           "text": "transition from operational maintenance toward high-touch client origination."
                         }
-                      ]
+                      ],
+                      "bullets": true
                     },
                     {
+                      "emoji": "🪜",
                       "title": "Seniority Dynamics",
                       "kind": "list",
                       "items": [
@@ -238,29 +245,31 @@
                       ]
                     },
                     {
+                      "emoji": "📋",
                       "title": "Common Scenarios & Daily Activities",
                       "kind": "list",
                       "items": [
                         {
-                          "label": "Portfolio maintenance & risk monitoring",
-                          "text": "Check overnight market movements first thing to identify margin calls or loan excesses. Coordinate with Bankers, Investors, and Client Services to notify clients and establish cure plans for margin deficiencies."
+                          "label": "Portfolio & risk monitoring",
+                          "text": "Check overnight markets for margin calls and excesses; set cure plans with Bankers, Investors and Client Services."
                         },
                         {
                           "label": "Origination & prospecting",
-                          "text": "Partner with Bankers and Investors to identify new borrowing opportunities within existing client books. Meet with clients / prospects to gauge appetite for debt and evaluate how lending fits their liquidity goals."
+                          "text": "Find borrowing opportunities in existing books with Bankers and Investors; gauge client appetite for debt."
                         },
                         {
                           "label": "Deal execution",
-                          "text": "Drive approved loans through internal setup, document execution, and system booking. Serve as the single point of contact across 5+ internal teams (Credit Risk, Underwriting, Legal, Middle Office) during execution."
+                          "text": "Drive approved loans through setup, documents and booking as the single point of contact across 5+ teams."
                         },
                         {
-                          "label": "Internal operations & reporting",
-                          "text": "Prepare pipeline presentations, portfolio updates, and risk reviews for management."
+                          "label": "Reporting",
+                          "text": "Pipeline presentations, portfolio updates and risk reviews for management."
                         }
                       ],
                       "span": true
                     },
                     {
+                      "emoji": "🛠️",
                       "title": "Tools / Software",
                       "kind": "groups",
                       "items": [
@@ -288,6 +297,7 @@
                       ]
                     },
                     {
+                      "emoji": "👥",
                       "title": "Collaborators",
                       "kind": "groups",
                       "items": [
@@ -364,20 +374,29 @@
                   },
                   "sections": [
                     {
+                      "emoji": "🎯",
                       "title": "Goals",
-                      "kind": "text",
-                      "text": "Grow revenue by increasing deposits, investments, and lending opportunities — deepening existing relationships and bringing in new clients by converting prospects. Advisors have a sense of urgency and want to be genuinely helpful and trusted for their solutions."
+                      "kind": "list",
+                      "items": [
+                        "Grow revenue through deposits, investments, and lending opportunities",
+                        "Deepen existing relationships and convert prospects into new clients",
+                        "Be genuinely helpful and trusted for their solutions, with a sense of urgency"
+                      ],
+                      "bullets": true
                     },
                     {
+                      "emoji": "😣",
                       "title": "Frustrations / Pain Points",
                       "kind": "list",
                       "items": [
                         "Streamlining conversion from prospect to client",
                         "Processes to update client information still being refined",
                         "Technology improvements help, but Account Opening / KYC remains a pain point"
-                      ]
+                      ],
+                      "bullets": true
                     },
                     {
+                      "emoji": "🚀",
                       "title": "Motivations",
                       "note": "Client Advisors are measured by",
                       "kind": "list",
@@ -385,9 +404,11 @@
                         "Revenue growth, client referrals",
                         "Flows: deposits, investments, credit",
                         "New client points > $5MM+"
-                      ]
+                      ],
+                      "bullets": true
                     },
                     {
+                      "emoji": "🏢",
                       "title": "Organization",
                       "kind": "list",
                       "items": [
@@ -402,37 +423,39 @@
                       ]
                     },
                     {
+                      "emoji": "📋",
                       "title": "Common Scenarios & Daily Activities",
                       "kind": "list",
                       "items": [
                         {
-                          "label": "Deepening relationships — high touch",
-                          "text": "Maintain a pulse on clients; deepen relationships with market updates and targeted business events."
+                          "label": "Deepening relationships",
+                          "text": "Keep a pulse on clients through market updates and targeted events."
                         },
                         {
                           "label": "Money movement",
-                          "text": "Between accounts, wires, and short-term liquidity needs (checking, savings, brokerage); place trades (several per day), reinvest cash, and follow up with IPs, CS, and other advisors."
+                          "text": "Transfers, wires and liquidity needs; several trades a day, reinvesting cash, following up with IPs and CS."
                         },
                         {
-                          "label": "Money management decisions",
-                          "text": "Recommend money movement tailored to client needs — e.g., open or borrow against a line of credit, sell investments."
+                          "label": "Money management",
+                          "text": "Recommend moves like borrowing against a line of credit or selling investments."
                         },
                         {
-                          "label": "New account open / administrative",
-                          "text": "Authorize accounts for new clients via KYC and account-opening paperwork; check for existing Chase relationships to facilitate LOB account transfers to JPM."
+                          "label": "Account opening",
+                          "text": "KYC and paperwork for new clients; bring existing Chase relationships over to JPM."
                         },
                         {
-                          "label": "Prospecting support",
-                          "text": "Leverage client relationships, the Chase network, CPAs, and attorneys to identify prospects."
+                          "label": "Prospecting",
+                          "text": "Find prospects through clients, the Chase network, CPAs and attorneys."
                         },
                         {
-                          "label": "Consult other advisors",
-                          "text": "Utilize Wealth Strategists, Wealth Advisors, Trust Advisors, Lending Advisors, and other specialists for items requiring more expertise."
+                          "label": "Consulting specialists",
+                          "text": "Bring in wealth, trust and lending specialists when deeper expertise is needed."
                         }
                       ],
                       "span": true
                     },
                     {
+                      "emoji": "🛠️",
                       "title": "Tools / Software",
                       "kind": "pills",
                       "items": [
@@ -447,6 +470,7 @@
                       ]
                     },
                     {
+                      "emoji": "👥",
                       "title": "Collaborators",
                       "kind": "pills",
                       "items": [
@@ -463,6 +487,7 @@
                       ]
                     },
                     {
+                      "emoji": "🔁",
                       "title": "Frequent Activities",
                       "kind": "list",
                       "wide": true,
@@ -515,6 +540,7 @@
                   },
                   "sections": [
                     {
+                      "emoji": "🎯",
                       "title": "Goals",
                       "kind": "list",
                       "items": [
@@ -522,9 +548,11 @@
                         "Surface key risks early to avoid late-stage rework",
                         "Ensure conditions and exceptions are clear, owned, and evidenced",
                         "Maintain a clean audit trail without slowing execution unnecessarily"
-                      ]
+                      ],
+                      "bullets": true
                     },
                     {
+                      "emoji": "😣",
                       "title": "Frustrations / Pain Points",
                       "kind": "list",
                       "items": [
@@ -533,23 +561,28 @@
                         "Conditional approvals not operationalized—ownership is ambiguous",
                         "Repeated status pings pull time away from review work",
                         "Late changes force re-review and create \"moving goalposts\" perception"
-                      ]
+                      ],
+                      "bullets": true
                     },
                     {
+                      "emoji": "🚀",
                       "title": "Motivations",
                       "kind": "list",
                       "items": [
                         "Protect the firm and clients through disciplined risk management",
                         "Avoid \"policy by escalation\" and inconsistent outcomes",
                         "Reduce avoidable fire drills from poor intake or unclear ownership"
-                      ]
+                      ],
+                      "bullets": true
                     },
                     {
+                      "emoji": "🏢",
                       "title": "Organization",
                       "kind": "text",
                       "text": "Reports into PB Credit Risk / Risk Management. Operates with independence while partnering closely with the business."
                     },
                     {
+                      "emoji": "📋",
                       "title": "Behaviors · Common Scenarios / Daily Activities",
                       "kind": "list",
                       "items": [
@@ -577,6 +610,7 @@
                       "span": true
                     },
                     {
+                      "emoji": "🛠️",
                       "title": "Tools / Software",
                       "note": "today",
                       "kind": "pills",
@@ -589,6 +623,7 @@
                       ]
                     },
                     {
+                      "emoji": "👥",
                       "title": "Collaborators",
                       "kind": "pills",
                       "items": [
@@ -640,6 +675,7 @@
                   },
                   "sections": [
                     {
+                      "emoji": "🎯",
                       "title": "Goals",
                       "kind": "list",
                       "items": [
@@ -648,9 +684,11 @@
                         "Ensure clean setup / closing readiness (conditions, docs, collateral)",
                         "Produce accurate, complete, consistent docs aligned to the final approved structure",
                         "Maintain a defensible audit trail — what issued, when, to whom, with approvals"
-                      ]
+                      ],
+                      "bullets": true
                     },
                     {
+                      "emoji": "😣",
                       "title": "Frustrations / Pain Points",
                       "kind": "list",
                       "items": [
@@ -660,9 +698,11 @@
                         "Conditions tracked inconsistently; evidence not linked to conditions/approvals",
                         "Incomplete signer/entity info and manual re-keying across tools increase error risk",
                         "Interrupt-driven work with limited transparency on \"why this is urgent\""
-                      ]
+                      ],
+                      "bullets": true
                     },
                     {
+                      "emoji": "🚀",
                       "title": "Motivations",
                       "kind": "list",
                       "items": [
@@ -670,45 +710,49 @@
                         "Ship clean, audit-ready records and documents first time — zero defects reaching execution",
                         "Keep funding timelines predictable without compromising controls",
                         "Protect client experience by preventing \"re-sign\" moments and last-minute escalations"
-                      ]
+                      ],
+                      "bullets": true
                     },
                     {
+                      "emoji": "🏢",
                       "title": "Organization",
                       "kind": "text",
                       "text": "Reports into PB Loan Ops / Credit Operations. Typically downstream from decisioning and upstream from funding execution, partnering closely with the business."
                     },
                     {
+                      "emoji": "📋",
                       "title": "Common Scenarios & Daily Activities",
                       "kind": "list",
                       "items": [
                         {
-                          "label": "Triage & validate intake",
-                          "text": "Check completeness, routing, and priority of incoming work; claim tickets and request missing info/documents."
+                          "label": "Triage intake",
+                          "text": "Check completeness and priority; chase missing documents."
                         },
                         {
-                          "label": "Track & communicate status",
-                          "text": "Track case/deal status, update stakeholders, and support mailbox workflows (incl. FinCEN-related processes)."
+                          "label": "Track status",
+                          "text": "Update stakeholders and run mailbox workflows, including FinCEN."
                         },
                         {
-                          "label": "Build & validate proposals",
-                          "text": "Assemble proposal components aligned to approvals; confirm required artifacts are present."
+                          "label": "Build proposals",
+                          "text": "Assemble proposals that match approvals."
                         },
                         {
-                          "label": "Collateral / UCC checks & conditions",
-                          "text": "Perform checks, store evidence, and manage condition readiness for next steps."
+                          "label": "Collateral & UCC checks",
+                          "text": "Run checks, store evidence and get conditions ready."
                         },
                         {
                           "label": "Build & QC doc packages",
-                          "text": "Translate approved terms into packages; QC entity, signers, capacity, collateral descriptions, and legal language."
+                          "text": "Turn approved terms into packages; QC signers, collateral and legal language."
                         },
                         {
-                          "label": "Signature logistics & evidence",
-                          "text": "Coordinate and track documents through completion; validate executed docs are stored for controls/audit."
+                          "label": "Signatures & evidence",
+                          "text": "Track documents to signature and store executed copies for audit."
                         }
                       ],
                       "span": true
                     },
                     {
+                      "emoji": "🛠️",
                       "title": "Tools / Software",
                       "note": "today",
                       "kind": "pills",
@@ -728,6 +772,7 @@
                       ]
                     },
                     {
+                      "emoji": "👥",
                       "title": "Collaborators",
                       "kind": "pills",
                       "items": [

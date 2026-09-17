@@ -47,7 +47,10 @@ function SectionBody({ section: s }) {
       const n = s.items.length;
       const cols = s.columns || (s.wide ? (n <= 4 ? n : 3) : s.span ? 2 : 1);
       return (
-        <ul className="cs-pt-list md-body-small" style={{ "--cs-pt-cols": cols }}>
+        <ul
+          className={"cs-pt-list md-body-small" + (s.bullets ? " is-bulleted" : "")}
+          style={{ "--cs-pt-cols": cols }}
+        >
           {s.items.map((item, i) => (
             <ListItem item={item} inline={cols === 1} key={i} />
           ))}
@@ -86,7 +89,14 @@ function Box({ section: s, altStripe = false }) {
       }
     >
       <div className="cs-pt-box-head">
-        <h6 className="cs-pt-box-title md-label-large">{s.title}</h6>
+        <h6 className="cs-pt-box-title md-label-large">
+          {s.emoji && (
+            <span className="cs-pt-box-emoji" aria-hidden="true">
+              {s.emoji}
+            </span>
+          )}
+          <span className="cs-pt-box-title-text">{s.title}</span>
+        </h6>
         {s.note && <p className="cs-pt-note md-body-small">{s.note}</p>}
       </div>
       <div className="cs-pt-box-body">

@@ -296,29 +296,38 @@
   column-gap: 8px;
   padding: 9px 14px 7px;
   border-bottom: 1px solid var(--cs-pt-line);
-  isolation: isolate;
 }
 
 .cs-pt-box-title {
-  position: relative;
-  flex: 1 1 auto;
   margin: 0;
   font-weight: 700;
   color: var(--text);
 }
 
-/* The stripe runs from the title to the box edge, under the lower half of
-   the letters */
-.cs-pt-box-title::before {
-  content: "";
-  position: absolute;
-  left: -2px;
-  right: 0;
-  bottom: 4px;
-  height: 8px;
+.cs-pt-box-emoji {
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 14px;
+  line-height: 1;
+  vertical-align: -1px;
+}
+
+/* The stripe hugs the title text — not the emoji — under the lower half of
+   the letters. It's an inline background cloned per line, so a title that
+   wraps gets a stripe under each line rather than one under the block. */
+.cs-pt-box-title-text {
+  padding: 0 3px;
+  margin: 0 -3px;
   border-radius: 2px;
-  background: var(--hl);
-  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    var(--hl) 50%,
+    var(--hl) 86%,
+    transparent 86%
+  );
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 .cs-pt-note {
@@ -346,6 +355,23 @@
   padding: 0;
   list-style: none;
   color: var(--text-soft);
+}
+
+/* Goals, Frustrations and Motivations take bullets, in Primary */
+.cs-pt-list.is-bulleted li {
+  position: relative;
+  padding-left: 14px;
+}
+
+.cs-pt-list.is-bulleted li::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--accent-dark);
 }
 
 .cs-pt-item-label {
