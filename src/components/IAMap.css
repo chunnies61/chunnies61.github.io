@@ -1,7 +1,7 @@
 /* ===== Information architecture map =====
    A site-map tree on a Primary 40 sheet — the same blue as the case study
-   callouts. Levels are told apart by fill, not hue: L1 white, L2 Primary 90,
-   pages outlined. The current product carries the callout label's yellow.
+   callouts. Levels are told apart by fill and shape, not hue: L1 white
+   blocks, L2 Primary 90, pages white pills. The current product carries the callout label's yellow.
    Type comes from the .md-* role on each element; this file holds colour,
    spacing and layout only. */
 
@@ -89,7 +89,9 @@
 }
 
 .cs-ia-key.is-l3 {
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  height: 8px;
+  border-radius: 999px;
+  background: #ffffff;
 }
 
 /* Persona filter */
@@ -182,6 +184,20 @@
   background: var(--cs-ia-wire);
 }
 
+/* Strokes are centred on their coordinate: uprights shift left by half a
+   stroke, horizontals up by half, so lines meet node centres exactly */
+.cs-ia-col::before,
+.cs-ia-app::before,
+.cs-ia-app::after,
+.cs-ia-page::after {
+  margin-left: calc(var(--cs-ia-stroke) / -2);
+}
+
+.cs-ia-pages::before,
+.cs-ia-page::before {
+  margin-top: calc(var(--cs-ia-stroke) / -2);
+}
+
 /* Stem from the bus down to the head */
 .cs-ia-col::before {
   top: 0;
@@ -256,16 +272,20 @@
   font-weight: 700;
 }
 
+/* Pages are white pills — told apart from the white L1 heads by shape and
+   weight: fully rounded, regular type, 28px tall against 34px */
 .cs-ia-node.is-l3 {
   justify-content: flex-start;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  color: var(--cs-ia-on-bg);
+  border-radius: 999px;
+  padding: 0 12px;
+  background: #ffffff;
+  color: var(--text);
 }
 
 .cs-ia-node.is-empty {
-  border-style: dashed;
+  border: 1px dashed var(--gray-300);
   font-style: italic;
-  color: var(--cs-ia-on-bg-soft);
+  color: var(--text-soft);
 }
 
 /* L2 apps: stacked on a trunk that runs through their centres. Each row
