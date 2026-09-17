@@ -187,7 +187,7 @@ function Persona({ persona: p }) {
   );
 }
 
-export default function PersonaTabs({ personas, label }) {
+export default function PersonaTabs({ personas, label, title }) {
   const [active, setActive] = useState(0);
   const baseId = useId();
   const rootRef = useRef(null);
@@ -246,50 +246,58 @@ export default function PersonaTabs({ personas, label }) {
   }
 
   return (
-    <div className="cs-pt" ref={rootRef}>
-      <div className="cs-pt-bar" ref={barRef}>
-        <div
-          className="cs-pt-tabs"
-          role="tablist"
-          aria-label={label}
-          ref={stripRef}
-          onKeyDown={onKeyDown}
-        >
-          {personas.map((p, i) => (
-            <button
-              key={p.id}
-              ref={(el) => (tabRefs.current[i] = el)}
-              type="button"
-              role="tab"
-              id={`${baseId}-tab-${p.id}`}
-              aria-selected={i === active}
-              aria-controls={`${baseId}-panel-${p.id}`}
-              tabIndex={i === active ? 0 : -1}
-              className={"cs-pt-tab" + (i === active ? " is-active" : "")}
-              onClick={() => select(i)}
-            >
-              <span className="cs-pt-tab-avatar" aria-hidden="true">
-                {p.avatar}
-              </span>
-              <span className="cs-pt-tab-name md-label-large">{p.name}</span>
-            </button>
-          ))}
+    <>
+      {title && (
+        <h5 className="cs-pt-heading md-headline-small" id={`${baseId}-heading`}>
+          {title}
+        </h5>
+      )}
+      <div className="cs-pt" ref={rootRef}>
+        <div className="cs-pt-bar" ref={barRef}>
+          <div
+            className="cs-pt-tabs"
+            role="tablist"
+            aria-label={title ? undefined : label}
+            aria-labelledby={title ? `${baseId}-heading` : undefined}
+            ref={stripRef}
+            onKeyDown={onKeyDown}
+          >
+            {personas.map((p, i) => (
+              <button
+                key={p.id}
+                ref={(el) => (tabRefs.current[i] = el)}
+                type="button"
+                role="tab"
+                id={`${baseId}-tab-${p.id}`}
+                aria-selected={i === active}
+                aria-controls={`${baseId}-panel-${p.id}`}
+                tabIndex={i === active ? 0 : -1}
+                className={"cs-pt-tab" + (i === active ? " is-active" : "")}
+                onClick={() => select(i)}
+              >
+                <span className="cs-pt-tab-avatar" aria-hidden="true">
+                  {p.avatar}
+                </span>
+                <span className="cs-pt-tab-name md-label-large">{p.name}</span>
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {personas.map((p, i) => (
-        <div
-          key={p.id}
-          role="tabpanel"
-          id={`${baseId}-panel-${p.id}`}
-          aria-labelledby={`${baseId}-tab-${p.id}`}
-          className="cs-pt-panel"
-          hidden={i !== active}
-          tabIndex={0}
-        >
-          <Persona persona={p} />
-        </div>
-      ))}
-    </div>
+        {personas.map((p, i) => (
+          <div
+            key={p.id}
+            role="tabpanel"
+            id={`${baseId}-panel-${p.id}`}
+            aria-labelledby={`${baseId}-tab-${p.id}`}
+            className="cs-pt-panel"
+            hidden={i !== active}
+            tabIndex={0}
+          >
+            <Persona persona={p} />
+          </div>
+        ))}
+      </div>
+    </>
   );
 }

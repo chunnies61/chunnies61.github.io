@@ -524,7 +524,9 @@ function Block({ block }) {
       return <IAMap block={block} />;
 
     case "persona-tabs":
-      return <PersonaTabs personas={block.personas} label={block.label} />;
+      return (
+        <PersonaTabs personas={block.personas} label={block.label} title={block.title} />
+      );
 
     case "step":
       return (

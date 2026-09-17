@@ -24,6 +24,13 @@
   --cs-pt-hl-b: #ffd8e6;
 }
 
+/* Section heading above the frame. The step body already spaces blocks
+   16px apart; the extra top margin separates it from the block before. */
+.cs-pt-heading {
+  margin: 16px 0 0;
+  color: var(--text);
+}
+
 /* --- Tab bar -----------------------------------------------------------
    A persona chooser: each tab carries its persona's portrait emoji and
    name, and the selected one lifts onto a white chip in Primary. Sticks under the 72px site nav so a reader deep in a long

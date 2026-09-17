@@ -278,6 +278,7 @@
             },
             {
               "type": "persona-tabs",
+              "title": "Lending personas",
               "label": "Lending personas — one tab per role",
               "personas": [
                 {
