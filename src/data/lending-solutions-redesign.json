@@ -9,6 +9,7 @@
     "Lending Workspace"
   ],
   "heroImage": "/images/lending-thumb.png",
+  "protected": true,
   "meta": [
     {
       "label": "Role",
