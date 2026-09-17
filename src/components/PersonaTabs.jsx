@@ -30,7 +30,7 @@ function Pills({ items }) {
   return (
     <ul className="cs-pt-pills">
       {items.map((item) => (
-        <li className="cs-pt-pill md-label-medium" key={item}>
+        <li className="cs-pt-pill md-label-small" key={item}>
           {item}
         </li>
       ))}
@@ -41,9 +41,12 @@ function Pills({ items }) {
 function SectionBody({ section: s }) {
   switch (s.kind) {
     case "list": {
-      const cols = s.columns || (s.wide ? 2 : 1);
+      // Wide lists run up to four across (5 and 6 items take three) so the
+      // long-form rows stay short.
+      const n = s.items.length;
+      const cols = s.columns || (s.wide ? (n <= 4 ? n : 3) : 1);
       return (
-        <ul className="cs-pt-list md-body-medium" style={{ "--cs-pt-cols": cols }}>
+        <ul className="cs-pt-list md-body-small" style={{ "--cs-pt-cols": cols }}>
           {s.items.map((item, i) => (
             <ListItem item={item} inline={cols === 1} key={i} />
           ))}
@@ -59,7 +62,7 @@ function SectionBody({ section: s }) {
         <div className="cs-pt-groups">
           {s.items.map((g) => (
             <div className="cs-pt-group" key={g.label}>
-              <p className="cs-pt-group-label md-label-medium">{g.label}</p>
+              <p className="cs-pt-group-label md-label-small">{g.label}</p>
               <Pills items={g.items} />
             </div>
           ))}
@@ -69,11 +72,11 @@ function SectionBody({ section: s }) {
     case "table":
       return (
         <div className="cs-pt-table-wrap">
-          <table className="cs-pt-table md-body-medium">
+          <table className="cs-pt-table md-body-small">
             <thead>
               <tr>
                 {s.columns.map((c) => (
-                  <th scope="col" className="md-label-medium" key={c}>
+                  <th scope="col" className="md-label-small" key={c}>
                     {c}
                   </th>
                 ))}
@@ -105,10 +108,10 @@ function SectionBody({ section: s }) {
         <ol className="cs-pt-journey">
           {s.items.map((step, i) => (
             <li className="cs-pt-journey-step" key={step.title}>
-              <span className="cs-pt-journey-num md-label-medium" aria-hidden="true">
+              <span className="cs-pt-journey-num md-label-small" aria-hidden="true">
                 {i + 1}
               </span>
-              <strong className="cs-pt-journey-title md-title-small">{step.title}</strong>
+              <strong className="cs-pt-journey-title md-label-large">{step.title}</strong>
               <span className="cs-pt-journey-text md-body-small">{step.text}</span>
               <span className="cs-pt-mood md-label-small">{step.mood}</span>
             </li>
@@ -118,7 +121,7 @@ function SectionBody({ section: s }) {
 
     case "mapping":
       return (
-        <ul className="cs-pt-map md-body-medium">
+        <ul className="cs-pt-map md-body-small">
           {s.items.map((row) => (
             <li className="cs-pt-map-row" key={row.problem}>
               <span className="cs-pt-map-problem">{row.problem}</span>
@@ -140,11 +143,11 @@ function Box({ section: s }) {
   return (
     <div className={"cs-pt-box" + (s.wide ? " is-wide" : "")}>
       <div className="cs-pt-box-head">
-        <h6 className="cs-pt-box-title md-title-small">{s.title}</h6>
+        <h6 className="cs-pt-box-title md-label-large">{s.title}</h6>
         {s.note && <p className="cs-pt-note md-body-small">{s.note}</p>}
       </div>
       <div className="cs-pt-box-body">
-        {s.text && <p className="cs-pt-text md-body-medium">{s.text}</p>}
+        {s.text && <p className="cs-pt-text md-body-small">{s.text}</p>}
         <SectionBody section={s} />
       </div>
     </div>
@@ -163,17 +166,17 @@ function Persona({ persona: p }) {
         </div>
 
         <div className="cs-pt-id">
-          <h5 className="cs-pt-name md-headline-small">{p.name}</h5>
+          <h5 className="cs-pt-name md-title-large">{p.name}</h5>
           <p className="cs-pt-role md-body-small">{p.role}</p>
         </div>
 
-        <blockquote className="cs-pt-quote md-body-medium">“{p.quote}”</blockquote>
+        <blockquote className="cs-pt-quote md-body-small">“{p.quote}”</blockquote>
         <p className="cs-pt-summary md-body-small">{p.summary}</p>
 
         <dl className="cs-pt-attrs">
           {p.stats.map((st) => (
             <div className="cs-pt-attr" key={st.label}>
-              <dt className="md-label-medium">{st.label}</dt>
+              <dt className="md-label-small">{st.label}</dt>
               <dd className="md-body-small">
                 <span className="cs-pt-attr-value">{st.value}</span>
                 {st.note && <span className="cs-pt-attr-note">{st.note}</span>}
@@ -183,7 +186,7 @@ function Persona({ persona: p }) {
 
           {p.roleDetail && (
             <div className="cs-pt-attr">
-              <dt className="md-label-medium">Role</dt>
+              <dt className="md-label-small">Role</dt>
               <dd className="md-body-small">
                 {p.roleDetail.text && <p className="cs-pt-attr-text">{p.roleDetail.text}</p>}
                 <SectionBody section={{ ...p.roleDetail, columns: 1 }} />
@@ -192,11 +195,11 @@ function Persona({ persona: p }) {
           )}
 
           <div className="cs-pt-attr">
-            <dt className="md-label-medium">Characteristics</dt>
+            <dt className="md-label-small">Characteristics</dt>
             <dd>
               <ul className="cs-pt-traits">
                 {p.traits.map((t) => (
-                  <li className="cs-pt-trait md-label-medium" key={t}>
+                  <li className="cs-pt-trait md-label-small" key={t}>
                     {t}
                   </li>
                 ))}
