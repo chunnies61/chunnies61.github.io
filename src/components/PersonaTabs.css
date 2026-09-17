@@ -7,7 +7,7 @@
   flex-direction: column;
   border: 1px solid var(--cs-pt-line);
   border-radius: 20px;
-  background: var(--bg);
+  background: var(--cs-pt-surface);
   /* clip, not hidden: it rounds the corners without creating a scroll
      container, so the tab bar can still stick under the nav */
   overflow: clip;
@@ -15,6 +15,10 @@
   /* One-pager ink: outlined white boxes on a firmer line than the page
      hairline, so the sheet reads as a document. */
   --cs-pt-line: var(--gray-200);
+  /* The sheet sits on Gray 50 so its white boxes read as cards. Solid, not
+     the translucent --surface-tint: the sticky tab bar needs an opaque fill
+     to hide content scrolling beneath it. */
+  --cs-pt-surface: var(--gray-50);
   /* Title highlighter stripes — Primary 90 and Pink 90 */
   --cs-pt-hl-a: #dae2ff;
   --cs-pt-hl-b: #ffd8e6;
@@ -30,7 +34,7 @@
   top: 72px;
   z-index: 10;
   padding: 10px;
-  background: var(--bg);
+  background: var(--cs-pt-surface);
   border-bottom: 1px solid var(--cs-pt-line);
 }
 
@@ -42,7 +46,7 @@
   gap: 4px;
   padding: 4px;
   border-radius: 12px;
-  background: var(--gray-50);
+  background: rgba(51, 57, 69, 0.07);
 }
 
 .cs-pt-tab {
@@ -167,7 +171,7 @@
   aspect-ratio: 1;
   border: 1px solid var(--cs-pt-line);
   border-radius: var(--radius-card);
-  background: var(--surface-tint);
+  background: var(--bg);
   font-size: 40px;
   line-height: 1;
 }
