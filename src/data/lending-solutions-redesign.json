@@ -316,10 +316,6 @@
                   ],
                   "stats": [
                     {
-                      "label": "Client Advisors (US PB)",
-                      "value": "~500"
-                    },
-                    {
                       "label": "Clients served",
                       "value": "~40 – 450",
                       "note": "families, by region"
