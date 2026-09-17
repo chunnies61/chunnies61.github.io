@@ -153,7 +153,6 @@
                   "avatar": "💼",
                   "role": "Structures and executes lending decisions across the client portfolio",
                   "quote": "I turn borrowing needs into risk-sound deals—then drive them to close.",
-                  "summary": "Balances portfolio upkeep with origination and execution across 5+ internal teams.",
                   "traits": [
                     "Analytical",
                     "Risk-conscious",
@@ -239,65 +238,6 @@
                         }
                       ],
                       "span": true
-                    },
-                    {
-                      "emoji": "🛠️",
-                      "title": "Tools / Software",
-                      "kind": "groups",
-                      "items": [
-                        {
-                          "label": "Primary platform",
-                          "items": [
-                            "Lending Workspace"
-                          ]
-                        },
-                        {
-                          "label": "Risk & portfolio",
-                          "items": [
-                            "Scorecards",
-                            "Collateral Insights",
-                            "LRA"
-                          ]
-                        },
-                        {
-                          "label": "Capital & credit",
-                          "items": [
-                            "Vessa",
-                            "Treasury apps"
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "emoji": "👥",
-                      "title": "Collaborators",
-                      "kind": "groups",
-                      "items": [
-                        {
-                          "label": "Front office",
-                          "items": [
-                            "Banker",
-                            "Investor",
-                            "Client Services"
-                          ]
-                        },
-                        {
-                          "label": "Risk & credit",
-                          "items": [
-                            "Credit Risk",
-                            "Underwriting"
-                          ]
-                        },
-                        {
-                          "label": "Execution",
-                          "items": [
-                            "Legal",
-                            "Middle Office",
-                            "Collateral",
-                            "Covenants"
-                          ]
-                        }
-                      ]
                     }
                   ]
                 },
@@ -307,7 +247,6 @@
                   "avatar": "🤝",
                   "role": "Manages HNW client relationships across the full balance sheet",
                   "quote": "I take care of all my clients' financial needs—and earn their trust.",
-                  "summary": "Client-loyal advisor covering banking, credit, investments and planning.",
                   "traits": [
                     "Persistent",
                     "Client-loyal",
@@ -417,31 +356,6 @@
                         }
                       ],
                       "span": true
-                    },
-                    {
-                      "emoji": "🛠️",
-                      "title": "Tools / Software",
-                      "kind": "pills",
-                      "items": [
-                        "Connect / Workstation",
-                        "Microsoft Office",
-                        "FSD",
-                        "Eikon",
-                        "ScoreCard"
-                      ]
-                    },
-                    {
-                      "emoji": "👥",
-                      "title": "Collaborators",
-                      "kind": "pills",
-                      "items": [
-                        "Investment Professionals",
-                        "Client Services",
-                        "Credit Team",
-                        "Wealth & Trust Advisors",
-                        "Mortgage Advisors",
-                        "Analysts"
-                      ]
                     }
                   ]
                 },
@@ -451,7 +365,6 @@
                   "avatar": "⚖️",
                   "role": "Approves credit decisions within policy and risk appetite",
                   "quote": "My job is to enable good business—consistently, defensibly, within policy.",
-                  "summary": "Independent approver making defensible calls without becoming the bottleneck.",
                   "traits": [
                     "Independent",
                     "Detail-driven",
@@ -534,29 +447,6 @@
                         }
                       ],
                       "span": true
-                    },
-                    {
-                      "emoji": "🛠️",
-                      "title": "Tools / Software",
-                      "kind": "pills",
-                      "items": [
-                        "Email & calendar",
-                        "Credit / risk platforms",
-                        "Document repositories",
-                        "Excel / Word memos"
-                      ]
-                    },
-                    {
-                      "emoji": "👥",
-                      "title": "Collaborators",
-                      "kind": "pills",
-                      "items": [
-                        "Lender",
-                        "Banker / RM",
-                        "CRS & Prelim Ops",
-                        "Policy",
-                        "Legal"
-                      ]
                     }
                   ]
                 },
@@ -566,7 +456,6 @@
                   "avatar": "🗂️",
                   "role": "CRS · Prelim · Doc Prep & QC — intake to close, audit-ready",
                   "quote": "I keep every record clean and audit-ready—so deals close right the first time.",
-                  "summary": "The operational backbone making sure what's executed matches what was approved.",
                   "traits": [
                     "Process-driven",
                     "Detail-oriented",
@@ -649,35 +538,6 @@
                         }
                       ],
                       "span": true
-                    },
-                    {
-                      "emoji": "🛠️",
-                      "title": "Tools / Software",
-                      "kind": "pills",
-                      "items": [
-                        "Prelim & CRE Dashboard",
-                        "SharePoint",
-                        "Workhub",
-                        "Dealworks",
-                        "ICRD",
-                        "Wolters Kluwer",
-                        "Collateral 360",
-                        "Outlook & Teams",
-                        "Excel / Word"
-                      ]
-                    },
-                    {
-                      "emoji": "👥",
-                      "title": "Collaborators",
-                      "kind": "pills",
-                      "items": [
-                        "Lenders",
-                        "Credit Officers",
-                        "Banker / RM",
-                        "Legal",
-                        "Client Service",
-                        "Second-line Risk"
-                      ]
                     }
                   ]
                 }

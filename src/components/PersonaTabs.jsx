@@ -61,18 +61,6 @@ function SectionBody({ section: s }) {
     case "pills":
       return <Pills items={s.items} />;
 
-    case "groups":
-      return (
-        <div className="cs-pt-groups">
-          {s.items.map((g) => (
-            <div className="cs-pt-group" key={g.label}>
-              <p className="cs-pt-group-label md-label-small">{g.label}</p>
-              <Pills items={g.items} />
-            </div>
-          ))}
-        </div>
-      );
-
     default:
       return null;
   }
@@ -145,7 +133,6 @@ function Persona({ persona: p }) {
         </div>
 
         <blockquote className="cs-pt-quote md-body-small">“{p.quote}”</blockquote>
-        <p className="cs-pt-summary md-body-small">{p.summary}</p>
 
         <dl className="cs-pt-attrs">
           {p.stats.map((st) => (
