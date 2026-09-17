@@ -5,8 +5,11 @@ import "./PersonaTabs.css";
    arrow keys / Home / End move between tabs and select as they go, and only
    the selected tab sits in the Tab order.
 
-   Every persona uses the same section order, so switching tabs compares like
-   with like — Goals is always in the same place. */
+   Each persona is laid out as a one-pager: a profile column (portrait, name,
+   quote, key attributes) beside a grid of titled boxes, with the long-form
+   detail — scenarios, journeys, frameworks — running full width beneath.
+   Every persona uses the same box order, so switching tabs compares like
+   with like. */
 
 function ListItem({ item, inline }) {
   if (typeof item === "string") return <li>{item}</li>;
@@ -133,63 +136,90 @@ function SectionBody({ section: s }) {
   }
 }
 
-function Section({ section: s }) {
+function Box({ section: s }) {
   return (
-    <div className={"cs-pt-section" + (s.wide ? " is-wide" : "")}>
-      <div className="cs-pt-section-head">
-        <h6 className="cs-pt-section-title md-title-small">
-          <span className="cs-pt-emoji" aria-hidden="true">
-            {s.emoji}
-          </span>
-          {s.title}
-        </h6>
+    <div className={"cs-pt-box" + (s.wide ? " is-wide" : "")}>
+      <div className="cs-pt-box-head">
+        <h6 className="cs-pt-box-title md-title-small">{s.title}</h6>
         {s.note && <p className="cs-pt-note md-body-small">{s.note}</p>}
       </div>
-      {s.text && <p className="cs-pt-text md-body-medium">{s.text}</p>}
-      <SectionBody section={s} />
+      <div className="cs-pt-box-body">
+        {s.text && <p className="cs-pt-text md-body-medium">{s.text}</p>}
+        <SectionBody section={s} />
+      </div>
     </div>
   );
 }
 
 function Persona({ persona: p }) {
+  const grid = p.sections.filter((s) => !s.wide);
+  const detail = p.sections.filter((s) => s.wide);
+
   return (
-    <>
-      <div className={"cs-pt-head" + (p.stats.length ? " has-stats" : "")}>
-        <div className="cs-pt-intro">
-          <h5 className="cs-pt-name md-headline-small">{p.name}</h5>
-          <p className="cs-pt-role md-body-medium">{p.role}</p>
-          <blockquote className="cs-pt-quote md-title-medium">“{p.quote}”</blockquote>
-          <p className="cs-pt-summary md-body-medium">{p.summary}</p>
-          <ul className="cs-pt-traits" aria-label="Characteristics">
-            {p.traits.map((t) => (
-              <li className="cs-pt-trait md-label-medium" key={t}>
-                {t}
-              </li>
-            ))}
-          </ul>
+    <div className="cs-pt-sheet">
+      <div className="cs-pt-profile">
+        <div className="cs-pt-portrait" aria-hidden="true">
+          {p.avatar}
         </div>
 
-        {p.stats.length > 0 && (
-          <dl className="cs-pt-stats">
-            {p.stats.map((st) => (
-              <div className="cs-pt-stat" key={st.label}>
-                <dt className="md-label-medium">{st.label}</dt>
-                <dd>
-                  <span className="cs-pt-stat-value">{st.value}</span>
-                  {st.note && <span className="cs-pt-stat-note md-body-small">{st.note}</span>}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        )}
+        <div className="cs-pt-id">
+          <h5 className="cs-pt-name md-headline-small">{p.name}</h5>
+          <p className="cs-pt-role md-body-small">{p.role}</p>
+        </div>
+
+        <blockquote className="cs-pt-quote md-body-medium">“{p.quote}”</blockquote>
+        <p className="cs-pt-summary md-body-small">{p.summary}</p>
+
+        <dl className="cs-pt-attrs">
+          {p.stats.map((st) => (
+            <div className="cs-pt-attr" key={st.label}>
+              <dt className="md-label-medium">{st.label}</dt>
+              <dd className="md-body-small">
+                <span className="cs-pt-attr-value">{st.value}</span>
+                {st.note && <span className="cs-pt-attr-note">{st.note}</span>}
+              </dd>
+            </div>
+          ))}
+
+          {p.roleDetail && (
+            <div className="cs-pt-attr">
+              <dt className="md-label-medium">Role</dt>
+              <dd className="md-body-small">
+                {p.roleDetail.text && <p className="cs-pt-attr-text">{p.roleDetail.text}</p>}
+                <SectionBody section={{ ...p.roleDetail, columns: 1 }} />
+              </dd>
+            </div>
+          )}
+
+          <div className="cs-pt-attr">
+            <dt className="md-label-medium">Characteristics</dt>
+            <dd>
+              <ul className="cs-pt-traits">
+                {p.traits.map((t) => (
+                  <li className="cs-pt-trait md-label-medium" key={t}>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </dd>
+          </div>
+        </dl>
       </div>
 
-      <div className="cs-pt-sections">
-        {p.sections.map((s) => (
-          <Section section={s} key={s.title} />
+      <div className="cs-pt-grid">
+        {grid.map((s) => (
+          <Box section={s} key={s.title} />
         ))}
       </div>
-    </>
+
+      {detail.length > 0 && (
+        <div className="cs-pt-detail">
+          {detail.map((s) => (
+            <Box section={s} key={s.title} />
+          ))}
+        </div>
+      )}
+    </div>
   );
 }
 
