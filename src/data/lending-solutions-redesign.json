@@ -823,25 +823,8 @@
               "label": "Three days at the Ohio HQ"
             },
             {
-              "type": "cards",
-              "columns": 3,
-              "items": [
-                {
-                  "emoji": "🔭",
-                  "title": "Showed concrete futures",
-                  "desc": "The agenda named my prototypes as reference points."
-                },
-                {
-                  "emoji": "🧭",
-                  "title": "Anchored in personas",
-                  "desc": "Every feature framed by persona and journey, not system boundary."
-                },
-                {
-                  "emoji": "🧱",
-                  "title": "Shaped the Workspace model",
-                  "desc": "Persona views and work queues — one experience, not ten apps."
-                }
-              ]
+              "type": "text",
+              "value": "My prototypes gave the room concrete futures to react to — the agenda named them as reference points. I kept every feature framed by persona and journey rather than system boundary, and that framing shaped the Workspace model we left with: persona views and work queues, one experience instead of ten apps."
             },
             {
               "type": "text",
