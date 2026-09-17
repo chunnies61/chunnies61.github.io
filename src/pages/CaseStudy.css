@@ -1786,3 +1786,27 @@ a.cs-index-item.is-active:hover {
     flex-direction: column;
   }
 }
+
+/* Password gate — a standalone page on the primary colour */
+.cs-gate {
+  min-height: calc(100vh - 88px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  background: var(--accent);
+}
+
+.cs-gate .cs-protected {
+  width: 100%;
+  margin: 0;
+  border: none;
+  box-shadow: 0 24px 60px rgba(20, 40, 110, 0.25);
+}
+
+.cs-gate .cs-protected h1 {
+  margin-top: 16px;
+  font-size: 24px;
+  font-weight: 700;
+  text-wrap: balance;
+}

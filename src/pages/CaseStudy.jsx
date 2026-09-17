@@ -664,6 +664,43 @@ export default function CaseStudy() {
     return () => observer.disconnect();
   }, [slug]);
 
+  if (isLocked) {
+    return (
+      <main className="cs-gate">
+        <div className="cs-protected">
+          <span className="cs-protected-lock">🔒</span>
+          <h1>{study.title}</h1>
+          <p>
+            This project contains confidential client work. Enter the password to view
+            it, or reach out and I'm happy to walk through it directly.
+          </p>
+          <form className="cs-password-form" onSubmit={handleUnlockSubmit}>
+            <input
+              type="password"
+              inputMode="numeric"
+              className="cs-password-input"
+              placeholder="Password"
+              value={passwordInput}
+              onChange={(e) => {
+                setPasswordInput(e.target.value);
+                setPasswordError(false);
+              }}
+              aria-label="Password"
+              autoFocus
+            />
+            <button type="submit" className="btn btn-primary">
+              Unlock
+            </button>
+          </form>
+          {passwordError && <p className="cs-password-error">Incorrect password — try again.</p>}
+          <a className="cs-protected-link" href="mailto:yichun.ux@gmail.com">
+            Or request access by email
+          </a>
+        </div>
+      </main>
+    );
+  }
+
   return (
     <article className={"case-study case-study--" + study.slug}>
       <header className="cs-header">
@@ -683,39 +720,6 @@ export default function CaseStudy() {
         )}
       </header>
 
-      {isLocked ? (
-        <div className="wrap">
-          <div className="cs-protected">
-            <span className="cs-protected-lock">🔒</span>
-            <h2>This case study is protected</h2>
-            <p>
-              This project contains confidential client work. Enter the password to view
-              it, or reach out and I'm happy to walk through it directly.
-            </p>
-            <form className="cs-password-form" onSubmit={handleUnlockSubmit}>
-              <input
-                type="password"
-                inputMode="numeric"
-                className="cs-password-input"
-                placeholder="Password"
-                value={passwordInput}
-                onChange={(e) => {
-                  setPasswordInput(e.target.value);
-                  setPasswordError(false);
-                }}
-                aria-label="Password"
-              />
-              <button type="submit" className="btn btn-primary">
-                Unlock
-              </button>
-            </form>
-            {passwordError && <p className="cs-password-error">Incorrect password — try again.</p>}
-            <a className="cs-protected-link" href="mailto:yichun.ux@gmail.com">
-              Or request access by email
-            </a>
-          </div>
-        </div>
-      ) : (
         <div className="wrap cs-body">
           <nav className="cs-index" aria-label="On this page">
             <div className="cs-index-inner">
@@ -866,7 +870,6 @@ export default function CaseStudy() {
           )}
           </div>
         </div>
-      )}
 
       {(prevCaseStudy || nextCaseStudy) && (
         <nav className="wrap cs-pager" aria-label="Case study pagination">
