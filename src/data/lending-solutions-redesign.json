@@ -468,15 +468,6 @@
                       "label": "Active queue",
                       "value": "~20–60",
                       "note": "new, renewals, escalations"
-                    },
-                    {
-                      "label": "Time split",
-                      "value": "Review · Alignment · Rationale"
-                    },
-                    {
-                      "label": "High-friction",
-                      "value": "Rushed",
-                      "note": "missing data, unclear versions"
                     }
                   ],
                   "sections": [
@@ -589,25 +580,6 @@
                     "Calm under pressure"
                   ],
                   "stats": [],
-                  "roleDetail": {
-                    "title": "Role",
-                    "kind": "list",
-                    "text": "Three functions:",
-                    "items": [
-                      {
-                        "label": "CRS",
-                        "text": "intake to completion, accurately and compliantly"
-                      },
-                      {
-                        "label": "Prelim Team",
-                        "text": "closing and funding readiness"
-                      },
-                      {
-                        "label": "Doc Prep & QC",
-                        "text": "clean, audit-proof documentation"
-                      }
-                    ]
-                  },
                   "sections": [
                     {
                       "emoji": "🎯",
