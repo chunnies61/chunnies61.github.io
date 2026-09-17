@@ -33,38 +33,39 @@
   color: var(--cs-ia-on-bg);
 }
 
-/* --- Header -------------------------------------------------------------- */
+/* --- Heading group, above the sheet --------------------------------------
+   Same pattern as the personas heading: extra space above to separate it
+   from the block before, then tight to its own title and intro. The
+   eyebrow is a div so the step's paragraph style doesn't reach it. */
+.cs-ia-eyebrow {
+  margin-top: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--text-soft);
+}
+
+/* index.css resets h1–h4 only */
+.cs-ia-heading {
+  margin: 16px 0 0;
+  color: var(--text);
+}
+
+.cs-ia-eyebrow + .cs-ia-heading {
+  margin-top: -12px;
+}
+
+.cs-ia-heading + .cs-ia-intro {
+  margin-top: -8px;
+}
+
+/* --- Sheet header: legend on the left, persona filter on the right ------- */
 .cs-ia-head {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 16px 32px;
-}
-
-.cs-ia-intro {
-  flex: 1 1 360px;
-  min-width: 0;
-}
-
-.cs-ia-eyebrow {
-  margin: 0 0 6px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-weight: 700;
-  color: var(--cs-ia-on-bg-soft);
-}
-
-/* index.css resets h1–h4 only */
-.cs-ia-title {
-  margin: 0;
-  color: var(--cs-ia-on-bg);
-}
-
-.cs-ia-subtitle {
-  max-width: 560px;
-  margin-top: 6px;
-  color: var(--cs-ia-on-bg-soft);
+  gap: 12px 32px;
 }
 
 /* Persona filter — plain text tabs, the active one underlined */
@@ -141,11 +142,13 @@
 
 /* --- Legend -------------------------------------------------------------- */
 .cs-ia-legend {
+  flex: 1 1 320px;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 6px 20px;
   margin: 0;
-  padding: 0;
+  padding: 4px 0 0;
   list-style: none;
   color: var(--cs-ia-on-bg-soft);
 }
