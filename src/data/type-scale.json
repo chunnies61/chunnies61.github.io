@@ -55,8 +55,8 @@
         {
           "role": "Headline Small",
           "class": "md-headline-small",
-          "size": 22,
-          "lineHeight": 28.6,
+          "size": 20,
+          "lineHeight": 26,
           "letterSpacing": 0
         }
       ]

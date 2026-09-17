@@ -207,8 +207,8 @@ button {
 }
 .md-headline-small {
   font-family: var(--font-display);
-  font-size: 22px;
-  line-height: 28.6px; /* 130% */
+  font-size: 20px;
+  line-height: 26px; /* 130% */
   letter-spacing: 0;
   font-weight: 700;
 }
