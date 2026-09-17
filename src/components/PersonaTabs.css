@@ -25,16 +25,15 @@
 }
 
 /* --- Tab bar -----------------------------------------------------------
-   A segmented persona chooser: each tab carries its persona's portrait
-   emoji and name on a tinted track, and the selected one lifts onto white
-   in Primary. Sticks under the 72px site nav so a reader deep in a long
+   A persona chooser: each tab carries its persona's portrait emoji and
+   name, and the selected one lifts onto a white chip in Primary. Sticks under the 72px site nav so a reader deep in a long
    sheet can still switch persona. */
 .cs-pt-bar {
   position: sticky;
   top: 72px;
   z-index: 10;
   padding: 10px;
-  background: var(--bg);
+  background: var(--cs-pt-surface);
   border-bottom: 1px solid var(--cs-pt-line);
 }
 
@@ -44,9 +43,6 @@
   position: relative;
   display: flex;
   gap: 4px;
-  padding: 4px;
-  border-radius: 12px;
-  background: rgba(51, 57, 69, 0.07);
 }
 
 .cs-pt-tab {
