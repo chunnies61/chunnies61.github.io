@@ -236,20 +236,7 @@
   display: block;
 }
 
-.cs-pt-attr-text {
-  margin-bottom: 6px;
-}
-
-.cs-pt-attr .cs-pt-list {
-  gap: 6px;
-}
-
-.cs-pt-attr .cs-pt-pills {
-  gap: 4px;
-}
-
-.cs-pt-traits,
-.cs-pt-pills {
+.cs-pt-traits {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
@@ -383,13 +370,6 @@
 .cs-pt-item-label.is-block {
   display: block;
   margin-bottom: 2px;
-}
-
-.cs-pt-pill {
-  padding: 2px 8px;
-  border-radius: 999px;
-  background: var(--gray-50);
-  color: var(--text);
 }
 
 /* --- Tablet: a narrower profile column keeps the two-up grid readable --- */

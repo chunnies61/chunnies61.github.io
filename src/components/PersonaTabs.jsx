@@ -27,18 +27,6 @@ function ListItem({ item, inline }) {
   );
 }
 
-function Pills({ items }) {
-  return (
-    <ul className="cs-pt-pills">
-      {items.map((item) => (
-        <li className="cs-pt-pill md-label-small" key={item}>
-          {item}
-        </li>
-      ))}
-    </ul>
-  );
-}
-
 function SectionBody({ section: s }) {
   switch (s.kind) {
     case "list": {
@@ -57,9 +45,6 @@ function SectionBody({ section: s }) {
         </ul>
       );
     }
-
-    case "pills":
-      return <Pills items={s.items} />;
 
     default:
       return null;
@@ -144,16 +129,6 @@ function Persona({ persona: p }) {
               </dd>
             </div>
           ))}
-
-          {p.roleDetail && (
-            <div className="cs-pt-attr">
-              <dt className="md-label-small">Role</dt>
-              <dd className="md-body-small">
-                {p.roleDetail.text && <p className="cs-pt-attr-text">{p.roleDetail.text}</p>}
-                <SectionBody section={{ ...p.roleDetail, columns: 1 }} />
-              </dd>
-            </div>
-          )}
 
           <div className="cs-pt-attr">
             <dt className="md-label-small">Characteristics</dt>

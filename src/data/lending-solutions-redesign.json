@@ -395,21 +395,6 @@
                       "note": "families, by region"
                     }
                   ],
-                  "roleDetail": {
-                    "title": "Role",
-                    "kind": "pills",
-                    "text": "Covers every part of a family's balance sheet:",
-                    "items": [
-                      "Banking",
-                      "Credit",
-                      "Investments",
-                      "Mortgage",
-                      "Estates & Trust",
-                      "Retirement",
-                      "Private Equity",
-                      "Education"
-                    ]
-                  },
                   "sections": [
                     {
                       "emoji": "🎯",
