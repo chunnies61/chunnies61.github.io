@@ -4,6 +4,7 @@ import { getCaseStudy, caseStudies } from "../data/caseStudies";
 import site from "../data/site.json";
 import ContactCta from "../components/ContactCta";
 import PersonaTabs from "../components/PersonaTabs";
+import IAMap from "../components/IAMap";
 import "./CaseStudy.css";
 
 const UNLOCK_PASSWORD = "0620";
@@ -518,6 +519,9 @@ function Block({ block }) {
           playsInline
         />
       );
+
+    case "ia-map":
+      return <IAMap block={block} />;
 
     case "persona-tabs":
       return <PersonaTabs personas={block.personas} label={block.label} />;

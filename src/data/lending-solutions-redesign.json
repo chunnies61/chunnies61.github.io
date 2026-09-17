@@ -144,6 +144,117 @@
               "label": "The Lending Workspace information architecture"
             },
             {
+              "type": "ia-map",
+              "title": "Lending Workspace",
+              "subtitle": "A top-to-bottom map of the navigation hierarchy — L1 products, L2 apps, sub-category tabs, and page-level controls.",
+              "personaFilter": {
+                "options": [
+                  "All",
+                  "Banker",
+                  "Lender",
+                  "Risk",
+                  "Ops"
+                ],
+                "note": "Persona-based views are a work in progress and may not be accurate yet."
+              },
+              "products": [
+                {
+                  "name": "Lending Workspace",
+                  "current": true
+                },
+                {
+                  "name": "CRM 360°"
+                },
+                {
+                  "name": "Catalog"
+                },
+                {
+                  "name": "Connect AI"
+                }
+              ],
+              "apps": [
+                {
+                  "name": "Overview",
+                  "pages": [
+                    "Single dashboard"
+                  ]
+                },
+                {
+                  "name": "Deal Journey",
+                  "pages": [
+                    "Deal Journey",
+                    "Facility Enrichment"
+                  ]
+                },
+                {
+                  "name": "Portfolio Health",
+                  "pages": [
+                    "Collateral Zone",
+                    "Doc Hub",
+                    "Risk Watch",
+                    "Annual Reviews",
+                    "Covenants",
+                    "Delinquency",
+                    "Informational Items"
+                  ]
+                },
+                {
+                  "name": "Insights",
+                  "pages": [
+                    "Lending Analytics",
+                    "Collateral Insights",
+                    "IPO Lending"
+                  ]
+                },
+                {
+                  "name": "Doc QC",
+                  "pages": [
+                    "Outside Counsel QC Viewer"
+                  ]
+                },
+                {
+                  "name": "Collateral Tools",
+                  "pages": [
+                    "Dashboards",
+                    "IM Manager",
+                    "LV Tool",
+                    "Uploads & Reports",
+                    "Maintenance"
+                  ]
+                },
+                {
+                  "name": "Margin Call",
+                  "pages": [
+                    "Single view"
+                  ]
+                },
+                {
+                  "name": "Book Simulation",
+                  "pages": [
+                    "Home",
+                    "Client View",
+                    "Position View",
+                    "Summary View",
+                    "Collateral Studio"
+                  ]
+                },
+                {
+                  "name": "ILM",
+                  "pages": []
+                },
+                {
+                  "name": "Approvals",
+                  "pages": [
+                    "Pledge Liquidity"
+                  ]
+                }
+              ],
+              "defaultApp": "Portfolio Health",
+              "hint": "Select an app above to view its pages and page-level details.",
+              "footer": "Lending Workspace · Information Architecture · current-state map · as of 09/01/2026",
+              "label": "Lending Workspace information architecture"
+            },
+            {
               "type": "persona-tabs",
               "label": "Lending personas — one tab per role",
               "personas": [

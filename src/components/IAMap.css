@@ -1,0 +1,380 @@
+/* ===== Information architecture map =====
+   Same sheet language as the persona tabs: framed, a light gray surface,
+   white nodes, Primary for the active path. Type comes from the .md-* role
+   on each element; this file holds colour, spacing and layout only. */
+
+.cs-ia {
+  --cs-ia-line: var(--gray-200);
+  --cs-ia-surface: color-mix(in srgb, var(--gray-50) 50%, #ffffff);
+  /* width of the level-label rail beside each row */
+  --cs-ia-rail: 76px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid var(--cs-ia-line);
+  border-radius: 20px;
+  background: var(--cs-ia-surface);
+}
+
+/* --- Header -------------------------------------------------------------- */
+.cs-ia-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px 24px;
+}
+
+.cs-ia-intro {
+  flex: 1 1 320px;
+  min-width: 0;
+}
+
+/* index.css resets h1–h4 only */
+.cs-ia-title,
+.cs-ia-pages-title {
+  margin: 0;
+  color: var(--text);
+}
+
+.cs-ia-subtitle {
+  margin-top: 4px;
+  color: var(--text-soft);
+}
+
+/* Persona filter — the same white-chip selection as the persona tabs */
+.cs-ia-filter {
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.cs-ia-filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.cs-ia-filter-option {
+  padding: 5px 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-soft);
+  cursor: pointer;
+}
+
+.cs-ia-filter-option.is-active {
+  color: var(--accent-dark);
+  background: var(--bg);
+  border-color: var(--cs-ia-line);
+  box-shadow: 0 1px 2px rgba(20, 32, 61, 0.06);
+}
+
+.cs-ia-filter-option:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.cs-ia-filter-note {
+  max-width: 260px;
+  text-align: right;
+  font-style: italic;
+  color: var(--text-soft);
+}
+
+/* --- Tree ---------------------------------------------------------------- */
+.cs-ia-tree {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* L1 → L2 connector, placed under the current product from JS */
+.cs-ia-line {
+  position: absolute;
+  z-index: 0;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--accent-dark);
+  pointer-events: none;
+}
+
+/* Each level is a row: its label in a left rail, its nodes beside it, so the
+   connector between levels never crosses a label. */
+.cs-ia-level {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: var(--cs-ia-rail) minmax(0, 1fr);
+  column-gap: 12px;
+  align-items: start;
+}
+
+.cs-ia-level-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin: 0;
+  padding-top: 8px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.cs-ia-level-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--pill-blue-bg);
+  color: var(--pill-blue-text);
+  font-weight: 700;
+}
+
+/* L1 products */
+.cs-ia-products {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cs-ia-product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border: 1px solid var(--cs-ia-line);
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--text-soft);
+  text-align: center;
+}
+
+.cs-ia-product.is-current {
+  border: 1.5px solid var(--accent-dark);
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.cs-ia-star {
+  font-size: 13px;
+  line-height: 1;
+}
+
+/* L2 apps — five across, each a selectable node. Solid white so the L1
+   connector passes behind them cleanly. */
+.cs-ia-apps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.cs-ia-app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 0;
+  padding: 10px 12px 11px;
+  border: 1px solid var(--cs-ia-line);
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cs-ia-app:hover {
+  border-color: var(--gray-300);
+}
+
+.cs-ia-app.is-active {
+  border-color: var(--accent-dark);
+  box-shadow: inset 0 0 0 0.5px var(--accent-dark), 0 2px 8px rgba(30, 87, 200, 0.12);
+}
+
+.cs-ia-app:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+.cs-ia-app-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  margin-bottom: 4px;
+  border-radius: 999px;
+  background: var(--gray-50);
+  color: var(--text-soft);
+}
+
+.cs-ia-app.is-active .cs-ia-app-num {
+  background: var(--accent-dark);
+  color: #fff;
+}
+
+.cs-ia-app-name {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-weight: 700;
+}
+
+.cs-ia-app.is-active .cs-ia-app-name {
+  color: var(--accent-dark);
+}
+
+.cs-ia-app-count {
+  color: var(--text-soft);
+}
+
+/* L3 pages panel — a notch on its top edge points at the selected app */
+.cs-ia-pages {
+  position: relative;
+  z-index: 1;
+  margin-left: calc(var(--cs-ia-rail) + 12px);
+  padding: 14px 16px 16px;
+  border: 1.5px solid var(--accent-dark);
+  border-radius: 14px;
+  background: var(--bg);
+}
+
+.cs-ia-pages::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: var(--cs-ia-notch, 50%);
+  width: 14px;
+  height: 14px;
+  border-top: 1.5px solid var(--accent-dark);
+  border-left: 1.5px solid var(--accent-dark);
+  border-top-left-radius: 3px;
+  background: var(--bg);
+  transform: translateX(-50%) rotate(45deg);
+  transition: left 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-ia-pages::before {
+    transition: none;
+  }
+}
+
+.cs-ia-pages-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 16px;
+  margin-bottom: 12px;
+}
+
+.cs-ia-pages-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.cs-ia-pages-count {
+  font-weight: 500;
+  color: var(--text-soft);
+}
+
+.cs-ia-hint {
+  color: var(--text-soft);
+}
+
+.cs-ia-page-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cs-ia-page {
+  padding: 6px 12px;
+  border: 1px solid var(--cs-ia-line);
+  border-radius: 10px;
+  background: var(--cs-ia-surface);
+  color: var(--text);
+}
+
+.cs-ia-empty {
+  padding: 12px;
+  border: 1px dashed var(--gray-300);
+  border-radius: 10px;
+  color: var(--text-soft);
+  text-align: center;
+  font-style: italic;
+}
+
+/* --- Footer -------------------------------------------------------------- */
+.cs-ia-footer {
+  padding-top: 12px;
+  border-top: 1px solid var(--cs-ia-line);
+  color: var(--text-soft);
+  text-align: center;
+}
+
+/* --- Tablet -------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .cs-ia-apps {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* --- Phone --------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .cs-ia {
+    padding: 16px;
+  }
+  .cs-ia-level {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 8px;
+  }
+  .cs-ia-level-label {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding-top: 0;
+  }
+  .cs-ia-pages {
+    margin-left: 0;
+  }
+  /* Stacked labels sit in the connector's path — the notch carries the
+     relationship on its own at this width */
+  .cs-ia-line {
+    display: none;
+  }
+  .cs-ia-filter {
+    align-items: flex-start;
+  }
+  .cs-ia-filter-note {
+    max-width: none;
+    text-align: left;
+  }
+  .cs-ia-products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .cs-ia-apps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
