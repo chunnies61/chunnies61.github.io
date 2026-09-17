@@ -182,7 +182,6 @@ export default function IAMap({ block }) {
         </div>
       </div>
 
-      {block.footer && <p className="cs-ia-footer md-label-small">{block.footer}</p>}
     </div>
   );
 }

@@ -12,7 +12,6 @@
   --cs-ia-bg: var(--accent-dark);             /* Primary 40 */
   --cs-ia-on-bg: #ffffff;
   --cs-ia-on-bg-soft: rgba(255, 255, 255, 0.82);
-  --cs-ia-rule: rgba(255, 255, 255, 0.22);
   --cs-ia-wire: rgba(255, 255, 255, 0.55);
   --cs-ia-node: #dae2ff;                      /* Primary 90 */
 
@@ -414,14 +413,6 @@
   border: 1px dashed var(--gray-300);
   font-style: italic;
   color: var(--text-soft);
-}
-
-/* --- Footer -------------------------------------------------------------- */
-.cs-ia-footer {
-  padding-top: 12px;
-  border-top: 1px solid var(--cs-ia-rule);
-  color: var(--cs-ia-on-bg-soft);
-  text-align: center;
 }
 
 /* --- Phone --------------------------------------------------------------- */

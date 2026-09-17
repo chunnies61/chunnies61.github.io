@@ -120,28 +120,7 @@
           "blocks": [
             {
               "type": "text",
-              "value": "I interviewed lenders and domain owners across every role, embedding in check-ins and morning meetings to reach the client-facing ones, and synthesised two artefacts."
-            },
-            {
-              "type": "cards",
-              "columns": 2,
-              "items": [
-                {
-                  "emoji": "🗺️",
-                  "title": "Lending Workspace IA",
-                  "desc": "L1 products down to page controls, on one screen."
-                },
-                {
-                  "emoji": "👥",
-                  "title": "Lending personas",
-                  "desc": "Goals, jobs and pain points for every role."
-                }
-              ]
-            },
-            {
-              "type": "image",
-              "src": "/images/lending-ia.png",
-              "label": "The Lending Workspace information architecture"
+              "value": "I interviewed lenders and domain owners across every role, embedding in check-ins and morning meetings to reach the client-facing ones, and synthesised what I heard into two artefacts: an information architecture of the Lending Workspace, from L1 products down to page controls on one screen, and a set of personas capturing the goals, jobs and pain points of every role."
             },
             {
               "type": "ia-map",
@@ -295,7 +274,6 @@
                   ]
                 }
               ],
-              "footer": "Lending Workspace · Information Architecture · current-state map · as of 09/01/2026",
               "label": "Lending Workspace information architecture"
             },
             {
