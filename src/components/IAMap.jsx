@@ -63,7 +63,6 @@ export default function IAMap({ block }) {
 
   return (
     <>
-      {block.eyebrow && <div className="cs-ia-eyebrow md-label-small">{block.eyebrow}</div>}
       <h5 className="cs-ia-heading md-headline-small" id={headingId}>
         {block.title}
       </h5>

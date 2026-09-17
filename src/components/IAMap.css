@@ -35,24 +35,12 @@
 
 /* --- Heading group, above the sheet --------------------------------------
    Same pattern as the personas heading: extra space above to separate it
-   from the block before, then tight to its own title and intro. The
-   eyebrow is a div so the step's paragraph style doesn't reach it. */
-.cs-ia-eyebrow {
-  margin-top: 16px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 700;
-  color: var(--text-soft);
-}
+   from the block before, then tight to its intro. */
 
 /* index.css resets h1–h4 only */
 .cs-ia-heading {
   margin: 16px 0 0;
   color: var(--text);
-}
-
-.cs-ia-eyebrow + .cs-ia-heading {
-  margin-top: -12px;
 }
 
 .cs-ia-heading + .cs-ia-intro {

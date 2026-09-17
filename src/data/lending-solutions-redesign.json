@@ -124,8 +124,7 @@
             },
             {
               "type": "ia-map",
-              "eyebrow": "Information Architecture",
-              "title": "Lending Workspace",
+              "title": "Lending Workspace Information Architecture",
               "subtitle": "A top-to-bottom map of the navigation hierarchy — L1 products, L2 apps, sub-category tabs, and page-level controls.",
               "personaFilter": {
                 "options": [
