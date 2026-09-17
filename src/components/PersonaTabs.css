@@ -174,13 +174,16 @@
 
 /* Name sits between two rules, as on a printed persona sheet */
 .cs-pt-id {
-  margin-top: 14px;
-  padding: 10px 0;
+  margin-top: 12px;
+  padding: 8px 0;
   border-top: 1px solid var(--cs-pt-line);
   border-bottom: 1px solid var(--cs-pt-line);
 }
 
+/* index.css only resets h1–h4, so this h5 would otherwise keep the
+   browser's ~1.67em margin above and below the name */
 .cs-pt-name {
+  margin: 0;
   color: var(--text);
 }
 
