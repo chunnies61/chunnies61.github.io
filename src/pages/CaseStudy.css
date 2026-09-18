@@ -1625,19 +1625,6 @@ a.cs-index-item.is-active:hover {
   font-size: 14px;
 }
 
-.cs-protected-link {
-  display: inline-block;
-  margin-top: 16px;
-  font-family: var(--font-ui);
-  font-size: 14px;
-  color: var(--text-soft);
-  text-decoration: underline;
-}
-
-.cs-protected-link:hover {
-  color: var(--accent-dark);
-}
-
 /* Bottom pagination — Previous on the left, Up next on the right */
 .cs-pager {
   display: grid;
@@ -1846,10 +1833,4 @@ body:has(.cs-gate) {
   font-weight: 600;
 }
 
-.cs-gate .cs-protected-link {
-  color: rgba(255, 255, 255, 0.88);
-}
 
-.cs-gate .cs-protected-link:hover {
-  color: #fff;
-}

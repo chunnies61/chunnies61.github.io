@@ -706,9 +706,6 @@ export default function CaseStudy() {
             </button>
           </form>
           {passwordError && <p className="cs-password-error">Incorrect password — try again.</p>}
-          <a className="cs-protected-link" href="mailto:yichun.ux@gmail.com">
-            Or request access by email
-          </a>
         </div>
       </main>
     );
