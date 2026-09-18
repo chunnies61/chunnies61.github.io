@@ -82,7 +82,6 @@ export default function P2Step({ deal, update, onReview }) {
   const uid = useId();
   const chat = deal.chat;
   const [text, setText] = useState("");
-  const [pane, setPane] = useState("chat"); // phone only: which panel shows
   const timer = useRef(null);
   const logRef = useRef(null);
   const filled = filledOf(chat.turn);
@@ -146,26 +145,7 @@ export default function P2Step({ deal, update, onReview }) {
   const chips = SCRIPT[chat.turn].chips;
 
   return (
-    <div className={`vp-agent is-pane-${pane}`}>
-      {/* Phone: a segmented button switches between the two panels */}
-      <div className="vp-segmented" role="group" aria-label="Show">
-        {[
-          ["chat", "Chat"],
-          ["app", `Application · ${progress}%`],
-        ].map(([k, label]) => (
-          <button
-            key={k}
-            type="button"
-            aria-pressed={pane === k}
-            className={pane === k ? "is-on" : ""}
-            onClick={() => setPane(k)}
-          >
-            {pane === k && <Icon name="check" size={18} />}
-            {label}
-          </button>
-        ))}
-      </div>
-
+    <div className="vp-agent">
       {/* Chat */}
       <section className="vp-chat" aria-label="Connect Coach">
         <header className="vp-chat-head">

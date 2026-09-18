@@ -4,10 +4,6 @@
    flows add: a combobox menu, rich tooltips, editable cards, accordions, a
    chat surface and a live deal builder. Scoped under .vp. */
 
-.vp .lra-window {
-  height: 800px;
-}
-
 /* --- Variant switch --------------------------------------------------------- */
 .vp-variants {
   margin-bottom: 16px;
@@ -254,7 +250,7 @@
 /* --- Cards --------------------------------------------------------------------- */
 .vp-grid-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 16px;
 }
 
@@ -699,10 +695,6 @@
   grid-template-rows: minmax(0, 1fr);
   gap: 16px;
   height: 100%;
-}
-
-.vp-segmented {
-  display: none;
 }
 
 .vp-chat,
@@ -1221,107 +1213,5 @@
   }
   .vp-progress > span {
     transition: none;
-  }
-}
-
-/* --- Narrower windows ------------------------------------------------------------ */
-@media (max-width: 900px) {
-  .vp-split,
-  .vp-builder {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .vp-path,
-  .vp-live-deal {
-    position: static;
-  }
-  .vp-path {
-    order: -1;
-  }
-}
-
-@media (max-width: 640px) {
-  .vp .lra-window {
-    height: 720px;
-  }
-  .vp-variant-desc {
-    min-height: 60px;
-  }
-  .vp .vp-strip {
-    padding: 8px 12px;
-  }
-  .vp-stepper {
-    margin-top: 12px;
-  }
-  .vp-dd {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .vp-build-row {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .vp-menu {
-    min-width: 0;
-  }
-  .vp-menu-head,
-  .vp-menu-row {
-    grid-template-columns: minmax(0, 1fr) auto;
-  }
-  .vp-menu-head > :nth-child(n + 3),
-  .vp-menu-row > :nth-child(n + 3) {
-    display: none;
-  }
-  .vp-tip {
-    display: none;
-  }
-  /* Proposal 2: one panel at a time, picked with a segmented button */
-  .vp-agent {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto minmax(0, 1fr);
-    gap: 12px;
-  }
-  .vp-agent.is-pane-chat .vp-app,
-  .vp-agent.is-pane-app .vp-chat {
-    display: none;
-  }
-  .vp-segmented {
-    display: flex;
-  }
-  .vp-segmented button {
-    position: relative;
-    isolation: isolate;
-    display: inline-flex;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    height: 40px;
-    padding: 0 12px;
-    border: 1px solid var(--md-outline);
-    background: transparent;
-    color: var(--md-on-surface);
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 500;
-    letter-spacing: 0.1px;
-    cursor: pointer;
-  }
-  .vp-segmented button:first-child {
-    border-radius: 20px 0 0 20px;
-  }
-  .vp-segmented button:last-child {
-    margin-left: -1px;
-    border-radius: 0 20px 20px 0;
-  }
-  .vp-segmented button.is-on {
-    background: var(--md-secondary-container);
-    color: var(--md-on-secondary-container);
-  }
-  .vp-segmented button:focus-visible {
-    z-index: 1;
-    outline: 3px solid var(--md-secondary);
-    outline-offset: 2px;
-  }
-  .vp-stats dd {
-    font-size: 18px;
-    line-height: 24px;
   }
 }

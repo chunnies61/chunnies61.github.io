@@ -203,7 +203,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 760px;
+  /* A Full HD screen: the stage sets the width, the window keeps 16:9 */
+  aspect-ratio: 16 / 9;
   border: 1px solid var(--md-outline-variant);
   border-radius: 28px;
   background: var(--md-surface);
@@ -1194,80 +1195,5 @@
   }
   .lra-snackbar {
     animation: none;
-  }
-}
-
-/* --- Phone (compact window class) ------------------------------------------------ */
-@media (max-width: 640px) {
-  /* One scrolling row of chips keeps the frame's height predictable */
-  .lra-preview {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-    /* Room for the focus ring, which the scroller would otherwise clip */
-    margin: -6px -16px 10px -6px;
-    padding: 6px 16px 6px 6px;
-  }
-  .lra-window {
-    height: 680px;
-    border-radius: 16px;
-  }
-  .lra-appbar {
-    height: 56px;
-  }
-  .lra-head {
-    padding: 0 16px 12px;
-  }
-  .lra-body {
-    padding: 16px;
-  }
-  .lra-sbl {
-    padding: 16px;
-  }
-  .lra-footer {
-    padding: 12px 16px;
-  }
-  /* The footer wraps to two lines here */
-  .lra-snackbar {
-    bottom: 108px;
-  }
-  .lra-party-row,
-  .lra-grid,
-  .lra-facilities {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .lra-party-row {
-    gap: 24px;
-  }
-  .lra-party-row .lra-btn {
-    justify-self: start;
-  }
-  /* Only the current step keeps its label */
-  .lra-stepper li:not(.is-current) .lra-step-label {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
-  }
-  .lra-stepper li:not(:last-child)::after {
-    width: 16px;
-  }
-  /* One row that scrolls sideways, so the review body keeps its height */
-  .lra-summary {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-  .lra-summary > div {
-    flex: none;
-  }
-  .lra-summary dd {
-    white-space: nowrap;
-  }
-  .lra-summary-links {
-    margin-left: 0;
-    white-space: nowrap;
   }
 }

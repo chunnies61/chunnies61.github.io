@@ -248,6 +248,20 @@ function CardIcon({ name, className = "cs-card-icon" }) {
   );
 }
 
+/* Prototypes are designed for a 1920×1080 (Full HD) screen. The stage breaks
+   out of the text column, centres on the viewport, keeps a 16:9 window that
+   fits on screen, and reflows across standard monitor widths. `extra` is the
+   height of any controls the prototype puts above its window. */
+function PrototypeStage({ extra = 0, children }) {
+  return (
+    <div className="cs-proto-stage" style={{ "--proto-extra": `${extra}px` }}>
+      <div className="cs-proto-canvas">
+        <Suspense fallback={<div className="cs-proto-loading" aria-busy="true" />}>{children}</Suspense>
+      </div>
+    </div>
+  );
+}
+
 function Block({ block }) {
   switch (block.type) {
     case "text":
@@ -530,9 +544,9 @@ function Block({ block }) {
         <>
           {block.title && <h5 className="cs-lra-heading md-headline-small">{block.title}</h5>}
           {block.intro && <p className="cs-lra-intro">{block.intro}</p>}
-          <Suspense fallback={<div className="cs-lra-loading" aria-busy="true" />}>
+          <PrototypeStage extra={48}>
             <LraPrototype title={block.title} />
-          </Suspense>
+          </PrototypeStage>
         </>
       );
 
@@ -541,9 +555,9 @@ function Block({ block }) {
         <>
           {block.title && <h5 className="cs-lra-heading md-headline-small">{block.title}</h5>}
           {block.intro && <p className="cs-lra-intro">{block.intro}</p>}
-          <Suspense fallback={<div className="cs-lra-loading cs-vp-loading" aria-busy="true" />}>
+          <PrototypeStage extra={76}>
             <VisionPrototype title={block.title} />
-          </Suspense>
+          </PrototypeStage>
         </>
       );
 
@@ -552,9 +566,9 @@ function Block({ block }) {
         <>
           {block.title && <h5 className="cs-lra-heading md-headline-small">{block.title}</h5>}
           {block.intro && <p className="cs-lra-intro">{block.intro}</p>}
-          <Suspense fallback={<div className="cs-lra-loading cs-ws-loading" aria-busy="true" />}>
+          <PrototypeStage extra={0}>
             <WorkspacePrototype title={block.title} />
-          </Suspense>
+          </PrototypeStage>
         </>
       );
 
