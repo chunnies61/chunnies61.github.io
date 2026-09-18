@@ -1,60 +1,101 @@
-/* ===== Loan Request App prototype — Material 3 =====
-   Built to the Material 3 spec (m3.material.io): colour roles from a scheme
-   seeded on JPMC blue (#126BC5), the baseline type scale set in the site's
-   Poppins, shape and elevation tokens, and 8/10/10% state layers. It's an embedded app mock,
-   so everything is scoped under .lra and it doesn't use the portfolio's
-   .md-* type classes. */
+/* ===== JPMC prototypes — Untitled UI =====
+   The three prototypes (Loan Request App, future vision, Lending Workspace)
+   share this base, built on the Untitled UI React component styles
+   (untitledui.com/react/components): Untitled's gray scale, semantic
+   foreground / background / border roles, shadows and radii, with the
+   brand ramp generated from JPMC blue #126BC5 (brand-600) and type set in
+   the site's Poppins. Everything is scoped under .lra. */
 
 .lra {
-  /* Colour roles (light scheme), seeded on JPMC blue #126BC5 (hue ≈211°).
-     Text pairs clear WCAG AA: primary on white 5.3:1, on the darkest
-     container it's drawn on 4.6:1; on-containers 7.2:1. */
-  --md-primary: #126bc5;
-  --md-on-primary: #fff;
-  --md-primary-container: #d3e4ff;
-  --md-on-primary-container: #00468c;
-  --md-secondary: #535f70;
-  --md-secondary-container: #d7e3f7;
-  --md-on-secondary-container: #3b4858;
-  --md-tertiary-container: #fcd7fb;
-  --md-on-tertiary-container: #583e5b;
-  --md-error: #ba1a1a;
-  --md-surface: #f8f9ff;
-  --md-surface-container-lowest: #fff;
-  --md-surface-container-low: #f2f3fa;
-  --md-surface-container: #ecedf4;
-  --md-surface-container-high: #e6e8ee;
-  --md-surface-container-highest: #e0e2e9;
-  --md-on-surface: #191c20;
-  --md-on-surface-variant: #42474e;
-  --md-outline: #72777f;
-  --md-outline-variant: #c2c7cf;
-  --md-inverse-surface: #2e3135;
-  --md-inverse-on-surface: #eff0f7;
-  /* Custom colours, harmonised to the scheme */
-  --md-success-container: #c4efd4;
-  --md-on-success-container: #005232;
-  --md-warning-container: #ffdf9e;
-  --md-on-warning-container: #5b4300;
+  /* Brand — JPMC blue at 600 */
+  --ui-brand-25: #f5f9fe;
+  --ui-brand-50: #edf4fc;
+  --ui-brand-100: #dbe9fa;
+  --ui-brand-200: #b9d3f4;
+  --ui-brand-300: #88b5eb;
+  --ui-brand-400: #4f90dd;
+  --ui-brand-500: #2a7bd2;
+  --ui-brand-600: #126bc5;
+  --ui-brand-700: #0e56a0;
+  --ui-brand-800: #0e4884;
 
-  /* Elevation */
-  --md-elev-1: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
-  --md-elev-3: 0 1px 3px rgba(0, 0, 0, 0.3), 0 4px 8px 3px rgba(0, 0, 0, 0.15);
+  /* Gray (Untitled "gray") */
+  --ui-gray-25: #fdfdfd;
+  --ui-gray-50: #fafafa;
+  --ui-gray-100: #f5f5f5;
+  --ui-gray-200: #e9eaeb;
+  --ui-gray-300: #d5d7da;
+  --ui-gray-400: #a4a7ae;
+  --ui-gray-500: #717680;
+  --ui-gray-600: #535862;
+  --ui-gray-700: #414651;
+  --ui-gray-800: #252b37;
+  --ui-gray-900: #181d27;
+  --ui-gray-950: #0a0d12;
 
-  --md-font: var(--font-ui); /* the site's Poppins */
+  /* Utility colours */
+  --ui-error-25: #fffbfa;
+  --ui-error-50: #fef3f2;
+  --ui-error-100: #fee4e2;
+  --ui-error-200: #fecdca;
+  --ui-error-300: #fda29b;
+  --ui-error-600: #d92d20;
+  --ui-error-700: #b42318;
+  --ui-warning-25: #fffcf5;
+  --ui-warning-50: #fffaeb;
+  --ui-warning-200: #fedf89;
+  --ui-warning-300: #fec84b;
+  --ui-warning-600: #dc6803;
+  --ui-warning-700: #b54708;
+  --ui-success-25: #f6fef9;
+  --ui-success-50: #ecfdf3;
+  --ui-success-200: #abefc6;
+  --ui-success-300: #75e0a7;
+  --ui-success-500: #17b26a;
+  --ui-success-600: #079455;
+  --ui-success-700: #067647;
+  --ui-purple-50: #f4f3ff;
+  --ui-purple-200: #d9d6fe;
+  --ui-purple-700: #5925dc;
 
-  /* Background behind an outlined field's floating label */
-  --lra-notch: var(--md-surface);
+  /* Semantic roles */
+  --ui-white: #fff;
+  --ui-fg: var(--ui-gray-900);
+  --ui-fg-secondary: var(--ui-gray-700);
+  --ui-fg-tertiary: var(--ui-gray-600);
+  --ui-fg-quaternary: var(--ui-gray-500);
+  --ui-fg-disabled: var(--ui-gray-400);
+  --ui-bg: var(--ui-white);
+  --ui-bg-secondary: var(--ui-gray-50);
+  --ui-bg-tertiary: var(--ui-gray-100);
+  --ui-border: var(--ui-gray-300);
+  --ui-border-secondary: var(--ui-gray-200);
+
+  /* Shadows */
+  --ui-shadow-xs: 0 1px 2px rgba(10, 13, 18, 0.05);
+  --ui-shadow-sm: 0 1px 3px rgba(10, 13, 18, 0.1), 0 1px 2px -1px rgba(10, 13, 18, 0.1);
+  --ui-shadow-md: 0 4px 6px -1px rgba(10, 13, 18, 0.1), 0 2px 4px -2px rgba(10, 13, 18, 0.06);
+  --ui-shadow-lg:
+    0 12px 16px -4px rgba(10, 13, 18, 0.08), 0 4px 6px -2px rgba(10, 13, 18, 0.03),
+    0 2px 2px -1px rgba(10, 13, 18, 0.04);
+  /* Untitled's skeuomorphic button edge: a hairline plus a soft bottom lip */
+  --ui-shadow-skeu:
+    0 1px 2px rgba(10, 13, 18, 0.05), inset 0 0 0 1px rgba(10, 13, 18, 0.18),
+    inset 0 -2px 0 rgba(10, 13, 18, 0.05);
+  --ui-ring: 0 0 0 4px var(--ui-brand-100);
+  --ui-ring-error: 0 0 0 4px var(--ui-error-100);
+
+  --ui-font: var(--font-ui); /* the site's Poppins */
 
   position: relative;
-  font-family: var(--md-font);
-  color: var(--md-on-surface);
+  font-family: var(--ui-font);
+  color: var(--ui-fg);
   -webkit-font-smoothing: antialiased;
 }
 
 .lra h4 {
   margin: 0;
-  font-family: var(--md-font);
+  font-family: var(--ui-font);
 }
 
 .lra p {
@@ -65,7 +106,7 @@
 .lra input,
 .lra select,
 .lra textarea {
-  font-family: var(--md-font);
+  font-family: var(--ui-font);
 }
 
 .lra-icon {
@@ -82,68 +123,22 @@
   white-space: nowrap;
 }
 
-/* Type roles */
+/* Type: text-lg semibold for the app header, text-md semibold for sections */
 .lra-appbar-title {
-  font-size: 22px;
+  font-size: 18px;
   line-height: 28px;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .lra-section-head h4,
 .lra-ticket h4 {
   font-size: 16px;
   line-height: 24px;
-  font-weight: 500;
-  letter-spacing: 0.15px;
+  font-weight: 600;
+  color: var(--ui-fg);
 }
 
-/* State layer: an overlay in the content colour — hover 8%, focus and press 10% */
-.lra-btn,
-.lra-chip,
-.lra-icon-btn,
-.lra-tab,
-.lra-rules summary {
-  position: relative;
-  isolation: isolate;
-}
-
-.lra-btn::after,
-.lra-chip::after,
-.lra-icon-btn::after,
-.lra-tab::after,
-.lra-rules summary::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border-radius: inherit;
-  background: currentColor;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.15s linear;
-}
-
-.lra-btn:hover:not(:disabled)::after,
-.lra-chip:hover::after,
-.lra-icon-btn:hover::after,
-.lra-tab:hover::after,
-.lra-rules summary:hover::after {
-  opacity: 0.08;
-}
-
-.lra-btn:focus-visible::after,
-.lra-btn:active:not(:disabled)::after,
-.lra-chip:focus-visible::after,
-.lra-chip:active::after,
-.lra-icon-btn:focus-visible::after,
-.lra-icon-btn:active::after,
-.lra-tab:focus-visible::after,
-.lra-tab:active::after,
-.lra-rules summary:focus-visible::after {
-  opacity: 0.1;
-}
-
-/* Focus indicator: 3px secondary, 2px offset */
+/* Focus ring — 2px brand, offset from the control */
 .lra-btn:focus-visible,
 .lra-chip:focus-visible,
 .lra-icon-btn:focus-visible,
@@ -151,7 +146,7 @@
 .lra-rules summary:focus-visible,
 .lra input[type="checkbox"]:focus-visible,
 .lra input[type="radio"]:focus-visible {
-  outline: 3px solid var(--md-secondary);
+  outline: 2px solid var(--ui-brand-500);
   outline-offset: 2px;
 }
 
@@ -180,7 +175,7 @@
   font-weight: 600;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  color: var(--md-on-surface-variant);
+  color: var(--ui-fg-tertiary);
 }
 
 .lra-toggle {
@@ -254,7 +249,7 @@
 }
 
 .lra-toggle-btn.is-on:focus-visible {
-  outline-color: var(--md-primary);
+  outline-color: var(--ui-brand-600);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -264,31 +259,38 @@
   }
 }
 
-/* Filter chip: 32dp, small (8dp) corners; selected fills with secondary
-   container and gains a leading check */
+/* --- Tags (selectable) ------------------------------------------------------
+   Untitled tag / button-group style: white, gray hairline, text-sm semibold;
+   selected turns brand-50 with a brand border and a leading check. */
 .lra-chip {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   height: 32px;
-  padding: 0 16px;
-  border: 1px solid var(--md-outline-variant);
+  padding: 0 12px;
+  border: 0;
   border-radius: 8px;
-  background: transparent;
-  color: var(--md-on-surface-variant);
+  background: var(--ui-bg);
+  box-shadow: var(--ui-shadow-xs), inset 0 0 0 1px var(--ui-border);
+  color: var(--ui-fg-secondary);
   font-size: 14px;
   line-height: 20px;
-  font-weight: 500;
-  letter-spacing: 0.1px;
+  font-weight: 600;
   white-space: nowrap;
   cursor: pointer;
+  transition: background-color 0.1s linear, color 0.1s linear;
+}
+
+.lra-chip:hover {
+  background: var(--ui-bg-secondary);
+  color: var(--ui-gray-800);
 }
 
 .lra-chip.is-on {
   padding-left: 8px;
-  border-color: transparent;
-  background: var(--md-secondary-container);
-  color: var(--md-on-secondary-container);
+  background: var(--ui-brand-50);
+  box-shadow: var(--ui-shadow-xs), inset 0 0 0 1px var(--ui-brand-300);
+  color: var(--ui-brand-700);
 }
 
 /* --- Scaled frame + browser window -----------------------------------------
@@ -375,7 +377,7 @@
   width: 18px;
   height: 18px;
   border-radius: 4px;
-  background: var(--md-primary);
+  background: var(--ui-brand-600);
   color: #fff;
   font-size: 11px;
   font-weight: 700;
@@ -434,8 +436,8 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: var(--md-primary-container);
-  color: var(--md-on-primary-container);
+  background: var(--ui-brand-50);
+  color: var(--ui-brand-700);
   font-size: 13px;
   font-weight: 600;
 }
@@ -474,32 +476,31 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  border: 1px solid var(--md-outline-variant);
-  border-radius: 28px;
-  background: var(--md-surface);
+  border: 1px solid var(--ui-border-secondary);
+  border-radius: 12px;
+  background: var(--ui-bg);
   overflow: hidden;
 }
 
-/* Small top app bar — 64dp, title large */
+/* App header — 64px, title text-lg semibold */
 .lra-appbar {
   flex: none;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
   height: 64px;
-  padding: 0 8px 0 4px;
-  background: var(--md-surface);
-  color: var(--md-on-surface);
+  padding: 0 16px 0 12px;
+  border-bottom: 1px solid var(--ui-border-secondary);
+  background: var(--ui-bg);
+  color: var(--ui-fg);
 }
 
 .lra-appbar .lra-icon-btn {
-  margin: 0 4px;
-  color: var(--md-on-surface);
+  color: var(--ui-fg-quaternary);
 }
 
 .lra-appbar .lra-icon-btn:last-child {
   margin-left: auto;
-  color: var(--md-on-surface-variant);
 }
 
 .lra-appbar-title {
@@ -510,14 +511,14 @@
 
 .lra-head {
   flex: none;
-  padding: 4px 24px 16px;
-  border-bottom: 1px solid var(--md-outline-variant);
+  padding: 16px 32px;
+  border-bottom: 1px solid var(--ui-border-secondary);
 }
 
 .lra-body {
   flex: 1;
   min-height: 0;
-  padding: 24px;
+  padding: 32px;
   overflow: auto;
 }
 
@@ -528,30 +529,29 @@
   align-items: center;
   justify-content: space-between;
   gap: 8px 16px;
-  padding: 16px 24px;
-  border-top: 1px solid var(--md-outline-variant);
-  background: var(--md-surface-container-low);
+  padding: 16px 32px;
+  border-top: 1px solid var(--ui-border-secondary);
+  background: var(--ui-bg);
 }
 
 .lra-footer-status {
   font-size: 14px;
   line-height: 20px;
-  letter-spacing: 0.25px;
-  color: var(--md-on-surface-variant);
+  color: var(--ui-fg-tertiary);
 }
 
 .lra-footer-btns {
   display: flex;
-  gap: 8px;
+  gap: 12px;
   margin-left: auto;
 }
 
-/* --- Stepper & summary ----------------------------------------------------- */
+/* --- Progress steps & summary ---------------------------------------------- */
 .lra-stepper {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -560,24 +560,31 @@
 .lra-stepper li {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-size: 14px;
   line-height: 20px;
-  font-weight: 500;
-  letter-spacing: 0.1px;
-  color: var(--md-on-surface-variant);
+  font-weight: 600;
+  color: var(--ui-fg-quaternary);
 }
 
 .lra-stepper li:not(:last-child)::after {
   content: "";
-  width: 32px;
-  height: 1px;
-  margin-left: 4px;
-  background: var(--md-outline-variant);
+  width: 40px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--ui-border-secondary);
+}
+
+.lra-stepper li.is-done::after {
+  background: var(--ui-brand-600);
 }
 
 .lra-stepper li.is-current {
-  color: var(--md-on-surface);
+  color: var(--ui-brand-700);
+}
+
+.lra-stepper li.is-done {
+  color: var(--ui-fg-secondary);
 }
 
 .lra-step-num {
@@ -586,49 +593,52 @@
   justify-content: center;
   width: 24px;
   height: 24px;
-  border: 1px solid var(--md-outline);
   border-radius: 50%;
+  background: var(--ui-bg);
+  box-shadow: inset 0 0 0 1.5px var(--ui-border-secondary);
+  color: var(--ui-fg-quaternary);
   font-size: 12px;
-  line-height: 16px;
-  font-weight: 500;
+  line-height: 18px;
+  font-weight: 600;
 }
 
 .is-current .lra-step-num {
-  border-color: var(--md-primary);
-  background: var(--md-primary);
-  color: var(--md-on-primary);
+  background: var(--ui-brand-600);
+  box-shadow: 0 0 0 4px var(--ui-brand-100);
+  color: var(--ui-white);
 }
 
 .is-done .lra-step-num {
-  border-color: var(--md-primary-container);
-  background: var(--md-primary-container);
-  color: var(--md-on-primary-container);
+  background: var(--ui-brand-600);
+  box-shadow: none;
+  color: var(--ui-white);
 }
 
 .lra-summary {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 24px;
+  gap: 8px 32px;
   margin: 16px 0 0;
   padding: 12px 16px;
+  border: 1px solid var(--ui-border-secondary);
   border-radius: 12px;
-  background: var(--md-surface-container);
+  background: var(--ui-bg-secondary);
 }
 
 .lra-summary dt,
 .lra-kv dt {
   font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.4px;
-  color: var(--md-on-surface-variant);
+  line-height: 18px;
+  font-weight: 500;
+  color: var(--ui-fg-quaternary);
 }
 
 .lra-summary dd {
   margin: 0;
   font-size: 14px;
   line-height: 20px;
-  font-weight: 500;
-  letter-spacing: 0.1px;
+  font-weight: 600;
+  color: var(--ui-fg);
 }
 
 .lra-summary-links {
@@ -638,9 +648,8 @@
   margin-left: auto;
   font-size: 14px;
   line-height: 20px;
-  font-weight: 500;
-  letter-spacing: 0.1px;
-  color: var(--md-primary);
+  font-weight: 600;
+  color: var(--ui-brand-700);
 }
 
 .is-caps {
@@ -659,51 +668,41 @@
   margin-bottom: 16px;
 }
 
-/* --- Outlined text fields & exposed dropdown menus --------------------------- */
+/* --- Inputs: label above, 40px field, brand focus ring ---------------------- */
 .lra-party-row {
   display: grid;
   grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) auto;
   gap: 16px;
-  align-items: center;
+  align-items: end;
 }
 
 .lra-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 24px 16px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px 16px;
+  align-items: start;
 }
 
 .lra-grid + .lra-field {
-  margin-top: 24px;
+  margin-top: 20px;
 }
 
 .lra-field {
   position: relative;
   display: flex;
   flex-direction: column;
+  gap: 6px;
   min-width: 0;
 }
 
-/* The label sits in the outline's notch (populated state) */
 .lra-field > label {
-  position: absolute;
-  top: -8px;
-  left: 12px;
-  z-index: 1;
-  max-width: calc(100% - 24px);
-  padding: 0 4px;
+  color: var(--ui-fg-secondary);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
   overflow: hidden;
-  background: var(--lra-notch);
-  color: var(--md-on-surface-variant);
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.4px;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.lra-field:focus-within > label {
-  color: var(--md-primary);
 }
 
 .lra input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
@@ -711,25 +710,25 @@
 .lra textarea {
   width: 100%;
   min-width: 0;
-  height: 48px;
-  padding: 0 16px;
-  border: 1px solid var(--md-outline);
-  border-radius: 4px;
-  background-color: transparent;
-  color: var(--md-on-surface);
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--ui-border);
+  border-radius: 8px;
+  background-color: var(--ui-bg);
+  box-shadow: var(--ui-shadow-xs);
+  color: var(--ui-fg);
   font-size: 16px;
   line-height: 24px;
-  letter-spacing: 0.5px;
-  transition: border-color 0.15s linear;
+  transition: border-color 0.1s linear, box-shadow 0.1s linear;
 }
 
 .lra-body select {
-  padding-right: 44px;
+  padding-right: 40px;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z' fill='%2344464f'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='m5 7.5 5 5 5-5' stroke='%23a4a7ae' stroke-width='1.67' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
-  background-size: 24px;
+  background-size: 20px;
   text-overflow: ellipsis;
   cursor: pointer;
 }
@@ -737,73 +736,55 @@
 .lra textarea {
   height: auto;
   min-height: 96px;
-  padding: 12px 16px;
+  padding: 10px 14px;
   resize: vertical;
 }
 
 .lra input::placeholder,
 .lra textarea::placeholder {
-  color: var(--md-on-surface-variant);
+  color: var(--ui-fg-quaternary);
 }
 
-.lra input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):hover,
-.lra-body select:hover,
-.lra textarea:hover {
-  border-color: var(--md-on-surface);
-}
-
-/* Focused: a 2dp primary outline (the inset shadow adds the second pixel
-   without shifting the text) */
 .lra input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):focus-visible,
 .lra-body select:focus-visible,
 .lra textarea:focus-visible {
   outline: none;
-  border-color: var(--md-primary);
-  box-shadow: inset 0 0 0 1px var(--md-primary);
-}
-
-.has-error > label,
-.has-error:focus-within > label {
-  color: var(--md-error);
+  border-color: var(--ui-brand-300);
+  box-shadow: var(--ui-shadow-xs), var(--ui-ring);
 }
 
 .has-error input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
-.has-error input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):hover,
-.has-error textarea,
-.has-error textarea:hover {
-  border-color: var(--md-error);
+.has-error textarea {
+  border-color: var(--ui-error-300);
 }
 
 .has-error input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):focus-visible,
 .has-error textarea:focus-visible {
-  border-color: var(--md-error);
-  box-shadow: inset 0 0 0 1px var(--md-error);
+  border-color: var(--ui-error-300);
+  box-shadow: var(--ui-shadow-xs), var(--ui-ring-error);
 }
 
-/* Supporting text */
+/* Hint and error text */
 .lra-field-error,
 .lra-field-hint {
-  padding: 4px 16px 0;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.4px;
-  color: var(--md-on-surface-variant);
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ui-fg-tertiary);
 }
 
 .lra-field-error {
-  color: var(--md-error);
+  color: var(--ui-error-600);
 }
 
 .lra-section > .lra-field-hint {
-  padding: 8px 0 0;
+  padding-top: 8px;
 }
 
 .lra-inline-error {
   margin-top: 12px;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.4px;
-  color: var(--md-error);
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ui-error-600);
 }
 
 .lra-money {
@@ -812,195 +793,194 @@
 }
 
 .lra-money select {
-  flex: 0 0 104px;
+  flex: 0 0 100px;
 }
 
 /* A dense dropdown inside a table cell */
 .lra-body select.is-compact {
   width: auto;
   height: 32px;
-  padding: 0 32px 0 12px;
-  border-radius: 8px;
-  background-position: right 4px center;
+  padding: 0 32px 0 10px;
+  border-radius: 6px;
+  background-position: right 8px center;
+  background-size: 16px;
   font-size: 14px;
   line-height: 20px;
-  letter-spacing: 0.25px;
 }
 
-/* --- Checkbox & radio button ---------------------------------------------- */
+/* --- Checkbox & radio: 16px ------------------------------------------------- */
 .lra input[type="checkbox"],
 .lra input[type="radio"] {
   appearance: none;
   flex: none;
-  width: 18px;
-  height: 18px;
-  margin: 11px;
-  border: 2px solid var(--md-on-surface-variant);
-  background: transparent;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border: 1px solid var(--ui-border);
+  background: var(--ui-bg);
   cursor: pointer;
-  transition: box-shadow 0.15s linear;
+  transition: background-color 0.1s linear, border-color 0.1s linear;
 }
 
 .lra input[type="checkbox"] {
-  border-radius: 2px;
-}
-
-.lra input[type="checkbox"]:checked {
-  border-color: var(--md-primary);
-  background: var(--md-primary)
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z' fill='%23fff'/%3E%3C/svg%3E")
-    center / 16px no-repeat;
+  border-radius: 4px;
 }
 
 .lra input[type="radio"] {
-  width: 20px;
-  height: 20px;
-  margin: 10px;
   border-radius: 50%;
 }
 
-.lra input[type="radio"]:checked {
-  border-color: var(--md-primary);
-  background: radial-gradient(circle, var(--md-primary) 0 4.5px, transparent 5px);
-}
-
-/* The 40dp state layer, drawn as a spread shadow */
 .lra input[type="checkbox"]:hover,
 .lra input[type="radio"]:hover {
-  box-shadow: 0 0 0 11px color-mix(in srgb, var(--md-on-surface) 8%, transparent);
+  border-color: var(--ui-brand-600);
+  background-color: var(--ui-brand-50);
 }
 
-.lra input[type="radio"]:hover {
-  box-shadow: 0 0 0 10px color-mix(in srgb, var(--md-on-surface) 8%, transparent);
+.lra input[type="checkbox"]:checked {
+  border-color: var(--ui-brand-600);
+  background: var(--ui-brand-600)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M11.667 3.5 5.25 9.917 2.333 7' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center / 12px no-repeat;
 }
 
-.lra input[type="checkbox"]:checked:hover {
-  box-shadow: 0 0 0 11px color-mix(in srgb, var(--md-primary) 8%, transparent);
-}
-
-.lra input[type="radio"]:checked:hover {
-  box-shadow: 0 0 0 10px color-mix(in srgb, var(--md-primary) 8%, transparent);
+.lra input[type="radio"]:checked {
+  border-color: var(--ui-brand-600);
+  background: radial-gradient(circle, var(--ui-white) 0 2.5px, var(--ui-brand-600) 3px);
 }
 
 .lra-radios {
   display: flex;
-  gap: 16px;
-  margin: -10px 0 8px -10px;
+  gap: 20px;
+  margin: 0 0 12px;
 }
 
 .lra-radio {
   display: flex;
   align-items: center;
-  padding-right: 4px;
+  gap: 8px;
   font-size: 14px;
   line-height: 20px;
-  letter-spacing: 0.25px;
+  font-weight: 500;
+  color: var(--ui-fg-secondary);
   cursor: pointer;
 }
 
-/* --- Common buttons: 40dp, full corners, label large ---------------------------- */
+/* --- Buttons: 40px, 8px corners, text-sm semibold --------------------------- */
 .lra-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   height: 40px;
-  padding: 0 24px;
-  border: 1px solid transparent;
-  border-radius: 20px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 8px;
   background: transparent;
   font-size: 14px;
   line-height: 20px;
-  font-weight: 500;
-  letter-spacing: 0.1px;
+  font-weight: 600;
   white-space: nowrap;
   cursor: pointer;
-  transition: box-shadow 0.15s linear;
+  transition: background-color 0.1s linear, color 0.1s linear;
 }
 
-.lra-btn:has(> .lra-icon:first-child) {
-  padding-left: 16px;
-}
-
-/* Filled */
+/* Primary */
 .lra-btn.is-primary,
 .lra-btn.is-toggle.is-on {
-  background: var(--md-primary);
-  color: var(--md-on-primary);
+  background: var(--ui-brand-600);
+  box-shadow: var(--ui-shadow-skeu);
+  color: var(--ui-white);
 }
 
 .lra-btn.is-primary:hover:not(:disabled),
 .lra-btn.is-toggle.is-on:hover {
-  box-shadow: var(--md-elev-1);
+  background: var(--ui-brand-700);
 }
 
-/* Filled tonal — also a toggle button's unselected state */
-.lra-btn.is-tonal,
+/* Secondary — also a toggle button's unselected state */
+.lra-btn.is-secondary,
 .lra-btn.is-toggle {
-  background: var(--md-secondary-container);
-  color: var(--md-on-secondary-container);
+  background: var(--ui-bg);
+  box-shadow: var(--ui-shadow-xs), inset 0 0 0 1px var(--ui-border), inset 0 -2px 0 rgba(10, 13, 18, 0.05);
+  color: var(--ui-fg-secondary);
 }
 
-.lra-btn.is-tonal:hover:not(:disabled),
-.lra-btn.is-toggle:hover {
-  box-shadow: var(--md-elev-1);
+.lra-btn.is-secondary:hover:not(:disabled),
+.lra-btn.is-toggle:not(.is-on):hover {
+  background: var(--ui-bg-secondary);
+  color: var(--ui-gray-800);
 }
 
-/* Outlined */
-.lra-btn.is-secondary {
-  border-color: var(--md-outline-variant);
-  color: var(--md-primary);
+/* Secondary colour — brand-tinted */
+.lra-btn.is-tonal {
+  background: var(--ui-brand-50);
+  box-shadow: var(--ui-shadow-xs), inset 0 0 0 1px var(--ui-brand-200);
+  color: var(--ui-brand-700);
 }
 
-/* Text */
+.lra-btn.is-tonal:hover:not(:disabled) {
+  background: var(--ui-brand-100);
+  color: var(--ui-brand-800);
+}
+
+/* Tertiary colour — brand text, tinted on hover */
 .lra-btn.is-ghost {
   padding: 0 12px;
-  color: var(--md-primary);
+  color: var(--ui-brand-700);
+}
+
+.lra-btn.is-ghost:hover:not(:disabled) {
+  background: var(--ui-brand-50);
+  color: var(--ui-brand-800);
 }
 
 .lra-btn:disabled {
-  background: color-mix(in srgb, var(--md-on-surface) 10%, transparent);
-  color: color-mix(in srgb, var(--md-on-surface) 38%, transparent);
-  box-shadow: none;
+  background: var(--ui-bg-tertiary);
+  box-shadow: inset 0 0 0 1px var(--ui-border-secondary);
+  color: var(--ui-fg-disabled);
   cursor: not-allowed;
-}
-
-.lra-btn.is-secondary:disabled {
-  border-color: color-mix(in srgb, var(--md-on-surface) 12%, transparent);
-  background: transparent;
 }
 
 .lra-btn.is-ghost:disabled {
   background: transparent;
+  box-shadow: none;
 }
 
-/* Standard icon button — 40dp */
+/* Utility (icon) button — 36px square */
 .lra-icon-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex: none;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   padding: 0;
   border: 0;
-  border-radius: 50%;
+  border-radius: 8px;
   background: transparent;
-  color: var(--md-on-surface-variant);
+  color: var(--ui-fg-quaternary);
   cursor: pointer;
+  transition: background-color 0.1s linear, color 0.1s linear;
+}
+
+.lra-icon-btn:hover {
+  background: var(--ui-bg-secondary);
+  color: var(--ui-fg-tertiary);
 }
 
 .lra-icon-btn.is-small {
   width: 24px;
   height: 24px;
+  border-radius: 6px;
 }
 
-/* --- Tables & badges ---------------------------------------------------------- */
+/* --- Tables: a card with a gray header row ----------------------------------- */
 .lra-table-wrap {
   overflow-x: auto;
-  border: 1px solid var(--md-outline-variant);
+  border: 1px solid var(--ui-border-secondary);
   border-radius: 12px;
-  background: var(--md-surface-container-lowest);
+  background: var(--ui-bg);
+  box-shadow: var(--ui-shadow-xs);
 }
 
 .lra-section > .lra-table-wrap + .lra-table-wrap,
@@ -1014,25 +994,26 @@
   border-collapse: collapse;
   font-size: 14px;
   line-height: 20px;
-  letter-spacing: 0.25px;
+  color: var(--ui-fg-tertiary);
 }
 
 .lra-table th,
 .lra-table td {
-  height: 52px;
-  padding: 4px 16px;
-  border-bottom: 1px solid var(--md-outline-variant);
+  height: 56px;
+  padding: 8px 20px;
+  border-bottom: 1px solid var(--ui-border-secondary);
   text-align: left;
   white-space: nowrap;
   vertical-align: middle;
 }
 
 .lra-table thead th {
-  height: 48px;
-  background: var(--md-surface-container-low);
+  height: 44px;
+  background: var(--ui-bg-secondary);
+  font-size: 12px;
+  line-height: 18px;
   font-weight: 500;
-  letter-spacing: 0.1px;
-  color: var(--md-on-surface-variant);
+  color: var(--ui-fg-tertiary);
 }
 
 .lra-table tbody tr:last-child > * {
@@ -1041,10 +1022,11 @@
 
 .lra-table tbody th {
   font-weight: 500;
+  color: var(--ui-fg);
 }
 
 .lra-table tbody tr:hover > * {
-  background: color-mix(in srgb, var(--md-on-surface) 4%, transparent);
+  background: var(--ui-bg-secondary);
 }
 
 /* Checkbox / radio / icon-button columns sit flush */
@@ -1052,7 +1034,7 @@
 .lra-table td:has(> input[type="radio"]),
 .lra-table td:has(> .lra-icon-btn) {
   width: 1%;
-  padding: 0 4px;
+  padding: 0 12px 0 20px;
 }
 
 .lra-table .is-num {
@@ -1060,70 +1042,88 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* --- Badges: pill, bordered, text-xs medium ----------------------------------- */
 .lra-pill {
   display: inline-flex;
   align-items: center;
-  height: 24px;
+  height: 22px;
   padding: 0 8px;
-  border-radius: 8px;
+  border-radius: 16px;
+  background: var(--ui-bg-secondary);
+  box-shadow: inset 0 0 0 1px var(--ui-border-secondary);
+  color: var(--ui-fg-secondary);
   font-size: 12px;
-  line-height: 16px;
+  line-height: 18px;
   font-weight: 500;
-  letter-spacing: 0.5px;
   white-space: nowrap;
 }
 
 .lra-pill.is-good {
-  background: var(--md-success-container);
-  color: var(--md-on-success-container);
+  background: var(--ui-success-50);
+  box-shadow: inset 0 0 0 1px var(--ui-success-200);
+  color: var(--ui-success-700);
 }
 
 .lra-pill.is-blue {
-  background: var(--md-primary-container);
-  color: var(--md-on-primary-container);
+  background: var(--ui-brand-50);
+  box-shadow: inset 0 0 0 1px var(--ui-brand-200);
+  color: var(--ui-brand-700);
 }
 
 .lra-pill.is-violet {
-  background: var(--md-tertiary-container);
-  color: var(--md-on-tertiary-container);
+  background: var(--ui-purple-50);
+  box-shadow: inset 0 0 0 1px var(--ui-purple-200);
+  color: var(--ui-purple-700);
 }
 
 .lra-pill.is-neutral {
-  background: var(--md-surface-container-highest);
-  color: var(--md-on-surface-variant);
+  background: var(--ui-bg-secondary);
+  box-shadow: inset 0 0 0 1px var(--ui-border-secondary);
+  color: var(--ui-fg-secondary);
+}
+
+.lra-pill.is-warn {
+  background: var(--ui-warning-50);
+  box-shadow: inset 0 0 0 1px var(--ui-warning-200);
+  color: var(--ui-warning-700);
+}
+
+.lra-pill.is-critical {
+  background: var(--ui-error-50);
+  box-shadow: inset 0 0 0 1px var(--ui-error-200);
+  color: var(--ui-error-700);
 }
 
 .lra-muted {
   font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.4px;
-  color: var(--md-on-surface-variant);
+  line-height: 18px;
+  color: var(--ui-fg-quaternary);
 }
 
-/* --- Cards ----------------------------------------------------------------- */
+/* --- Cards: white, hairline, 12px, shadow-xs --------------------------------- */
 .lra-facilities {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 16px;
 }
 
-/* Outlined cards: medium (12dp) corners */
 .lra-facility,
 .lra-offer,
 .lra-ticket {
-  padding: 16px;
-  border: 1px solid var(--md-outline-variant);
+  padding: 20px;
+  border: 1px solid var(--ui-border-secondary);
   border-radius: 12px;
-  background: var(--md-surface-container-lowest);
+  background: var(--ui-bg);
+  box-shadow: var(--ui-shadow-xs);
 }
 
 .lra-facility {
-  transition: border-color 0.15s linear;
+  transition: border-color 0.1s linear, box-shadow 0.1s linear;
 }
 
 .lra-facility.is-selected {
-  border-color: var(--md-primary);
-  box-shadow: inset 0 0 0 1px var(--md-primary);
+  border-color: var(--ui-brand-600);
+  box-shadow: var(--ui-shadow-xs), inset 0 0 0 1px var(--ui-brand-600);
 }
 
 .lra-facility-top {
@@ -1131,13 +1131,13 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 8px 12px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .lra-kv {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px 16px;
+  gap: 16px;
   margin: 0;
 }
 
@@ -1146,10 +1146,11 @@
 }
 
 .lra-kv dd {
-  margin: 0;
+  margin: 2px 0 0;
   font-size: 14px;
   line-height: 20px;
-  letter-spacing: 0.25px;
+  font-weight: 500;
+  color: var(--ui-fg);
   overflow-wrap: anywhere;
 }
 
@@ -1157,13 +1158,12 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .lra-offer {
-  border-color: var(--md-primary-container);
-  background: var(--md-surface-container-lowest);
-  box-shadow: var(--md-elev-1);
+  border-color: var(--ui-brand-200);
+  box-shadow: var(--ui-shadow-sm);
 }
 
 .lra-offer > .lra-btn {
@@ -1175,22 +1175,22 @@
 }
 
 .lra-ticket h4 {
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .lra-build-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 12px;
 }
 
-/* The SBL builder: a filled card, large (16dp) corners */
+/* The SBL builder: a gray panel */
 .lra-sbl {
-  --lra-notch: var(--md-surface-container-low);
   margin-top: 24px;
   padding: 24px;
-  border-radius: 16px;
-  background: var(--md-surface-container-low);
+  border: 1px solid var(--ui-border-secondary);
+  border-radius: 12px;
+  background: var(--ui-bg-secondary);
 }
 
 .lra-sbl > .lra-banner:first-child {
@@ -1201,103 +1201,112 @@
   margin-top: 24px;
 }
 
-/* Input chip for the uploaded file */
+/* Uploaded file — Untitled file-upload item, compact */
 .lra-file {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  height: 32px;
-  padding: 0 4px 0 8px;
-  border: 1px solid var(--md-outline-variant);
+  height: 40px;
+  padding: 0 8px 0 12px;
+  border: 1px solid var(--ui-border-secondary);
   border-radius: 8px;
-  background: var(--md-surface-container-lowest);
-  color: var(--md-on-surface-variant);
+  background: var(--ui-bg);
+  box-shadow: var(--ui-shadow-xs);
+  color: var(--ui-brand-600);
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;
-  letter-spacing: 0.1px;
 }
 
 .lra-file > span {
-  color: var(--md-on-surface);
+  color: var(--ui-fg-secondary);
 }
 
-/* --- Tabs: primary tabs, 48dp, indicator hugs the label ----------------------- */
+/* --- Tabs: underline, text-sm semibold ----------------------------------------- */
 .lra-tabs {
   display: flex;
-  margin-bottom: 16px;
-  border-bottom: 1px solid var(--md-outline-variant);
+  gap: 12px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--ui-border-secondary);
 }
 
 .lra-tab {
-  height: 48px;
-  padding: 0 16px;
+  height: 44px;
+  padding: 0 4px;
   border: 0;
   background: transparent;
-  color: var(--md-on-surface-variant);
+  color: var(--ui-fg-quaternary);
   font-size: 14px;
   line-height: 20px;
-  font-weight: 500;
-  letter-spacing: 0.1px;
+  font-weight: 600;
   cursor: pointer;
+  transition: color 0.1s linear;
+}
+
+.lra-tab:hover {
+  color: var(--ui-fg-secondary);
 }
 
 .lra-tab > span {
   position: relative;
   display: inline-flex;
   align-items: center;
-  height: 48px;
+  height: 44px;
 }
 
 .lra-tab.is-active {
-  color: var(--md-primary);
+  color: var(--ui-brand-700);
 }
 
 .lra-tab.is-active > span::after {
   content: "";
   position: absolute;
-  right: 0;
+  right: -4px;
   bottom: 0;
-  left: 0;
-  height: 3px;
-  border-radius: 3px 3px 0 0;
-  background: var(--md-primary);
+  left: -4px;
+  height: 2px;
+  background: var(--ui-brand-600);
 }
 
-/* --- Banners (tonal cards), progress, empty state ----------------------------- */
+/* --- Alerts: tinted, bordered, 12px ----------------------------------------------- */
 .lra-banner {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  gap: 12px;
   margin-top: 16px;
   padding: 16px;
+  border: 1px solid;
   border-radius: 12px;
   font-size: 14px;
   line-height: 20px;
-  letter-spacing: 0.25px;
+  font-weight: 500;
 }
 
 .lra-step > .lra-banner:first-child {
   margin-top: 0;
 }
 
-.lra-banner p {
-  padding-top: 2px;
+.lra-banner .lra-icon {
+  width: 20px;
+  height: 20px;
 }
 
 .lra-banner.is-info {
-  background: var(--md-primary-container);
-  color: var(--md-on-primary-container);
+  border-color: var(--ui-brand-300);
+  background: var(--ui-brand-25);
+  color: var(--ui-brand-700);
 }
 
 .lra-banner.is-warning {
-  background: var(--md-warning-container);
-  color: var(--md-on-warning-container);
+  border-color: var(--ui-warning-300);
+  background: var(--ui-warning-25);
+  color: var(--ui-warning-700);
 }
 
 .lra-banner.is-success {
-  background: var(--md-success-container);
-  color: var(--md-on-success-container);
+  border-color: var(--ui-success-300);
+  background: var(--ui-success-25);
+  color: var(--ui-success-700);
 }
 
 .lra-step > .lra-banner + .lra-section {
@@ -1311,16 +1320,16 @@
   margin-top: 16px;
   font-size: 14px;
   line-height: 20px;
-  letter-spacing: 0.25px;
-  color: var(--md-on-surface-variant);
+  font-weight: 500;
+  color: var(--ui-fg-tertiary);
 }
 
-/* Circular progress indicator — 4dp track and active indicator */
+/* Loading indicator — line spinner */
 .lra-spinner {
   width: 24px;
   height: 24px;
-  border: 4px solid var(--md-secondary-container);
-  border-top-color: var(--md-primary);
+  border: 3px solid var(--ui-border-secondary);
+  border-top-color: var(--ui-brand-600);
   border-radius: 50%;
   animation: lra-spin 0.9s linear infinite;
 }
@@ -1331,16 +1340,17 @@
   }
 }
 
+/* Empty state */
 .lra-empty {
   margin-top: 24px;
-  padding: 32px 16px;
+  padding: 40px 16px;
+  border: 1px dashed var(--ui-border);
   border-radius: 12px;
-  background: var(--md-surface-container-low);
+  background: var(--ui-bg-secondary);
   text-align: center;
   font-size: 14px;
   line-height: 20px;
-  letter-spacing: 0.25px;
-  color: var(--md-on-surface-variant);
+  color: var(--ui-fg-tertiary);
 }
 
 .lra-rules {
@@ -1351,16 +1361,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 48px;
-  padding: 0 8px 0 16px;
-  border-radius: 12px;
-  color: var(--md-on-surface);
+  height: 44px;
+  padding: 0 8px 0 12px;
+  border-radius: 8px;
+  color: var(--ui-fg);
   font-size: 14px;
   line-height: 20px;
-  font-weight: 500;
-  letter-spacing: 0.1px;
+  font-weight: 600;
   list-style: none;
   cursor: pointer;
+}
+
+.lra-rules summary:hover {
+  background: var(--ui-bg-secondary);
 }
 
 .lra-rules summary::-webkit-details-marker {
@@ -1368,7 +1381,7 @@
 }
 
 .lra-rules summary .lra-icon {
-  color: var(--md-on-surface-variant);
+  color: var(--ui-fg-quaternary);
   transition: transform 0.2s ease;
 }
 
@@ -1380,7 +1393,7 @@
   margin-top: 8px;
 }
 
-/* --- USPB work in progress --------------------------------------------------- */
+/* --- USPB work in progress: featured icon + empty-state copy ---------------------- */
 .lra-wip {
   display: flex;
   flex-direction: column;
@@ -1394,61 +1407,57 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
-  margin-bottom: 8px;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 12px;
   border-radius: 50%;
-  background: var(--md-surface-container-high);
-  color: var(--md-on-surface-variant);
+  background: var(--ui-bg-tertiary);
+  box-shadow: 0 0 0 8px var(--ui-bg-secondary);
+  color: var(--ui-fg-tertiary);
 }
 
 .lra-wip h4 {
-  font-size: 22px;
+  font-size: 18px;
   line-height: 28px;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .lra-wip p {
   font-size: 14px;
   line-height: 20px;
-  letter-spacing: 0.25px;
-  color: var(--md-on-surface-variant);
+  color: var(--ui-fg-tertiary);
 }
 
-/* --- APAC – GA snackbar -------------------------------------------------------- */
+/* --- Toast (APAC – GA notice, snackbars) ---------------------------------------- */
 .lra-snackbar {
   position: absolute;
   bottom: 88px;
   left: 50%;
   z-index: 3;
   display: flex;
-  align-items: center;
-  gap: 4px;
-  width: min(480px, calc(100% - 32px));
-  min-height: 48px;
-  padding: 6px 4px 6px 16px;
-  border-radius: 4px;
-  background: var(--md-inverse-surface);
-  color: var(--md-inverse-on-surface);
-  box-shadow: var(--md-elev-3);
+  align-items: flex-start;
+  gap: 8px;
+  width: min(440px, calc(100% - 32px));
+  padding: 14px 8px 14px 16px;
+  border: 1px solid var(--ui-border);
+  border-radius: 12px;
+  background: var(--ui-bg);
+  color: var(--ui-fg-secondary);
+  box-shadow: var(--ui-shadow-lg);
   font-size: 14px;
   line-height: 20px;
-  letter-spacing: 0.25px;
+  font-weight: 500;
   transform: translateX(-50%);
   animation: lra-snackbar 0.2s ease-out;
 }
 
 .lra-snackbar p {
   flex: 1;
-  padding: 8px 0;
+  padding-top: 7px;
 }
 
 .lra-snackbar .lra-icon-btn {
-  color: var(--md-inverse-on-surface);
-}
-
-.lra-snackbar .lra-icon-btn:focus-visible {
-  outline-color: var(--md-inverse-on-surface);
+  color: var(--ui-fg-disabled);
 }
 
 @keyframes lra-snackbar {
