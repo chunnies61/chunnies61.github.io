@@ -937,8 +937,7 @@
         },
         {
           "type": "workspace-prototype",
-          "title": "Lending Workspace prototype",
-          "intro": "The Workspace pilot as bankers and lending specialists use it: Overview, Deal Journey, Opportunities and Portfolio Health, behind the same shell as every Connect app."
+          "title": "Lending Workspace"
         }
       ]
     },
