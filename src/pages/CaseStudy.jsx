@@ -396,7 +396,7 @@ function Block({ block }) {
 
     case "phases":
       return (
-        <div className="cs-phases">
+        <div className="cs-phases" style={{ "--phase-count": block.steps.length }}>
           {block.steps.map((s) => (
             <div className="cs-phase" key={s.num}>
               <div className="cs-phase-rail">

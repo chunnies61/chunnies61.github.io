@@ -843,7 +843,7 @@
       "blocks": [
         {
           "type": "text",
-          "value": "The boldest proposal was the AI Application Agent: auto-populate and auto-size the whole request from a chat. The business loved it. Prototype testing with two Lender Specialists hit a trust wall."
+          "value": "Prototype testing narrowed three proposals to one direction — and exposed where automation stops helping."
         },
         {
           "type": "quote",
@@ -851,46 +851,44 @@
           "attribution": "Lender Specialist, prototype testing"
         },
         {
-          "type": "callout",
-          "label": "The trap",
-          "value": "Full automation would have recreated the exact rework it was meant to remove."
-        },
-        {
-          "type": "text",
-          "value": "I combined them. One Request, Any Deal became the backbone, killing the fork behind mis-routed intake; Collateral-First's live recalculation surfaced capacity early; the AI agent became an assist, not an autopilot — three moves for trust:"
-        },
-        {
-          "type": "cards",
-          "columns": 3,
-          "items": [
+          "type": "phases",
+          "steps": [
             {
-              "emoji": "🔍",
-              "label": "Transparency",
-              "title": "Provenance on every value",
-              "desc": "Every value shows its source system and as-of date."
+              "num": "1",
+              "emoji": "🧭",
+              "title": "One request, routed by the deal",
+              "points": [
+                "Why: the up-front SBL-vs-Custom choice caused mis-routed intake.",
+                "Trade-off: routing logic now lives in the product.",
+                "UI: a live path helper; extra fields only when needed; capacity recalculates as collateral is added."
+              ]
             },
             {
-              "emoji": "✍️",
-              "label": "Reversibility",
-              "title": "The human keeps the pen",
-              "desc": "One-click override, with a required reason."
+              "num": "2",
+              "emoji": "✅",
+              "title": "Credit's rules, checked at entry",
+              "points": [
+                "Why: most bounce-backs were questions the banker was never asked.",
+                "Trade-off: a longer intake, for far fewer returns.",
+                "UI: inline limit checks; Continue names the one thing still missing."
+              ]
             },
             {
-              "emoji": "➡️",
-              "label": "Context flows forward",
-              "title": "Explained, not suspicious",
-              "desc": "Override reasons travel to Credit with the numbers."
+              "num": "3",
+              "emoji": "🤝",
+              "title": "AI drafts, the banker decides",
+              "points": [
+                "Why: full auto-sizing hit a trust wall in testing.",
+                "Trade-off: less automation, but no redone work.",
+                "UI: provenance on every value; a one-click override whose reason travels to Credit."
+              ]
             }
           ]
         },
         {
-          "type": "image",
-          "label": "A provenance chip, and the override-with-reason interaction"
-        },
-        {
           "type": "callout",
           "label": "The rationale I'd defend in any review",
-          "value": "In lending, accountability is personal. The best choice wasn't maximum automation but transparent, reversible automation — trust earned, not demanded."
+          "value": "Accountability in lending is personal. Automation earns trust only when it's transparent and reversible."
         }
       ]
     },

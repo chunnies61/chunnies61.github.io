@@ -994,7 +994,8 @@ a.cs-index-item.is-active:hover {
    cards, each card carrying its phase's hue from the blue->magenta ramp. */
 .cs-phases {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* One column per step, so the rail spans the full row */
+  grid-template-columns: repeat(var(--phase-count, 4), minmax(0, 1fr));
   gap: 20px;
 }
 .cs-phase {
