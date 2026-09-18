@@ -149,9 +149,6 @@ export default function VisionPrototype({ title = "Future-vision prototype" }) {
             ),
           }))}
         />
-        <p className="vp-variant-desc" aria-live="polite">
-          <strong>{v.name}.</strong> {v.desc}
-        </p>
       </div>
 
       <ScaledFrame title="Loan Request – Future vision" path={`/lending/loan-request/prototype?variant=${variant}`}>

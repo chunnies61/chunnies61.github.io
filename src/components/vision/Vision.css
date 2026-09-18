@@ -8,20 +8,6 @@
   margin-bottom: 16px;
 }
 
-.vp .lra-toggle-row {
-  margin-bottom: 8px;
-}
-.vp-variant-desc {
-  min-height: 20px;
-  font-size: 14px;
-  line-height: 20px;
-  color: var(--ui-fg-tertiary);
-}
-
-.vp-variant-desc strong {
-  font-weight: 500;
-  color: var(--ui-fg);
-}
 
 /* Rich tooltip: surface container, level 2, medium corners */
 
