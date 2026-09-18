@@ -464,5 +464,5 @@
 
 /* The frame's top edge under the toggle specimen */
 .pds-tab-edge {
-  border-top: 2px solid var(--ui-gray-800);
+  border-top: 3px solid var(--ui-gray-800);
 }

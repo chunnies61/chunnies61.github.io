@@ -1894,10 +1894,10 @@ p.cs-proto-prompt {
    a 16:9 window — the same footprint, so nothing below it jumps */
 .cs-proto-loading {
   box-sizing: content-box;
-  width: calc(100% - 4px);
+  width: calc(100% - 6px);
   margin-top: var(--proto-extra, 0px);
   aspect-ratio: 16 / 9;
-  border: 2px solid #414042; /* the prototypes' gray-800 */
+  border: 3px solid #414042; /* the prototypes' gray-800 */
   border-radius: 12px;
   background: #eef0f3;
 }
