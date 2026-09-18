@@ -863,9 +863,9 @@
               "label": "Decision 1",
               "title": "One request, routed by the deal",
               "points": [
-                "Why: the up-front SBL-vs-Custom choice caused mis-routed intake.",
-                "Trade-off: routing logic now lives in the product.",
-                "UI: a live path helper; extra fields only when needed; capacity recalculates as collateral is added."
+                "Why: choosing SBL vs Custom up front mis-routed deals.",
+                "Trade-off: routing logic moves into the product.",
+                "UI: a path helper; fields and capacity adapt as you go."
               ]
             },
             {
@@ -873,9 +873,9 @@
               "label": "Decision 2",
               "title": "Credit's rules, checked at entry",
               "points": [
-                "Why: most bounce-backs were questions the banker was never asked.",
-                "Trade-off: a longer intake, for far fewer returns.",
-                "UI: inline limit checks; Continue names the one thing still missing."
+                "Why: most bounce-backs were unasked questions.",
+                "Trade-off: longer intake, far fewer returns.",
+                "UI: inline limit checks; Continue names what's missing."
               ]
             },
             {
@@ -883,9 +883,9 @@
               "label": "Decision 3",
               "title": "AI drafts, the banker decides",
               "points": [
-                "Why: full auto-sizing hit a trust wall in testing.",
-                "Trade-off: less automation, but no redone work.",
-                "UI: provenance on every value; a one-click override whose reason travels to Credit."
+                "Why: full auto-sizing broke trust in testing.",
+                "Trade-off: less automation, no redone work.",
+                "UI: provenance on every value; overrides carry a reason to Credit."
               ]
             }
           ]
