@@ -829,11 +829,11 @@
 
 /* Menu: surface container, level 2, extra-small corners */
 .ws-portal {
-  position: static;
+  display: contents;
 }
 
 .ws-menu {
-  position: fixed;
+  position: absolute;
   z-index: 1000;
   min-width: 200px;
   max-width: 280px;

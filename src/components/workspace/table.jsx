@@ -1,15 +1,18 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Icon } from "../lra/ui";
+import { FRAME_H, useFrame } from "../lra/frame";
 
-/* M3 menu — rendered in a portal (so a table's scroll box can't clip it),
-   fixed under its trigger. Closes on Escape, an outside click or scroll;
-   arrow keys move between items. */
+/* M3 menu — portalled into the scaled frame's overlay layer (so a table's
+   scroll box can't clip it) and placed under its trigger in canvas
+   coordinates, so it scales with the app. Closes on Escape, an outside
+   click or scroll; arrow keys move between items. */
 export function Menu({ label, icon = "moreVert", items, onSelect, className = "" }) {
   const [pos, setPos] = useState(null); // null when closed
   const wrap = useRef(null);
   const menu = useRef(null);
   const menuId = useId();
+  const frame = useFrame();
   const open = pos !== null;
 
   useEffect(() => {
@@ -33,11 +36,15 @@ export function Menu({ label, icon = "moreVert", items, onSelect, className = ""
 
   function toggle() {
     if (open) return setPos(null);
+    // Trigger position, converted from screen pixels to canvas pixels
     const r = wrap.current.getBoundingClientRect();
-    const below = window.innerHeight - r.bottom > 240;
+    const f = frame.canvas.current.getBoundingClientRect();
+    const k = frame.scale;
+    const top = (r.bottom - f.top) / k + 4;
+    const below = FRAME_H - top > 280;
     setPos({
-      right: Math.max(8, window.innerWidth - r.right),
-      ...(below ? { top: r.bottom + 4 } : { bottom: window.innerHeight - r.top + 4 }),
+      right: Math.max(8, (f.right - r.right) / k),
+      ...(below ? { top } : { bottom: (f.bottom - r.top) / k + 4 }),
     });
   }
 
@@ -70,8 +77,9 @@ export function Menu({ label, icon = "moreVert", items, onSelect, className = ""
         <Icon name={icon} />
       </button>
       {open &&
+        frame.layer &&
         createPortal(
-          <div className="lra ws-portal">
+          <div className="ws-portal">
             <div
               className="ws-menu"
               role="menu"
@@ -114,7 +122,7 @@ export function Menu({ label, icon = "moreVert", items, onSelect, className = ""
               )}
             </div>
           </div>,
-          document.body
+          frame.layer
         )}
     </div>
   );

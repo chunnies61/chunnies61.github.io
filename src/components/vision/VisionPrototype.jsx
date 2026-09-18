@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Icon } from "../lra/ui";
+import { ScaledFrame } from "../lra/frame";
 import { ALL_PARTIES, COLLATERALS, TICKET, VARIANTS } from "./data";
 import { emptyBespoke } from "./builder";
 import { clientOf } from "./parts";
@@ -162,112 +163,114 @@ export default function VisionPrototype({ title = "Future-vision prototype" }) {
         </p>
       </div>
 
-      <div className="lra-window">
-        <div className="lra-appbar">
-          <span className="lra-icon-btn" aria-hidden="true">
-            <Icon name="close" />
-          </span>
-          <span className="lra-appbar-title">Loan Request: New loan request</span>
-          <span className="lra-icon-btn" aria-hidden="true">
-            <Icon name="moreVert" />
-          </span>
-        </div>
-
-        <div className="lra-head">
-          {/* Client info strip */}
-          <dl className="lra-summary vp-strip">
-            {[
-              ["Client name", (primary?.name ?? "Adam Ross").toUpperCase()],
-              ["ECI", primary?.eci ?? "9876543210"],
-              ["Account number", TICKET.account],
-              ["Account type", "–"],
-              ["Loan request", TICKET.number],
-              ["Owner", TICKET.owner.toUpperCase()],
-            ].map(([k, val]) => (
-              <div key={k}>
-                <dt>{k}</dt>
-                <dd>{val}</dd>
-              </div>
-            ))}
-            <div>
-              <dt>Status</dt>
-              <dd>
-                <span className={"lra-pill " + (step === "done" ? "is-good" : "is-neutral")}>
-                  {step === "done" ? "SUBMITTED" : TICKET.status}
-                </span>
-              </dd>
-            </div>
-            <div className="lra-summary-links">
-              <span>Comments (0)</span>
-              <span>Documents (0)</span>
-            </div>
-          </dl>
-
-          {step !== "done" && (
-            <ol className="lra-stepper vp-stepper">
-              {v.steps.map((label, i) => (
-                <li
-                  key={label}
-                  className={i === step ? "is-current" : i < step ? "is-done" : ""}
-                  aria-current={i === step ? "step" : undefined}
-                >
-                  <span className="lra-step-num" aria-hidden="true">
-                    {i < step ? <Icon name="check" size={16} /> : i + 1}
-                  </span>
-                  <span className="lra-step-label">{label}</span>
-                </li>
-              ))}
-            </ol>
-          )}
-        </div>
-
-        <div className="lra-body" ref={bodyRef}>
-          {step === 0 && (
-            <StepOne
-              key={variant}
-              deal={deal}
-              update={update}
-              setB={setB}
-              choose={choose}
-              addParty={addParty}
-              onReview={() => setStep(1)}
-            />
-          )}
-          {step !== 0 && step !== "done" && step < last && (
-            <LoanDetails deal={deal} update={update} offer={offer} />
-          )}
-          {step !== 0 && step === last && <Review deal={deal} update={update} offer={offer} />}
-          {step === "done" && <Submission deal={deal} offer={offer} />}
-        </div>
-
-        <div className="lra-footer">
-          <p className="lra-footer-status" aria-live="polite">
-            {step === 0 && reason ? `To continue: ${reason}` : ""}
-          </p>
-          <div className="lra-footer-btns">
-            {buttons.map(([label, kind, onClick, disabled]) => (
-              <button
-                key={label}
-                type="button"
-                className={`lra-btn is-${kind}`}
-                disabled={disabled}
-                onClick={onClick}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {toast && (
-          <div className="lra-snackbar" role="status">
-            <p>{toast}</p>
-            <button type="button" className="lra-icon-btn" aria-label="Dismiss" onClick={() => setToast("")}>
+      <ScaledFrame>
+        <div className="lra-window">
+          <div className="lra-appbar">
+            <span className="lra-icon-btn" aria-hidden="true">
               <Icon name="close" />
-            </button>
+            </span>
+            <span className="lra-appbar-title">Loan Request: New loan request</span>
+            <span className="lra-icon-btn" aria-hidden="true">
+              <Icon name="moreVert" />
+            </span>
           </div>
-        )}
-      </div>
+
+          <div className="lra-head">
+            {/* Client info strip */}
+            <dl className="lra-summary vp-strip">
+              {[
+                ["Client name", (primary?.name ?? "Adam Ross").toUpperCase()],
+                ["ECI", primary?.eci ?? "9876543210"],
+                ["Account number", TICKET.account],
+                ["Account type", "–"],
+                ["Loan request", TICKET.number],
+                ["Owner", TICKET.owner.toUpperCase()],
+              ].map(([k, val]) => (
+                <div key={k}>
+                  <dt>{k}</dt>
+                  <dd>{val}</dd>
+                </div>
+              ))}
+              <div>
+                <dt>Status</dt>
+                <dd>
+                  <span className={"lra-pill " + (step === "done" ? "is-good" : "is-neutral")}>
+                    {step === "done" ? "SUBMITTED" : TICKET.status}
+                  </span>
+                </dd>
+              </div>
+              <div className="lra-summary-links">
+                <span>Comments (0)</span>
+                <span>Documents (0)</span>
+              </div>
+            </dl>
+
+            {step !== "done" && (
+              <ol className="lra-stepper vp-stepper">
+                {v.steps.map((label, i) => (
+                  <li
+                    key={label}
+                    className={i === step ? "is-current" : i < step ? "is-done" : ""}
+                    aria-current={i === step ? "step" : undefined}
+                  >
+                    <span className="lra-step-num" aria-hidden="true">
+                      {i < step ? <Icon name="check" size={16} /> : i + 1}
+                    </span>
+                    <span className="lra-step-label">{label}</span>
+                  </li>
+                ))}
+              </ol>
+            )}
+          </div>
+
+          <div className="lra-body" ref={bodyRef}>
+            {step === 0 && (
+              <StepOne
+                key={variant}
+                deal={deal}
+                update={update}
+                setB={setB}
+                choose={choose}
+                addParty={addParty}
+                onReview={() => setStep(1)}
+              />
+            )}
+            {step !== 0 && step !== "done" && step < last && (
+              <LoanDetails deal={deal} update={update} offer={offer} />
+            )}
+            {step !== 0 && step === last && <Review deal={deal} update={update} offer={offer} />}
+            {step === "done" && <Submission deal={deal} offer={offer} />}
+          </div>
+
+          <div className="lra-footer">
+            <p className="lra-footer-status" aria-live="polite">
+              {step === 0 && reason ? `To continue: ${reason}` : ""}
+            </p>
+            <div className="lra-footer-btns">
+              {buttons.map(([label, kind, onClick, disabled]) => (
+                <button
+                  key={label}
+                  type="button"
+                  className={`lra-btn is-${kind}`}
+                  disabled={disabled}
+                  onClick={onClick}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {toast && (
+            <div className="lra-snackbar" role="status">
+              <p>{toast}</p>
+              <button type="button" className="lra-icon-btn" aria-label="Dismiss" onClick={() => setToast("")}>
+                <Icon name="close" />
+              </button>
+            </div>
+          )}
+        </div>
+      </ScaledFrame>
     </div>
   );
 }

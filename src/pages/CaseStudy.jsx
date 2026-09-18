@@ -248,10 +248,10 @@ function CardIcon({ name, className = "cs-card-icon" }) {
   );
 }
 
-/* Prototypes are designed for a 1920×1080 (Full HD) screen. The stage breaks
-   out of the text column, centres on the viewport, keeps a 16:9 window that
-   fits on screen, and reflows across standard monitor widths. `extra` is the
-   height of any controls the prototype puts above its window. */
+/* The prompt, then the prototype. Each app lays out at 1920×1080 and scales
+   down to the text column's width (see components/lra/frame.jsx). `extra`
+   is the height of any controls the prototype puts above its window, so
+   the loading placeholder matches its footprint. */
 function PrototypeStage({ extra = 0, children }) {
   return (
     <>
@@ -260,9 +260,7 @@ function PrototypeStage({ extra = 0, children }) {
         app, running entirely on dummy data.
       </p>
       <div className="cs-proto-stage" style={{ "--proto-extra": `${extra}px` }}>
-        <div className="cs-proto-canvas">
-          <Suspense fallback={<div className="cs-proto-loading" aria-busy="true" />}>{children}</Suspense>
-        </div>
+        <Suspense fallback={<div className="cs-proto-loading" aria-busy="true" />}>{children}</Suspense>
       </div>
     </>
   );

@@ -198,13 +198,41 @@
   color: var(--md-on-secondary-container);
 }
 
+/* --- Scaled frame ----------------------------------------------------------
+   The app lays out on a fixed 1920×1080 canvas (see frame.jsx), scaled to
+   the frame's width. The frame reserves the scaled height; the canvas is
+   pinned to its top-left and transformed. */
+.lra-frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.lra-frame-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+}
+
+/* Menus that must escape scroll boxes render here, in canvas coordinates */
+.lra-frame-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.lra-frame-layer * {
+  pointer-events: auto;
+}
+
 /* --- Window -------------------------------------------------------------- */
 .lra-window {
   position: relative;
   display: flex;
   flex-direction: column;
-  /* A Full HD screen: the stage sets the width, the window keeps 16:9 */
-  aspect-ratio: 16 / 9;
+  height: 100%;
   border: 1px solid var(--md-outline-variant);
   border-radius: 28px;
   background: var(--md-surface);

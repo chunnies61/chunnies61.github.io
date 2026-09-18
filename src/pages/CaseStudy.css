@@ -1857,52 +1857,15 @@ body:has(.cs-gate) {
 
 /* The nudge above each prototype */
 p.cs-proto-prompt {
-  /* Offsets the stage's 8px padding so it reads as part of the prototype */
-  margin-bottom: -8px;
   font-weight: 600;
   color: var(--text);
 }
 
-/* Prototype stage — the prototypes are designed for a 1920×1080 screen, so
-   they break out of the 832px text column. The stage is centred on the
-   viewport (the column sits 120px left of centre, beside the index rail),
-   capped at 1920px, and sized so the 16:9 window plus up to ~80px of
-   controls above it fits on screen below the 72px nav — the same width for
-   every prototype. Standard monitors get a
-   window at least 1200px wide; anything narrower scrolls sideways rather
-   than reflowing for mobile. */
-.cs-proto-stage {
-  --rail-shift: 120px;
-  --proto-w: clamp(
-    min(1200px, 100vw - 64px),
-    min(100vw - 64px, (100vh - 200px) * 16 / 9),
-    1920px
-  );
-  /* 8px of padding keeps focus rings at the edges clear of the scroller */
-  width: calc(var(--proto-w) + 16px);
-  margin-left: calc(50% + var(--rail-shift) - var(--proto-w) / 2 - 8px);
-  padding: 8px;
-  overflow-x: auto;
-  /* It spans the index rail's column: sit above the sticky rail, opaque */
-  position: relative;
-  z-index: 2;
-  background: var(--bg);
-}
-
-.cs-proto-canvas {
-  min-width: 1200px;
-}
-
-/* Same footprint as the loaded prototype, so nothing below it jumps */
+/* Placeholder while a prototype's code loads: its controls' height, then
+   a 16:9 window — the same footprint, so nothing below it jumps */
 .cs-proto-loading {
   margin-top: var(--proto-extra, 0px);
   aspect-ratio: 16 / 9;
-  border-radius: 28px;
+  border-radius: 12px;
   background: #f4f3fa;
-}
-
-@media (max-width: 1040px) {
-  .cs-proto-stage {
-    --rail-shift: 0px;
-  }
 }
