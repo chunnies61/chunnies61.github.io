@@ -214,35 +214,36 @@ function PortfolioView({ openAnnual, onPlaceholder }) {
             origination.
           </p>
         </Card>
-      </div>
 
-      <Card
-        title="Proactive Insights & Deepening Opportunities"
-        aside={
-          <span className="lra-pill is-blue ws-pill-icon">
-            <Icon name="sparkle" size={14} />
-            Coach AI
-          </span>
-        }
-      >
-        <div className="ws-coach">
-          {COACH.map((c) => (
-            <article key={c.kind} className="ws-coach-card">
-              <p className="ws-coach-kind">{c.kind}</p>
-              <p className="ws-coach-title">{c.title}</p>
-              <p className="lra-muted">{c.body}</p>
-              <div className="ws-coach-actions">
-                <button type="button" className="lra-btn is-secondary" onClick={() => onPlaceholder("Simulate opens Book Simulation, which isn't built here.")}>
-                  Simulate
-                </button>
-                <button type="button" className="lra-btn is-tonal" onClick={() => onPlaceholder("Start in LRA opens the Loan Request App — try it in the prototype above.")}>
-                  Start in LRA
-                </button>
-              </div>
-            </article>
-          ))}
-        </div>
-      </Card>
+        <Card
+          className="ws-grid-side"
+          title="Proactive Insights & Deepening Opportunities"
+          aside={
+            <span className="lra-pill is-blue ws-pill-icon">
+              <Icon name="sparkle" size={14} />
+              Coach AI
+            </span>
+          }
+        >
+          <div className="ws-coach">
+            {COACH.map((c) => (
+              <article key={c.kind} className="ws-coach-card">
+                <p className="ws-coach-kind">{c.kind}</p>
+                <p className="ws-coach-title">{c.title}</p>
+                <p className="lra-muted">{c.body}</p>
+                <div className="ws-coach-actions">
+                  <button type="button" className="lra-btn is-secondary" onClick={() => onPlaceholder("Simulate opens Book Simulation, which isn't built here.")}>
+                    Simulate
+                  </button>
+                  <button type="button" className="lra-btn is-tonal" onClick={() => onPlaceholder("Start in LRA opens the Loan Request App — try it in the prototype above.")}>
+                    Start in LRA
+                  </button>
+                </div>
+              </article>
+            ))}
+          </div>
+        </Card>
+      </div>
     </div>
   );
 }

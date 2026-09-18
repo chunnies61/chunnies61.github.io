@@ -394,8 +394,14 @@
   gap: 8px;
 }
 
+/* Tiles wrap into rows that each stretch to the card's full width */
 .ws-tiles {
-  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ws-tiles > .ws-metric {
+  flex: 1 1 120px;
 }
 
 .ws-metric {
@@ -700,7 +706,7 @@
 /* --- Tables ----------------------------------------------------------------------------- */
 .ws-summary {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 8px;
   margin: 0;
 }
@@ -994,9 +1000,21 @@
   }
 }
 
+/* Portfolio View: two columns of cards, with Coach AI running down the third */
+.ws-grid-side {
+  grid-column: 1 / -1;
+}
+
 @container (min-width: 900px) {
   .ws-grid-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .ws-grid-side {
+    grid-column: 3;
+    grid-row: 1 / span 3;
+  }
+  .ws-grid-side .ws-coach {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -1172,11 +1190,6 @@
   gap: 12px;
 }
 
-@container (min-width: 900px) {
-  .ws-coach {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
 
 .ws-coach-card {
   display: flex;
