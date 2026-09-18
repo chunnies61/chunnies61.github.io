@@ -259,7 +259,7 @@ function PrototypeStage({ extra = 0, children }) {
       <div className="cs-proto-stage" style={{ "--proto-extra": `${extra}px` }}>
         <Suspense fallback={<div className="cs-proto-loading" aria-busy="true" />}>{children}</Suspense>
       </div>
-      <p className="cs-proto-prompt">
+      <p className="cs-proto-prompt md-label-medium">
         <span aria-hidden="true">👆 </span>Click around — it's fully interactive, running on dummy data.
       </p>
     </div>
