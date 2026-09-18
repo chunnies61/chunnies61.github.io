@@ -426,7 +426,7 @@ export default function PrototypeDesignSystem() {
             </Specimen>
           </Block>
 
-          <Block title="Canvas & frame" note="Each prototype lays out on a 1920×1080 canvas — 96px of browser chrome over a 1920×984 app — then scales uniformly to the column's width. A 2px #003fa3 border and a soft shadow set it apart from the page.">
+          <Block title="Canvas & frame" note="Each prototype lays out on a 1920×1080 canvas — 96px of browser chrome over a 1920×984 app — then scales uniformly to the column's width. A 2px gray-800 border and a soft shadow set it apart from the page.">
             <Specimen className="pds-frame-demo">
               <ScaledFrame title="Example app" path="/lending/example">
                 <div className="lra-window">

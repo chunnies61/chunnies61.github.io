@@ -288,14 +288,14 @@
    reserves the scaled height and draws the window's edge and shadow; the
    canvas is pinned to its top-left and transformed. */
 .lra-frame {
-  /* A solid #003fa3 (Primary 30) border sets the prototype apart from the
-     page. Content-box sizing keeps the border outside the scaled canvas:
+  /* A solid gray-800 border (the site's --gray-800) sets the prototype
+     apart from the page. Content-box sizing keeps the border outside the scaled canvas:
      the frame's content is exactly the 16:9 screen. */
   position: relative;
   box-sizing: content-box;
   width: calc(100% - 4px);
   overflow: hidden;
-  border: 2px solid #003fa3;
+  border: 2px solid var(--gray-800);
   border-radius: 12px;
   box-shadow: 0 12px 32px rgba(20, 32, 61, 0.14);
 }
