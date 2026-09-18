@@ -1889,7 +1889,7 @@ p.cs-proto-prompt {
   width: calc(100% - 4px);
   margin-top: var(--proto-extra, 0px);
   aspect-ratio: 16 / 9;
-  border: 2px solid var(--gray-800);
+  border: 2px solid #414042; /* the prototypes' gray-800 */
   border-radius: 12px;
   background: #eef0f3;
 }

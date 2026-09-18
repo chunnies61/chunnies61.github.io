@@ -91,7 +91,7 @@ export function Banner({ tone = "info", children }) {
 }
 
 /* Toggle — the black segmented switch above a prototype. Equal-width
-   options on a dark track; a white thumb slides to the selected one. The
+   options on a gray-800 track; a white thumb slides to the selected one. The
    label is announced (aria-label) but not shown. An
    option's `tip` renders inside its cell (for hover tooltips). */
 export function Toggle({ label, options, value, onChange }) {

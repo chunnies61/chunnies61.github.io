@@ -58,17 +58,28 @@ const PALETTE = [
     ["$link-primary-hover", "Primary link on hover", "link-hover"],
     ["$link-secondary", "Secondary / definition link", "link-secondary"],
     ["$link-success-default", "Success / gain", "success-600"],
-    ["$link-success-hover", "Success / gain on hover", "success-700"],
+    ["$link-success-hover", "Success / gain on hover", "success-900"],
     ["$link-error-default", "Error / loss", "error-600"],
-    ["$link-error-hover", "Error / loss on hover", "error-700"],
+    ["$link-error-hover", "Error / loss on hover", "error-800"],
   ]],
 ];
 
-// Supporting tints generated around the palette colours
-const TINTS = [
-  ["Brand", "brand", ["25", "50", "100", "200", "300", "400", "500", "600", "700"]],
-  ["Success", "success", ["25", "50", "200", "300", "500", "600", "700"]],
-  ["Error", "error", ["25", "50", "100", "200", "300", "600", "700"]],
+// Full 25–950 scales for every brand colour. Palette values are pinned at
+// the listed steps; everything else is generated around them.
+const ALL = ["25", "50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"];
+const SCALES = [
+  ["Brand", "brand", { 600: "$brand-primary", 800: "$link-primary-hover" }],
+  ["Accent", "accent", { 300: "$accent" }],
+  ["Neutral", "gray", {
+    50: "$background-hover", 100: "$background-secondary", 200: "$divider-secondary",
+    300: "$divider-primary", 400: "$icon-disabled", 500: "$text-disabled",
+    600: "$text-secondary", 700: "$icon-default", 800: "$text-primary",
+  }],
+  ["Success", "success", { 600: "$link-success-default", 900: "$link-success-hover" }],
+  ["Error", "error", { 600: "$link-error-default", 800: "$link-error-hover" }],
+];
+// Supporting hues, not in the Connect palette (partial Untitled UI ramps)
+const SUPPORTING = [
   ["Warning", "warning", ["25", "50", "200", "300", "600", "700"]],
   ["Purple", "purple", ["50", "200", "700"]],
 ];
@@ -174,15 +185,16 @@ const ratio = (a, b) => {
   return (hi + 0.05) / (lo + 0.05);
 };
 
-function Chip({ token, name, note, big, maps }) {
+function Chip({ token, name, note, big, maps, pinned }) {
   const [ref, hex] = useToken(token);
   return (
-    <div className={"pds-chip" + (big ? " is-big" : "")}>
+    <div className={"pds-chip" + (big ? " is-big" : "") + (pinned ? " is-pinned" : "")} title={pinned}>
       <span ref={ref} className="pds-chip-color" style={{ background: `var(--ui-${token})` }} />
       <span className="pds-chip-name">{name ?? token}</span>
       <code>{hex.toUpperCase()}</code>
       {note && <span className="pds-chip-note">{note}</span>}
       {maps && <code className="pds-chip-maps">--ui-{token}</code>}
+      {pinned && <span className="lra-pill is-blue pds-chip-pin">Connect</span>}
     </div>
   );
 }
@@ -327,14 +339,28 @@ export default function PrototypeDesignSystem() {
             </Usage>
           </Block>
 
-          <Block title="Tints" note="Supporting steps generated around the palette colours for selected states, badges, alerts and focus rings. Badges pair 50 fill + 200 border + 600/700 text; alerts pair 25 fill + 300 border.">
+          <Block title="Colour scales" note="Every brand colour has a full 25–950 scale, generated in OKLCH so each step is an even jump in perceived lightness, kept inside the sRGB gamut. The palette's own values are pinned where their lightness falls — marked Connect — and every other step is built around them. 600 is the default for fills and text; the light end (25–200) is for tints, selected states and badge fills; the dark end for hovers and pressed states.">
             <Specimen>
-              {TINTS.map(([label, key, steps]) => (
+              {SCALES.map(([label, key, pins]) => (
+                <div key={key} className="pds-utility">
+                  <p className="pds-utility-name">
+                    {label} <code>--ui-{key}-*</code>
+                  </p>
+                  <div className="pds-scale">
+                    {ALL.map((st) => (
+                      <Chip key={st} token={`${key}-${st}`} name={st} pinned={pins[st]} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </Specimen>
+            <Specimen label="Supporting hues — warning and purple aren't in the Connect palette; they keep partial Untitled UI ramps">
+              {SUPPORTING.map(([label, key, steps]) => (
                 <div key={key} className="pds-utility">
                   <p className="pds-utility-name">{label}</p>
                   <div className="pds-ramp">
                     {steps.map((st) => (
-                      <Chip key={st} token={`${key}-${st}`} name={st} big={key === "brand" && st === "600"} />
+                      <Chip key={st} token={`${key}-${st}`} name={st} />
                     ))}
                   </div>
                 </div>
@@ -506,7 +532,7 @@ export default function PrototypeDesignSystem() {
               </div>
             </Specimen>
             <Usage>
-              <li><strong>Primary</strong> — the step's forward action (Save & continue, Create offer). Hover darkens to brand-700.</li>
+              <li><strong>Primary</strong> — the step's forward action (Save & continue, Create offer). Hover darkens to brand-800 ($link-primary-hover).</li>
               <li><strong>Secondary</strong> — Back, Upload, Simulate. <strong>Secondary colour</strong> — additive actions (Add party, Mark complete).</li>
               <li><strong>Tertiary</strong> — low-stakes or destructive-but-reversible (Abandon, Edit, Remove).</li>
               <li><strong>Toggle</strong> — a choice that opens a section; gains a check when on.</li>

@@ -426,3 +426,38 @@
   margin-top: 2px;
   color: var(--ui-brand-600) !important;
 }
+
+/* Full colour scales: twelve steps in one row */
+.pds-scale {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.pds-scale .pds-chip-color {
+  height: 56px;
+}
+
+.pds-scale .pds-chip code {
+  font-size: 11px;
+}
+
+.pds-chip.is-pinned .pds-chip-color {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3.5px var(--ui-gray-800);
+}
+
+.pds-chip-pin {
+  align-self: flex-start;
+  height: 18px;
+  margin-top: 4px;
+  padding: 0 6px;
+  font-size: 10px;
+}
+
+.pds-utility-name code {
+  margin-left: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--ui-fg-tertiary);
+}

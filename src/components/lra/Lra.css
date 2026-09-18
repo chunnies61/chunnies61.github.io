@@ -7,88 +7,113 @@
    the site's Poppins. Everything is scoped under .lra. */
 
 .lra {
-  /* Colour comes from the Connect Design System palette (JPMC). Brand —
-     $brand-primary #126BC5 at 600, the one primary for fills, links and
-     accents (5.3:1 on white); 700 is $link-primary-hover #0A4386. The
-     lighter tints are generated for selected states, badges and alerts. */
-  --ui-brand-25: #f5f9fe;
-  --ui-brand-50: #edf4fc;
-  --ui-brand-100: #dbe9fa;
-  --ui-brand-200: #b9d3f4;
-  --ui-brand-300: #88b5eb;
-  --ui-brand-400: #4f90dd;
-  --ui-brand-500: #2a7bd2;
-  --ui-brand-600: #126bc5;
-  --ui-brand-700: #0a4386;
-  --ui-brand-800: #0a4386;
-  --ui-accent: #79e0ad; /* $accent */
+  /* Colour comes from the Connect Design System palette (JPMC). Each brand
+     colour has a full 25–950 scale, generated in OKLCH (even steps of
+     perceived lightness, kept in the sRGB gamut) with the palette's own
+     values pinned — marked "Connect". */
+  /* Brand — $brand-primary #126BC5 at 600; $link-primary-hover #0A4386 at 800 */
+  --ui-brand-25: #f7faff;
+  --ui-brand-50: #e3efff;
+  --ui-brand-100: #c9dffa;
+  --ui-brand-200: #abcbf4;
+  --ui-brand-300: #8bb6eb;
+  --ui-brand-400: #699fe0;
+  --ui-brand-500: #4486d3;
+  --ui-brand-600: #126bc5; /* Connect */
+  --ui-brand-700: #0056a6;
+  --ui-brand-800: #0a4386; /* Connect */
+  --ui-brand-900: #003062;
+  --ui-brand-950: #001f42;
 
-  /* Gray (Untitled "gray") */
-  --ui-gray-25: #fdfdfd;
-  --ui-gray-50: #fafafa;
-  --ui-gray-100: #f5f5f5;
-  --ui-gray-200: #e9eaeb;
-  --ui-gray-300: #d5d7da;
-  --ui-gray-400: #a4a7ae;
-  --ui-gray-500: #717680;
-  --ui-gray-600: #535862;
-  --ui-gray-700: #414651;
-  --ui-gray-800: #252b37;
-  --ui-gray-900: #181d27;
-  --ui-gray-950: #0a0d12;
+  /* Accent — $accent #79E0AD at 300 (a light mint, so it anchors high) */
+  --ui-accent-25: #f2fef7;
+  --ui-accent-50: #defaea;
+  --ui-accent-100: #c2f3d8;
+  --ui-accent-200: #a0eac3;
+  --ui-accent-300: #79e0ad; /* Connect */
+  --ui-accent-400: #62c394;
+  --ui-accent-500: #4ba87c;
+  --ui-accent-600: #338d64;
+  --ui-accent-700: #19724e;
+  --ui-accent-800: #005939;
+  --ui-accent-900: #003f27;
+  --ui-accent-950: #002716;
+  --ui-accent: var(--ui-accent-300);
+
+  /* Neutral — built from the Connect greys (text, icons, dividers, surfaces) */
+  --ui-gray-25: #fcfcfc;
+  --ui-gray-50: #f9f9f9; /* Connect */
+  --ui-gray-100: #f6f6f6; /* Connect */
+  --ui-gray-200: #ededed; /* Connect */
+  --ui-gray-300: #cccccc; /* Connect */
+  --ui-gray-400: #b2b2b2; /* Connect */
+  --ui-gray-500: #999999; /* Connect */
+  --ui-gray-600: #717171; /* Connect */
+  --ui-gray-700: #666666; /* Connect */
+  --ui-gray-800: #414042; /* Connect */
+  --ui-gray-900: #2b2a2c;
+  --ui-gray-950: #161617;
 
   /* Utility colours */
-  /* Error — $link-error-default #BF2155 at 600 (5.9:1 on white, 5.3:1 on
-     50); 700 is $link-error-hover #801337. Tints generated. */
-  --ui-error-25: #fdf8fa;
-  --ui-error-50: #fbeff3;
-  --ui-error-100: #f6e0e7;
-  --ui-error-200: #edc1cf;
-  --ui-error-300: #df90aa;
-  --ui-error-600: #bf2155;
-  --ui-error-700: #801337;
+  /* Error — $link-error-default #BF2155 at 600; $link-error-hover #801337 at 800 */
+  --ui-error-25: #fff8f9;
+  --ui-error-50: #ffe7ea;
+  --ui-error-100: #fdcfd5;
+  --ui-error-200: #f7b3be;
+  --ui-error-300: #ed96a5;
+  --ui-error-400: #e0758b;
+  --ui-error-500: #d15170;
+  --ui-error-600: #bf2155; /* Connect */
+  --ui-error-700: #a10a43;
+  --ui-error-800: #801337; /* Connect */
+  --ui-error-900: #600024;
+  --ui-error-950: #410016;
   --ui-warning-25: #fffcf5;
   --ui-warning-50: #fffaeb;
   --ui-warning-200: #fedf89;
   --ui-warning-300: #fec84b;
   --ui-warning-600: #dc6803;
   --ui-warning-700: #b54708;
-  /* Success — $link-success-default #006600 at 600 (7.2:1 on white, 6.5:1
-     on 50); 700 is $link-success-hover #003000. Tints generated. */
-  --ui-success-25: #f7faf7;
-  --ui-success-50: #edf4ed;
-  --ui-success-200: #b8d4b8;
-  --ui-success-300: #80b280;
-  --ui-success-500: #338533;
-  --ui-success-600: #006600;
-  --ui-success-700: #003000;
+  /* Success — $link-success-default #006600 at 600; $link-success-hover #003000 at 900 */
+  --ui-success-25: #f7fbf7;
+  --ui-success-50: #e4f0e2;
+  --ui-success-100: #c8dec6;
+  --ui-success-200: #a9caa5;
+  --ui-success-300: #87b383;
+  --ui-success-400: #639b5f;
+  --ui-success-500: #3c8138;
+  --ui-success-600: #006600; /* Connect */
+  --ui-success-700: #005600;
+  --ui-success-800: #004600;
+  --ui-success-900: #003000; /* Connect */
+  --ui-success-950: #002800;
   --ui-purple-50: #f4f3ff;
   --ui-purple-200: #d9d6fe;
   --ui-purple-700: #5925dc;
 
   /* Semantic roles — mapped to the Connect tokens they implement */
   --ui-white: #fff;
-  --ui-fg: #414042; /* $text-primary */
-  --ui-fg-secondary: #414042; /* $text-primary — labels, button text */
-  --ui-fg-tertiary: #717171; /* $text-secondary — body, cells, hints */
-  --ui-fg-quaternary: #717171; /* $text-secondary — captions, placeholders */
-  --ui-fg-disabled: #999999; /* $text-disabled */
+  --ui-fg: var(--ui-gray-800); /* $text-primary */
+  --ui-fg-secondary: var(--ui-gray-800); /* $text-primary — labels, button text */
+  --ui-fg-tertiary: var(--ui-gray-600); /* $text-secondary — body, cells, hints */
+  --ui-fg-quaternary: var(--ui-gray-600); /* $text-secondary — captions, placeholders */
+  --ui-fg-disabled: var(--ui-gray-500); /* $text-disabled */
   --ui-bg: #fff; /* $background-primary */
-  --ui-bg-secondary: #f6f6f6; /* $background-secondary — panels, headers */
-  --ui-bg-tertiary: #f6f6f6; /* $background-disabled */
-  --ui-bg-hover: #f9f9f9; /* $background-hover — rows and components */
-  --ui-border: #cccccc; /* $divider-primary — inputs, buttons, tags */
-  --ui-border-secondary: #ededed; /* $divider-secondary — cards, tables */
-  --ui-icon: #666666; /* $icon-default */
+  --ui-bg-secondary: var(--ui-gray-100); /* $background-secondary — panels, headers */
+  --ui-bg-tertiary: var(--ui-gray-100); /* $background-disabled */
+  --ui-bg-hover: var(--ui-gray-50); /* $background-hover — rows and components */
+  --ui-border: var(--ui-gray-300); /* $divider-primary — inputs, buttons, tags */
+  --ui-border-secondary: var(--ui-gray-200); /* $divider-secondary — cards, tables */
+  --ui-icon: var(--ui-gray-700); /* $icon-default */
   --ui-icon-hover: #959595; /* $icon-hover */
-  --ui-icon-disabled: #b2b2b2; /* $icon-disabled */
+  --ui-icon-disabled: var(--ui-gray-400); /* $icon-disabled */
   --ui-row-selected: #f2f5ff; /* $row-selected-default */
   --ui-row-selected-hover: #e5edff; /* $row-selected-hover */
   --ui-editable-grid: #fffaeb; /* $editable-grid */
   --ui-editable-grid-outline: #ffd037; /* $editable-grid-outline */
-  --ui-link: #126bc5; /* $link-primary-default */
-  --ui-link-hover: #0a4386; /* $link-primary-hover */
-  --ui-link-secondary: #414042; /* $link-secondary, $link-definition */
+  --ui-link: var(--ui-brand-600); /* $link-primary-default */
+  --ui-link-hover: var(--ui-brand-800); /* $link-primary-hover */
+  --ui-link-secondary: var(--ui-gray-800); /* $link-secondary, $link-definition */
 
   /* Shadows */
   --ui-shadow-xs: 0 1px 2px rgba(10, 13, 18, 0.05);
@@ -176,7 +201,7 @@
 
 /* --- Prototype switch: the black toggle ------------------------------------
    Sits above the window, on the portfolio page rather than in the app, so
-   it's set in the site's Poppins. Equal-width options on a near-black
+   it's set in the site's Poppins. Equal-width options on a gray-800
    track; a white thumb slides to the selected option. No visible caption —
    the group is named with aria-label. 32px tall; each prototype sets the
    space beneath it. */
@@ -196,7 +221,7 @@
   grid-template-columns: repeat(var(--n), 1fr);
   padding: 3px;
   border-radius: 6px;
-  background: #0e1014;
+  background: var(--ui-gray-800);
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.06),
     0 1px 2px rgba(0, 0, 0, 0.18);
@@ -249,7 +274,7 @@
 }
 
 .lra-toggle-btn.is-on {
-  color: #0e1014;
+  color: var(--ui-gray-800);
   font-weight: 600;
   cursor: default;
 }
@@ -310,14 +335,14 @@
    reserves the scaled height and draws the window's edge and shadow; the
    canvas is pinned to its top-left and transformed. */
 .lra-frame {
-  /* A solid gray-800 border (the site's --gray-800) sets the prototype
-     apart from the page. Content-box sizing keeps the border outside the scaled canvas:
+  /* A solid gray-800 border (#414042, the Connect $text-primary) sets the
+     prototype apart from the page. Content-box sizing keeps the border outside the scaled canvas:
      the frame's content is exactly the 16:9 screen. */
   position: relative;
   box-sizing: content-box;
   width: calc(100% - 4px);
   overflow: hidden;
-  border: 2px solid var(--gray-800);
+  border: 2px solid var(--ui-gray-800);
   border-radius: 12px;
   box-shadow: 0 12px 32px rgba(20, 32, 61, 0.14);
 }
@@ -1062,7 +1087,7 @@
 
 .lra-btn.is-primary:hover:not(:disabled),
 .lra-btn.is-toggle.is-on:hover {
-  background: var(--ui-brand-700);
+  background: var(--ui-brand-800);
 }
 
 /* Secondary — also a toggle button's unselected state */
