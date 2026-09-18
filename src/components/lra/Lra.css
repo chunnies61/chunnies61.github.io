@@ -1248,8 +1248,8 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* --- Badges: pill, bordered, text-xs medium ----------------------------------- */
-/* Badges are set in capitals, lightly tracked */
+/* --- Badges: pill, bordered, text-xs semibold -------------------------------- */
+/* Badges are set in semibold capitals, lightly tracked */
 .lra-pill {
   display: inline-flex;
   align-items: center;
@@ -1263,7 +1263,7 @@
   color: var(--ui-fg-secondary);
   font-size: 12px;
   line-height: 18px;
-  font-weight: 500;
+  font-weight: 600;
   white-space: nowrap;
 }
 
@@ -1388,18 +1388,16 @@
 }
 
 /* --- Existing facility card (FacilityCard.jsx) ------------------------------
-   Built for scanning: identity, line size + utilisation, term, people and
-   collateral, then actions. */
+   Horizontal zones that scan in one pass: identity + actions; a stat strip
+   of the four numbers; a full-width utilisation bar; a gray footer for
+   borrowers and collateral. */
 .lra-fac-grid {
-  grid-template-columns: repeat(auto-fill, minmax(560px, 640px));
-  gap: 20px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
 }
 
 .lra-fac {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 24px;
+  overflow: hidden;
   border: 1px solid var(--ui-border-secondary);
   border-radius: var(--ui-radius-md);
   background: var(--ui-bg);
@@ -1415,7 +1413,8 @@
 .lra-fac-head {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
+  padding: 20px 24px;
 }
 
 .lra-fac-icon {
@@ -1423,15 +1422,17 @@
   flex: none;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: var(--ui-radius-md);
   background: var(--ui-brand-50);
+  box-shadow: inset 0 0 0 1px var(--ui-brand-200);
   color: var(--ui-primary);
 }
 
-.lra-fac-icon.is-custom {
+.lra-fac.is-custom .lra-fac-icon {
   background: var(--ui-purple-50);
+  box-shadow: inset 0 0 0 1px var(--ui-purple-200);
   color: var(--ui-purple-700);
 }
 
@@ -1440,8 +1441,15 @@
   min-width: 0;
 }
 
-.lra-fac-title h5 {
-  margin: 0;
+.lra-fac-name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.lra-fac-name h5 {
+  margin: 0 4px 0 0;
   font-family: var(--ui-font);
   font-size: 18px;
   line-height: 28px;
@@ -1450,165 +1458,99 @@
 }
 
 .lra-fac-title p {
+  margin-top: 2px;
   font-size: 14px;
   line-height: 20px;
   color: var(--ui-fg-tertiary);
+  font-variant-numeric: tabular-nums;
 }
 
+/* The four numbers */
+.lra-fac-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  border-top: 1px solid var(--ui-border-secondary);
+}
+
+.lra-fac-stats > div {
+  padding: 16px 24px;
+}
+
+.lra-fac-stats > div + div {
+  border-left: 1px solid var(--ui-border-secondary);
+}
+
+.lra-fac-stats dt,
 .lra-fac-label {
   font-size: 12px;
   line-height: 18px;
-  font-weight: 500;
-  color: var(--ui-fg-quaternary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ui-fg-tertiary);
 }
 
-/* Line size + utilisation */
-.lra-fac-line {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 32px;
-  align-items: end;
-  padding: 16px 20px;
-  border-radius: var(--ui-radius-md);
-  background: var(--ui-bg-secondary);
-}
-
-.lra-fac-amount {
-  font-size: 30px;
-  line-height: 38px;
+.lra-fac-stats dd {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 4px 0 0;
+  font-size: 20px;
+  line-height: 30px;
   font-weight: 600;
   color: var(--ui-fg);
   font-variant-numeric: tabular-nums;
 }
 
-.lra-fac-amount span {
-  margin-left: 6px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--ui-fg-quaternary);
+.lra-fac-stats dd.is-lead {
+  font-size: 24px;
+  line-height: 30px;
 }
 
-.lra-fac-usage-head {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-}
-
-.lra-fac-usage-head strong {
-  margin-left: auto;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--ui-fg);
-}
-
-.lra-fac-bar,
-.lra-fac-timeline {
-  height: 8px;
-  overflow: hidden;
-  border-radius: 4px;
-  background: var(--ui-border-secondary);
-}
-
-.lra-fac-bar > span,
-.lra-fac-timeline > span {
-  display: block;
-  height: 100%;
-  border-radius: 4px;
-  background: var(--ui-primary);
-}
-
-.lra-fac-bar.is-near > span {
-  background: var(--ui-warning-600);
-}
-
-.lra-fac-usage-foot {
-  display: flex;
-  gap: 20px;
-  margin-top: 8px;
-  font-size: 12px;
-  line-height: 18px;
-  color: var(--ui-fg-tertiary);
-}
-
-.lra-fac-usage-foot span {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.lra-fac-key {
-  width: 8px;
-  height: 8px;
-  border-radius: 2px;
-  background: var(--ui-border-secondary);
-}
-
-.lra-fac-key.is-drawn {
-  background: var(--ui-primary);
-}
-
-.lra-fac-bar.is-near + .lra-fac-usage-foot .lra-fac-key.is-drawn {
-  background: var(--ui-warning-600);
-}
-
-/* Term */
-.lra-fac-term {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  color: var(--ui-icon);
-}
-
-.lra-fac-term-body {
-  flex: 1;
-}
-
-.lra-fac-term-head {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
+.lra-fac-stats dd span {
   font-size: 14px;
   line-height: 20px;
+  font-weight: 500;
   color: var(--ui-fg-tertiary);
 }
 
-.lra-fac-term-head strong {
-  font-weight: 600;
-  color: var(--ui-fg);
+/* Utilisation: a full-bleed bar under the stats */
+.lra-fac-util {
+  height: 6px;
+  background: var(--ui-gray-100);
 }
 
-.lra-fac-timeline {
-  height: 4px;
+.lra-fac-util > span {
+  display: block;
+  height: 100%;
+  background: var(--ui-primary);
 }
 
-.lra-fac-timeline > span {
-  background: var(--ui-fg-quaternary);
+.lra-fac-util.is-near > span {
+  background: var(--ui-warning-600);
 }
 
 /* People and collateral */
-.lra-fac-meta {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 16px;
-  margin: 0;
-  padding-top: 16px;
-  border-top: 1px solid var(--ui-border-secondary);
-}
-
-.lra-fac-meta dt {
-  margin-bottom: 8px;
-  font-size: 12px;
-  line-height: 18px;
-  font-weight: 500;
-  color: var(--ui-fg-quaternary);
-}
-
-.lra-fac-meta dd {
+.lra-fac-foot {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 12px;
-  margin: 0;
+  align-items: center;
+  gap: 12px 48px;
+  padding: 14px 24px;
+  background: var(--ui-bg-secondary);
+}
+
+.lra-fac-foot > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lra-fac-people {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
 }
 
 .lra-fac-person {
@@ -1628,8 +1570,8 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: var(--ui-brand-50);
-  box-shadow: inset 0 0 0 0.75px rgba(10, 13, 18, 0.08);
+  background: var(--ui-bg);
+  box-shadow: inset 0 0 0 1px var(--ui-border);
   color: var(--ui-primary);
   font-size: 12px;
   font-weight: 600;
@@ -1642,16 +1584,17 @@
   padding: 0 10px;
   border: 1px solid var(--ui-border);
   border-radius: var(--ui-radius-sm);
+  background: var(--ui-bg);
   font-size: 14px;
   font-weight: 500;
   color: var(--ui-fg);
   font-variant-numeric: tabular-nums;
 }
 
-/* Actions — a button group */
+/* Actions — a button group, top right */
 .lra-fac-actions {
   display: inline-flex;
-  align-self: flex-start;
+  flex: none;
   overflow: hidden;
   border-radius: var(--ui-radius-sm);
   box-shadow: var(--ui-shadow-xs), inset 0 0 0 1px var(--ui-border);
@@ -1692,8 +1635,11 @@
   outline-offset: -2px;
 }
 
-.lra-fac > .lra-inline-error {
-  margin-top: -8px;
+.lra-fac-error {
+  margin: 0;
+  padding: 12px 24px;
+  border-top: 1px solid var(--ui-error-200);
+  background: var(--ui-error-50);
 }
 
 .lra-build-actions {

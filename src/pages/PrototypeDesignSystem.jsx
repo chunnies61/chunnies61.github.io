@@ -108,7 +108,7 @@ const TYPE = [
   ["Text lg", 18, 28, 600, "App header title, empty-state titles"],
   ["Text md", 16, 24, 600, "Section and card titles (inputs use 400)"],
   ["Text sm", 14, 20, 500, "Body, labels (500), buttons and tabs (600)"],
-  ["Text xs", 12, 18, 500, "Badges, captions, table headers, key labels"],
+  ["Text xs", 12, 18, 500, "Captions, key labels (badges use 600)"],
 ];
 
 const SPACING = [2, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48];
@@ -706,7 +706,7 @@ export default function PrototypeDesignSystem() {
             </Specimen>
           </Block>
 
-          <Block title="Badges" note="Pill, 22px, text-xs medium in all caps (0.04em tracking), 1px border. Colour carries meaning — never decoration.">
+          <Block title="Badges" note="Pill, 22px, text-xs semibold in all caps (0.04em tracking), 1px border. Colour carries meaning — never decoration.">
             <Specimen>
               <div className="pds-row">
                 <span className="lra-pill is-good">Complete</span>
