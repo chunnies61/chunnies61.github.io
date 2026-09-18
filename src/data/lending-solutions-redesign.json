@@ -855,11 +855,12 @@
           "value": "The final design keeps what removed rework from all three, and cuts what removed judgement:"
         },
         {
-          "type": "phases",
-          "steps": [
+          "type": "cards",
+          "columns": 3,
+          "items": [
             {
-              "num": "1",
               "emoji": "🧭",
+              "label": "Decision 1",
               "title": "One request, routed by the deal",
               "points": [
                 "Why: the up-front SBL-vs-Custom choice caused mis-routed intake.",
@@ -868,8 +869,8 @@
               ]
             },
             {
-              "num": "2",
               "emoji": "✅",
+              "label": "Decision 2",
               "title": "Credit's rules, checked at entry",
               "points": [
                 "Why: most bounce-backs were questions the banker was never asked.",
@@ -878,8 +879,8 @@
               ]
             },
             {
-              "num": "3",
               "emoji": "🤝",
+              "label": "Decision 3",
               "title": "AI drafts, the banker decides",
               "points": [
                 "Why: full auto-sizing hit a trust wall in testing.",
