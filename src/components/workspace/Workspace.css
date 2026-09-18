@@ -977,7 +977,7 @@
 }
 
 .ws-kpi-note.is-warn {
-  color: var(--ui-error-700);
+  color: var(--ui-error-600);
 }
 
 .ws-grid-2 {
@@ -1115,11 +1115,11 @@
 }
 
 .ws-dot.is-warn {
-  background: #b26a00;
+  background: var(--ui-warning-600);
 }
 
 .ws-dot.is-good {
-  background: #1a8f5a;
+  background: var(--ui-success-600);
 }
 
 .ws-overdue {

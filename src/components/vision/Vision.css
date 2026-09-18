@@ -745,7 +745,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--ui-success-500);
+  background: var(--ui-success-600);
 }
 
 .vp-chat-log {

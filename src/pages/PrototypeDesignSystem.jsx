@@ -51,7 +51,7 @@ const PAIRS = [
   ["white", "brand-600", "White on primary button"],
   ["success-700", "success-50", "Success badge"],
   ["warning-700", "warning-50", "Warning badge"],
-  ["error-700", "error-50", "Error badge"],
+  ["error-600", "error-50", "Error badge (JPMC red)"],
   ["purple-700", "purple-50", "Purple badge"],
 ];
 
@@ -292,7 +292,7 @@ export default function PrototypeDesignSystem() {
             </Specimen>
           </Block>
 
-          <Block title="Utility colours" note="Status only: success, warning, error — plus purple for the one secondary category (Tailored / Custom deals). Badges pair 50 fill + 200 border + 700 text; alerts pair 25 fill + 300 border + 700 text.">
+          <Block title="Utility colours" note="Status only. Success is JPMC green #1F8924 and error is JPMC red #C51212, both at 600, with tints generated around them; warning and purple (the one secondary category, Tailored / Custom deals) follow Untitled UI. Red text uses 600; green 600 is for dots, icons and fills, and green text uses 700, since #1F8924 falls under AA on its own tints.">
             <Specimen>
               {UTILITY.map(([label, key, steps]) => (
                 <div key={key} className="pds-utility">

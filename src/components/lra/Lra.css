@@ -36,26 +36,29 @@
   --ui-gray-950: #0a0d12;
 
   /* Utility colours */
-  --ui-error-25: #fffbfa;
-  --ui-error-50: #fef3f2;
-  --ui-error-100: #fee4e2;
-  --ui-error-200: #fecdca;
-  --ui-error-300: #fda29b;
-  --ui-error-600: #d92d20;
-  --ui-error-700: #b42318;
+  /* Error — JPMC red #C51212 at 600 (text-safe: 6.1:1 on white, 5.4:1 on 50) */
+  --ui-error-25: #fdf8f8;
+  --ui-error-50: #fbeeee;
+  --ui-error-100: #f7dede;
+  --ui-error-200: #efbdbd;
+  --ui-error-300: #e38d8d;
+  --ui-error-600: #c51212;
+  --ui-error-700: #a20f0f;
   --ui-warning-25: #fffcf5;
   --ui-warning-50: #fffaeb;
   --ui-warning-200: #fedf89;
   --ui-warning-300: #fec84b;
   --ui-warning-600: #dc6803;
   --ui-warning-700: #b54708;
-  --ui-success-25: #f6fef9;
-  --ui-success-50: #ecfdf3;
-  --ui-success-200: #abefc6;
-  --ui-success-300: #75e0a7;
-  --ui-success-500: #17b26a;
-  --ui-success-600: #079455;
-  --ui-success-700: #067647;
+  /* Success — JPMC green #1F8924 at 600, for dots, icons and fills. It's
+     4.5:1 on white but under AA on its tints, so green text uses 700. */
+  --ui-success-25: #f8fbf8;
+  --ui-success-50: #eff7f0;
+  --ui-success-200: #c0dec2;
+  --ui-success-300: #93c696;
+  --ui-success-500: #479e4b;
+  --ui-success-600: #1f8924;
+  --ui-success-700: #19701e;
   --ui-purple-50: #f4f3ff;
   --ui-purple-200: #d9d6fe;
   --ui-purple-700: #5925dc;
@@ -1083,7 +1086,7 @@
 .lra-pill.is-critical {
   background: var(--ui-error-50);
   box-shadow: inset 0 0 0 1px var(--ui-error-200);
-  color: var(--ui-error-700);
+  color: var(--ui-error-600);
 }
 
 .lra-muted {
@@ -1299,6 +1302,10 @@
   border-color: var(--ui-success-300);
   background: var(--ui-success-25);
   color: var(--ui-success-700);
+}
+
+.lra-banner.is-success .lra-icon {
+  color: var(--ui-success-600);
 }
 
 .lra-step > .lra-banner + .lra-section {
