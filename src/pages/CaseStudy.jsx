@@ -295,26 +295,6 @@ function Block({ block }) {
               {item.label && <span className="cs-card-label">{item.label}</span>}
               {item.title && <h4>{item.title}</h4>}
               {item.desc && <p>{item.desc}</p>}
-              {item.points && (
-                <ul className="cs-card-points">
-                  {item.points.map((pt) => {
-                    // "Why: …" — the lead-in before the first colon is set in bold
-                    const at = pt.indexOf(": ");
-                    return (
-                      <li key={pt}>
-                        {at > 0 ? (
-                          <>
-                            <strong>{pt.slice(0, at + 1)}</strong>
-                            {pt.slice(at + 1)}
-                          </>
-                        ) : (
-                          pt
-                        )}
-                      </li>
-                    );
-                  })}
-                </ul>
-              )}
             </div>
           ))}
         </div>

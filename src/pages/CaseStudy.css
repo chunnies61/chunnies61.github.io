@@ -518,26 +518,6 @@ a.cs-index-item.is-active:hover {
   color: var(--text-soft);
 }
 
-/* Optional short list in a card (e.g. Why / Trade-off / UI) */
-.cs-card-points {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin: 10px 0 0;
-  padding-left: 18px;
-  font-size: 14px;
-  color: var(--text-soft);
-}
-
-.cs-card-points li::marker {
-  color: var(--gray-400);
-}
-
-.cs-card-points strong {
-  font-weight: 600;
-  color: var(--text);
-}
-
 /* Shipped-surface showcase — alternating video + text rows */
 .cs-surface-showcase {
   display: flex;

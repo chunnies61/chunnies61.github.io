@@ -837,67 +837,6 @@
       ]
     },
     {
-      "id": "decision",
-      "kicker": "Design Decisions",
-      "title": "Assisted, not automated",
-      "blocks": [
-        {
-          "type": "text",
-          "value": "The room chose a direction; testing decided how far to take it. The boldest proposal — an AI agent that sized the whole request from a chat — hit a trust wall."
-        },
-        {
-          "type": "quote",
-          "value": "If the system sizes it and it's wrong, it's still my name on the deal. I'll just redo it by hand to be safe.",
-          "attribution": "Lender Specialist, prototype testing"
-        },
-        {
-          "type": "text",
-          "value": "The final design keeps what removed rework from all three, and cuts what removed judgement:"
-        },
-        {
-          "type": "cards",
-          "columns": 3,
-          "items": [
-            {
-              "emoji": "🧭",
-              "label": "Decision 1",
-              "title": "One request, routed by the deal",
-              "points": [
-                "Why: choosing SBL vs Custom up front mis-routed deals.",
-                "Trade-off: routing logic moves into the product.",
-                "UI: a path helper; fields and capacity adapt as you go."
-              ]
-            },
-            {
-              "emoji": "✅",
-              "label": "Decision 2",
-              "title": "Credit's rules, checked at entry",
-              "points": [
-                "Why: most bounce-backs were unasked questions.",
-                "Trade-off: longer intake, far fewer returns.",
-                "UI: inline limit checks; Continue names what's missing."
-              ]
-            },
-            {
-              "emoji": "🤝",
-              "label": "Decision 3",
-              "title": "AI drafts, the banker decides",
-              "points": [
-                "Why: full auto-sizing broke trust in testing.",
-                "Trade-off: less automation, no redone work.",
-                "UI: provenance on every value; overrides carry a reason to Credit."
-              ]
-            }
-          ]
-        },
-        {
-          "type": "callout",
-          "label": "The rationale I'd defend in any review",
-          "value": "Accountability in lending is personal. Automation earns trust only when it's transparent and reversible."
-        }
-      ]
-    },
-    {
       "id": "delivery",
       "kicker": "Delivery",
       "title": "Shipping without formal authority",
