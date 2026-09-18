@@ -209,6 +209,7 @@
    space beneath it. */
 .lra-toggle-row {
   display: flex;
+  justify-content: center;
   font-family: var(--font-ui);
 }
 
