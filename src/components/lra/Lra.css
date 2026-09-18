@@ -1,34 +1,36 @@
 /* ===== Loan Request App prototype — Material 3 =====
    Built to the Material 3 spec (m3.material.io): colour roles from a scheme
-   seeded on the site's Primary 40, the baseline type scale set in the site's Poppins, shape
-   and elevation tokens, and 8/10/10% state layers. It's an embedded app mock,
+   seeded on JPMC blue (#126BC5), the baseline type scale set in the site's
+   Poppins, shape and elevation tokens, and 8/10/10% state layers. It's an embedded app mock,
    so everything is scoped under .lra and it doesn't use the portfolio's
    .md-* type classes. */
 
 .lra {
-  /* Colour roles (light scheme) */
-  --md-primary: #1e57c8;
+  /* Colour roles (light scheme), seeded on JPMC blue #126BC5 (hue ≈211°).
+     Text pairs clear WCAG AA: primary on white 5.3:1, on the darkest
+     container it's drawn on 4.6:1; on-containers 7.2:1. */
+  --md-primary: #126bc5;
   --md-on-primary: #fff;
-  --md-primary-container: #dae2ff;
-  --md-on-primary-container: #003fa3;
-  --md-secondary: #575e71;
-  --md-secondary-container: #dce2f9;
-  --md-on-secondary-container: #3f4759;
+  --md-primary-container: #d3e4ff;
+  --md-on-primary-container: #00468c;
+  --md-secondary: #535f70;
+  --md-secondary-container: #d7e3f7;
+  --md-on-secondary-container: #3b4858;
   --md-tertiary-container: #fcd7fb;
   --md-on-tertiary-container: #583e5b;
   --md-error: #ba1a1a;
-  --md-surface: #faf8ff;
+  --md-surface: #f8f9ff;
   --md-surface-container-lowest: #fff;
-  --md-surface-container-low: #f4f3fa;
-  --md-surface-container: #eeedf4;
-  --md-surface-container-high: #e8e7ef;
-  --md-surface-container-highest: #e2e2e9;
-  --md-on-surface: #1a1b21;
-  --md-on-surface-variant: #44464f;
-  --md-outline: #757780;
-  --md-outline-variant: #c5c6d0;
-  --md-inverse-surface: #2f3036;
-  --md-inverse-on-surface: #f1f0f7;
+  --md-surface-container-low: #f2f3fa;
+  --md-surface-container: #ecedf4;
+  --md-surface-container-high: #e6e8ee;
+  --md-surface-container-highest: #e0e2e9;
+  --md-on-surface: #191c20;
+  --md-on-surface-variant: #42474e;
+  --md-outline: #72777f;
+  --md-outline-variant: #c2c7cf;
+  --md-inverse-surface: #2e3135;
+  --md-inverse-on-surface: #eff0f7;
   /* Custom colours, harmonised to the scheme */
   --md-success-container: #c4efd4;
   --md-on-success-container: #005232;
