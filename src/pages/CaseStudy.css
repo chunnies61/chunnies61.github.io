@@ -1858,7 +1858,7 @@ body:has(.cs-gate) {
 /* The nudge above each prototype */
 p.cs-proto-prompt {
   font-weight: 600;
-  color: var(--text);
+  color: var(--accent-dark); /* Primary 40 — the text-safe primary on white */
 }
 
 /* Placeholder while a prototype's code loads: its controls' height, then
