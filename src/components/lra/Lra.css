@@ -7,9 +7,10 @@
    the site's Poppins. Everything is scoped under .lra. */
 
 .lra {
-  /* Brand — JPMC blue #126BC5 at 600, the one primary for fills, text and
-     accents (5.3:1 on white, 4.8:1 on brand-50). 700 is only the primary
-     button's hover. */
+  /* Colour comes from the Connect Design System palette (JPMC). Brand —
+     $brand-primary #126BC5 at 600, the one primary for fills, links and
+     accents (5.3:1 on white); 700 is $link-primary-hover #0A4386. The
+     lighter tints are generated for selected states, badges and alerts. */
   --ui-brand-25: #f5f9fe;
   --ui-brand-50: #edf4fc;
   --ui-brand-100: #dbe9fa;
@@ -18,8 +19,9 @@
   --ui-brand-400: #4f90dd;
   --ui-brand-500: #2a7bd2;
   --ui-brand-600: #126bc5;
-  --ui-brand-700: #0e56a0;
-  --ui-brand-800: #0e4884;
+  --ui-brand-700: #0a4386;
+  --ui-brand-800: #0a4386;
+  --ui-accent: #79e0ad; /* $accent */
 
   /* Gray (Untitled "gray") */
   --ui-gray-25: #fdfdfd;
@@ -36,45 +38,57 @@
   --ui-gray-950: #0a0d12;
 
   /* Utility colours */
-  /* Error — JPMC red #C51212 at 600 (text-safe: 6.1:1 on white, 5.4:1 on 50) */
-  --ui-error-25: #fdf8f8;
-  --ui-error-50: #fbeeee;
-  --ui-error-100: #f7dede;
-  --ui-error-200: #efbdbd;
-  --ui-error-300: #e38d8d;
-  --ui-error-600: #c51212;
-  --ui-error-700: #a20f0f;
+  /* Error — $link-error-default #BF2155 at 600 (5.9:1 on white, 5.3:1 on
+     50); 700 is $link-error-hover #801337. Tints generated. */
+  --ui-error-25: #fdf8fa;
+  --ui-error-50: #fbeff3;
+  --ui-error-100: #f6e0e7;
+  --ui-error-200: #edc1cf;
+  --ui-error-300: #df90aa;
+  --ui-error-600: #bf2155;
+  --ui-error-700: #801337;
   --ui-warning-25: #fffcf5;
   --ui-warning-50: #fffaeb;
   --ui-warning-200: #fedf89;
   --ui-warning-300: #fec84b;
   --ui-warning-600: #dc6803;
   --ui-warning-700: #b54708;
-  /* Success — JPMC green #1F8924 at 600, for dots, icons and fills. It's
-     4.5:1 on white but under AA on its tints, so green text uses 700. */
-  --ui-success-25: #f8fbf8;
-  --ui-success-50: #eff7f0;
-  --ui-success-200: #c0dec2;
-  --ui-success-300: #93c696;
-  --ui-success-500: #479e4b;
-  --ui-success-600: #1f8924;
-  --ui-success-700: #19701e;
+  /* Success — $link-success-default #006600 at 600 (7.2:1 on white, 6.5:1
+     on 50); 700 is $link-success-hover #003000. Tints generated. */
+  --ui-success-25: #f7faf7;
+  --ui-success-50: #edf4ed;
+  --ui-success-200: #b8d4b8;
+  --ui-success-300: #80b280;
+  --ui-success-500: #338533;
+  --ui-success-600: #006600;
+  --ui-success-700: #003000;
   --ui-purple-50: #f4f3ff;
   --ui-purple-200: #d9d6fe;
   --ui-purple-700: #5925dc;
 
-  /* Semantic roles */
+  /* Semantic roles — mapped to the Connect tokens they implement */
   --ui-white: #fff;
-  --ui-fg: var(--ui-gray-900);
-  --ui-fg-secondary: var(--ui-gray-700);
-  --ui-fg-tertiary: var(--ui-gray-600);
-  --ui-fg-quaternary: var(--ui-gray-500);
-  --ui-fg-disabled: var(--ui-gray-400);
-  --ui-bg: var(--ui-white);
-  --ui-bg-secondary: var(--ui-gray-50);
-  --ui-bg-tertiary: var(--ui-gray-100);
-  --ui-border: var(--ui-gray-300);
-  --ui-border-secondary: var(--ui-gray-200);
+  --ui-fg: #414042; /* $text-primary */
+  --ui-fg-secondary: #414042; /* $text-primary — labels, button text */
+  --ui-fg-tertiary: #717171; /* $text-secondary — body, cells, hints */
+  --ui-fg-quaternary: #717171; /* $text-secondary — captions, placeholders */
+  --ui-fg-disabled: #999999; /* $text-disabled */
+  --ui-bg: #fff; /* $background-primary */
+  --ui-bg-secondary: #f6f6f6; /* $background-secondary — panels, headers */
+  --ui-bg-tertiary: #f6f6f6; /* $background-disabled */
+  --ui-bg-hover: #f9f9f9; /* $background-hover — rows and components */
+  --ui-border: #cccccc; /* $divider-primary — inputs, buttons, tags */
+  --ui-border-secondary: #ededed; /* $divider-secondary — cards, tables */
+  --ui-icon: #666666; /* $icon-default */
+  --ui-icon-hover: #959595; /* $icon-hover */
+  --ui-icon-disabled: #b2b2b2; /* $icon-disabled */
+  --ui-row-selected: #f2f5ff; /* $row-selected-default */
+  --ui-row-selected-hover: #e5edff; /* $row-selected-hover */
+  --ui-editable-grid: #fffaeb; /* $editable-grid */
+  --ui-editable-grid-outline: #ffd037; /* $editable-grid-outline */
+  --ui-link: #126bc5; /* $link-primary-default */
+  --ui-link-hover: #0a4386; /* $link-primary-hover */
+  --ui-link-secondary: #414042; /* $link-secondary, $link-definition */
 
   /* Shadows */
   --ui-shadow-xs: 0 1px 2px rgba(10, 13, 18, 0.05);
@@ -274,7 +288,7 @@
 }
 
 .lra-chip:hover {
-  background: var(--ui-bg-secondary);
+  background: var(--ui-bg-hover);
   color: var(--ui-gray-800);
 }
 
@@ -491,7 +505,7 @@
 }
 
 .lra-appbar .lra-icon-btn {
-  color: var(--ui-fg-quaternary);
+  color: var(--ui-icon);
 }
 
 .lra-appbar .lra-icon-btn:last-child {
@@ -720,7 +734,7 @@
 .lra-body select {
   padding-right: 40px;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='m5 7.5 5 5 5-5' stroke='%23a4a7ae' stroke-width='1.67' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='m5 7.5 5 5 5-5' stroke='%23666666' stroke-width='1.67' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 20px;
@@ -902,7 +916,7 @@
 
 .lra-btn.is-secondary:hover:not(:disabled),
 .lra-btn.is-toggle:not(.is-on):hover {
-  background: var(--ui-bg-secondary);
+  background: var(--ui-bg-hover);
   color: var(--ui-gray-800);
 }
 
@@ -953,14 +967,14 @@
   border: 0;
   border-radius: 8px;
   background: transparent;
-  color: var(--ui-fg-quaternary);
+  color: var(--ui-icon);
   cursor: pointer;
   transition: background-color 0.1s linear, color 0.1s linear;
 }
 
 .lra-icon-btn:hover {
-  background: var(--ui-bg-secondary);
-  color: var(--ui-fg-tertiary);
+  background: var(--ui-bg-hover);
+  color: var(--ui-icon-hover);
 }
 
 .lra-icon-btn.is-small {
@@ -1021,7 +1035,16 @@
 }
 
 .lra-table tbody tr:hover > * {
-  background: var(--ui-bg-secondary);
+  background: var(--ui-bg-hover);
+}
+
+/* A row whose checkbox or radio is on reads as selected */
+.lra-table tbody tr:has(> td > input:checked) > * {
+  background: var(--ui-row-selected);
+}
+
+.lra-table tbody tr:has(> td > input:checked):hover > * {
+  background: var(--ui-row-selected-hover);
 }
 
 /* Checkbox / radio / icon-button columns sit flush */
@@ -1056,7 +1079,7 @@
 .lra-pill.is-good {
   background: var(--ui-success-50);
   box-shadow: inset 0 0 0 1px var(--ui-success-200);
-  color: var(--ui-success-700);
+  color: var(--ui-success-600);
 }
 
 .lra-pill.is-blue {
@@ -1301,7 +1324,7 @@
 .lra-banner.is-success {
   border-color: var(--ui-success-300);
   background: var(--ui-success-25);
-  color: var(--ui-success-700);
+  color: var(--ui-success-600);
 }
 
 .lra-banner.is-success .lra-icon {
@@ -1372,7 +1395,7 @@
 }
 
 .lra-rules summary:hover {
-  background: var(--ui-bg-secondary);
+  background: var(--ui-bg-hover);
 }
 
 .lra-rules summary::-webkit-details-marker {

@@ -18,41 +18,75 @@ import "./PrototypeDesignSystem.css";
 
 const SLUG = "lending-solutions-redesign";
 
-const BRAND = ["25", "50", "100", "200", "300", "400", "500", "600", "700", "800"];
-const GRAY = ["25", "50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"];
-const UTILITY = [
-  ["Error", "error", ["25", "50", "100", "200", "300", "600", "700"]],
-  ["Warning", "warning", ["25", "50", "200", "300", "600", "700"]],
-  ["Success", "success", ["25", "50", "200", "300", "500", "600", "700"]],
-  ["Purple", "purple", ["50", "200", "700"]],
+// The Connect Design System palette, as the prototypes implement it:
+// [Connect token, what it's for, the --ui-* token that carries it]
+const PALETTE = [
+  ["Brand", [
+    ["$brand-primary", "Primary brand", "brand-600"],
+    ["$brand-secondary", "Secondary brand", "white"],
+    ["$accent", "Brand accent", "accent"],
+  ]],
+  ["Surface", [
+    ["$background-primary", "Primary background", "bg"],
+    ["$background-secondary", "Secondary background", "bg-secondary"],
+    ["$background-hover", "Background on hover for components", "bg-hover"],
+    ["$background-disabled", "Disabled background for components", "bg-tertiary"],
+  ]],
+  ["Rows", [
+    ["$background-hover", "Row fill on hover", "bg-hover"],
+    ["$row-selected-default", "Selected row fill", "row-selected"],
+    ["$row-selected-hover", "Selected row fill on hover", "row-selected-hover"],
+    ["$editable-grid", "Editable grid row fill", "editable-grid"],
+    ["$editable-grid-outline", "Editable grid outline", "editable-grid-outline"],
+  ]],
+  ["Dividers", [
+    ["$divider-primary", "Primary divider — inputs, buttons, tags", "border"],
+    ["$divider-secondary", "Secondary divider — cards, tables", "border-secondary"],
+  ]],
+  ["Icons", [
+    ["$icon-default", "Default icon colour", "icon"],
+    ["$icon-hover", "Icon on hover", "icon-hover"],
+    ["$icon-disabled", "Disabled icon", "icon-disabled"],
+  ]],
+  ["Text", [
+    ["$text-primary", "Primary text, labels", "fg"],
+    ["$text-secondary", "Secondary text, body, captions", "fg-tertiary"],
+    ["$text-disabled", "Disabled text", "fg-disabled"],
+  ]],
+  ["Links", [
+    ["$link-primary-default", "Primary link", "link"],
+    ["$link-primary-hover", "Primary link on hover", "link-hover"],
+    ["$link-secondary", "Secondary / definition link", "link-secondary"],
+    ["$link-success-default", "Success / gain", "success-600"],
+    ["$link-success-hover", "Success / gain on hover", "success-700"],
+    ["$link-error-default", "Error / loss", "error-600"],
+    ["$link-error-hover", "Error / loss on hover", "error-700"],
+  ]],
 ];
 
-const ROLES = [
-  ["fg", "Primary text, headings, values"],
-  ["fg-secondary", "Labels, button text on white"],
-  ["fg-tertiary", "Body copy, table cells, supporting text"],
-  ["fg-quaternary", "Captions, placeholders, inactive tabs, icons"],
-  ["fg-disabled", "Disabled text and icons"],
-  ["bg", "Surfaces: window, cards, inputs"],
-  ["bg-secondary", "Panels, table headers, hover rows"],
-  ["bg-tertiary", "Disabled fills, featured-icon wells"],
-  ["border", "Inputs, secondary buttons, tags"],
-  ["border-secondary", "Cards, tables, dividers"],
+// Supporting tints generated around the palette colours
+const TINTS = [
+  ["Brand", "brand", ["25", "50", "100", "200", "300", "400", "500", "600", "700"]],
+  ["Success", "success", ["25", "50", "200", "300", "500", "600", "700"]],
+  ["Error", "error", ["25", "50", "100", "200", "300", "600", "700"]],
+  ["Warning", "warning", ["25", "50", "200", "300", "600", "700"]],
+  ["Purple", "purple", ["50", "200", "700"]],
 ];
 
 // Text/background pairs checked live against WCAG AA (4.5:1)
 const PAIRS = [
-  ["fg", "bg", "Primary text on white"],
-  ["fg-tertiary", "bg", "Body text on white"],
-  ["fg-tertiary", "bg-secondary", "Body text on panels"],
-  ["fg-quaternary", "bg", "Captions on white"],
-  ["brand-600", "bg", "Primary (links, active tab) on white"],
-  ["brand-600", "brand-50", "Primary on brand tint (tags, badges)"],
-  ["white", "brand-600", "White on primary button"],
-  ["success-700", "success-50", "Success badge"],
+  ["fg", "bg", "$text-primary on white"],
+  ["fg-tertiary", "bg", "$text-secondary on white"],
+  ["fg-tertiary", "bg-secondary", "$text-secondary on secondary background"],
+  ["link", "bg", "$link-primary on white"],
+  ["link", "row-selected", "$link-primary on a selected row"],
+  ["white", "brand-600", "White on the primary button"],
+  ["success-600", "success-50", "Success badge"],
+  ["error-600", "error-50", "Error badge"],
   ["warning-700", "warning-50", "Warning badge"],
-  ["error-600", "error-50", "Error badge (JPMC red)"],
   ["purple-700", "purple-50", "Purple badge"],
+  ["fg", "editable-grid", "Text on the editable grid"],
+  ["icon", "bg", "$icon-default on white (icons need 3:1)", 3],
 ];
 
 const TYPE = [
@@ -140,19 +174,20 @@ const ratio = (a, b) => {
   return (hi + 0.05) / (lo + 0.05);
 };
 
-function Chip({ token, name, note, big }) {
+function Chip({ token, name, note, big, maps }) {
   const [ref, hex] = useToken(token);
   return (
     <div className={"pds-chip" + (big ? " is-big" : "")}>
       <span ref={ref} className="pds-chip-color" style={{ background: `var(--ui-${token})` }} />
       <span className="pds-chip-name">{name ?? token}</span>
-      <code>{hex}</code>
+      <code>{hex.toUpperCase()}</code>
       {note && <span className="pds-chip-note">{note}</span>}
+      {maps && <code className="pds-chip-maps">--ui-{token}</code>}
     </div>
   );
 }
 
-function ContrastRow({ fg, bg, label }) {
+function ContrastRow({ fg, bg, label, min = 4.5 }) {
   const [fgRef, fgHex] = useToken(fg);
   const [bgRef, bgHex] = useToken(bg);
   const r = fgHex && bgHex ? ratio(fgHex, bgHex) : 0;
@@ -171,7 +206,7 @@ function ContrastRow({ fg, bg, label }) {
       </td>
       <td className="is-num">{r ? r.toFixed(2) : "–"}:1</td>
       <td>
-        <span className={"lra-pill " + (r >= 4.5 ? "is-good" : "is-critical")}>{r >= 4.5 ? "AA" : "Fails"}</span>
+        <span className={"lra-pill " + (r >= min ? "is-good" : "is-critical")}>{r >= min ? "AA" : "Fails"}</span>
       </td>
     </tr>
   );
@@ -221,7 +256,7 @@ export default function PrototypeDesignSystem() {
           <dl className="pds-facts">
             {[
               ["Built on", "Untitled UI React components"],
-              ["Primary", "JPMC blue #126BC5"],
+              ["Colour", "Connect palette · #126BC5"],
               ["Typeface", "Poppins"],
               ["Canvas", "1920 × 1080, scaled to fit"],
               ["Tokens", "--ui-*, scoped to .lra"],
@@ -259,7 +294,7 @@ export default function PrototypeDesignSystem() {
               {[
                 ["One primary", "#126BC5 is the only accent — fills, links, active states and focus. Status colours are for status, never decoration."],
                 ["Labels above fields", "Every input has a visible label above it and hint or error text below. No placeholder-as-label."],
-                ["Hairlines, not heavy fills", "Surfaces separate with 1px gray-200 borders and shadow-xs; gray fills are reserved for panels and headers."],
+                ["Hairlines, not heavy fills", "Surfaces separate with 1px $divider-secondary borders and shadow-xs; $background-secondary is reserved for panels and headers."],
                 ["Say what's blocking", "A disabled Continue always sits beside a status line naming the one thing still missing."],
                 ["Sample data only", "Every name, account and figure is dummy; URLs use the reserved .example domain."],
               ].map(([t, d]) => (
@@ -272,48 +307,38 @@ export default function PrototypeDesignSystem() {
           </Block>
 
           {/* ---------------- Foundations ---------------- */}
-          <Block title="Brand colour" note="Generated around JPMC blue at brand-600. 600 is the primary for fills, text and accents; 700 appears only as the primary button's hover; 25–200 are tints for selected states, badges and alerts.">
+          <Block title="Colour palette" note="The Connect Design System palette (JPMC), used as-is. Each swatch shows the Connect token, its value — read live from the prototypes' CSS — and the --ui-* token that carries it.">
             <Specimen>
-              <div className="pds-ramp">
-                {BRAND.map((s) => (
-                  <Chip key={s} token={`brand-${s}`} name={s} big={s === "600"} note={s === "600" ? "Primary" : undefined} />
-                ))}
-              </div>
-            </Specimen>
-          </Block>
-
-          <Block title="Gray" note="Untitled UI's neutral gray. Text uses 900 / 700 / 600 / 500; borders 300 and 200; surfaces white, 50 and 100.">
-            <Specimen>
-              <div className="pds-ramp">
-                {GRAY.map((s) => (
-                  <Chip key={s} token={`gray-${s}`} name={s} />
-                ))}
-              </div>
-            </Specimen>
-          </Block>
-
-          <Block title="Utility colours" note="Status only. Success is JPMC green #1F8924 and error is JPMC red #C51212, both at 600, with tints generated around them; warning and purple (the one secondary category, Tailored / Custom deals) follow Untitled UI. Red text uses 600; green 600 is for dots, icons and fills, and green text uses 700, since #1F8924 falls under AA on its own tints.">
-            <Specimen>
-              {UTILITY.map(([label, key, steps]) => (
-                <div key={key} className="pds-utility">
-                  <p className="pds-utility-name">{label}</p>
-                  <div className="pds-ramp">
-                    {steps.map((s) => (
-                      <Chip key={s} token={`${key}-${s}`} name={s} />
+              {PALETTE.map(([group, tokens]) => (
+                <div key={group} className="pds-utility">
+                  <p className="pds-utility-name">{group}</p>
+                  <div className="pds-roles">
+                    {tokens.map(([name, note, token]) => (
+                      <Chip key={name + token} token={token} name={name} note={note} maps />
                     ))}
                   </div>
                 </div>
               ))}
             </Specimen>
+            <Usage>
+              <li><strong>One primary.</strong> $brand-primary #126BC5 fills primary buttons and marks links, active tabs, current steps and selection; $link-primary-hover darkens it on hover.</li>
+              <li><strong>Accent sparingly.</strong> $accent #79E0AD is a brand highlight, never a status or a text colour.</li>
+              <li><strong>Gain and loss.</strong> Success #006600 and error #BF2155 are the only status hues for text, badges and alerts; warning (amber) is supplemental.</li>
+            </Usage>
           </Block>
 
-          <Block title="Semantic roles" note="Components reference roles, not raw ramp steps — so a palette change is one edit.">
+          <Block title="Tints" note="Supporting steps generated around the palette colours for selected states, badges, alerts and focus rings. Badges pair 50 fill + 200 border + 600/700 text; alerts pair 25 fill + 300 border.">
             <Specimen>
-              <div className="pds-roles">
-                {ROLES.map(([token, note]) => (
-                  <Chip key={token} token={token} name={`--ui-${token}`} note={note} />
-                ))}
-              </div>
+              {TINTS.map(([label, key, steps]) => (
+                <div key={key} className="pds-utility">
+                  <p className="pds-utility-name">{label}</p>
+                  <div className="pds-ramp">
+                    {steps.map((st) => (
+                      <Chip key={st} token={`${key}-${st}`} name={st} big={key === "brand" && st === "600"} />
+                    ))}
+                  </div>
+                </div>
+              ))}
             </Specimen>
           </Block>
 
@@ -333,17 +358,17 @@ export default function PrototypeDesignSystem() {
                     </tr>
                   </thead>
                   <tbody>
-                    {PAIRS.map(([fg, bg, label]) => (
-                      <ContrastRow key={fg + bg} fg={fg} bg={bg} label={label} />
+                    {PAIRS.map(([fg, bg, label, min]) => (
+                      <ContrastRow key={fg + bg} fg={fg} bg={bg} label={label} min={min} />
                     ))}
                   </tbody>
                 </table>
               </div>
             </Specimen>
             <p className="pds-caveat">
-              Input and tag borders use Untitled UI's gray-300 (1.4:1 against white) — below WCAG's
-              3:1 for component boundaries. They're kept for fidelity to Untitled UI; the label above
-              each field and the focus ring carry the affordance.
+              Input and tag borders use $divider-primary #CCCCCC (1.6:1 against white) — below WCAG's
+              3:1 for component boundaries. It's kept for fidelity to the Connect palette; the label
+              above each field and the focus ring carry the affordance. $text-disabled is exempt.
             </p>
           </Block>
 
@@ -488,7 +513,7 @@ export default function PrototypeDesignSystem() {
             </Usage>
           </Block>
 
-          <Block title="Icon buttons" note="36px square utility buttons (24px small), gray-500 glyphs. Always carry an aria-label.">
+          <Block title="Icon buttons" note="36px square utility buttons (24px small) in $icon-default, $icon-hover on hover. Always carry an aria-label.">
             <Specimen>
               <div className="pds-row">
                 <button type="button" className="lra-icon-btn" aria-label="Delete">
@@ -680,7 +705,7 @@ export default function PrototypeDesignSystem() {
             </Specimen>
           </Block>
 
-          <Block title="Cards" note="White, 1px gray-200 border, 12px corners, shadow-xs, 20px padding. Selected: a 2px primary edge.">
+          <Block title="Cards" note="White, 1px $divider-secondary border, 12px corners, shadow-xs, 20px padding. Selected: a 2px primary edge.">
             <Specimen>
               <div className="lra-facilities">
                 {[false, true].map((sel) => (
@@ -725,12 +750,15 @@ export default function PrototypeDesignSystem() {
             </Specimen>
           </Block>
 
-          <Block title="Tables" note="A card with a gray-50 header row (text-xs medium), 56px rows, gray-600 cells and a gray-900 first column. Numbers right-aligned and tabular.">
+          <Block title="Tables" note="A card with a $background-secondary header row (text-xs medium), 56px rows, $text-secondary cells and a $text-primary first column. Rows take $background-hover on hover and $row-selected when checked. Numbers right-aligned and tabular.">
             <Specimen>
               <div className="lra-table-wrap">
                 <table className="lra-table">
                   <thead>
                     <tr>
+                      <th scope="col">
+                        <span className="lra-sr">Select</span>
+                      </th>
                       <th scope="col">Client name</th>
                       <th scope="col">ECI</th>
                       <th scope="col">KYC</th>
@@ -747,8 +775,11 @@ export default function PrototypeDesignSystem() {
                     {[
                       ["Adam Ross", "9876543210", "4,000,000.00"],
                       ["Carol Simpson", "9876543211", "1,250,000.00"],
-                    ].map(([n, e, v]) => (
+                    ].map(([n, e, v], i) => (
                       <tr key={n}>
+                        <td>
+                          <input type="checkbox" defaultChecked={i === 0} aria-label={`Select ${n}`} />
+                        </td>
                         <th scope="row">{n}</th>
                         <td>{e}</td>
                         <td>
@@ -817,7 +848,7 @@ export default function PrototypeDesignSystem() {
             </Specimen>
           </Block>
 
-          <Block title="Menus & tooltips" note="Menus: white, gray-200 border, 8px, shadow-lg, 40px items. Tooltips: gray-950, 8px, text-xs — for supplementary detail only.">
+          <Block title="Menus & tooltips" note="Menus: white, $divider-secondary border, 8px, shadow-lg, 40px items that take $background-hover. Tooltips: near-black, 8px, text-xs — for supplementary detail only.">
             <Specimen>
               <div className="pds-row pds-top pds-static">
                 <div className="ws">
@@ -852,7 +883,7 @@ export default function PrototypeDesignSystem() {
             </Specimen>
           </Block>
 
-          <Block title="Empty & error states" note="A featured icon (gray-100 well, gray-50 halo), one title and one line of guidance — plus the action that recovers, if there is one.">
+          <Block title="Empty & error states" note="A featured icon ($background-disabled well), one title and one line of guidance — plus the action that recovers, if there is one.">
             <Specimen>
               <div className="pds-states">
                 <p className="lra-empty">Add a party to see lending opportunities and existing facilities.</p>

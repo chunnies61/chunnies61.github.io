@@ -437,7 +437,7 @@
   font-size: 11px;
   line-height: 16px;
   font-weight: 500;
-  color: var(--ui-success-700);
+  color: var(--ui-success-600);
 }
 
 .ws-mini-head {
@@ -973,7 +973,7 @@
 }
 
 .ws-kpi-note.is-up {
-  color: var(--ui-success-700);
+  color: var(--ui-success-600);
 }
 
 .ws-kpi-note.is-warn {
@@ -1239,4 +1239,13 @@
 
 .ws .ws-snackbar {
   bottom: 24px;
+}
+
+/* Menu items take the palette's hover surface rather than an overlay */
+.ws-menu-item:hover::after {
+  opacity: 0;
+}
+
+.ws-menu-item:hover {
+  background: var(--ui-bg-hover);
 }
