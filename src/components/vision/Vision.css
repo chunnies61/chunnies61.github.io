@@ -533,7 +533,7 @@
 
 .vp-dropzone strong {
   font-weight: 600;
-  color: var(--ui-brand-700);
+  color: var(--ui-brand-600);
 }
 
 .vp-dropzone:hover {
@@ -625,7 +625,7 @@
   font-size: 12px;
   line-height: 18px;
   font-weight: 600;
-  color: var(--ui-brand-700);
+  color: var(--ui-brand-600);
 }
 
 .vp-path-route {
@@ -669,7 +669,7 @@
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
-  color: var(--ui-brand-700);
+  color: var(--ui-brand-600);
 }
 
 @keyframes vp-reveal {

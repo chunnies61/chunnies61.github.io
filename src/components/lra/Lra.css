@@ -7,7 +7,9 @@
    the site's Poppins. Everything is scoped under .lra. */
 
 .lra {
-  /* Brand — JPMC blue at 600 */
+  /* Brand — JPMC blue #126BC5 at 600, the one primary for fills, text and
+     accents (5.3:1 on white, 4.8:1 on brand-50). 700 is only the primary
+     button's hover. */
   --ui-brand-25: #f5f9fe;
   --ui-brand-50: #edf4fc;
   --ui-brand-100: #dbe9fa;
@@ -290,7 +292,7 @@
   padding-left: 8px;
   background: var(--ui-brand-50);
   box-shadow: var(--ui-shadow-xs), inset 0 0 0 1px var(--ui-brand-300);
-  color: var(--ui-brand-700);
+  color: var(--ui-brand-600);
 }
 
 /* --- Scaled frame + browser window -----------------------------------------
@@ -437,7 +439,7 @@
   height: 30px;
   border-radius: 50%;
   background: var(--ui-brand-50);
-  color: var(--ui-brand-700);
+  color: var(--ui-brand-600);
   font-size: 13px;
   font-weight: 600;
 }
@@ -580,7 +582,7 @@
 }
 
 .lra-stepper li.is-current {
-  color: var(--ui-brand-700);
+  color: var(--ui-brand-600);
 }
 
 .lra-stepper li.is-done {
@@ -649,7 +651,7 @@
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
-  color: var(--ui-brand-700);
+  color: var(--ui-brand-600);
 }
 
 .is-caps {
@@ -915,7 +917,7 @@
 .lra-btn.is-tonal {
   background: var(--ui-brand-50);
   box-shadow: var(--ui-shadow-xs), inset 0 0 0 1px var(--ui-brand-200);
-  color: var(--ui-brand-700);
+  color: var(--ui-brand-600);
 }
 
 .lra-btn.is-tonal:hover:not(:disabled) {
@@ -926,7 +928,7 @@
 /* Tertiary colour — brand text, tinted on hover */
 .lra-btn.is-ghost {
   padding: 0 12px;
-  color: var(--ui-brand-700);
+  color: var(--ui-brand-600);
 }
 
 .lra-btn.is-ghost:hover:not(:disabled) {
@@ -1067,7 +1069,7 @@
 .lra-pill.is-blue {
   background: var(--ui-brand-50);
   box-shadow: inset 0 0 0 1px var(--ui-brand-200);
-  color: var(--ui-brand-700);
+  color: var(--ui-brand-600);
 }
 
 .lra-pill.is-violet {
@@ -1255,7 +1257,7 @@
 }
 
 .lra-tab.is-active {
-  color: var(--ui-brand-700);
+  color: var(--ui-brand-600);
 }
 
 .lra-tab.is-active > span::after {
@@ -1294,7 +1296,7 @@
 .lra-banner.is-info {
   border-color: var(--ui-brand-300);
   background: var(--ui-brand-25);
-  color: var(--ui-brand-700);
+  color: var(--ui-brand-600);
 }
 
 .lra-banner.is-warning {

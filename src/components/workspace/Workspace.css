@@ -202,7 +202,7 @@
 }
 
 .ws-ws-tab.is-on {
-  background: var(--ui-brand-700);
+  background: var(--ui-brand-600);
   color: var(--ui-white);
   cursor: default;
 }
@@ -426,7 +426,7 @@
 }
 
 .ws-metric.is-link .ws-metric-value {
-  color: var(--ui-brand-700);
+  color: var(--ui-brand-600);
 }
 
 .ws-delta {
@@ -754,7 +754,7 @@
 
 .ws .lra-btn.is-ghost.is-active {
   background: var(--ui-brand-50);
-  color: var(--ui-brand-700);
+  color: var(--ui-brand-600);
 }
 
 .ws-filter {
@@ -1153,7 +1153,7 @@
   border: 1px solid var(--ui-brand-200);
   border-radius: 12px;
   background: var(--ui-brand-25);
-  color: var(--ui-brand-700);
+  color: var(--ui-brand-600);
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;
@@ -1179,7 +1179,7 @@
   font-size: 12px;
   line-height: 18px;
   font-weight: 600;
-  color: var(--ui-brand-700);
+  color: var(--ui-brand-600);
 }
 
 .ws-coach-title {
