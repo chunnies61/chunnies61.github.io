@@ -19,7 +19,6 @@
   --text-soft: var(--gray-700); /* secondary text, captions */
   --accent: #4575e7;      /* PRIMARY — accents, rules, tints (never body text on white) */
   --accent-dark: #1e57c8; /* MD3 Primary 40 — primary buttons and interactive text on white (6.5:1) */
-  --primary-30: #003fa3;  /* MD3 Primary 30 — deeper ink for emphasised text (9.4:1) */
   --card-bg: #ffffff;
   --card-border: rgba(51, 57, 69, 0.14);   /* HAIRLINE — gray-900 @ 14% */
   --placeholder-bg: rgba(217, 221, 229, 0.1); /* TINT — image/media placeholders — gray-100 @ 10% */

@@ -1887,7 +1887,7 @@ body:has(.cs-gate) {
 /* Type is .md-label-medium; only alignment and colour here */
 p.cs-proto-prompt {
   text-align: center;
-  color: var(--primary-30);
+  color: var(--accent-dark); /* Primary 40 — the text-safe primary on white */
 }
 
 /* Placeholder while a prototype's code loads: its controls' height, then
