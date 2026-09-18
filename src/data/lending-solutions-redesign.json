@@ -1030,11 +1030,6 @@
         {
           "type": "text",
           "value": "The Workspace gained coherence too: the Deal Journey Tracker now integrates the eCQ credit questionnaire and has onboarded IPB SBL and Custom deals — end-to-end visibility across the seams I mapped. The IA and personas are still the team's source of truth."
-        },
-        {
-          "type": "image",
-          "src": "/images/lending-laptop.png",
-          "label": "The shipped Loan Request App"
         }
       ]
     },
