@@ -155,13 +155,16 @@
 
 /* --- Prototype switch: the black toggle ------------------------------------
    Sits above the window, on the portfolio page rather than in the app, so
-   it's set in the site's Poppins. A caption on the left; equal-width options
+   it's set in the site's Poppins. A caption above; equal-width options
    on a near-black track; a white thumb slides to the selected option. Each
-   prototype sets the space beneath it. 32px tall. */
+   prototype sets the space beneath it. 54px tall: 16px caption, 6px gap,
+   32px control. */
+/* Caption stacked above the control */
 .lra-toggle-row {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
   font-family: var(--font-ui);
 }
 
