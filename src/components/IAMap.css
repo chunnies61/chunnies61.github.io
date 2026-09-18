@@ -6,7 +6,10 @@
    Colour stays in the site system on a Primary 40 sheet: products and apps
    are Primary 90 nodes, unselected products are outlined, pages are white
    pills. Type comes from the .md-* role on each element; this file holds
-   colour, spacing and layout only. */
+   colour, spacing and layout only.
+
+   Pills use corner-shape: squircle (Figma's 100% corner smoothing).
+   Browsers without corner-shape fall back to the plain 12px radius. */
 
 .cs-ia {
   --cs-ia-bg: #1e57c8;                        /* Primary 40 */
