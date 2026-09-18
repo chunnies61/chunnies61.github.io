@@ -128,7 +128,7 @@ function PortfolioView({ openAnnual, onPlaceholder }) {
         ))}
       </dl>
 
-      <div className="ws-grid-2">
+      <div className="ws-grid-3">
         <Card title="Collateral Allocation">
           <Donut />
         </Card>
