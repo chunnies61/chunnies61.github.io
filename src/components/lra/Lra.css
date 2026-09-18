@@ -1,6 +1,6 @@
 /* ===== Loan Request App prototype — Material 3 =====
    Built to the Material 3 spec (m3.material.io): colour roles from a scheme
-   seeded on the site's Primary 40, the baseline type scale set in Open Sans, shape
+   seeded on the site's Primary 40, the baseline type scale set in the site's Poppins, shape
    and elevation tokens, and 8/10/10% state layers. It's an embedded app mock,
    so everything is scoped under .lra and it doesn't use the portfolio's
    .md-* type classes. */
@@ -39,7 +39,7 @@
   --md-elev-1: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
   --md-elev-3: 0 1px 3px rgba(0, 0, 0, 0.3), 0 4px 8px 3px rgba(0, 0, 0, 0.15);
 
-  --md-font: "Open Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --md-font: var(--font-ui); /* the site's Poppins */
 
   /* Background behind an outlined field's floating label */
   --lra-notch: var(--md-surface);

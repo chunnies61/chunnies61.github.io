@@ -9,15 +9,6 @@ import { Icon } from "./ui";
    (menus) portal into the frame's overlay layer, in canvas coordinates, so
    they scale with it. */
 
-// The prototypes' typeface, loaded once, only when a prototype is
-if (typeof document !== "undefined" && !document.getElementById("lra-font")) {
-  const link = document.createElement("link");
-  link.id = "lra-font";
-  link.rel = "stylesheet";
-  link.href = "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap";
-  document.head.append(link);
-}
-
 export const FRAME_W = 1920;
 export const FRAME_H = 1080;
 
