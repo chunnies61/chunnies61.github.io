@@ -1,7 +1,7 @@
 {
   "slug": "lending-solutions-redesign",
   "title": "Lending Solutions Redesign",
-  "subtitle": "Making the invisible ownable — turning a loan workflow no single team owned into one everyone could see and fix",
+  "subtitle": "Turning a loan workflow no single team owned into one everyone could see, own and fix",
   "summary": "Making an unowned loan workflow visible enough to fix",
   "tags": [
     "B2B",
@@ -38,7 +38,7 @@
           "type": "text",
           "value": [
             "The Global Private Bank spans USPB — 55 U.S. markets — and IPB across APAC, EMEA and LatAm: 1,000+ advisors, clients in 140+ countries, nine languages, 30+ regulators. Lending is one product line inside that footprint.",
-            "I own two of its surfaces."
+            "I own two of its surfaces: where a loan begins, and where it's managed every day."
           ]
         },
         {
@@ -71,19 +71,19 @@
         },
         {
           "type": "text",
-          "value": "My users sit along the whole chain: Bankers, SC Advisors, Lender Specialists, Credit Risk and Middle Office."
+          "value": "Between them sits every role that touches a loan — Bankers, SC Advisors, Lender Specialists, Credit Risk and Middle Office — and every handoff where it can go wrong."
         }
       ]
     },
     {
       "id": "brief",
       "kicker": "The Problem",
-      "title": "The brief, and why it was wrong",
+      "title": "The brief — and why it was wrong",
       "blocks": [
         {
           "type": "text",
           "value": [
-            "The mandate was narrow: the intake form is bad, clean it up to reduce rework. It came from a recurring Lender Specialist complaint."
+            "The brief arrived narrow: the intake form is bad, so clean it up and cut the rework. It traced back to one complaint Lender Specialists kept repeating."
           ]
         },
         {
@@ -93,12 +93,12 @@
         },
         {
           "type": "text",
-          "value": "The business read this as a UI problem. My first job was to test that assumption."
+          "value": "The business heard a UI problem. Before redesigning anything, I wanted to know whether it was one."
         },
         {
           "type": "callout",
           "label": "The reframe",
-          "value": "The form wasn't ugly. It was collecting the Banker's information but being measured against Credit's requirements — a handoff mismatch, not a UI mismatch."
+          "value": "The form wasn't the problem. It collected what the Banker knew, but was judged against what Credit needed — a handoff mismatch, not a UI one."
         }
       ]
     },
@@ -110,8 +110,8 @@
         {
           "type": "text",
           "value": [
-            "Mapping the current state hit two gaps at once. No one could describe the full origination chain — each role saw its own segment and assumed the next worked fine. And there was nothing to map against: no documented IA, no personas. Everyone designed against their own mental model of the product.",
-            "So before fixing the workflow, I had to build the foundation nobody had built."
+            "Proving that meant seeing the whole chain — and no one could show it to me. Each role knew its own segment and assumed the next worked. With no documented IA or personas, everyone designed against their own mental model.",
+            "Before fixing the workflow, I had to build the foundation it was missing."
           ]
         },
         {
@@ -121,7 +121,7 @@
           "blocks": [
             {
               "type": "text",
-              "value": "I interviewed lenders and domain owners across every role, embedding in check-ins and morning meetings to reach the client-facing ones, and synthesised what I heard into two artefacts: an information architecture of the Lending Workspace, from L1 products down to page controls on one screen, and a set of personas capturing the goals, jobs and pain points of every role."
+              "value": "I interviewed lenders and domain owners in every role — joining their check-ins and morning meetings to reach the client-facing ones — and turned what I heard into two artefacts: an information architecture of the Lending Workspace, from L1 products down to page controls, and personas capturing each role's goals, jobs and pain points."
             },
             {
               "type": "ia-map",
@@ -279,7 +279,7 @@
             {
               "type": "persona-tabs",
               "title": "Lending personas",
-              "intro": "Four roles carry a loan from first conversation to funding, and each needed something different from the same workspace. Switch tabs to compare their goals, pain points and daily work side by side.",
+              "intro": "Four roles carry a loan from first conversation to funding, and each needs something different from the same workspace. Switch tabs to compare them side by side.",
               "label": "Lending personas — one tab per role",
               "personas": [
                 {
@@ -666,7 +666,7 @@
             {
               "type": "callout",
               "label": "Impact beyond my project",
-              "value": "Both became the team's source of truth — designers and POs cite them in their own reviews and roadmaps."
+              "value": "Both became the team's source of truth — designers and POs now cite them in their own reviews and roadmaps."
             }
           ]
         },
@@ -677,7 +677,7 @@
           "blocks": [
             {
               "type": "text",
-              "value": "With the map in place I could isolate where rework happened. Instead of more interviews, I put one person from each role in a room with one anonymised deal — a real-estate investor borrowing against existing assets to buy a property — printed as a timeline on the wall."
+              "value": "The map showed where the work happened, not where it broke. So instead of more interviews, I put one person from each role in a room with a single anonymised deal — a real-estate investor borrowing against existing assets to buy a property — printed as a timeline on the wall."
             },
             {
               "type": "quote",
@@ -691,7 +691,7 @@
             },
             {
               "type": "text",
-              "value": "The dots clustered at the same three seams every time. The most consistent: requests reaching Credit without the collateral and entity details the Banker was never asked for — the asset basis and ownership structure needed to size the facility."
+              "value": "The dots clustered at the same three seams, every time. The most consistent: requests reached Credit without the collateral and entity details the Banker was never asked for — the asset basis and ownership structure needed to size the facility."
             },
             {
               "type": "cards",
@@ -717,7 +717,7 @@
             },
             {
               "type": "text",
-              "value": "Advisors had to already know what to do — the system rewarded institutional knowledge and penalised anyone without it."
+              "value": "The system rewarded institutional knowledge. Advisors had to already know what Credit would ask — and anyone who didn't paid for it in rework."
             },
             {
               "type": "honest-note",
@@ -736,7 +736,7 @@
         {
           "type": "text",
           "value": [
-            "The workflow spanned four teams across USPB and IPB, each with its own regulators and roadmap. Every PO owned a slice deeply; nobody owned the seams. \"Fix the intake\" became a hot potato: Loan Request App called it Credit's problem, Credit called it intake's."
+            "The evidence was clear; the owner wasn't. The workflow crossed four teams in USPB and IPB, each with its own regulators and roadmap. POs owned their slices deeply, but nobody owned the seams — so \"fix the intake\" bounced between the Loan Request App and Credit."
           ]
         },
         {
@@ -746,7 +746,7 @@
           "blocks": [
             {
               "type": "text",
-              "value": "Specialised teams spread across regions — with a pilot already live in USPB, EMEA and APAC — wouldn't stay aligned off one workshop. So I built three recurring rituals."
+              "value": "With a pilot already live in USPB, EMEA and APAC, one workshop wouldn't keep specialised, distributed teams aligned. So I set up three recurring rituals."
             },
             {
               "type": "cards",
@@ -772,7 +772,7 @@
             {
               "type": "callout",
               "label": "Why it worked",
-              "value": "Alignment isn't a document — it's presence. Being in the rooms where work got scoped made me the link between siloed owners."
+              "value": "Alignment isn't a document; it's presence. Being in the rooms where work was scoped made me the link between siloed owners."
             }
           ]
         },
@@ -784,8 +784,8 @@
             {
               "type": "text",
               "value": [
-                "The rituals kept teams in sync but left the bigger fracture untouched: every owner could defend their slice, nobody could sequence across all of them.",
-                "Leadership called a three-day portfolio workshop at the Ohio HQ. I went as the only designer among POs, journey owners, data, architecture and risk, walking one artefact from initiative through to owner, dependency and sequence."
+                "The rituals kept teams in sync, but not in sequence: every owner could defend their slice, and no one could order the work across all of them.",
+                "When leadership called a three-day portfolio workshop at the Ohio HQ, I joined as the only designer among POs, journey owners, data, architecture and risk — walking each initiative through to owner, dependency and sequence."
               ]
             },
             {
@@ -795,11 +795,11 @@
             },
             {
               "type": "text",
-              "value": "My prototypes gave the room concrete futures to react to — the agenda named them as reference points. I kept every feature framed by persona and journey rather than system boundary, and that framing shaped the Workspace model we left with: persona views and work queues, one experience instead of ten apps."
+              "value": "I brought prototypes, and they became the room's reference points — the agenda named them. Framing every feature by persona and journey, rather than by system boundary, shaped the Workspace model we left with: persona views and work queues, one experience instead of ten apps."
             },
             {
               "type": "text",
-              "value": "The three explorations I put in front of them:"
+              "value": "The three futures I put in front of them:"
             },
             {
               "type": "cards",
@@ -830,7 +830,7 @@
             {
               "type": "callout",
               "label": "Why it mattered",
-              "value": "The only designer at the portfolio table, I helped leadership pick a direction instead of handing design a backlog to decorate."
+              "value": "As the only designer at the portfolio table, I helped leadership choose a direction — instead of handing design a backlog to decorate."
             }
           ]
         }
@@ -843,12 +843,16 @@
       "blocks": [
         {
           "type": "text",
-          "value": "Prototype testing narrowed three proposals to one direction — and exposed where automation stops helping."
+          "value": "The room chose a direction; testing decided how far to take it. The boldest proposal — an AI agent that sized the whole request from a chat — hit a trust wall."
         },
         {
           "type": "quote",
           "value": "If the system sizes it and it's wrong, it's still my name on the deal. I'll just redo it by hand to be safe.",
           "attribution": "Lender Specialist, prototype testing"
+        },
+        {
+          "type": "text",
+          "value": "The final design keeps what removed rework from all three, and cuts what removed judgement:"
         },
         {
           "type": "phases",
@@ -895,11 +899,11 @@
     {
       "id": "delivery",
       "kicker": "Delivery",
-      "title": "Driving to ship without formal authority",
+      "title": "Shipping without formal authority",
       "blocks": [
         {
           "type": "text",
-          "value": "No PO ran cover — I drove to build with authority over none of the four teams. What carried it was artefacts, not opinions."
+          "value": "A direction isn't a release. No PO ran cover: I drove the build across four teams without authority over any of them — and what carried it was artefacts, not opinions."
         },
         {
           "type": "cards",
@@ -908,12 +912,12 @@
             {
               "emoji": "🖱️",
               "title": "Prototypes, not specs",
-              "desc": "An unreadable collateral field — v1 shipped two seams, parked the third."
+              "desc": "Clickable flows exposed what specs hid, like an unreadable collateral field. v1 shipped two seams and parked the third."
             },
             {
               "emoji": "📊",
               "title": "Anchored to the baseline",
-              "desc": "\"Six in ten get redone\" settled every argument."
+              "desc": "“Six in ten get redone” settled every argument."
             }
           ]
         },
@@ -924,7 +928,7 @@
         },
         {
           "type": "text",
-          "value": "Regional variants shipped on one skeleton, with conditional logic injecting what each market required rather than forking the product."
+          "value": "Regional variants shipped on one skeleton — conditional logic adds what each market requires instead of forking the product. Try both products below."
         },
         {
           "type": "lra-prototype",
@@ -941,7 +945,7 @@
     {
       "id": "outcome",
       "kicker": "Outcome",
-      "title": "Rework down, the right personas adopting",
+      "title": "Less rework, and the right people adopting",
       "blocks": [
         {
           "type": "stats",
@@ -971,8 +975,8 @@
         {
           "type": "text",
           "value": [
-            "Validate-at-source intake shipped with provenance chips and reason-coded overrides.",
-            "NIGO — not in good order — is the firm's own term for the bounce-back rework I set out to reduce, which makes it the metric closest to the work. It's a programme-level result the redesign contributed to, alongside process and training changes."
+            "Validate-at-source intake shipped with provenance chips and reason-coded overrides. New-ticket NIGO now sits at ~22%, down from ~60% in discovery.",
+            "NIGO — not in good order — is the firm's own term for the bounce-back rework I set out to reduce, so it's the metric closest to the work. It's a programme-level result: the redesign contributed alongside process and training changes."
           ]
         },
         {
@@ -1029,7 +1033,7 @@
         },
         {
           "type": "text",
-          "value": "The Workspace gained coherence too: the Deal Journey Tracker now integrates the eCQ credit questionnaire and has onboarded IPB SBL and Custom deals — end-to-end visibility across the seams I mapped. The IA and personas are still the team's source of truth."
+          "value": "The Workspace gained coherence too: the Deal Journey Tracker now integrates the eCQ credit questionnaire and covers IPB SBL and Custom deals — end-to-end visibility across the seams I mapped. And the IA and personas remain the team's source of truth."
         }
       ]
     },
@@ -1041,11 +1045,11 @@
         {
           "type": "callout",
           "label": "The takeaway",
-          "value": "The hardest problems here weren't design problems — they were ownership problems in a design costume. My job was making the invisible visible until the right call was obvious."
+          "value": "The hardest problems here weren't design problems — they were ownership problems in a design costume. My job was to make the invisible visible until the right call became obvious."
         },
         {
           "type": "text",
-          "value": "Three moves proved repeatable beyond this project."
+          "value": "Three moves proved repeatable beyond this project:"
         },
         {
           "type": "cards",
@@ -1074,11 +1078,11 @@
         {
           "type": "honest-note",
           "label": "What I'm still watching",
-          "value": "Adoption is real but early. When Workspace dipped −10.8% week over week I didn't wave it away — seasonality or access provisioning is still an open question, and exactly the kind of signal I want instrumented rather than guessed."
+          "value": "Adoption is real but early. When Workspace usage dipped 10.8% week over week, I didn't wave it away: seasonality or access provisioning is still an open question — exactly the kind of signal I want instrumented, not guessed."
         },
         {
           "type": "text",
-          "value": "What I'd do differently: wire telemetry into the two targeted seams from day one, so NIGO improvement attributes cleanly to the design change and the parked third seam has evidence ready when it comes up for prioritisation."
+          "value": "What I'd do differently: wire telemetry into the two targeted seams from day one, so the NIGO improvement attributes cleanly to the design change — and the parked third seam has evidence ready when it's next up for prioritisation."
         }
       ]
     }
