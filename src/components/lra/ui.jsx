@@ -1,4 +1,3 @@
-import { useId } from "react";
 /* Shared Material 3 bits for the prototype: Material Symbols icons (inline
    SVG, 24px grid) and the tonal banner. */
 
@@ -90,23 +89,20 @@ export function Banner({ tone = "info", children }) {
 }
 
 /* Toggle — the black segmented switch above a prototype. Equal-width
-   options on a dark track; a white thumb slides to the selected one. An
+   options on a dark track; a white thumb slides to the selected one. The
+   label is announced (aria-label) but not shown. An
    option's `tip` renders inside its cell (for hover tooltips). */
 export function Toggle({ label, options, value, onChange }) {
-  const labelId = useId();
   const index = Math.max(
     0,
     options.findIndex((o) => o.id === value)
   );
   return (
     <div className="lra-toggle-row">
-      <span className="lra-toggle-label" id={labelId}>
-        {label}
-      </span>
       <div
         className="lra-toggle"
         role="group"
-        aria-labelledby={labelId}
+        aria-label={label}
         style={{ "--n": options.length, "--i": index }}
       >
         <span className="lra-toggle-thumb" aria-hidden="true" />

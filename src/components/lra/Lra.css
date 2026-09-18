@@ -154,30 +154,17 @@
 
 /* --- Prototype switch: the black toggle ------------------------------------
    Sits above the window, on the portfolio page rather than in the app, so
-   it's set in the site's Poppins. A caption above; equal-width options
-   on a near-black track; a white thumb slides to the selected option. Each
-   prototype sets the space beneath it. 54px tall: 16px caption, 6px gap,
-   32px control. */
-/* Caption stacked above the control */
+   it's set in the site's Poppins. Equal-width options on a near-black
+   track; a white thumb slides to the selected option. No visible caption —
+   the group is named with aria-label. 32px tall; each prototype sets the
+   space beneath it. */
 .lra-toggle-row {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
   font-family: var(--font-ui);
 }
 
 .lra > .lra-toggle-row {
   margin-bottom: 16px;
-}
-
-.lra-toggle-label {
-  font-size: 11px;
-  line-height: 16px;
-  font-weight: 600;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  color: var(--ui-fg-tertiary);
 }
 
 .lra-toggle {
