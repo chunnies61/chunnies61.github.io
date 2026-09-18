@@ -1877,6 +1877,13 @@ body:has(.cs-gate) {
 }
 
 /* The nudge above each prototype */
+/* Prototype with its prompt set close beneath, like a caption */
+.cs-proto {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 p.cs-proto-prompt {
   font-weight: 600;
   color: var(--accent-dark); /* Primary 40 — the text-safe primary on white */

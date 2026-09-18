@@ -248,21 +248,21 @@ function CardIcon({ name, className = "cs-card-icon" }) {
   );
 }
 
-/* The prompt, then the prototype. Each app lays out at 1920×1080 and scales
-   down to the text column's width (see components/lra/frame.jsx). `extra`
-   is the height of any controls the prototype puts above its window, so
-   the loading placeholder matches its footprint. */
+/* The prototype, then a one-line prompt beneath it. Each app lays out at
+   1920×1080 and scales down to the text column's width (see
+   components/lra/frame.jsx). `extra` is the height of any controls the
+   prototype puts above its window, so the loading placeholder matches its
+   footprint. */
 function PrototypeStage({ extra = 0, children }) {
   return (
-    <>
-      <p className="cs-proto-prompt">
-        <span aria-hidden="true">👇 </span>Click around! This is my fully interactive recreation of the
-        app, running entirely on dummy data.
-      </p>
+    <div className="cs-proto">
       <div className="cs-proto-stage" style={{ "--proto-extra": `${extra}px` }}>
         <Suspense fallback={<div className="cs-proto-loading" aria-busy="true" />}>{children}</Suspense>
       </div>
-    </>
+      <p className="cs-proto-prompt">
+        <span aria-hidden="true">👆 </span>Click around — it's fully interactive, running on dummy data.
+      </p>
+    </div>
   );
 }
 
