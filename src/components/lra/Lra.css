@@ -1,6 +1,6 @@
 /* ===== Loan Request App prototype — Material 3 =====
    Built to the Material 3 spec (m3.material.io): colour roles from a scheme
-   seeded on the site's Primary 40, the baseline type scale in Roboto, shape
+   seeded on the site's Primary 40, the baseline type scale set in Open Sans, shape
    and elevation tokens, and 8/10/10% state layers. It's an embedded app mock,
    so everything is scoped under .lra and it doesn't use the portfolio's
    .md-* type classes. */
@@ -39,7 +39,7 @@
   --md-elev-1: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
   --md-elev-3: 0 1px 3px rgba(0, 0, 0, 0.3), 0 4px 8px 3px rgba(0, 0, 0, 0.15);
 
-  --md-font: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --md-font: "Open Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   /* Background behind an outlined field's floating label */
   --lra-notch: var(--md-surface);
@@ -255,21 +255,169 @@
   color: var(--md-on-secondary-container);
 }
 
-/* --- Scaled frame ----------------------------------------------------------
-   The app lays out on a fixed 1920×1080 canvas (see frame.jsx), scaled to
-   the frame's width. The frame reserves the scaled height; the canvas is
-   pinned to its top-left and transformed. */
+/* --- Scaled frame + browser window -----------------------------------------
+   The app runs in a simulated desktop browser window laid out on a fixed
+   1920×1080 canvas (see frame.jsx), scaled to the frame's width. The frame
+   reserves the scaled height and draws the window's edge and shadow; the
+   canvas is pinned to its top-left and transformed. */
 .lra-frame {
   position: relative;
   width: 100%;
   overflow: hidden;
+  border-radius: 10px;
+  box-shadow:
+    0 0 0 1px rgba(20, 32, 61, 0.14),
+    0 12px 32px rgba(20, 32, 61, 0.14);
 }
 
 .lra-frame-canvas {
   position: absolute;
   top: 0;
   left: 0;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
   transform-origin: 0 0;
+}
+
+/* Browser chrome — the browser's own UI, so the system font, not the app's */
+.lra-browser-chrome {
+  flex: none;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #e3e6eb;
+  color: #5f6368;
+}
+
+.lra-browser-tabs {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  height: 46px;
+  padding: 0 12px 0 20px;
+}
+
+.lra-browser-lights {
+  display: flex;
+  align-self: center;
+  gap: 9px;
+  margin-right: 12px;
+}
+
+.lra-browser-lights > span {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ff5f57;
+}
+
+.lra-browser-lights > span:nth-child(2) {
+  background: #febc2e;
+}
+
+.lra-browser-lights > span:nth-child(3) {
+  background: #28c840;
+}
+
+.lra-browser-tab {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 280px;
+  height: 38px;
+  padding: 0 12px 0 14px;
+  border-radius: 10px 10px 0 0;
+  background: #fff;
+  color: #1f2328;
+  font-size: 14px;
+}
+
+.lra-browser-favicon {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background: var(--md-primary);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.lra-browser-tab-title {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lra-browser-newtab {
+  display: flex;
+  align-self: center;
+}
+
+.lra-browser-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 50px;
+  padding: 0 18px;
+  border-bottom: 1px solid #d9dde3;
+  background: #fff;
+}
+
+.lra-browser-nav {
+  display: flex;
+  gap: 18px;
+}
+
+.lra-browser-address {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 10px;
+  height: 36px;
+  padding: 0 18px;
+  border-radius: 18px;
+  background: #eef0f3;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.lra-browser-host {
+  color: #1f2328;
+}
+
+.lra-browser-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--md-primary-container);
+  color: var(--md-on-primary-container);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* The page area: the app fills it edge to edge */
+.lra-browser-viewport {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.lra-browser-viewport > .lra-window {
+  flex: 1;
+  min-height: 0;
+  height: auto;
+  border: 0;
+  border-radius: 0;
 }
 
 /* Menus that must escape scroll boxes render here, in canvas coordinates */

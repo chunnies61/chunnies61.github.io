@@ -8,15 +8,6 @@ import { Icon } from "./ui";
 import { ScaledFrame } from "./frame";
 import "./Lra.css";
 
-// Material 3's baseline typeface, loaded only when the prototype is
-if (typeof document !== "undefined" && !document.getElementById("lra-roboto")) {
-  const link = document.createElement("link");
-  link.id = "lra-roboto";
-  link.rel = "stylesheet";
-  link.href = "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap";
-  document.head.append(link);
-}
-
 /* Loan Request App prototype — the origination wizard, by region, built
    with Material 3 components.
 
@@ -88,7 +79,7 @@ export default function LraPrototype({ title = "Loan request prototype" }) {
         })}
       </div>
 
-      <ScaledFrame>
+      <ScaledFrame title="Loan Request App" path={`/lending/loan-request/new?region=${regionId}`}>
         <div className="lra-window">
           {/* Top app bar */}
           <div className="lra-appbar">

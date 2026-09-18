@@ -1866,6 +1866,6 @@ p.cs-proto-prompt {
 .cs-proto-loading {
   margin-top: var(--proto-extra, 0px);
   aspect-ratio: 16 / 9;
-  border-radius: 12px;
-  background: #f4f3fa;
+  border-radius: 10px;
+  background: #eef0f3;
 }

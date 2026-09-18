@@ -56,7 +56,7 @@ export default function WorkspacePrototype({ title = "Lending Workspace prototyp
 
   return (
     <div className="lra ws" aria-label={title} role="region">
-      <ScaledFrame>
+      <ScaledFrame title="Lending Workspace" path={`/lending/workspace/${section}`}>
         <div className="lra-window ws-window">
           {/* Row 1 — global bar */}
           <div className="ws-global">
