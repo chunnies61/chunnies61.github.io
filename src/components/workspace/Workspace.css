@@ -479,10 +479,10 @@
 }
 
 .ws-mini-table thead th {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 500;
-  color: var(--ui-fg-tertiary);
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 600;
+  color: var(--ui-gray-800);
 }
 
 .ws-mini-table tbody tr:last-child > * {

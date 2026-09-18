@@ -1202,15 +1202,15 @@
   vertical-align: middle;
 }
 
-/* Header row: neutral-200, with neutral-700 text (4.9:1 — the usual
-   $text-secondary would drop to 4.2:1 on this fill) */
+/* Header row: neutral-200 fill, text-sm semibold in $text-primary
+   (neutral-800, 8.8:1) so the headers read clearly above the rows */
 .lra-table thead th {
   height: 44px;
   background: var(--ui-gray-200);
-  font-size: 12px;
+  font-size: 13px;
   line-height: 18px;
-  font-weight: 500;
-  color: var(--ui-gray-700);
+  font-weight: 600;
+  color: var(--ui-gray-800);
 }
 
 .lra-table tbody tr:last-child > * {

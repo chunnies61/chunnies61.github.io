@@ -97,7 +97,7 @@ const PAIRS = [
   ["warning-700", "warning-50", "Warning badge"],
   ["purple-700", "purple-50", "Purple badge"],
   ["fg", "editable-grid", "Text on the editable grid"],
-  ["gray-700", "gray-200", "Table header text on neutral-200"],
+  ["gray-800", "gray-200", "Table header text on neutral-200"],
   ["icon", "bg", "$icon-default on white (icons need 3:1)", 3],
 ];
 
@@ -784,7 +784,7 @@ export default function PrototypeDesignSystem() {
             </Specimen>
           </Block>
 
-          <Block title="Tables" note="A card with a neutral-200 header row (text-xs medium in neutral-700), 56px rows, $text-secondary cells and a $text-primary first column. Rows take $background-hover on hover and $row-selected when checked. Numbers right-aligned and tabular.">
+          <Block title="Tables" note="A card with a neutral-200 header row (13px semibold in $text-primary), 56px rows, $text-secondary cells and a $text-primary first column. Rows take $background-hover on hover and $row-selected when checked. Numbers right-aligned and tabular.">
             <Specimen>
               <div className="lra-table-wrap">
                 <table className="lra-table">

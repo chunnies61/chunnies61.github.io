@@ -210,10 +210,10 @@
   padding: 8px 10px;
   border-bottom: 1px solid var(--ui-border-secondary);
   margin-bottom: 4px;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 18px;
-  font-weight: 500;
-  color: var(--ui-fg-quaternary);
+  font-weight: 600;
+  color: var(--ui-gray-800);
 }
 
 .vp-menu-row {
