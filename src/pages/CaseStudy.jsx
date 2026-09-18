@@ -254,11 +254,17 @@ function CardIcon({ name, className = "cs-card-icon" }) {
    height of any controls the prototype puts above its window. */
 function PrototypeStage({ extra = 0, children }) {
   return (
-    <div className="cs-proto-stage" style={{ "--proto-extra": `${extra}px` }}>
-      <div className="cs-proto-canvas">
-        <Suspense fallback={<div className="cs-proto-loading" aria-busy="true" />}>{children}</Suspense>
+    <>
+      <p className="cs-proto-prompt">
+        <span aria-hidden="true">👇 </span>Click around! This is my fully interactive recreation of the
+        app, running entirely on dummy data.
+      </p>
+      <div className="cs-proto-stage" style={{ "--proto-extra": `${extra}px` }}>
+        <div className="cs-proto-canvas">
+          <Suspense fallback={<div className="cs-proto-loading" aria-busy="true" />}>{children}</Suspense>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -1855,6 +1855,14 @@ body:has(.cs-gate) {
   margin-top: -8px;
 }
 
+/* The nudge above each prototype */
+p.cs-proto-prompt {
+  /* Offsets the stage's 8px padding so it reads as part of the prototype */
+  margin-bottom: -8px;
+  font-weight: 600;
+  color: var(--text);
+}
+
 /* Prototype stage — the prototypes are designed for a 1920×1080 screen, so
    they break out of the 832px text column. The stage is centred on the
    viewport (the column sits 120px left of centre, beside the index rail),

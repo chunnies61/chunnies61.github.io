@@ -825,7 +825,7 @@
             {
               "type": "vision-prototype",
               "title": "The three future-vision proposals, side by side",
-              "intro": "Switch variants to compare today's Loan Request workflow with the three futures I put in front of the room. They share one design system, so only the idea changes. All names, accounts and figures are sample data."
+              "intro": "Switch variants to compare today's Loan Request workflow with the three futures I put in front of the room. They share one design system, so only the idea changes."
             },
             {
               "type": "callout",
@@ -931,12 +931,12 @@
         {
           "type": "lra-prototype",
           "title": "Loan Request App prototype",
-          "intro": "Use the Preview chips to move between regions. EMEA and APAC share one flow, APAC GA layers on its compliance gates, and USPB hadn't been built yet. All client and account data is dummy."
+          "intro": "Use the Preview chips to move between regions. EMEA and APAC share one flow, APAC GA layers on its compliance gates, and USPB hadn't been built yet."
         },
         {
           "type": "workspace-prototype",
           "title": "Lending Workspace prototype",
-          "intro": "The Workspace pilot as bankers and lending specialists use it: Overview, Deal Journey, Opportunities and Portfolio Health, behind the same shell as every Connect app. All clients, tasks and figures are sample data."
+          "intro": "The Workspace pilot as bankers and lending specialists use it: Overview, Deal Journey, Opportunities and Portfolio Health, behind the same shell as every Connect app."
         }
       ]
     },
