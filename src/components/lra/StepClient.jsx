@@ -14,17 +14,7 @@ import {
   TRANSACTION_TYPES,
 } from "./data";
 import { money, num } from "./rules";
-
-function Banner({ tone = "info", children }) {
-  return (
-    <div className={`lra-banner is-${tone}`} role={tone === "warning" ? "alert" : "status"}>
-      <span className="lra-banner-icon" aria-hidden="true">
-        {tone === "warning" ? "!" : "i"}
-      </span>
-      <p>{children}</p>
-    </div>
-  );
-}
+import { Banner, Icon } from "./ui";
 
 function Field({ label, error, hint, children, id }) {
   return (
@@ -127,7 +117,7 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
           </Field>
           <button
             type="button"
-            className="lra-btn is-secondary lra-add-party"
+            className="lra-btn is-tonal lra-add-party"
             disabled={!canAdd}
             onClick={() => {
               addParty({ ...CLIENTS.find((c) => c.id === clientId), role });
@@ -135,6 +125,7 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
               setRole("");
             }}
           >
+            <Icon name="add" size={18} />
             Add party
           </button>
         </div>
@@ -184,7 +175,7 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
                           update((d) => ({ parties: d.parties.filter((_, j) => j !== i) }))
                         }
                       >
-                        ✕
+                        <Icon name="delete" />
                       </button>
                     </td>
                   </tr>
@@ -242,7 +233,7 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
                           <button
                             key={action}
                             type="button"
-                            className={"lra-btn is-ghost" + (on ? " is-on" : "")}
+                            className={"lra-chip" + (on ? " is-on" : "")}
                             aria-pressed={on}
                             onClick={() =>
                               update(
@@ -252,6 +243,7 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
                               )
                             }
                           >
+                            {on && <Icon name="check" size={18} />}
                             {action}
                           </button>
                         );
@@ -273,18 +265,20 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
             <div className="lra-build-actions">
               <button
                 type="button"
-                className={"lra-btn is-primary" + (deal.build === "sbl" ? " is-on" : "")}
+                className={"lra-btn is-toggle" + (deal.build === "sbl" ? " is-on" : "")}
                 aria-pressed={deal.build === "sbl"}
                 onClick={() => update((d) => ({ build: d.build === "sbl" ? null : "sbl" }))}
               >
+                {deal.build === "sbl" && <Icon name="check" size={18} />}
                 Build your own (SBL) deal
               </button>
               <button
                 type="button"
-                className={"lra-btn is-secondary" + (deal.build === "custom" ? " is-on" : "")}
+                className={"lra-btn is-toggle" + (deal.build === "custom" ? " is-on" : "")}
                 aria-pressed={deal.build === "custom"}
                 onClick={() => update((d) => ({ build: d.build === "custom" ? null : "custom" }))}
               >
+                {deal.build === "custom" && <Icon name="check" size={18} />}
                 Build a tailored (Custom) deal
               </button>
             </div>
@@ -324,7 +318,7 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
                       className={"lra-tab" + (deal.collateralTab === key ? " is-active" : "")}
                       onClick={() => update({ collateralTab: key })}
                     >
-                      {label}
+                      <span>{label}</span>
                     </button>
                   ))}
                 </div>
@@ -671,14 +665,15 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
               <Section title="Documents">
                 {deal.crfUploaded ? (
                   <div className="lra-file">
-                    <span aria-hidden="true">📄</span>
+                    <Icon name="description" size={18} />
                     <span>credit-request-form.pdf</span>
                     <button
                       type="button"
-                      className="lra-btn is-ghost"
+                      className="lra-icon-btn is-small"
+                      aria-label="Remove credit-request-form.pdf"
                       onClick={() => update({ crfUploaded: false })}
                     >
-                      Remove
+                      <Icon name="close" size={18} />
                     </button>
                   </div>
                 ) : (
@@ -687,6 +682,7 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
                     className="lra-btn is-secondary"
                     onClick={() => update({ crfUploaded: true })}
                   >
+                    <Icon name="upload" size={18} />
                     Upload Credit Request Form
                   </button>
                 )}

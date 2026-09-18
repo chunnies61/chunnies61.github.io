@@ -1,4 +1,5 @@
 import { FACILITIES, RULES, TICKET } from "./data";
+import { Banner, Icon } from "./ui";
 
 /* Submitted — confirmation, the ticket card and the rules that ran. */
 
@@ -18,21 +19,14 @@ export default function Submission({ deal, onRestart }) {
 
   return (
     <div className="lra-step">
-      <div className="lra-banner is-success" role="status">
-        <span className="lra-banner-icon" aria-hidden="true">
-          ✓
-        </span>
-        <p>
-          Loan origination request has been successfully submitted. You can view and share ticket
-          information.
-        </p>
-      </div>
-      <div className="lra-banner is-info">
-        <span className="lra-banner-icon" aria-hidden="true">
-          i
-        </span>
-        <p>Loan pricing entry was unable to be generated. The pricing request will be completed in Underwriting.</p>
-      </div>
+      <Banner tone="success">
+        Loan origination request has been successfully submitted. You can view and share ticket
+        information.
+      </Banner>
+      <Banner>
+        Loan pricing entry was unable to be generated. The pricing request will be completed in
+        Underwriting.
+      </Banner>
 
       <article className="lra-ticket">
         <h4>Loan request # {TICKET.number}</h4>
@@ -61,7 +55,10 @@ export default function Submission({ deal, onRestart }) {
       </article>
 
       <details className="lra-rules" open>
-        <summary>Detailed results</summary>
+        <summary>
+          Detailed results
+          <Icon name="expand" />
+        </summary>
         <div className="lra-table-wrap">
           <table className="lra-table">
             <thead>

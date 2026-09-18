@@ -1833,4 +1833,29 @@ body:has(.cs-gate) {
   font-weight: 600;
 }
 
+/* Loan Request App prototype — heading, intro and the placeholder shown while
+   its code loads. They live here, not in Lra.css, because that stylesheet
+   arrives with the lazy-loaded chunk. Section blocks sit 24px apart: extra
+   space above the heading, and the intro tight beneath it. */
+.cs-lra-heading {
+  margin: 16px 0 0;
+  color: var(--text);
+}
 
+.cs-lra-heading + .cs-lra-intro {
+  margin-top: -16px;
+}
+
+/* Same height as the preview chips + window, so nothing below it jumps */
+.cs-lra-loading {
+  height: 808px;
+  border-radius: 28px;
+  background: #f4f3fa;
+}
+
+@media (max-width: 640px) {
+  .cs-lra-loading {
+    height: 728px;
+    border-radius: 16px;
+  }
+}

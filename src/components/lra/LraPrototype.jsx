@@ -1,20 +1,29 @@
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { REGIONS, STEPS, TICKET } from "./data";
 import { assess, emptyDeal } from "./rules";
 import StepClient from "./StepClient";
 import StepReview from "./StepReview";
 import Submission from "./Submission";
+import { Icon } from "./ui";
 import "./Lra.css";
 
-/* Loan Request App prototype — the origination wizard, by region.
+// Material 3's baseline typeface, loaded only when the prototype is
+if (typeof document !== "undefined" && !document.getElementById("lra-roboto")) {
+  const link = document.createElement("link");
+  link.id = "lra-roboto";
+  link.rel = "stylesheet";
+  link.href = "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap";
+  document.head.append(link);
+}
 
-   A window-framed app with a PREVIEW chip that switches between the regional
-   variants. EMEA and EMEA – GVA share the EMEA flow; APAC – Pilot and
+/* Loan Request App prototype — the origination wizard, by region, built
+   with Material 3 components.
+
+   A row of preview chips switches between the regional variants. EMEA and EMEA – GVA share the EMEA flow; APAC – Pilot and
    APAC – GA share the APAC flow, with GA adding its compliance gates; USPB
    is still a work in progress. All data is mocked (see ./data.js). */
 
 export default function LraPrototype({ title = "Loan request prototype" }) {
-  const uid = useId();
   const [regionId, setRegionId] = useState(REGIONS[0].id);
   const [step, setStep] = useState(0); // 0, 1, 2, or "done"
   const [deal, setDeal] = useState(emptyDeal);
@@ -55,42 +64,46 @@ export default function LraPrototype({ title = "Loan request prototype" }) {
 
   return (
     <div className="lra" aria-label={title} role="region">
-      {/* Preview chip — switches region variants */}
-      <div className="lra-preview">
-        <label htmlFor={`${uid}-region`}>Preview</label>
-        <select
-          id={`${uid}-region`}
-          value={regionId}
-          onChange={(e) => {
-            setRegionId(e.target.value);
-            reset();
-          }}
-        >
-          {REGIONS.map((r) => (
-            <option key={r.id} value={r.id}>
+      {/* Preview — single-select filter chips that switch region variants */}
+      <div className="lra-preview" role="group" aria-label="Preview region">
+        <span className="lra-preview-label">Preview</span>
+        {REGIONS.map((r) => {
+          const on = r.id === regionId;
+          return (
+            <button
+              key={r.id}
+              type="button"
+              className={"lra-chip" + (on ? " is-on" : "")}
+              aria-pressed={on}
+              onClick={() => {
+                if (on) return;
+                setRegionId(r.id);
+                reset();
+              }}
+            >
+              {on && <Icon name="check" size={18} />}
               {r.label}
-            </option>
-          ))}
-        </select>
+            </button>
+          );
+        })}
       </div>
 
       <div className="lra-window">
-        {/* Window chrome */}
-        <div className="lra-chrome">
-          <span className="lra-logo" aria-hidden="true">
-            W
+        {/* Top app bar */}
+        <div className="lra-appbar">
+          <span className="lra-icon-btn" aria-hidden="true">
+            <Icon name="close" />
           </span>
-          <span className="lra-chrome-title">Loan Request: New loan request</span>
-          <span className="lra-chrome-btns" aria-hidden="true">
-            <span>▢</span>
-            <span>✕</span>
+          <span className="lra-appbar-title">New loan request</span>
+          <span className="lra-icon-btn" aria-hidden="true">
+            <Icon name="moreVert" />
           </span>
         </div>
 
         {region.flow === "wip" ? (
           <div className="lra-body lra-wip" ref={bodyRef}>
-            <span className="lra-wip-icon" aria-hidden="true">
-              🚧
+            <span className="lra-wip-icon">
+              <Icon name="hourglass" size={32} />
             </span>
             <h4>USPB — Work in progress</h4>
             <p>This version hasn't been built yet.</p>
@@ -98,8 +111,8 @@ export default function LraPrototype({ title = "Loan request prototype" }) {
         ) : (
           <>
             {/* Header: stepper, and the summary bar once past step 1 */}
-            <div className="lra-head">
-              {step !== "done" && (
+            {step !== "done" && (
+              <div className="lra-head">
                 <ol className="lra-stepper">
                   {STEPS.map((label, i) => (
                     <li
@@ -108,53 +121,52 @@ export default function LraPrototype({ title = "Loan request prototype" }) {
                       aria-current={i === step ? "step" : undefined}
                     >
                       <span className="lra-step-num" aria-hidden="true">
-                        {i < step ? "✓" : i + 1}
+                        {i < step ? <Icon name="check" size={16} /> : i + 1}
                       </span>
-                      {label}
+                      <span className="lra-step-label">{label}</span>
                     </li>
                   ))}
                 </ol>
-              )}
-
-              {(step === 1 || step === 2) && firstParty && (
-                <dl className="lra-summary">
-                  <div>
-                    <dt>Client name</dt>
-                    <dd className="is-caps">{firstParty.name}</dd>
-                  </div>
-                  <div>
-                    <dt>ECI</dt>
-                    <dd>{firstParty.eci}</dd>
-                  </div>
-                  <div>
-                    <dt>Account number</dt>
-                    <dd>{TICKET.account}</dd>
-                  </div>
-                  <div>
-                    <dt>Account type</dt>
-                    <dd>–</dd>
-                  </div>
-                  <div>
-                    <dt>Loan request</dt>
-                    <dd>{TICKET.number}</dd>
-                  </div>
-                  <div>
-                    <dt>Owner</dt>
-                    <dd className="is-caps">{TICKET.owner}</dd>
-                  </div>
-                  <div>
-                    <dt>Status</dt>
-                    <dd>
-                      <span className="lra-pill is-neutral">{TICKET.status}</span>
-                    </dd>
-                  </div>
-                  <div className="lra-summary-links">
-                    <span>Comments (0)</span>
-                    <span>Documents ({deal.crfUploaded ? 1 : 0})</span>
-                  </div>
-                </dl>
-              )}
-            </div>
+                {(step === 1 || step === 2) && firstParty && (
+                  <dl className="lra-summary">
+                    <div>
+                      <dt>Client name</dt>
+                      <dd className="is-caps">{firstParty.name}</dd>
+                    </div>
+                    <div>
+                      <dt>ECI</dt>
+                      <dd>{firstParty.eci}</dd>
+                    </div>
+                    <div>
+                      <dt>Account number</dt>
+                      <dd>{TICKET.account}</dd>
+                    </div>
+                    <div>
+                      <dt>Account type</dt>
+                      <dd>–</dd>
+                    </div>
+                    <div>
+                      <dt>Loan request</dt>
+                      <dd>{TICKET.number}</dd>
+                    </div>
+                    <div>
+                      <dt>Owner</dt>
+                      <dd className="is-caps">{TICKET.owner}</dd>
+                    </div>
+                    <div>
+                      <dt>Status</dt>
+                      <dd>
+                        <span className="lra-pill is-neutral">{TICKET.status}</span>
+                      </dd>
+                    </div>
+                    <div className="lra-summary-links">
+                      <span>Comments (0)</span>
+                      <span>Documents ({deal.crfUploaded ? 1 : 0})</span>
+                    </div>
+                  </dl>
+                )}
+              </div>
+            )}
 
             <div className="lra-body" ref={bodyRef}>
               {step === 0 && (
@@ -206,23 +218,20 @@ export default function LraPrototype({ title = "Loan request prototype" }) {
               </div>
             )}
 
-            {/* APAC – GA: CDS on FX/OTC needs an ISDA agreement */}
+            {/* APAC – GA: CDS on FX/OTC needs an ISDA agreement — shown as a snackbar */}
             {step === 0 && verdict.showCds && (
-              <div className="lra-flyin" role="alert">
-                <div>
-                  <p className="lra-flyin-title">ISDA agreement required</p>
-                  <p>
-                    CDS transactions require an ISDA agreement. Please consult a member of the SBL team
-                    before proceeding.
-                  </p>
-                </div>
+              <div className="lra-snackbar" role="alert">
+                <p>
+                  CDS transactions require an ISDA agreement. Consult a member of the SBL team before
+                  proceeding.
+                </p>
                 <button
                   type="button"
                   className="lra-icon-btn"
                   aria-label="Dismiss"
                   onClick={() => update({ cdsDismissed: true })}
                 >
-                  ✕
+                  <Icon name="close" />
                 </button>
               </div>
             )}

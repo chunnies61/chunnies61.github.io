@@ -1,5 +1,6 @@
 import { COLLATERALS, FACILITIES } from "./data";
 import { money } from "./rules";
+import { Banner } from "./ui";
 
 /* Steps 2 and 3 — a read-only review of the deal assembled in step 1. */
 
@@ -19,11 +20,7 @@ export default function StepReview({ deal, final }) {
 
   return (
     <div className="lra-step">
-      {final && (
-        <p className="lra-review-note" role="status">
-          Check everything below — continuing submits the loan request.
-        </p>
-      )}
+      {final && <Banner>Check everything below — continuing submits the loan request.</Banner>}
 
       <section className="lra-section">
         <div className="lra-section-head">

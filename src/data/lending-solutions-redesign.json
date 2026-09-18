@@ -959,7 +959,7 @@
         {
           "type": "lra-prototype",
           "title": "Loan Request App prototype",
-          "intro": "Use the Preview switch to move between regions. EMEA and APAC share one flow, APAC GA layers on its compliance gates, and USPB hadn't been built yet. All client and account data is dummy."
+          "intro": "Use the Preview chips to move between regions. EMEA and APAC share one flow, APAC GA layers on its compliance gates, and USPB hadn't been built yet. All client and account data is dummy."
         }
       ]
     },
