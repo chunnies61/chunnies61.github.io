@@ -1787,9 +1787,18 @@ a.cs-index-item.is-active:hover {
   }
 }
 
-/* Password gate — a standalone page on the primary colour */
+/* Password gate — a standalone page on the primary colour, no footer */
+body:has(.cs-gate) .footer {
+  display: none;
+}
+
+/* Let the blue run to the bottom edge whatever the nav's height */
+body:has(.cs-gate) {
+  background: var(--accent);
+}
+
 .cs-gate {
-  min-height: calc(100vh - 88px);
+  min-height: calc(100dvh - 72px);
   display: flex;
   align-items: center;
   justify-content: center;
