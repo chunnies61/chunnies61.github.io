@@ -1862,6 +1862,11 @@ body:has(.cs-gate) {
   margin-top: -8px;
 }
 
+/* Lending Workspace prototype: just the window */
+.cs-ws-loading {
+  height: 880px;
+}
+
 /* Future-vision prototype: variant chips + description + window */
 .cs-vp-loading {
   height: 876px;
@@ -1874,5 +1879,8 @@ body:has(.cs-gate) {
   }
   .cs-vp-loading {
     height: 842px;
+  }
+  .cs-ws-loading {
+    height: 760px;
   }
 }

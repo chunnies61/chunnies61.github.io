@@ -932,6 +932,11 @@
           "type": "lra-prototype",
           "title": "Loan Request App prototype",
           "intro": "Use the Preview chips to move between regions. EMEA and APAC share one flow, APAC GA layers on its compliance gates, and USPB hadn't been built yet. All client and account data is dummy."
+        },
+        {
+          "type": "workspace-prototype",
+          "title": "Lending Workspace prototype",
+          "intro": "The Workspace pilot as bankers and lending specialists use it: Overview, Deal Journey, Opportunities and Portfolio Health, behind the same shell as every Connect app. All clients, tasks and figures are sample data."
         }
       ]
     },
