@@ -1884,8 +1884,9 @@ body:has(.cs-gate) {
   gap: 12px;
 }
 
-/* Type is .md-label-medium; only the colour here */
+/* Type is .md-label-medium; only alignment and colour here */
 p.cs-proto-prompt {
+  text-align: center;
   color: var(--accent-dark); /* Primary 40 — the text-safe primary on white */
 }
 
