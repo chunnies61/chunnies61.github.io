@@ -682,7 +682,7 @@ export default function CaseStudy() {
       <main className="cs-gate">
         <div className="cs-protected">
           <span className="cs-protected-lock">🔒</span>
-          <h1>{study.title}</h1>
+          <h1>This is a protected page</h1>
           <p>
             This project contains confidential client work. Enter the password to view
             it, or reach out and I'm happy to walk through it directly.
