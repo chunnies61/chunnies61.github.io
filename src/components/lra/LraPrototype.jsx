@@ -65,16 +65,16 @@ export default function LraPrototype({ title = "Loan request prototype" }) {
 
   return (
     <div className="lra" aria-label={title} role="region">
-      {/* Preview — single-select filter chips that switch region variants */}
-      <div className="lra-preview" role="group" aria-label="Preview region">
-        <span className="lra-preview-label">Preview</span>
+      {/* Preview — a black segmented toggle that switches region variants */}
+      <div className="lra-toggle" role="group" aria-label="Preview region">
+        <span className="lra-toggle-label">Preview</span>
         {REGIONS.map((r) => {
           const on = r.id === regionId;
           return (
             <button
               key={r.id}
               type="button"
-              className={"lra-chip" + (on ? " is-on" : "")}
+              className={"lra-toggle-btn" + (on ? " is-on" : "")}
               aria-pressed={on}
               onClick={() => {
                 if (on) return;
@@ -82,7 +82,6 @@ export default function LraPrototype({ title = "Loan request prototype" }) {
                 reset();
               }}
             >
-              {on && <Icon name="check" size={18} />}
               {r.label}
             </button>
           );

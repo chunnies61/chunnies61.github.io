@@ -548,7 +548,7 @@ function Block({ block }) {
         <>
           {block.title && <h5 className="cs-lra-heading md-headline-small">{block.title}</h5>}
           {block.intro && <p className="cs-lra-intro">{block.intro}</p>}
-          <PrototypeStage extra={48}>
+          <PrototypeStage extra={56}>
             <LraPrototype title={block.title} />
           </PrototypeStage>
         </>
@@ -559,7 +559,7 @@ function Block({ block }) {
         <>
           {block.title && <h5 className="cs-lra-heading md-headline-small">{block.title}</h5>}
           {block.intro && <p className="cs-lra-intro">{block.intro}</p>}
-          <PrototypeStage extra={76}>
+          <PrototypeStage extra={84}>
             <VisionPrototype title={block.title} />
           </PrototypeStage>
         </>

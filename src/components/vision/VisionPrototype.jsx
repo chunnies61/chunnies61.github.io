@@ -128,17 +128,17 @@ export default function VisionPrototype({ title = "Future-vision prototype" }) {
 
   return (
     <div className="lra vp" aria-label={title} role="region">
-      {/* Variant switch — filter chips, each with a rich tooltip */}
+      {/* Variant switch — a black segmented toggle, each option with a rich tooltip */}
       <div className="vp-variants">
-        <div className="lra-preview vp-variant-chips" role="group" aria-label="Prototype variant">
-          <span className="lra-preview-label">Variant</span>
+        <div className="lra-toggle" role="group" aria-label="Prototype variant">
+          <span className="lra-toggle-label">Variant</span>
           {VARIANTS.map((x) => {
             const on = x.id === variant;
             return (
               <span key={x.id} className="vp-tip-anchor">
                 <button
                   type="button"
-                  className={"lra-chip" + (on ? " is-on" : "")}
+                  className={"lra-toggle-btn" + (on ? " is-on" : "")}
                   aria-pressed={on}
                   aria-describedby={`vp-tip-${x.id}`}
                   onClick={() => {
@@ -147,7 +147,6 @@ export default function VisionPrototype({ title = "Future-vision prototype" }) {
                     reset(x.id);
                   }}
                 >
-                  {on && <Icon name="check" size={18} />}
                   {x.chip}
                 </button>
                 <span className="vp-tip" role="tooltip" id={`vp-tip-${x.id}`}>
