@@ -20,6 +20,9 @@ export const CLIENTS = [
 
 export const ROLES = ["Borrower", "Pledgor", "Guarantor"];
 
+// Dates are counted against a fixed "as of" day so the prototype is stable
+export const AS_OF = "2026-09-18";
+
 export const FACILITIES = [
   {
     id: "f1",
@@ -28,8 +31,12 @@ export const FACILITIES = [
     facilityId: "100000001",
     borrowers: "Alex Morgan",
     lineSize: "2,000,000.00 USD",
+    lineValue: 2000000,
+    drawn: 1240000,
     type: "Global limit",
+    opened: "2024-10-28",
     maturity: "28-Oct-2027",
+    maturityDate: "2027-10-28",
     collateral: "400001",
   },
   {
@@ -39,8 +46,12 @@ export const FACILITIES = [
     facilityId: "100000002",
     borrowers: "Alex Morgan, Casey Lin",
     lineSize: "5,500,000.00 USD",
+    lineValue: 5500000,
+    drawn: 4620000,
     type: "Commitment – Term loan",
+    opened: "2023-03-15",
     maturity: "15-Mar-2028",
+    maturityDate: "2028-03-15",
     collateral: "400002, 400003",
   },
 ];

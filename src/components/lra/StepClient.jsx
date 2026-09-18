@@ -15,6 +15,8 @@ import {
 } from "./data";
 import { money, num } from "./rules";
 import { Banner, Icon } from "./ui";
+import Dropdown from "./dropdown";
+import FacilityCard from "./FacilityCard";
 
 function Field({ label, error, hint, children, id }) {
   return (
@@ -93,26 +95,22 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
       <Section title="Parties">
         <div className="lra-party-row">
           <Field label="Search clients" id={`${uid}-client`}>
-            <select
+            <Dropdown
               id={`${uid}-client`}
               value={clientId}
-              onChange={(e) => setClientId(e.target.value)}
-            >
-              <option value="">Select a client…</option>
-              {CLIENTS.map((c) => (
-                <option key={c.id} value={c.id}>
-                  {c.name} · ECI {c.eci}
-                </option>
-              ))}
-            </select>
+              onChange={setClientId}
+              placeholder="Select a client…"
+              options={CLIENTS.map((c) => ({ value: c.id, label: `${c.name} · ECI ${c.eci}` }))}
+            />
           </Field>
           <Field label="Role" id={`${uid}-role`}>
-            <select id={`${uid}-role`} value={role} onChange={(e) => setRole(e.target.value)}>
-              <option value="">Select a role…</option>
-              {ROLES.map((r) => (
-                <option key={r}>{r}</option>
-              ))}
-            </select>
+            <Dropdown
+              id={`${uid}-role`}
+              value={role}
+              onChange={setRole}
+              placeholder="Select a role…"
+              options={ROLES}
+            />
           </Field>
           <button
             type="button"
@@ -189,73 +187,18 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
         <>
           {/* Existing facilities */}
           <Section title="Existing facilities">
-            <div className="lra-facilities">
-              {FACILITIES.map((fac) => {
-                const selected = deal.facilityId === fac.id;
-                return (
-                  <article
-                    key={fac.id}
-                    className={"lra-facility" + (selected ? " is-selected" : "")}
-                  >
-                    <div className="lra-facility-top">
-                      <span className={"lra-pill " + (fac.kind === "sbl" ? "is-blue" : "is-violet")}>
-                        {fac.badge}
-                      </span>
-                      <span className="lra-muted">Facility ID: {fac.facilityId}</span>
-                    </div>
-                    <dl className="lra-kv">
-                      <div>
-                        <dt>Borrower(s)</dt>
-                        <dd>{fac.borrowers}</dd>
-                      </div>
-                      <div>
-                        <dt>Line size</dt>
-                        <dd>{fac.lineSize}</dd>
-                      </div>
-                      <div>
-                        <dt>Facility type</dt>
-                        <dd>{fac.type}</dd>
-                      </div>
-                      <div>
-                        <dt>Maturity date</dt>
-                        <dd>{fac.maturity}</dd>
-                      </div>
-                      <div>
-                        <dt>Collateral account(s)</dt>
-                        <dd>{fac.collateral}</dd>
-                      </div>
-                    </dl>
-                    <div className="lra-facility-actions">
-                      {["Amendment", "Replace", "More actions"].map((action) => {
-                        const on = selected && deal.facilityAction === action;
-                        return (
-                          <button
-                            key={action}
-                            type="button"
-                            className={"lra-chip" + (on ? " is-on" : "")}
-                            aria-pressed={on}
-                            onClick={() =>
-                              update(
-                                on
-                                  ? { facilityId: null, facilityAction: null }
-                                  : { facilityId: fac.id, facilityAction: action }
-                              )
-                            }
-                          >
-                            {on && <Icon name="check" size={18} />}
-                            {action}
-                          </button>
-                        );
-                      })}
-                    </div>
-                    {selected && fac.kind === "custom" && (
-                      <p className="lra-inline-error" role="alert">
-                        Tailored facilities can't continue here — they go through the Custom intake.
-                      </p>
-                    )}
-                  </article>
-                );
-              })}
+            <div className="lra-facilities lra-fac-grid">
+              {FACILITIES.map((fac) => (
+                <FacilityCard
+                  key={fac.id}
+                  fac={fac}
+                  selected={deal.facilityId === fac.id}
+                  action={deal.facilityAction}
+                  onAction={(a, on) =>
+                    update(on ? { facilityId: null, facilityAction: null } : { facilityId: fac.id, facilityAction: a })
+                  }
+                />
+              ))}
             </div>
           </Section>
 
@@ -264,7 +207,7 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
             <div className="lra-build-actions">
               <button
                 type="button"
-                className={"lra-btn is-toggle" + (deal.build === "sbl" ? " is-on" : "")}
+                className="lra-btn is-primary"
                 aria-pressed={deal.build === "sbl"}
                 onClick={() => update((d) => ({ build: d.build === "sbl" ? null : "sbl" }))}
               >
@@ -362,20 +305,17 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
                             <td>{c.stdLv}</td>
                             <td>{c.emlLv}</td>
                             <td>
-                              <select
-                                className="is-compact"
-                                aria-label={`Market value currency for ${c.acct}`}
+                              <Dropdown
+                                compact
+                                label={`Market value currency for ${c.acct}`}
                                 value={deal.collateralCcy[c.acct] ?? c.ccy}
-                                onChange={(e) =>
+                                onChange={(v) =>
                                   update((d) => ({
-                                    collateralCcy: { ...d.collateralCcy, [c.acct]: e.target.value },
+                                    collateralCcy: { ...d.collateralCcy, [c.acct]: v },
                                   }))
                                 }
-                              >
-                                {CURRENCIES.map((ccy) => (
-                                  <option key={ccy}>{ccy}</option>
-                                ))}
-                              </select>
+                                options={CURRENCIES}
+                              />
                             </td>
                             <td className="is-num">{money(c.mv)}</td>
                           </tr>
@@ -474,18 +414,13 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
               <Section title="Facility">
                 <div className="lra-grid">
                   <Field label="Facility type" id={`${uid}-ftype`}>
-                    <select
+                    <Dropdown
                       id={`${uid}-ftype`}
                       value={deal.facilityType}
-                      onChange={(e) =>
-                        update({ facilityType: e.target.value, fields: {}, offer: null, cdsDismissed: false })
-                      }
-                    >
-                      <option value="">Select a facility type…</option>
-                      {FACILITY_TYPES.map((t) => (
-                        <option key={t}>{t}</option>
-                      ))}
-                    </select>
+                      onChange={(v) => update({ facilityType: v, fields: {}, offer: null, cdsDismissed: false })}
+                      placeholder="Select a facility type…"
+                      options={FACILITY_TYPES}
+                    />
                   </Field>
                   <Field label="Requested line size" id={`${uid}-line`}>
                     <div className="lra-money">
@@ -496,27 +431,21 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
                         value={deal.lineSize}
                         onChange={(e) => update({ lineSize: e.target.value, offer: null })}
                       />
-                      <select
-                        aria-label="Line size currency"
+                      <Dropdown
+                        label="Line size currency"
                         value={deal.currency}
-                        onChange={(e) => update({ currency: e.target.value, offer: null })}
-                      >
-                        {CURRENCIES.map((ccy) => (
-                          <option key={ccy}>{ccy}</option>
-                        ))}
-                      </select>
+                        onChange={(v) => update({ currency: v, offer: null })}
+                        options={CURRENCIES}
+                      />
                     </div>
                   </Field>
                   <Field label="Asset type" id={`${uid}-asset`}>
-                    <select
+                    <Dropdown
                       id={`${uid}-asset`}
                       value={deal.assetType}
-                      onChange={(e) => update({ assetType: e.target.value })}
-                    >
-                      {ASSET_TYPES.map((t) => (
-                        <option key={t}>{t}</option>
-                      ))}
-                    </select>
+                      onChange={(v) => update({ assetType: v })}
+                      options={ASSET_TYPES}
+                    />
                   </Field>
 
                   {deal.facilityType === "FX/OTC Derivatives" && (
@@ -566,19 +495,16 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
                         />
                       </Field>
                       <Field label="Transaction type" id={`${uid}-txn`}>
-                        <select
+                        <Dropdown
                           id={`${uid}-txn`}
                           value={f.txnType ?? ""}
-                          onChange={(e) => {
-                            setField("txnType", e.target.value);
+                          onChange={(v) => {
+                            setField("txnType", v);
                             update({ cdsDismissed: false });
                           }}
-                        >
-                          <option value="">Select…</option>
-                          {TRANSACTION_TYPES.map((t) => (
-                            <option key={t}>{t}</option>
-                          ))}
-                        </select>
+                          placeholder="Select…"
+                          options={TRANSACTION_TYPES}
+                        />
                       </Field>
                     </>
                   )}
@@ -594,15 +520,12 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
                         />
                       </Field>
                       <Field label="Exchange" id={`${uid}-exch`}>
-                        <select
+                        <Dropdown
                           id={`${uid}-exch`}
                           value={f.exchange ?? EXCHANGES[0]}
-                          onChange={(e) => setField("exchange", e.target.value)}
-                        >
-                          {EXCHANGES.map((x) => (
-                            <option key={x}>{x}</option>
-                          ))}
-                        </select>
+                          onChange={(v) => setField("exchange", v)}
+                          options={EXCHANGES}
+                        />
                       </Field>
                     </>
                   )}
@@ -618,15 +541,12 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
                         />
                       </Field>
                       <Field label="Repayment" id={`${uid}-repay`}>
-                        <select
+                        <Dropdown
                           id={`${uid}-repay`}
                           value={f.repayment ?? REPAYMENTS[0]}
-                          onChange={(e) => setField("repayment", e.target.value)}
-                        >
-                          {REPAYMENTS.map((x) => (
-                            <option key={x}>{x}</option>
-                          ))}
-                        </select>
+                          onChange={(v) => setField("repayment", v)}
+                          options={REPAYMENTS}
+                        />
                       </Field>
                     </>
                   )}
