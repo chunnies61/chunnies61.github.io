@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import ScrollToHash from "./components/ScrollToHash";
 import Home from "./pages/Home";
 import CaseStudy from "./pages/CaseStudy";
 import AllProjects from "./pages/AllProjects";
@@ -13,6 +14,7 @@ const PrototypeDesignSystem = lazy(() => import("./pages/PrototypeDesignSystem")
 function App() {
   return (
     <>
+      <ScrollToHash />
       <Nav />
       <main>
         <Routes>

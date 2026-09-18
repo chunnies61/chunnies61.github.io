@@ -68,7 +68,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
+      <section id="making" className="section making">
         <div className="wrap">
           <div className="more-head">
             <div>

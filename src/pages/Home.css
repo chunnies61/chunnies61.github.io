@@ -256,6 +256,11 @@
   }
 }
 
+/* In-page nav target: clear the sticky nav */
+.making {
+  scroll-margin-top: 88px;
+}
+
 /* ===== About (merged from the standalone About page) ===== */
 .about-hero {
   padding: var(--space-section) 0;
