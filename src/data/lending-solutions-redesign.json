@@ -742,35 +742,6 @@
         {
           "type": "step",
           "num": "1",
-          "title": "Make the problem impossible to pass along",
-          "blocks": [
-            {
-              "type": "text",
-              "value": "The red-dot findings became a one-page Rework Map: three seams, their cost, the teams on either side. Then 45 minutes with every PO and the Credit Risk lead in one room — they had only ever met pairwise."
-            },
-            {
-              "type": "image",
-              "label": "The Rework Map"
-            },
-            {
-              "type": "text",
-              "value": "Quantified, in front of everyone at once, the potato became impossible to pass:"
-            },
-            {
-              "type": "quote",
-              "value": "If we just told them what we needed up front, we'd stop bouncing these.",
-              "attribution": "Credit Risk lead"
-            },
-            {
-              "type": "callout",
-              "label": "What that bought me",
-              "value": "A de-facto sponsor by evidence, not org chart."
-            }
-          ]
-        },
-        {
-          "type": "step",
-          "num": "2",
           "title": "Make alignment a habit, not a meeting",
           "blocks": [
             {
@@ -807,7 +778,7 @@
         },
         {
           "type": "step",
-          "num": "3",
+          "num": "2",
           "title": "Bring design upstream of the roadmap",
           "blocks": [
             {
