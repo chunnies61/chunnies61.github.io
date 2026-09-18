@@ -5,7 +5,8 @@
 
 /* --- Variant switch --------------------------------------------------------- */
 .vp-variants {
-  margin-bottom: 16px;
+  position: relative;
+  z-index: 1; /* its tooltips float over the frame */
 }
 
 

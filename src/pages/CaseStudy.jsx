@@ -256,7 +256,7 @@ function CardIcon({ name, className = "cs-card-icon" }) {
 function PrototypeStage({ extra = 0, children }) {
   return (
     <div className="cs-proto">
-      <div className="cs-proto-stage" style={{ "--proto-extra": `${extra}px` }}>
+      <div className={"cs-proto-stage" + (extra ? " has-tab" : "")} style={{ "--proto-extra": `${extra}px` }}>
         <Suspense fallback={<div className="cs-proto-loading" aria-busy="true" />}>{children}</Suspense>
       </div>
       <p className="cs-proto-prompt md-label-medium">
@@ -568,7 +568,7 @@ function Block({ block }) {
         <>
           {block.title && <h5 className="cs-lra-heading md-headline-small">{block.title}</h5>}
           {block.intro && <p className="cs-lra-intro">{block.intro}</p>}
-          <PrototypeStage extra={48}>
+          <PrototypeStage extra={30}>
             <LraPrototype title={block.title} />
           </PrototypeStage>
         </>
@@ -579,7 +579,7 @@ function Block({ block }) {
         <>
           {block.title && <h5 className="cs-lra-heading md-headline-small">{block.title}</h5>}
           {block.intro && <p className="cs-lra-intro">{block.intro}</p>}
-          <PrototypeStage extra={48}>
+          <PrototypeStage extra={30}>
             <VisionPrototype title={block.title} />
           </PrototypeStage>
         </>

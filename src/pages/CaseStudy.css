@@ -1901,3 +1901,8 @@ p.cs-proto-prompt {
   border-radius: 12px;
   background: #eef0f3;
 }
+
+/* Under a toggle tab the frame's top-left corner is square */
+.has-tab > .cs-proto-loading {
+  border-top-left-radius: 0;
+}

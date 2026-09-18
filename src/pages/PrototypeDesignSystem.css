@@ -461,3 +461,8 @@
   font-weight: 400;
   color: var(--ui-fg-tertiary);
 }
+
+/* The frame's top edge under the toggle specimen */
+.pds-tab-edge {
+  border-top: 2px solid var(--ui-gray-800);
+}

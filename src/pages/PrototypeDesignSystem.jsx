@@ -485,7 +485,7 @@ export default function PrototypeDesignSystem() {
             </Specimen>
           </Block>
 
-          <Block title="Canvas & frame" note="Each prototype lays out on a 1920×1080 canvas — 96px of browser chrome over a 1920×984 app — then scales uniformly to the column's width. A 2px gray-800 border and a soft shadow set it apart from the page.">
+          <Block title="Canvas & frame" note="Each prototype lays out on a 1920×1080 canvas — 96px of browser chrome over a 1920×984 app — then scales uniformly to the column's width. A 2px gray-800 border and a soft shadow set it apart from the page; where a prototype has a toggle, it sits on that border as a tab and the frame's top-left corner goes square.">
             <Specimen className="pds-frame-demo">
               <ScaledFrame title="Example app" path="/lending/example">
                 <div className="lra-window">
@@ -669,7 +669,7 @@ export default function PrototypeDesignSystem() {
                 </div>
               </div>
             </Specimen>
-            <Specimen label="Prototype toggle — sits on the page above a prototype, in the site's Poppins">
+            <Specimen label="Prototype toggle — a tab on the frame's outline, flush left, in the site's Poppins">
               <Toggle
                 label="Variant"
                 value={demoToggle}
@@ -680,6 +680,7 @@ export default function PrototypeDesignSystem() {
                   { id: "c", label: "P2 · AI Agent" },
                 ]}
               />
+              <div className="pds-tab-edge" aria-hidden="true" />
             </Specimen>
           </Block>
 

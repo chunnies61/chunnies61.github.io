@@ -205,16 +205,20 @@
    Sits above the window, on the portfolio page rather than in the app, so
    it's set in the site's Poppins. Equal-width options on a gray-800
    track; a white thumb slides to the selected option. No visible caption —
-   the group is named with aria-label. 32px tall; each prototype sets the
-   space beneath it. */
+   the group is named with aria-label. It reads as a tab of the frame's
+   outline: flush left, square along the bottom, sitting on the frame's
+   gray-800 border, whose top-left corner goes square to meet it. */
 .lra-toggle-row {
+  position: relative;
+  z-index: 1; /* above the frame's shadow */
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   font-family: var(--font-ui);
 }
 
-.lra > .lra-toggle-row {
-  margin-bottom: 16px;
+.lra-toggle-row + .lra-frame,
+.vp-variants + .lra-frame {
+  border-top-left-radius: 0;
 }
 
 .lra-toggle {
@@ -222,19 +226,16 @@
   display: inline-grid;
   /* 1fr (not minmax(0, 1fr)): every option is as wide as the longest label */
   grid-template-columns: repeat(var(--n), 1fr);
-  padding: 3px;
-  border-radius: 6px;
+  padding: 3px 3px 1px;
+  border-radius: 8px 8px 0 0;
   background: var(--ui-gray-800);
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
-    0 1px 2px rgba(0, 0, 0, 0.18);
 }
 
 /* The thumb: one option wide, moved by the selected index */
 .lra-toggle-thumb {
   position: absolute;
   top: 3px;
-  bottom: 3px;
+  bottom: 1px;
   left: 3px;
   width: calc((100% - 6px) / var(--n));
   border-radius: var(--ui-radius-sm);
