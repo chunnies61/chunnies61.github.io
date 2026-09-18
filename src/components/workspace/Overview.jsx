@@ -70,7 +70,7 @@ function OpenTasks({ onPlaceholder }) {
 
   return (
     <Card title="My Open Tasks">
-      <div className="lra-tabs ws-tabs-fill" role="tablist" aria-label="Tasks">
+      <div className="lra-tabs ws-task-tabs" role="tablist" aria-label="Tasks">
         {[
           ["me", `Assigned to me (${TASKS.me.length})`],
           ["team", `Assigned to My Team (${TASKS.team.length})`],

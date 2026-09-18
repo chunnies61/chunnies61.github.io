@@ -582,22 +582,13 @@
   }
 }
 
-/* Tabs that share the card width and may wrap to two lines */
-.ws-tabs-fill {
+/* Task tabs sit left-aligned at their natural width */
+.ws-task-tabs {
   margin-bottom: 4px;
 }
 
-.ws-tabs-fill .lra-tab {
-  flex: 1;
-  height: auto;
-  min-height: 48px;
-  padding: 0 8px;
-}
-
-.ws-tabs-fill .lra-tab > span {
-  height: auto;
-  padding: 14px 0;
-  text-align: center;
+.ws-task-tabs .lra-tab > span {
+  text-align: left;
 }
 
 .ws-tasks {
