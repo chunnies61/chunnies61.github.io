@@ -3,13 +3,13 @@
    top, one line down to the apps, and the apps side by side with their pages
    stacked beneath — scrolling sideways when they outrun the column.
 
-   Colour stays in the site system on a Primary 30 sheet: products and apps
+   Colour stays in the site system on a Primary 40 sheet: products and apps
    are Primary 90 nodes, unselected products are outlined, pages are white
    pills. Type comes from the .md-* role on each element; this file holds
    colour, spacing and layout only. */
 
 .cs-ia {
-  --cs-ia-bg: #003fa3;                        /* Primary 30 */
+  --cs-ia-bg: #1e57c8;                        /* Primary 40 */
   --cs-ia-on-bg: #ffffff;
   --cs-ia-on-bg-soft: rgba(255, 255, 255, 0.82);
   --cs-ia-wire: rgba(255, 255, 255, 0.55);
