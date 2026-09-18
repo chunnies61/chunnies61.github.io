@@ -91,12 +91,13 @@ const PAIRS = [
   ["fg-tertiary", "bg-secondary", "$text-secondary on secondary background"],
   ["link", "bg", "$link-primary on white"],
   ["link", "row-selected", "$link-primary on a selected row"],
-  ["white", "brand-600", "White on the primary button"],
+  ["white", "primary", "White on the primary button (#0056A6)"],
   ["success-600", "success-50", "Success badge"],
   ["error-600", "error-50", "Error badge"],
   ["warning-700", "warning-50", "Warning badge"],
   ["purple-700", "purple-50", "Purple badge"],
   ["fg", "editable-grid", "Text on the editable grid"],
+  ["gray-700", "gray-200", "Table header text on neutral-200"],
   ["icon", "bg", "$icon-default on white (icons need 3:1)", 3],
 ];
 
@@ -268,7 +269,7 @@ export default function PrototypeDesignSystem() {
           <dl className="pds-facts">
             {[
               ["Built on", "Untitled UI React components"],
-              ["Colour", "Connect palette · #126BC5"],
+              ["Colour", "Connect palette · main #0056A6"],
               ["Typeface", "Poppins"],
               ["Canvas", "1920 × 1080, scaled to fit"],
               ["Tokens", "--ui-*, scoped to .lra"],
@@ -304,7 +305,7 @@ export default function PrototypeDesignSystem() {
           <Block title="Principles" note="Five rules every prototype screen follows.">
             <div className="pds-principles">
               {[
-                ["One primary", "#126BC5 is the only accent — fills, links, active states and focus. Status colours are for status, never decoration."],
+                ["One primary", "#0056A6 (brand-700) is the only accent — fills, links, active states and selection. Status colours are for status, never decoration."],
                 ["Labels above fields", "Every input has a visible label above it and hint or error text below. No placeholder-as-label."],
                 ["Hairlines, not heavy fills", "Surfaces separate with 1px $divider-secondary borders and shadow-xs; $background-secondary is reserved for panels and headers."],
                 ["Say what's blocking", "A disabled Continue always sits beside a status line naming the one thing still missing."],
@@ -333,13 +334,13 @@ export default function PrototypeDesignSystem() {
               ))}
             </Specimen>
             <Usage>
-              <li><strong>One primary.</strong> $brand-primary #126BC5 fills primary buttons and marks links, active tabs, current steps and selection; $link-primary-hover darkens it on hover.</li>
+              <li><strong>One primary.</strong> Brand-700 #0056A6 is the main colour: it fills primary buttons and marks links, active tabs, current steps and selection; $link-primary-hover (brand-800) darkens it on hover. $brand-primary #126BC5 sits at 600 in the scale.</li>
               <li><strong>Accent sparingly.</strong> $accent #79E0AD is a brand highlight, never a status or a text colour.</li>
               <li><strong>Gain and loss.</strong> Success #006600 and error #BF2155 are the only status hues for text, badges and alerts; warning (amber) is supplemental.</li>
             </Usage>
           </Block>
 
-          <Block title="Colour scales" note="Every brand colour has a full 25–950 scale, generated in OKLCH so each step is an even jump in perceived lightness, kept inside the sRGB gamut. The palette's own values are pinned where their lightness falls — marked Connect — and every other step is built around them. 600 is the default for fills and text; the light end (25–200) is for tints, selected states and badge fills; the dark end for hovers and pressed states.">
+          <Block title="Colour scales" note="Every brand colour has a full 25–950 scale, generated in OKLCH so each step is an even jump in perceived lightness, kept inside the sRGB gamut. The palette's own values are pinned where their lightness falls — marked Connect — and every other step is built around them. Brand 700 is the main colour; elsewhere 600 is the default for fills and text. The light end (25–200) is for tints, selected states and badge fills; the dark end for hovers and pressed states.">
             <Specimen>
               {SCALES.map(([label, key, pins]) => (
                 <div key={key} className="pds-utility">
@@ -348,7 +349,14 @@ export default function PrototypeDesignSystem() {
                   </p>
                   <div className="pds-scale">
                     {ALL.map((st) => (
-                      <Chip key={st} token={`${key}-${st}`} name={st} pinned={pins[st]} />
+                      <Chip
+                        key={st}
+                        token={`${key}-${st}`}
+                        name={st}
+                        pinned={pins[st]}
+                        big={key === "brand" && st === "700"}
+                        note={key === "brand" && st === "700" ? "Main" : undefined}
+                      />
                     ))}
                   </div>
                 </div>
@@ -609,7 +617,7 @@ export default function PrototypeDesignSystem() {
             </Specimen>
           </Block>
 
-          <Block title="Selection controls" note="16px checkboxes (4px corners) and radios, brand-600 when on, brand-50 on hover. The whole label is the hit target.">
+          <Block title="Selection controls" note="16px checkboxes (4px corners) and radios, in the main colour (brand-700) when on, brand-50 on hover. The whole label is the hit target.">
             <Specimen>
               <div className="pds-row pds-gap-lg">
                 <label className="lra-radio">
@@ -776,7 +784,7 @@ export default function PrototypeDesignSystem() {
             </Specimen>
           </Block>
 
-          <Block title="Tables" note="A card with a $background-secondary header row (text-xs medium), 56px rows, $text-secondary cells and a $text-primary first column. Rows take $background-hover on hover and $row-selected when checked. Numbers right-aligned and tabular.">
+          <Block title="Tables" note="A card with a neutral-200 header row (text-xs medium in neutral-700), 56px rows, $text-secondary cells and a $text-primary first column. Rows take $background-hover on hover and $row-selected when checked. Numbers right-aligned and tabular.">
             <Specimen>
               <div className="lra-table-wrap">
                 <table className="lra-table">

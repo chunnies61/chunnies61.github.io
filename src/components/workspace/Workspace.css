@@ -202,7 +202,7 @@
 }
 
 .ws-ws-tab.is-on {
-  background: var(--ui-brand-600);
+  background: var(--ui-primary);
   color: var(--ui-white);
   cursor: default;
 }
@@ -251,7 +251,7 @@
   display: flex;
   align-items: center;
   height: 48px;
-  background: var(--ui-brand-600);
+  background: var(--ui-primary);
   color: var(--ui-white);
 }
 
@@ -426,7 +426,7 @@
 }
 
 .ws-metric.is-link .ws-metric-value {
-  color: var(--ui-brand-600);
+  color: var(--ui-primary);
 }
 
 .ws-delta {
@@ -754,7 +754,7 @@
 
 .ws .lra-btn.is-ghost.is-active {
   background: var(--ui-brand-50);
-  color: var(--ui-brand-600);
+  color: var(--ui-primary);
 }
 
 .ws-filter {
@@ -793,7 +793,7 @@
 .ws-sort-icon.is-on,
 .ws-sort:hover .ws-sort-icon.is-on {
   opacity: 1;
-  color: var(--ui-brand-600);
+  color: var(--ui-primary);
 }
 
 .is-num .ws-sort {
@@ -857,8 +857,8 @@
 }
 
 .ws-menu-check.is-on {
-  border-color: var(--ui-brand-600);
-  background: var(--ui-brand-600);
+  border-color: var(--ui-primary);
+  background: var(--ui-primary);
   color: var(--ui-white);
 }
 
@@ -1061,7 +1061,7 @@
 }
 
 .ws-swatch.is-servicing {
-  background: var(--ui-brand-600);
+  background: var(--ui-primary);
 }
 
 .ws-swatch.is-origination {
@@ -1137,7 +1137,7 @@
 }
 
 .ws-split-bar span:first-child {
-  background: var(--ui-brand-600);
+  background: var(--ui-primary);
 }
 
 .ws-split-bar span:last-child {
@@ -1153,7 +1153,7 @@
   border: 1px solid var(--ui-brand-200);
   border-radius: var(--ui-radius-md);
   background: var(--ui-brand-25);
-  color: var(--ui-brand-600);
+  color: var(--ui-primary);
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;
@@ -1179,7 +1179,7 @@
   font-size: 12px;
   line-height: 18px;
   font-weight: 600;
-  color: var(--ui-brand-600);
+  color: var(--ui-primary);
 }
 
 .ws-coach-title {

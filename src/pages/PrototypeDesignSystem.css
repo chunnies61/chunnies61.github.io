@@ -160,7 +160,7 @@
 }
 
 .pds-chip.is-big .pds-chip-color {
-  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--ui-brand-600);
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--ui-primary);
 }
 
 .pds-chip-name {
@@ -288,7 +288,7 @@
 }
 
 .pds-radius span {
-  border: 2px solid var(--ui-brand-600);
+  border: 2px solid var(--ui-primary);
   background: var(--ui-brand-50);
 }
 
@@ -424,7 +424,7 @@
 
 .pds-chip-maps {
   margin-top: 2px;
-  color: var(--ui-brand-600) !important;
+  color: var(--ui-primary) !important;
 }
 
 /* Full colour scales: twelve steps in one row */

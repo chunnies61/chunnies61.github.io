@@ -161,7 +161,7 @@ export const KPIS = [
 ];
 
 export const ALLOCATION = [
-  ["Marketable securities", 42, "#126bc5"],
+  ["Marketable securities", 42, "#0056a6"],
   ["Real estate", 24, "#00796b"],
   ["Life insurance", 16, "#8a4fa6"],
   ["Cash & deposits", 12, "#b26a00"],

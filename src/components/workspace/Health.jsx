@@ -77,7 +77,7 @@ function Utilization() {
           cy="50"
           r={R}
           fill="none"
-          stroke="var(--ui-brand-600)"
+          stroke="var(--ui-primary)"
           strokeWidth="14"
           strokeDasharray={`${len} ${C}`}
           transform="rotate(-90 50 50)"
