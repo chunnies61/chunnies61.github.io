@@ -160,7 +160,8 @@
 
 .cs-ia-key.is-page {
   height: 9px;
-  border-radius: 999px;
+  border-radius: 4px;
+  corner-shape: squircle;
   background: #ffffff;
 }
 
@@ -183,7 +184,8 @@
 .cs-ia-level {
   margin: 0;
   padding: 3px 12px;
-  border-radius: 999px;
+  border-radius: 12px;
+  corner-shape: squircle;
   background: rgba(255, 255, 255, 0.14);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -395,7 +397,8 @@
 .cs-ia-node.is-page {
   height: var(--cs-ia-page-h);
   padding: 0 12px;
-  border-radius: 999px;
+  border-radius: 12px;
+  corner-shape: squircle;
   background: #ffffff;
   color: var(--text);
 }

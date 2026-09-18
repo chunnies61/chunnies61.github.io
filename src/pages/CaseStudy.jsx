@@ -11,8 +11,8 @@ const LraPrototype = lazy(() => import("../components/lra/LraPrototype"));
 const VisionPrototype = lazy(() => import("../components/vision/VisionPrototype"));
 const WorkspacePrototype = lazy(() => import("../components/workspace/WorkspacePrototype"));
 import "./CaseStudy.css";
+import PasswordGate, { useUnlocked } from "../components/PasswordGate";
 
-const UNLOCK_PASSWORD = "0620";
 
 function QuoteAttribution({ value }) {
   if (!value) return null;
@@ -659,34 +659,11 @@ export default function CaseStudy() {
   const { slug } = useParams();
   const study = getCaseStudy(slug);
 
-  const [unlocked, setUnlocked] = useState(false);
-  const [passwordInput, setPasswordInput] = useState("");
-  const [passwordError, setPasswordError] = useState(false);
-
-  useEffect(() => {
-    setPasswordInput("");
-    setPasswordError(false);
-    if (study?.protected) {
-      setUnlocked(localStorage.getItem(`unlocked:${study.slug}`) === "true");
-    } else {
-      setUnlocked(false);
-    }
-  }, [slug]);
+  const [unlocked, unlock] = useUnlocked(slug, Boolean(study?.protected));
 
   if (!study) return <Navigate to="/" replace />;
 
   const isLocked = Boolean(study.protected && !unlocked);
-
-  function handleUnlockSubmit(e) {
-    e.preventDefault();
-    if (passwordInput === UNLOCK_PASSWORD) {
-      localStorage.setItem(`unlocked:${study.slug}`, "true");
-      setUnlocked(true);
-      setPasswordError(false);
-    } else {
-      setPasswordError(true);
-    }
-  }
 
   const otherLinks = (study.otherProjects || [])
     .map((title) => caseStudies.find((cs) => cs.title === title))
@@ -740,37 +717,7 @@ export default function CaseStudy() {
   }, [slug]);
 
   if (isLocked) {
-    return (
-      <main className="cs-gate">
-        <div className="cs-protected">
-          <span className="cs-protected-lock">🔒</span>
-          <h1>This is a protected page</h1>
-          <p>
-            This project contains confidential client work. Enter the password to view
-            it, or reach out and I'm happy to walk through it directly.
-          </p>
-          <form className="cs-password-form" onSubmit={handleUnlockSubmit}>
-            <input
-              type="password"
-              inputMode="numeric"
-              className="cs-password-input"
-              placeholder="Password"
-              value={passwordInput}
-              onChange={(e) => {
-                setPasswordInput(e.target.value);
-                setPasswordError(false);
-              }}
-              aria-label="Password"
-              autoFocus
-            />
-            <button type="submit" className="btn btn-primary">
-              Unlock
-            </button>
-          </form>
-          {passwordError && <p className="cs-password-error">Incorrect password — try again.</p>}
-        </div>
-      </main>
-    );
+    return <PasswordGate key={slug} onUnlock={unlock} />;
   }
 
   return (
