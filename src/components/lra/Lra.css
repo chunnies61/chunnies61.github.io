@@ -665,6 +665,21 @@
   text-transform: uppercase;
 }
 
+/* Loan Request App: no app bar — the stepper sits centred at the top and
+   each step opens with a page title matching its stepper label */
+.lra-app .lra-stepper {
+  justify-content: center;
+}
+
+.lra-page-title {
+  margin: 0 0 24px;
+  font-family: var(--ui-font);
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  color: var(--ui-fg);
+}
+
 /* --- Sections -------------------------------------------------------------- */
 .lra-section + .lra-section {
   margin-top: 32px;

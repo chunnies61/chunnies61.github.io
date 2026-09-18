@@ -50,7 +50,6 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
   const [role, setRole] = useState("");
   const f = deal.fields;
   const { errors } = verdict;
-  const emea = region.flow === "emea";
 
   const canAdd =
     clientId &&
@@ -743,12 +742,6 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
         </>
       )}
 
-      {emea && deal.parties.length === 0 && (
-        <p className="lra-empty">Search for a client and add them as a party to start the request.</p>
-      )}
-      {!emea && deal.parties.length === 0 && (
-        <p className="lra-empty">Add a party to see their existing facilities and build a deal.</p>
-      )}
     </div>
   );
 }

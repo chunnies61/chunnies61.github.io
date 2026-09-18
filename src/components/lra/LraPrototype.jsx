@@ -52,10 +52,13 @@ export default function LraPrototype({ title = "Loan request prototype" }) {
   }, [step, regionId]);
 
   const inWizard = region.flow !== "wip" && step !== "done";
+  // The page title matches the current step's label in the stepper
+  const pageTitle =
+    region.flow === "wip" ? "Work in progress" : step === "done" ? "Request submitted" : STEPS[step];
   const firstParty = deal.parties[0];
 
   return (
-    <div className="lra" aria-label={title} role="region">
+    <div className="lra lra-app" aria-label={title} role="region">
       {/* Preview — the black toggle switches region variants */}
       <Toggle
         label="Preview"
@@ -67,19 +70,11 @@ export default function LraPrototype({ title = "Loan request prototype" }) {
         options={REGIONS.map((r) => ({ id: r.id, label: r.label }))}
       />
 
-      <ScaledFrame title="Loan Request App" path={`/lending/loan-request/new?region=${regionId}`}>
+      <ScaledFrame
+        title={`${pageTitle} · Loan Request App`}
+        path={`/lending/loan-request/new?region=${regionId}`}
+      >
         <div className="lra-window">
-          {/* Top app bar */}
-          <div className="lra-appbar">
-            <span className="lra-icon-btn" aria-hidden="true">
-              <Icon name="close" />
-            </span>
-            <span className="lra-appbar-title">New loan request</span>
-            <span className="lra-icon-btn" aria-hidden="true">
-              <Icon name="moreVert" />
-            </span>
-          </div>
-
           {region.flow === "wip" ? (
             <div className="lra-body lra-wip" ref={bodyRef}>
               <span className="lra-wip-icon">
@@ -149,6 +144,7 @@ export default function LraPrototype({ title = "Loan request prototype" }) {
               )}
 
               <div className="lra-body" ref={bodyRef}>
+                {step !== "done" && <h3 className="lra-page-title">{pageTitle}</h3>}
                 {step === 0 && (
                   <StepClient
                     key={regionId}
