@@ -99,7 +99,7 @@
   height: 40px;
   padding: 0 12px;
   border: 1px solid var(--ui-border);
-  border-radius: 8px;
+  border-radius: var(--ui-radius-sm);
   background: var(--ui-bg);
   box-shadow: var(--ui-shadow-xs);
   color: var(--ui-fg-quaternary);
@@ -130,7 +130,7 @@
   height: 32px;
   padding: 0 10px 0 4px;
   border: 1px solid var(--ui-border);
-  border-radius: 8px;
+  border-radius: var(--ui-radius-sm);
   background: var(--ui-bg);
   box-shadow: var(--ui-shadow-xs);
   color: var(--ui-fg-secondary);
@@ -315,7 +315,7 @@
   height: 36px;
   margin: 0 12px;
   padding: 0 8px 0 12px;
-  border-radius: 8px;
+  border-radius: var(--ui-radius-sm);
   background: var(--ui-bg);
   box-shadow: var(--ui-shadow-xs);
   color: var(--ui-fg-quaternary);
@@ -344,7 +344,7 @@
 .ws-card {
   padding: 20px;
   border: 1px solid var(--ui-border-secondary);
-  border-radius: 12px;
+  border-radius: var(--ui-radius-md);
   background: var(--ui-bg);
   box-shadow: var(--ui-shadow-xs);
 }
@@ -406,7 +406,7 @@
   min-width: 0;
   padding: 12px 14px;
   border: 1px solid var(--ui-border-secondary);
-  border-radius: 8px;
+  border-radius: var(--ui-radius-sm);
   background: var(--ui-bg-secondary);
   color: var(--ui-fg);
   text-align: left;
@@ -707,7 +707,7 @@
 .ws-summary > div {
   padding: 16px;
   border: 1px solid var(--ui-border-secondary);
-  border-radius: 12px;
+  border-radius: var(--ui-radius-md);
   background: var(--ui-bg);
   box-shadow: var(--ui-shadow-xs);
 }
@@ -874,7 +874,7 @@
   gap: 8px;
   padding: 48px 16px;
   border: 1px solid var(--ui-border-secondary);
-  border-radius: 12px;
+  border-radius: var(--ui-radius-md);
   background: var(--ui-bg);
   box-shadow: var(--ui-shadow-xs);
   text-align: center;
@@ -943,7 +943,7 @@
 .ws-kpis > div {
   padding: 20px;
   border: 1px solid var(--ui-border-secondary);
-  border-radius: 12px;
+  border-radius: var(--ui-radius-md);
   background: var(--ui-bg);
   box-shadow: var(--ui-shadow-xs);
 }
@@ -1151,7 +1151,7 @@
   margin-top: 16px;
   padding: 12px 14px;
   border: 1px solid var(--ui-brand-200);
-  border-radius: 12px;
+  border-radius: var(--ui-radius-md);
   background: var(--ui-brand-25);
   color: var(--ui-brand-600);
   font-size: 14px;
@@ -1171,7 +1171,7 @@
   gap: 4px;
   padding: 16px;
   border: 1px solid var(--ui-border-secondary);
-  border-radius: 12px;
+  border-radius: var(--ui-radius-md);
   background: var(--ui-bg-secondary);
 }
 
@@ -1203,7 +1203,7 @@
   align-self: flex-start;
   max-width: 100%;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: var(--ui-radius-sm);
   box-shadow: var(--ui-shadow-xs), inset 0 0 0 1px var(--ui-border);
 }
 

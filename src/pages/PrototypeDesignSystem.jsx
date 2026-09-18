@@ -101,10 +101,10 @@ const TYPE = [
 
 const SPACING = [2, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48];
 const RADII = [
-  [4, "Checkboxes"],
-  [6, "Compact selects, small icon buttons, menu items"],
-  [8, "Buttons, inputs, tags, menus, tooltips"],
-  [12, "Cards, tables, alerts, panels, the frame"],
+  [4, "Inputs, tags, switches, checkboxes, metric tiles (--ui-radius-sm)"],
+  [6, "Cards, tables, alerts, toasts, panels (--ui-radius-md)"],
+  [8, "Buttons, icon buttons, menus, tooltips"],
+  [12, "The prototype frame"],
   [16, "Badges (pill)"],
   ["50%", "Avatars, radios, featured icons, steps"],
 ];
@@ -410,7 +410,7 @@ export default function PrototypeDesignSystem() {
             </Specimen>
           </Block>
 
-          <Block title="Radius" note="Small controls 6–8; containers 12; badges are pills.">
+          <Block title="Radius" note="Tight corners: 4px for inputs, tags and switches; 6px for cards, tables, alerts and toasts; 8px for buttons and menus; badges are pills.">
             <Specimen>
               <div className="pds-radii">
                 {RADII.map(([r, use]) => (
@@ -705,7 +705,7 @@ export default function PrototypeDesignSystem() {
             </Specimen>
           </Block>
 
-          <Block title="Cards" note="White, 1px $divider-secondary border, 12px corners, shadow-xs, 20px padding. Selected: a 2px primary edge.">
+          <Block title="Cards" note="White, 1px $divider-secondary border, 6px corners, shadow-xs, 20px padding. Selected: a 2px primary edge.">
             <Specimen>
               <div className="lra-facilities">
                 {[false, true].map((sel) => (
