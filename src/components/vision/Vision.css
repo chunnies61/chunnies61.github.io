@@ -745,6 +745,8 @@
   border-radius: 16px;
   background: var(--ui-success-50);
   box-shadow: inset 0 0 0 1px var(--ui-success-200);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   font-size: 12px;
   line-height: 18px;
   font-weight: 500;

@@ -29,7 +29,7 @@ export default function WorkspacePrototype({ title = "Lending Workspace prototyp
   const [oppTab, setOppTab] = useState("offers");
   const [pill, setPill] = useState("portfolio");
   const [search, setSearch] = useState("");
-  const [client, setClient] = useState("First Name Last name");
+  const [client, setClient] = useState("");
   const [toast, setToast] = useState("");
   const toastTimer = useRef(null);
   const bodyRef = useRef(null);
@@ -180,7 +180,12 @@ export default function WorkspacePrototype({ title = "Lending Workspace prototyp
               <label htmlFor={`${uid}-client`} className="lra-sr">
                 Client
               </label>
-              <input id={`${uid}-client`} value={client} onChange={(e) => setClient(e.target.value)} />
+              <input
+                  id={`${uid}-client`}
+                  placeholder="First Name Last name"
+                  value={client}
+                  onChange={(e) => setClient(e.target.value)}
+                />
               <Icon name="expand" size={20} />
             </div>
           </div>

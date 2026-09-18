@@ -151,6 +151,7 @@ export default function P3Step({ deal, update, addParty }) {
                   <input
                     id={`${uid}-line`}
                     inputMode="decimal"
+                    placeholder="0"
                     value={c.line.toLocaleString("en-US")}
                     onChange={(e) => setPool({ requested: num(e.target.value) })}
                   />

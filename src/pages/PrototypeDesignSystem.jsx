@@ -532,7 +532,7 @@ export default function PrototypeDesignSystem() {
             </Specimen>
           </Block>
 
-          <Block title="Inputs" note="Label above (text-sm medium), 40px field, hint or error below. Focus: brand-300 border + 4px brand-100 ring; error: error-300 border + error-100 ring.">
+          <Block title="Inputs" note="Label above (text-sm medium), 40px field, a realistic placeholder in $text-secondary, hint or error below. Focus: brand-300 border + 4px brand-100 ring; error: error-300 border + error-100 ring.">
             <Specimen>
               <div className="lra-grid pds-inputs">
                 <div className="lra-field">
@@ -672,7 +672,7 @@ export default function PrototypeDesignSystem() {
             </Specimen>
           </Block>
 
-          <Block title="Badges" note="Pill, 22px, text-xs medium, 1px border. Colour carries meaning — never decoration.">
+          <Block title="Badges" note="Pill, 22px, text-xs medium in all caps (0.04em tracking), 1px border. Colour carries meaning — never decoration.">
             <Specimen>
               <div className="pds-row">
                 <span className="lra-pill is-good">Complete</span>

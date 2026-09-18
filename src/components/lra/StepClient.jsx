@@ -459,6 +459,7 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
                         <input
                           id={`${uid}-peak`}
                           inputMode="decimal"
+                          placeholder="e.g. 2,000,000"
                           value={f.peakLimit ?? ""}
                           aria-invalid={Boolean(errors.peakLimit)}
                           onChange={(e) => setField("peakLimit", e.target.value)}
@@ -468,6 +469,7 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
                         <input
                           id={`${uid}-im`}
                           inputMode="decimal"
+                          placeholder="e.g. 20"
                           value={f.initialMargin ?? ""}
                           onChange={(e) => setField("initialMargin", e.target.value)}
                         />
@@ -481,6 +483,7 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
                         <input
                           id={`${uid}-tenor`}
                           inputMode="numeric"
+                          placeholder="e.g. 60"
                           value={f.tenor ?? ""}
                           aria-invalid={Boolean(errors.tenor)}
                           onChange={(e) => setField("tenor", e.target.value)}
@@ -490,6 +493,7 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
                         <input
                           id={`${uid}-notional`}
                           inputMode="decimal"
+                          placeholder="e.g. 5,000,000"
                           value={f.notional ?? ""}
                           onChange={(e) => setField("notional", e.target.value)}
                         />
@@ -515,6 +519,7 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
                         <input
                           id={`${uid}-fo-im`}
                           inputMode="decimal"
+                          placeholder="e.g. 15"
                           value={f.initialMargin ?? ""}
                           onChange={(e) => setField("initialMargin", e.target.value)}
                         />
@@ -536,6 +541,7 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
                         <input
                           id={`${uid}-term`}
                           inputMode="numeric"
+                          placeholder="e.g. 36"
                           value={f.term ?? ""}
                           onChange={(e) => setField("term", e.target.value)}
                         />
@@ -560,6 +566,7 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
                       <input
                         id={`${uid}-eq`}
                         inputMode="decimal"
+                        placeholder="e.g. 35"
                         value={f.equityConc ?? ""}
                         onChange={(e) => setField("equityConc", e.target.value)}
                       />
@@ -572,6 +579,7 @@ export default function StepClient({ deal, update, setField, addParty, verdict, 
                     <textarea
                       id={`${uid}-comment`}
                       rows={3}
+                      placeholder="Explain why the concentration is acceptable for this client…"
                       value={f.comment ?? ""}
                       aria-invalid={Boolean(errors.comment)}
                       onChange={(e) => setField("comment", e.target.value)}

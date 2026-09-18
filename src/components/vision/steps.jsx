@@ -43,10 +43,20 @@ function DetailCards({ d, save, readOnly }) {
         renderEdit={edit((v, set) => (
           <>
             <Field label="Facility" id={`${uid}-fac`}>
-              <input id={`${uid}-fac`} value={v.facility} onChange={(e) => set({ facility: e.target.value })} />
+              <input
+                id={`${uid}-fac`}
+                placeholder="e.g. GLOBAL LIMIT"
+                value={v.facility}
+                onChange={(e) => set({ facility: e.target.value })}
+              />
             </Field>
             <Field label="Line size" id={`${uid}-line`}>
-              <input id={`${uid}-line`} value={v.lineSize} onChange={(e) => set({ lineSize: e.target.value })} />
+              <input
+                id={`${uid}-line`}
+                placeholder="e.g. 8,000,000.00 USD"
+                value={v.lineSize}
+                onChange={(e) => set({ lineSize: e.target.value })}
+              />
             </Field>
           </>
         ))}
@@ -82,6 +92,7 @@ function DetailCards({ d, save, readOnly }) {
               <input
                 id={`${uid}-tenor`}
                 inputMode="numeric"
+                placeholder="e.g. 48"
                 value={v.tenor}
                 onChange={(e) => set({ tenor: e.target.value })}
               />
@@ -150,7 +161,13 @@ function DetailCards({ d, save, readOnly }) {
               <input id={`${uid}-date`} type="date" value={v.docsDate} onChange={(e) => set({ docsDate: e.target.value })} />
             </Field>
             <Field label="Use of proceeds" id={`${uid}-use`} className="vp-span">
-              <textarea id={`${uid}-use`} rows={2} value={v.proceeds} onChange={(e) => set({ proceeds: e.target.value })} />
+              <textarea
+                id={`${uid}-use`}
+                rows={2}
+                placeholder="Describe how the funds will be used…"
+                value={v.proceeds}
+                onChange={(e) => set({ proceeds: e.target.value })}
+              />
             </Field>
           </>
         ))}
@@ -178,6 +195,7 @@ function Approvals({ deal, update, readOnly }) {
                   <textarea
                     id={`${uid}-${a.key}`}
                     rows={2}
+                    placeholder="Respond to the risk officer's comment…"
                     value={st.response}
                     onChange={(e) => setA(a.key, { response: e.target.value })}
                   />

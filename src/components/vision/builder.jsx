@@ -233,12 +233,17 @@ export function LifeInsurance({ b, set }) {
             <tbody>
               <tr>
                 {[
-                  ["policy", "Policy number"],
-                  ["holder", "Policy holder"],
-                  ["company", "Life insurance company"],
-                ].map(([k, label]) => (
+                  ["policy", "Policy number", "e.g. LI-20417"],
+                  ["holder", "Policy holder", "Full name"],
+                  ["company", "Life insurance company", "Insurer name"],
+                ].map(([k, label, hint]) => (
                   <td key={k}>
-                    <input aria-label={label} value={row[k]} onChange={(e) => setRow({ [k]: e.target.value })} />
+                    <input
+                      aria-label={label}
+                      placeholder={hint}
+                      value={row[k]}
+                      onChange={(e) => setRow({ [k]: e.target.value })}
+                    />
                   </td>
                 ))}
                 <td>
@@ -254,6 +259,7 @@ export function LifeInsurance({ b, set }) {
                   <input
                     aria-label="Policy market value"
                     inputMode="decimal"
+                    placeholder="0.00"
                     value={row.mv}
                     onChange={(e) => setRow({ mv: e.target.value })}
                   />
@@ -322,7 +328,12 @@ export function AdditionalAssets({ b, set }) {
               <Select id={`${uid}-type`} value={a.assetType} onChange={(v) => setA({ assetType: v })} options={ASSET_TYPES} />
             </Field>
             <Field label="Account owner" id={`${uid}-owner`}>
-              <input id={`${uid}-owner`} value={a.owner} onChange={(e) => setA({ owner: e.target.value })} />
+              <input
+                id={`${uid}-owner`}
+                placeholder="Full name"
+                value={a.owner}
+                onChange={(e) => setA({ owner: e.target.value })}
+              />
             </Field>
           </div>
           <Field
@@ -334,6 +345,7 @@ export function AdditionalAssets({ b, set }) {
             <textarea
               id={`${uid}-comments`}
               rows={3}
+              placeholder="Add context Credit will need about these assets…"
               maxLength={5000}
               value={a.comments}
               onChange={(e) => setA({ comments: e.target.value })}
@@ -415,6 +427,7 @@ export function FacilityFields({ b, set }) {
             <input
               id={`${uid}-line`}
               inputMode="decimal"
+              placeholder="0.00"
               value={b.lineSize}
               onChange={(e) => set({ lineSize: e.target.value })}
             />
@@ -518,6 +531,7 @@ export function DmAccount({ b, set, onTeam }) {
           <input
             id={`${uid}-line`}
             inputMode="decimal"
+            placeholder="0.00"
             value={dm.lineSize}
             onChange={(e) => setDm({ lineSize: e.target.value })}
           />
@@ -564,7 +578,13 @@ export function DmAccount({ b, set, onTeam }) {
           </table>
         </div>
         <Field label="Brief overview of balance sheet / cash flows" id={`${uid}-ov`} className="vp-field-top">
-          <textarea id={`${uid}-ov`} rows={3} value={dm.overview} onChange={(e) => setDm({ overview: e.target.value })} />
+          <textarea
+            id={`${uid}-ov`}
+            rows={3}
+            placeholder="Summarise assets, liabilities and cash flows…"
+            value={dm.overview}
+            onChange={(e) => setDm({ overview: e.target.value })}
+          />
         </Field>
         <RiskComment {...RISK_COMMENT} />
       </Section>
