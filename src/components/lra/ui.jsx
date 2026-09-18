@@ -1,3 +1,4 @@
+import { useId } from "react";
 /* Shared Material 3 bits for the prototype: Material Symbols icons (inline
    SVG, 24px grid) and the tonal banner. */
 
@@ -82,6 +83,49 @@ export function Banner({ tone = "info", children }) {
     <div className={`lra-banner is-${tone}`} role={tone === "warning" ? "alert" : "status"}>
       <Icon name={BANNER_ICON[tone]} />
       <p>{children}</p>
+    </div>
+  );
+}
+
+/* Toggle — the black segmented switch above a prototype. Equal-width
+   options on a dark track; a white thumb slides to the selected one. An
+   option's `tip` renders inside its cell (for hover tooltips). */
+export function Toggle({ label, options, value, onChange }) {
+  const labelId = useId();
+  const index = Math.max(
+    0,
+    options.findIndex((o) => o.id === value)
+  );
+  return (
+    <div className="lra-toggle-row">
+      <span className="lra-toggle-label" id={labelId}>
+        {label}
+      </span>
+      <div
+        className="lra-toggle"
+        role="group"
+        aria-labelledby={labelId}
+        style={{ "--n": options.length, "--i": index }}
+      >
+        <span className="lra-toggle-thumb" aria-hidden="true" />
+        {options.map((o) => {
+          const on = o.id === value;
+          return (
+            <span key={o.id} className={"lra-toggle-cell" + (o.tip ? " has-tip" : "")}>
+              <button
+                type="button"
+                className={"lra-toggle-btn" + (on ? " is-on" : "")}
+                aria-pressed={on}
+                aria-describedby={o.tipId}
+                onClick={() => !on && onChange(o.id)}
+              >
+                {o.label}
+              </button>
+              {o.tip}
+            </span>
+          );
+        })}
+      </div>
     </div>
   );
 }

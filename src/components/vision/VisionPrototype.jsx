@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Icon } from "../lra/ui";
+import { Icon, Toggle } from "../lra/ui";
 import { ScaledFrame } from "../lra/frame";
 import { ALL_PARTIES, COLLATERALS, TICKET, VARIANTS } from "./data";
 import { emptyBespoke } from "./builder";
@@ -128,35 +128,27 @@ export default function VisionPrototype({ title = "Future-vision prototype" }) {
 
   return (
     <div className="lra vp" aria-label={title} role="region">
-      {/* Variant switch — a black segmented toggle, each option with a rich tooltip */}
+      {/* Variant switch — the black toggle; each option has a rich tooltip */}
       <div className="vp-variants">
-        <div className="lra-toggle" role="group" aria-label="Prototype variant">
-          <span className="lra-toggle-label">Variant</span>
-          {VARIANTS.map((x) => {
-            const on = x.id === variant;
-            return (
-              <span key={x.id} className="vp-tip-anchor">
-                <button
-                  type="button"
-                  className={"lra-toggle-btn" + (on ? " is-on" : "")}
-                  aria-pressed={on}
-                  aria-describedby={`vp-tip-${x.id}`}
-                  onClick={() => {
-                    if (on) return;
-                    setVariant(x.id);
-                    reset(x.id);
-                  }}
-                >
-                  {x.chip}
-                </button>
-                <span className="vp-tip" role="tooltip" id={`vp-tip-${x.id}`}>
-                  <strong>{x.name}</strong>
-                  {x.desc}
-                </span>
+        <Toggle
+          label="Variant"
+          value={variant}
+          onChange={(id) => {
+            setVariant(id);
+            reset(id);
+          }}
+          options={VARIANTS.map((x) => ({
+            id: x.id,
+            label: x.chip,
+            tipId: `vp-tip-${x.id}`,
+            tip: (
+              <span className="vp-tip" role="tooltip" id={`vp-tip-${x.id}`}>
+                <strong>{x.name}</strong>
+                {x.desc}
               </span>
-            );
-          })}
-        </div>
+            ),
+          }))}
+        />
         <p className="vp-variant-desc" aria-live="polite">
           <strong>{v.name}.</strong> {v.desc}
         </p>

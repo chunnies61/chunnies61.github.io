@@ -9,7 +9,7 @@
   margin-bottom: 16px;
 }
 
-.vp .lra-toggle {
+.vp .lra-toggle-row {
   margin-bottom: 8px;
 }
 .vp-variant-desc {
@@ -26,10 +26,6 @@
 }
 
 /* Rich tooltip: surface container, level 2, medium corners */
-.vp-tip-anchor {
-  position: relative;
-  display: inline-flex;
-}
 
 .vp-tip {
   position: absolute;
@@ -61,20 +57,20 @@
   color: var(--md-on-surface);
 }
 
-.vp-tip-anchor:last-child .vp-tip {
+.lra-toggle-cell:last-child .vp-tip {
   right: 0;
   left: auto;
 }
 
 @media (hover: hover) {
-  .vp-tip-anchor:hover .vp-tip {
+  .lra-toggle-cell:hover .vp-tip {
     opacity: 1;
     visibility: visible;
     transition-delay: 0.3s;
   }
 }
 
-.vp-tip-anchor:has(:focus-visible) .vp-tip {
+.lra-toggle-cell:has(:focus-visible) .vp-tip {
   opacity: 1;
   visibility: visible;
 }

@@ -4,7 +4,7 @@ import { assess, emptyDeal } from "./rules";
 import StepClient from "./StepClient";
 import StepReview from "./StepReview";
 import Submission from "./Submission";
-import { Icon } from "./ui";
+import { Icon, Toggle } from "./ui";
 import { ScaledFrame } from "./frame";
 import "./Lra.css";
 
@@ -56,28 +56,16 @@ export default function LraPrototype({ title = "Loan request prototype" }) {
 
   return (
     <div className="lra" aria-label={title} role="region">
-      {/* Preview — a black segmented toggle that switches region variants */}
-      <div className="lra-toggle" role="group" aria-label="Preview region">
-        <span className="lra-toggle-label">Preview</span>
-        {REGIONS.map((r) => {
-          const on = r.id === regionId;
-          return (
-            <button
-              key={r.id}
-              type="button"
-              className={"lra-toggle-btn" + (on ? " is-on" : "")}
-              aria-pressed={on}
-              onClick={() => {
-                if (on) return;
-                setRegionId(r.id);
-                reset();
-              }}
-            >
-              {r.label}
-            </button>
-          );
-        })}
-      </div>
+      {/* Preview — the black toggle switches region variants */}
+      <Toggle
+        label="Preview"
+        value={regionId}
+        onChange={(id) => {
+          setRegionId(id);
+          reset();
+        }}
+        options={REGIONS.map((r) => ({ id: r.id, label: r.label }))}
+      />
 
       <ScaledFrame title="Loan Request App" path={`/lending/loan-request/new?region=${regionId}`}>
         <div className="lra-window">
