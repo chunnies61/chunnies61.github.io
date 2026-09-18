@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { getCaseStudy, caseStudies } from "../data/caseStudies";
 import site from "../data/site.json";
@@ -6,6 +6,8 @@ import ContactCta from "../components/ContactCta";
 import PersonaTabs from "../components/PersonaTabs";
 import IAMap from "../components/IAMap";
 import PilotScorecard from "../components/PilotScorecard";
+// Only the locked JPMC study uses the prototype — load it on demand
+const LraPrototype = lazy(() => import("../components/lra/LraPrototype"));
 import "./CaseStudy.css";
 
 const UNLOCK_PASSWORD = "0620";
@@ -519,6 +521,17 @@ function Block({ block }) {
           muted
           playsInline
         />
+      );
+
+    case "lra-prototype":
+      return (
+        <>
+          {block.title && <h5 className="cs-lra-heading md-headline-small">{block.title}</h5>}
+          {block.intro && <p className="cs-lra-intro">{block.intro}</p>}
+          <Suspense fallback={<div className="cs-lra-loading" aria-busy="true" />}>
+            <LraPrototype title={block.title} />
+          </Suspense>
+        </>
       );
 
     case "scorecard":
