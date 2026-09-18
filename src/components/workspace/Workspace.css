@@ -1160,7 +1160,8 @@
   background: #00796b;
 }
 
-.ws-ai-note {
+/* .ws prefix: .lra p { margin: 0 } would otherwise zero the top margin */
+.ws .ws-ai-note {
   display: flex;
   align-items: flex-start;
   gap: 8px;
