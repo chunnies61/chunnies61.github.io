@@ -436,7 +436,7 @@
   color: var(--md-primary);
 }
 
-.lra input:not([type="checkbox"]):not([type="radio"]),
+.lra input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
 .lra-body select,
 .lra textarea {
   width: 100%;
@@ -476,7 +476,7 @@
   color: var(--md-on-surface-variant);
 }
 
-.lra input:not([type="checkbox"]):not([type="radio"]):hover,
+.lra input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):hover,
 .lra-body select:hover,
 .lra textarea:hover {
   border-color: var(--md-on-surface);
@@ -484,7 +484,7 @@
 
 /* Focused: a 2dp primary outline (the inset shadow adds the second pixel
    without shifting the text) */
-.lra input:not([type="checkbox"]):not([type="radio"]):focus-visible,
+.lra input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):focus-visible,
 .lra-body select:focus-visible,
 .lra textarea:focus-visible {
   outline: none;
@@ -497,14 +497,14 @@
   color: var(--md-error);
 }
 
-.has-error input:not([type="checkbox"]):not([type="radio"]),
-.has-error input:not([type="checkbox"]):not([type="radio"]):hover,
+.has-error input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+.has-error input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):hover,
 .has-error textarea,
 .has-error textarea:hover {
   border-color: var(--md-error);
 }
 
-.has-error input:not([type="checkbox"]):not([type="radio"]):focus-visible,
+.has-error input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):focus-visible,
 .has-error textarea:focus-visible {
   border-color: var(--md-error);
   box-shadow: inset 0 0 0 1px var(--md-error);

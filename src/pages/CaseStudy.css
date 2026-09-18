@@ -1853,9 +1853,26 @@ body:has(.cs-gate) {
   background: #f4f3fa;
 }
 
+/* Inside a process step, blocks sit 16px apart rather than 24px */
+.cs-step-body > .cs-lra-heading {
+  margin-top: 8px;
+}
+
+.cs-step-body > .cs-lra-heading + .cs-lra-intro {
+  margin-top: -8px;
+}
+
+/* Future-vision prototype: variant chips + description + window */
+.cs-vp-loading {
+  height: 876px;
+}
+
 @media (max-width: 640px) {
   .cs-lra-loading {
     height: 728px;
     border-radius: 16px;
+  }
+  .cs-vp-loading {
+    height: 842px;
   }
 }

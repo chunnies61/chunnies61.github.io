@@ -823,8 +823,9 @@
               ]
             },
             {
-              "type": "image",
-              "label": "The three future-vision proposals, side by side"
+              "type": "vision-prototype",
+              "title": "The three future-vision proposals, side by side",
+              "intro": "Switch variants to compare today's Loan Request workflow with the three futures I put in front of the room. They share one design system, so only the idea changes. All names, accounts and figures are sample data."
             },
             {
               "type": "callout",

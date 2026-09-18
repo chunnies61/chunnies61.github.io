@@ -8,6 +8,7 @@ import IAMap from "../components/IAMap";
 import PilotScorecard from "../components/PilotScorecard";
 // Only the locked JPMC study uses the prototype — load it on demand
 const LraPrototype = lazy(() => import("../components/lra/LraPrototype"));
+const VisionPrototype = lazy(() => import("../components/vision/VisionPrototype"));
 import "./CaseStudy.css";
 
 const UNLOCK_PASSWORD = "0620";
@@ -530,6 +531,17 @@ function Block({ block }) {
           {block.intro && <p className="cs-lra-intro">{block.intro}</p>}
           <Suspense fallback={<div className="cs-lra-loading" aria-busy="true" />}>
             <LraPrototype title={block.title} />
+          </Suspense>
+        </>
+      );
+
+    case "vision-prototype":
+      return (
+        <>
+          {block.title && <h5 className="cs-lra-heading md-headline-small">{block.title}</h5>}
+          {block.intro && <p className="cs-lra-intro">{block.intro}</p>}
+          <Suspense fallback={<div className="cs-lra-loading cs-vp-loading" aria-busy="true" />}>
+            <VisionPrototype title={block.title} />
           </Suspense>
         </>
       );
