@@ -42,14 +42,14 @@
    structure, form or typography, and never below the 10 mm minimum signet
    diameter — the signet is ~28% of the label's width, so 150px keeps it clear. */
 .ap-award {
-  width: 150px;
+  width: 120px;
   height: auto;
   margin-top: 4px;
 }
 
 @media (max-width: 900px) {
   .ap-award {
-    width: 136px;
+    width: 108px;
   }
 }
 
