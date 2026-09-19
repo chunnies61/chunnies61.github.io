@@ -6,13 +6,50 @@ export const USER_ID = "W000123";
 export const WORKSPACES = ["CRM 360", "Catalog", "Connect AI", "Lending"];
 export const APPS = ["Lending Workspace", "Lending Wizard", "Lending Offers", "Loan Request 2.0"];
 
-// L2 sections — only the first four are built
+// Portfolio Health pages: [id, label, built]
+export const HEALTH_PILLS = [
+  ["portfolio", "Portfolio View", true],
+  ["collateral", "Collateral Zone"],
+  ["doc", "Doc Hub"],
+  ["risk", "Risk Watch"],
+  ["annual", "Annual Review", true],
+  ["covenants", "Covenants"],
+  ["delinquency", "Delinquency"],
+  ["info", "Informational Items"],
+];
+
+// L2 sections — only the first four are built. A section's `subs` are its
+// pages, reached from a dropdown on the L2 tab: [id, label, built].
 export const SECTIONS = [
   { id: "overview", label: "Overview", built: true },
-  { id: "deals", label: "Deal Journey", built: true },
-  { id: "opps", label: "Opportunities", built: true },
-  { id: "health", label: "Portfolio Health", built: true },
-  { id: "insights", label: "Insights", menu: true },
+  {
+    id: "deals",
+    label: "Deal Journey",
+    built: true,
+    subs: [
+      ["deals", "Deal Journey", true],
+      ["enrichment", "Facility Enrichment"],
+    ],
+  },
+  {
+    id: "opps",
+    label: "Opportunities",
+    built: true,
+    subs: [
+      ["plc", "PLC Conversions", true],
+      ["offers", "Pre-Approved Offers", true],
+    ],
+  },
+  { id: "health", label: "Portfolio Health", built: true, subs: HEALTH_PILLS },
+  {
+    id: "insights",
+    label: "Insights",
+    subs: [
+      ["analytics", "Lending Analytics"],
+      ["collateral", "Collateral Insights"],
+      ["ipo", "IPO Lending"],
+    ],
+  },
   { id: "docqc", label: "Doc QC" },
   { id: "collateral", label: "Collateral Tools" },
   { id: "margin", label: "Margin Call" },
@@ -142,17 +179,6 @@ export const OFFERS = OFFER_BORROWERS.map(([name, line, rate], i) => ({
 }));
 
 /* --- Portfolio Health ------------------------------------------------------------- */
-export const HEALTH_PILLS = [
-  ["portfolio", "Portfolio View", true],
-  ["collateral", "Collateral Zone"],
-  ["doc", "Doc Hub"],
-  ["risk", "Risk Watch"],
-  ["annual", "Annual Review", true],
-  ["covenants", "Covenants"],
-  ["delinquency", "Delinquency"],
-  ["info", "Informational Items"],
-];
-
 export const KPIS = [
   ["Total Line Size", "$305.5B", "+2.1%", "up"],
   ["Active Facilities", "1,247", "+18 this wk", "up"],

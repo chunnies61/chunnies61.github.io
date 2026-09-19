@@ -6,8 +6,21 @@ import { FRAME_H, useFrame } from "../lra/frame";
 /* M3 menu — portalled into the scaled frame's overlay layer (so a table's
    scroll box can't clip it) and placed under its trigger in canvas
    coordinates, so it scales with the app. Closes on Escape, an outside
-   click or scroll; arrow keys move between items. */
-export function Menu({ label, icon = "moreVert", items, onSelect, className = "" }) {
+   click or scroll; arrow keys move between items.
+   Pass `children` for a labelled trigger (styled by triggerClassName /
+   triggerProps) instead of the default icon button; align="left" hangs the
+   menu from the trigger's left edge. */
+export function Menu({
+  label,
+  icon = "moreVert",
+  items,
+  onSelect,
+  className = "",
+  align = "right",
+  triggerClassName = "lra-icon-btn",
+  triggerProps,
+  children,
+}) {
   const [pos, setPos] = useState(null); // null when closed
   const wrap = useRef(null);
   const menu = useRef(null);
@@ -43,7 +56,9 @@ export function Menu({ label, icon = "moreVert", items, onSelect, className = ""
     const top = (r.bottom - f.top) / k + 4;
     const below = FRAME_H - top > 280;
     setPos({
-      right: Math.max(8, (f.right - r.right) / k),
+      ...(align === "left"
+        ? { left: Math.max(8, (r.left - f.left) / k) }
+        : { right: Math.max(8, (f.right - r.right) / k) }),
       ...(below ? { top } : { bottom: (f.bottom - r.top) / k + 4 }),
     });
   }
@@ -67,14 +82,15 @@ export function Menu({ label, icon = "moreVert", items, onSelect, className = ""
     <div className={`ws-menu-wrap ${className}`} ref={wrap}>
       <button
         type="button"
-        className="lra-icon-btn"
-        aria-label={label}
+        className={triggerClassName}
+        aria-label={children ? undefined : label}
         aria-haspopup="menu"
         aria-expanded={open}
         aria-controls={open ? menuId : undefined}
         onClick={toggle}
+        {...triggerProps}
       >
-        <Icon name={icon} />
+        {children ?? <Icon name={icon} />}
       </button>
       {open &&
         frame.layer &&
@@ -109,14 +125,19 @@ export function Menu({ label, icon = "moreVert", items, onSelect, className = ""
                     key={item.label}
                     type="button"
                     role="menuitem"
-                    className="ws-menu-item"
+                    className={
+                      "ws-menu-item" + (item.current ? " is-current" : "") + (item.disabled ? " is-off" : "")
+                    }
+                    aria-current={item.current ? "page" : undefined}
+                    aria-disabled={item.disabled || undefined}
                     onClick={() => {
                       setPos(null);
                       wrap.current?.querySelector("button")?.focus();
                       onSelect(item);
                     }}
                   >
-                    {item.label}
+                    <span className="ws-menu-label">{item.label}</span>
+                    {item.current && <Icon name="check" size={18} />}
                   </button>
                 )
               )}

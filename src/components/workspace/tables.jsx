@@ -107,29 +107,10 @@ function PlcError() {
   );
 }
 
-export function Opportunities({ tab, setTab, onPlaceholder }) {
+export function Opportunities({ tab, onPlaceholder }) {
   return (
     <div className="ws-section">
-      <div className="lra-tabs" role="tablist" aria-label="Opportunities">
-        {[
-          ["plc", "PLC Conversions"],
-          ["offers", "Pre-Approved Offers"],
-        ].map(([k, label]) => (
-          <button
-            key={k}
-            type="button"
-            role="tab"
-            aria-selected={tab === k}
-            className={"lra-tab" + (tab === k ? " is-active" : "")}
-            onClick={() => setTab(k)}
-          >
-            <span>{label}</span>
-          </button>
-        ))}
-      </div>
-      <div role="tabpanel">
-        {tab === "offers" ? <OffersTable onPlaceholder={onPlaceholder} /> : <PlcError />}
-      </div>
+      {tab === "offers" ? <OffersTable onPlaceholder={onPlaceholder} /> : <PlcError />}
     </div>
   );
 }

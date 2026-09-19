@@ -7,7 +7,6 @@ import {
   COACH,
   COVENANTS,
   CRITICAL,
-  HEALTH_PILLS,
   KPIS,
   REVIEWS,
   UTILIZATION,
@@ -294,31 +293,9 @@ function AnnualReview({ onPlaceholder }) {
 }
 
 export default function PortfolioHealth({ pill, setPill, onPlaceholder }) {
-  return (
-    <div className="ws-section">
-      <div className="ws-pills" role="tablist" aria-label="Portfolio Health views">
-        {HEALTH_PILLS.map(([k, label, built]) => (
-          <button
-            key={k}
-            type="button"
-            role="tab"
-            aria-selected={pill === k}
-            aria-disabled={!built}
-            className={"lra-chip" + (pill === k ? " is-on" : "") + (built ? "" : " is-disabled")}
-            onClick={() => (built ? setPill(k) : onPlaceholder(`${label} isn't built in this prototype.`))}
-          >
-            {pill === k && <Icon name="check" size={18} />}
-            {label}
-          </button>
-        ))}
-      </div>
-      <div role="tabpanel">
-        {pill === "annual" ? (
-          <AnnualReview onPlaceholder={onPlaceholder} />
-        ) : (
-          <PortfolioView openAnnual={() => setPill("annual")} onPlaceholder={onPlaceholder} />
-        )}
-      </div>
-    </div>
+  return pill === "annual" ? (
+    <AnnualReview onPlaceholder={onPlaceholder} />
+  ) : (
+    <PortfolioView openAnnual={() => setPill("annual")} onPlaceholder={onPlaceholder} />
   );
 }

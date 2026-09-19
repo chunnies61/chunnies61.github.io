@@ -298,6 +298,16 @@
   outline-offset: -3px;
 }
 
+/* L2 tabs with pages open a dropdown; the wrapper keeps the tab full height */
+.ws-l2-menu {
+  flex: none;
+  height: 100%;
+}
+
+.ws-l2-tab[aria-expanded="true"] .lra-icon {
+  transform: rotate(180deg);
+}
+
 .ws-l2-divider {
   flex: none;
   width: 1px;
@@ -338,6 +348,16 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+/* Title of the page open inside a section (picked from the L2 dropdown) */
+.ws .ws-page-title {
+  margin: 0 0 16px;
+  font-family: var(--ui-font);
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 600;
+  color: var(--ui-fg);
 }
 
 /* Cards */
@@ -842,6 +862,20 @@
   text-align: left;
 }
 
+.ws-menu-label {
+  flex: 1;
+  min-width: 0;
+}
+
+.ws-menu-item.is-current {
+  color: var(--ui-primary);
+  font-weight: 600;
+}
+
+.ws-menu-item.is-off {
+  color: var(--ui-fg-disabled);
+}
+
 .ws-menu-check {
   display: inline-flex;
   align-items: center;
@@ -902,12 +936,6 @@
 }
 
 /* --- Portfolio Health -------------------------------------------------------------------------- */
-.ws-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
 .ws .lra-chip.is-disabled {
   background: var(--ui-bg-secondary);
   box-shadow: inset 0 0 0 1px var(--ui-border-secondary);

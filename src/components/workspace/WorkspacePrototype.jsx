@@ -4,6 +4,7 @@ import { ScaledFrame } from "../lra/frame";
 import { APPS, EXTERNAL, SECTIONS, USER_ID, WORKSPACES } from "./data";
 import Overview from "./Overview";
 import { DealJourney, Opportunities } from "./tables";
+import { Menu } from "./table";
 import PortfolioHealth from "./Health";
 import "../lra/Lra.css";
 import "./Workspace.css";
@@ -53,6 +54,16 @@ export default function WorkspacePrototype({ title = "Lending Workspace prototyp
   }, [section, pill, oppTab]);
 
   const placeholder = (what) => () => say(`${what} isn't part of this prototype.`);
+
+  // The page currently open inside a section, for sections that have pages
+  const currentSub = { deals: "deals", opps: oppTab, health: pill };
+  const active = SECTIONS.find((s) => s.id === section);
+  const activeSub = active.subs?.find(([k]) => k === currentSub[section]);
+
+  function openSub(s, [k, label, built]) {
+    if (!built) return say(`${label} isn't built in this prototype.`);
+    go(s.id, k);
+  }
 
   return (
     <div className="lra ws" aria-label={title} role="region">
@@ -150,19 +161,40 @@ export default function WorkspacePrototype({ title = "Lending Workspace prototyp
           {/* Row 4 — L2 section nav + client selector */}
           <div className="ws-l2">
             <nav className="ws-l2-scroll" aria-label="Lending Workspace sections">
-              {SECTIONS.map((s) => (
-                <button
-                  key={s.id}
-                  type="button"
-                  className={"ws-l2-tab" + (section === s.id ? " is-on" : "") + (s.built ? "" : " is-off")}
-                  aria-current={section === s.id ? "page" : undefined}
-                  aria-disabled={!s.built}
-                  onClick={() => (s.built ? setSection(s.id) : say(`${s.label} isn't built in this prototype.`))}
-                >
-                  {s.label}
-                  {s.menu && <Icon name="expand" size={18} />}
-                </button>
-              ))}
+              {SECTIONS.map((s) =>
+                s.subs ? (
+                  <Menu
+                    key={s.id}
+                    label={s.label}
+                    align="left"
+                    className="ws-l2-menu"
+                    triggerClassName={"ws-l2-tab" + (section === s.id ? " is-on" : "") + (s.built ? "" : " is-off")}
+                    triggerProps={{ "aria-current": section === s.id ? "page" : undefined }}
+                    items={s.subs.map(([k, label, built]) => ({
+                      key: k,
+                      label,
+                      built,
+                      disabled: !built,
+                      current: section === s.id && currentSub[s.id] === k,
+                    }))}
+                    onSelect={(item) => openSub(s, [item.key, item.label, item.built])}
+                  >
+                    {s.label}
+                    <Icon name="expand" size={18} />
+                  </Menu>
+                ) : (
+                  <button
+                    key={s.id}
+                    type="button"
+                    className={"ws-l2-tab" + (section === s.id ? " is-on" : "") + (s.built ? "" : " is-off")}
+                    aria-current={section === s.id ? "page" : undefined}
+                    aria-disabled={!s.built}
+                    onClick={() => (s.built ? setSection(s.id) : say(`${s.label} isn't built in this prototype.`))}
+                  >
+                    {s.label}
+                  </button>
+                )
+              )}
               <span className="ws-l2-divider" aria-hidden="true" />
               {EXTERNAL.map((x) => (
                 <button
@@ -191,10 +223,14 @@ export default function WorkspacePrototype({ title = "Lending Workspace prototyp
           </div>
 
           <div className="lra-body ws-body" ref={bodyRef}>
-            <h4 className="lra-sr">{SECTIONS.find((s) => s.id === section).label}</h4>
+            {activeSub ? (
+              <h4 className="ws-page-title">{activeSub[1]}</h4>
+            ) : (
+              <h4 className="lra-sr">{active.label}</h4>
+            )}
             {section === "overview" && <Overview go={go} onPlaceholder={say} />}
             {section === "deals" && <DealJourney onPlaceholder={say} />}
-            {section === "opps" && <Opportunities tab={oppTab} setTab={setOppTab} onPlaceholder={say} />}
+            {section === "opps" && <Opportunities tab={oppTab} onPlaceholder={say} />}
             {section === "health" && <PortfolioHealth pill={pill} setPill={setPill} onPlaceholder={say} />}
           </div>
 
