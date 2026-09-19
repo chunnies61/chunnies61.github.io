@@ -6,7 +6,7 @@ export const VARIANTS = [
     id: "current",
     chip: "Current state",
     name: "Current state",
-    desc: "Today's Loan Request workflow, exactly as it works now. The baseline for comparing each proposal.",
+    desc: "Today's Loan Request workflow — the Loan Request App's EMEA flow, exactly as it works now. The baseline for comparing each proposal.",
     steps: ["Client & facility", "Loan details", "Loan review"],
   },
   {

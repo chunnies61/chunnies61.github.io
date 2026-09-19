@@ -583,6 +583,14 @@
   color: var(--ui-fg-tertiary);
 }
 
+.lra-footer-status.is-error {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: var(--ui-error-600);
+}
+
 .lra-footer-btns {
   display: flex;
   gap: 12px;
@@ -608,6 +616,35 @@
   line-height: 20px;
   font-weight: 600;
   color: var(--ui-fg-quaternary);
+}
+
+/* Each step is a link to its page */
+.lra-stepper button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: -4px -8px;
+  padding: 4px 8px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.lra-stepper button:hover {
+  background: var(--ui-bg-hover);
+  color: var(--ui-fg-secondary);
+}
+
+.lra-stepper li.is-current button:hover {
+  color: var(--ui-primary);
+}
+
+.lra-stepper button:focus-visible {
+  outline: 2px solid var(--ui-brand-500);
+  outline-offset: 2px;
 }
 
 .lra-stepper li:not(:last-child)::after {
@@ -767,6 +804,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.lra-req {
+  color: var(--ui-error-600);
 }
 
 .lra input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
@@ -1131,6 +1172,28 @@
   color: var(--ui-brand-800);
 }
 
+/* A secondary or tertiary button that is the selected choice */
+.lra-btn.is-secondary.is-on {
+  background: var(--ui-brand-50);
+  box-shadow: var(--ui-shadow-xs), inset 0 0 0 1px var(--ui-brand-300);
+  color: var(--ui-primary);
+}
+
+.lra-btn.is-ghost.is-on {
+  background: var(--ui-brand-50);
+  color: var(--ui-primary);
+}
+
+/* Destructive — red text (Abandon) */
+.lra-btn.is-destructive {
+  color: var(--ui-error-600);
+}
+
+.lra-btn.is-destructive:hover:not(:disabled) {
+  background: var(--ui-error-50);
+  color: var(--ui-error-800);
+}
+
 .lra-btn:disabled {
   background: var(--ui-bg-tertiary);
   box-shadow: inset 0 0 0 1px var(--ui-border-secondary);
@@ -1196,18 +1259,17 @@
 
 .lra-table th,
 .lra-table td {
-  height: 56px;
-  padding: 8px 20px;
+  height: 48px;
+  padding: 0 20px;
   border-bottom: 1px solid var(--ui-border-secondary);
   text-align: left;
   white-space: nowrap;
   vertical-align: middle;
 }
 
-/* Header row: neutral-200 fill, text-sm semibold in $text-primary
-   (neutral-800, 8.8:1) so the headers read clearly above the rows */
+/* Header row: the same 48px as the rows; neutral-200 fill, text-sm
+   semibold in $text-primary (neutral-800, 8.8:1) so it reads clearly */
 .lra-table thead th {
-  height: 44px;
   background: var(--ui-gray-200);
   font-size: 13px;
   line-height: 18px;
@@ -1377,10 +1439,6 @@
   box-shadow: var(--ui-shadow-sm);
 }
 
-.lra-offer > .lra-btn {
-  margin: 12px 0 -4px -12px;
-}
-
 .lra-ticket {
   margin: 16px 0;
 }
@@ -1390,12 +1448,12 @@
 }
 
 /* --- Existing facility card (FacilityCard.jsx) ------------------------------
-   Horizontal zones that scan in one pass: identity + actions; a stat strip
-   of the four numbers; a full-width utilisation bar; a gray footer for
-   borrowers and collateral. */
+   Top-down hierarchy: what it is and what you can do with it; the line
+   size as the one big number, its utilisation beneath and the supporting
+   figures beside; then borrowers and collateral, quietly, in the footer. */
 .lra-fac-grid {
   grid-template-columns: minmax(0, 1fr);
-  gap: 16px;
+  gap: 20px;
 }
 
 .lra-fac {
@@ -1467,24 +1525,25 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* The four numbers */
-.lra-fac-stats {
+/* Actions: Amend (secondary), Restructure (tertiary), then the ⋯ menu */
+.lra-fac-actions {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 8px;
+}
+
+/* The numbers */
+.lra-fac-body {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin: 0;
+  grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr));
+  gap: 24px 32px;
+  padding: 20px 24px 24px;
   border-top: 1px solid var(--ui-border-secondary);
 }
 
-.lra-fac-stats > div {
-  padding: 16px 24px;
-}
-
-.lra-fac-stats > div + div {
-  border-left: 1px solid var(--ui-border-secondary);
-}
-
-.lra-fac-stats dt,
-.lra-fac-label {
+.lra-fac-label,
+.lra-fac-stats dt {
   font-size: 12px;
   line-height: 18px;
   font-weight: 600;
@@ -1493,39 +1552,35 @@
   color: var(--ui-fg-tertiary);
 }
 
-.lra-fac-stats dd {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  margin: 4px 0 0;
-  font-size: 20px;
-  line-height: 30px;
+.lra-fac-amount {
+  display: block;
+  margin-top: 4px;
+  font-size: 30px;
+  line-height: 38px;
   font-weight: 600;
   color: var(--ui-fg);
   font-variant-numeric: tabular-nums;
 }
 
-.lra-fac-stats dd.is-lead {
-  font-size: 24px;
-  line-height: 30px;
-}
-
-.lra-fac-stats dd span {
+.lra-fac-amount span {
+  margin-left: 4px;
   font-size: 14px;
-  line-height: 20px;
   font-weight: 500;
   color: var(--ui-fg-tertiary);
 }
 
-/* Utilisation: a full-bleed bar under the stats */
 .lra-fac-util {
-  height: 6px;
+  height: 8px;
+  margin-top: 12px;
+  overflow: hidden;
+  border-radius: 4px;
   background: var(--ui-gray-100);
 }
 
 .lra-fac-util > span {
   display: block;
   height: 100%;
+  border-radius: 4px;
   background: var(--ui-primary);
 }
 
@@ -1533,20 +1588,55 @@
   background: var(--ui-warning-600);
 }
 
+.lra-fac-caption {
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--ui-fg-tertiary);
+}
+
+.lra-fac-caption strong {
+  font-weight: 600;
+  color: var(--ui-fg-secondary);
+}
+
+.lra-fac-stats {
+  display: contents;
+  margin: 0;
+}
+
+.lra-fac-stats dd {
+  margin: 4px 0 0;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 600;
+  color: var(--ui-fg);
+  font-variant-numeric: tabular-nums;
+}
+
+.lra-fac-stats dd span {
+  display: block;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 500;
+  color: var(--ui-fg-tertiary);
+}
+
 /* People and collateral */
 .lra-fac-foot {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px 48px;
-  padding: 14px 24px;
+  gap: 12px 40px;
+  padding: 12px 24px;
+  border-top: 1px solid var(--ui-border-secondary);
   background: var(--ui-bg-secondary);
 }
 
 .lra-fac-foot > div {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .lra-fac-people {
@@ -1565,6 +1655,7 @@
   color: var(--ui-fg);
 }
 
+/* Avatars: a solid fill in the main colour */
 .lra-fac-avatar {
   display: inline-flex;
   align-items: center;
@@ -1572,9 +1663,8 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: var(--ui-bg);
-  box-shadow: inset 0 0 0 1px var(--ui-border);
-  color: var(--ui-primary);
+  background: var(--ui-primary);
+  color: var(--ui-white);
   font-size: 12px;
   font-weight: 600;
 }
@@ -1593,55 +1683,15 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* Actions — a button group, top right */
-.lra-fac-actions {
-  display: inline-flex;
-  flex: none;
-  overflow: hidden;
-  border-radius: var(--ui-radius-sm);
-  box-shadow: var(--ui-shadow-xs), inset 0 0 0 1px var(--ui-border);
-}
-
-.lra-fac-actions button {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  height: 40px;
-  padding: 0 16px;
-  border: 0;
-  border-right: 1px solid var(--ui-border);
-  background: transparent;
-  color: var(--ui-fg);
-  font-family: var(--ui-font);
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.lra-fac-actions button:last-child {
-  border-right: 0;
-}
-
-.lra-fac-actions button:hover {
-  background: var(--ui-bg-hover);
-}
-
-.lra-fac-actions button.is-on {
-  background: var(--ui-brand-50);
-  color: var(--ui-primary);
-}
-
-.lra-fac-actions button:focus-visible {
-  outline: 2px solid var(--ui-brand-500);
-  outline-offset: -2px;
-}
-
-.lra-fac-error {
+/* A Tailored facility: where this request goes instead */
+.lra-fac-note {
   margin: 0;
   padding: 12px 24px;
-  border-top: 1px solid var(--ui-error-200);
-  background: var(--ui-error-50);
+  border-top: 1px solid var(--ui-warning-200);
+  background: var(--ui-warning-50);
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ui-warning-700);
 }
 
 .lra-build-actions {
@@ -1650,42 +1700,216 @@
   gap: 12px;
 }
 
-/* The SBL builder: a gray panel */
-.lra-sbl {
-  margin-top: 24px;
-  padding: 24px;
+/* --- File upload: a drop zone, then the attached files ------------------------ */
+.lra-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 20px 24px;
+  border: 1px dashed var(--ui-border);
+  border-radius: var(--ui-radius-md);
+  background: var(--ui-bg);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.1s linear, background-color 0.1s linear;
+}
+
+.lra-upload:hover,
+.lra-upload.is-over {
+  border-color: var(--ui-brand-300);
+  background: var(--ui-brand-25);
+}
+
+.lra-upload:focus-visible {
+  outline: 2px solid var(--ui-brand-500);
+  outline-offset: 2px;
+}
+
+.lra-upload.is-done {
+  border-style: solid;
+  border-color: var(--ui-border-secondary);
+  background: var(--ui-bg-secondary);
+  cursor: default;
+}
+
+.lra-upload-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
   border: 1px solid var(--ui-border-secondary);
   border-radius: var(--ui-radius-md);
-  background: var(--ui-bg-secondary);
-}
-
-.lra-sbl > .lra-banner:first-child {
-  margin-top: 0;
-}
-
-.lra-sbl > .lra-banner + .lra-section {
-  margin-top: 24px;
-}
-
-/* Uploaded file — Untitled file-upload item, compact */
-.lra-file {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  height: 40px;
-  padding: 0 8px 0 12px;
-  border: 1px solid var(--ui-border-secondary);
-  border-radius: var(--ui-radius-sm);
   background: var(--ui-bg);
   box-shadow: var(--ui-shadow-xs);
+  color: var(--ui-icon);
+}
+
+.lra-upload p {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ui-fg-tertiary);
+}
+
+.lra-upload p strong {
+  font-weight: 600;
   color: var(--ui-primary);
+}
+
+.lra-upload .lra-upload-hint {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.lra-files {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lra-file {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px 10px 16px;
+  border: 1px solid var(--ui-border-secondary);
+  border-radius: var(--ui-radius-md);
+  background: var(--ui-bg);
+  box-shadow: var(--ui-shadow-xs);
+}
+
+.lra-file-icon {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--ui-radius-sm);
+  background: var(--ui-brand-50);
+  color: var(--ui-primary);
+}
+
+.lra-file-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.lra-file-name {
+  overflow: hidden;
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;
+  color: var(--ui-fg);
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.lra-file > span {
-  color: var(--ui-fg-secondary);
+.lra-file-meta {
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--ui-fg-tertiary);
+}
+
+.lra-file-ok {
+  display: flex;
+  color: var(--ui-success-600);
+}
+
+/* --- Offers: the Create offer row, then three cards ----------------------------- */
+.lra-offer-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--ui-border-secondary);
+}
+
+.lra-offer-cta .lra-field-hint {
+  margin: 0;
+}
+
+.lra-section-intro {
+  margin: -8px 0 16px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ui-fg-tertiary);
+}
+
+.lra-offers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.lra-offers .lra-offer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color 0.1s linear, box-shadow 0.1s linear;
+}
+
+.lra-offer.is-selected {
+  border-color: var(--ui-primary);
+  box-shadow: var(--ui-shadow-sm), inset 0 0 0 1px var(--ui-primary);
+}
+
+.lra-offer.is-ineligible {
+  border-color: var(--ui-border-secondary);
+  background: var(--ui-bg-secondary);
+  box-shadow: none;
+}
+
+.lra-offer-head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lra-offer-head h5 {
+  margin: 0;
+  font-family: var(--ui-font);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: var(--ui-fg);
+}
+
+.lra-offer-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.lra-offer-amount {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  color: var(--ui-fg);
+  font-variant-numeric: tabular-nums;
+}
+
+.lra-offers .lra-kv {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+
+.lra-offers .lra-btn,
+.lra-offers .lra-field-hint {
+  margin-top: auto;
+}
+
+.lra-offers .lra-btn {
+  align-self: flex-start;
 }
 
 /* --- Tabs: underline, text-sm semibold ----------------------------------------- */

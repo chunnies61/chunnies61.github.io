@@ -646,10 +646,10 @@ export default function PrototypeDesignSystem() {
               <div className="pds-row">
                 <button type="button" className="lra-chip is-on">
                   <Icon name="check" size={18} />
-                  Amendment
+                  Amend
                 </button>
-                <button type="button" className="lra-chip">Replace</button>
-                <button type="button" className="lra-chip">More actions</button>
+                <button type="button" className="lra-chip">Restructure</button>
+                <button type="button" className="lra-chip">Renew</button>
                 <span className="ws">
                   <button type="button" className="lra-chip is-disabled" aria-disabled="true">
                     Risk Watch
@@ -762,7 +762,7 @@ export default function PrototypeDesignSystem() {
                     <div className="lra-facility-actions">
                       <button type="button" className={"lra-chip" + (sel ? " is-on" : "")}>
                         {sel && <Icon name="check" size={18} />}
-                        Amendment
+                        Amend
                       </button>
                     </div>
                   </article>
@@ -785,7 +785,7 @@ export default function PrototypeDesignSystem() {
             </Specimen>
           </Block>
 
-          <Block title="Tables" note="A card with a neutral-200 header row (13px semibold in $text-primary), 56px rows, $text-secondary cells and a $text-primary first column. Rows take $background-hover on hover and $row-selected when checked. Numbers right-aligned and tabular.">
+          <Block title="Tables" note="A card with a neutral-200 header row (13px semibold in $text-primary) the same 48px as its rows, $text-secondary cells and a $text-primary first column. Rows take $background-hover on hover and $row-selected when checked. Numbers right-aligned and tabular.">
             <Specimen>
               <div className="lra-table-wrap">
                 <table className="lra-table">

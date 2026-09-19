@@ -1,21 +1,26 @@
 import { FACILITIES, RULES, TICKET } from "./data";
+import { money, num } from "./rules";
 import { Banner, Icon } from "./ui";
 
 /* Submitted — confirmation, the ticket card and the rules that ran. */
 
 export default function Submission({ deal, onRestart }) {
   const facility = FACILITIES.find((f) => f.id === deal.facilityId);
-  const usingOffer = Boolean(deal.offer) && facility?.kind !== "sbl";
   const borrower =
     deal.parties.find((p) => p.role === "Borrower")?.name ?? deal.parties[0]?.name ?? "–";
 
-  const card = usingOffer
+  // The chosen offer, else what was entered (or the facility's own terms)
+  const card = deal.offer
     ? {
         facility: deal.offer.facilityType,
         lineSize: deal.offer.lineSize,
-        collateral: deal.offer.collaterals.join(", "),
+        collateral: deal.offer.collaterals.join(", ") || "–",
       }
-    : { facility: facility.type, lineSize: facility.lineSize, collateral: facility.collateral };
+    : {
+        facility: deal.facilityType || facility?.type || "–",
+        lineSize: num(deal.lineSize) > 0 ? money(deal.lineSize, deal.currency) : facility?.lineSize ?? "–",
+        collateral: deal.collaterals.join(", ") || facility?.collateral || "–",
+      };
 
   return (
     <div className="lra-step">

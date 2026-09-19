@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Icon, Toggle } from "../lra/ui";
 import { ScaledFrame } from "../lra/frame";
+import { REGIONS } from "../lra/data";
+import { LraFlow } from "../lra/LraPrototype";
 import { ALL_PARTIES, COLLATERALS, TICKET, VARIANTS } from "./data";
 import { emptyBespoke } from "./builder";
 import { clientOf } from "./parts";
 import { LoanDetails, Review, Submission } from "./steps";
-import CurrentStep, * as current from "./current";
 import P1Step, * as p1 from "./p1";
 import P2Step, * as p2 from "./p2";
 import P3Step, * as p3 from "./p3";
@@ -13,11 +14,14 @@ import "../lra/Lra.css";
 import "./Vision.css";
 
 /* Future-vision prototype — today's Loan Request workflow and the three
-   proposals from the portfolio workshop, side by side on one Material 3
-   design system (the Loan Request App prototype's). All data is sample. */
+   proposals from the portfolio workshop, side by side on one design system
+   (the Loan Request App prototype's). The Current state is the Loan Request
+   App's EMEA flow itself (LraFlow); the proposals have their own steps
+   below. All data is sample. */
 
-const FLOWS = { current, p1, p2, p3 };
-const STEP_ONE = { current: CurrentStep, p1: P1Step, p2: P2Step, p3: P3Step };
+const FLOWS = { p1, p2, p3 };
+const STEP_ONE = { p1: P1Step, p2: P2Step, p3: P3Step };
+const EMEA = REGIONS[0];
 
 function initialDeal(variant) {
   const b = emptyBespoke();
@@ -50,9 +54,9 @@ export default function VisionPrototype({ title = "Future-vision prototype" }) {
   const bodyRef = useRef(null);
 
   const v = VARIANTS.find((x) => x.id === variant);
-  const flow = FLOWS[variant];
-  const offer = flow.offerOf(deal);
-  const reason = flow.blocker(deal);
+  const flow = FLOWS[variant]; // undefined for the Current state
+  const offer = flow ? flow.offerOf(deal) : null;
+  const reason = flow ? flow.blocker(deal) : null;
   const last = v.steps.length - 1;
   const StepOne = STEP_ONE[variant];
 
@@ -151,6 +155,14 @@ export default function VisionPrototype({ title = "Future-vision prototype" }) {
         />
       </div>
 
+      {variant === "current" ? (
+        <LraFlow
+          key="current"
+          region={EMEA}
+          suffix="Loan Request – Current state"
+          path="/lending/loan-request/prototype?variant=current"
+        />
+      ) : (
       <ScaledFrame title="Loan Request – Future vision" path={`/lending/loan-request/prototype?variant=${variant}`}>
         <div className="lra-window">
           <div className="lra-appbar">
@@ -259,6 +271,7 @@ export default function VisionPrototype({ title = "Future-vision prototype" }) {
           )}
         </div>
       </ScaledFrame>
+      )}
     </div>
   );
 }

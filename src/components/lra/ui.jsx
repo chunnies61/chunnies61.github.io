@@ -3,6 +3,9 @@
 
 const PATHS = {
   add: "M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z",
+  error: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z",
+  moreHoriz:
+    "M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z",
   apps:
     "M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z",
   arrowBack: "M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z",
@@ -80,6 +83,44 @@ export function Icon({ name, size = 24 }) {
 }
 
 const BANNER_ICON = { info: "info", warning: "warning", success: "checkCircle" };
+
+/* A form field: label above, the control, then an error or a hint */
+export function Field({ label, error, hint, children, id, required = false }) {
+  return (
+    <div className={"lra-field" + (error ? " has-error" : "")}>
+      <label htmlFor={id}>
+        {label}
+        {required && (
+          <span className="lra-req" aria-hidden="true">
+            {" "}
+            *
+          </span>
+        )}
+      </label>
+      {children}
+      {error ? (
+        <p className="lra-field-error" id={`${id}-err`}>
+          {error}
+        </p>
+      ) : (
+        hint && <p className="lra-field-hint">{hint}</p>
+      )}
+    </div>
+  );
+}
+
+/* A titled block of a step */
+export function Section({ title, children, aside }) {
+  return (
+    <section className="lra-section">
+      <div className="lra-section-head">
+        <h4>{title}</h4>
+        {aside}
+      </div>
+      {children}
+    </section>
+  );
+}
 
 export function Banner({ tone = "info", children }) {
   return (

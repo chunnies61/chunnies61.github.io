@@ -1,11 +1,11 @@
 import { Icon } from "./ui";
-import { AS_OF } from "./data";
+import Menu from "./menu";
+import { AS_OF, FACILITY_ACTIONS, FACILITY_MORE_ACTIONS } from "./data";
 
-/* An existing facility, laid out in horizontal zones so it scans in one
-   pass: identity and actions; a strip of the four numbers that matter;
-   the utilisation bar; then who's on it and what secures it. */
-
-const ACTIONS = ["Amendment", "Replace", "More actions"];
+/* An existing facility. The hierarchy runs top-down: what it is and what
+   you can do with it; the line size as the one big number, its
+   utilisation right beneath and the supporting figures beside it; then
+   who is on it and what secures it, quietly, in the footer. */
 
 const day = (iso) => new Date(`${iso}T00:00:00Z`).getTime();
 const months = (ms) => Math.round(ms / (1000 * 60 * 60 * 24 * 30.44));
@@ -24,6 +24,9 @@ const initials = (name) =>
     .map((w) => w[0])
     .join("");
 
+// Amend is the common path (outlined); Restructure is the quieter one (text)
+const ACTION_STYLE = ["is-secondary", "is-ghost"];
+
 export default function FacilityCard({ fac, selected, action, onAction }) {
   const used = fac.drawn / fac.lineValue;
   const pct = Math.round(used * 100);
@@ -32,6 +35,7 @@ export default function FacilityCard({ fac, selected, action, onAction }) {
   const borrowers = fac.borrowers.split(", ");
   const accounts = fac.collateral.split(", ");
   const custom = fac.kind === "custom";
+  const moreOn = selected && FACILITY_MORE_ACTIONS.includes(action) ? action : null;
 
   return (
     <article
@@ -54,51 +58,60 @@ export default function FacilityCard({ fac, selected, action, onAction }) {
           </p>
         </div>
         <div className="lra-fac-actions" role="group" aria-label={`Actions for facility ${fac.facilityId}`}>
-          {ACTIONS.map((a) => {
+          {FACILITY_ACTIONS.map((a, i) => {
             const on = selected && action === a;
             return (
-              <button key={a} type="button" className={on ? "is-on" : ""} aria-pressed={on} onClick={() => onAction(a, on)}>
-                {on && <Icon name="check" size={16} />}
+              <button
+                key={a}
+                type="button"
+                className={`lra-btn ${ACTION_STYLE[i]}` + (on ? " is-on" : "")}
+                aria-pressed={on}
+                onClick={() => onAction(a, on)}
+              >
+                {on && <Icon name="check" size={18} />}
                 {a}
               </button>
             );
           })}
+          <Menu label="More actions" items={FACILITY_MORE_ACTIONS} value={moreOn} onSelect={onAction} />
         </div>
       </header>
 
-      {/* The four numbers */}
-      <dl className="lra-fac-stats">
-        <div>
-          <dt>Line size</dt>
-          <dd className="is-lead">
-            {usd(fac.lineValue)} <span>USD</span>
-          </dd>
+      {/* The numbers: line size leads, the rest support */}
+      <div className="lra-fac-body">
+        <div className="lra-fac-hero">
+          <span className="lra-fac-label">Line size</span>
+          <strong className="lra-fac-amount">
+            {fac.lineValue.toLocaleString("en-US")} <span>USD</span>
+          </strong>
+          <div
+            className={"lra-fac-util" + (near ? " is-near" : "")}
+            role="img"
+            aria-label={`Utilisation ${pct}%: ${usd(fac.drawn)} drawn of ${usd(fac.lineValue)}`}
+          >
+            <span style={{ width: `${pct}%` }} />
+          </div>
+          <p className="lra-fac-caption">
+            <strong>{pct}%</strong> drawn
+          </p>
         </div>
-        <div>
-          <dt>Drawn</dt>
-          <dd>
-            {usd(fac.drawn)} <span>{pct}%</span>
-          </dd>
-        </div>
-        <div>
-          <dt>Available</dt>
-          <dd>{usd(fac.lineValue - fac.drawn)}</dd>
-        </div>
-        <div>
-          <dt>Matures</dt>
-          <dd>
-            {fac.maturity} <span>{left} mo left</span>
-          </dd>
-        </div>
-      </dl>
-
-      {/* Utilisation */}
-      <div
-        className={"lra-fac-util" + (near ? " is-near" : "")}
-        role="img"
-        aria-label={`Utilisation ${pct}%: ${usd(fac.drawn)} drawn of ${usd(fac.lineValue)}`}
-      >
-        <span style={{ width: `${pct}%` }} />
+        <dl className="lra-fac-stats">
+          <div>
+            <dt>Drawn</dt>
+            <dd>{usd(fac.drawn)}</dd>
+          </div>
+          <div>
+            <dt>Available</dt>
+            <dd>{usd(fac.lineValue - fac.drawn)}</dd>
+          </div>
+          <div>
+            <dt>Matures</dt>
+            <dd>
+              {fac.maturity}
+              <span>{left} months left</span>
+            </dd>
+          </div>
+        </dl>
       </div>
 
       {/* People and collateral */}
@@ -129,8 +142,8 @@ export default function FacilityCard({ fac, selected, action, onAction }) {
       </footer>
 
       {selected && custom && (
-        <p className="lra-inline-error lra-fac-error" role="alert">
-          Tailored facilities can't continue here — they go through the Custom intake.
+        <p className="lra-fac-note" role="status">
+          Tailored facilities are handled in the Custom intake — this request will be routed there.
         </p>
       )}
     </article>

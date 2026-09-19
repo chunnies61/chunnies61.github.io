@@ -69,6 +69,18 @@ export const HOST_ACCOUNTS = [
   { acct: "500002", internal: "INT-0002" },
 ];
 
+// Actions on an existing facility: the two common paths are buttons, the
+// rest sit behind an overflow menu
+export const FACILITY_ACTIONS = ["Amend", "Restructure"];
+export const FACILITY_MORE_ACTIONS = ["Renew", "Increase limit", "Close facility"];
+
+// Sample documents the upload area attaches, in this order
+export const DOCUMENTS = [
+  { id: "crf", name: "credit-request-form.pdf", size: "1.2 MB", required: true },
+  { id: "cal", name: "client-affirmation-letter.pdf", size: "640 KB" },
+  { id: "saf", name: "suitability-assessment-form.pdf", size: "880 KB" },
+];
+
 export const FACILITY_TYPES = ["Global limit", "FX/OTC Derivatives", "F&O / ETP", "Commitment – Term loan"];
 
 export const CURRENCIES = ["USD", "EUR", "GBP", "JPY", "SGD", "HKD", "AUD", "CNH"];
