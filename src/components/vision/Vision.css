@@ -64,15 +64,6 @@
   padding-top: 0;
 }
 
-.vp .vp-strip {
-  margin-top: 0;
-  padding: 8px 16px;
-  gap: 4px 24px;
-}
-
-.vp-stepper {
-  margin-top: 16px;
-}
 
 /* --- Sections, fields --------------------------------------------------------- */
 .vp .lra-section-head {

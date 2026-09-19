@@ -5,7 +5,6 @@ import { REGIONS } from "../lra/data";
 import { LraFlow } from "../lra/LraPrototype";
 import { ALL_PARTIES, COLLATERALS, TICKET, VARIANTS } from "./data";
 import { emptyBespoke } from "./builder";
-import { clientOf } from "./parts";
 import { LoanDetails, Review, Submission } from "./steps";
 import P1Step, * as p1 from "./p1";
 import P2Step, * as p2 from "./p2";
@@ -100,8 +99,6 @@ export default function VisionPrototype({ title = "Future-vision prototype" }) {
     bodyRef.current?.scrollTo({ top: 0 });
   }, [step, variant]);
 
-  const primary = clientOf(deal.parties[0]?.id);
-
   // Footer buttons for the current step
   let buttons;
   if (step === "done") {
@@ -176,35 +173,6 @@ export default function VisionPrototype({ title = "Future-vision prototype" }) {
           </div>
 
           <div className="lra-head">
-            {/* Client info strip */}
-            <dl className="lra-summary vp-strip">
-              {[
-                ["Client name", (primary?.name ?? "Adam Ross").toUpperCase()],
-                ["ECI", primary?.eci ?? "9876543210"],
-                ["Account number", TICKET.account],
-                ["Account type", "–"],
-                ["Loan request", TICKET.number],
-                ["Owner", TICKET.owner.toUpperCase()],
-              ].map(([k, val]) => (
-                <div key={k}>
-                  <dt>{k}</dt>
-                  <dd>{val}</dd>
-                </div>
-              ))}
-              <div>
-                <dt>Status</dt>
-                <dd>
-                  <span className={"lra-pill " + (step === "done" ? "is-good" : "is-neutral")}>
-                    {step === "done" ? "SUBMITTED" : TICKET.status}
-                  </span>
-                </dd>
-              </div>
-              <div className="lra-summary-links">
-                <span>Comments (0)</span>
-                <span>Documents (0)</span>
-              </div>
-            </dl>
-
             {step !== "done" && (
               <ol className="lra-stepper vp-stepper">
                 {v.steps.map((label, i) => (

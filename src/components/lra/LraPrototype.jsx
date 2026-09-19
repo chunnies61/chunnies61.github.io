@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { REGIONS, STEPS, TICKET } from "./data";
+import { REGIONS, STEPS } from "./data";
 import { assess, emptyDeal, freshBuilder } from "./rules";
 import StepClient from "./StepClient";
 import StepDetails from "./StepDetails";
@@ -85,7 +85,6 @@ export function LraFlow({ region, suffix, path }) {
   // The page title matches the current step's label in the stepper
   const pageTitle =
     region.flow === "wip" ? "Work in progress" : step === "done" ? "Request submitted" : STEPS[step];
-  const firstParty = deal.parties[0];
   const primaryLabel =
     step === 2 ? "Submit request" : region.flow === "emea" ? "Save and continue" : "Save & continue";
   const showError = tried && blocked;
@@ -103,7 +102,7 @@ export function LraFlow({ region, suffix, path }) {
           </div>
         ) : (
           <>
-            {/* Header: the stepper (each step is a link), and the summary bar once past step 1 */}
+            {/* Header: the stepper — each step is a link */}
             {step !== "done" && (
               <div className="lra-head">
                 <ol className="lra-stepper">
@@ -118,44 +117,6 @@ export function LraFlow({ region, suffix, path }) {
                     </li>
                   ))}
                 </ol>
-                {(step === 1 || step === 2) && firstParty && (
-                  <dl className="lra-summary">
-                    <div>
-                      <dt>Client name</dt>
-                      <dd className="is-caps">{firstParty.name}</dd>
-                    </div>
-                    <div>
-                      <dt>ECI</dt>
-                      <dd>{firstParty.eci}</dd>
-                    </div>
-                    <div>
-                      <dt>Account number</dt>
-                      <dd>{TICKET.account}</dd>
-                    </div>
-                    <div>
-                      <dt>Account type</dt>
-                      <dd>–</dd>
-                    </div>
-                    <div>
-                      <dt>Loan request</dt>
-                      <dd>{TICKET.number}</dd>
-                    </div>
-                    <div>
-                      <dt>Owner</dt>
-                      <dd className="is-caps">{TICKET.owner}</dd>
-                    </div>
-                    <div>
-                      <dt>Status</dt>
-                      <dd>
-                        <span className="lra-pill is-neutral">{TICKET.status}</span>
-                      </dd>
-                    </div>
-                    <div className="lra-summary-links">
-                      <span>Comments ({deal.note.trim() ? 1 : 0})</span>
-                      <span>Documents ({deal.documents.length})</span>
-                    </div>
-                  </dl>
-                )}
               </div>
             )}
 
@@ -175,7 +136,7 @@ export function LraFlow({ region, suffix, path }) {
                   onTried={() => setTried(true)}
                 />
               )}
-              {step === 2 && <StepReview deal={deal} />}
+              {step === 2 && <StepReview deal={deal} verdict={verdict} onEdit={go} />}
               {step === "done" && <Submission deal={deal} onRestart={reset} />}
             </div>
 

@@ -952,27 +952,6 @@ export default function PrototypeDesignSystem() {
                 </div>
               </div>
             </Specimen>
-            <Specimen label="Context strip — who and what the request is about, pinned above the steps">
-              <dl className="lra-summary">
-                {[
-                  ["Client name", "ADAM ROSS"],
-                  ["ECI", "9876543210"],
-                  ["Loan request", "A12345678"],
-                  ["Owner", "STEPHEN GREEN (F123456)"],
-                ].map(([k, v]) => (
-                  <div key={k}>
-                    <dt>{k}</dt>
-                    <dd>{v}</dd>
-                  </div>
-                ))}
-                <div>
-                  <dt>Status</dt>
-                  <dd>
-                    <span className="lra-pill is-neutral">DRAFT</span>
-                  </dd>
-                </div>
-              </dl>
-            </Specimen>
             <Specimen label="Path helper — a live route plus a short checklist beside the form (Proposal 1)" className="vp">
               <aside className="vp-path pds-path" aria-label="Path helper">
                 <p className="vp-path-eyebrow">

@@ -694,42 +694,11 @@
   color: var(--ui-white);
 }
 
-.lra-summary {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 32px;
-  margin: 16px 0 0;
-  padding: 12px 16px;
-  border: 1px solid var(--ui-border-secondary);
-  border-radius: var(--ui-radius-md);
-  background: var(--ui-bg-secondary);
-}
-
-.lra-summary dt,
 .lra-kv dt {
   font-size: 12px;
   line-height: 18px;
   font-weight: 500;
   color: var(--ui-fg-quaternary);
-}
-
-.lra-summary dd {
-  margin: 0;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 600;
-  color: var(--ui-fg);
-}
-
-.lra-summary-links {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-left: auto;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 600;
-  color: var(--ui-primary);
 }
 
 .is-caps {
@@ -1910,6 +1879,330 @@
 
 .lra-offers .lra-btn {
   align-self: flex-start;
+}
+
+/* --- Loan review: what's being submitted, and how ready it is ---------------- */
+.lra-review {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+.lra-review-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+/* The selected offer leads */
+.lra-review-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 40px;
+  padding: 24px;
+  border: 1px solid var(--ui-brand-200);
+  border-radius: var(--ui-radius-md);
+  background: var(--ui-brand-25);
+}
+
+.lra-review-hero-main {
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+.lra-review-eyebrow {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ui-primary);
+}
+
+.lra-review-amount {
+  margin-top: 4px;
+  font-size: 30px;
+  line-height: 38px;
+  font-weight: 600;
+  color: var(--ui-fg);
+  font-variant-numeric: tabular-nums;
+}
+
+.lra-review-amount span {
+  margin-left: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ui-fg-tertiary);
+}
+
+.lra-review-hero-name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ui-fg);
+}
+
+.lra-review-hero dl {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+  margin: 0;
+}
+
+.lra-review-hero dt {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+  color: var(--ui-fg-tertiary);
+}
+
+.lra-review-hero dd {
+  margin: 2px 0 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--ui-fg);
+}
+
+.lra-review-empty {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 20px;
+  padding: 20px 24px;
+  border: 1px dashed var(--ui-border);
+  border-radius: var(--ui-radius-md);
+  background: var(--ui-bg-secondary);
+}
+
+.lra-review-empty > div {
+  flex: 1 1 280px;
+}
+
+.lra-review-empty strong {
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: var(--ui-fg);
+}
+
+.lra-review-empty p {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ui-fg-tertiary);
+}
+
+.lra-review-empty-icon {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--ui-radius-md);
+  background: var(--ui-bg);
+  box-shadow: var(--ui-shadow-xs), inset 0 0 0 1px var(--ui-border-secondary);
+  color: var(--ui-primary);
+}
+
+/* Section cards, each with an Edit link back to its step */
+.lra-review-card {
+  overflow: hidden;
+  border: 1px solid var(--ui-border-secondary);
+  border-radius: var(--ui-radius-md);
+  background: var(--ui-bg);
+  box-shadow: var(--ui-shadow-xs);
+}
+
+.lra-review-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 12px 12px 20px;
+  border-bottom: 1px solid var(--ui-border-secondary);
+}
+
+.lra-review-card-head h4 {
+  margin: 0;
+}
+
+.lra-review-edit {
+  height: 36px;
+  margin-left: auto;
+}
+
+.lra-review-card-body {
+  padding: 20px;
+}
+
+.lra-review-card > div > .lra-table-wrap {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.lra-review-none {
+  padding: 16px 20px;
+}
+
+.lra-review-files {
+  margin: 0;
+}
+
+.lra-review-note {
+  margin-top: 20px;
+}
+
+/* Readiness: required first, then what Credit will expect */
+.lra-ready {
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  border: 1px solid var(--ui-border-secondary);
+  border-radius: var(--ui-radius-md);
+  background: var(--ui-bg);
+  box-shadow: var(--ui-shadow-xs);
+}
+
+.lra-ready-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--ui-border-secondary);
+}
+
+.lra-ready-head h4 {
+  margin: 0;
+}
+
+.lra-ready-head p {
+  margin-top: 2px;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--ui-fg-tertiary);
+}
+
+.lra-ready-status {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.lra-ready.is-ok .lra-ready-head {
+  background: var(--ui-success-50);
+}
+
+.lra-ready.is-ok .lra-ready-status {
+  background: var(--ui-success-100);
+  color: var(--ui-success-600);
+}
+
+.lra-ready.is-warn .lra-ready-head {
+  background: var(--ui-warning-25);
+}
+
+.lra-ready.is-warn .lra-ready-status {
+  background: var(--ui-warning-50);
+  color: var(--ui-warning-600);
+}
+
+.lra-ready.is-error .lra-ready-head {
+  background: var(--ui-error-50);
+}
+
+.lra-ready.is-error .lra-ready-status {
+  background: var(--ui-error-100);
+  color: var(--ui-error-600);
+}
+
+.lra-ready-list {
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;
+}
+
+.lra-ready-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 20px;
+}
+
+.lra-ready-icon {
+  display: flex;
+  flex: none;
+  margin-top: 1px;
+  color: var(--ui-success-600);
+}
+
+.lra-ready-item.is-warn .lra-ready-icon {
+  color: var(--ui-warning-600);
+}
+
+.lra-ready-item.is-error .lra-ready-icon {
+  color: var(--ui-error-600);
+}
+
+.lra-ready-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.lra-ready-text strong {
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--ui-fg);
+}
+
+.lra-ready-text span {
+  display: block;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--ui-fg-tertiary);
+  overflow-wrap: anywhere;
+}
+
+.lra-ready-item.is-error .lra-ready-text span {
+  color: var(--ui-error-600);
+}
+
+.lra-ready-fix {
+  flex: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: var(--ui-font);
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--ui-primary);
+  cursor: pointer;
+}
+
+.lra-ready-fix:hover {
+  color: var(--ui-brand-800);
+  text-decoration: underline;
+}
+
+.lra-ready-fix:focus-visible {
+  outline: 2px solid var(--ui-brand-500);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 /* --- Tabs: underline, text-sm semibold ----------------------------------------- */

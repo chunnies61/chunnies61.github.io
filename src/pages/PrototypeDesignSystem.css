@@ -418,10 +418,6 @@
   max-width: 300px;
 }
 
-.pds-canvas > .lra-summary {
-  margin-top: 0;
-}
-
 .pds-chip-maps {
   margin-top: 2px;
   color: var(--ui-primary) !important;
