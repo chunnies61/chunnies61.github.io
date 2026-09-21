@@ -16,7 +16,7 @@ import { Banner, Field, Icon, Section } from "./ui";
 import Dropdown from "./dropdown";
 
 /* Step 2 — Loan details: collateral, host accounts, the facility, the
-   supporting documents and notes, then the offers. Only facility type and
+   supporting documents and comments, then the offers. Only facility type and
    requested line size are required; the rest is guidance. */
 
 const VERB = {
@@ -510,9 +510,9 @@ export default function StepDetails({ deal, update, setField, verdict, region, t
         )}
       </Section>
 
-      {/* Notes */}
-      <Section title="Notes">
-        <Field label="Note for Credit" id={`${uid}-note`} hint="Optional — context, timing, anything unusual about the request.">
+      {/* Comments */}
+      <Section title="Comments">
+        <Field label="Comment for Credit" id={`${uid}-note`} hint="Optional — context, timing, anything unusual about the request.">
           <textarea
             id={`${uid}-note`}
             rows={3}
@@ -546,8 +546,8 @@ export default function StepDetails({ deal, update, setField, verdict, region, t
                   aria-label={o.name}
                 >
                   <div className="lra-offer-head">
-                    <h5>{o.name}</h5>
-                    <div className="lra-offer-pills">
+                    <div className="lra-offer-title">
+                      <h5>{o.name}</h5>
                       {o.recommended && <span className="lra-pill is-blue">Recommended</span>}
                       {o.eml ? (
                         <span className={"lra-pill " + (o.eligible ? "is-violet" : "is-neutral")}>
@@ -557,6 +557,17 @@ export default function StepDetails({ deal, update, setField, verdict, region, t
                         <span className="lra-pill is-good">SBL eligible</span>
                       )}
                     </div>
+                    {o.eligible && (
+                      <button
+                        type="button"
+                        className={"lra-btn is-secondary lra-offer-select" + (on ? " is-on" : "")}
+                        aria-pressed={on}
+                        onClick={() => update({ offer: on ? null : o })}
+                      >
+                        {on && <Icon name="check" size={18} />}
+                        {on ? "Selected" : "Select offer"}
+                      </button>
+                    )}
                   </div>
                   <p className="lra-offer-amount">{o.lineSize}</p>
                   <dl className="lra-kv">
@@ -577,17 +588,7 @@ export default function StepDetails({ deal, update, setField, verdict, region, t
                       <dd>{o.host}</dd>
                     </div>
                   </dl>
-                  {o.eligible ? (
-                    <button
-                      type="button"
-                      className={"lra-btn is-secondary" + (on ? " is-on" : "")}
-                      aria-pressed={on}
-                      onClick={() => update({ offer: on ? null : o })}
-                    >
-                      {on && <Icon name="check" size={18} />}
-                      {on ? "Selected" : "Select offer"}
-                    </button>
-                  ) : (
+                  {!o.eligible && (
                     <p className="lra-field-hint">Needs EML-eligible collateral — add an account with an EML LV.</p>
                   )}
                 </article>

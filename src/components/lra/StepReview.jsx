@@ -252,7 +252,7 @@ export default function StepReview({ deal, verdict, onEdit }) {
           )}
         </Card>
 
-        <Card title="Documents & notes" count={deal.documents.length} step={1} onEdit={onEdit}>
+        <Card title="Documents & comments" count={deal.documents.length} step={1} onEdit={onEdit}>
           {deal.documents.length ? (
             <ul className="lra-files lra-review-files">
               {deal.documents.map((doc) => (
@@ -277,7 +277,7 @@ export default function StepReview({ deal, verdict, onEdit }) {
             <p className="lra-muted">No documents attached.</p>
           )}
           <dl className="lra-kv is-review lra-review-note">
-            <Row label="Note for Credit" value={deal.note.trim()} />
+            <Row label="Comment for Credit" value={deal.note.trim()} />
           </dl>
         </Card>
       </div>
