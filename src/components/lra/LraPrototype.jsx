@@ -13,9 +13,8 @@ import "./Lra.css";
 
    LraFlow is one region's wizard in its browser window: Client & facility,
    Loan details, Loan review, then the submission. LraPrototype adds the
-   Preview toggle that switches regions: EMEA; APAC – Pilot and APAC share
-   the APAC flow, with APAC adding its compliance gates; USPB is still a
-   work in progress. The future-vision
+   Preview toggle that switches regions: EMEA; APAC, with its compliance
+   gates; USPB is still a work in progress. The future-vision
    prototype reuses LraFlow (EMEA) as its Current state. All data is mocked
    (see ./data.js). */
 
