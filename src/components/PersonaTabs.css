@@ -37,15 +37,15 @@
 }
 
 /* --- Tab bar -----------------------------------------------------------
-   A persona chooser: each tab carries its persona's portrait emoji and
-   name, and the selected one lifts onto a white chip in Primary. Sticks under the 72px site nav so a reader deep in a long
+   A persona chooser built like the rest of the site's tabs: each role keeps
+   its portrait in a tinted badge, and the chosen one takes Primary ink over
+   a 3px indicator. Sticks under the 72px site nav so a reader deep in a long
    sheet can still switch persona. */
 .cs-pt-bar {
   position: sticky;
   top: 72px;
   z-index: 10;
-  padding: 10px;
-  background: var(--cs-pt-surface);
+  background: var(--bg);
   border-bottom: 1px solid var(--cs-pt-line);
 }
 
@@ -54,34 +54,52 @@
 .cs-pt-tabs {
   position: relative;
   display: flex;
-  gap: 4px;
+  gap: 0;
 }
 
 .cs-pt-tab {
+  position: relative;
   flex: 1 1 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   min-width: 0;
-  padding: 8px 10px;
-  border: 1px solid transparent;
-  border-radius: 9px;
+  padding: 14px 16px;
+  border: 0;
   background: transparent;
   color: var(--text-soft);
   cursor: pointer;
-  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease,
-    box-shadow 0.15s ease;
+  transition: color 0.15s ease, background-color 0.15s ease;
 }
 
-/* Portraits stay grey until their persona is hovered or chosen */
+/* The indicator sits on the bar's own hairline */
+.cs-pt-tab::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -1px;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: var(--accent-dark);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+/* Portraits ride a tinted badge — grey until their persona is chosen */
 .cs-pt-tab-avatar {
   flex: none;
-  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: var(--gray-50);
+  font-size: 17px;
   line-height: 1;
   filter: grayscale(1);
-  opacity: 0.55;
-  transition: filter 0.15s ease, opacity 0.15s ease;
+  opacity: 0.6;
+  transition: filter 0.15s ease, opacity 0.15s ease, background-color 0.15s ease;
 }
 
 .cs-pt-tab-name {
@@ -92,7 +110,7 @@
 
 .cs-pt-tab:hover {
   color: var(--text);
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--cs-pt-surface);
 }
 
 .cs-pt-tab:hover .cs-pt-tab-avatar {
@@ -102,19 +120,22 @@
 
 .cs-pt-tab.is-active {
   color: var(--accent-dark);
-  background: var(--bg);
-  border-color: var(--cs-pt-line);
-  box-shadow: 0 1px 2px rgba(20, 32, 61, 0.06), 0 2px 8px rgba(20, 32, 61, 0.06);
+}
+
+.cs-pt-tab.is-active::after {
+  opacity: 1;
 }
 
 .cs-pt-tab.is-active .cs-pt-tab-avatar {
+  background: var(--pill-blue-bg);
   filter: none;
   opacity: 1;
 }
 
 .cs-pt-tab:focus-visible {
   outline: 2px solid var(--text);
-  outline-offset: 2px;
+  outline-offset: -2px;
+  border-radius: 8px;
 }
 
 /* --- Panel ------------------------------------------------------------- */
@@ -403,10 +424,6 @@
 
 /* --- Phone: profile becomes a header, everything stacks ----------------- */
 @media (max-width: 760px) {
-  .cs-pt-bar {
-    padding: 8px;
-  }
-
   .cs-pt-panel {
     padding: 16px;
   }
