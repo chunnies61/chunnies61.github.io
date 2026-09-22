@@ -680,12 +680,6 @@
   justify-content: center;
 }
 
-/* Party search: fixed-width fields, not the full 1920px row */
-.lra-app .lra-party-row {
-  grid-template-columns: 480px 280px auto;
-  justify-content: start;
-}
-
 .lra-page-title {
   margin: 0 0 24px;
   font-family: var(--ui-font);
@@ -708,9 +702,12 @@
 }
 
 /* --- Inputs: label above, 40px field, brand focus ring ---------------------- */
+/* Party search: fixed-width fields (480 search, 280 role), not the full
+   1920px row — the same in every prototype */
 .lra-party-row {
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) auto;
+  grid-template-columns: 480px 280px auto;
+  justify-content: start;
   gap: 16px;
   align-items: end;
 }
