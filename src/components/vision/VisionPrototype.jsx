@@ -127,8 +127,11 @@ export default function VisionPrototype({ title = "Future-vision prototype" }) {
     ];
   }
 
+  // The Current state is scoped as the Loan Request App itself (.lra-app), so
+  // none of the proposals' .vp overrides touch it and it renders pixel for
+  // pixel like the EMEA preview
   return (
-    <div className="lra vp" aria-label={title} role="region">
+    <div className={"lra " + (variant === "current" ? "lra-app" : "vp")} aria-label={title} role="region">
       {/* Variant switch — the black toggle; each option has a rich tooltip */}
       <div className="vp-variants">
         <Toggle
