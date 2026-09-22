@@ -862,11 +862,6 @@
           ]
         },
         {
-          "type": "image",
-          "src": "/images/lending-before-after.png",
-          "label": "Before and after — Credit's acceptance rules moved upstream into the Banker's intake moment"
-        },
-        {
           "type": "text",
           "value": "Regional variants shipped on one skeleton — conditional logic adds what each market requires instead of forking the product. Try both products below."
         },
