@@ -5,7 +5,7 @@ import { AS_OF, FACILITY_ACTIONS, FACILITY_MORE_ACTIONS } from "./data";
 /* An existing facility, as a card: a title row carrying the facility's type
    and badges, the three figures on one line, a utilisation bar reading the
    whole width beneath them, then maturity, borrowers and collateral, and the
-   actions along the bottom. Two cards sit side by side. */
+   actions along the bottom. Three cards sit in a row. */
 
 const day = (iso) => new Date(`${iso}T00:00:00Z`).getTime();
 const months = (ms) => Math.round(ms / (1000 * 60 * 60 * 24 * 30.44));
