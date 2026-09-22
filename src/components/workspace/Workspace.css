@@ -308,13 +308,6 @@
   transform: rotate(180deg);
 }
 
-.ws-l2-divider {
-  flex: none;
-  width: 1px;
-  height: 24px;
-  margin: 0 6px;
-  background: color-mix(in srgb, var(--ui-white) 40%, transparent);
-}
 
 .ws-client {
   position: relative;

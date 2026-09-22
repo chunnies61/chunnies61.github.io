@@ -52,7 +52,6 @@ export const SECTIONS = [
     ],
   },
   { id: "docqc", label: "Doc QC", built: true },
-  { id: "collateral", label: "Collateral Tools" },
   { id: "margin", label: "Margin Call", built: true },
   {
     id: "book",
@@ -66,7 +65,6 @@ export const SECTIONS = [
     ],
   },
 ];
-export const EXTERNAL = ["ILM", "Atlas Holdings LLC"];
 
 /* --- Overview ------------------------------------------------------------- */
 export const TOP_DEALS = ["Robert Johnson", "Peter Walsh", "Jim Wallace", "John Trenton", "Danielle Houston"];

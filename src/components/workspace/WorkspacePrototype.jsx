@@ -1,7 +1,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { Icon } from "../lra/ui";
 import { ScaledFrame } from "../lra/frame";
-import { APPS, EXTERNAL, SECTIONS, USER_ID, WORKSPACES } from "./data";
+import { APPS, SECTIONS, USER_ID, WORKSPACES } from "./data";
 import Overview from "./Overview";
 import { DealJourney, Opportunities } from "./tables";
 import { Menu } from "./table";
@@ -203,18 +203,6 @@ export default function WorkspacePrototype({ title = "Lending Workspace prototyp
                   </button>
                 )
               )}
-              <span className="ws-l2-divider" aria-hidden="true" />
-              {EXTERNAL.map((x) => (
-                <button
-                  key={x}
-                  type="button"
-                  className="ws-l2-tab is-link"
-                  onClick={() => say(`${x} opens another prototype in a new tab — not included here.`)}
-                >
-                  {x}
-                  <Icon name="openInNew" size={16} />
-                </button>
-              ))}
             </nav>
             <div className="ws-client">
               <label htmlFor={`${uid}-client`} className="lra-sr">
