@@ -1384,7 +1384,7 @@
    their own; the utilisation bar then reads across the full card width, in
    warning tone when the line is nearly drawn. */
 .lra-fac-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
 }
 

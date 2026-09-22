@@ -52,6 +52,20 @@ export const FACILITIES = [
     maturityDate: "2028-03-15",
     collateral: "400002, 400003",
   },
+  {
+    id: "f3",
+    kind: "sbl",
+    badge: "Streamlined (SBL)",
+    facilityId: "100000003",
+    borrowers: "Casey Lin",
+    lineValue: 1000000,
+    drawn: 150000,
+    type: "FX/OTC Derivatives",
+    opened: "2025-06-02",
+    maturity: "02-Jun-2027",
+    maturityDate: "2027-06-02",
+    collateral: "400004",
+  },
 ];
 
 export const COLLATERALS = [
