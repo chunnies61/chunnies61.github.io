@@ -3,66 +3,30 @@
 
 export const USER_ID = "W000123";
 
-export const WORKSPACES = ["CRM 360", "Catalog", "Connect AI", "Lending"];
-
-// Portfolio Health pages: [id, label, built]
+// Portfolio Health pages: [id, label]
 export const HEALTH_PILLS = [
-  ["portfolio", "Portfolio View", true],
-  ["collateral", "Collateral Zone"],
-  ["doc", "Doc Hub"],
-  ["risk", "Risk Watch"],
-  ["annual", "Annual Review", true],
-  ["covenants", "Covenants"],
-  ["delinquency", "Delinquency"],
-  ["info", "Informational Items"],
+  ["portfolio", "Portfolio View"],
+  ["annual", "Annual Review"],
 ];
 
-// L2 sections — only the first four are built. A section's `subs` are its
-// pages, reached from a dropdown on the L2 tab: [id, label, built].
+// L2 sections. A section's `subs` are its pages, reached from a dropdown
+// on the L2 tab: [id, label]; a single-page section names its page instead.
 export const SECTIONS = [
-  { id: "overview", label: "Overview", built: true },
-  {
-    id: "deals",
-    label: "Deal Journey",
-    built: true,
-    subs: [
-      ["deals", "Deal Journey", true],
-      ["enrichment", "Facility Enrichment"],
-    ],
-  },
+  { id: "overview", label: "Overview" },
+  { id: "deals", label: "Deal Journey", page: "Deal Journey" },
   {
     id: "opps",
     label: "Opportunities",
-    built: true,
     subs: [
-      ["plc", "PLC Conversions", true],
-      ["offers", "Pre-Approved Offers", true],
+      ["plc", "PLC Conversions"],
+      ["offers", "Pre-Approved Offers"],
     ],
   },
-  { id: "health", label: "Portfolio Health", built: true, subs: HEALTH_PILLS },
-  {
-    id: "insights",
-    label: "Insights",
-    built: true,
-    subs: [
-      ["analytics", "Lending Analytics"],
-      ["collateral", "Collateral Insights", true],
-      ["ipo", "IPO Lending"],
-    ],
-  },
-  { id: "docqc", label: "Doc QC", built: true },
-  { id: "margin", label: "Margin Call", built: true },
-  {
-    id: "book",
-    label: "Book Simulation",
-    built: true,
-    subs: [
-      ["home", "Home", true],
-      ["client", "Client View"],
-      ["position", "Position View"],
-      ["summary", "Summary View"],
-    ],
-  },
+  { id: "health", label: "Portfolio Health", subs: HEALTH_PILLS },
+  { id: "insights", label: "Insights", page: "Collateral Insights" },
+  { id: "docqc", label: "Doc QC" },
+  { id: "margin", label: "Margin Call" },
+  { id: "book", label: "Book Simulation", page: "Book Simulation" },
 ];
 
 /* --- Overview ------------------------------------------------------------- */

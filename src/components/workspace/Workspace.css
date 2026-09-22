@@ -277,10 +277,6 @@
   box-shadow: inset 0 -3px 0 var(--ui-white);
 }
 
-.ws-l2-tab.is-off {
-  color: color-mix(in srgb, var(--ui-white) 70%, transparent);
-}
-
 .ws-l2-tab:focus-visible {
   outline: 2px solid var(--ui-white);
   outline-offset: -3px;
@@ -851,10 +847,6 @@
 .ws-menu-item.is-current {
   color: var(--ui-primary);
   font-weight: 600;
-}
-
-.ws-menu-item.is-off {
-  color: var(--ui-fg-disabled);
 }
 
 .ws-menu-check {

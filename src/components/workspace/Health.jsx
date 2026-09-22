@@ -15,7 +15,7 @@ import { Card } from "./Overview";
 import { DataTable } from "./table";
 
 /* Portfolio Health — pill tabs over a portfolio dashboard (Portfolio View)
-   and an exceptions table (Annual Review). The other pills aren't built. */
+   and an exceptions table (Annual Review). */
 
 const R = 40;
 const C = 2 * Math.PI * R;

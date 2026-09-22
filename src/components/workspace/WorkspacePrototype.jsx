@@ -1,7 +1,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { Icon } from "../lra/ui";
 import { ScaledFrame } from "../lra/frame";
-import { SECTIONS, USER_ID, WORKSPACES } from "./data";
+import { SECTIONS, USER_ID } from "./data";
 import Overview from "./Overview";
 import { DealJourney, Opportunities } from "./tables";
 import { Menu } from "./table";
@@ -15,8 +15,7 @@ import "./Workspace.css";
 
 /* Lending Workspace prototype — the "single pane of glass" where bankers
    and lending specialists service and grow their book. A persistent shell
-   (global bar, workspace tabs, app tabs, blue section nav) over four built
-   sections. Material 3, on the Loan Request App prototype's system; all
+   (global bar, workspace strip, blue section nav) over its sections. Material 3, on the Loan Request App prototype's system; all
    data is sample. */
 
 const UTILITIES = [
@@ -33,8 +32,6 @@ export default function WorkspacePrototype({ title = "Lending Workspace prototyp
   const [section, setSection] = useState("overview");
   const [oppTab, setOppTab] = useState("offers");
   const [pill, setPill] = useState("portfolio");
-  const [insightsTab, setInsightsTab] = useState("collateral");
-  const [bookTab, setBookTab] = useState("home");
   const [search, setSearch] = useState("");
   const [client, setClient] = useState("");
   const [toast, setToast] = useState("");
@@ -53,25 +50,18 @@ export default function WorkspacePrototype({ title = "Lending Workspace prototyp
     setSection(id);
     if (id === "opps" && sub) setOppTab(sub);
     if (id === "health") setPill(sub ?? "portfolio");
-    if (id === "insights" && sub) setInsightsTab(sub);
-    if (id === "book" && sub) setBookTab(sub);
   }
 
   useEffect(() => {
     bodyRef.current?.scrollTo({ top: 0 });
-  }, [section, pill, oppTab, insightsTab, bookTab]);
+  }, [section, pill, oppTab]);
 
   const placeholder = (what) => () => say(`${what} isn't part of this prototype.`);
 
   // The page currently open inside a section, for sections that have pages
-  const currentSub = { deals: "deals", opps: oppTab, health: pill, insights: insightsTab, book: bookTab };
+  const currentSub = { opps: oppTab, health: pill };
   const active = SECTIONS.find((s) => s.id === section);
-  const activeSub = active.subs?.find(([k]) => k === currentSub[section]);
-
-  function openSub(s, [k, label, built]) {
-    if (!built) return say(`${label} isn't built in this prototype.`);
-    go(s.id, k);
-  }
+  const pageTitle = active.subs ? active.subs.find(([k]) => k === currentSub[section])?.[1] : active.page;
 
   return (
     <div className="lra ws" aria-label={title} role="region">
@@ -127,19 +117,8 @@ export default function WorkspacePrototype({ title = "Lending Workspace prototyp
               <button type="button" className="lra-icon-btn is-small" aria-label="Home" onClick={placeholder("Home")}>
                 <Icon name="home" size={20} />
               </button>
-              {WORKSPACES.map((w) => (
-                <button
-                  key={w}
-                  type="button"
-                  className={"ws-ws-tab" + (w === "Lending" ? " is-on" : "")}
-                  aria-current={w === "Lending" ? "page" : undefined}
-                  onClick={w === "Lending" ? undefined : placeholder(`The ${w} workspace`)}
-                >
-                  {w}
-                </button>
-              ))}
-              <button type="button" className="lra-icon-btn is-small" aria-label="Add workspace" onClick={placeholder("Adding a workspace")}>
-                <Icon name="add" size={20} />
+              <button type="button" className="ws-ws-tab is-on" aria-current="page">
+                Lending
               </button>
             </nav>
             <ol className="ws-crumbs" aria-label="Breadcrumb">
@@ -158,16 +137,14 @@ export default function WorkspacePrototype({ title = "Lending Workspace prototyp
                     label={s.label}
                     align="left"
                     className="ws-l2-menu"
-                    triggerClassName={"ws-l2-tab" + (section === s.id ? " is-on" : "") + (s.built ? "" : " is-off")}
+                    triggerClassName={"ws-l2-tab" + (section === s.id ? " is-on" : "")}
                     triggerProps={{ "aria-current": section === s.id ? "page" : undefined }}
-                    items={s.subs.map(([k, label, built]) => ({
+                    items={s.subs.map(([k, label]) => ({
                       key: k,
                       label,
-                      built,
-                      disabled: !built,
                       current: section === s.id && currentSub[s.id] === k,
                     }))}
-                    onSelect={(item) => openSub(s, [item.key, item.label, item.built])}
+                    onSelect={(item) => go(s.id, item.key)}
                   >
                     {s.label}
                     <Icon name="expand" size={18} />
@@ -176,10 +153,9 @@ export default function WorkspacePrototype({ title = "Lending Workspace prototyp
                   <button
                     key={s.id}
                     type="button"
-                    className={"ws-l2-tab" + (section === s.id ? " is-on" : "") + (s.built ? "" : " is-off")}
+                    className={"ws-l2-tab" + (section === s.id ? " is-on" : "")}
                     aria-current={section === s.id ? "page" : undefined}
-                    aria-disabled={!s.built}
-                    onClick={() => (s.built ? setSection(s.id) : say(`${s.label} isn't built in this prototype.`))}
+                    onClick={() => setSection(s.id)}
                   >
                     {s.label}
                   </button>
@@ -201,8 +177,8 @@ export default function WorkspacePrototype({ title = "Lending Workspace prototyp
           </div>
 
           <div className="lra-body ws-body" ref={bodyRef}>
-            {activeSub ? (
-              <h4 className="ws-page-title">{activeSub[1]}</h4>
+            {pageTitle ? (
+              <h4 className="ws-page-title">{pageTitle}</h4>
             ) : (
               <h4 className="lra-sr">{active.label}</h4>
             )}
