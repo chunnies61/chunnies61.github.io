@@ -1287,7 +1287,7 @@
 
 @container (min-width: 900px) {
   .ws-insights {
-    grid-template-columns: 260px minmax(0, 1fr);
+    grid-template-columns: 340px minmax(0, 1fr);
   }
 }
 
@@ -1439,15 +1439,6 @@
 /* --- Doc QC ---------------------------------------------------------------------- */
 .ws-docqc {
   max-width: 900px;
-}
-
-.ws-disclaimer {
-  align-items: flex-start;
-}
-
-.ws .ws-disclaimer-title {
-  margin-bottom: 4px;
-  font-weight: 600;
 }
 
 .ws-docqc-form {

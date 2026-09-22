@@ -337,9 +337,6 @@ export const POSITIONS = [
 ];
 
 /* --- Doc QC ------------------------------------------------------------------ */
-export const DOCQC_DISCLAIMER =
-  "This feature is for internal use only within USPB. Outputs may be inaccurate, misleading, outdated, incomplete or out of context — even when they appear credible. Do not rely on this content without independent verification from approved sources and subject-matter experts. Do not share or discuss any output with external parties, including recipients, regulators, vendors, clients or prospects.";
-
 export const DOCQC_FILE_TYPES = "PDF, DOC, DOCX, XLS, XLSX, XLSM, ZIP";
 
 /* --- Margin Call -------------------------------------------------------------- */

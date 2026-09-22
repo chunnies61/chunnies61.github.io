@@ -1,6 +1,6 @@
 import { useId, useState } from "react";
 import { Icon } from "../lra/ui";
-import { DOCQC_DISCLAIMER, DOCQC_FILE_TYPES } from "./data";
+import { DOCQC_FILE_TYPES } from "./data";
 
 /* Doc QC › Outside Counsel QC Data Comparison Viewer — a gated intake form:
    the ticket loads its proposals, a proposal loads its facilities, and the
@@ -16,7 +16,6 @@ export default function DocQC({ onPlaceholder }) {
   const [facility, setFacility] = useState("");
   const [files, setFiles] = useState([]);
   const [over, setOver] = useState(false);
-  const [dismissed, setDismissed] = useState(false);
 
   const hasTicket = ticket.trim().length > 0;
   const ready = hasTicket && proposal && facility && files.length > 0;
@@ -35,19 +34,6 @@ export default function DocQC({ onPlaceholder }) {
 
   return (
     <div className="ws-section ws-docqc">
-      {!dismissed && (
-        <div className="lra-banner is-warning ws-disclaimer" role="note">
-          <Icon name="warning" />
-          <div>
-            <p className="ws-disclaimer-title">Disclaimer</p>
-            <p>{DOCQC_DISCLAIMER}</p>
-          </div>
-          <button type="button" className="lra-icon-btn" aria-label="Dismiss disclaimer" onClick={() => setDismissed(true)}>
-            <Icon name="close" size={20} />
-          </button>
-        </div>
-      )}
-
       <section className="ws-card ws-docqc-form">
         <div className="ws-card-head">
           <h5>Outside Counsel QC Data Comparison Viewer</h5>
