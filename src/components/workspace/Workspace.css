@@ -233,19 +233,7 @@
   color: var(--ui-fg);
 }
 
-.ws-apps {
-  height: 48px;
-  gap: 16px;
-  padding: 0 16px;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.ws-apps .lra-tab {
-  flex: none;
-}
-
-/* --- Row 4: the blue section nav ------------------------------------------------ */
+/* --- Row 3: the blue section nav ------------------------------------------------ */
 .ws-l2 {
   flex: none;
   display: flex;

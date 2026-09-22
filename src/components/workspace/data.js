@@ -4,7 +4,6 @@
 export const USER_ID = "W000123";
 
 export const WORKSPACES = ["CRM 360", "Catalog", "Connect AI", "Lending"];
-export const APPS = ["Lending Workspace", "Lending Wizard", "Lending Offers", "Loan Request 2.0"];
 
 // Portfolio Health pages: [id, label, built]
 export const HEALTH_PILLS = [

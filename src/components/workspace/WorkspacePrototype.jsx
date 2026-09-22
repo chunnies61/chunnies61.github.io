@@ -1,7 +1,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { Icon } from "../lra/ui";
 import { ScaledFrame } from "../lra/frame";
-import { APPS, SECTIONS, USER_ID, WORKSPACES } from "./data";
+import { SECTIONS, USER_ID, WORKSPACES } from "./data";
 import Overview from "./Overview";
 import { DealJourney, Opportunities } from "./tables";
 import { Menu } from "./table";
@@ -148,25 +148,7 @@ export default function WorkspacePrototype({ title = "Lending Workspace prototyp
             </ol>
           </div>
 
-          {/* Row 3 — L1 app tabs */}
-          <nav className="ws-row ws-apps" aria-label="Lending apps">
-            {APPS.map((a, i) => (
-              <button
-                key={a}
-                type="button"
-                className={"lra-tab" + (i === 0 ? " is-active" : "")}
-                aria-current={i === 0 ? "page" : undefined}
-                onClick={i === 0 ? undefined : placeholder(a)}
-              >
-                <span>{a}</span>
-              </button>
-            ))}
-            <button type="button" className="lra-icon-btn is-small" aria-label="Open a new app" onClick={placeholder("Opening a new app")}>
-              <Icon name="add" size={20} />
-            </button>
-          </nav>
-
-          {/* Row 4 — L2 section nav + client selector */}
+          {/* Row 3 — L2 section nav + client selector */}
           <div className="ws-l2">
             <nav className="ws-l2-scroll" aria-label="Lending Workspace sections">
               {SECTIONS.map((s) =>
