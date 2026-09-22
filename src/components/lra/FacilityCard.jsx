@@ -2,10 +2,10 @@ import { Icon } from "./ui";
 import Menu from "./menu";
 import { AS_OF, FACILITY_ACTIONS, FACILITY_MORE_ACTIONS } from "./data";
 
-/* An existing facility, as a structured card: a tinted identity band; three
-   stat tiles (line size, drawn with its utilisation, available); a compact
-   list of maturity, borrowers and collateral; and the actions along the
-   bottom. Two cards sit side by side. */
+/* An existing facility, as a card: a title row carrying the facility's type
+   and badges, the three figures on one line, a utilisation bar reading the
+   whole width beneath them, then maturity, borrowers and collateral, and the
+   actions along the bottom. Two cards sit side by side. */
 
 const day = (iso) => new Date(`${iso}T00:00:00Z`).getTime();
 const months = (ms) => Math.round(ms / (1000 * 60 * 60 * 24 * 30.44));
@@ -43,46 +43,48 @@ export default function FacilityCard({ fac, currency, selected, action, onAction
     >
       {/* Identity */}
       <header className="lra-fac-head">
-        <span className="lra-fac-icon" aria-hidden="true">
-          <Icon name="bank" />
-        </span>
-        <div className="lra-fac-title">
-          <div className="lra-fac-name">
-            <h5>{fac.type}</h5>
-            <span className={"lra-pill " + (custom ? "is-violet" : "is-blue")}>{fac.badge}</span>
-            {near && <span className="lra-pill is-warn">Near limit</span>}
-          </div>
-          <p>
-            Facility {fac.facilityId} · Opened {date(fac.opened)}
-          </p>
+        <div className="lra-fac-name">
+          <h5>{fac.type}</h5>
+          <span className={"lra-pill " + (custom ? "is-violet" : "is-blue")}>{fac.badge}</span>
+          {near && <span className="lra-pill is-warn">Near limit</span>}
         </div>
+        <p>
+          Facility {fac.facilityId} · Opened {date(fac.opened)}
+        </p>
       </header>
 
       <div className="lra-fac-body">
-        {/* The numbers, as tiles */}
-        <div className="lra-fac-tiles">
-          <div className="lra-fac-tile is-lead">
+        {/* The numbers on one line, then utilisation across the full width */}
+        <div className="lra-fac-figures">
+          <div className="lra-fac-figure is-lead">
             <span className="lra-fac-label">Line size</span>
             <strong>{amount(fac.lineValue)}</strong>
             <span className="lra-fac-sub">{currency}</span>
           </div>
-          <div className={"lra-fac-tile" + (near ? " is-near" : "")}>
+          <div className="lra-fac-figure">
             <span className="lra-fac-label">Drawn</span>
             <strong>{amount(fac.drawn)}</strong>
-            <div
-              className="lra-fac-util"
-              role="img"
-              aria-label={`Utilisation ${pct}%: ${amount(fac.drawn)} drawn of ${amount(fac.lineValue)}`}
-            >
-              <span style={{ width: `${pct}%` }} />
-            </div>
             <span className="lra-fac-sub">{pct}% of line</span>
           </div>
-          <div className="lra-fac-tile">
+          <div className="lra-fac-figure">
             <span className="lra-fac-label">Available</span>
             <strong>{amount(fac.lineValue - fac.drawn)}</strong>
             <span className="lra-fac-sub">{100 - pct}% headroom</span>
           </div>
+        </div>
+
+        <div className={"lra-fac-util" + (near ? " is-near" : "")}>
+          <div
+            className="lra-fac-util-track"
+            role="img"
+            aria-label={`Utilisation ${pct}%: ${amount(fac.drawn)} drawn of ${amount(fac.lineValue)}`}
+          >
+            <span style={{ width: `${pct}%` }} />
+          </div>
+          <p className="lra-fac-util-note">
+            {near && <Icon name="warning" size={16} />}
+            {near ? `Near limit — ${pct}% drawn` : `${pct}% drawn`}
+          </p>
         </div>
 
         {/* Term, people, security */}

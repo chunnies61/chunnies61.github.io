@@ -1379,16 +1379,17 @@
 }
 
 /* --- Existing facility card (FacilityCard.jsx) ------------------------------
-   A structured card, two side by side: a tinted identity band; three stat
-   tiles (line size leads; drawn carries the utilisation bar; available);
-   a compact list of maturity, borrowers and collateral; the actions along
-   the bottom. */
+   Two cards side by side. A title row carries the type and its badges; the
+   three figures sit on one line divided by hairlines rather than in boxes of
+   their own; the utilisation bar then reads across the full card width, in
+   warning tone when the line is nearly drawn. */
 .lra-fac-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
 }
 
 .lra-fac {
+  position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -1399,46 +1400,27 @@
   transition: border-color 0.1s linear, box-shadow 0.1s linear;
 }
 
+/* A rail in the facility's own colour, so type reads before the text does */
+.lra-fac::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--ui-primary);
+}
+
+.lra-fac.is-custom::before {
+  background: var(--ui-purple-500, var(--ui-purple-700));
+}
+
 .lra-fac.is-selected {
   border-color: var(--ui-primary);
   box-shadow: var(--ui-shadow-xs), inset 0 0 0 1px var(--ui-primary);
 }
 
-/* Identity band */
+/* Identity */
 .lra-fac-head {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 16px 20px;
-  border-bottom: 1px solid var(--ui-border-secondary);
-  background: var(--ui-brand-25);
-}
-
-.lra-fac.is-custom .lra-fac-head {
-  background: var(--ui-purple-50);
-}
-
-.lra-fac-icon {
-  display: flex;
-  flex: none;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: var(--ui-radius-md);
-  background: var(--ui-bg);
-  box-shadow: inset 0 0 0 1px var(--ui-brand-200);
-  color: var(--ui-primary);
-}
-
-.lra-fac.is-custom .lra-fac-icon {
-  box-shadow: inset 0 0 0 1px var(--ui-purple-200);
-  color: var(--ui-purple-700);
-}
-
-.lra-fac-title {
-  flex: 1;
-  min-width: 0;
+  padding: 16px 20px 0;
 }
 
 .lra-fac-name {
@@ -1457,9 +1439,9 @@
   color: var(--ui-fg);
 }
 
-.lra-fac-title p {
+.lra-fac-head p {
   margin-top: 2px;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 20px;
   color: var(--ui-fg-tertiary);
   font-variant-numeric: tabular-nums;
@@ -1467,80 +1449,88 @@
 
 .lra-fac-body {
   flex: 1;
-  padding: 20px;
+  padding: 16px 20px 20px;
 }
 
-/* Stat tiles */
-.lra-fac-tiles {
+/* The three figures, divided rather than boxed */
+.lra-fac-figures {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  gap: 16px;
 }
 
-.lra-fac-tile {
+.lra-fac-figure {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  padding: 14px 16px;
-  border: 1px solid var(--ui-border-secondary);
-  border-radius: var(--ui-radius-sm);
-  background: var(--ui-bg-secondary);
+  padding-left: 16px;
+  border-left: 1px solid var(--ui-border-secondary);
 }
 
-.lra-fac-tile.is-lead {
-  border-color: var(--ui-brand-200);
-  background: var(--ui-bg);
+.lra-fac-figure:first-child {
+  padding-left: 0;
+  border-left: 0;
 }
 
 .lra-fac-label {
   font-size: 12px;
   line-height: 18px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
   color: var(--ui-fg-tertiary);
 }
 
-.lra-fac-tile strong {
-  margin-top: 4px;
-  font-size: 24px;
-  line-height: 32px;
+.lra-fac-figure strong {
+  margin-top: 2px;
+  font-size: 22px;
+  line-height: 30px;
   font-weight: 600;
   color: var(--ui-fg);
   font-variant-numeric: tabular-nums;
 }
 
-.lra-fac-tile.is-lead strong {
+.lra-fac-figure.is-lead strong {
   color: var(--ui-primary);
 }
 
 .lra-fac-sub {
-  margin-top: 2px;
   font-size: 12px;
   line-height: 18px;
   color: var(--ui-fg-tertiary);
 }
 
+/* Utilisation, across the whole card */
 .lra-fac-util {
-  height: 6px;
-  margin-top: 10px;
+  margin-top: 16px;
+}
+
+.lra-fac-util-track {
+  height: 8px;
   overflow: hidden;
-  border-radius: 3px;
+  border-radius: 999px;
   background: var(--ui-gray-200);
 }
 
-.lra-fac-util > span {
+.lra-fac-util-track > span {
   display: block;
   height: 100%;
-  border-radius: 3px;
+  border-radius: 999px;
   background: var(--ui-primary);
 }
 
-.lra-fac-tile.is-near .lra-fac-util > span {
+.lra .lra-fac-util-note {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--ui-fg-tertiary);
+}
+
+.lra-fac-util.is-near .lra-fac-util-track > span {
   background: var(--ui-warning-600);
 }
 
-.lra-fac-tile.is-near .lra-fac-sub {
+.lra .lra-fac-util.is-near .lra-fac-util-note {
   font-weight: 600;
   color: var(--ui-warning-700);
 }
