@@ -13,14 +13,16 @@ import "./Lra.css";
 
    LraFlow is one region's wizard in its browser window: Client & facility,
    Loan details, Loan review, then the submission. LraPrototype adds the
-   Preview toggle that switches regions: EMEA; APAC, with its compliance
-   gates; USPB is still a work in progress. The future-vision
+   Preview toggle that switches regions: EMEA (in EUR); APAC (USD, with its
+   compliance gates); USPB (the EMEA flow in USD, plus the GFG flag). The
+   future-vision
    prototype reuses LraFlow (EMEA) as its Current state. All data is mocked
    (see ./data.js). */
 
 export function LraFlow({ region, suffix, path }) {
   const [step, setStep] = useState(0); // 0, 1, 2, or "done"
-  const [deal, setDeal] = useState(emptyDeal);
+  const ccy = region.currency ?? "USD";
+  const [deal, setDeal] = useState(() => emptyDeal(ccy));
   const [tried, setTried] = useState(false); // continue was pressed while blocked
   const timer = useRef(null);
   const bodyRef = useRef(null);
@@ -41,7 +43,7 @@ export function LraFlow({ region, suffix, path }) {
 
   function reset() {
     clearTimeout(timer.current);
-    setDeal(emptyDeal());
+    setDeal(emptyDeal(ccy));
     go(0);
   }
 
@@ -50,7 +52,7 @@ export function LraFlow({ region, suffix, path }) {
     update((d) =>
       d.build === "sbl"
         ? { facilityId: null, facilityAction: null }
-        : { build: "sbl", facilityId: null, facilityAction: null, ...freshBuilder() }
+        : { build: "sbl", facilityId: null, facilityAction: null, ...freshBuilder(ccy) }
     );
     go(1);
   }
@@ -80,10 +82,9 @@ export function LraFlow({ region, suffix, path }) {
     bodyRef.current?.scrollTo({ top: 0 });
   }, [step]);
 
-  const inWizard = region.flow !== "wip" && step !== "done";
+  const inWizard = step !== "done";
   // The page title matches the current step's label in the stepper
-  const pageTitle =
-    region.flow === "wip" ? "Work in progress" : step === "done" ? "Request submitted" : STEPS[step];
+  const pageTitle = step === "done" ? "Request submitted" : STEPS[step];
   const primaryLabel =
     step === 2 ? "Submit request" : region.flow === "emea" ? "Save and continue" : "Save & continue";
   const showError = tried && blocked;
@@ -91,106 +92,94 @@ export function LraFlow({ region, suffix, path }) {
   return (
     <ScaledFrame title={`${pageTitle} · ${suffix}`} path={path}>
       <div className="lra-window">
-        {region.flow === "wip" ? (
-          <div className="lra-body lra-wip" ref={bodyRef}>
-            <span className="lra-wip-icon">
-              <Icon name="hourglass" size={32} />
-            </span>
-            <h4>USPB — Work in progress</h4>
-            <p>This version hasn't been built yet.</p>
-          </div>
-        ) : (
-          <>
-            {/* Header: the stepper — each step is a link */}
-            {step !== "done" && (
-              <div className="lra-head">
-                <ol className="lra-stepper">
-                  {STEPS.map((label, i) => (
-                    <li key={label} className={i === step ? "is-current" : i < step ? "is-done" : ""}>
-                      <button type="button" aria-current={i === step ? "step" : undefined} onClick={() => go(i)}>
-                        <span className="lra-step-num" aria-hidden="true">
-                          {i < step ? <Icon name="check" size={16} /> : i + 1}
-                        </span>
-                        <span className="lra-step-label">{label}</span>
-                      </button>
-                    </li>
-                  ))}
-                </ol>
-              </div>
-            )}
-
-            <div className="lra-body" ref={bodyRef}>
-              {step !== "done" && <h3 className="lra-page-title">{pageTitle}</h3>}
-              {step === 0 && (
-                <StepClient deal={deal} update={update} addParty={addParty} onBuildSbl={buildSbl} />
-              )}
-              {step === 1 && (
-                <StepDetails
-                  deal={deal}
-                  update={update}
-                  setField={setField}
-                  verdict={verdict}
-                  region={region}
-                  tried={tried}
-                  onTried={() => setTried(true)}
-                />
-              )}
-              {step === 2 && <StepReview deal={deal} verdict={verdict} onEdit={go} />}
-              {step === "done" && <Submission deal={deal} onRestart={reset} />}
-            </div>
-
-            {inWizard && (
-              <div className="lra-footer">
-                <p
-                  className={"lra-footer-status" + (showError ? " is-error" : "")}
-                  role={showError ? "alert" : undefined}
-                  aria-live="polite"
-                >
-                  {showError ? (
-                    <>
-                      <Icon name="error" size={18} />
-                      To continue: {blockers.join(" and ")}.
-                    </>
-                  ) : (
-                    hint
-                  )}
-                </p>
-                <div className="lra-footer-btns">
-                  {step === 0 && region.flow === "emea" && (
-                    <button type="button" className="lra-btn is-ghost is-destructive" onClick={reset}>
-                      Abandon
-                    </button>
-                  )}
-                  {step > 0 && (
-                    <button type="button" className="lra-btn is-secondary" onClick={() => go(step - 1)}>
-                      Back
-                    </button>
-                  )}
-                  <button type="button" className="lra-btn is-primary" onClick={saveAndContinue}>
-                    {primaryLabel}
+        {/* Header: the stepper — each step is a link */}
+        {step !== "done" && (
+          <div className="lra-head">
+            <ol className="lra-stepper">
+              {STEPS.map((label, i) => (
+                <li key={label} className={i === step ? "is-current" : i < step ? "is-done" : ""}>
+                  <button type="button" aria-current={i === step ? "step" : undefined} onClick={() => go(i)}>
+                    <span className="lra-step-num" aria-hidden="true">
+                      {i < step ? <Icon name="check" size={16} /> : i + 1}
+                    </span>
+                    <span className="lra-step-label">{label}</span>
                   </button>
-                </div>
-              </div>
-            )}
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
 
-            {/* APAC: CDS on FX/OTC needs an ISDA agreement — shown as a snackbar */}
-            {step === 1 && verdict.showCds && (
-              <div className="lra-snackbar" role="alert">
-                <p>
-                  CDS transactions require an ISDA agreement. Consult a member of the SBL team before
-                  proceeding.
-                </p>
-                <button
-                  type="button"
-                  className="lra-icon-btn"
-                  aria-label="Dismiss"
-                  onClick={() => update({ cdsDismissed: true })}
-                >
-                  <Icon name="close" />
+        <div className="lra-body" ref={bodyRef}>
+          {step !== "done" && <h3 className="lra-page-title">{pageTitle}</h3>}
+          {step === 0 && (
+            <StepClient deal={deal} update={update} addParty={addParty} onBuildSbl={buildSbl} region={region} />
+          )}
+          {step === 1 && (
+            <StepDetails
+              deal={deal}
+              update={update}
+              setField={setField}
+              verdict={verdict}
+              region={region}
+              tried={tried}
+              onTried={() => setTried(true)}
+            />
+          )}
+          {step === 2 && <StepReview deal={deal} verdict={verdict} onEdit={go} />}
+          {step === "done" && <Submission deal={deal} onRestart={reset} />}
+        </div>
+
+        {inWizard && (
+          <div className="lra-footer">
+            <p
+              className={"lra-footer-status" + (showError ? " is-error" : "")}
+              role={showError ? "alert" : undefined}
+              aria-live="polite"
+            >
+              {showError ? (
+                <>
+                  <Icon name="error" size={18} />
+                  To continue: {blockers.join(" and ")}.
+                </>
+              ) : (
+                hint
+              )}
+            </p>
+            <div className="lra-footer-btns">
+              {step === 0 && region.flow === "emea" && (
+                <button type="button" className="lra-btn is-ghost is-destructive" onClick={reset}>
+                  Abandon
                 </button>
-              </div>
-            )}
-          </>
+              )}
+              {step > 0 && (
+                <button type="button" className="lra-btn is-secondary" onClick={() => go(step - 1)}>
+                  Back
+                </button>
+              )}
+              <button type="button" className="lra-btn is-primary" onClick={saveAndContinue}>
+                {primaryLabel}
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* APAC: CDS on FX/OTC needs an ISDA agreement — shown as a snackbar */}
+        {step === 1 && verdict.showCds && (
+          <div className="lra-snackbar" role="alert">
+            <p>
+              CDS transactions require an ISDA agreement. Consult a member of the SBL team before
+              proceeding.
+            </p>
+            <button
+              type="button"
+              className="lra-icon-btn"
+              aria-label="Dismiss"
+              onClick={() => update({ cdsDismissed: true })}
+            >
+              <Icon name="close" />
+            </button>
+          </div>
         )}
       </div>
     </ScaledFrame>

@@ -9,8 +9,9 @@ import FacilityCard from "./FacilityCard";
    this request starts: an action on an existing facility, or a new deal.
    Building an SBL deal goes straight on to Loan details. */
 
-export default function StepClient({ deal, update, addParty, onBuildSbl }) {
+export default function StepClient({ deal, update, addParty, onBuildSbl, region }) {
   const uid = useId();
+  const ccy = deal.currency;
   const [clientId, setClientId] = useState("");
   const [role, setRole] = useState("");
 
@@ -112,6 +113,25 @@ export default function StepClient({ deal, update, addParty, onBuildSbl }) {
             </table>
           </div>
         )}
+
+        {/* USPB: flag the deal for Global Families Group processing */}
+        {region.gfg && deal.parties.length > 0 && (
+          <div className="lra-gfg">
+            <label>
+              <input type="checkbox" checked={deal.gfg} onChange={(e) => update({ gfg: e.target.checked })} />
+              GFG (Global Families Group) Deal
+            </label>
+            <span className="lra-info">
+              <button type="button" className="lra-info-btn" aria-label="About GFG deals" aria-describedby={`${uid}-gfg-tip`}>
+                <Icon name="info" size={18} />
+              </button>
+              <span className="lra-tip" role="tooltip" id={`${uid}-gfg-tip`}>
+                Check this box to flag this deal for Global Families Group processing workflow. This will
+                route the ticket to the appropriate GFG processing team.
+              </span>
+            </span>
+          </div>
+        )}
       </Section>
 
       {deal.parties.length > 0 && (
@@ -124,6 +144,7 @@ export default function StepClient({ deal, update, addParty, onBuildSbl }) {
                 <FacilityCard
                   key={fac.id}
                   fac={fac}
+                  currency={ccy}
                   selected={deal.facilityId === fac.id}
                   action={deal.facilityAction}
                   onAction={(a, on) =>
@@ -134,7 +155,7 @@ export default function StepClient({ deal, update, addParty, onBuildSbl }) {
                             facilityId: fac.id,
                             facilityAction: a,
                             build: null,
-                            ...(fac.kind === "sbl" && d.facilityId !== fac.id ? builderFor(fac) : {}),
+                            ...(fac.kind === "sbl" && d.facilityId !== fac.id ? builderFor(fac, ccy) : {}),
                           }
                     )
                   }

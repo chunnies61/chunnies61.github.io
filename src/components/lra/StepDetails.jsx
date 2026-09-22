@@ -34,6 +34,7 @@ export default function StepDetails({ deal, update, setField, verdict, region, t
   const uid = useId();
   const [over, setOver] = useState(false); // a file is being dragged over the drop zone
   const f = deal.fields;
+  const ccy = deal.currency;
   const { errors, missing, facility } = verdict;
   const required = tried && (missing.facilityType || missing.lineSize);
 
@@ -147,7 +148,7 @@ export default function StepDetails({ deal, update, setField, verdict, region, t
                       <Dropdown
                         compact
                         label={`Market value currency for ${c.acct}`}
-                        value={deal.collateralCcy[c.acct] ?? c.ccy}
+                        value={deal.collateralCcy[c.acct] ?? c.ccy ?? ccy}
                         onChange={(v) =>
                           update((d) => ({ collateralCcy: { ...d.collateralCcy, [c.acct]: v } }))
                         }
@@ -299,10 +300,10 @@ export default function StepDetails({ deal, update, setField, verdict, region, t
           {deal.facilityType === "FX/OTC Derivatives" && (
             <>
               <Field
-                label="Peak limit (USD)"
+                label={`Peak limit (${ccy})`}
                 id={`${uid}-peak`}
                 error={errors.peakLimit}
-                hint="Streamlined up to USD 2.5MM"
+                hint={`Streamlined up to ${ccy} 2.5MM`}
               >
                 <input
                   id={`${uid}-peak`}
@@ -332,7 +333,7 @@ export default function StepDetails({ deal, update, setField, verdict, region, t
                   onChange={(e) => setField("tenor", e.target.value)}
                 />
               </Field>
-              <Field label="Expected notional (USD)" id={`${uid}-notional`}>
+              <Field label={`Expected notional (${ccy})`} id={`${uid}-notional`}>
                 <input
                   id={`${uid}-notional`}
                   inputMode="decimal"

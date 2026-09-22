@@ -17,7 +17,7 @@ export const money = (n, ccy) =>
   }`;
 
 /* The Loan details fields, empty */
-export function freshBuilder() {
+export function freshBuilder(currency = "USD") {
   return {
     collateralTab: "collaterals",
     collaterals: [],
@@ -27,7 +27,7 @@ export function freshBuilder() {
     facilityType: "",
     fields: {},
     lineSize: "",
-    currency: "USD",
+    currency,
     assetType: "Equities",
     documents: [],
     note: "",
@@ -39,23 +39,24 @@ export function freshBuilder() {
 
 /* The Loan details fields for an action on an existing facility: its
    current terms, ready to be changed */
-export function builderFor(fac) {
+export function builderFor(fac, currency) {
   return {
-    ...freshBuilder(),
+    ...freshBuilder(currency),
     facilityType: fac.type,
     lineSize: String(fac.lineValue),
     collaterals: fac.collateral.split(", ").filter((a) => COLLATERALS.some((c) => c.acct === a)),
   };
 }
 
-export function emptyDeal() {
+export function emptyDeal(currency = "USD") {
   return {
     parties: [],
     loading: false,
     facilityId: null,
     facilityAction: null,
     build: null, // null | "sbl" | "custom"
-    ...freshBuilder(),
+    gfg: false, // USPB: flagged for Global Families Group processing
+    ...freshBuilder(currency),
   };
 }
 
@@ -112,6 +113,7 @@ export function offersFor(deal) {
    field errors that explain, and a soft hint per step in the footer. */
 export function assess(deal, region) {
   const ga = Boolean(region.compliance);
+  const ccy = region.currency ?? "USD";
   const f = deal.fields;
   const facility = FACILITIES.find((x) => x.id === deal.facilityId);
   // In the builder: a new SBL deal, or an action on an existing SBL facility
@@ -120,7 +122,7 @@ export function assess(deal, region) {
 
   if (deal.facilityType === "FX/OTC Derivatives") {
     if (num(f.peakLimit) > PEAK_LIMIT_USD)
-      errors.peakLimit = "Exceeds the USD 2.5MM peak limit — handled as a Custom ticket.";
+      errors.peakLimit = `Exceeds the ${ccy} 2.5MM peak limit — handled as a Custom ticket.`;
     if (num(f.tenor) > MAX_TENOR_MONTHS)
       errors.tenor = "Exceeds 10 years (120 months) — handled as a Custom ticket.";
   }

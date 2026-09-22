@@ -18,7 +18,7 @@ export default function Submission({ deal, onRestart }) {
       }
     : {
         facility: deal.facilityType || facility?.type || "–",
-        lineSize: num(deal.lineSize) > 0 ? money(deal.lineSize, deal.currency) : facility?.lineSize ?? "–",
+        lineSize: num(deal.lineSize) > 0 ? money(deal.lineSize, deal.currency) : facility ? money(facility.lineValue, deal.currency) : "–",
         collateral: deal.collaterals.join(", ") || facility?.collateral || "–",
       };
 

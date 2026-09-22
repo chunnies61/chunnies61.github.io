@@ -26,7 +26,7 @@ const initials = (name) =>
 // Amend is the common path (outlined); Restructure is the quieter one (text)
 const ACTION_STYLE = ["is-secondary", "is-ghost"];
 
-export default function FacilityCard({ fac, selected, action, onAction }) {
+export default function FacilityCard({ fac, currency, selected, action, onAction }) {
   const used = fac.drawn / fac.lineValue;
   const pct = Math.round(used * 100);
   const near = used >= 0.8;
@@ -64,7 +64,7 @@ export default function FacilityCard({ fac, selected, action, onAction }) {
           <div className="lra-fac-tile is-lead">
             <span className="lra-fac-label">Line size</span>
             <strong>{amount(fac.lineValue)}</strong>
-            <span className="lra-fac-sub">USD</span>
+            <span className="lra-fac-sub">{currency}</span>
           </div>
           <div className={"lra-fac-tile" + (near ? " is-near" : "")}>
             <span className="lra-fac-label">Drawn</span>

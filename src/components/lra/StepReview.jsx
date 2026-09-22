@@ -201,11 +201,12 @@ export default function StepReview({ deal, verdict, onEdit }) {
           <dl className="lra-kv is-review">
             {acting && <Row label="Existing facility" value={`${facility.badge} · ${facility.type}`} />}
             <Row label="Deal type" value={deal.build === "custom" ? "Tailored (Custom)" : "Streamlined (SBL)"} />
+            {deal.gfg && <Row label="GFG deal" value="Yes — routed to the GFG processing team" />}
             <Row label="Facility type" value={deal.facilityType} />
             <Row label="Requested line size" value={num(deal.lineSize) > 0 ? money(deal.lineSize, deal.currency) : ""} />
             <Row label="Asset type" value={deal.assetType} />
             <Row label="Host account" value={host} />
-            {f.peakLimit && <Row label="Peak limit" value={money(f.peakLimit, "USD")} />}
+            {f.peakLimit && <Row label="Peak limit" value={money(f.peakLimit, deal.currency)} />}
             {f.tenor && <Row label="Tenor" value={`${f.tenor} months`} />}
             {f.txnType && <Row label="Transaction type" value={f.txnType} />}
             {f.initialMargin && <Row label="Initial margin" value={`${f.initialMargin}%`} />}
@@ -241,7 +242,7 @@ export default function StepReview({ deal, verdict, onEdit }) {
                       <td>{c.type}</td>
                       <td>{c.stdLv}</td>
                       <td>{c.emlLv}</td>
-                      <td className="is-num">{money(c.mv, deal.collateralCcy[c.acct] ?? c.ccy)}</td>
+                      <td className="is-num">{money(c.mv, deal.collateralCcy[c.acct] ?? c.ccy ?? deal.currency)}</td>
                     </tr>
                   ))}
                 </tbody>

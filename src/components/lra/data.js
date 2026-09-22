@@ -2,10 +2,12 @@
    Everything here is dummy: names, IDs, account numbers and amounts are
    invented and stand in for real client and bank data. */
 
+// Each region's flow, its currency (every amount is shown in it), and any
+// region-only fields. USPB is the EMEA flow in USD, plus the GFG flag.
 export const REGIONS = [
-  { id: "emea", label: "EMEA", flow: "emea" },
-  { id: "apac", label: "APAC", flow: "apac", compliance: true },
-  { id: "uspb", label: "USPB", flow: "wip" },
+  { id: "emea", label: "EMEA", flow: "emea", currency: "EUR" },
+  { id: "apac", label: "APAC", flow: "apac", currency: "USD", compliance: true },
+  { id: "uspb", label: "USPB", flow: "emea", currency: "USD", gfg: true },
 ];
 
 export const STEPS = ["Client & facility", "Loan details", "Loan review"];
@@ -28,7 +30,6 @@ export const FACILITIES = [
     badge: "Streamlined (SBL)",
     facilityId: "100000001",
     borrowers: "Alex Morgan",
-    lineSize: "2,000,000.00 USD",
     lineValue: 2000000,
     drawn: 1240000,
     type: "Global limit",
@@ -43,7 +44,6 @@ export const FACILITIES = [
     badge: "Tailored (Custom)",
     facilityId: "100000002",
     borrowers: "Alex Morgan, Casey Lin",
-    lineSize: "5,500,000.00 USD",
     lineValue: 5500000,
     drawn: 4620000,
     type: "Commitment – Term loan",
@@ -55,8 +55,8 @@ export const FACILITIES = [
 ];
 
 export const COLLATERALS = [
-  { acct: "400001", owners: "Alex Morgan", platform: "SGP", type: "Custody", pledged: "No", stdLv: "70%", emlLv: "80%", mv: 3250000, ccy: "USD" },
-  { acct: "400004", owners: "Alex Morgan, Casey Lin", platform: "SGP", type: "Discretionary", pledged: "Yes", stdLv: "65%", emlLv: "75%", mv: 6100000, ccy: "USD" },
+  { acct: "400001", owners: "Alex Morgan", platform: "SGP", type: "Custody", pledged: "No", stdLv: "70%", emlLv: "80%", mv: 3250000 },
+  { acct: "400004", owners: "Alex Morgan, Casey Lin", platform: "SGP", type: "Discretionary", pledged: "Yes", stdLv: "65%", emlLv: "75%", mv: 6100000 },
   { acct: "400005", owners: "Alex Morgan", platform: "SGP", type: "Brokerage", pledged: "No", stdLv: "50%", emlLv: "—", mv: 1480000, ccy: "SGD" },
 ];
 
