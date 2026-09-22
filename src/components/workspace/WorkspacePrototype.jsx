@@ -6,6 +6,10 @@ import Overview from "./Overview";
 import { DealJourney, Opportunities } from "./tables";
 import { Menu } from "./table";
 import PortfolioHealth from "./Health";
+import Insights from "./Insights";
+import DocQC from "./DocQC";
+import MarginCall from "./MarginCall";
+import BookSim from "./BookSim";
 import "../lra/Lra.css";
 import "./Workspace.css";
 
@@ -29,6 +33,8 @@ export default function WorkspacePrototype({ title = "Lending Workspace prototyp
   const [section, setSection] = useState("overview");
   const [oppTab, setOppTab] = useState("offers");
   const [pill, setPill] = useState("portfolio");
+  const [insightsTab, setInsightsTab] = useState("collateral");
+  const [bookTab, setBookTab] = useState("home");
   const [search, setSearch] = useState("");
   const [client, setClient] = useState("");
   const [toast, setToast] = useState("");
@@ -47,16 +53,18 @@ export default function WorkspacePrototype({ title = "Lending Workspace prototyp
     setSection(id);
     if (id === "opps" && sub) setOppTab(sub);
     if (id === "health") setPill(sub ?? "portfolio");
+    if (id === "insights" && sub) setInsightsTab(sub);
+    if (id === "book" && sub) setBookTab(sub);
   }
 
   useEffect(() => {
     bodyRef.current?.scrollTo({ top: 0 });
-  }, [section, pill, oppTab]);
+  }, [section, pill, oppTab, insightsTab, bookTab]);
 
   const placeholder = (what) => () => say(`${what} isn't part of this prototype.`);
 
   // The page currently open inside a section, for sections that have pages
-  const currentSub = { deals: "deals", opps: oppTab, health: pill };
+  const currentSub = { deals: "deals", opps: oppTab, health: pill, insights: insightsTab, book: bookTab };
   const active = SECTIONS.find((s) => s.id === section);
   const activeSub = active.subs?.find(([k]) => k === currentSub[section]);
 
@@ -232,6 +240,10 @@ export default function WorkspacePrototype({ title = "Lending Workspace prototyp
             {section === "deals" && <DealJourney onPlaceholder={say} />}
             {section === "opps" && <Opportunities tab={oppTab} onPlaceholder={say} />}
             {section === "health" && <PortfolioHealth pill={pill} setPill={setPill} onPlaceholder={say} />}
+            {section === "insights" && <Insights onPlaceholder={say} />}
+            {section === "docqc" && <DocQC onPlaceholder={say} />}
+            {section === "margin" && <MarginCall onPlaceholder={say} />}
+            {section === "book" && <BookSim onPlaceholder={say} />}
           </div>
 
           {toast && (

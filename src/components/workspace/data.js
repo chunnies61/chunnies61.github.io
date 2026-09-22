@@ -44,16 +44,27 @@ export const SECTIONS = [
   {
     id: "insights",
     label: "Insights",
+    built: true,
     subs: [
       ["analytics", "Lending Analytics"],
-      ["collateral", "Collateral Insights"],
+      ["collateral", "Collateral Insights", true],
       ["ipo", "IPO Lending"],
     ],
   },
-  { id: "docqc", label: "Doc QC" },
+  { id: "docqc", label: "Doc QC", built: true },
   { id: "collateral", label: "Collateral Tools" },
-  { id: "margin", label: "Margin Call" },
-  { id: "book", label: "Book Simulation" },
+  { id: "margin", label: "Margin Call", built: true },
+  {
+    id: "book",
+    label: "Book Simulation",
+    built: true,
+    subs: [
+      ["home", "Home", true],
+      ["client", "Client View"],
+      ["position", "Position View"],
+      ["summary", "Summary View"],
+    ],
+  },
 ];
 export const EXTERNAL = ["ILM", "Atlas Holdings LLC"];
 
@@ -261,3 +272,116 @@ export const ANNUAL = CLIENTS.slice(0, 20).map((name, i) => {
     owner: PEOPLE[(i + 3) % PEOPLE.length],
   };
 });
+
+/* --- Insights › Collateral Insights ----------------------------------------- */
+export const INSIGHT_ASOF = "2026-09-18";
+
+export const INSIGHT_KPIS = [
+  ["Total Positions", "80,094"],
+  ["DM ECI Count", "13K"],
+  ["Facility Count", "19K"],
+  ["Collateral MV", "$430B"],
+  ["Post Haircut ELV", "$262B"],
+  ["Secured Exposure", "$53B"],
+];
+
+// Search filters, then the four classification selects
+export const INSIGHT_FILTERS = [
+  "Inst Long Name",
+  "Client Name",
+  "ECI Identifier",
+  "DM ECI Identifier",
+  "Instr Id",
+  "Facility Number",
+];
+export const INSIGHT_SELECTS = [
+  "Source Asset Type",
+  "Inst Clsf Type Name L1",
+  "Inst Clsf Type Name L2",
+  "Inst Clsf Type Name L3",
+];
+
+/* [label, DM ECI count, facility count, collateral MV, post-haircut ELV,
+   secured exposure] — raw numbers so the in-cell bars can scale */
+export const ASSET_TYPES = [
+  ["Cash", 12000, 17000, 7e9, 5e9, 1e9],
+  ["Mutual Fund", 11000, 15000, 116e9, 87e9, 12e9],
+  ["Equities", 9000, 12000, 201e9, 116e9, 26e9],
+  ["Fixed Income", 4000, 5000, 37e9, 29e9, 6e9],
+  ["Alternative Investments", 3000, 4000, 20e9, 449e6, 79e6],
+  ["Other", 198, 241, 1e9, 22e3, 15e3],
+  ["Commodities", 193, 222, 2e9, 924e6, 50e6],
+  ["Hedge Fund", 41, 49, 14e9, 6e9, 2e9],
+  ["Life Insurance", 38, 66, 2e9, 2e9, 1e9],
+  ["Management Fees", 36, 37, 5e9, 2e9, 764e6],
+  ["Artwork", 26, 29, 6e9, 3e9, 1e9],
+  ["Private Equity", 8, 10, 4e9, 2e9, 481e6],
+];
+
+export const TOP_BY = [
+  ["eci", "DM ECI Count"],
+  ["facilities", "Facility Count"],
+  ["mv", "Collateral MV"],
+  ["elv", "Post Haircut ELV"],
+  ["exposure", "Secured Exposure"],
+];
+
+/* [client, instrument, asset type, facility, DM ECI count, facility count,
+   collateral MV, post-haircut ELV, secured exposure] */
+export const POSITIONS = [
+  ["Atlas Holdings LLC", "US Treasury 4.25% 2030", "Fixed Income", "FAC-880142", 412, 615, 4.2e9, 3.9e9, 1.4e9],
+  ["Bellweather Trust", "Vanguard Total Stock Idx", "Mutual Fund", "FAC-880517", 388, 702, 3.8e9, 2.9e9, 1.1e9],
+  ["Cortland Family Office", "Apple Inc", "Equities", "FAC-881003", 604, 489, 3.1e9, 1.8e9, 940e6],
+  ["Dunmore Partners", "USD Demand Deposit", "Cash", "FAC-881260", 275, 840, 2.6e9, 2.6e9, 780e6],
+  ["Everline Capital", "Blackstone Private Credit", "Alternative Investments", "FAC-881744", 96, 138, 2.2e9, 640e6, 410e6],
+  ["Fairmount Group", "Microsoft Corp", "Equities", "FAC-882019", 521, 377, 1.9e9, 1.1e9, 360e6],
+  ["Glenrock Holdings", "iShares Core MSCI EAFE", "Mutual Fund", "FAC-882388", 344, 296, 1.4e9, 1.0e9, 290e6],
+  ["Harbour Point LP", "Gold Bullion — LBMA", "Commodities", "FAC-882640", 58, 71, 980e6, 540e6, 150e6],
+];
+
+/* --- Doc QC ------------------------------------------------------------------ */
+export const DOCQC_DISCLAIMER =
+  "This feature is for internal use only within USPB. Outputs may be inaccurate, misleading, outdated, incomplete or out of context — even when they appear credible. Do not rely on this content without independent verification from approved sources and subject-matter experts. Do not share or discuss any output with external parties, including recipients, regulators, vendors, clients or prospects.";
+
+export const DOCQC_FILE_TYPES = "PDF, DOC, DOCX, XLS, XLSX, XLSM, ZIP";
+
+/* --- Margin Call -------------------------------------------------------------- */
+export const MARGIN_META = { app: "GCM Margin Calls", env: "UAT1 NA", release: "CONNECT 1.3.1" };
+
+// [id, label, count, tone]
+export const MARGIN_GROUPS = [
+  ["invalid", "Invalid", 5, "is-critical"],
+  ["resolved", "Resolved", 243, "is-good"],
+  ["override", "Review Resolved with Amount Override", 5, "is-warn"],
+  ["unreviewed", "Unreviewed", 788, "is-warn"],
+  ["cwm", "Valid CWM", 33, "is-neutral"],
+  ["gwm", "Valid GWM", 149, "is-neutral"],
+];
+
+export const MARGIN_COLUMNS = [
+  "LOB",
+  "Ticket ID",
+  "Arrangement ID",
+  "Issue Date",
+  "Cause of Margin Call",
+  "Classified Valid/Invalid?",
+  "Total Margin Call Amount USD",
+  "RAG Rating",
+  "Team",
+];
+
+export const MARGIN_CAUSES = [
+  "Market value drop",
+  "Collateral withdrawal",
+  "Haircut change",
+  "New drawdown",
+  "FX move",
+];
+
+/* --- Book Simulation ---------------------------------------------------------- */
+export const BOOK_COB = [
+  ["Asia", "11/Oct/2026"],
+  ["Europe", "12/Oct/2026"],
+  ["Switzerland", "19/May/2026"],
+  ["North America", "13/Oct/2026"],
+];
