@@ -559,6 +559,7 @@
 }
 
 .lra-body {
+  position: relative; /* the loading overlay centres on it */
   flex: 1;
   min-height: 0;
   padding: 32px;
@@ -1214,10 +1215,6 @@
 
 .lra-section > .lra-table-wrap + .lra-table-wrap,
 .lra-party-row + .lra-table-wrap,
-.lra-loading + .lra-table-wrap {
-  margin-top: 16px;
-}
-
 .lra-table {
   width: 100%;
   border-collapse: collapse;
@@ -2306,22 +2303,29 @@
   margin-top: 24px;
 }
 
+/* Loading: an overlay centred on the page, over a light scrim */
 .lra-loading {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
-  margin-top: 16px;
+  justify-content: center;
+  gap: 14px;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.72);
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;
-  color: var(--ui-fg-tertiary);
+  color: var(--ui-fg-secondary);
 }
 
 /* Loading indicator — line spinner */
 .lra-spinner {
-  width: 24px;
-  height: 24px;
-  border: 3px solid var(--ui-border-secondary);
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--ui-border-secondary);
   border-top-color: var(--ui-primary);
   border-radius: 50%;
   animation: lra-spin 0.9s linear infinite;

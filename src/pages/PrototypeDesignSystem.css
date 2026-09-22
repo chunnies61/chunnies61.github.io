@@ -462,3 +462,11 @@
 .pds-tab-edge {
   border-top: 3px solid var(--ui-gray-800);
 }
+
+/* The loading overlay, shown inline as a specimen */
+.pds-progress .lra-loading {
+  position: static;
+  flex-direction: row;
+  gap: 12px;
+  background: transparent;
+}
