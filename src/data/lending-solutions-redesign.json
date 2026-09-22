@@ -867,11 +867,13 @@
         },
         {
           "type": "lra-prototype",
-          "title": "Loan Request App"
+          "title": "Loan Request App",
+          "intro": "Where a request begins: the banker adds the parties, acts on an existing facility or builds a new deal, and gets an indicative offer — with Credit's rules checked at entry instead of after submission. Switch the preview to see how each region shapes the same flow."
         },
         {
           "type": "workspace-prototype",
-          "title": "Lending Workspace"
+          "title": "Lending Workspace",
+          "intro": "The single pane of glass that replaced ten separate apps: the book, the deal pipeline, portfolio health, insights and QC in one shell, organised by who's working and what they're doing rather than by which system holds the data."
         }
       ]
     },
