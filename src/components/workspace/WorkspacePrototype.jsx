@@ -30,7 +30,6 @@ const UTILITIES = [
 export default function WorkspacePrototype({ title = "Lending Workspace prototype" }) {
   const uid = useId();
   const [section, setSection] = useState("overview");
-  const [oppTab, setOppTab] = useState("offers");
   const [pill, setPill] = useState("portfolio");
   const [search, setSearch] = useState("");
   const [client, setClient] = useState("");
@@ -48,18 +47,17 @@ export default function WorkspacePrototype({ title = "Lending Workspace prototyp
   // Jump to a section (and optionally one of its tabs)
   function go(id, sub) {
     setSection(id);
-    if (id === "opps" && sub) setOppTab(sub);
     if (id === "health") setPill(sub ?? "portfolio");
   }
 
   useEffect(() => {
     bodyRef.current?.scrollTo({ top: 0 });
-  }, [section, pill, oppTab]);
+  }, [section, pill]);
 
   const placeholder = (what) => () => say(`${what} isn't part of this prototype.`);
 
   // The page currently open inside a section, for sections that have pages
-  const currentSub = { opps: oppTab, health: pill };
+  const currentSub = { health: pill };
   const active = SECTIONS.find((s) => s.id === section);
   const pageTitle = active.subs ? active.subs.find(([k]) => k === currentSub[section])?.[1] : active.page;
 
@@ -184,7 +182,7 @@ export default function WorkspacePrototype({ title = "Lending Workspace prototyp
             )}
             {section === "overview" && <Overview go={go} onPlaceholder={say} />}
             {section === "deals" && <DealJourney onPlaceholder={say} />}
-            {section === "opps" && <Opportunities tab={oppTab} onPlaceholder={say} />}
+            {section === "opps" && <Opportunities onPlaceholder={say} />}
             {section === "health" && <PortfolioHealth pill={pill} setPill={setPill} onPlaceholder={say} />}
             {section === "insights" && <Insights onPlaceholder={say} />}
             {section === "docqc" && <DocQC onPlaceholder={say} />}

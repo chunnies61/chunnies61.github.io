@@ -14,14 +14,7 @@ export const HEALTH_PILLS = [
 export const SECTIONS = [
   { id: "overview", label: "Overview" },
   { id: "deals", label: "Deal Journey", page: "Deal Journey" },
-  {
-    id: "opps",
-    label: "Opportunities",
-    subs: [
-      ["plc", "PLC Conversions"],
-      ["offers", "Pre-Approved Offers"],
-    ],
-  },
+  { id: "opps", label: "Opportunities", page: "Pre-Approved Offers" },
   { id: "health", label: "Portfolio Health", subs: HEALTH_PILLS },
   { id: "insights", label: "Insights", page: "Collateral Insights" },
   { id: "docqc", label: "Doc QC" },
@@ -35,7 +28,6 @@ export const TOP_DEALS = ["Robert Johnson", "Peter Walsh", "Jim Wallace", "John 
 export const HEALTH_TILES = [
   ["Annual Review", 336, "annual"],
   ["Collateral Zone", 1076],
-  ["PLC Conversions", 1369],
   ["Delinquency", 1302],
   ["Doc Hub", 1713],
   ["Informational Items", 1103],

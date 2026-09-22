@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState } from "react";
-import { Icon } from "../lra/ui";
 import { DEALS, DEAL_TILES, OFFERS } from "./data";
 import { DataTable } from "./table";
 
@@ -63,54 +61,10 @@ function OffersTable({ onPlaceholder }) {
   );
 }
 
-/* PLC Conversions — the feed is down; Retry tries again (and fails again) */
-function PlcError() {
-  const [loading, setLoading] = useState(false);
-  const [tries, setTries] = useState(0);
-  const timer = useRef(null);
-  useEffect(() => () => clearTimeout(timer.current), []);
-
-  return (
-    <div className="ws-state" role="status" aria-live="polite">
-      {loading ? (
-        <>
-          <span className="lra-spinner" aria-hidden="true" />
-          <p>Loading PLC conversions…</p>
-        </>
-      ) : (
-        <>
-          <span className="ws-state-icon" aria-hidden="true">
-            <Icon name="cloudOff" size={32} />
-          </span>
-          <p className="ws-state-title">No data received from server</p>
-          <p className="lra-muted">
-            {tries ? `Tried again ${tries} ${tries === 1 ? "time" : "times"} — the feed is still unavailable.` : "The PLC conversions feed didn't respond."}
-          </p>
-          <button
-            type="button"
-            className="lra-btn is-secondary"
-            onClick={() => {
-              setLoading(true);
-              clearTimeout(timer.current);
-              timer.current = setTimeout(() => {
-                setLoading(false);
-                setTries((t) => t + 1);
-              }, 1200);
-            }}
-          >
-            <Icon name="refresh" size={18} />
-            Retry
-          </button>
-        </>
-      )}
-    </div>
-  );
-}
-
-export function Opportunities({ tab, onPlaceholder }) {
+export function Opportunities({ onPlaceholder }) {
   return (
     <div className="ws-section">
-      {tab === "offers" ? <OffersTable onPlaceholder={onPlaceholder} /> : <PlcError />}
+      <OffersTable onPlaceholder={onPlaceholder} />
     </div>
   );
 }

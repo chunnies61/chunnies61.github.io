@@ -179,7 +179,6 @@ export default function Overview({ go, onPlaceholder }) {
 
         <Card title="Opportunities" onOpen={() => go("opps")}>
           <div className="ws-metrics">
-            <Metric label="PLC Conversions" value={0} onClick={() => go("opps", "plc")} />
             <Metric label="Pre-Approved Offers" value={549} onClick={() => go("opps", "offers")} />
           </div>
         </Card>
