@@ -165,16 +165,6 @@ export default function VisionPrototype({ title = "Future-vision prototype" }) {
       ) : (
       <ScaledFrame title="Loan Request – Future vision" path={`/lending/loan-request/prototype?variant=${variant}`}>
         <div className="lra-window">
-          <div className="lra-appbar">
-            <span className="lra-icon-btn" aria-hidden="true">
-              <Icon name="close" />
-            </span>
-            <span className="lra-appbar-title">Loan Request: New loan request</span>
-            <span className="lra-icon-btn" aria-hidden="true">
-              <Icon name="moreVert" />
-            </span>
-          </div>
-
           <div className="lra-head">
             {step !== "done" && (
               <ol className="lra-stepper vp-stepper">

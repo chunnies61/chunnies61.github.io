@@ -174,13 +174,7 @@
   white-space: nowrap;
 }
 
-/* Type: text-lg semibold for the app header, text-md semibold for sections */
-.lra-appbar-title {
-  font-size: 18px;
-  line-height: 28px;
-  font-weight: 600;
-}
-
+/* Type: text-md semibold for sections */
 .lra-section-head h4,
 .lra-ticket h4 {
   font-size: 16px;
@@ -526,32 +520,6 @@
 }
 
 /* App header — 64px, title text-lg semibold */
-.lra-appbar {
-  flex: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  height: 64px;
-  padding: 0 16px 0 12px;
-  border-bottom: 1px solid var(--ui-border-secondary);
-  background: var(--ui-bg);
-  color: var(--ui-fg);
-}
-
-.lra-appbar .lra-icon-btn {
-  color: var(--ui-icon);
-}
-
-.lra-appbar .lra-icon-btn:last-child {
-  margin-left: auto;
-}
-
-.lra-appbar-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .lra-head {
   flex: none;
   padding: 16px 32px;

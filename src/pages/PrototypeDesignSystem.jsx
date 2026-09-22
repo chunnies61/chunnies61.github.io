@@ -489,15 +489,6 @@ export default function PrototypeDesignSystem() {
             <Specimen className="pds-frame-demo">
               <ScaledFrame title="Example app" path="/lending/example">
                 <div className="lra-window">
-                  <div className="lra-appbar">
-                    <span className="lra-icon-btn" aria-hidden="true">
-                      <Icon name="close" />
-                    </span>
-                    <span className="lra-appbar-title">New loan request</span>
-                    <span className="lra-icon-btn" aria-hidden="true">
-                      <Icon name="moreVert" />
-                    </span>
-                  </div>
                   <div className="lra-body pds-frame-body">
                     <p>1920 × 984 app area</p>
                   </div>

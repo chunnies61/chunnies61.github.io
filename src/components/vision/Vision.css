@@ -60,8 +60,9 @@
 }
 
 /* --- Header ------------------------------------------------------------------ */
-.vp .lra-head {
-  padding-top: 0;
+/* The proposals' stepper sits centred, like the Loan Request App's */
+.vp .lra-stepper {
+  justify-content: center;
 }
 
 
