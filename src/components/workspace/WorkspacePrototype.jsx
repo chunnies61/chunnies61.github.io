@@ -116,7 +116,7 @@ export default function WorkspacePrototype({ title = "Lending Workspace prototyp
                 <Icon name="home" size={20} />
               </button>
               <button type="button" className="ws-ws-tab is-on" aria-current="page">
-                Lending
+                Lending Workspace
               </button>
             </nav>
             <ol className="ws-crumbs" aria-label="Breadcrumb">
