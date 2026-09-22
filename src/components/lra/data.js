@@ -4,9 +4,8 @@
 
 export const REGIONS = [
   { id: "emea", label: "EMEA", flow: "emea" },
-  { id: "emea-geneva", label: "EMEA – GVA", flow: "emea" },
   { id: "apac-pilot", label: "APAC – Pilot", flow: "apac" },
-  { id: "apac-ga", label: "APAC – GA", flow: "apac", compliance: true },
+  { id: "apac", label: "APAC", flow: "apac", compliance: true },
   { id: "uspb", label: "USPB", flow: "wip" },
 ];
 

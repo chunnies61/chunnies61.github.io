@@ -2432,7 +2432,7 @@
   color: var(--ui-fg-tertiary);
 }
 
-/* --- Toast (APAC – GA notice, snackbars) ---------------------------------------- */
+/* --- Toast (APAC notice, snackbars) ---------------------------------------- */
 .lra-snackbar {
   position: absolute;
   bottom: 88px;

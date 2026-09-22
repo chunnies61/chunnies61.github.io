@@ -13,9 +13,9 @@ import "./Lra.css";
 
    LraFlow is one region's wizard in its browser window: Client & facility,
    Loan details, Loan review, then the submission. LraPrototype adds the
-   Preview toggle that switches regions: EMEA and EMEA – GVA share the EMEA
-   flow; APAC – Pilot and APAC – GA share the APAC flow, with GA adding its
-   compliance gates; USPB is still a work in progress. The future-vision
+   Preview toggle that switches regions: EMEA; APAC – Pilot and APAC share
+   the APAC flow, with APAC adding its compliance gates; USPB is still a
+   work in progress. The future-vision
    prototype reuses LraFlow (EMEA) as its Current state. All data is mocked
    (see ./data.js). */
 
@@ -174,7 +174,7 @@ export function LraFlow({ region, suffix, path }) {
               </div>
             )}
 
-            {/* APAC – GA: CDS on FX/OTC needs an ISDA agreement — shown as a snackbar */}
+            {/* APAC: CDS on FX/OTC needs an ISDA agreement — shown as a snackbar */}
             {step === 1 && verdict.showCds && (
               <div className="lra-snackbar" role="alert">
                 <p>
