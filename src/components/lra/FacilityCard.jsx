@@ -2,10 +2,10 @@ import { Icon } from "./ui";
 import Menu from "./menu";
 import { AS_OF, FACILITY_ACTIONS, FACILITY_MORE_ACTIONS } from "./data";
 
-/* An existing facility. The hierarchy runs top-down: what it is and what
-   you can do with it; the line size as the one big number, its
-   utilisation right beneath and the supporting figures beside it; then
-   who is on it and what secures it, quietly, in the footer. */
+/* An existing facility, as a structured card: a tinted identity band; three
+   stat tiles (line size, drawn with its utilisation, available); a compact
+   list of maturity, borrowers and collateral; and the actions along the
+   bottom. Two cards sit side by side. */
 
 const day = (iso) => new Date(`${iso}T00:00:00Z`).getTime();
 const months = (ms) => Math.round(ms / (1000 * 60 * 60 * 24 * 30.44));
@@ -15,8 +15,7 @@ const date = (iso) => {
   return `${d}-${MONTHS[+m - 1]}-${y}`;
 };
 
-const usd = (n) =>
-  n >= 1e6 ? `$${(n / 1e6).toFixed(2).replace(/\.?0+$/, "")}M` : `$${Math.round(n / 1e3)}K`;
+const amount = (n) => n.toLocaleString("en-US");
 
 const initials = (name) =>
   name
@@ -42,7 +41,7 @@ export default function FacilityCard({ fac, selected, action, onAction }) {
       className={"lra-fac" + (selected ? " is-selected" : "") + (custom ? " is-custom" : "")}
       aria-label={`${fac.type}, facility ${fac.facilityId}`}
     >
-      {/* Identity + actions */}
+      {/* Identity */}
       <header className="lra-fac-head">
         <span className="lra-fac-icon" aria-hidden="true">
           <Icon name="bank" />
@@ -57,88 +56,88 @@ export default function FacilityCard({ fac, selected, action, onAction }) {
             Facility {fac.facilityId} · Opened {date(fac.opened)}
           </p>
         </div>
-        <div className="lra-fac-actions" role="group" aria-label={`Actions for facility ${fac.facilityId}`}>
-          {FACILITY_ACTIONS.map((a, i) => {
-            const on = selected && action === a;
-            return (
-              <button
-                key={a}
-                type="button"
-                className={`lra-btn ${ACTION_STYLE[i]}` + (on ? " is-on" : "")}
-                aria-pressed={on}
-                onClick={() => onAction(a, on)}
-              >
-                {on && <Icon name="check" size={18} />}
-                {a}
-              </button>
-            );
-          })}
-          <Menu label="More actions" items={FACILITY_MORE_ACTIONS} value={moreOn} onSelect={onAction} />
-        </div>
       </header>
 
-      {/* The numbers: line size leads, the rest support */}
       <div className="lra-fac-body">
-        <div className="lra-fac-hero">
-          <span className="lra-fac-label">Line size</span>
-          <strong className="lra-fac-amount">
-            {fac.lineValue.toLocaleString("en-US")} <span>USD</span>
-          </strong>
-          <div
-            className={"lra-fac-util" + (near ? " is-near" : "")}
-            role="img"
-            aria-label={`Utilisation ${pct}%: ${usd(fac.drawn)} drawn of ${usd(fac.lineValue)}`}
-          >
-            <span style={{ width: `${pct}%` }} />
+        {/* The numbers, as tiles */}
+        <div className="lra-fac-tiles">
+          <div className="lra-fac-tile is-lead">
+            <span className="lra-fac-label">Line size</span>
+            <strong>{amount(fac.lineValue)}</strong>
+            <span className="lra-fac-sub">USD</span>
           </div>
-          <p className="lra-fac-caption">
-            <strong>{pct}%</strong> drawn
-          </p>
+          <div className={"lra-fac-tile" + (near ? " is-near" : "")}>
+            <span className="lra-fac-label">Drawn</span>
+            <strong>{amount(fac.drawn)}</strong>
+            <div
+              className="lra-fac-util"
+              role="img"
+              aria-label={`Utilisation ${pct}%: ${amount(fac.drawn)} drawn of ${amount(fac.lineValue)}`}
+            >
+              <span style={{ width: `${pct}%` }} />
+            </div>
+            <span className="lra-fac-sub">{pct}% of line</span>
+          </div>
+          <div className="lra-fac-tile">
+            <span className="lra-fac-label">Available</span>
+            <strong>{amount(fac.lineValue - fac.drawn)}</strong>
+            <span className="lra-fac-sub">{100 - pct}% headroom</span>
+          </div>
         </div>
-        <dl className="lra-fac-stats">
-          <div>
-            <dt>Drawn</dt>
-            <dd>{usd(fac.drawn)}</dd>
-          </div>
-          <div>
-            <dt>Available</dt>
-            <dd>{usd(fac.lineValue - fac.drawn)}</dd>
-          </div>
+
+        {/* Term, people, security */}
+        <dl className="lra-fac-rows">
           <div>
             <dt>Matures</dt>
             <dd>
               {fac.maturity}
-              <span>{left} months left</span>
+              <span> · {left} months left</span>
+            </dd>
+          </div>
+          <div>
+            <dt>Borrower{borrowers.length > 1 ? "s" : ""}</dt>
+            <dd className="lra-fac-people">
+              {borrowers.map((b) => (
+                <span key={b} className="lra-fac-person">
+                  <span className="lra-fac-avatar" aria-hidden="true">
+                    {initials(b)}
+                  </span>
+                  {b}
+                </span>
+              ))}
+            </dd>
+          </div>
+          <div>
+            <dt>Collateral</dt>
+            <dd className="lra-fac-people">
+              {accounts.map((a) => (
+                <span key={a} className="lra-fac-account">
+                  {a}
+                </span>
+              ))}
             </dd>
           </div>
         </dl>
       </div>
 
-      {/* People and collateral */}
-      <footer className="lra-fac-foot">
-        <div>
-          <span className="lra-fac-label">Borrower{borrowers.length > 1 ? "s" : ""}</span>
-          <span className="lra-fac-people">
-            {borrowers.map((b) => (
-              <span key={b} className="lra-fac-person">
-                <span className="lra-fac-avatar" aria-hidden="true">
-                  {initials(b)}
-                </span>
-                {b}
-              </span>
-            ))}
-          </span>
-        </div>
-        <div>
-          <span className="lra-fac-label">Collateral</span>
-          <span className="lra-fac-people">
-            {accounts.map((a) => (
-              <span key={a} className="lra-fac-account">
-                {a}
-              </span>
-            ))}
-          </span>
-        </div>
+      {/* Actions */}
+      <footer className="lra-fac-actions" role="group" aria-label={`Actions for facility ${fac.facilityId}`}>
+        {FACILITY_ACTIONS.map((a, i) => {
+          const on = selected && action === a;
+          return (
+            <button
+              key={a}
+              type="button"
+              className={`lra-btn ${ACTION_STYLE[i]}` + (on ? " is-on" : "")}
+              aria-pressed={on}
+              onClick={() => onAction(a, on)}
+            >
+              {on && <Icon name="check" size={18} />}
+              {a}
+            </button>
+          );
+        })}
+        <Menu label="More actions" items={FACILITY_MORE_ACTIONS} value={moreOn} onSelect={onAction} />
       </footer>
 
       {selected && custom && (

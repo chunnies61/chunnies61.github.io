@@ -1382,15 +1382,18 @@
 }
 
 /* --- Existing facility card (FacilityCard.jsx) ------------------------------
-   Top-down hierarchy: what it is and what you can do with it; the line
-   size as the one big number, its utilisation beneath and the supporting
-   figures beside; then borrowers and collateral, quietly, in the footer. */
+   A structured card, two side by side: a tinted identity band; three stat
+   tiles (line size leads; drawn carries the utilisation bar; available);
+   a compact list of maturity, borrowers and collateral; the actions along
+   the bottom. */
 .lra-fac-grid {
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
 }
 
 .lra-fac {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   border: 1px solid var(--ui-border-secondary);
   border-radius: var(--ui-radius-md);
@@ -1404,11 +1407,18 @@
   box-shadow: var(--ui-shadow-xs), inset 0 0 0 1px var(--ui-primary);
 }
 
+/* Identity band */
 .lra-fac-head {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 20px 24px;
+  gap: 14px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--ui-border-secondary);
+  background: var(--ui-brand-25);
+}
+
+.lra-fac.is-custom .lra-fac-head {
+  background: var(--ui-purple-50);
 }
 
 .lra-fac-icon {
@@ -1416,16 +1426,15 @@
   flex: none;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--ui-radius-md);
-  background: var(--ui-brand-50);
+  background: var(--ui-bg);
   box-shadow: inset 0 0 0 1px var(--ui-brand-200);
   color: var(--ui-primary);
 }
 
 .lra-fac.is-custom .lra-fac-icon {
-  background: var(--ui-purple-50);
   box-shadow: inset 0 0 0 1px var(--ui-purple-200);
   color: var(--ui-purple-700);
 }
@@ -1459,25 +1468,34 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* Actions: Amend (secondary), Restructure (tertiary), then the ⋯ menu */
-.lra-fac-actions {
-  display: flex;
-  flex: none;
-  align-items: center;
-  gap: 8px;
-}
-
-/* The numbers */
 .lra-fac-body {
-  display: grid;
-  grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr));
-  gap: 24px 32px;
-  padding: 20px 24px 24px;
-  border-top: 1px solid var(--ui-border-secondary);
+  flex: 1;
+  padding: 20px;
 }
 
-.lra-fac-label,
-.lra-fac-stats dt {
+/* Stat tiles */
+.lra-fac-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.lra-fac-tile {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--ui-border-secondary);
+  border-radius: var(--ui-radius-sm);
+  background: var(--ui-bg-secondary);
+}
+
+.lra-fac-tile.is-lead {
+  border-color: var(--ui-brand-200);
+  background: var(--ui-bg);
+}
+
+.lra-fac-label {
   font-size: 12px;
   line-height: 18px;
   font-weight: 600;
@@ -1486,107 +1504,95 @@
   color: var(--ui-fg-tertiary);
 }
 
-.lra-fac-amount {
-  display: block;
+.lra-fac-tile strong {
   margin-top: 4px;
-  font-size: 30px;
-  line-height: 38px;
+  font-size: 24px;
+  line-height: 32px;
   font-weight: 600;
   color: var(--ui-fg);
   font-variant-numeric: tabular-nums;
 }
 
-.lra-fac-amount span {
-  margin-left: 4px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--ui-fg-tertiary);
+.lra-fac-tile.is-lead strong {
+  color: var(--ui-primary);
 }
 
-.lra-fac-util {
-  height: 8px;
-  margin-top: 12px;
-  overflow: hidden;
-  border-radius: 4px;
-  background: var(--ui-gray-100);
-}
-
-.lra-fac-util > span {
-  display: block;
-  height: 100%;
-  border-radius: 4px;
-  background: var(--ui-primary);
-}
-
-.lra-fac-util.is-near > span {
-  background: var(--ui-warning-600);
-}
-
-.lra-fac-caption {
-  margin-top: 6px;
+.lra-fac-sub {
+  margin-top: 2px;
   font-size: 12px;
   line-height: 18px;
   color: var(--ui-fg-tertiary);
 }
 
-.lra-fac-caption strong {
-  font-weight: 600;
-  color: var(--ui-fg-secondary);
+.lra-fac-util {
+  height: 6px;
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: var(--ui-gray-200);
 }
 
-.lra-fac-stats {
-  display: contents;
-  margin: 0;
-}
-
-.lra-fac-stats dd {
-  margin: 4px 0 0;
-  font-size: 18px;
-  line-height: 28px;
-  font-weight: 600;
-  color: var(--ui-fg);
-  font-variant-numeric: tabular-nums;
-}
-
-.lra-fac-stats dd span {
+.lra-fac-util > span {
   display: block;
+  height: 100%;
+  border-radius: 3px;
+  background: var(--ui-primary);
+}
+
+.lra-fac-tile.is-near .lra-fac-util > span {
+  background: var(--ui-warning-600);
+}
+
+.lra-fac-tile.is-near .lra-fac-sub {
+  font-weight: 600;
+  color: var(--ui-warning-700);
+}
+
+/* Term, people, security */
+.lra-fac-rows {
+  margin: 16px 0 0;
+}
+
+.lra-fac-rows > div {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid var(--ui-border-secondary);
+}
+
+.lra-fac-rows dt {
   font-size: 13px;
-  line-height: 18px;
+  line-height: 20px;
   font-weight: 500;
   color: var(--ui-fg-tertiary);
 }
 
-/* People and collateral */
-.lra-fac-foot {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px 40px;
-  padding: 12px 24px;
-  border-top: 1px solid var(--ui-border-secondary);
-  background: var(--ui-bg-secondary);
+.lra-fac-rows dd {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--ui-fg);
+  font-variant-numeric: tabular-nums;
 }
 
-.lra-fac-foot > div {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.lra-fac-rows dd > span:not([class]) {
+  font-weight: 400;
+  color: var(--ui-fg-tertiary);
 }
 
 .lra-fac-people {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 16px;
+  gap: 6px 16px;
 }
 
 .lra-fac-person {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 500;
-  color: var(--ui-fg);
 }
 
 /* Avatars: a solid fill in the main colour */
@@ -1611,16 +1617,25 @@
   border: 1px solid var(--ui-border);
   border-radius: var(--ui-radius-sm);
   background: var(--ui-bg);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--ui-fg);
-  font-variant-numeric: tabular-nums;
+}
+
+/* Actions: Amend (secondary), Restructure (tertiary), then the ⋯ menu */
+.lra-fac-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-top: 1px solid var(--ui-border-secondary);
+}
+
+.lra-fac-actions > :last-child {
+  margin-left: auto;
 }
 
 /* A Tailored facility: where this request goes instead */
 .lra-fac-note {
   margin: 0;
-  padding: 12px 24px;
+  padding: 12px 20px;
   border-top: 1px solid var(--ui-warning-200);
   background: var(--ui-warning-50);
   font-size: 14px;
@@ -1985,7 +2000,7 @@
 }
 
 /* Section cards, each with an Edit link back to its step. A brand bar
-   down the left edge and a tinted head make each section easy to find. */
+   down the left edge makes each section easy to find. */
 .lra-review-card {
   overflow: hidden;
   border: 1px solid var(--ui-border-secondary);
@@ -2001,7 +2016,6 @@
   gap: 10px;
   padding: 12px 12px 12px 20px;
   border-bottom: 1px solid var(--ui-border-secondary);
-  background: var(--ui-bg-secondary);
 }
 
 .lra-review-card-head h4 {
