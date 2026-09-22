@@ -144,7 +144,7 @@ export default function P1Step({ deal, update, setB, addParty }) {
           {/* Revealed when the collateral falls short — and kept while it's in use */}
           {(route.id === "short" ||
             (route.id !== "dm" && (b.life === "Yes" || b.additional === "Yes"))) && (
-            <div className="lra-sbl vp-reveal">
+            <div className="vp-reveal">
               <p className="vp-reveal-title">
                 <Icon name="add" size={18} />
                 Add more security
@@ -156,7 +156,7 @@ export default function P1Step({ deal, update, setB, addParty }) {
 
           {/* Revealed only for unsecured deals */}
           {route.id === "dm" && (
-            <div className="lra-sbl vp-reveal">
+            <div className="vp-reveal">
               <p className="vp-reveal-title">
                 <Icon name="description" size={18} />
                 Credit underwriting
