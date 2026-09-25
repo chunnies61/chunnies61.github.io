@@ -316,7 +316,7 @@ export default function Overview({ go, onPlaceholder }) {
               </tr>
             </thead>
             <tbody>
-              {MATURITIES.map(([client, facility, type, days, line]) => (
+              {MATURITIES.slice(0, 3).map(([client, facility, type, days, line]) => (
                 <tr key={facility}>
                   <th scope="row">{client}</th>
                   <td>
