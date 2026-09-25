@@ -97,31 +97,3 @@ export function Sparkline({ points }) {
     </svg>
   );
 }
-
-/* Facilities plotted on the next 90 days */
-export function Timeline({ items, horizon = 90, soon = 30 }) {
-  return (
-    <div className="ws-tl" role="img" aria-label={`${items.length} facilities maturing in the next ${horizon} days`}>
-      <div className="ws-tl-track">
-        <span className="ws-tl-soon" style={{ width: `${(soon / horizon) * 100}%` }} />
-        {items.map(([client, facility, , days]) => (
-          <span
-            key={facility}
-            className={"ws-tl-dot" + (days <= soon ? " is-soon" : "")}
-            style={{ left: `${(days / horizon) * 100}%` }}
-            title={`${client} · ${facility} · ${days} days`}
-          >
-            <span className="ws-tl-name">{client.split(" ").pop()}</span>
-          </span>
-        ))}
-      </div>
-      <div className="ws-tl-ticks">
-        {[0, 30, 60, 90].map((d) => (
-          <span key={d} style={{ left: `${(d / horizon) * 100}%` }}>
-            {d === 0 ? "Today" : `${d}d`}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}

@@ -11,7 +11,7 @@ import {
   TASKS,
   TOP_DEALS,
 } from "./data";
-import { HealthRing, PipelineBar, Sparkline, Timeline } from "./charts";
+import { HealthRing, PipelineBar, Sparkline } from "./charts";
 
 /* Overview — the landing dashboard: three columns of cards. Card titles and
    metric tiles jump to the matching section. */
@@ -304,7 +304,6 @@ export default function Overview({ go, onPlaceholder }) {
         </Card>
 
         <Card title="Upcoming Maturities" aside={<span className="lra-pill is-neutral">Next 90 days</span>} onOpen={() => go("deals")}>
-          <Timeline items={MATURITIES} />
           <table className="ws-mini-table">
             <thead>
               <tr>
