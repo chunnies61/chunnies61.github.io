@@ -10,6 +10,7 @@ import StyleGuide from "./pages/StyleGuide";
 
 // The prototypes' design system carries their stylesheets, so it loads on demand
 const PrototypeDesignSystem = lazy(() => import("./pages/PrototypeDesignSystem"));
+const Capture = lazy(() => import("./pages/Capture"));
 
 function App() {
   return (
@@ -22,6 +23,14 @@ function App() {
           <Route path="/case-studies/:slug" element={<CaseStudy />} />
           <Route path="/projects" element={<AllProjects />} />
           <Route path="/style-guide" element={<StyleGuide />} />
+          <Route
+            path="/capture"
+            element={
+              <Suspense fallback={null}>
+                <Capture />
+              </Suspense>
+            }
+          />
           <Route
             path="/case-studies/lending-solutions-redesign/design-system"
             element={
