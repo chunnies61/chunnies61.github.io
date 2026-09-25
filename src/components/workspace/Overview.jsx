@@ -18,17 +18,10 @@ import { HealthRing, PipelineBar, Sparkline, Timeline } from "./charts";
 
 const fmt = (n) => n.toLocaleString("en-US");
 
-// `icon` puts a featured icon before the title; `action` tints the header
-// band, marking cards you act on rather than read
-export function Card({ title, icon, action = false, onOpen, aside, children, className = "" }) {
+export function Card({ title, onOpen, aside, children, className = "" }) {
   return (
-    <section className={`ws-card ${action ? "is-action " : ""}${className}`}>
+    <section className={`ws-card ${className}`}>
       <div className="ws-card-head">
-        {icon && (
-          <span className="ws-card-icon" aria-hidden="true">
-            <Icon name={icon} size={18} />
-          </span>
-        )}
         {onOpen ? (
           <h5>
             <button type="button" className="ws-card-link" onClick={onOpen}>
@@ -100,7 +93,7 @@ function OpenTasks({ onPlaceholder }) {
   const rows = all.slice((page - 1) * PER_PAGE, page * PER_PAGE);
 
   return (
-    <Card title="My Open Tasks" icon="checklist" action>
+    <Card title="My Open Tasks">
       <div className="lra-tabs ws-task-tabs" role="tablist" aria-label="Tasks">
         {[
           ["me", `Assigned to me (${TASKS.me.length})`],
@@ -180,7 +173,7 @@ export default function Overview({ go, onPlaceholder }) {
     <div className="ws-overview">
       {/* Column 1 */}
       <div className="ws-col">
-        <Card title="Deal Journey Tracker" icon="trendingUp" action onOpen={() => go("deals")}>
+        <Card title="Deal Journey Tracker" onOpen={() => go("deals")}>
           <PipelineBar stages={PIPELINE} />
           <div className="ws-mini-head">
             <p className="ws-mini-title">Top deals</p>
@@ -216,7 +209,7 @@ export default function Overview({ go, onPlaceholder }) {
           </table>
         </Card>
 
-        <Card title="Portfolio Health" icon="checkCircle" action onOpen={() => go("health")}>
+        <Card title="Portfolio Health" onOpen={() => go("health")}>
           <HealthRing segments={HEALTH_SPLIT} value={336} label="need action" />
           <div className="ws-tiles">
             {HEALTH_TILES.map(([label, value, pill, tone]) => (
@@ -225,7 +218,7 @@ export default function Overview({ go, onPlaceholder }) {
           </div>
         </Card>
 
-        <Card title="Pending Approvals" icon="hourglass" action aside={<span className="lra-pill is-neutral">{PENDING_APPROVALS.length} waiting</span>} onOpen={() => go("deals")}>
+        <Card title="Pending Approvals" aside={<span className="lra-pill is-neutral">{PENDING_APPROVALS.length} waiting</span>} onOpen={() => go("deals")}>
           <table className="ws-mini-table">
             <thead>
               <tr>
@@ -258,7 +251,7 @@ export default function Overview({ go, onPlaceholder }) {
 
       {/* Column 2 */}
       <div className="ws-col">
-        <Card title="Insights" icon="sparkle" aside={<span className="lra-pill is-neutral">May 2026</span>}>
+        <Card title="Insights" aside={<span className="lra-pill is-neutral">May 2026</span>}>
           <div className="ws-tiles is-2">
             {INSIGHTS.map(([label, value, series]) => (
               <div key={label} className="ws-metric">
@@ -274,7 +267,7 @@ export default function Overview({ go, onPlaceholder }) {
           </div>
         </Card>
 
-        <Card title="Margin Call/Near Margin" icon="warning">
+        <Card title="Margin Call/Near Margin">
           <table className="ws-mini-table">
             <thead>
               <tr>
@@ -299,7 +292,7 @@ export default function Overview({ go, onPlaceholder }) {
           </table>
         </Card>
 
-        <Card title="Past Due Payments" icon="bell">
+        <Card title="Past Due Payments">
           <dl className="ws-list">
             {["60+ days", "30–59 Days", "< 30 days", "Current not on auto-debit"].map((k) => (
               <div key={k}>
@@ -310,7 +303,7 @@ export default function Overview({ go, onPlaceholder }) {
           </dl>
         </Card>
 
-        <Card title="Upcoming Maturities" icon="calendar" action aside={<span className="lra-pill is-neutral">Next 90 days</span>} onOpen={() => go("deals")}>
+        <Card title="Upcoming Maturities" aside={<span className="lra-pill is-neutral">Next 90 days</span>} onOpen={() => go("deals")}>
           <Timeline items={MATURITIES} />
           <table className="ws-mini-table">
             <thead>
@@ -346,7 +339,7 @@ export default function Overview({ go, onPlaceholder }) {
       <div className="ws-col">
         <OpenTasks onPlaceholder={onPlaceholder} />
 
-        <Card title="New" icon="note" aside={<span className="lra-muted">{NEWSLETTER.date}</span>}>
+        <Card title="New" aside={<span className="lra-muted">{NEWSLETTER.date}</span>}>
           <article className="ws-news">
             <h6>{NEWSLETTER.title}</h6>
             {NEWSLETTER.paragraphs.map((p) => (
