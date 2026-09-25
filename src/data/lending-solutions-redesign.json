@@ -60,16 +60,6 @@
           ]
         },
         {
-          "type": "image",
-          "src": "/images/lending-after.png",
-          "label": "Loan Request App — the Client & facility step where a deal begins"
-        },
-        {
-          "type": "image",
-          "src": "/images/lending-workspace-overview.png",
-          "label": "Lending Workspace — the daily hub"
-        },
-        {
           "type": "text",
           "value": "Between them sits every role that touches a loan — Bankers, SC Advisors, Lender Specialists, Credit Risk and Middle Office — and every handoff where it can go wrong."
         }
