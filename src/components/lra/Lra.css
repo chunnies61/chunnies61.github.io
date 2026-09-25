@@ -1400,19 +1400,6 @@
   transition: border-color 0.1s linear, box-shadow 0.1s linear;
 }
 
-/* A rail in the facility's own colour, so type reads before the text does */
-.lra-fac::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 3px;
-  background: var(--ui-primary);
-}
-
-.lra-fac.is-custom::before {
-  background: var(--ui-purple-500, var(--ui-purple-700));
-}
-
 .lra-fac.is-selected {
   border-color: var(--ui-primary);
   box-shadow: var(--ui-shadow-xs), inset 0 0 0 1px var(--ui-primary);
