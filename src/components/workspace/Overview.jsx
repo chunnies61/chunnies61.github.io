@@ -28,11 +28,19 @@ export function Card({ title, onOpen, aside, children, className = "" }) {
   );
 }
 
-function Metric({ label, value, onClick }) {
-  const body = (
+// `labelFirst` puts the caption above the number
+function Metric({ label, value, onClick, labelFirst = false }) {
+  const v = <span className="ws-metric-value">{typeof value === "number" ? fmt(value) : value}</span>;
+  const l = <span className="ws-metric-label">{label}</span>;
+  const body = labelFirst ? (
     <>
-      <span className="ws-metric-value">{typeof value === "number" ? fmt(value) : value}</span>
-      <span className="ws-metric-label">{label}</span>
+      {l}
+      {v}
+    </>
+  ) : (
+    <>
+      {v}
+      {l}
     </>
   );
   return onClick ? (
@@ -186,7 +194,7 @@ export default function Overview({ go, onPlaceholder }) {
         <Card title="Portfolio Health" onOpen={() => go("health")}>
           <div className="ws-tiles">
             {HEALTH_TILES.map(([label, value, pill]) => (
-              <Metric key={label} label={label} value={value} onClick={() => go("health", pill ?? "portfolio")} />
+              <Metric key={label} label={label} value={value} labelFirst onClick={() => go("health", pill ?? "portfolio")} />
             ))}
           </div>
         </Card>
