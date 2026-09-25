@@ -25,20 +25,38 @@ export const SECTIONS = [
 /* --- Overview ------------------------------------------------------------- */
 export const TOP_DEALS = ["Robert Johnson", "Peter Walsh", "Jim Wallace", "John Trenton", "Danielle Houston"];
 
+// Portfolio Health tiles: [label, count, page, status]
 export const HEALTH_TILES = [
-  ["Annual Review", 336, "annual"],
-  ["Collateral Zone", 1076],
-  ["Delinquency", 1302],
-  ["Doc Hub", 1713],
-  ["Informational Items", 1103],
-  ["Risk Watch", 182],
+  ["Annual Review", 336, "annual", "error"],
+  ["Collateral Zone", 1076, undefined, "ok"],
+  ["Delinquency", 1302, undefined, "warn"],
+  ["Doc Hub", 1713, undefined, "ok"],
+  ["Informational Items", 1103, undefined, "ok"],
+  ["Risk Watch", 182, undefined, "warn"],
 ];
 
+// The book, by health
+export const HEALTH_SPLIT = [
+  { label: "Healthy", value: 13480, tone: "ok" },
+  { label: "Watch", value: 1896, tone: "warn" },
+  { label: "Needs action", value: 336, tone: "error" },
+];
+
+// The pipeline by stage
+export const PIPELINE = [
+  ["Draft", 1369],
+  ["In Flight", 2240],
+  ["Proposal Not Complete", 158],
+  ["Documentation", 175],
+  ["Completed", 2],
+];
+
+// KPIs with a 30-day trend (12 samples)
 export const INSIGHTS = [
-  ["Facility Counts", "15.71K"],
-  ["Total Line Size", "305.53B"],
-  ["Total Used/OS Amt", "110.39B"],
-  ["Total Available Amt", "183.17B"],
+  ["Facility Counts", "15.71K", [14.2, 14.4, 14.5, 14.9, 15.0, 15.1, 15.3, 15.2, 15.4, 15.5, 15.6, 15.71]],
+  ["Total Line Size", "305.53B", [281, 284, 288, 290, 289, 294, 297, 299, 301, 300, 303, 305.5]],
+  ["Total Used/OS Amt", "110.39B", [104, 105, 103, 106, 107, 108, 107, 109, 110, 111, 110, 110.4]],
+  ["Total Available Amt", "183.17B", [172, 174, 178, 178, 180, 179, 181, 182, 181, 183, 184, 183.2]],
 ];
 
 const TASK_TYPES = [

@@ -1,16 +1,34 @@
 import { useState } from "react";
 import { Icon } from "../lra/ui";
-import { HEALTH_TILES, INSIGHTS, MATURITIES, NEWSLETTER, PENDING_APPROVALS, TASKS, TOP_DEALS } from "./data";
+import {
+  HEALTH_SPLIT,
+  HEALTH_TILES,
+  INSIGHTS,
+  MATURITIES,
+  NEWSLETTER,
+  PENDING_APPROVALS,
+  PIPELINE,
+  TASKS,
+  TOP_DEALS,
+} from "./data";
+import { HealthRing, PipelineBar, Sparkline, Timeline } from "./charts";
 
 /* Overview — the landing dashboard: three columns of cards. Card titles and
    metric tiles jump to the matching section. */
 
 const fmt = (n) => n.toLocaleString("en-US");
 
-export function Card({ title, onOpen, aside, children, className = "" }) {
+// `icon` puts a featured icon before the title; `action` tints the header
+// band, marking cards you act on rather than read
+export function Card({ title, icon, action = false, onOpen, aside, children, className = "" }) {
   return (
-    <section className={`ws-card ${className}`}>
+    <section className={`ws-card ${action ? "is-action " : ""}${className}`}>
       <div className="ws-card-head">
+        {icon && (
+          <span className="ws-card-icon" aria-hidden="true">
+            <Icon name={icon} size={18} />
+          </span>
+        )}
         {onOpen ? (
           <h5>
             <button type="button" className="ws-card-link" onClick={onOpen}>
@@ -29,9 +47,14 @@ export function Card({ title, onOpen, aside, children, className = "" }) {
 }
 
 // `labelFirst` puts the caption above the number
-function Metric({ label, value, onClick, labelFirst = false }) {
+function Metric({ label, value, onClick, labelFirst = false, tone }) {
   const v = <span className="ws-metric-value">{typeof value === "number" ? fmt(value) : value}</span>;
-  const l = <span className="ws-metric-label">{label}</span>;
+  const l = (
+    <span className="ws-metric-label">
+      {tone && <span className={`ws-dot is-${tone}`} aria-hidden="true" />}
+      {label}
+    </span>
+  );
   const body = labelFirst ? (
     <>
       {l}
@@ -77,7 +100,7 @@ function OpenTasks({ onPlaceholder }) {
   const rows = all.slice((page - 1) * PER_PAGE, page * PER_PAGE);
 
   return (
-    <Card title="My Open Tasks">
+    <Card title="My Open Tasks" icon="checklist" action>
       <div className="lra-tabs ws-task-tabs" role="tablist" aria-label="Tasks">
         {[
           ["me", `Assigned to me (${TASKS.me.length})`],
@@ -157,11 +180,8 @@ export default function Overview({ go, onPlaceholder }) {
     <div className="ws-overview">
       {/* Column 1 */}
       <div className="ws-col">
-        <Card title="Deal Journey Tracker" onOpen={() => go("deals")}>
-          <div className="ws-metrics">
-            <Metric label="In Flight" value={2554} onClick={() => go("deals")} />
-            <Metric label="Completed Today" value={2} onClick={() => go("deals")} />
-          </div>
+        <Card title="Deal Journey Tracker" icon="trendingUp" action onOpen={() => go("deals")}>
+          <PipelineBar stages={PIPELINE} />
           <div className="ws-mini-head">
             <p className="ws-mini-title">Top deals</p>
             <div className="ws-mini-tools">
@@ -196,15 +216,16 @@ export default function Overview({ go, onPlaceholder }) {
           </table>
         </Card>
 
-        <Card title="Portfolio Health" onOpen={() => go("health")}>
+        <Card title="Portfolio Health" icon="checkCircle" action onOpen={() => go("health")}>
+          <HealthRing segments={HEALTH_SPLIT} value={336} label="need action" />
           <div className="ws-tiles">
-            {HEALTH_TILES.map(([label, value, pill]) => (
-              <Metric key={label} label={label} value={value} labelFirst onClick={() => go("health", pill ?? "portfolio")} />
+            {HEALTH_TILES.map(([label, value, pill, tone]) => (
+              <Metric key={label} label={label} value={value} labelFirst tone={tone} onClick={() => go("health", pill ?? "portfolio")} />
             ))}
           </div>
         </Card>
 
-        <Card title="Pending Approvals" aside={<span className="lra-pill is-neutral">{PENDING_APPROVALS.length} waiting</span>} onOpen={() => go("deals")}>
+        <Card title="Pending Approvals" icon="hourglass" action aside={<span className="lra-pill is-neutral">{PENDING_APPROVALS.length} waiting</span>} onOpen={() => go("deals")}>
           <table className="ws-mini-table">
             <thead>
               <tr>
@@ -237,22 +258,23 @@ export default function Overview({ go, onPlaceholder }) {
 
       {/* Column 2 */}
       <div className="ws-col">
-        <Card title="Insights" aside={<span className="lra-pill is-neutral">May 2026</span>}>
+        <Card title="Insights" icon="sparkle" aside={<span className="lra-pill is-neutral">May 2026</span>}>
           <div className="ws-tiles is-2">
-            {INSIGHTS.map(([label, value]) => (
+            {INSIGHTS.map(([label, value, series]) => (
               <div key={label} className="ws-metric">
                 <span className="ws-metric-label">{label}</span>
                 <span className="ws-metric-value">{value}</span>
+                <Sparkline points={series} />
                 <span className="ws-delta">
                   <Icon name="trendingUp" size={16} />
-                  +100% MoM
+                  30-day trend
                 </span>
               </div>
             ))}
           </div>
         </Card>
 
-        <Card title="Margin Call/Near Margin">
+        <Card title="Margin Call/Near Margin" icon="warning">
           <table className="ws-mini-table">
             <thead>
               <tr>
@@ -277,7 +299,7 @@ export default function Overview({ go, onPlaceholder }) {
           </table>
         </Card>
 
-        <Card title="Past Due Payments">
+        <Card title="Past Due Payments" icon="bell">
           <dl className="ws-list">
             {["60+ days", "30–59 Days", "< 30 days", "Current not on auto-debit"].map((k) => (
               <div key={k}>
@@ -288,7 +310,8 @@ export default function Overview({ go, onPlaceholder }) {
           </dl>
         </Card>
 
-        <Card title="Upcoming Maturities" aside={<span className="lra-pill is-neutral">Next 90 days</span>} onOpen={() => go("deals")}>
+        <Card title="Upcoming Maturities" icon="calendar" action aside={<span className="lra-pill is-neutral">Next 90 days</span>} onOpen={() => go("deals")}>
+          <Timeline items={MATURITIES} />
           <table className="ws-mini-table">
             <thead>
               <tr>
@@ -323,7 +346,7 @@ export default function Overview({ go, onPlaceholder }) {
       <div className="ws-col">
         <OpenTasks onPlaceholder={onPlaceholder} />
 
-        <Card title="New" aside={<span className="lra-muted">{NEWSLETTER.date}</span>}>
+        <Card title="New" icon="note" aside={<span className="lra-muted">{NEWSLETTER.date}</span>}>
           <article className="ws-news">
             <h6>{NEWSLETTER.title}</h6>
             {NEWSLETTER.paragraphs.map((p) => (
