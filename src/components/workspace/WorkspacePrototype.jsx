@@ -115,9 +115,18 @@ export default function WorkspacePrototype({ title = "Lending Workspace prototyp
               <button type="button" className="lra-icon-btn is-small" aria-label="Home" onClick={placeholder("Home")}>
                 <Icon name="home" size={20} />
               </button>
-              <button type="button" className="ws-ws-tab is-on" aria-current="page">
-                Lending Workspace
-              </button>
+              {/* The other apps are placeholders — only Lending Workspace is built */}
+              {["Lending Workspace", "CRM 360", "Catalog", "Connect AI"].map((w, i) => (
+                <button
+                  key={w}
+                  type="button"
+                  className={"ws-ws-tab" + (i === 0 ? " is-on" : "")}
+                  aria-current={i === 0 ? "page" : undefined}
+                  onClick={i === 0 ? undefined : placeholder(`The ${w} app`)}
+                >
+                  {w}
+                </button>
+              ))}
             </nav>
             <ol className="ws-crumbs" aria-label="Breadcrumb">
               <li>Recommended</li>
