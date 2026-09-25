@@ -594,11 +594,12 @@
   list-style: none;
 }
 
+/* A task: ticket, title and assignee on the left; urgency and due on the right */
 .ws-task {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
-  gap: 4px;
+  justify-content: space-between;
+  gap: 12px;
   width: 100%;
   margin: 0 -8px;
   padding: 10px 8px;
@@ -627,10 +628,52 @@
   color: var(--ui-fg-secondary);
 }
 
+.ws-task-main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.ws-task-assignee {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--ui-fg-tertiary);
+}
+
+.ws-task-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--ui-primary);
+  color: var(--ui-white);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
 .ws-task-meta {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex: none;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  padding-top: 2px;
+}
+
+.ws-mini-sub {
+  display: block;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--ui-fg-tertiary);
 }
 
 .ws-pager {

@@ -51,13 +51,30 @@ const TASK_TYPES = [
   ["Covenant certificate overdue", "High", 2],
 ];
 
-function tasks(count, start) {
+const TEAM = ["Priya Natarajan", "Daniel Okafor", "Mei Tanaka", "Luis Herrera", "Hannah Blake"];
+
+function tasks(count, start, assignee) {
   return Array.from({ length: count }, (_, i) => {
     const [title, priority, due] = TASK_TYPES[i % TASK_TYPES.length];
-    return { ticket: String(start + i), title, priority, due: due + Math.floor(i / TASK_TYPES.length) };
+    return {
+      ticket: String(start + i),
+      title,
+      priority,
+      due: due + Math.floor(i / TASK_TYPES.length),
+      assignee: assignee ?? TEAM[i % TEAM.length],
+    };
   });
 }
-export const TASKS = { me: tasks(12, 99968203649), team: tasks(56, 99968204100) };
+export const TASKS = { me: tasks(12, 99968203649, "Sam Rivera"), team: tasks(56, 99968204100) };
+
+// Facilities maturing in the next 90 days: [client, facility, type, days, line size]
+export const MATURITIES = [
+  ["Robert Johnson", "FAC-880142", "Global limit", 9, "$4,200,000"],
+  ["Ilana Thieme", "FAC-880517", "Term loan", 21, "$1,750,000"],
+  ["Peter Walsh", "FAC-881003", "FX/OTC line", 34, "$2,000,000"],
+  ["Danielle Houston", "FAC-881277", "Global limit", 58, "$6,500,000"],
+  ["Miles Bach", "FAC-881390", "Term loan", 83, "$950,000"],
+];
 
 export const NEWSLETTER = {
   title: "STEPPING INTO SPRING: Q1 RECAP",

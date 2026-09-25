@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Icon } from "../lra/ui";
-import { HEALTH_TILES, INSIGHTS, NEWSLETTER, TASKS, TOP_DEALS } from "./data";
+import { HEALTH_TILES, INSIGHTS, MATURITIES, NEWSLETTER, TASKS, TOP_DEALS } from "./data";
 
 /* Overview — the landing dashboard: three columns of cards. Card titles and
    metric tiles jump to the matching section. */
@@ -106,8 +106,19 @@ function OpenTasks({ onPlaceholder }) {
               className="ws-task"
               onClick={() => onPlaceholder("Tasks open the unified-workflow prototype, which isn't embedded here.")}
             >
-              <span className="ws-task-ticket">Ticket #{t.ticket}</span>
-              <span className="ws-task-title">{t.title}</span>
+              <span className="ws-task-main">
+                <span className="ws-task-ticket">Ticket #{t.ticket}</span>
+                <span className="ws-task-title">{t.title}</span>
+                <span className="ws-task-assignee">
+                  <span className="ws-task-avatar" aria-hidden="true">
+                    {t.assignee
+                      .split(" ")
+                      .map((w) => w[0])
+                      .join("")}
+                  </span>
+                  {t.assignee}
+                </span>
+              </span>
               <span className="ws-task-meta">
                 <span className={`lra-pill ${PRIORITY_TONE[t.priority]}`}>{t.priority}</span>
                 <span className="lra-muted">Due in {t.due} days</span>
@@ -185,10 +196,34 @@ export default function Overview({ go, onPlaceholder }) {
           </table>
         </Card>
 
-        <Card title="Opportunities" onOpen={() => go("opps")}>
-          <div className="ws-metrics">
-            <Metric label="Pre-Approved Offers" value={549} onClick={() => go("opps", "offers")} />
-          </div>
+        <Card title="Upcoming Maturities" aside={<span className="lra-pill is-neutral">Next 90 days</span>} onOpen={() => go("deals")}>
+          <table className="ws-mini-table">
+            <thead>
+              <tr>
+                <th scope="col">Client</th>
+                <th scope="col">Facility</th>
+                <th scope="col">Matures</th>
+                <th scope="col" className="is-num">
+                  Line Size
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {MATURITIES.map(([client, facility, type, days, line]) => (
+                <tr key={facility}>
+                  <th scope="row">{client}</th>
+                  <td>
+                    {facility}
+                    <span className="ws-mini-sub">{type}</span>
+                  </td>
+                  <td>
+                    <span className={"lra-pill " + (days <= 30 ? "is-warn" : "is-neutral")}>{days} days</span>
+                  </td>
+                  <td className="is-num">{line}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </Card>
 
         <Card title="Portfolio Health" onOpen={() => go("health")}>
@@ -206,8 +241,8 @@ export default function Overview({ go, onPlaceholder }) {
           <div className="ws-tiles is-2">
             {INSIGHTS.map(([label, value]) => (
               <div key={label} className="ws-metric">
-                <span className="ws-metric-value">{value}</span>
                 <span className="ws-metric-label">{label}</span>
+                <span className="ws-metric-value">{value}</span>
                 <span className="ws-delta">
                   <Icon name="trendingUp" size={16} />
                   +100% MoM
