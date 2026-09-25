@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Icon } from "../lra/ui";
-import { HEALTH_TILES, INSIGHTS, MATURITIES, NEWSLETTER, TASKS, TOP_DEALS } from "./data";
+import { HEALTH_TILES, INSIGHTS, MATURITIES, NEWSLETTER, PENDING_APPROVALS, TASKS, TOP_DEALS } from "./data";
 
 /* Overview — the landing dashboard: three columns of cards. Card titles and
    metric tiles jump to the matching section. */
@@ -202,6 +202,36 @@ export default function Overview({ go, onPlaceholder }) {
               <Metric key={label} label={label} value={value} labelFirst onClick={() => go("health", pill ?? "portfolio")} />
             ))}
           </div>
+        </Card>
+
+        <Card title="Pending Approvals" aside={<span className="lra-pill is-neutral">{PENDING_APPROVALS.length} waiting</span>} onOpen={() => go("deals")}>
+          <table className="ws-mini-table">
+            <thead>
+              <tr>
+                <th scope="col">Client</th>
+                <th scope="col">With</th>
+                <th scope="col">Waiting</th>
+                <th scope="col" className="is-num">
+                  Amount
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {PENDING_APPROVALS.map(([client, product, team, days, amount]) => (
+                <tr key={client}>
+                  <th scope="row">
+                    {client}
+                    <span className="ws-mini-sub">{product}</span>
+                  </th>
+                  <td>{team}</td>
+                  <td>
+                    <span className={"lra-pill " + (days >= 7 ? "is-warn" : "is-neutral")}>{days} days</span>
+                  </td>
+                  <td className="is-num">{amount}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </Card>
       </div>
 

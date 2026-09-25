@@ -67,6 +67,14 @@ function tasks(count, start, assignee) {
 }
 export const TASKS = { me: tasks(12, 99968203649, "Sam Rivera"), team: tasks(56, 99968204100) };
 
+// Deals waiting on a decision: [client, product, with whom, days waiting, amount]
+export const PENDING_APPROVALS = [
+  ["Peter Walsh", "Global limit", "Credit", 6, "$3,000,000"],
+  ["Ilana Thieme", "Term loan", "Underwriting", 4, "$1,750,000"],
+  ["Jim Wallace", "FX/OTC line", "Credit", 2, "$2,500,000"],
+  ["John Trenton", "Global limit", "Legal", 9, "$8,000,000"],
+];
+
 // Facilities maturing in the next 90 days: [client, facility, type, days, line size]
 export const MATURITIES = [
   ["Robert Johnson", "FAC-880142", "Global limit", 9, "$4,200,000"],
