@@ -196,36 +196,6 @@ export default function Overview({ go, onPlaceholder }) {
           </table>
         </Card>
 
-        <Card title="Upcoming Maturities" aside={<span className="lra-pill is-neutral">Next 90 days</span>} onOpen={() => go("deals")}>
-          <table className="ws-mini-table">
-            <thead>
-              <tr>
-                <th scope="col">Client</th>
-                <th scope="col">Facility</th>
-                <th scope="col">Matures</th>
-                <th scope="col" className="is-num">
-                  Line Size
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {MATURITIES.map(([client, facility, type, days, line]) => (
-                <tr key={facility}>
-                  <th scope="row">{client}</th>
-                  <td>
-                    {facility}
-                    <span className="ws-mini-sub">{type}</span>
-                  </td>
-                  <td>
-                    <span className={"lra-pill " + (days <= 30 ? "is-warn" : "is-neutral")}>{days} days</span>
-                  </td>
-                  <td className="is-num">{line}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </Card>
-
         <Card title="Portfolio Health" onOpen={() => go("health")}>
           <div className="ws-tiles">
             {HEALTH_TILES.map(([label, value, pill]) => (
@@ -286,6 +256,36 @@ export default function Overview({ go, onPlaceholder }) {
               </div>
             ))}
           </dl>
+        </Card>
+
+        <Card title="Upcoming Maturities" aside={<span className="lra-pill is-neutral">Next 90 days</span>} onOpen={() => go("deals")}>
+          <table className="ws-mini-table">
+            <thead>
+              <tr>
+                <th scope="col">Client</th>
+                <th scope="col">Facility</th>
+                <th scope="col">Matures</th>
+                <th scope="col" className="is-num">
+                  Line Size
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {MATURITIES.map(([client, facility, type, days, line]) => (
+                <tr key={facility}>
+                  <th scope="row">{client}</th>
+                  <td>
+                    {facility}
+                    <span className="ws-mini-sub">{type}</span>
+                  </td>
+                  <td>
+                    <span className={"lra-pill " + (days <= 30 ? "is-warn" : "is-neutral")}>{days} days</span>
+                  </td>
+                  <td className="is-num">{line}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </Card>
       </div>
 
