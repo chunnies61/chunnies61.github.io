@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Icon, Toggle } from "../lra/ui";
+import { Banner, Icon, Toggle } from "../lra/ui";
 import { ScaledFrame } from "../lra/frame";
 import { REGIONS } from "../lra/data";
 import { LraFlow } from "../lra/LraPrototype";
@@ -19,6 +19,10 @@ import "./Vision.css";
    below. All data is sample. */
 
 const FLOWS = { p1, p2, p3 };
+
+// Stands in when a proposal is continued before an offer is chosen — the
+// later steps render with dashes and a note instead of stopping the user
+const NO_OFFER = { kind: "offer", pending: true, facility: "", lineSize: 0, currency: "USD", collateral: [], host: "", product: "–", rate: "–", borrowers: "–" };
 const STEP_ONE = { p1: P1Step, p2: P2Step, p3: P3Step };
 const EMEA = REGIONS[0];
 
@@ -54,7 +58,7 @@ export default function VisionPrototype({ title = "Future-vision prototype" }) {
 
   const v = VARIANTS.find((x) => x.id === variant);
   const flow = FLOWS[variant]; // undefined for the Current state
-  const offer = flow ? flow.offerOf(deal) : null;
+  const offer = (flow ? flow.offerOf(deal) : null) ?? NO_OFFER;
   const reason = flow ? flow.blocker(deal) : null;
   const last = v.steps.length - 1;
   const StepOne = STEP_ONE[variant];
@@ -197,7 +201,14 @@ export default function VisionPrototype({ title = "Future-vision prototype" }) {
               />
             )}
             {step !== 0 && step !== "done" && step < last && (
-              <LoanDetails deal={deal} update={update} offer={offer} />
+              <>
+                {offer.pending && (
+                  <Banner tone="warning">
+                    No offer chosen yet — go back to pick one. The details below are placeholders until you do.
+                  </Banner>
+                )}
+                <LoanDetails deal={deal} update={update} offer={offer} />
+              </>
             )}
             {step !== 0 && step === last && <Review deal={deal} update={update} offer={offer} />}
             {step === "done" && <Submission deal={deal} offer={offer} />}

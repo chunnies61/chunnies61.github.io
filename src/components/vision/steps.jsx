@@ -8,10 +8,11 @@ import { Accordion, Field, InfoCard, PartiesTable, RiskComment, Section, Select,
 
 const PROCEEDS = "General Liquidity, to include the purchase of margin securities.";
 
+// Loan details for the chosen offer — dashes where nothing is chosen yet
 export function detailsOf(deal, offer) {
   return {
-    facility: offer.facility,
-    lineSize: money(offer.lineSize, offer.currency),
+    facility: offer?.facility || "–",
+    lineSize: offer?.lineSize ? money(offer.lineSize, offer.currency) : "–",
     pricingType: "Standard",
     tenor: "48",
     rateType: "Variable",
