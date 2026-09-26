@@ -112,7 +112,7 @@ export default function VisionPrototype({ title = "Future-vision prototype" }) {
       variant === "p2"
         ? ["Save as draft", "ghost", () => say("Saved as a draft.")]
         : ["Close", "ghost", () => reset()],
-      ["Save & continue", "primary", () => setStep(1), Boolean(reason)],
+      ["Save & continue", "primary", () => setStep(1)],
     ];
   } else {
     buttons = [

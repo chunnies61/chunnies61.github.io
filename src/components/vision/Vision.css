@@ -67,6 +67,11 @@
 
 
 /* --- Sections, fields --------------------------------------------------------- */
+/* Every table sits 20px below whatever precedes it */
+.vp * + .lra-table-wrap {
+  margin-top: 20px;
+}
+
 .vp .lra-section-head {
   align-items: flex-start;
   gap: 16px;
@@ -580,8 +585,8 @@
 }
 
 .is-done > .vp-check-dot {
-  border-color: var(--ui-primary);
-  background: var(--ui-primary);
+  border-color: var(--ui-success-600);
+  background: var(--ui-success-600);
   color: var(--ui-white);
 }
 
@@ -622,8 +627,8 @@
   color: var(--ui-primary);
 }
 
-.vp-path-route {
-  margin-top: 12px;
+.vp-path .vp-path-route {
+  margin: 20px 0;
 }
 
 .vp-path-route .lra-pill {
