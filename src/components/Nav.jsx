@@ -23,14 +23,6 @@ export default function Nav() {
               {link.label}
             </Link>
           ))}
-          <a
-            className="md-label-large"
-            href={site.nav.resumeUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            CV
-          </a>
         </nav>
       </div>
     </header>
