@@ -13,12 +13,4 @@
   gap: 8px 20px;
 }
 
-.footer-link {
-  color: var(--text-soft);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
 
-.footer-link:hover {
-  color: var(--accent-dark);
-}
