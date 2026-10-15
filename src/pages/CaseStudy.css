@@ -1886,3 +1886,30 @@ p.cs-proto-prompt {
 .has-tab > .cs-proto-loading {
   border-top-left-radius: 0;
 }
+
+/* --- Phone ------------------------------------------------------------------
+   The study's own title drops 30% (45 -> 32), and every rounded image softens
+   to 12px: most ride --radius-media, so the token carries them; the hero and
+   its copy panel carry their own 24px. */
+@media (max-width: 640px) {
+  .case-study {
+    --radius-media: 12px;
+  }
+
+  /* Outcome tiles stack: two-up leaves a hole on the last row and squeezes
+     the figures */
+  .cs-outcomes-grid,
+  .cs-outcomes-2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cs-header-title {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .cs-hero-image,
+  .cs-header-panel {
+    border-radius: 12px;
+  }
+}
