@@ -8,7 +8,7 @@ const CFG = {
   iconSizeDesktop: 56,
   iconSizeMobile: 44,
   tagHeightDesktop: 34, // pill tags: width = height × aspect
-  tagHeightMobile: 26,
+  tagHeightMobile: 31, // 20% up on phones, where the pills read small
   mobileBreakpoint: 560,
   gravity: 1,
   restitution: 0.45, // bounciness, 0–1

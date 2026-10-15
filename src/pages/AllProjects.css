@@ -47,9 +47,20 @@
   margin-top: 4px;
 }
 
+/* Stacked rows: the title keeps the left edge and the Red Dot label moves to
+   the right of the same line, rather than sitting under the title */
 @media (max-width: 900px) {
+  .ap-title {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
   .ap-award {
+    flex: none;
     width: 108px;
+    margin-top: 0;
   }
 }
 

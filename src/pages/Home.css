@@ -224,6 +224,18 @@
   color: var(--accent-dark);
 }
 
+/* Phone: the display headings drop 20% so they stop dominating the screen.
+   Hero 48 -> 38, section titles 32 -> 26. */
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 38px;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+}
+
 /* Below the full 920px grid width: stack case studies into one centered
    column so the 120px desktop gap never crowds the cards. */
 @media (max-width: 920px) {
@@ -348,5 +360,13 @@
   }
   .testimonial-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* About's heading is defined further down than the phone block above, so its
+   20% reduction has to come after it to win the cascade */
+@media (max-width: 640px) {
+  .about-hero-text h2 {
+    font-size: 32px;
   }
 }
