@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import PasswordGate, { useUnlocked } from "../components/PasswordGate";
+import study from "../data/lending-solutions-redesign.json";
 import { Banner, ICON_NAMES, Icon, Toggle } from "../components/lra/ui";
 import { ScaledFrame } from "../components/lra/frame";
 import "../components/lra/Lra.css";
@@ -228,7 +229,9 @@ function ContrastRow({ fg, bg, label, min = 4.5 }) {
 /* --- Page ------------------------------------------------------------------------ */
 
 export default function PrototypeDesignSystem() {
-  const [unlocked, unlock] = useUnlocked(SLUG);
+  // Gated only while the JPMC case study itself is protected
+  const [stored, unlock] = useUnlocked(SLUG);
+  const unlocked = !study.protected || stored;
   const [items, setItems] = useState([]);
   const [activeId, setActiveId] = useState(null);
   const [demoToggle, setDemoToggle] = useState("a");
