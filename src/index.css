@@ -295,7 +295,8 @@ button {
 .cs-section,
 .cs-row,
 .cs-step,
-.ap-row {
+.ap-row,
+.hero + .section {
   position: relative;
 }
 
@@ -303,7 +304,8 @@ button {
 .cs-row::after,
 .ap-row::after,
 .cs-step::before,
-.ap-row:first-child::before {
+.ap-row:first-child::before,
+.hero + .section::before {
   content: "";
   position: absolute;
   left: 0;
@@ -330,6 +332,15 @@ button {
 .cs-step::before,
 .ap-row:first-child::before {
   top: calc(var(--wave-height) / -2);
+}
+
+/* Below the home hero: the hero clips its contents, so the wave starts at the top
+   of the next section, right under the falling-tools pile */
+.hero + .section::before {
+  top: 0;
+  /* in line with the page's content column, like the other dividers */
+  left: max(24px, calc((100% - var(--max-width)) / 2 + 24px));
+  right: max(24px, calc((100% - var(--max-width)) / 2 + 24px));
 }
 
 /* No divider after the last section or row, before the first step, or on the
