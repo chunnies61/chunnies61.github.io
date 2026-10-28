@@ -202,13 +202,8 @@ a.cs-index-item.is-active:hover {
 /* Indexed section — single column now that the rail carries the navigation */
 .cs-section {
   padding: 40px 0;
-  border-bottom: 1px solid var(--card-border);
   /* Index jumps land below the 72px sticky site nav */
   scroll-margin-top: 72px;
-}
-
-.cs-section:last-child {
-  border-bottom: none;
 }
 
 @media (max-width: 1040px) {
@@ -274,11 +269,6 @@ a.cs-index-item.is-active:hover {
   grid-template-columns: 160px 1fr;
   gap: 40px;
   padding: 40px 0;
-  border-bottom: 1px solid var(--card-border);
-}
-
-.cs-row:last-child {
-  border-bottom: none;
 }
 
 .cs-row-label {
@@ -1164,7 +1154,6 @@ a.cs-index-item.is-active:hover {
   background: var(--surface-tint);
   box-shadow: 0 0 0 100vmax var(--surface-tint);
   clip-path: inset(0 -100vmax);
-  border-bottom: none;
 }
 
 /* Auto-rotating slideshow — cross-fades one image at a time */
@@ -1265,14 +1254,12 @@ a.cs-index-item.is-active:hover {
 
 /* Process steps */
 .cs-step {
-  border-top: 1px solid var(--card-border);
   padding-top: 28px;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 .cs-step:first-of-type {
-  border-top: none;
   padding-top: 0;
 }
 .cs-step-head {
