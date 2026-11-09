@@ -36,7 +36,7 @@ function OgCard() {
         <img className="og-logo" src="/images/logo-dcc224.svg" alt="" />
         <h1 className="og-name">Yichun Liu</h1>
         <p className="og-role">Staff Product Designer</p>
-        <p className="og-sub">Fintech, healthtech &amp; SaaS — 7+ years turning complex workflows into products people adopt.</p>
+        <p className="og-sub">Fintech, healthtech &amp; SaaS — 8+ years turning complex workflows into products people adopt.</p>
         <p className="og-url">yichuns.com</p>
       </div>
       <div className="og-art">
