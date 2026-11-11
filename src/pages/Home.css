@@ -2,6 +2,8 @@
   background: #ffffff;
 }
 
+/* A wash of the primary blue that fades out before the next section, so the
+   hero reads as its own surface without a hard edge against the white page. */
 .hero {
   position: relative;
   overflow: hidden;
@@ -9,6 +11,12 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  background: linear-gradient(
+    180deg,
+    rgba(69, 117, 231, 0.18) 0%,
+    rgba(69, 117, 231, 0.09) 42%,
+    rgba(69, 117, 231, 0) 100%
+  );
 }
 
 .hero-inner {

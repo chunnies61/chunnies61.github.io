@@ -1,0 +1,20 @@
+/* The About page's own spacing: the hero panel no longer follows a section
+   above it, so it opens at the page's standard top gap instead. */
+.about-page .about-hero {
+  margin-top: var(--space-page-top);
+  scroll-margin-top: 0;
+}
+
+/* Page title: the same size the heading had as a section on the home page. */
+.about-page .about-hero-text h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .about-page .about-hero-text h1 {
+    font-size: 32px;
+  }
+}

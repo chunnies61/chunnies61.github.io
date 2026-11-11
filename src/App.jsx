@@ -6,6 +6,7 @@ import ScrollToHash from "./components/ScrollToHash";
 import Home from "./pages/Home";
 import CaseStudy from "./pages/CaseStudy";
 import AllProjects from "./pages/AllProjects";
+import About from "./pages/About";
 import StyleGuide from "./pages/StyleGuide";
 
 // The prototypes' design system carries their stylesheets, so it loads on demand
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/case-studies/:slug" element={<CaseStudy />} />
           <Route path="/projects" element={<AllProjects />} />
+          <Route path="/about" element={<About />} />
           <Route path="/style-guide" element={<StyleGuide />} />
           <Route
             path="/capture"
