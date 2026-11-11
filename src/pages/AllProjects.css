@@ -18,7 +18,7 @@
   grid-template-columns: 2fr 3fr 6fr;
   gap: 32px;
   align-items: start;
-  padding: 48px 0;
+  padding: 68px 0;
 }
 
 .ap-title {
@@ -182,7 +182,7 @@
   .ap-row {
     grid-template-columns: 1fr;
     gap: 12px;
-    padding: 32px 0;
+    padding: 52px 0;
   }
   .ap-link {
     text-align: left;

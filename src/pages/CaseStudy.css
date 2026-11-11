@@ -201,7 +201,8 @@ a.cs-index-item.is-active:hover {
 
 /* Indexed section — single column now that the rail carries the navigation */
 .cs-section {
-  padding: 40px 0;
+  /* 40px of its own + 20px of breathing room each side of the wave divider */
+  padding: 60px 0;
   /* Index jumps land below the 72px sticky site nav */
   scroll-margin-top: 72px;
 }
@@ -268,7 +269,7 @@ a.cs-index-item.is-active:hover {
   display: grid;
   grid-template-columns: 160px 1fr;
   gap: 40px;
-  padding: 40px 0;
+  padding: 60px 0;
 }
 
 .cs-row-label {
@@ -1254,7 +1255,7 @@ a.cs-index-item.is-active:hover {
 
 /* Process steps */
 .cs-step {
-  padding-top: 28px;
+  padding-top: 48px;
   display: flex;
   flex-direction: column;
   gap: 16px;
