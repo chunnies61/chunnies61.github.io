@@ -103,13 +103,13 @@ const PAIRS = [
 ];
 
 const TYPE = [
-  ["Display sm", 30, 38, 600, "KPI values, borrowing capacity"],
-  ["Display xs", 24, 32, 600, "Metric tiles, summary counts"],
-  ["Text xl", 20, 30, 600, "Live-deal stats"],
-  ["Text lg", 18, 28, 600, "App header title, empty-state titles"],
-  ["Text md", 16, 24, 600, "Section and card titles (inputs use 400)"],
-  ["Text sm", 14, 20, 500, "Body, labels (500), buttons and tabs (600)"],
-  ["Text xs", 12, 18, 500, "Captions, key labels (badges use 600)"],
+  ["Display sm", 30, 38, 500, "KPI values, borrowing capacity"],
+  ["Display xs", 24, 32, 500, "Metric tiles, summary counts"],
+  ["Text xl", 20, 30, 400, "Live-deal stats"],
+  ["Text lg", 18, 28, 400, "App header title, empty-state titles"],
+  ["Text md", 16, 24, 400, "Section and card titles, input text"],
+  ["Text sm", 14, 20, 400, "Body, labels, buttons and tabs"],
+  ["Text xs", 12, 18, 400, "Captions, key labels, badges"],
 ];
 
 const SPACING = [2, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48];
@@ -409,7 +409,7 @@ export default function PrototypeDesignSystem() {
             </p>
           </Block>
 
-          <Block title="Typography" note="Poppins, the portfolio's own face, at Untitled UI's scale. No letter-spacing. Weights: 400 for input text, 500 for body emphasis and labels, 600 for titles, buttons and tabs.">
+          <Block title="Typography" note="Poppins, the portfolio's own face, at Untitled UI's scale. No letter-spacing. Weights: 500 for Display, 400 for every Text size.">
             <Specimen>
               <table className="pds-type">
                 <tbody>
