@@ -2,7 +2,7 @@
   "nav": {
     "logoText": "yichun",
     "resumeUrl": "/yichun-liu-resume.pdf",
-    "links": [{"label": "Home", "to": "/"}, {"label": "Making", "to": "/#making"}, {"label": "About", "to": "/about"}]
+    "links": [{"label": "Home", "to": "/"}, {"label": "About", "to": "/about"}]
   },
   "contact": {
     "email": "yichun.ux@gmail.com",
@@ -22,8 +22,8 @@
       {"slug": "nitro-college", "title": "Nitro College", "tags": ["Fintech", "Edutech", "B2C"], "desc": "Turning scattered screens into an end-to-end platform — by delivering a system, not just pages", "thumb": "/images/thumbnail-4ae4a5.png"},
       {"slug": "clinicmind-ehr-platform", "title": "ClinicMind EHR Platform", "tags": ["Healthcare SaaS", "B2B", "CRM"], "desc": "Building design influence from zero in a 20-year, engineer-led healthcare platform", "thumb": "/images/thumbnail-4-9d912d.png"}
     ],
-    "otherWorkEyebrow": "Making",
-    "otherWorkTitle": "Built for the love of it",
+    "otherWorkEyebrow": "Built for the love of it",
+    "otherWorkTitle": "Side projects",
     "otherWork": [
       {
         "thumb": "/images/sora-1.png",

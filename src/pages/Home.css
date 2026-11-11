@@ -4,11 +4,57 @@
 
 .hero {
   position: relative;
-  overflow: hidden;
+  /* No `overflow: hidden` here: the aurora below has to reach up past the hero
+     to sit behind the sticky nav. The falling tools don't need it either —
+     .falling-tools clips its own stage. */
   padding: var(--space-page-top) 0 var(--space-section);
   display: flex;
   align-items: flex-start;
   justify-content: center;
+}
+
+/* A soft aurora behind the hero: nine overlapping radial blobs, heavily
+   blurred so no individual circle reads as a shape. The layer runs past the
+   hero above and below, because `blur()` fades toward transparent at its own
+   edges and would otherwise leave a visible seam. As the pseudo element is
+   the hero's first child it paints behind the text and the falling tools
+   without needing a z-index on either. */
+.hero::before {
+  content: "";
+  position: absolute;
+  /* Reaches 232px above the hero — 160px of room for the blur, plus the 72px
+     sticky nav, so the colour runs behind the nav instead of starting under
+     it. Left and right stay at 0 so the oversized layer can't widen the page.
+     The nav's own z-index (50) keeps it painting on top of this. */
+  top: -232px;
+  bottom: -160px;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  pointer-events: none;
+  /* Nine lobes of uneven size, offset from one another so their union is
+     lumpy rather than round. Each one stays a circle, but none of them is the
+     silhouette — the blur below fuses them into one organic mass. */
+  background:
+    /* the bright core */
+    radial-gradient(circle 144px at 72% 47%, rgba(255, 255, 255, 0.95), transparent 70%),
+    /* primary blue — the main body, plus two lobes pulling it off-round */
+    radial-gradient(circle 228px at 73% 50%, rgba(69, 117, 231, 0.4), transparent 72%),
+    radial-gradient(circle 154px at 80% 40%, rgba(69, 117, 231, 0.31), transparent 74%),
+    radial-gradient(circle 125px at 62% 55%, rgba(69, 117, 231, 0.26), transparent 76%),
+    /* violet — the smallest and faintest lobe, just a hint under the blue */
+    radial-gradient(circle 100px at 64% 57%, rgba(124, 92, 240, 0.18), transparent 76%),
+    /* cyan — a tail of four lobes, each smaller and fainter than the last, so
+       it tapers away to the lower left instead of stopping */
+    radial-gradient(circle 180px at 83% 57%, rgba(86, 190, 255, 0.26), transparent 76%),
+    radial-gradient(circle 132px at 77% 65%, rgba(86, 190, 255, 0.21), transparent 78%),
+    radial-gradient(circle 106px at 71% 73%, rgba(86, 190, 255, 0.16), transparent 80%),
+    radial-gradient(circle 86px at 65% 80%, rgba(86, 190, 255, 0.12), transparent 82%);
+  filter: blur(72px);
+  /* Fades out before the next section, so the colour never ends on a hard
+     horizontal seam at the section boundary. */
+  -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 92%);
+  mask-image: linear-gradient(to bottom, #000 70%, transparent 92%);
 }
 
 .hero-inner {
@@ -19,7 +65,8 @@
 
 .hero-title {
   max-width: 900px;
-  margin: 0 auto;
+  /* 40px of room above the title block; the line height is untouched */
+  margin: 40px auto 0;
   font-family: var(--font-display);
   font-size: 48px;
   font-weight: 700;
