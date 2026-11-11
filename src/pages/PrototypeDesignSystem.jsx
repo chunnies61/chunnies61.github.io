@@ -475,7 +475,7 @@ export default function PrototypeDesignSystem() {
             </Specimen>
           </Block>
 
-          <Block title="Iconography" note="Material Symbols paths on a 24px grid, drawn in currentColor. 24px in toolbars, 20px in alerts and dropdowns, 16–18px inside buttons and tags.">
+          <Block title="Iconography" note="Iconstica line icons on a 24px grid, 1.5px rounded strokes, drawn in currentColor. 24px in toolbars, 20px in alerts and dropdowns, 16–18px inside buttons and tags.">
             <Specimen>
               <div className="pds-icons">
                 {ICON_NAMES.map((n) => (

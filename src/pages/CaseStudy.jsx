@@ -205,26 +205,24 @@ function Slideshow({ images, interval = SLIDESHOW_INTERVAL_MS }) {
 /* Inline icon primitives for cards — 24px grid, stroke-based, inherit currentColor.
    Use "icon" on a card item instead of "emoji" when the mark should scale and
    theme with the text rather than render as a platform emoji glyph. */
+// Iconstica line glyphs (the same family as the prototypes' Icon), inlined so this page
+// doesn't pull in the prototypes' icon set
 const CARD_ICONS = {
   alert: (
     <>
-      <path d="M10.3 3.9 1.8 18.5A2 2 0 0 0 3.5 21.5h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z" />
-      <path d="M12 9v4.5" />
-      <path d="M12 17.5h.01" />
+      <path d="M19.2743 14.6L15.1174 7.4C13.8968 5.28589 13.2865 4.22884 12.4155 4.04371C12.1414 3.98543 11.8581 3.98543 11.5839 4.04371C10.7129 4.22884 10.1026 5.28589 8.88204 7.4L8.88203 7.4L4.72511 14.6C3.50453 16.7141 2.89424 17.7712 3.16941 18.618C3.25602 18.8846 3.39769 19.13 3.58523 19.3383C4.18107 20 5.40165 20 7.8428 20H16.1566C18.5978 20 19.8184 20 20.4142 19.3383C20.6018 19.13 20.7434 18.8846 20.83 18.618C21.1052 17.7712 20.4949 16.7141 19.2743 14.6Z" />
+      <path d="M13 16.5C13 15.9477 12.5523 15.5 12 15.5C11.4477 15.5 11 15.9477 11 16.5C11 17.0523 11.4477 17.5 12 17.5C12.5523 17.5 13 17.0523 13 16.5Z" />
+      <path d="M12 13.25V9.75" />
     </>
   ),
   restart: (
     <>
-      <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
-      <path d="M3 3v5h5" />
+      <path d="M3 12C3 7.02944 7.02944 3 12 3C15.4146 3 18.3851 4.90157 19.9102 7.7035M20.3855 4.16797V7.7035H19.9102M19.9102 7.7035H16.85M21 12C21 16.9706 16.9706 21 12 21C8.5854 21 5.61494 19.0984 4.08982 16.2965M3.61447 19.832L3.61447 16.2965H4.08982M4.08982 16.2965L7.15 16.2965" />
     </>
   ),
   exchange: (
     <>
-      <path d="M8 3 4 7l4 4" />
-      <path d="M4 7h16" />
-      <path d="m16 13 4 4-4 4" />
-      <path d="M20 17H4" />
+      <path d="M20 10H4L7 7M4 14H20L17 17" />
     </>
   ),
 };
@@ -238,7 +236,7 @@ function CardIcon({ name, className = "cs-card-icon" }) {
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.8"
+        strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
