@@ -310,7 +310,6 @@ export default function KeySkills() {
       <div className="wrap">
         <p className="eyebrow center">{data.eyebrow}</p>
         <h2 className="section-title center">{data.title}</h2>
-        {!reduced && <p className="ks-hint">{data.hint}</p>}
         <div className={"ks-grid" + (reduced ? " is-still" : "")}>
           {data.skills.map((s) => (
             <Tile key={s.id} skill={s} reduced={reduced} />

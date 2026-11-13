@@ -3,14 +3,6 @@
    colour comes from key-skills.json. Everything here is decoration, so it is all
    switched off for visitors who ask for reduced motion. */
 
-.ks-hint {
-  margin: 8px 0 0;
-  text-align: center;
-  font-size: 14px;
-  line-height: 20px;
-  color: var(--text-soft);
-}
-
 .ks-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
