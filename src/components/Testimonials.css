@@ -1,0 +1,197 @@
+/* ===== In their words =====
+   Quote cards on a grid-paper ground. Colours and fonts are the site's own tokens; only the
+   layout (a row of cards with a selection frame and hand-drawn buttons) is borrowed. */
+
+.tm {
+  --tm-w: min(720px, calc(100vw - 48px));
+  --tm-gap: 24px;
+  padding: var(--space-section) 0;
+  overflow: hidden;
+}
+
+.tm-stage {
+  display: grid;
+  justify-items: center;
+  margin-top: var(--space-title-gap);
+  padding: 28px 0;
+  outline: none;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.tm-stage.is-dragging {
+  cursor: grabbing;
+}
+
+.tm-stage:focus-visible {
+  outline: 2px solid var(--accent-dark);
+  outline-offset: -2px;
+  border-radius: 16px;
+}
+
+.tm-card {
+  grid-area: 1 / 1;
+  position: relative;
+  box-sizing: border-box;
+  width: var(--tm-w);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 32px;
+  border-radius: 24px;
+  background-color: #fff;
+  /* faint primary-tint grid paper */
+  background-image:
+    linear-gradient(rgba(69, 117, 231, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(69, 117, 231, 0.09) 1px, transparent 1px);
+  background-size: 24px 24px;
+  border: 1px solid var(--gray-100);
+  opacity: 0.5;
+  transform: translateX(calc(var(--o) * (var(--tm-w) + var(--tm-gap)) + var(--drag, 0px))) scale(0.95);
+  transition: transform 0.7s cubic-bezier(0.3, 0, 0.2, 1), opacity 0.5s ease;
+}
+
+.tm-card.is-active {
+  opacity: 1;
+  transform: translateX(var(--drag, 0px));
+}
+
+.tm-card[data-wrap] {
+  transition: none;
+}
+
+.tm-stage.is-dragging .tm-card {
+  transition: none;
+}
+
+.tm-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+  object-fit: cover;
+  background: var(--gray-50);
+  pointer-events: none;
+}
+
+.tm-quote {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.tm-person {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-200);
+}
+
+.tm-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.tm-role {
+  margin: 0;
+  text-align: right;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+/* Selection frame: four small squares on the active card's corners, like a design tool */
+.tm-corner {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border: 1.5px solid var(--accent-dark);
+  border-radius: 2px;
+}
+.tm-corner.tl { top: -5px; left: -5px; }
+.tm-corner.tr { top: -5px; right: -5px; }
+.tm-corner.bl { bottom: -5px; left: -5px; }
+.tm-corner.br { bottom: -5px; right: -5px; }
+
+.tm-card.is-active {
+  outline: 1.5px solid var(--accent-dark);
+  outline-offset: 0;
+}
+
+/* Hand-drawn buttons: uneven radii make the outline look inked, not stamped */
+.tm-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tm-btn {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  color: var(--text);
+  background: transparent;
+  border: 2px solid var(--text);
+  border-radius: 54% 46% 52% 48% / 48% 54% 46% 52%;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.tm-btn.alt {
+  border-radius: 47% 53% 46% 54% / 53% 47% 55% 45%;
+}
+
+.tm-btn:hover,
+.tm-btn:focus-visible {
+  color: #fff;
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+
+.tm-count {
+  min-width: 84px;
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  border: 2px solid var(--text);
+  border-radius: 999px;
+}
+
+@media (max-width: 640px) {
+  .tm-card {
+    padding: 24px;
+  }
+  .tm-person {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .tm-role {
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tm-card {
+    transition: opacity 0.2s ease;
+  }
+}

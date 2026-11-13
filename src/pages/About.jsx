@@ -1,6 +1,7 @@
 import site from "../data/site.json";
 import ContactCta from "../components/ContactCta";
 import KeySkills from "../components/KeySkills";
+import Testimonials from "../components/Testimonials";
 import "./Home.css";
 import "./About.css";
 
@@ -28,26 +29,7 @@ export default function About() {
 
       <KeySkills />
 
-      <section className="section">
-        <div className="wrap">
-          <p className="eyebrow center">{about.testimonialsEyebrow}</p>
-          <h2 className="section-title center">{about.testimonialsTitle}</h2>
-          <div className="testimonial-grid">
-            {about.testimonials.map((t) => (
-              <div className="testimonial-card" key={t.name}>
-                <p className="testimonial-quote">&ldquo;{t.quote}&rdquo;</p>
-                <div className="testimonial-person">
-                  <img src={t.photo} alt={t.name} />
-                  <div>
-                    <p className="testimonial-name">{t.name}</p>
-                    <p className="testimonial-title">{t.title}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Testimonials />
 
       <ContactCta title={home.ctaTitle} subtitle={home.ctaSubtitle} />
     </div>

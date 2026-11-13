@@ -325,7 +325,7 @@
   padding: var(--space-section) 0;
   margin: var(--space-title-gap) 40px;
   scroll-margin-top: 88px;
-  background: var(--gray-900);
+  background: var(--accent-dark);
   border-radius: 40px;
 }
 
