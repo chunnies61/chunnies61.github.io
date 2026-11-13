@@ -102,14 +102,26 @@ const PAIRS = [
   ["icon", "bg", "$icon-default on white (icons need 3:1)", 3],
 ];
 
+// The type scale in two groups: Display (500) for numbers and headlines, Regular text (400) for
+// everything that is read. Each row: [name, size, line height, weight, where it's used].
 const TYPE = [
-  ["Display sm", 30, 38, 500, "KPI values, borrowing capacity"],
-  ["Display xs", 24, 32, 500, "Metric tiles, summary counts"],
-  ["Text xl", 20, 30, 400, "Live-deal stats"],
-  ["Text lg", 18, 28, 400, "App header title, empty-state titles"],
-  ["Text md", 16, 24, 400, "Section and card titles, input text"],
-  ["Text sm", 14, 20, 400, "Body, labels, buttons and tabs"],
-  ["Text xs", 12, 18, 400, "Captions, key labels, badges"],
+  [
+    "Display",
+    [
+      ["Display sm", 30, 38, 500, "KPI values, borrowing capacity"],
+      ["Display xs", 24, 32, 500, "Metric tiles, summary counts"],
+    ],
+  ],
+  [
+    "Regular text",
+    [
+      ["Regular text xl", 20, 30, 400, "Live-deal stats"],
+      ["Regular text lg", 18, 28, 400, "App header title, empty-state titles"],
+      ["Regular text md", 16, 24, 400, "Case-study copy, section and card titles, input text"],
+      ["Regular text sm", 14, 20, 400, "Body, labels, buttons and tabs"],
+      ["Regular text xs", 12, 18, 400, "Captions, key labels, badges"],
+    ],
+  ],
 ];
 
 const SPACING = [2, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48];
@@ -409,28 +421,33 @@ export default function PrototypeDesignSystem() {
             </p>
           </Block>
 
-          <Block title="Typography" note="Poppins, the portfolio's own face, at Untitled UI's scale. No letter-spacing. Weights: 500 for Display, 400 for every Text size.">
+          <Block title="Typography" note="Poppins, the portfolio's own face, at Untitled UI's scale. No letter-spacing. Display is 500; Regular text is 400. Case-study copy is Regular text md, 16/24.">
             <Specimen>
-              <table className="pds-type">
-                <tbody>
-                  {TYPE.map(([name, size, lh, weight, use]) => (
-                    <tr key={name}>
-                      <td>
-                        <span className="pds-type-name">{name}</span>
-                        <code>
-                          {size}/{lh} · {weight}
-                        </code>
-                      </td>
-                      <td>
-                        <span style={{ fontSize: size, lineHeight: `${lh}px`, fontWeight: weight }}>
-                          New loan request
-                        </span>
-                      </td>
-                      <td className="pds-type-use">{use}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              {TYPE.map(([group, rows]) => (
+                <div key={group} className="pds-type-set">
+                  <p className="pds-type-group">{group}</p>
+                  <table className="pds-type">
+                    <tbody>
+                      {rows.map(([name, size, lh, weight, use]) => (
+                        <tr key={name}>
+                          <td>
+                            <span className="pds-type-name">{name}</span>
+                            <code>
+                              {size}/{lh} · {weight}
+                            </code>
+                          </td>
+                          <td>
+                            <span style={{ fontSize: size, lineHeight: `${lh}px`, fontWeight: weight }}>
+                              New loan request
+                            </span>
+                          </td>
+                          <td className="pds-type-use">{use}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ))}
             </Specimen>
           </Block>
 

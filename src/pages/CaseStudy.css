@@ -286,10 +286,25 @@ a.cs-index-item.is-active:hover {
   min-width: 0;
 }
 
+/* Case-study copy is Regular text md — 16px / 24px, weight 400 — the same style the
+   prototype design system lists for it. Every running paragraph, intro, prose list and
+   note takes it from this one rule; supporting text inside cards and tiles keeps its
+   own smaller sizes. */
+.cs-row-content > p,
+.cs-section-content > p,
+.cs-step-body > p,
+.cs-surface-text p,
+.cs-lra-intro,
+.cs-honest-note p,
+.cs-list li {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
 .cs-row-content > p {
   max-width: 720px;
   color: var(--text-soft);
-  font-size: 16px;
 }
 
 .cs-row-content > p + p {
@@ -380,7 +395,6 @@ a.cs-index-item.is-active:hover {
 .cs-section-content > p {
   max-width: 720px;
   color: var(--text-soft);
-  font-size: 16px;
 }
 
 /* Card grid */
@@ -668,8 +682,6 @@ a.cs-index-item.is-active:hover {
 }
 
 .cs-surface-text p {
-  font-size: 15px;
-  line-height: 1.6;
   color: var(--text-soft);
 }
 
@@ -1321,7 +1333,6 @@ a.cs-index-item.is-active:hover {
 }
 .cs-step-body > p {
   max-width: 720px;
-  font-size: 15px;
   color: var(--text-soft);
 }
 
@@ -1519,9 +1530,9 @@ a.cs-index-item.is-active:hover {
   padding: 0 28px;
   border-left: 3px solid #4e6fe0; /* Primary Ink, tone 50 */
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 24px;
   color: var(--text);
 }
 

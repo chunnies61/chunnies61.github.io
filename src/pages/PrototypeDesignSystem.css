@@ -239,7 +239,7 @@
 }
 
 .pds-type td:first-child {
-  width: 140px;
+  width: 176px;
 }
 
 .pds-type-use {
@@ -469,4 +469,19 @@
   flex-direction: row;
   gap: 12px;
   background: transparent;
+}
+
+/* The type scale is two tables, one per group */
+.pds-type-group {
+  margin: 0 0 4px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ui-fg-tertiary);
+}
+
+.pds-type-set + .pds-type-set {
+  margin-top: 28px;
 }
