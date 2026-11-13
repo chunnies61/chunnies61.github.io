@@ -67,11 +67,10 @@
 }
 
 .tm-photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 20px;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
   object-fit: cover;
-  background: var(--gray-50);
   pointer-events: none;
 }
 
