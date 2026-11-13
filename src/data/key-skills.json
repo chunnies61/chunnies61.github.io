@@ -1,0 +1,54 @@
+{
+  "eyebrow": "Key skills",
+  "title": "What I bring to the work",
+  "skills": [
+    {
+      "id": "empathy",
+      "title": "Empathy",
+      "desc": "I start by sitting with the people who use the work, and the people who sign it off.",
+      "bg": "#ffc9dd"
+    },
+    {
+      "id": "problem-solving",
+      "title": "Problem solving",
+      "desc": "Untangling a messy workflow until the real problem is the only thing left.",
+      "bg": "#fde9a8"
+    },
+    {
+      "id": "systems",
+      "title": "Systems thinking",
+      "desc": "Seeing the whole chain of roles, rules and handoffs, not just the screen.",
+      "bg": "#bfe6fb"
+    },
+    {
+      "id": "creativity",
+      "title": "Creativity",
+      "desc": "Exploring many directions, then keeping the one that feels inevitable.",
+      "bg": "#ffa583"
+    },
+    {
+      "id": "data",
+      "title": "Data-driven",
+      "desc": "Settling arguments with evidence, like auditing 40 real requests instead of guessing.",
+      "bg": "#c4ecd6"
+    },
+    {
+      "id": "influence",
+      "title": "Alignment",
+      "desc": "Getting four teams moving the same way without formal authority over any of them.",
+      "bg": "#dacfff"
+    },
+    {
+      "id": "prototyping",
+      "title": "AI-native prototyping",
+      "desc": "Building polished, working prototypes fast, with real code engineers can pick up.",
+      "bg": "#cbf26c"
+    },
+    {
+      "id": "finance",
+      "title": "Business fluency",
+      "desc": "A finance background means complicated business problems don't scare me.",
+      "bg": "#a9c8e6"
+    }
+  ]
+}

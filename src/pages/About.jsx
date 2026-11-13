@@ -1,9 +1,10 @@
 import site from "../data/site.json";
 import ContactCta from "../components/ContactCta";
+import KeySkills from "../components/KeySkills";
 import "./Home.css";
 import "./About.css";
 
-/* About — the intro panel and the testimonials, on their own page. The two
+/* About — the intro panel, the key skills and the testimonials, on their own page. The two
    sections keep the styles they had as part of the home page. */
 
 export default function About() {
@@ -24,6 +25,8 @@ export default function About() {
           <img className="about-hero-image" src={about.headerImage} alt="" />
         </div>
       </section>
+
+      <KeySkills />
 
       <section className="section">
         <div className="wrap">

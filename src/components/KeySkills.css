@@ -1,0 +1,288 @@
+/* ===== Key skills =====
+   Colour tiles with a looping abstract drawing each. Ink is near-black, the tile
+   colour comes from key-skills.json. Everything here is decoration, so it is all
+   switched off for visitors who ask for reduced motion. */
+
+.ks-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: var(--space-title-gap);
+}
+
+.ks-tile {
+  display: flex;
+  flex-direction: column;
+  min-height: 372px;
+  padding: 24px 22px 8px;
+  overflow: hidden;
+  border-radius: 24px;
+  color: #15181f;
+}
+
+.ks-tile h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.ks-tile p {
+  margin: 8px 0 0;
+  max-width: 24ch;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+  color: rgba(21, 24, 31, 0.76);
+}
+
+.ks-art {
+  display: block;
+  width: calc(100% + 8px);
+  height: auto;
+  margin: auto -4px 0;
+  overflow: visible;
+}
+
+@media (max-width: 1000px) {
+  .ks-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .ks-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ks-tile {
+    min-height: 340px;
+  }
+}
+
+/* --- Empathy: two figures lean in until they touch ---------------------------- */
+.ks-lean {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+
+.ks-lean-l {
+  animation: ks-lean-l 6s ease-in-out infinite;
+}
+
+.ks-lean-r {
+  animation: ks-lean-r 6s ease-in-out infinite;
+}
+
+@keyframes ks-lean-l {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+  45%,
+  62% {
+    transform: rotate(9deg);
+  }
+}
+
+@keyframes ks-lean-r {
+  0%,
+  100% {
+    transform: rotate(5deg);
+  }
+  45%,
+  62% {
+    transform: rotate(-9deg);
+  }
+}
+
+.ks-spark-dot {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ks-pop 6s ease-in-out infinite;
+}
+
+@keyframes ks-pop {
+  0%,
+  38%,
+  100% {
+    transform: scale(0);
+  }
+  50%,
+  60% {
+    transform: scale(1);
+  }
+  72% {
+    transform: scale(0);
+  }
+}
+
+/* --- Systems thinking: two rings turning against each other ------------------ */
+.ks-turn {
+  transform-box: view-box;
+  transform-origin: 120px 76px;
+}
+
+.ks-turn-a {
+  animation: ks-turn 32s linear infinite;
+}
+
+.ks-turn-b {
+  animation: ks-turn 20s linear infinite reverse;
+}
+
+@keyframes ks-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ks-core {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ks-breathe 3.6s ease-in-out infinite;
+}
+
+@keyframes ks-breathe {
+  0%,
+  100% {
+    transform: scale(0.82);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+/* --- Creativity: a slow turn under the morphing shape ------------------------ */
+.ks-spin {
+  transform-box: view-box;
+  transform-origin: 120px 76px;
+  animation: ks-turn 48s linear infinite;
+}
+
+/* --- Data-driven: bars rise in turn ------------------------------------------ */
+.ks-bar {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: ks-grow 5.2s cubic-bezier(0.3, 0, 0.2, 1) infinite both;
+  animation-delay: var(--d);
+}
+
+@keyframes ks-grow {
+  0% {
+    transform: scaleY(0.04);
+  }
+  26%,
+  80% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0.04);
+  }
+}
+
+/* --- Alignment: scattered dots snap to a grid -------------------------------- */
+.ks-dot {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ks-snap 6s cubic-bezier(0.5, 0, 0.15, 1) infinite both;
+  animation-delay: var(--d);
+}
+
+@keyframes ks-snap {
+  0%,
+  8% {
+    transform: translate(var(--dx), var(--dy));
+  }
+  38%,
+  72% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(var(--dx), var(--dy));
+  }
+}
+
+/* --- AI-native prototyping: a layout builds itself --------------------------- */
+.ks-build {
+  transform-box: fill-box;
+  transform-origin: 0% 50%;
+  animation: ks-draw 6s cubic-bezier(0.3, 0, 0.2, 1) infinite both;
+  animation-delay: var(--d);
+}
+
+@keyframes ks-draw {
+  0% {
+    transform: scaleX(0);
+  }
+  16%,
+  82% {
+    transform: scaleX(1);
+  }
+  96%,
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+.ks-twinkle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ks-twinkle 6s ease-in-out infinite both;
+}
+
+@keyframes ks-twinkle {
+  0%,
+  28% {
+    transform: scale(0) rotate(-40deg);
+  }
+  42% {
+    transform: scale(1.25) rotate(0deg);
+  }
+  50%,
+  80% {
+    transform: scale(1) rotate(0deg);
+  }
+  92%,
+  100% {
+    transform: scale(0) rotate(40deg);
+  }
+}
+
+/* --- Business fluency: coins stack up ---------------------------------------- */
+.ks-coin {
+  animation: ks-drop 6s cubic-bezier(0.3, 0, 0.2, 1) infinite both;
+  animation-delay: var(--d);
+}
+
+@keyframes ks-drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  14%,
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  96%,
+  100% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+/* --- Reduced motion: hold every drawing in its finished pose ------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .ks-art *,
+  .ks-art {
+    animation: none !important;
+  }
+  .ks-lean-l {
+    transform: rotate(9deg);
+  }
+  .ks-lean-r {
+    transform: rotate(-9deg);
+  }
+}
