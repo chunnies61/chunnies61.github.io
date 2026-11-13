@@ -97,7 +97,8 @@
               "type": "text",
               "value": [
                 "Next, a harder sell: stop piling on features and build a design system first.",
-                "Deeply counter-intuitive at the time: the team wanted output, and I was asking for a foundation with no short-term deliverable — in a regulated clinical domain whose vocabulary I was still learning. My argument wasn't \"it'll look better.\" It was ROI math: with two designers against 7+ engineers, negotiating every page from scratch means we never catch up. With an Atomic Design component library and clear documentation, every feature becomes assembly."
+                "Deeply counter-intuitive at the time: the team wanted output, and I was asking for a foundation with no short-term deliverable — in a regulated clinical domain whose vocabulary I was still learning.",
+                "My argument wasn't \"it'll look better.\" It was ROI math: with two designers against 7+ engineers, negotiating every page from scratch means we never catch up. With an Atomic Design component library and clear documentation, every feature becomes assembly."
               ]
             },
             {
