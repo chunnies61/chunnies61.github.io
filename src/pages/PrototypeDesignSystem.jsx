@@ -102,8 +102,8 @@ const PAIRS = [
   ["icon", "bg", "$icon-default on white (icons need 3:1)", 3],
 ];
 
-// The type scale in two groups: Display (500) for numbers and headlines, Regular text (400) for
-// everything that is read. Each row: [name, size, line height, weight, where it's used].
+// The type scale in two groups: Display for numbers and headlines, Regular text for everything that is
+// read. Both are weight 500; they differ in size. Each row: [name, size, line height, weight, where it's used].
 const TYPE = [
   [
     "Display",
@@ -115,11 +115,11 @@ const TYPE = [
   [
     "Regular text",
     [
-      ["Regular text xl", 20, 30, 400, "Live-deal stats"],
-      ["Regular text lg", 18, 28, 400, "App header title, empty-state titles"],
-      ["Regular text md", 16, 24, 400, "Case-study copy, section and card titles, input text"],
-      ["Regular text sm", 14, 20, 400, "Body, labels, buttons and tabs"],
-      ["Regular text xs", 12, 18, 400, "Captions, key labels, badges"],
+      ["Regular text xl", 20, 30, 500, "Live-deal stats"],
+      ["Regular text lg", 18, 28, 500, "App header title, empty-state titles"],
+      ["Regular text md", 16, 24, 500, "Case-study copy, section and card titles, input text"],
+      ["Regular text sm", 14, 20, 500, "Body, labels, buttons and tabs"],
+      ["Regular text xs", 12, 18, 500, "Captions, key labels, badges"],
     ],
   ],
 ];
@@ -421,7 +421,7 @@ export default function PrototypeDesignSystem() {
             </p>
           </Block>
 
-          <Block title="Typography" note="Poppins, the portfolio's own face, at Untitled UI's scale. No letter-spacing. Display is 500; Regular text is 400. Case-study copy is Regular text md, 16/24.">
+          <Block title="Typography" note="Poppins, the portfolio's own face, at Untitled UI's scale. No letter-spacing. Every style is weight 500. Display and Regular text are separate groups; case-study copy is Regular text md, 16/24.">
             <Specimen>
               {TYPE.map(([group, rows]) => (
                 <div key={group} className="pds-type-set">

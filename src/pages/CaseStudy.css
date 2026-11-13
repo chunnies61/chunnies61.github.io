@@ -286,7 +286,7 @@ a.cs-index-item.is-active:hover {
   min-width: 0;
 }
 
-/* Case-study copy is Regular text md — 16px / 24px, weight 400 — the same style the
+/* Case-study copy is Regular text md — 16px / 24px, weight 500 — the same style the
    prototype design system lists for it. Every running paragraph, intro, prose list and
    note takes it from this one rule; supporting text inside cards and tiles keeps its
    own smaller sizes. */
@@ -299,7 +299,7 @@ a.cs-index-item.is-active:hover {
 .cs-list li {
   font-size: 16px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .cs-row-content > p {
@@ -1530,7 +1530,7 @@ a.cs-index-item.is-active:hover {
   padding: 0 28px;
   border-left: 3px solid #4e6fe0; /* Primary Ink, tone 50 */
   font-style: italic;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   color: var(--text);
