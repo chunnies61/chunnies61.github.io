@@ -323,7 +323,7 @@
 /* ===== About (merged from the standalone About page) ===== */
 .about-hero {
   padding: var(--space-section) 0;
-  margin: var(--space-title-gap) 0;
+  margin: var(--space-title-gap) 24px;
   scroll-margin-top: 88px;
   background: var(--accent-dark);
   border-radius: 24px;

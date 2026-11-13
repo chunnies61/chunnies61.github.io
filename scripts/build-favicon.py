@@ -18,10 +18,10 @@ from PIL import Image, ImageDraw
 import re  # noqa: E402
 
 
-def site_primary(fallback="#4575E7"):
-    """The site's own primary: --accent in src/index.css, the same blue as the logo."""
+def site_primary(fallback="#1E57C8"):
+    """The site's primary blue: --accent-dark in src/index.css, as used by the About section and the buttons."""
     css = (Path(__file__).resolve().parent.parent / "src/index.css").read_text()
-    m = re.search(r"--accent:\s*(#[0-9a-fA-F]{6})", css)
+    m = re.search(r"--accent-dark:\s*(#[0-9a-fA-F]{6})", css)
     return m.group(1).upper() if m else fallback
 
 
