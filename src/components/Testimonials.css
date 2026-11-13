@@ -118,7 +118,7 @@
   width: 10px;
   height: 10px;
   background: #fff;
-  border: 1.5px solid var(--accent-dark);
+  border: 1.5px solid var(--gray-900);
   border-radius: 2px;
 }
 .tm-corner.tl { top: -5px; left: -5px; }
@@ -127,7 +127,7 @@
 .tm-corner.br { bottom: -5px; right: -5px; }
 
 .tm-card.is-active {
-  outline: 1.5px solid var(--accent-dark);
+  outline: 1.5px solid var(--gray-900);
   outline-offset: 0;
 }
 
