@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Builds the site's favicon: the rounded star-burst badge from portfolio.chsmc.org, in purple.
+"""Builds the site's favicon: the rounded star-burst badge from portfolio.chsmc.org, in the site's primary colour.
 
 One flat colour, one bold silhouette with soft corners, filling its canvas, on a
 transparent ground. The shape's numbers below were fitted to that site's favicon.
@@ -7,7 +7,7 @@ transparent ground. The shape's numbers below were fitted to that site's favicon
   python3 scripts/build-favicon.py             # writes public/favicon.svg, favicon.ico, apple-touch-icon.png
   python3 scripts/build-favicon.py --preview out.png   # a size comparison sheet instead
 
-Needs Pillow (pip install pillow). Tweak COLOR / POINTS / DEPTH / ROUND_* / ROTATE below to change it.
+Needs Pillow (pip install pillow). Tweak POINTS / DEPTH / ROUND_* / ROTATE below to change it.
 """
 import math
 import sys
@@ -15,7 +15,17 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw
 
-COLOR = "#8B5CF6"    # purple
+import re  # noqa: E402
+
+
+def site_primary(fallback="#4575E7"):
+    """The site's own primary: --accent in src/index.css, the same blue as the logo."""
+    css = (Path(__file__).resolve().parent.parent / "src/index.css").read_text()
+    m = re.search(r"--accent:\s*(#[0-9a-fA-F]{6})", css)
+    return m.group(1).upper() if m else fallback
+
+
+COLOR = site_primary()
 POINTS = 10          # number of points
 DEPTH = 0.85         # inner radius / outer radius of the points: 1.0 is a plain polygon, lower is spikier
 ROUND_OUT = 0.13     # corner radius at the points, as a fraction of the outer radius
