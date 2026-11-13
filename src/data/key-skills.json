@@ -5,50 +5,51 @@
     {
       "id": "empathy",
       "title": "Empathy",
-      "desc": "I start by sitting with the people who use the work, and the people who sign it off.",
+      "desc": "I start by listening to the people using the work.",
       "bg": "#ffc9dd"
     },
     {
       "id": "problem-solving",
       "title": "Problem solving",
-      "desc": "Untangling a messy workflow until the real problem is the only thing left.",
+      "desc": "Untangling messy workflows to find the real problem.",
       "bg": "#fde9a8"
     },
     {
       "id": "systems",
       "title": "Systems thinking",
-      "desc": "Seeing the whole chain of roles, rules and handoffs, not just the screen.",
+      "desc": "Seeing the whole chain, not just the screen.",
       "bg": "#bfe6fb"
     },
     {
       "id": "creativity",
       "title": "Creativity",
-      "desc": "Exploring many directions, then keeping the one that feels inevitable.",
+      "desc": "Exploring many ideas, keeping the one that feels right.",
       "bg": "#ffa583"
     },
     {
       "id": "data",
       "title": "Data-driven",
-      "desc": "Settling arguments with evidence, like auditing 40 real requests instead of guessing.",
+      "desc": "Settling debates with evidence, not opinion.",
       "bg": "#c4ecd6"
     },
     {
       "id": "influence",
       "title": "Alignment",
-      "desc": "Getting four teams moving the same way without formal authority over any of them.",
+      "desc": "Moving four teams the same way, without authority.",
       "bg": "#dacfff"
     },
     {
       "id": "prototyping",
       "title": "AI-native prototyping",
-      "desc": "Building polished, working prototypes fast, with real code engineers can pick up.",
+      "desc": "Building polished, working prototypes fast.",
       "bg": "#cbf26c"
     },
     {
       "id": "finance",
       "title": "Business fluency",
-      "desc": "A finance background means complicated business problems don't scare me.",
+      "desc": "Complex business problems don't scare me.",
       "bg": "#a9c8e6"
     }
-  ]
+  ],
+  "hint": "Move across a tile to play it by hand."
 }

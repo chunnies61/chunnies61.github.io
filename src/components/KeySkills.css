@@ -1,7 +1,15 @@
 /* ===== Key skills =====
-   Colour tiles with a looping abstract drawing each. Ink is near-black, the tile
+   Colour tiles with a looping abstract drawing each. Ink is a soft charcoal, the tile
    colour comes from key-skills.json. Everything here is decoration, so it is all
    switched off for visitors who ask for reduced motion. */
+
+.ks-hint {
+  margin: 8px 0 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-soft);
+}
 
 .ks-grid {
   display: grid;
@@ -13,36 +21,42 @@
 .ks-tile {
   display: flex;
   flex-direction: column;
-  min-height: 372px;
-  padding: 24px 22px 8px;
+  aspect-ratio: 1 / 1;
+  padding: 20px 20px 10px;
   overflow: hidden;
   border-radius: 24px;
-  color: #15181f;
+  color: #23262d;
+  /* Moving across a tile plays its drawing; a vertical swipe still scrolls the page */
+  cursor: ew-resize;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .ks-tile h3 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 17px;
+  line-height: 22px;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
 
 .ks-tile p {
-  margin: 8px 0 0;
-  max-width: 24ch;
-  font-size: 14px;
-  line-height: 21px;
+  margin: 6px 0 0;
+  font-size: 13px;
+  line-height: 19px;
   font-weight: 500;
-  color: rgba(21, 24, 31, 0.76);
+  color: rgba(35, 38, 45, 0.74);
 }
 
+/* The drawing takes whatever the square has left, sitting on its bottom edge */
 .ks-art {
   display: block;
-  width: calc(100% + 8px);
-  height: auto;
-  margin: auto -4px 0;
+  flex: 1 1 0;
+  width: 100%;
+  min-height: 0;
+  margin-top: 6px;
   overflow: visible;
 }
 
@@ -55,9 +69,6 @@
 @media (max-width: 560px) {
   .ks-grid {
     grid-template-columns: minmax(0, 1fr);
-  }
-  .ks-tile {
-    min-height: 340px;
   }
 }
 

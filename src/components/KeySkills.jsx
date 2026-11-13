@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import data from "../data/key-skills.json";
 import "./KeySkills.css";
 
@@ -10,7 +10,7 @@ import "./KeySkills.css";
    (prototyping), coins stack (business). All SVG; the motion is CSS keyframes and
    SMIL, and stops entirely when the visitor prefers reduced motion. */
 
-const INK = "#15181f";
+const INK = "#3b3f49"; // charcoal, not black
 const WHITE = "#ffffff";
 
 const SHAPES = {
@@ -43,52 +43,30 @@ function Empathy() {
   );
 }
 
-/* A knotted line pulls straight, with its end dot following */
+/* A looping line unravels into a straight one. Both ends stay where they are, so
+   only the part in between moves — the loops shrink away until the line is clear. */
+const LOOPS = "M24.0 76.0 C25.8 79.0 30.1 88.5 34.9 93.9 C39.8 99.3 46.3 104.5 53.2 108.3 C60.2 112.0 68.5 114.9 76.6 116.2 C84.7 117.5 93.8 117.5 101.9 116.2 C110.0 114.9 118.3 112.0 125.3 108.3 C132.2 104.5 138.7 99.3 143.6 93.9 C148.4 88.5 152.2 82.0 154.5 76.0 C156.8 70.0 157.6 63.5 157.3 58.1 C157.0 52.7 155.1 47.5 152.7 43.7 C150.3 40.0 146.5 37.1 143.0 35.8 C139.5 34.5 135.0 34.5 131.5 35.8 C128.0 37.1 124.2 40.0 121.8 43.7 C119.4 47.5 117.5 52.7 117.2 58.1 C116.9 63.5 117.7 70.0 120.0 76.0 C122.3 82.0 126.1 88.5 130.9 93.9 C135.8 99.3 142.3 104.5 149.2 108.3 C156.2 112.0 164.5 114.9 172.6 116.2 C180.7 117.5 189.8 117.5 197.9 116.2 C206.0 114.9 214.3 112.0 221.3 108.3 C228.2 104.5 234.7 99.3 239.6 93.9 C244.4 88.5 248.2 82.0 250.5 76.0 C252.8 70.0 253.6 63.5 253.3 58.1 C253.0 52.7 251.1 47.5 248.7 43.7 C246.3 40.0 242.5 37.1 239.0 35.8 C235.5 34.5 231.0 34.5 227.5 35.8 C224.0 37.1 220.2 40.0 217.8 43.7 C215.4 47.5 213.5 52.7 213.2 58.1 C212.9 63.5 215.5 73.0 216.0 76.0";
+const STRAIGHT = "M24.0 76.0 C25.1 76.0 28.6 76.0 30.9 76.0 C33.1 76.0 35.4 76.0 37.7 76.0 C40.0 76.0 42.3 76.0 44.6 76.0 C46.9 76.0 49.1 76.0 51.4 76.0 C53.7 76.0 56.0 76.0 58.3 76.0 C60.6 76.0 62.9 76.0 65.1 76.0 C67.4 76.0 69.7 76.0 72.0 76.0 C74.3 76.0 76.6 76.0 78.9 76.0 C81.1 76.0 83.4 76.0 85.7 76.0 C88.0 76.0 90.3 76.0 92.6 76.0 C94.9 76.0 97.1 76.0 99.4 76.0 C101.7 76.0 104.0 76.0 106.3 76.0 C108.6 76.0 110.9 76.0 113.1 76.0 C115.4 76.0 117.7 76.0 120.0 76.0 C122.3 76.0 124.6 76.0 126.9 76.0 C129.1 76.0 131.4 76.0 133.7 76.0 C136.0 76.0 138.3 76.0 140.6 76.0 C142.9 76.0 145.1 76.0 147.4 76.0 C149.7 76.0 152.0 76.0 154.3 76.0 C156.6 76.0 158.9 76.0 161.1 76.0 C163.4 76.0 165.7 76.0 168.0 76.0 C170.3 76.0 172.6 76.0 174.9 76.0 C177.1 76.0 179.4 76.0 181.7 76.0 C184.0 76.0 186.3 76.0 188.6 76.0 C190.9 76.0 193.1 76.0 195.4 76.0 C197.7 76.0 200.0 76.0 202.3 76.0 C204.6 76.0 206.9 76.0 209.1 76.0 C211.4 76.0 214.9 76.0 216.0 76.0";
+
 function ProblemSolving({ animate }) {
-  const tangle = "M24 112 C70 150 40 10 100 40 S120 140 150 70 S190 0 216 62";
-  const straight = "M24 76 C60 76 60 76 100 76 S130 76 150 76 S190 76 216 76";
   const ease = "0.45 0 0.2 1";
   return (
     <g>
-      <path d={animate ? tangle : straight} fill="none" stroke={INK} strokeWidth="9" strokeLinecap="round" strokeLinejoin="round">
+      <path d={animate ? LOOPS : STRAIGHT} fill="none" stroke={INK} strokeWidth="7" strokeLinecap="round" strokeLinejoin="round">
         {animate && (
           <animate
             attributeName="d"
-            dur="7s"
+            dur="8s"
             repeatCount="indefinite"
             calcMode="spline"
-            keyTimes="0;0.2;0.5;0.8;1"
+            keyTimes="0;0.18;0.5;0.78;1"
             keySplines={`${ease};${ease};${ease};${ease}`}
-            values={`${tangle};${tangle};${straight};${straight};${tangle}`}
+            values={`${LOOPS};${LOOPS};${STRAIGHT};${STRAIGHT};${LOOPS}`}
           />
         )}
       </path>
-      <circle cx="216" cy={animate ? 62 : 76} r="10" fill={WHITE} stroke={INK} strokeWidth="4">
-        {animate && (
-          <animate
-            attributeName="cy"
-            dur="7s"
-            repeatCount="indefinite"
-            calcMode="spline"
-            keyTimes="0;0.2;0.5;0.8;1"
-            keySplines={`${ease};${ease};${ease};${ease}`}
-            values="62;62;76;76;62"
-          />
-        )}
-      </circle>
-      <circle cx="24" cy={animate ? 112 : 76} r="6" fill={INK}>
-        {animate && (
-          <animate
-            attributeName="cy"
-            dur="7s"
-            repeatCount="indefinite"
-            calcMode="spline"
-            keyTimes="0;0.2;0.5;0.8;1"
-            keySplines={`${ease};${ease};${ease};${ease}`}
-            values="112;112;76;76;112"
-          />
-        )}
-      </circle>
+      <circle cx="24" cy="76" r="6" fill={INK} />
+      <circle cx="216" cy="76" r="10" fill={WHITE} stroke={INK} strokeWidth="4" />
     </g>
   );
 }
@@ -243,6 +221,99 @@ const ART = {
   finance: Business,
 };
 
+/* Move across a tile (or drag, on touch) to play its drawing by hand: the pointer's
+   left-to-right position is the animation's progress, so the line unravels, the
+   rings turn and the shape morphs as you go. Let go and it carries on looping from
+   where you left it. CSS animations are scrubbed through the Web Animations API,
+   the SMIL morphs through the svg's own clock. */
+function useScrub(tileRef, svgRef, enabled, smilPeriod) {
+  useEffect(() => {
+    const tile = tileRef.current;
+    const svg = svgRef.current;
+    if (!enabled || !tile || !svg || !svg.getAnimations) return undefined;
+
+    let list = []; // [animation, iteration duration in ms]
+    let active = false;
+    let current = 0;
+    let target = 0;
+    let raf = 0;
+
+    const phase = () => {
+      const [a, d] = list[0] ?? [];
+      if (a && d) return (((a.currentTime ?? 0) / d) % 1 + 1) % 1;
+      if (smilPeriod) return ((svg.getCurrentTime() / smilPeriod) % 1 + 1) % 1;
+      return 0;
+    };
+    const apply = (p) => {
+      for (const [a, d] of list) a.currentTime = p * d;
+      if (smilPeriod) svg.setCurrentTime(p * smilPeriod);
+    };
+    const aim = (e) => {
+      const r = tile.getBoundingClientRect();
+      target = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+    };
+    const tick = () => {
+      current += (target - current) * 0.18;
+      apply(current);
+      raf = active ? requestAnimationFrame(tick) : 0;
+    };
+    const begin = (e) => {
+      if (active) return;
+      active = true;
+      list = svg
+        .getAnimations({ subtree: true })
+        .map((a) => [a, a.effect?.getTiming().duration])
+        .filter(([, d]) => typeof d === "number" && d > 0);
+      for (const [a] of list) a.pause();
+      svg.pauseAnimations?.();
+      current = phase();
+      aim(e);
+      raf = requestAnimationFrame(tick);
+    };
+    const move = (e) => {
+      if (active) aim(e);
+    };
+    const end = () => {
+      if (!active) return;
+      active = false;
+      cancelAnimationFrame(raf);
+      for (const [a] of list) a.play();
+      svg.unpauseAnimations?.();
+    };
+
+    tile.addEventListener("pointerenter", begin);
+    tile.addEventListener("pointermove", move);
+    tile.addEventListener("pointerleave", end);
+    tile.addEventListener("pointercancel", end);
+    return () => {
+      end();
+      tile.removeEventListener("pointerenter", begin);
+      tile.removeEventListener("pointermove", move);
+      tile.removeEventListener("pointerleave", end);
+      tile.removeEventListener("pointercancel", end);
+    };
+  }, [tileRef, svgRef, enabled, smilPeriod]);
+}
+
+// How long one loop of the SMIL-driven drawings lasts, in seconds
+const SMIL_PERIOD = { "problem-solving": 8, creativity: 12 };
+
+function Tile({ skill, reduced }) {
+  const tile = useRef(null);
+  const svg = useRef(null);
+  const Art = ART[skill.id];
+  useScrub(tile, svg, !reduced, SMIL_PERIOD[skill.id]);
+  return (
+    <article className="ks-tile" ref={tile} style={{ background: skill.bg }}>
+      <h3>{skill.title}</h3>
+      <p>{skill.desc}</p>
+      <svg ref={svg} className="ks-art" viewBox="0 0 240 150" preserveAspectRatio="xMidYMax meet" aria-hidden="true" focusable="false">
+        <Art animate={!reduced} />
+      </svg>
+    </article>
+  );
+}
+
 export default function KeySkills() {
   const reduced = usePrefersReducedMotion();
   return (
@@ -250,19 +321,11 @@ export default function KeySkills() {
       <div className="wrap">
         <p className="eyebrow center">{data.eyebrow}</p>
         <h2 className="section-title center">{data.title}</h2>
+        {!reduced && <p className="ks-hint">{data.hint}</p>}
         <div className={"ks-grid" + (reduced ? " is-still" : "")}>
-          {data.skills.map((s) => {
-            const Art = ART[s.id];
-            return (
-              <article className="ks-tile" key={s.id} style={{ background: s.bg }}>
-                <h3>{s.title}</h3>
-                <p>{s.desc}</p>
-                <svg className="ks-art" viewBox="0 0 240 150" aria-hidden="true" focusable="false">
-                  <Art animate={!reduced} />
-                </svg>
-              </article>
-            );
-          })}
+          {data.skills.map((s) => (
+            <Tile key={s.id} skill={s} reduced={reduced} />
+          ))}
         </div>
       </div>
     </section>
