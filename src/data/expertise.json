@@ -1,0 +1,54 @@
+{
+  "eyebrow": "Expertise",
+  "title": "Where I go deep",
+  "items": [
+    {
+      "title": "AI-native prototyping in code",
+      "desc": "I build prototypes that actually work, in HTML, CSS and React with Claude Code, so stakeholders can click through real flows and engineers can pick up the code.",
+      "tools": ["Claude Code", "React", "HTML & CSS"],
+      "proof": { "text": "Three working prototypes that set Lending's direction", "slug": "lending-solutions-redesign" }
+    },
+    {
+      "title": "Design systems",
+      "desc": "From Atomic Design foundations to libraries of 2,000+ components: tokens, variables, documentation, and getting teams to actually adopt them.",
+      "tools": ["Figma", "Variables & tokens", "Documentation"],
+      "proof": { "text": "Built ClinicMind's design system from scratch", "slug": "clinicmind-ehr-platform" }
+    },
+    {
+      "title": "Product strategy",
+      "desc": "Turning a slogan into a real problem, then defining what success looks like and steering the roadmap toward it.",
+      "tools": ["Problem framing", "Success metrics", "Roadmapping"],
+      "proof": { "text": "Reframed \"move it to the cloud\" into a user problem", "slug": "otis-digital-eco-system" }
+    },
+    {
+      "title": "Metrics & experimentation",
+      "desc": "I set UX success metrics before launch, test the options, and measure what changed after, then fold it into the next iteration.",
+      "tools": ["UX metrics", "Usability testing", "Post-launch analysis"],
+      "proof": { "text": "Loan requests sent back for rework: ~60% down to ~22%", "slug": "lending-solutions-redesign" }
+    },
+    {
+      "title": "User research",
+      "desc": "Shadowing, interviews, workshops, card sorting and usability tests, and the synthesis that turns them into decisions, with or without a researcher.",
+      "tools": ["Shadowing", "Interviews", "Synthesis"],
+      "proof": { "text": "Live agent shadowing with no research budget", "slug": "agent-desk" }
+    },
+    {
+      "title": "AI experience design",
+      "desc": "Designing AI features people can trust: surfacing insights while keeping them in control of every consequential decision.",
+      "tools": ["AI copilots", "Human-in-the-loop", "Trust & control"],
+      "proof": { "text": "The \"Ask Otis\" AI Copilot", "slug": "otis-digital-eco-system" }
+    },
+    {
+      "title": "End-to-end ownership",
+      "desc": "Leading from vision to shipped product: aligning teams without authority, setting the craft bar and mentoring designers.",
+      "tools": ["Leadership", "Alignment", "Mentoring"],
+      "proof": { "text": "Solo designer, end to end, in a regulated workflow", "slug": "agent-desk" }
+    },
+    {
+      "title": "Front-end fluency",
+      "desc": "Enough HTML, CSS, JavaScript and React to work in a real codebase and judge what's feasible. This site is one I built myself.",
+      "tools": ["JavaScript", "React", "Vite"],
+      "proof": { "text": "See the site's own style guide", "href": "/style-guide" }
+    }
+  ]
+}

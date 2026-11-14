@@ -1,11 +1,12 @@
 import site from "../data/site.json";
 import ContactCta from "../components/ContactCta";
+import Expertise from "../components/Expertise";
 import KeySkills from "../components/KeySkills";
 import Testimonials from "../components/Testimonials";
 import "./Home.css";
 import "./About.css";
 
-/* About — the intro panel, the key skills and the testimonials, on their own page. The two
+/* About — the intro panel, the key skills, the expertise list and the testimonials, on their own page. The two
    sections keep the styles they had as part of the home page. */
 
 export default function About() {
@@ -28,6 +29,8 @@ export default function About() {
       </section>
 
       <KeySkills />
+
+      <Expertise />
 
       <Testimonials />
 
