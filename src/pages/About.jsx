@@ -6,7 +6,7 @@ import Testimonials from "../components/Testimonials";
 import "./Home.css";
 import "./About.css";
 
-/* About — the intro panel, the key skills, the expertise list and the testimonials, on their own page. The two
+/* About — the intro panel, with its expertise chips, the key skills and the testimonials, on their own page. The two
    sections keep the styles they had as part of the home page. */
 
 export default function About() {
@@ -23,14 +23,13 @@ export default function About() {
                 {p}
               </p>
             ))}
+            <Expertise />
           </div>
           <img className="about-hero-image" src={about.headerImage} alt="" />
         </div>
       </section>
 
       <KeySkills />
-
-      <Expertise />
 
       <Testimonials />
 

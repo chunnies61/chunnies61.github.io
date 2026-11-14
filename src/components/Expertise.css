@@ -1,81 +1,72 @@
 /* ===== Expertise =====
-   A quiet two-column list of cards under the colourful key-skills tiles: number,
-   skill, one line on how I do it, the tools, and a link to the proof. */
+   Small outlined chips on the blue About panel, in rows that scroll sideways.
+   The scrollbar is hidden and the rows fade out at both ends. */
 
-.ex-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+.ex {
+  margin-top: 28px;
+}
+
+.ex-label {
+  margin: 0 0 10px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.ex-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ex-row {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  cursor: grab;
+  touch-action: pan-x pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 32px, #000 calc(100% - 32px), transparent);
+  mask-image: linear-gradient(to right, transparent, #000 32px, #000 calc(100% - 32px), transparent);
+}
+
+.ex-row::-webkit-scrollbar {
+  display: none;
+}
+
+.ex-row.is-dragging {
+  cursor: grabbing;
+}
+
+.ex-track {
+  display: flex;
+  width: max-content;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.ex-card {
-  display: flex;
-  flex-direction: column;
-  padding: 28px;
-  border: 1px solid var(--card-border);
-  border-radius: 24px;
-  background: var(--card-bg);
+/* Spacing is a right margin, not a gap, so the doubled list is exactly twice one set */
+.ex-chip {
+  flex: none;
+  margin-right: 8px;
+  padding: 3px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 6px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 500;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.88);
 }
 
-.ex-num {
-  font-family: var(--font-display);
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--accent-dark);
-}
-
-.ex-card h3 {
-  margin-top: 8px;
-  font-size: 22px;
-  line-height: 28px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
-.ex-desc {
-  margin-top: 10px;
-  font-size: 15px;
-  color: var(--text-soft);
-}
-
-.ex-tools {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 18px 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-/* The proof link sits on the card's bottom edge, so links line up across a row */
-.ex-proof {
-  margin-top: auto;
-  padding-top: 20px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--accent-dark);
-}
-
-.ex-proof:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-@media (max-width: 760px) {
-  .ex-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 16px;
-  }
-
-  .ex-card {
-    padding: 22px;
-  }
-
-  .ex-card h3 {
-    font-size: 20px;
-    line-height: 26px;
-  }
+/* The rows are wider than any screen; let the panel's text column shrink to its
+   grid track instead of stretching to fit them */
+.about-hero-text {
+  min-width: 0;
 }
