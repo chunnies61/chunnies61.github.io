@@ -109,7 +109,8 @@
             {
               "type": "text",
               "value": [
-                "With no researcher and a lean team, I used the lowest-cost, highest-signal method: live agent shadowing. Sitting beside agents on real cases, I watched them bounce across five or six systems — the legacy Agent Desktop, the Admin console, LoanPro, LexisNexis, raw spreadsheets — cross-checking the same data by hand, on tribal knowledge, with no single source of truth."
+                "With no researcher and a lean team, I used the lowest-cost, highest-signal method: live agent shadowing.",
+                "Sitting beside agents on real cases, I watched them bounce across five or six systems — the legacy Agent Desktop, the Admin console, LoanPro, LexisNexis, raw spreadsheets — cross-checking the same data by hand, on tribal knowledge, with no single source of truth."
               ]
             },
             {
@@ -249,7 +250,8 @@
               "type": "text",
               "value": [
                 "The Manager's Menu applied decision one's consolidation logic to the manager tier. That raised a harder question than \"what's in the workspace\": should every agent see everything in it? Compliance said no. Different agent types carry different decision authority, and access has to match it exactly.",
-                "So I designed permissions as a first-class layer of the workspace, not a settings-page afterthought. Junior agents get the baseline — application data, checklist, notes. Managers layer the Manager's Menu on top: cross-account visibility, override authority, and the tools to unblock a case an agent can't resolve. Same interface, different ceiling."
+                "So I designed permissions as a first-class layer of the workspace, not a settings-page afterthought.",
+                "Junior agents get the baseline — application data, checklist, notes. Managers layer the Manager's Menu on top: cross-account visibility, override authority, and the tools to unblock a case an agent can't resolve. Same interface, different ceiling."
               ]
             },
             {

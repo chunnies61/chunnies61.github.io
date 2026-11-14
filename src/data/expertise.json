@@ -1,0 +1,33 @@
+{
+  "label": "Expertise",
+  "rows": [
+    [
+      "AI-native prototyping",
+      "Claude Code",
+      "Design systems",
+      "Figma",
+      "Variables & tokens",
+      "Product strategy",
+      "Success metrics",
+      "Usability testing",
+      "User research",
+      "Fintech & lending",
+      "Workshops",
+      "Mentoring"
+    ],
+    [
+      "AI experience design",
+      "React",
+      "HTML & CSS",
+      "JavaScript",
+      "Component libraries",
+      "Information architecture",
+      "Roadmapping",
+      "Agent shadowing",
+      "Healthcare",
+      "End-to-end ownership",
+      "Documentation",
+      "Coffee shop scouting"
+    ]
+  ]
+}

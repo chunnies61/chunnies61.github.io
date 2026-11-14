@@ -57,8 +57,10 @@
         {
           "type": "text",
           "value": [
-            "Otis's clients manage complex properties worldwide, but legacy on-premise infrastructure made real-time monitoring nearly impossible. That opacity forced reactive maintenance — waiting for elevators to fail — driving up downtime, cost, and friction. The hypothesis: real-time health data and predictive alerts could cut emergency repair calls by 20%.",
-            "I was brought in as Lead Designer to move this rigid system to a cloud-native, globally scalable ecosystem. But the mandate arrived as a slogan — \"move our legacy system to the cloud, and make it scale globally\" — with no user, no scenario, no definition of success. \"Cloud\" is a technical action, not a user need.",
+            "Otis's clients manage complex properties worldwide, but legacy on-premise infrastructure made real-time monitoring nearly impossible. That opacity forced reactive maintenance — waiting for elevators to fail — driving up downtime, cost, and friction.",
+            "The hypothesis: real-time health data and predictive alerts could cut emergency repair calls by 20%.",
+            "I was brought in as Lead Designer to move this rigid system to a cloud-native, globally scalable ecosystem. But the mandate arrived as a slogan — \"move our legacy system to the cloud, and make it scale globally\" — with no user, no scenario, no definition of success.",
+            "\"Cloud\" is a technical action, not a user need.",
             "So my first move wasn't visual. It was turning the slogan back into an answerable question."
           ]
         },
@@ -102,7 +104,8 @@
               "type": "text",
               "value": [
                 "When I aligned with the business and PM, the \"requirement\" was crisp: \"We need a real-time monitoring dashboard.\" Classic solution-as-requirement. So instead of taking the order, I traced it back.",
-                "Why a real-time dashboard? Because clients can't see equipment health live. Why does that matter? Because they only learn of a failure after a breakdown. Why is that bad? Because every fix is then reactive: expensive, disruptive, and a constant source of complaints. Five questions in, the root problem had nothing to do with a dashboard. Clients were stuck firefighting and never preventing, and that reframe set the direction for everything after."
+                "Why a real-time dashboard? Because clients can't see equipment health live. Why does that matter? Because they only learn of a failure after a breakdown. Why is that bad? Because every fix is then reactive: expensive, disruptive, and a constant source of complaints.",
+                "Five questions in, the root problem had nothing to do with a dashboard. Clients were stuck firefighting and never preventing, and that reframe set the direction for everything after."
               ]
             },
             {
@@ -131,7 +134,8 @@
             {
               "type": "text",
               "value": [
-                "Before committing, I hit the brakes on one realization: every \"user need\" I had was second-hand, relayed to HQ in New York through sales, support, and engineering — layers of distortion. The user described in a conference room and the one standing in a machine room could easily be two different people. I couldn't even follow the vocabulary — car call, hall call, group dispatch.",
+                "Before committing, I hit the brakes on one realization: every \"user need\" I had was second-hand, relayed to HQ in New York through sales, support, and engineering — layers of distortion.",
+                "The user described in a conference room and the one standing in a machine room could easily be two different people. I couldn't even follow the vocabulary — car call, hall call, group dispatch.",
                 "With no researcher and a lean team (me + 2 UI designers), a months-long study was off the table. So I took the lowest-cost path to the highest-fidelity truth: on-site contextual inquiry at high-traffic NYC properties, standing behind users as they worked."
               ]
             },
@@ -162,7 +166,10 @@
             },
             {
               "type": "text",
-              "value": "That was the moment. We were designing for efficiency; users were stuck in fear. I named it consequence anxiety: the dread of an irreversible, catastrophic mistake. It made them offload even simple tasks to engineers — which meant our usage data was a false positive. The real pain point was invisible in the data, and only surfaced on-site."
+              "value": [
+                "That was the moment. We were designing for efficiency; users were stuck in fear.",
+                "I named it consequence anxiety: the dread of an irreversible, catastrophic mistake. It made them offload even simple tasks to engineers — which meant our usage data was a false positive. The real pain point was invisible in the data, and only surfaced on-site."
+              ]
             },
             {
               "type": "callout",
@@ -179,7 +186,8 @@
             {
               "type": "text",
               "value": [
-                "The hard part: fear doesn't fit in a PRD, and engineers can't sprint-plan an emotion. So my final discovery move was translating the feeling into testable requirements. I codified \"users operate in fear\" into a principle — psychological safety before efficiency — and broke it into three things engineering could build and validate:"
+                "The hard part: fear doesn't fit in a PRD, and engineers can't sprint-plan an emotion.",
+                "So my final discovery move was translating the feeling into testable requirements. I codified \"users operate in fear\" into a principle — psychological safety before efficiency — and broke it into three things engineering could build and validate:"
               ]
             },
             {
@@ -243,7 +251,8 @@
           "type": "text",
           "value": [
             "With the problem framed, execution followed a phased, de-risked path.",
-            "Discovery and research came first: find the UX quick wins, and prioritise the low-risk improvements that would build stakeholder confidence. Testing and validation followed, with user testing, a workflow cleanup, and the introduction of the \"Ask Otis\" AI Copilot. Then beta test and launch: a pilot rollout, then feedback-driven iteration. The fourth phase is still ahead, a future vision of AI insights, energy prediction, and cost optimisation across touchpoints."
+            "Discovery and research came first: find the UX quick wins, and prioritise the low-risk improvements that would build stakeholder confidence. Testing and validation followed, with user testing, a workflow cleanup, and the introduction of the \"Ask Otis\" AI Copilot.",
+            "Then beta test and launch: a pilot rollout, then feedback-driven iteration. The fourth phase is still ahead, a future vision of AI insights, energy prediction, and cost optimisation across touchpoints."
           ]
         },
         {

@@ -1,0 +1,72 @@
+/* ===== Expertise =====
+   Small outlined chips on the blue About panel, in rows that scroll sideways.
+   The scrollbar is hidden and the rows fade out at both ends. */
+
+.ex {
+  margin-top: 28px;
+}
+
+.ex-label {
+  margin: 0 0 10px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.ex-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ex-row {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  cursor: grab;
+  touch-action: pan-x pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 32px, #000 calc(100% - 32px), transparent);
+  mask-image: linear-gradient(to right, transparent, #000 32px, #000 calc(100% - 32px), transparent);
+}
+
+.ex-row::-webkit-scrollbar {
+  display: none;
+}
+
+.ex-row.is-dragging {
+  cursor: grabbing;
+}
+
+.ex-track {
+  display: flex;
+  width: max-content;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Spacing is a right margin, not a gap, so the doubled list is exactly twice one set */
+.ex-chip {
+  flex: none;
+  margin-right: 8px;
+  padding: 3px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 6px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 500;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* The rows are wider than any screen; let the panel's text column shrink to its
+   grid track instead of stretching to fit them */
+.about-hero-text {
+  min-width: 0;
+}
