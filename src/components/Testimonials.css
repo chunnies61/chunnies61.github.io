@@ -74,6 +74,18 @@
   pointer-events: none;
 }
 
+/* No photo: the person's initials on a soft colour, the way their profile shows them */
+.tm-initials {
+  display: grid;
+  place-items: center;
+  flex: none;
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  user-select: none;
+}
+
 .tm-quote {
   margin: 0;
   font-size: 16px;

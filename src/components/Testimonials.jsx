@@ -136,7 +136,13 @@ export default function Testimonials() {
               onClick={() => !isActive && Math.abs(drag) < 6 && go(i)}
               data-wrap={wraps ? "1" : undefined}
             >
-              <img className="tm-photo" src={t.photo} alt="" draggable="false" width="160" height="160" />
+              {t.photo ? (
+                <img className="tm-photo" src={t.photo} alt="" draggable="false" width="160" height="160" />
+              ) : (
+                <span className="tm-photo tm-initials" style={{ background: t.avatarBg, color: t.avatarInk }} aria-hidden="true">
+                  {t.initials}
+                </span>
+              )}
               <p className="tm-quote">&ldquo;{t.quote}&rdquo;</p>
               <div className="tm-person">
                 <p className="tm-name">{t.name}</p>
