@@ -95,60 +95,126 @@
   }
 }
 
-/* --- Empathy: two figures lean in until they touch ---------------------------- */
-.ks-lean {
+/* --- Empathy: a dark bubble types, a white one replies, a heart rises (7s) ---- */
+.ks-bubble-a,
+.ks-bubble-b,
+.ks-heart {
   transform-box: fill-box;
-  transform-origin: 50% 100%;
 }
 
-.ks-lean-l {
-  animation: ks-lean-l 6s ease-in-out infinite;
+.ks-bubble-a {
+  transform-origin: 15% 100%;
+  animation: ks-bubble-a 7s cubic-bezier(0.3, 0, 0.2, 1) infinite both;
 }
 
-.ks-lean-r {
-  animation: ks-lean-r 6s ease-in-out infinite;
+.ks-bubble-b {
+  transform-origin: 85% 100%;
+  animation: ks-bubble-b 7s cubic-bezier(0.3, 0, 0.2, 1) infinite both;
 }
 
-@keyframes ks-lean-l {
-  0%,
+@keyframes ks-bubble-a {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  6% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+  10%,
+  86% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  94%,
   100% {
-    transform: rotate(-5deg);
-  }
-  45%,
-  62% {
-    transform: rotate(9deg);
+    transform: scale(1);
+    opacity: 0;
   }
 }
 
-@keyframes ks-lean-r {
+@keyframes ks-bubble-b {
   0%,
-  100% {
-    transform: rotate(5deg);
+  32% {
+    transform: scale(0.4);
+    opacity: 0;
   }
-  45%,
-  62% {
-    transform: rotate(-9deg);
+  38% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+  42%,
+  86% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  94%,
+  100% {
+    transform: scale(1);
+    opacity: 0;
   }
 }
 
-.ks-spark-dot {
+.ks-typing {
+  animation: ks-typing 1.2s ease-in-out infinite both;
+  animation-delay: var(--d);
+}
+
+@keyframes ks-typing {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-5px);
+  }
+}
+
+.ks-reply {
   transform-box: fill-box;
-  transform-origin: center;
-  animation: ks-pop 6s ease-in-out infinite;
+  transform-origin: 0% 50%;
+  animation: ks-reply 7s cubic-bezier(0.3, 0, 0.2, 1) infinite both;
+  animation-delay: var(--d, 0s);
 }
 
-@keyframes ks-pop {
+@keyframes ks-reply {
   0%,
-  38%,
-  100% {
-    transform: scale(0);
+  42% {
+    transform: scaleX(0);
   }
   50%,
-  60% {
-    transform: scale(1);
+  100% {
+    transform: scaleX(1);
   }
-  72% {
-    transform: scale(0);
+}
+
+.ks-heart {
+  transform-origin: center;
+  animation: ks-heart 7s ease-in-out infinite both;
+}
+
+@keyframes ks-heart {
+  0%,
+  50% {
+    transform: translateY(10px) scale(0);
+  }
+  58% {
+    transform: translateY(-4px) scale(1.2);
+  }
+  62%,
+  70%,
+  78%,
+  86% {
+    transform: translateY(0) scale(1);
+  }
+  66%,
+  74% {
+    transform: translateY(0) scale(1.12);
+  }
+  94%,
+  100% {
+    transform: translateY(0) scale(0);
   }
 }
 
@@ -217,47 +283,225 @@
   }
 }
 
-/* --- Systems thinking: two rings turning against each other ------------------ */
-.ks-turn {
-  transform-box: view-box;
-  transform-origin: 120px 76px;
+/* --- Systems thinking: a pulse lights a chain of screens (7s) ---------------- */
+.ks-link {
+  stroke-dasharray: 1;
 }
 
-.ks-turn-a {
-  animation: ks-turn 32s linear infinite;
+.ks-link-1 {
+  animation: ks-link-1 7s ease-in-out infinite both;
 }
 
-.ks-turn-b {
-  animation: ks-turn 20s linear infinite reverse;
+.ks-link-2 {
+  animation: ks-link-2 7s ease-in-out infinite both;
 }
 
-@keyframes ks-turn {
-  to {
-    transform: rotate(360deg);
+@keyframes ks-link-1 {
+  0%,
+  10% {
+    stroke-dashoffset: 1;
+    opacity: 1;
+  }
+  24%,
+  86% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  94%,
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
   }
 }
 
-.ks-core {
+@keyframes ks-link-2 {
+  0%,
+  30% {
+    stroke-dashoffset: 1;
+    opacity: 1;
+  }
+  44%,
+  86% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  94%,
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+.ks-lit {
   transform-box: fill-box;
   transform-origin: center;
-  animation: ks-breathe 3.6s ease-in-out infinite;
 }
 
-@keyframes ks-breathe {
+.ks-lit-1 {
+  animation: ks-lit-1 7s ease-out infinite both;
+}
+
+.ks-lit-2 {
+  animation: ks-lit-2 7s ease-out infinite both;
+}
+
+.ks-lit-3 {
+  animation: ks-lit-3 7s ease-out infinite both;
+}
+
+@keyframes ks-lit-1 {
   0%,
-  100% {
-    transform: scale(0.82);
+  4% {
+    opacity: 0;
   }
-  50% {
-    transform: scale(1.12);
+  9%,
+  88% {
+    opacity: 1;
+  }
+  95%,
+  100% {
+    opacity: 0;
   }
 }
 
-/* --- Creativity: a slow turn under the morphing shape ------------------------ */
-.ks-spin {
-  transform-box: view-box;
-  transform-origin: 120px 76px;
-  animation: ks-turn 48s linear infinite;
+@keyframes ks-lit-2 {
+  0%,
+  24% {
+    opacity: 0;
+  }
+  29%,
+  88% {
+    opacity: 1;
+  }
+  95%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes ks-lit-3 {
+  0%,
+  44% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  49% {
+    opacity: 1;
+    transform: scale(1.14);
+  }
+  54%,
+  88% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  95%,
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+/* --- Creativity: four ideas, one keeper (8s) ---------------------------------- */
+.ks-idea,
+.ks-chosen,
+.ks-chosen-spark {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.ks-idea {
+  animation: ks-idea 8s cubic-bezier(0.3, 0, 0.2, 1) infinite both;
+  animation-delay: var(--d);
+}
+
+@keyframes ks-idea {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  8% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  12%,
+  32% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  42%,
+  100% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+}
+
+.ks-chosen {
+  animation: ks-chosen 8s cubic-bezier(0.45, 0, 0.2, 1) infinite both;
+}
+
+@keyframes ks-chosen {
+  0%,
+  5% {
+    transform: translate(76px, 0) scale(0);
+    opacity: 1;
+  }
+  13% {
+    transform: translate(76px, 0) scale(0.56);
+  }
+  17%,
+  36% {
+    transform: translate(76px, 0) scale(0.5);
+  }
+  52% {
+    transform: translate(0, 0) scale(1.08);
+  }
+  56%,
+  88% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  95%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+}
+
+.ks-chosen-fill {
+  animation: ks-chosen-fill 8s ease-in-out infinite both;
+}
+
+@keyframes ks-chosen-fill {
+  0%,
+  50% {
+    opacity: 0;
+  }
+  58%,
+  100% {
+    opacity: 1;
+  }
+}
+
+.ks-chosen-spark {
+  animation: ks-chosen-spark 8s ease-in-out infinite both;
+}
+
+@keyframes ks-chosen-spark {
+  0%,
+  58% {
+    transform: scale(0) rotate(-40deg);
+  }
+  64% {
+    transform: scale(1.25) rotate(0deg);
+  }
+  68%,
+  88% {
+    transform: scale(1) rotate(0deg);
+  }
+  94%,
+  100% {
+    transform: scale(0) rotate(30deg);
+  }
 }
 
 /* --- Data-driven: bars rise in turn ------------------------------------------ */
@@ -484,11 +728,5 @@
   .ks-art *,
   .ks-art {
     animation: none !important;
-  }
-  .ks-lean-l {
-    transform: rotate(9deg);
-  }
-  .ks-lean-r {
-    transform: rotate(-9deg);
   }
 }

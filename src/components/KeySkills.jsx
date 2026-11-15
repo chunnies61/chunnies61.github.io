@@ -3,31 +3,45 @@ import data from "../data/key-skills.json";
 import usePrefersReducedMotion from "../hooks/usePrefersReducedMotion";
 import "./KeySkills.css";
 
-/* Key skills — a grid of colour tiles, each naming one skill and showing it as
-   a small looping abstract animation: two figures lean toward each other
-   (empathy), a missing puzzle piece snaps into place (problem solving), nodes orbit and link
-   (systems), a shape keeps becoming another (creativity), bars grow (data),
-   scattered dots snap to a grid (alignment), a layout builds itself
-   (prototyping), coins stack (business). All SVG; the motion is CSS keyframes and
-   SMIL, and stops entirely when the visitor prefers reduced motion. */
+/* How I work — a grid of colour tiles, each naming one skill and showing it as a
+   small looping drawing: two chat bubbles and a heart (empathy), a missing
+   puzzle piece snaps into place (problem solving), a pulse lights a chain of
+   screens (systems), one sketched idea wins out (creativity), bars grow (data),
+   scattered dots snap to a grid (alignment), a prompt becomes a clickable
+   interface (prototyping), coins stack (business). All SVG with CSS keyframes;
+   every drawing rests in its finished pose, which is all that shows when the
+   visitor prefers reduced motion. */
 
 const INK = "#1f2228"; // deep charcoal, just short of black
 const WHITE = "#ffffff";
 
-const SHAPES = {
-  circle: "M120.0 18.0 C125.0 18.0 130.2 18.7 135.0 20.0 C139.8 21.3 144.7 23.3 149.0 25.8 C153.3 28.3 157.5 31.4 161.0 35.0 C164.6 38.5 167.7 42.7 170.2 47.0 C172.7 51.3 174.7 56.2 176.0 61.0 C177.3 65.8 178.0 71.0 178.0 76.0 C178.0 81.0 177.3 86.2 176.0 91.0 C174.7 95.8 172.7 100.7 170.2 105.0 C167.7 109.3 164.6 113.5 161.0 117.0 C157.5 120.6 153.3 123.7 149.0 126.2 C144.7 128.7 139.8 130.7 135.0 132.0 C130.2 133.3 125.0 134.0 120.0 134.0 C115.0 134.0 109.8 133.3 105.0 132.0 C100.2 130.7 95.3 128.7 91.0 126.2 C86.7 123.7 82.5 120.6 79.0 117.0 C75.4 113.5 72.3 109.3 69.8 105.0 C67.3 100.7 65.3 95.8 64.0 91.0 C62.7 86.2 62.0 81.0 62.0 76.0 C62.0 71.0 62.7 65.8 64.0 61.0 C65.3 56.2 67.3 51.3 69.8 47.0 C72.3 42.7 75.4 38.5 79.0 35.0 C82.5 31.4 86.7 28.3 91.0 25.8 C95.3 23.3 100.2 21.3 105.0 20.0 C109.8 18.7 115.0 18.0 120.0 18.0Z",
-  badge: "M120.0 18.0 C124.1 18.0 127.6 28.7 132.2 30.4 C136.8 32.1 143.4 26.8 147.5 28.3 C151.7 29.7 154.4 35.2 156.9 39.1 C159.4 42.9 159.6 47.7 162.7 51.4 C165.8 55.0 174.7 57.1 175.3 61.2 C175.9 65.3 166.4 71.1 166.4 76.0 C166.4 80.9 175.9 86.7 175.3 90.8 C174.7 94.9 165.8 97.0 162.7 100.7 C159.6 104.3 159.4 109.1 156.9 112.9 C154.4 116.8 151.7 122.3 147.5 123.7 C143.4 125.2 136.8 119.9 132.2 121.6 C127.6 123.3 124.1 134.0 120.0 134.0 C115.9 134.0 112.4 123.3 107.8 121.6 C103.2 119.9 96.6 125.2 92.5 123.7 C88.3 122.3 85.6 116.8 83.1 112.9 C80.6 109.1 80.4 104.3 77.3 100.7 C74.2 97.0 65.3 94.9 64.7 90.8 C64.1 86.7 73.6 80.9 73.6 76.0 C73.6 71.1 64.1 65.3 64.7 61.2 C65.3 57.1 74.2 55.0 77.3 51.4 C80.4 47.7 80.6 42.9 83.1 39.1 C85.6 35.2 88.3 29.7 92.4 28.3 C96.6 26.8 103.2 32.1 107.8 30.4 C112.4 28.7 115.9 18.0 120.0 18.0Z",
-  flower: "M120.0 18.0 C124.0 18.0 129.1 26.5 132.0 31.2 C134.9 35.8 133.9 43.9 137.4 45.9 C140.9 47.9 147.3 43.0 152.8 43.2 C158.3 43.4 168.2 43.5 170.2 47.0 C172.2 50.5 167.4 59.2 164.8 64.0 C162.2 68.8 154.8 72.0 154.8 76.0 C154.8 80.0 162.2 83.2 164.8 88.0 C167.4 92.8 172.2 101.5 170.2 105.0 C168.2 108.5 158.3 108.6 152.8 108.8 C147.3 109.0 140.9 104.1 137.4 106.1 C133.9 108.1 134.9 116.2 132.0 120.8 C129.1 125.5 124.0 134.0 120.0 134.0 C116.0 134.0 110.9 125.5 108.0 120.8 C105.1 116.2 106.1 108.1 102.6 106.1 C99.1 104.1 92.7 109.0 87.2 108.8 C81.7 108.6 71.8 108.5 69.8 105.0 C67.8 101.5 72.6 92.8 75.2 88.0 C77.8 83.2 85.2 80.0 85.2 76.0 C85.2 72.0 77.8 68.8 75.2 64.0 C72.6 59.2 67.8 50.5 69.8 47.0 C71.8 43.5 81.7 43.4 87.2 43.2 C92.7 43.0 99.1 47.9 102.6 45.9 C106.1 43.9 105.1 35.8 108.0 31.2 C110.9 26.5 116.0 18.0 120.0 18.0Z",
-  squircle: "M120.0 26.5 C124.4 26.5 129.0 25.8 133.2 26.7 C137.5 27.6 141.7 29.6 145.5 31.8 C149.3 34.0 153.0 36.8 156.1 39.9 C159.2 43.0 162.0 46.7 164.2 50.5 C166.4 54.3 168.4 58.5 169.3 62.8 C170.2 67.0 169.5 71.6 169.5 76.0 C169.5 80.4 170.2 85.0 169.3 89.2 C168.4 93.5 166.4 97.7 164.2 101.5 C162.0 105.3 159.2 109.0 156.1 112.1 C153.0 115.2 149.3 118.0 145.5 120.2 C141.7 122.4 137.5 124.4 133.2 125.3 C129.0 126.2 124.4 125.5 120.0 125.5 C115.6 125.5 111.0 126.2 106.8 125.3 C102.5 124.4 98.3 122.4 94.5 120.2 C90.7 118.0 87.0 115.2 83.9 112.1 C80.8 109.0 78.0 105.3 75.8 101.5 C73.6 97.7 71.6 93.5 70.7 89.2 C69.8 85.0 70.5 80.4 70.5 76.0 C70.5 71.6 69.8 67.0 70.7 62.8 C71.6 58.5 73.6 54.3 75.8 50.5 C78.0 46.7 80.8 43.0 83.9 39.9 C87.0 36.8 90.7 34.0 94.5 31.8 C98.3 29.6 102.5 27.6 106.8 26.7 C111.0 25.8 115.6 26.5 120.0 26.5Z",
-};
-
-/* Two figures lean in until they touch, then a spark appears between them */
+/* Listening both ways: a dark bubble "types" (three bouncing dots), a white bubble
+   replies, and a heart rises between them. */
 function Empathy() {
   return (
-    <g>
-      <rect className="ks-lean ks-lean-l" x="70" y="30" width="34" height="112" rx="17" fill={INK} />
-      <rect className="ks-lean ks-lean-r" x="136" y="30" width="34" height="112" rx="17" fill={WHITE} stroke={INK} strokeWidth="3" />
-      <circle className="ks-spark-dot" cx="120" cy="24" r="8" fill={INK} />
+    <g strokeLinejoin="round">
+      <g className="ks-bubble-a">
+        <rect x="30" y="26" width="108" height="46" rx="23" fill={INK} />
+        <path d="M46 66 L38 86 L64 70 Z" fill={INK} />
+        {[62, 84, 106].map((cx, i) => (
+          <circle key={cx} className="ks-typing" style={{ "--d": `${i * 0.15}s` }} cx={cx} cy="49" r="5.5" fill={WHITE} />
+        ))}
+      </g>
+      <g className="ks-bubble-b">
+        <rect x="102" y="80" width="108" height="46" rx="23" fill={WHITE} stroke={INK} strokeWidth="3" />
+        {/* the tail: a white patch hides the bubble's outline where it joins */}
+        <path d="M178 122 L198 138 L192 120" fill={WHITE} />
+        <path d="M178 124.5 L198 138 L192 122" fill="none" stroke={INK} strokeWidth="3" />
+        <rect className="ks-reply" x="124" y="95" width="66" height="7" rx="3.5" fill={INK} />
+        <rect className="ks-reply" style={{ "--d": "0.2s" }} x="124" y="107" width="42" height="7" rx="3.5" fill={INK} fillOpacity="0.45" />
+      </g>
+      <path
+        className="ks-heart"
+        d="M183 64 C161 50 163 24 183 35 C203 24 205 50 183 64 Z"
+        fill={WHITE}
+        stroke={INK}
+        strokeWidth="3"
+      />
     </g>
   );
 }
@@ -81,62 +95,96 @@ function ProblemSolving({ bg }) {
   );
 }
 
-/* Two rings of nodes turn in opposite directions, linked to a pulsing core */
+/* The whole chain, not just the screen: four small screens linked into a flow. A
+   pulse runs from the first, through both middle ones, to the last, lighting each
+   screen as it arrives. Drawn finished (all lit); the animation lights them in turn. */
+const SCREENS = [
+  { id: "a", x: 30, y: 62, step: 1 },
+  { id: "b", x: 102, y: 22, step: 2 },
+  { id: "c", x: 102, y: 102, step: 2 },
+  { id: "d", x: 174, y: 62, step: 3 },
+];
+const SW = 36; // screen width
+const SH = 28; // screen height
+const mid = (id) => {
+  const s = SCREENS.find((x) => x.id === id);
+  return [s.x + SW / 2, s.y + SH / 2];
+};
+const LINKS = [
+  ["a", "b", 1],
+  ["a", "c", 1],
+  ["b", "d", 2],
+  ["c", "d", 2],
+];
+
 function Systems() {
-  const outer = [0, 1, 2, 3, 4].map((i) => {
-    const a = (i * 72 - 90) * (Math.PI / 180);
-    return [120 + 60 * Math.cos(a), 76 + 60 * Math.sin(a)];
-  });
-  const inner = [0, 1, 2].map((i) => {
-    const a = (i * 120 - 30) * (Math.PI / 180);
-    return [120 + 30 * Math.cos(a), 76 + 30 * Math.sin(a)];
-  });
   return (
-    <g>
-      <g className="ks-turn ks-turn-a">
-        {outer.map(([x, y], i) => (
-          <line key={`s${i}`} x1="120" y1="76" x2={x} y2={y} stroke={INK} strokeWidth="2.5" />
-        ))}
-        <polygon points={outer.map((p) => p.join(",")).join(" ")} fill="none" stroke={INK} strokeWidth="2.5" strokeLinejoin="round" />
-        {outer.map(([x, y], i) => (
-          <circle key={`o${i}`} cx={x} cy={y} r="9" fill={i % 2 ? WHITE : INK} stroke={INK} strokeWidth="3" />
-        ))}
-      </g>
-      <g className="ks-turn ks-turn-b">
-        {inner.map(([x, y], i) => (
-          <circle key={`i${i}`} cx={x} cy={y} r="6.5" fill={INK} />
-        ))}
-      </g>
-      <circle className="ks-core" cx="120" cy="76" r="14" fill={INK} />
+    <g strokeLinecap="round" strokeLinejoin="round">
+      {LINKS.map(([f, t]) => {
+        const [x1, y1] = mid(f);
+        const [x2, y2] = mid(t);
+        return <line key={`b${f}${t}`} x1={x1} y1={y1} x2={x2} y2={y2} stroke={INK} strokeWidth="3" opacity="0.25" />;
+      })}
+      {LINKS.map(([f, t, d]) => {
+        const [x1, y1] = mid(f);
+        const [x2, y2] = mid(t);
+        return (
+          <line
+            key={`l${f}${t}`}
+            className={`ks-link ks-link-${d}`}
+            pathLength="1"
+            x1={x1}
+            y1={y1}
+            x2={x2}
+            y2={y2}
+            stroke={INK}
+            strokeWidth="3"
+          />
+        );
+      })}
+      {SCREENS.map((sc) => (
+        <g key={sc.id}>
+          <rect x={sc.x} y={sc.y} width={SW} height={SH} rx="6" fill={WHITE} stroke={INK} strokeWidth="3" />
+          <rect className={`ks-lit ks-lit-${sc.step}`} x={sc.x} y={sc.y} width={SW} height={SH} rx="6" fill={INK} stroke={INK} strokeWidth="3" />
+          <rect x={sc.x + 7} y={sc.y + 8} width="14" height="4" rx="2" fill={WHITE} />
+          <rect x={sc.x + 7} y={sc.y + 16} width="22" height="4" rx="2" fill={WHITE} />
+        </g>
+      ))}
     </g>
   );
 }
 
-/* One shape keeps becoming another; a paler echo follows a beat behind */
-function Creativity({ animate }) {
-  const seq = [SHAPES.circle, SHAPES.badge, SHAPES.flower, SHAPES.squircle, SHAPES.circle];
-  const ease = "0.45 0 0.25 1";
-  const morph = (begin) =>
-    animate && (
-      <animate
-        attributeName="d"
-        dur="12s"
-        begin={begin}
-        repeatCount="indefinite"
-        calcMode="spline"
-        keyTimes="0;0.25;0.5;0.75;1"
-        keySplines={`${ease};${ease};${ease};${ease}`}
-        values={seq.join(";")}
-      />
-    );
+/* Exploring many ideas, keeping the one that feels right: four sketched shapes pop up
+   in a row, three fade away, and the star moves to the centre, fills in and earns a
+   spark. Drawn finished (the star, centred and filled); the animation tells the story. */
+function starPath(cx, cy, R, r, n = 5) {
+  const pts = [];
+  for (let i = 0; i < n * 2; i++) {
+    const rad = i % 2 ? r : R;
+    const a = -Math.PI / 2 + (i * Math.PI) / n;
+    pts.push(`${(cx + rad * Math.cos(a)).toFixed(1)} ${(cy + rad * Math.sin(a)).toFixed(1)}`);
+  }
+  return `M${pts.join(" L")} Z`;
+}
+const STAR = starPath(120, 80, 36, 16);
+
+function Creativity() {
   return (
-    <g className="ks-spin">
-      <path d={SHAPES.badge} fill="none" stroke={INK} strokeWidth="2.5" opacity="0.45" transform="translate(120 76) scale(1.2) translate(-120 -76)">
-        {morph("-1.5s")}
-      </path>
-      <path d={animate ? SHAPES.circle : SHAPES.badge} fill={INK}>
-        {morph("0s")}
-      </path>
+    <g strokeLinejoin="round">
+      <circle className="ks-idea" style={{ "--d": "0s" }} cx="44" cy="80" r="17" fill={WHITE} stroke={INK} strokeWidth="3" opacity="0" />
+      <path className="ks-idea" style={{ "--d": "0.15s" }} d="M94 63 L112 95 L76 95 Z" fill={WHITE} stroke={INK} strokeWidth="3" opacity="0" />
+      <rect className="ks-idea" style={{ "--d": "0.3s" }} x="129" y="64" width="32" height="32" rx="5" fill={WHITE} stroke={INK} strokeWidth="3" opacity="0" />
+      <g className="ks-chosen">
+        <path d={STAR} fill={WHITE} stroke={INK} strokeWidth="3" />
+        <path className="ks-chosen-fill" d={STAR} fill={INK} stroke={INK} strokeWidth="3" />
+      </g>
+      <path
+        className="ks-chosen-spark"
+        d="M170 30 L174 39 L183 43 L174 47 L170 56 L166 47 L157 43 L166 39 Z"
+        fill={WHITE}
+        stroke={INK}
+        strokeWidth="3"
+      />
     </g>
   );
 }
@@ -324,7 +372,7 @@ function useScrub(tileRef, svgRef, enabled, smilPeriod) {
 }
 
 // How long one loop of the SMIL-driven drawings lasts, in seconds
-const SMIL_PERIOD = { creativity: 12 };
+const SMIL_PERIOD = {};
 
 function Tile({ skill, reduced }) {
   const tile = useRef(null);
