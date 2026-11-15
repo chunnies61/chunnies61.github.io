@@ -856,11 +856,11 @@ a.cs-index-item.is-active:hover {
 .cs-callout {
   background: #1e57c8; /* Primary, tone 40 */
   border-radius: var(--radius-card);
-  padding: 24px 28px;
+  padding: 20px;
 }
 .cs-callout-label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   font-family: var(--font-ui);
   font-size: 12px;
   font-weight: 600;

@@ -82,7 +82,7 @@ export default function Home() {
           </div>
 
           <div className="more-scroller" ref={scrollerRef}>
-            {home.otherWork.slice(0, 6).map((item, i) => (
+            {home.otherWork.filter((p) => p.title !== "Project title").slice(0, 6).map((item, i) => (
               <div className="more-card" key={`${item.thumb}-${i}`}>
                 <div className="more-card-media">
                   <img src={item.thumb} alt="" loading="lazy" />
