@@ -870,20 +870,25 @@
     {
       "id": "outcome",
       "kicker": "Outcome",
-      "title": "Less rework, and the right people adopting",
+      "title": "Faster requests, less rework, and the right people adopting",
       "blocks": [
         {
           "type": "stats",
           "items": [
             {
+              "value": "14 min",
+              "label": "Faster loan request submission",
+              "desc": "New Loan Request App vs. the old one"
+            },
+            {
+              "value": "~3×",
+              "label": "Faster credit questionnaire",
+              "desc": "e-CQ vs. DocuSign, ~5 min typical"
+            },
+            {
               "value": "~22%",
               "label": "New-ticket NIGO rate",
               "desc": "Against a ~60% discovery baseline"
-            },
-            {
-              "value": "~24%",
-              "label": "Overall adoption",
-              "desc": "USPB scorecard, still mid-pilot"
             },
             {
               "value": "~190",
@@ -891,6 +896,39 @@
               "desc": "19-week average, peak 307"
             }
           ]
+        },
+        {
+          "type": "text",
+          "value": "The results are early but point the same way: requests get submitted faster, come back less often, and reach the roles the work was designed for."
+        },
+        {
+          "type": "cards",
+          "columns": 3,
+          "items": [
+            {
+              "emoji": "📝",
+              "label": "Loan Request App",
+              "title": "Live, and already booking deals",
+              "desc": "13 new requests submitted, 5 in progress and 2 booked so far."
+            },
+            {
+              "emoji": "⏱️",
+              "label": "Credit Questionnaire",
+              "title": "Done in about 5 minutes",
+              "desc": "Clients usually finish the e-CQ in about 5 minutes, and sometimes in as little as 3."
+            },
+            {
+              "emoji": "🧭",
+              "label": "Lending Workspace",
+              "title": "In pilot with real users",
+              "desc": "16 users demoed and 5 given pilot access, with their feedback folded into launch planning."
+            }
+          ]
+        },
+        {
+          "type": "quote",
+          "value": "Much smoother… super easy to use… a big improvement.",
+          "attribution": "Pilot users, on the new Loan Request App"
         },
         {
           "type": "text",
@@ -954,6 +992,11 @@
         {
           "type": "text",
           "value": "The Workspace gained coherence too: the Deal Journey Tracker now integrates the eCQ credit questionnaire and covers IPB SBL and Custom deals — end-to-end visibility across the seams I mapped. And the IA and personas remain the team's source of truth."
+        },
+        {
+          "type": "honest-note",
+          "label": "What's next",
+          "value": "A manual Credit Questionnaire workflow, targeting automation of half of all manual questionnaires and cutting internal handling from ~20 minutes to ~5 for the ones it covers. It's a target, not a result yet."
         }
       ]
     },
