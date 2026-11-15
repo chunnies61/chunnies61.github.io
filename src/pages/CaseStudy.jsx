@@ -13,7 +13,6 @@ const WorkspacePrototype = lazy(() => import("../components/workspace/WorkspaceP
 import "./CaseStudy.css";
 import PasswordGate, { useUnlocked } from "../components/PasswordGate";
 import InViewVideo from "../components/InViewVideo";
-import { ICONS } from "../components/lra/icons.generated";
 
 
 function QuoteAttribution({ value }) {
@@ -228,22 +227,6 @@ const CARD_ICONS = {
     </>
   ),
 };
-
-/* A metric tile's icon: one of the Iconstica line icons the prototypes use, in the
-   same round tint as the card icons. */
-function StatIcon({ name }) {
-  const parts = ICONS[name];
-  if (!parts) return null;
-  return (
-    <span className="cs-card-icon cs-outcome-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none">
-        {parts.map((props, i) => (
-          <path key={i} {...props} />
-        ))}
-      </svg>
-    </span>
-  );
-}
 
 function CardIcon({ name, className = "cs-card-icon" }) {
   const glyph = CARD_ICONS[name];
@@ -484,7 +467,7 @@ function Block({ block }) {
         <div className={"cs-outcomes-grid cs-outcomes-" + block.items.length}>
           {block.items.map((item) => (
             <div className="cs-outcome-tile" key={item.label}>
-              {item.icon && <StatIcon name={item.icon} />}
+              {item.emoji && <span className="cs-card-emoji">{item.emoji}</span>}
               {item.value && <p className="cs-outcome-value">{item.value}</p>}
               <p className="cs-outcome-label cs-outcome-label-strong">{item.label}</p>
               {item.desc && <p className="cs-outcome-desc">{item.desc}</p>}
