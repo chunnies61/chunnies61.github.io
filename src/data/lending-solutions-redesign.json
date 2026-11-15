@@ -889,11 +889,6 @@
               "value": "~190",
               "label": "Weekly active users",
               "desc": "19-week average, peak 307"
-            },
-            {
-              "value": "3",
-              "label": "Regions in pilot",
-              "desc": "USPB · EMEA · APAC"
             }
           ]
         },
