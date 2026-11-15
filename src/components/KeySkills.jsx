@@ -11,7 +11,7 @@ import "./KeySkills.css";
    (prototyping), coins stack (business). All SVG; the motion is CSS keyframes and
    SMIL, and stops entirely when the visitor prefers reduced motion. */
 
-const INK = "#3b3f49"; // charcoal, not black
+const INK = "#1f2228"; // deep charcoal, just short of black
 const WHITE = "#ffffff";
 
 const SHAPES = {
