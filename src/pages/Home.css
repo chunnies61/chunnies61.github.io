@@ -239,27 +239,7 @@
 
 .more-arrows {
   display: flex;
-  gap: 12px;
-}
-
-.more-arrow {
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  border: 1px solid var(--card-border);
-  background: #fff;
-  color: var(--accent);
-  font-size: 16px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: border-color 0.2s ease, color 0.2s ease;
-}
-
-.more-arrow:hover {
-  border-color: var(--accent);
-  color: var(--accent-dark);
+  gap: 16px;
 }
 
 /* Phone: the display headings drop 20% so they stop dominating the screen.
