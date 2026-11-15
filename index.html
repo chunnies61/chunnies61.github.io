@@ -47,6 +47,24 @@
         }
       })(window.location);
     </script>
+    <!-- Google Analytics 4. Runs after the URL is restored above, so a direct visit to
+         /about is recorded as /about. Only on the live domain, so local previews don't
+         count. Page changes inside the site are picked up by GA4's enhanced measurement
+         ("page changes based on browser history events"), which is on by default. -->
+    <script>
+      (function () {
+        var id = 'G-1X6G315C05';
+        if (!/(^|\.)yichuns\.com$/.test(location.hostname)) return;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', id);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
