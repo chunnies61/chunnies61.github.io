@@ -426,4 +426,10 @@
   .cs-ia-filter-note {
     text-align: left;
   }
+  /* L1 products and L2 apps step down to 13px on phones */
+  .cs-ia-node.is-product,
+  .cs-ia-node.is-other,
+  .cs-ia-node.is-app {
+    font-size: 13px;
+  }
 }
