@@ -3,16 +3,16 @@
   "title": "What I bring to the table",
   "skills": [
     {
-      "id": "prototyping",
-      "title": "AI-native prototyping",
-      "desc": "Building polished, working prototypes fast.",
-      "bg": "#cbf26c"
-    },
-    {
       "id": "empathy",
       "title": "Empathy",
       "desc": "Not just for users, but for my stakeholders too.",
       "bg": "#ffc9dd"
+    },
+    {
+      "id": "prototyping",
+      "title": "AI-native prototyping",
+      "desc": "Building polished, working prototypes fast.",
+      "bg": "#cbf26c"
     },
     {
       "id": "problem-solving",
