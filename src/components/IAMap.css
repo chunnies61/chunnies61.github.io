@@ -3,8 +3,8 @@
    top, one line down to the apps, and the apps side by side with their pages
    stacked beneath — scrolling sideways when they outrun the column.
 
-   Colour stays in the site system on a Primary 40 sheet: products and apps
-   are Primary 90 nodes, unselected products are outlined, pages are white
+   Colour stays in the site system on a gray sheet: products and apps are
+   Primary 40 chips, unselected products are outlined, pages are white
    pills. Type comes from the .md-* role on each element; this file holds
    colour, spacing and layout only.
 
@@ -12,11 +12,12 @@
    smoothing). Browsers without corner-shape fall back to the plain radius. */
 
 .cs-ia {
-  --cs-ia-bg: #1e57c8;                        /* Primary 40 */
-  --cs-ia-on-bg: #ffffff;
-  --cs-ia-on-bg-soft: rgba(255, 255, 255, 0.82);
-  --cs-ia-wire: rgba(255, 255, 255, 0.55);
-  --cs-ia-node: #dae2ff;                      /* Primary 90 */
+  --cs-ia-bg: var(--gray-100);                /* gray sheet */
+  --cs-ia-on-bg: var(--text);
+  --cs-ia-on-bg-soft: var(--text-soft);
+  --cs-ia-wire: var(--gray-400);
+  --cs-ia-node: var(--accent-dark);           /* Primary 40 chips */
+  --cs-ia-on-node: #ffffff;
 
   /* Geometry — connectors are placed from these */
   --cs-ia-stroke: 1.5px;
@@ -167,14 +168,15 @@
   border-radius: 4px;
   corner-shape: squircle;
   background: #ffffff;
+  box-shadow: inset 0 0 0 1px var(--gray-200);
 }
 
 .cs-ia-key.is-other {
-  border: 1.5px solid rgba(255, 255, 255, 0.8);
+  border: 1.5px solid var(--gray-700);
 }
 
 .cs-ia-key.is-empty {
-  border: 1.5px dashed rgba(255, 255, 255, 0.8);
+  border: 1.5px dashed var(--gray-700);
 }
 
 /* --- Map ----------------------------------------------------------------- */
@@ -190,7 +192,7 @@
   padding: 3px 12px;
   border-radius: 100px;
   corner-shape: squircle;
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(51, 57, 69, 0.1);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 700;
@@ -228,19 +230,19 @@
 
 .cs-ia-node.is-product {
   background: var(--cs-ia-node);
-  color: var(--text);
+  color: var(--cs-ia-on-node);
   font-weight: 700;
 }
 
 .cs-ia-node.is-other {
-  border: 1.5px solid rgba(255, 255, 255, 0.8);
+  border: 1.5px solid var(--gray-700);
   color: var(--cs-ia-on-bg);
 }
 
 .cs-ia-star {
   font-size: 13px;
   line-height: 1;
-  color: var(--accent-dark);
+  color: var(--cs-ia-on-node);
 }
 
 /* L1 → L2 connector */
@@ -274,7 +276,7 @@
   padding-bottom: 12px;
   overflow-x: auto;
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.45) transparent;
+  scrollbar-color: var(--gray-400) transparent;
   --cs-ia-fade: 48px;
 }
 
@@ -361,7 +363,7 @@
   border-radius: 12px;
   corner-shape: squircle;
   background: var(--cs-ia-node);
-  color: var(--text);
+  color: var(--cs-ia-on-node);
   font-weight: 700;
 }
 
@@ -378,8 +380,8 @@
   width: 20px;
   height: 20px;
   border-radius: 999px;
-  background: var(--accent-dark);
-  color: #ffffff;
+  background: #ffffff;
+  color: var(--accent-dark);
 }
 
 /* Pages — stacked under their app on a rail from the header to the last page */
@@ -407,6 +409,7 @@
   corner-shape: squircle;
   background: #ffffff;
   color: var(--text);
+  box-shadow: 0 0 0 1px var(--gray-200);
 }
 
 .cs-ia-node.is-empty {
