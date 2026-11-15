@@ -18,10 +18,12 @@
     font-size: 24px;
   }
 
-  /* Phones: a tighter gap under the nav and less padding inside the panel, so the
-     heading starts near the top of the screen instead of 120px down. */
+  /* Phones: a tighter gap under the nav, 20px either side, and less padding
+     inside the panel, so the heading starts near the top of the screen. */
   .about-page .about-hero {
     margin-top: 16px;
+    margin-left: 20px;
+    margin-right: 20px;
     padding-top: 48px;
     padding-bottom: 48px;
   }
