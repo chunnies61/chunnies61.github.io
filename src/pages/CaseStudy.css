@@ -879,6 +879,14 @@ a.cs-index-item.is-active:hover {
   color: #bfdbfe;
 }
 
+/* Phones: the callout's main line steps down to 16px so it stays a few lines long */
+@media (max-width: 640px) {
+  .cs-callout p.md-headline-small {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
 
 /* Contrast pair */
 .cs-contrast {
