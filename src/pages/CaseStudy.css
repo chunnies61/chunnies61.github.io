@@ -133,10 +133,12 @@ a.cs-index-item.is-active:hover {
     padding: 36px 24px 40px;
   }
 
+  /* The hero images are 3:2; a 16:9 frame cropped their top edge, logo included.
+     Show them whole at their own shape. */
   .cs-hero-image {
     height: auto;
     min-height: 0;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 3 / 2;
   }
 }
 
