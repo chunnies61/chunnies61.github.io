@@ -5,7 +5,7 @@ import "./KeySkills.css";
 
 /* Key skills — a grid of colour tiles, each naming one skill and showing it as
    a small looping abstract animation: two figures lean toward each other
-   (empathy), a tangle straightens (problem solving), nodes orbit and link
+   (empathy), a missing puzzle piece snaps into place (problem solving), nodes orbit and link
    (systems), a shape keeps becoming another (creativity), bars grow (data),
    scattered dots snap to a grid (alignment), a layout builds itself
    (prototyping), coins stack (business). All SVG; the motion is CSS keyframes and
@@ -32,30 +32,51 @@ function Empathy() {
   );
 }
 
-/* A looping line unravels into a straight one. Both ends stay where they are, so
-   only the part in between moves — the loops shrink away until the line is clear. */
-const LOOPS = "M24.0 76.0 C25.8 79.0 30.1 88.5 34.9 93.9 C39.8 99.3 46.3 104.5 53.2 108.3 C60.2 112.0 68.5 114.9 76.6 116.2 C84.7 117.5 93.8 117.5 101.9 116.2 C110.0 114.9 118.3 112.0 125.3 108.3 C132.2 104.5 138.7 99.3 143.6 93.9 C148.4 88.5 152.2 82.0 154.5 76.0 C156.8 70.0 157.6 63.5 157.3 58.1 C157.0 52.7 155.1 47.5 152.7 43.7 C150.3 40.0 146.5 37.1 143.0 35.8 C139.5 34.5 135.0 34.5 131.5 35.8 C128.0 37.1 124.2 40.0 121.8 43.7 C119.4 47.5 117.5 52.7 117.2 58.1 C116.9 63.5 117.7 70.0 120.0 76.0 C122.3 82.0 126.1 88.5 130.9 93.9 C135.8 99.3 142.3 104.5 149.2 108.3 C156.2 112.0 164.5 114.9 172.6 116.2 C180.7 117.5 189.8 117.5 197.9 116.2 C206.0 114.9 214.3 112.0 221.3 108.3 C228.2 104.5 234.7 99.3 239.6 93.9 C244.4 88.5 248.2 82.0 250.5 76.0 C252.8 70.0 253.6 63.5 253.3 58.1 C253.0 52.7 251.1 47.5 248.7 43.7 C246.3 40.0 242.5 37.1 239.0 35.8 C235.5 34.5 231.0 34.5 227.5 35.8 C224.0 37.1 220.2 40.0 217.8 43.7 C215.4 47.5 213.5 52.7 213.2 58.1 C212.9 63.5 215.5 73.0 216.0 76.0";
-const STRAIGHT = "M24.0 76.0 C25.1 76.0 28.6 76.0 30.9 76.0 C33.1 76.0 35.4 76.0 37.7 76.0 C40.0 76.0 42.3 76.0 44.6 76.0 C46.9 76.0 49.1 76.0 51.4 76.0 C53.7 76.0 56.0 76.0 58.3 76.0 C60.6 76.0 62.9 76.0 65.1 76.0 C67.4 76.0 69.7 76.0 72.0 76.0 C74.3 76.0 76.6 76.0 78.9 76.0 C81.1 76.0 83.4 76.0 85.7 76.0 C88.0 76.0 90.3 76.0 92.6 76.0 C94.9 76.0 97.1 76.0 99.4 76.0 C101.7 76.0 104.0 76.0 106.3 76.0 C108.6 76.0 110.9 76.0 113.1 76.0 C115.4 76.0 117.7 76.0 120.0 76.0 C122.3 76.0 124.6 76.0 126.9 76.0 C129.1 76.0 131.4 76.0 133.7 76.0 C136.0 76.0 138.3 76.0 140.6 76.0 C142.9 76.0 145.1 76.0 147.4 76.0 C149.7 76.0 152.0 76.0 154.3 76.0 C156.6 76.0 158.9 76.0 161.1 76.0 C163.4 76.0 165.7 76.0 168.0 76.0 C170.3 76.0 172.6 76.0 174.9 76.0 C177.1 76.0 179.4 76.0 181.7 76.0 C184.0 76.0 186.3 76.0 188.6 76.0 C190.9 76.0 193.1 76.0 195.4 76.0 C197.7 76.0 200.0 76.0 202.3 76.0 C204.6 76.0 206.9 76.0 209.1 76.0 C211.4 76.0 214.9 76.0 216.0 76.0";
-
-function ProblemSolving({ animate }) {
-  const ease = "0.45 0 0.2 1";
+/* A jigsaw piece: a square of side S at (x, y) whose edges are flat (0), carry a knob
+   (1) or take a socket (-1), listed top, right, bottom, left. The outline runs
+   clockwise, so sweep 1 bulges a knob outward and sweep 0 cuts a socket inward. */
+function piecePath(x, y, S, [top, right, bottom, left]) {
+  const a = S * 0.34; // where the knob starts along the edge
+  const b = S * 0.66; // and where it ends
+  const r = S * 0.19; // a little more than half the gap, so the knob reads as a bulb
+  const knob = (t, ex, ey) => (t === 0 ? "" : `L${ex[0]} ${ex[1]} A${r} ${r} 0 1 ${t > 0 ? 1 : 0} ${ey[0]} ${ey[1]} `);
   return (
-    <g>
-      <path d={animate ? LOOPS : STRAIGHT} fill="none" stroke={INK} strokeWidth="7" strokeLinecap="round" strokeLinejoin="round">
-        {animate && (
-          <animate
-            attributeName="d"
-            dur="8s"
-            repeatCount="indefinite"
-            calcMode="spline"
-            keyTimes="0;0.18;0.5;0.78;1"
-            keySplines={`${ease};${ease};${ease};${ease}`}
-            values={`${LOOPS};${LOOPS};${STRAIGHT};${STRAIGHT};${LOOPS}`}
-          />
-        )}
-      </path>
-      <circle cx="24" cy="76" r="6" fill={INK} />
-      <circle cx="216" cy="76" r="10" fill={WHITE} stroke={INK} strokeWidth="4" />
+    `M${x} ${y} ` +
+    knob(top, [x + a, y], [x + b, y]) + `L${x + S} ${y} ` +
+    knob(right, [x + S, y + a], [x + S, y + b]) + `L${x + S} ${y + S} ` +
+    knob(bottom, [x + S - a, y + S], [x + S - b, y + S]) + `L${x} ${y + S} ` +
+    knob(left, [x, y + S - a], [x, y + S - b]) + "Z"
+  );
+}
+
+/* A missing puzzle piece floats in, turns, snaps into its gap, and a spark lands.
+   Three ink pieces and a dashed outline of the gap; the white piece is the answer. */
+const PS = 54; // piece size
+const PX = 66; // grid left
+const PY = 30; // grid top
+const PIECES = {
+  tl: piecePath(PX, PY, PS, [0, 1, -1, 0]),
+  bl: piecePath(PX, PY + PS, PS, [1, -1, 0, 0]),
+  br: piecePath(PX + PS, PY + PS, PS, [-1, 0, 0, 1]),
+  tr: piecePath(PX + PS, PY, PS, [0, 0, 1, -1]),
+};
+
+function ProblemSolving({ bg }) {
+  return (
+    <g strokeLinejoin="round">
+      {["tl", "bl", "br"].map((k) => (
+        <path key={k} d={PIECES[k]} fill={INK} stroke={bg} strokeWidth="2.5" />
+      ))}
+      <path d={PIECES.tr} fill="none" stroke={INK} strokeWidth="2.5" strokeDasharray="5 5" opacity="0.45" />
+      <path className="ks-piece" d={PIECES.tr} fill={WHITE} stroke={INK} strokeWidth="3" />
+      <path
+        className="ks-piece-spark"
+        d="M196 22 L200 31 L209 35 L200 39 L196 48 L192 39 L183 35 L192 31 Z"
+        fill={WHITE}
+        stroke={INK}
+        strokeWidth="3"
+        strokeLinejoin="round"
+      />
     </g>
   );
 }
@@ -285,7 +306,7 @@ function useScrub(tileRef, svgRef, enabled, smilPeriod) {
 }
 
 // How long one loop of the SMIL-driven drawings lasts, in seconds
-const SMIL_PERIOD = { "problem-solving": 8, creativity: 12 };
+const SMIL_PERIOD = { creativity: 12 };
 
 function Tile({ skill, reduced }) {
   const tile = useRef(null);
@@ -297,7 +318,7 @@ function Tile({ skill, reduced }) {
       <h3>{skill.title}</h3>
       <p>{skill.desc}</p>
       <svg ref={svg} className="ks-art" viewBox="0 0 240 150" preserveAspectRatio="xMidYMax meet" aria-hidden="true" focusable="false">
-        <Art animate={!reduced} />
+        <Art animate={!reduced} bg={skill.bg} />
       </svg>
     </article>
   );
