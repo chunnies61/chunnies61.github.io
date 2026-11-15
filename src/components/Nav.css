@@ -7,7 +7,7 @@
   transition: background 0.25s ease;
 }
 
-/* Home only: the hero's aurora runs up behind the bar, so let it show through
+/* Home only: the hero's gradient runs up behind the bar, so let it show through
    while the page sits at the top. Every other page keeps a white nav. */
 body:has(.home) .nav {
   background: transparent;
