@@ -33,28 +33,6 @@
       "title": "A slogan, not a brief",
       "blocks": [
         {
-          "type": "stats",
-          "items": [
-            {
-              "value": "−70%",
-              "label": "Task completion time"
-            },
-            {
-              "value": "−45%",
-              "label": "Error rate"
-            },
-            {
-              "value": "Millions",
-              "label": "Active users",
-              "desc": "Pilot → millions of users"
-            },
-            {
-              "value": "−50%",
-              "label": "Support tickets & training time"
-            }
-          ]
-        },
-        {
           "type": "text",
           "value": [
             "Otis's clients manage complex properties worldwide, but legacy on-premise infrastructure made real-time monitoring nearly impossible. That opacity forced reactive maintenance — waiting for elevators to fail — driving up downtime, cost, and friction.",
@@ -322,9 +300,9 @@
               "label": "Error rate"
             },
             {
-              "value": "3×",
+              "value": "Millions",
               "label": "Active users",
-              "desc": "300+ → 1,000+"
+              "desc": "Pilot → millions of users"
             },
             {
               "value": "−50%",
