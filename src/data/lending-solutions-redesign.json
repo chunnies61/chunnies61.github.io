@@ -49,7 +49,7 @@
               "emoji": "📝",
               "label": "Where a deal starts",
               "title": "Loan Request App",
-              "desc": "SBL, Custom Credit and PLP tickets, across four regions."
+              "desc": "Nearly $200B in loan requests a month — SBL, Custom Credit and PLP tickets, across four regions."
             },
             {
               "emoji": "🗂️",
@@ -858,7 +858,7 @@
         {
           "type": "lra-prototype",
           "title": "Loan Request App",
-          "intro": "Where a request begins: the banker adds the parties, acts on an existing facility or builds a new deal, and gets an indicative offer — with Credit's rules checked at entry instead of after submission. Switch the preview to see how each region shapes the same flow."
+          "intro": "Where a request begins: the banker adds the parties, acts on an existing facility or builds a new deal, and gets an indicative offer — with Credit's rules checked at entry instead of after submission."
         },
         {
           "type": "workspace-prototype",
@@ -870,91 +870,42 @@
     {
       "id": "outcome",
       "kicker": "Outcome",
-      "title": "Less rework, and the right people adopting",
+      "title": "Faster requests and less rework",
       "blocks": [
         {
           "type": "stats",
           "items": [
             {
+              "value": "14 min",
+              "emoji": "⏱️",
+              "label": "Faster loan request submission",
+              "desc": "New Loan Request App vs. the old one"
+            },
+            {
+              "value": "~3×",
+              "emoji": "📝",
+              "label": "Faster credit questionnaire",
+              "desc": "e-CQ vs. DocuSign, ~5 min typical"
+            },
+            {
               "value": "~22%",
+              "emoji": "✅",
               "label": "New-ticket NIGO rate",
-              "desc": "Against a ~60% discovery baseline"
-            },
-            {
-              "value": "~24%",
-              "label": "Overall adoption",
-              "desc": "USPB scorecard, still mid-pilot"
-            },
-            {
-              "value": "~190",
-              "label": "Weekly active users",
-              "desc": "19-week average, peak 307"
-            },
-            {
-              "value": "3",
-              "label": "Regions in pilot",
-              "desc": "USPB · EMEA · APAC"
+              "desc": "Down from ~60% in discovery"
             }
           ]
         },
         {
           "type": "text",
           "value": [
-            "Validate-at-source intake shipped with provenance chips and reason-coded overrides. New-ticket NIGO now sits at ~22%, down from ~60% in discovery.",
-            "NIGO — not in good order — is the firm's own term for the bounce-back rework I set out to reduce, so it's the metric closest to the work. It's a programme-level result: the redesign contributed alongside process and training changes."
+            "The new Loan Request App is live and in use globally. Clients usually finish the new e-CQ credit questionnaire in about 5 minutes, and sometimes in as little as 3.",
+            "Validate-at-source intake brought new-ticket NIGO — not in good order, the firm's own term for the bounce-back rework I set out to reduce — down to ~22% from ~60%. It's a programme-level result: the redesign contributed alongside process and training changes."
           ]
         },
         {
           "type": "honest-note",
-          "label": "What the usage mix confirms",
-          "value": "Lenders (43.8%), Analysts (16.9%) and Credit Middle Office (16.3%) — the exact roles, in the exact order, the personas were built around."
-        },
-        {
-          "type": "scorecard",
-          "title": "The pilot scorecard",
-          "caption": "NIGO, adoption, and the weekly-active role mix",
-          "nigo": {
-            "label": "New-ticket NIGO rate",
-            "unit": "%",
-            "baseline": {
-              "label": "Discovery baseline",
-              "value": 60
-            },
-            "current": {
-              "label": "Pilot",
-              "value": 22
-            },
-            "note": "Lower is better"
-          },
-          "adoption": {
-            "label": "Overall adoption",
-            "value": 24,
-            "note": "USPB scorecard, still mid-pilot"
-          },
-          "roleMix": {
-            "label": "Weekly active users",
-            "value": 190,
-            "note": "19-week average, peak 307",
-            "segments": [
-              {
-                "name": "Lenders",
-                "value": 43.8
-              },
-              {
-                "name": "Analysts",
-                "value": 16.9
-              },
-              {
-                "name": "Credit Middle Office",
-                "value": 16.3
-              },
-              {
-                "name": "Other roles",
-                "value": 23.0,
-                "other": true
-              }
-            ]
-          }
+          "label": "In their words",
+          "value": "Pilot users called the new Loan Request App “much smoother” and “super easy to use” — “a big improvement” on the old one."
         },
         {
           "type": "text",

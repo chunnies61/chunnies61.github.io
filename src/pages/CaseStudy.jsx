@@ -467,6 +467,7 @@ function Block({ block }) {
         <div className={"cs-outcomes-grid cs-outcomes-" + block.items.length}>
           {block.items.map((item) => (
             <div className="cs-outcome-tile" key={item.label}>
+              {item.emoji && <span className="cs-card-emoji">{item.emoji}</span>}
               {item.value && <p className="cs-outcome-value">{item.value}</p>}
               <p className="cs-outcome-label cs-outcome-label-strong">{item.label}</p>
               {item.desc && <p className="cs-outcome-desc">{item.desc}</p>}

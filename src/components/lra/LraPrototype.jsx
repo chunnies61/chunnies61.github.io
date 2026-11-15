@@ -5,18 +5,17 @@ import StepClient from "./StepClient";
 import StepDetails from "./StepDetails";
 import StepReview from "./StepReview";
 import Submission from "./Submission";
-import { Icon, Toggle } from "./ui";
+import { Icon } from "./ui";
 import { ScaledFrame } from "./frame";
 import "./Lra.css";
 
 /* Loan Request App prototype — the origination wizard, by region.
 
    LraFlow is one region's wizard in its browser window: Client & facility,
-   Loan details, Loan review, then the submission. LraPrototype adds the
-   Preview toggle that switches regions: EMEA (in EUR); APAC (USD, with its
-   compliance gates); USPB (the EMEA flow in USD, plus the GFG flag). The
-   future-vision
-   prototype reuses LraFlow (EMEA) as its Current state. All data is mocked
+   Loan details, Loan review, then the submission. The case study shows the EMEA
+   flow (in EUR) only; the APAC and USPB variants stay defined in ./data.js and
+   ./rules.js. The future-vision prototype reuses LraFlow (EMEA) as its Current
+   state. All data is mocked
    (see ./data.js). */
 
 export function LraFlow({ region, suffix, path }) {
@@ -187,24 +186,11 @@ export function LraFlow({ region, suffix, path }) {
 }
 
 export default function LraPrototype({ title = "Loan request prototype" }) {
-  const [regionId, setRegionId] = useState(REGIONS[0].id);
-  const region = REGIONS.find((r) => r.id === regionId);
+  const region = REGIONS[0]; // EMEA
 
   return (
     <div className="lra lra-app" aria-label={title} role="region">
-      {/* Preview — the black toggle switches region variants; each starts afresh */}
-      <Toggle
-        label="Preview"
-        value={regionId}
-        onChange={setRegionId}
-        options={REGIONS.map((r) => ({ id: r.id, label: r.label }))}
-      />
-      <LraFlow
-        key={regionId}
-        region={region}
-        suffix="Loan Request App"
-        path={`/lending/loan-request/new?region=${regionId}`}
-      />
+      <LraFlow region={region} suffix="Loan Request App" path={`/lending/loan-request/new?region=${region.id}`} />
     </div>
   );
 }
