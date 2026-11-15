@@ -106,9 +106,9 @@ export const NEWSLETTER = {
   title: "STEPPING INTO SPRING: Q1 RECAP",
   date: "2026-04-10",
   paragraphs: [
-    "Team — what a quarter. Custom loan submissions were up on every desk, and the time from first conversation to credit approval kept falling as more of you moved deals through the Workspace.",
+    "Team, what a quarter! Custom loan submissions were up on every desk, and the time from first conversation to credit approval kept falling as more of you moved deals through the Workspace.",
     "Our “Liquidity at Tax Time” campaign reached clients right when they needed flexibility, and it turned into one of the strongest origination months we've had.",
-    "Lending balances closed the quarter at a record $135Bn in the US and $200Bn globally — a result of steady servicing as much as new business.",
+    "Lending balances closed the quarter at a record $135Bn in the US and $200Bn globally, the result of steady servicing as much as new business.",
     "Thank you for the care you bring to every client. Let's carry the momentum into Q2.",
   ],
   signature: "JORDAN ELLIS",

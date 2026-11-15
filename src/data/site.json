@@ -15,11 +15,11 @@
     "sectionEyebrow": "Selected Work",
     "sectionTitle": "Case studies",
     "caseStudies": [
-      {"slug": "unified-customer-hub", "title": "Unified Customer Hub", "tags": ["Fintech", "B2C", "Customer Service"], "desc": "Turning three disconnected fintech products into one platform — and 420K+ monthly users", "thumb": "/images/unified-customer-hub-homepage-thumb.png"},
-      {"slug": "lending-solutions-redesign", "title": "Lending Solutions Redesign", "tags": ["B2B", "Loan Request App", "Lending Workspace"], "desc": "Making the invisible ownable — turning a loan workflow no single team owned into one everyone could see and fix", "thumb": "/images/lending-hero-workspace.png", "locked": false},
+      {"slug": "unified-customer-hub", "title": "Unified Customer Hub", "tags": ["Fintech", "B2C", "Customer Service"], "desc": "Turning three disconnected fintech products into one platform for 420K+ monthly users", "thumb": "/images/unified-customer-hub-homepage-thumb.png"},
+      {"slug": "lending-solutions-redesign", "title": "Lending Solutions Redesign", "tags": ["B2B", "Loan Request App", "Lending Workspace"], "desc": "Making the invisible ownable: turning a loan workflow no single team owned into one everyone could see and fix", "thumb": "/images/lending-hero-workspace.png", "locked": false},
       {"slug": "agent-desk", "title": "Agent Desk", "tags": ["Fintech", "Internal Tool", "Workflow Optimization"], "desc": "Accelerating customer review and verification workflows", "thumb": "/images/thumbnail-3-d54e40.png"},
-      {"slug": "otis-digital-eco-system", "title": "Otis Cloud EMS 2.0", "tags": ["Property Management", "B2B2C"], "desc": "Turning a legacy monitoring system into a proactive, cloud-native platform — by designing for fear, not just efficiency", "thumb": "/images/otis-thumb.png", "locked": true},
-      {"slug": "nitro-college", "title": "Nitro College", "tags": ["Fintech", "Edutech", "B2C"], "desc": "Turning scattered screens into an end-to-end platform — by delivering a system, not just pages", "thumb": "/images/thumbnail-4ae4a5.png"},
+      {"slug": "otis-digital-eco-system", "title": "Otis Cloud EMS 2.0", "tags": ["Property Management", "B2B2C"], "desc": "Turning a legacy monitoring system into a proactive, cloud-native platform by designing for fear, not just efficiency", "thumb": "/images/otis-thumb.png", "locked": true},
+      {"slug": "nitro-college", "title": "Nitro College", "tags": ["Fintech", "Edutech", "B2C"], "desc": "Turning scattered screens into an end-to-end platform by delivering a system, not just pages", "thumb": "/images/thumbnail-4ae4a5.png"},
       {"slug": "clinicmind-ehr-platform", "title": "ClinicMind EHR Platform", "tags": ["Healthcare SaaS", "B2B", "CRM"], "desc": "Building design influence from zero in a 20-year, engineer-led healthcare platform", "thumb": "/images/thumbnail-4-9d912d.png"}
     ],
     "otherWorkEyebrow": "Built for the love of it",
@@ -33,7 +33,7 @@
           "alt": "Red Dot Winner 2026"
         },
         "desc": [
-          "SORA is a women's personal safety companion paired with Apple Watch, offering mode-based protection, safe-word detection, and trusted-circle check-ins for the 1 in 3 women worldwide who don't feel safe in their own community. SORA does not surveil — it accompanies."
+          "SORA is a women's personal safety companion paired with Apple Watch, offering mode-based protection, safe-word detection, and trusted-circle check-ins for the 1 in 3 women worldwide who don't feel safe in their own community. SORA does not surveil. It accompanies."
         ],
         "link": "https://ziyi0619.github.io/sora/",
         "images": [
@@ -51,7 +51,7 @@
           "alt": "Red Dot Winner 2026"
         },
         "desc": [
-          "PawPath is an automated post-adoption monitoring platform that replaces manual shelter follow-up with scheduled adopter check-ins and a real-time staff dashboard. It surfaces flagged cases, declining wellbeing scores, and overdue check-ins early — so shelters can intervene before an animal is returned."
+          "PawPath is an automated post-adoption monitoring platform that replaces manual shelter follow-up with scheduled adopter check-ins and a real-time staff dashboard. It surfaces flagged cases, declining wellbeing scores, and overdue check-ins early, so shelters can intervene before an animal is returned."
         ],
         "link": "https://pawpath.framer.website/",
         "images": [
@@ -71,7 +71,7 @@
           "alt": "Red Dot Winner 2026"
         },
         "desc": [
-          "Afterwards is a two-sided platform for what follows a death: one side lets someone organize documents, assign trusted people to tasks, and leave personal messages while still alive — the other guides the person they chose through it all, urgent matters first, at a pace calibrated for grief. It reframes end-of-life planning as anticipatory care, turning a frantic hunt for hidden documents into a final, considered act of love."
+          "Afterwards is a two-sided platform for what follows a death: one side lets someone organize documents, assign trusted people to tasks, and leave personal messages while still alive; the other guides the person they chose through it all, urgent matters first, at a pace calibrated for grief. It reframes end-of-life planning as anticipatory care, turning a frantic hunt for hidden documents into a final, considered act of love."
         ],
         "link": "https://afterwards-app.webflow.io/",
         "images": [

@@ -13,7 +13,7 @@
   "meta": [
     {
       "label": "Role",
-      "value": "Lead Product Designer — discovery to delivery"
+      "value": "Lead Product Designer, from discovery to delivery"
     },
     {
       "label": "Team",
@@ -37,7 +37,7 @@
         {
           "type": "text",
           "value": [
-            "The Global Private Bank spans USPB — 55 U.S. markets — and IPB across APAC, EMEA and LatAm: 1,000+ advisors, clients in 140+ countries, nine languages, 30+ regulators. Lending is one product line inside that footprint.",
+            "The Global Private Bank spans USPB (55 U.S. markets) and IPB across APAC, EMEA and LatAm: 1,000+ advisors, clients in 140+ countries, nine languages, 30+ regulators. Lending is one product line inside that footprint.",
             "I own two of its surfaces: where a loan begins, and where it's managed every day."
           ]
         },
@@ -49,7 +49,7 @@
               "emoji": "📝",
               "label": "Where a deal starts",
               "title": "Loan Request App",
-              "desc": "Nearly $200B in loan requests a month — SBL, Custom Credit and PLP tickets, across four regions."
+              "desc": "Nearly $200B in loan requests a month: SBL, Custom Credit and PLP tickets, across four regions."
             },
             {
               "emoji": "🗂️",
@@ -61,14 +61,14 @@
         },
         {
           "type": "text",
-          "value": "Between them sits every role that touches a loan — Bankers, SC Advisors, Lender Specialists, Credit Risk and Middle Office — and every handoff where it can go wrong."
+          "value": "Between them sits every role that touches a loan (Bankers, SC Advisors, Lender Specialists, Credit Risk and Middle Office) and every handoff where it can go wrong."
         }
       ]
     },
     {
       "id": "brief",
       "kicker": "The Problem",
-      "title": "The brief — and why it was wrong",
+      "title": "The brief, and why it was wrong",
       "blocks": [
         {
           "type": "text",
@@ -88,7 +88,7 @@
         {
           "type": "callout",
           "label": "The reframe",
-          "value": "The form wasn't the problem. It collected what the Banker knew, but was judged against what Credit needed — a handoff mismatch, not a UI one."
+          "value": "The form wasn't the problem. It collected what the Banker knew, but was judged against what Credit needed. It was a handoff mismatch, not a UI one."
         }
       ]
     },
@@ -100,7 +100,7 @@
         {
           "type": "text",
           "value": [
-            "Proving that meant seeing the whole chain — and no one could show it to me. Each role knew its own segment and assumed the next worked. With no documented IA or personas, everyone designed against their own mental model.",
+            "Proving that meant seeing the whole chain, and no one could show it to me. Each role knew its own segment and assumed the next worked. With no documented IA or personas, everyone designed against their own mental model.",
             "Before fixing the workflow, I had to build the foundation it was missing."
           ]
         },
@@ -111,12 +111,12 @@
           "blocks": [
             {
               "type": "text",
-              "value": "I interviewed lenders and domain owners in every role — joining their check-ins and morning meetings to reach the client-facing ones — and turned what I heard into two artefacts: an information architecture of the Lending Workspace, from L1 products down to page controls, and personas capturing each role's goals, jobs and pain points."
+              "value": "I interviewed lenders and domain owners in every role, joining their check-ins and morning meetings to reach the client-facing ones. Then I turned what I heard into two artefacts: an information architecture of the Lending Workspace, from L1 products down to page controls, and personas capturing each role's goals, jobs and pain points."
             },
             {
               "type": "ia-map",
               "title": "Lending Workspace Information Architecture",
-              "subtitle": "A top-to-bottom map of the navigation hierarchy — L1 products, L2 apps, sub-category tabs, and page-level controls.",
+              "subtitle": "A top-to-bottom map of the navigation hierarchy: L1 products, L2 apps, sub-category tabs, and page-level controls.",
               "personaFilter": {
                 "options": [
                   "All",
@@ -270,14 +270,14 @@
               "type": "persona-tabs",
               "title": "Lending personas",
               "intro": "Four roles carry a loan from first conversation to funding, and each needs something different from the same workspace. Switch tabs to compare them side by side.",
-              "label": "Lending personas — one tab per role",
+              "label": "Lending personas, one tab per role",
               "personas": [
                 {
                   "id": "lender-specialist",
                   "name": "Lender Specialist",
                   "avatar": "💼",
                   "role": "Structures and executes lending decisions across the client portfolio",
-                  "quote": "I turn borrowing needs into risk-sound deals—then drive them to close.",
+                  "quote": "I turn borrowing needs into risk-sound deals, then drive them to close.",
                   "traits": [
                     "Analytical",
                     "Risk-conscious",
@@ -371,7 +371,7 @@
                   "name": "Client Advisor",
                   "avatar": "🤝",
                   "role": "Manages HNW client relationships across the full balance sheet",
-                  "quote": "I take care of all my clients' financial needs—and earn their trust.",
+                  "quote": "I take care of all my clients' financial needs and earn their trust.",
                   "traits": [
                     "Persistent",
                     "Client-loyal",
@@ -474,7 +474,7 @@
                   "name": "Credit Risk & Analysis",
                   "avatar": "⚖️",
                   "role": "Approves credit decisions within policy and risk appetite",
-                  "quote": "My job is to enable good business—consistently, defensibly, within policy.",
+                  "quote": "My job is to enable good business: consistently, defensibly, within policy.",
                   "traits": [
                     "Independent",
                     "Detail-driven",
@@ -564,8 +564,8 @@
                   "id": "middle-office",
                   "name": "Middle Office & Ops",
                   "avatar": "🗂️",
-                  "role": "CRS · Prelim · Doc Prep & QC — intake to close, audit-ready",
-                  "quote": "I keep every record clean and audit-ready—so deals close right the first time.",
+                  "role": "CRS · Prelim · Doc Prep & QC: intake to close, audit-ready",
+                  "quote": "I keep every record clean and audit-ready, so deals close right the first time.",
                   "traits": [
                     "Process-driven",
                     "Detail-oriented",
@@ -656,7 +656,7 @@
             {
               "type": "callout",
               "label": "Impact beyond my project",
-              "value": "Both became the team's source of truth — designers and POs now cite them in their own reviews and roadmaps."
+              "value": "Both became the team's source of truth. Designers and POs now cite them in their own reviews and roadmaps."
             }
           ]
         },
@@ -667,7 +667,7 @@
           "blocks": [
             {
               "type": "text",
-              "value": "The map showed where the work happened, not where it broke. So instead of more interviews, I put one person from each role in a room with a single anonymised deal — a real-estate investor borrowing against existing assets to buy a property — printed as a timeline on the wall."
+              "value": "The map showed where the work happened, not where it broke. So instead of more interviews, I put one person from each role in a room with a single anonymised deal printed as a timeline on the wall: a real-estate investor borrowing against existing assets to buy a property."
             },
             {
               "type": "quote",
@@ -681,7 +681,7 @@
             },
             {
               "type": "text",
-              "value": "==The dots clustered at the same three seams, every time.== The most consistent: requests reached Credit without the collateral and entity details the Banker was never asked for — the asset basis and ownership structure needed to size the facility."
+              "value": "==The dots clustered at the same three seams, every time.== The most consistent: requests reached Credit without the collateral and entity details the Banker was never asked for, the asset basis and ownership structure needed to size the facility."
             },
             {
               "type": "cards",
@@ -707,7 +707,7 @@
             },
             {
               "type": "text",
-              "value": "The system rewarded institutional knowledge. Advisors had to already know what Credit would ask — and anyone who didn't paid for it in rework."
+              "value": "The system rewarded institutional knowledge. Advisors had to already know what Credit would ask, and anyone who didn't paid for it in rework."
             },
             {
               "type": "honest-note",
@@ -726,7 +726,7 @@
         {
           "type": "text",
           "value": [
-            "The evidence was clear; the owner wasn't. The workflow crossed four teams in USPB and IPB, each with its own regulators and roadmap. POs owned their slices deeply, but ==nobody owned the seams== — so \"fix the intake\" bounced between the Loan Request App and Credit."
+            "The evidence was clear; the owner wasn't. The workflow crossed four teams in USPB and IPB, each with its own regulators and roadmap. POs owned their slices deeply, but ==nobody owned the seams==, so \"fix the intake\" bounced between the Loan Request App and Credit."
           ]
         },
         {
@@ -775,7 +775,7 @@
               "type": "text",
               "value": [
                 "The rituals kept teams in sync, but not in sequence: every owner could defend their slice, and no one could order the work across all of them.",
-                "When leadership called a three-day portfolio workshop at the Ohio HQ, I joined as the only designer among POs, journey owners, data, architecture and risk — walking each initiative through to owner, dependency and sequence."
+                "When leadership called a three-day portfolio workshop at the Ohio HQ, I joined as the only designer among POs, journey owners, data, architecture and risk, walking each initiative through to owner, dependency and sequence."
               ]
             },
             {
@@ -785,7 +785,7 @@
             },
             {
               "type": "text",
-              "value": "I brought prototypes, and they became the room's reference points — the agenda named them. Framing every feature by persona and journey, rather than by system boundary, shaped the Workspace model we left with: persona views and work queues, one experience instead of ten apps."
+              "value": "I brought prototypes, and they became the room's reference points. The agenda named them. Framing every feature by persona and journey, rather than by system boundary, shaped the Workspace model we left with: persona views and work queues, one experience instead of ten apps."
             },
             {
               "type": "text",
@@ -798,7 +798,7 @@
                 {
                   "label": "Exploration 1",
                   "title": "One Request, Any Deal",
-                  "desc": "No SBL-vs-Custom fork — the split behind mis-routed intake."
+                  "desc": "No SBL-vs-Custom fork, the split behind mis-routed intake."
                 },
                 {
                   "label": "Exploration 2",
@@ -815,12 +815,12 @@
             {
               "type": "vision-prototype",
               "title": "The three future-vision proposals, side by side",
-              "intro": "Switch variants to compare today's Loan Request workflow with the three futures I put in front of the room — the prototypes I used to help leadership decide where the product goes next."
+              "intro": "Switch variants to compare today's Loan Request workflow with the three futures I put in front of the room. These are the prototypes I used to help leadership decide where the product goes next."
             },
             {
               "type": "callout",
               "label": "Why it mattered",
-              "value": "As the only designer at the portfolio table, I helped leadership choose a direction — instead of handing design a backlog to decorate."
+              "value": "As the only designer at the portfolio table, I helped leadership choose a direction instead of handing design a backlog to decorate."
             }
           ]
         }
@@ -833,7 +833,7 @@
       "blocks": [
         {
           "type": "text",
-          "value": "A direction isn't a release. No PO ran cover: I drove the build across four teams without authority over any of them — and what carried it was artefacts, not opinions."
+          "value": "A direction isn't a release. No PO ran cover: I drove the build across four teams without authority over any of them. What carried it was artefacts, not opinions."
         },
         {
           "type": "cards",
@@ -853,12 +853,12 @@
         },
         {
           "type": "text",
-          "value": "Regional variants shipped on one skeleton — conditional logic adds what each market requires instead of forking the product. Try both products below."
+          "value": "Regional variants shipped on one skeleton: conditional logic adds what each market requires instead of forking the product. Try both products below."
         },
         {
           "type": "lra-prototype",
           "title": "Loan Request App",
-          "intro": "Where a request begins: the banker adds the parties, acts on an existing facility or builds a new deal, and gets an indicative offer — with Credit's rules checked at entry instead of after submission."
+          "intro": "Where a request begins: the banker adds the parties, acts on an existing facility or builds a new deal, and gets an indicative offer, with Credit's rules checked at entry instead of after submission."
         },
         {
           "type": "workspace-prototype",
@@ -899,17 +899,17 @@
           "type": "text",
           "value": [
             "The new Loan Request App is live and in use globally. Clients usually finish the new e-CQ credit questionnaire in about 5 minutes, and sometimes in as little as 3.",
-            "Validate-at-source intake brought new-ticket NIGO — not in good order, the firm's own term for the bounce-back rework I set out to reduce — ==down to ~22% from ~60%==. It's a programme-level result: the redesign contributed alongside process and training changes."
+            "Validate-at-source intake brought new-ticket NIGO ==down to ~22% from ~60%==. NIGO (not in good order) is the firm's own term for the bounce-back rework I set out to reduce. It's a programme-level result: the redesign contributed alongside process and training changes."
           ]
         },
         {
           "type": "honest-note",
           "label": "In their words",
-          "value": "Pilot users called the new Loan Request App “much smoother” and “super easy to use” — “a big improvement” on the old one."
+          "value": "Pilot users called the new Loan Request App “much smoother,” “super easy to use” and “a big improvement” on the old one."
         },
         {
           "type": "text",
-          "value": "The Workspace gained coherence too: the Deal Journey Tracker now integrates the eCQ credit questionnaire and covers IPB SBL and Custom deals — end-to-end visibility across the seams I mapped. And the IA and personas remain the team's source of truth."
+          "value": "The Workspace gained coherence too: the Deal Journey Tracker now integrates the eCQ credit questionnaire and covers IPB SBL and Custom deals, giving end-to-end visibility across the seams I mapped. And the IA and personas remain the team's source of truth."
         }
       ]
     },
@@ -921,7 +921,7 @@
         {
           "type": "callout",
           "label": "The takeaway",
-          "value": "The hardest problems here weren't design problems — they were ownership problems in a design costume. My job was to make the invisible visible until the right call became obvious."
+          "value": "The hardest problems here weren't design problems. They were ownership problems in a design costume. My job was to make the invisible visible until the right call became obvious."
         },
         {
           "type": "text",
@@ -954,11 +954,11 @@
         {
           "type": "honest-note",
           "label": "What I'm still watching",
-          "value": "Adoption is real but early. When Workspace usage dipped 10.8% week over week, I didn't wave it away: seasonality or access provisioning is still an open question — exactly the kind of signal I want instrumented, not guessed."
+          "value": "Adoption is real but early. When Workspace usage dipped 10.8% week over week, I didn't wave it away: seasonality or access provisioning is still an open question, and exactly the kind of signal I want instrumented, not guessed."
         },
         {
           "type": "text",
-          "value": "What I'd do differently: wire telemetry into the two targeted seams from day one, so the NIGO improvement attributes cleanly to the design change — and the parked third seam has evidence ready when it's next up for prioritisation."
+          "value": "What I'd do differently: wire telemetry into the two targeted seams from day one, so the NIGO improvement attributes cleanly to the design change, and the parked third seam has evidence ready when it's next up for prioritisation."
         }
       ]
     }

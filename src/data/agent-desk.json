@@ -1,7 +1,7 @@
 {
   "slug": "agent-desk",
   "title": "Agent Desk",
-  "subtitle": "Making two opposing metrics win at once — speed and compliance — in a high-stakes fintech workflow",
+  "subtitle": "Making two opposing metrics, speed and compliance, win at once in a high-stakes fintech workflow",
   "tags": [
     "Fintech",
     "Internal Tool",
@@ -23,7 +23,7 @@
     },
     {
       "label": "Platform",
-      "value": "Internal web platform — regulated fintech"
+      "value": "Internal web platform, regulated fintech"
     }
   ],
   "indexedSections": [
@@ -35,8 +35,8 @@
         {
           "type": "text",
           "value": [
-            "==Agent Desk is Best Egg's internal platform where verification agents approve or reject credit applications — personal loans, credit cards, and secured auto loans== — inside fraud-prevention and compliance rules. The decisions are irreversible, and they land on real people's credit outcomes.",
-            "The legacy system was fragmented across agent roles, forcing agents to act as \"human middleware\" — a 3.2-day bottleneck per application. As the solo designer, I owned it end-to-end: the workflow, the UX success metrics, and shipping inside a heavily regulated environment."
+            "==Agent Desk is Best Egg's internal platform where verification agents approve or reject credit applications== for personal loans, credit cards, and secured auto loans, inside fraud-prevention and compliance rules. The decisions are irreversible, and they land on real people's credit outcomes.",
+            "The legacy system was fragmented across agent roles, forcing agents to act as \"human middleware\" and creating a 3.2-day bottleneck per application. As the solo designer, I owned it end-to-end: the workflow, the UX success metrics, and shipping inside a heavily regulated environment."
           ]
         },
         {
@@ -74,25 +74,25 @@
             {
               "emoji": "⚡",
               "label": "Business wanted speed",
-              "desc": "A single application took 3.2 days — a massive bottleneck."
+              "desc": "A single application took 3.2 days, a massive bottleneck."
             },
             {
               "emoji": "🔍",
               "label": "Risk wanted rigor",
-              "desc": "Verification rate sat at ~80% — too many valid applications weren't clearing."
+              "desc": "Verification rate sat at ~80%, so too many valid applications weren't clearing."
             }
           ]
         },
         {
           "type": "text",
           "value": [
-            "The trap: these metrics are naturally opposed. Push agents faster and they get sloppy — verification rate drops. Tell them to slow down and time climbs. Most teams pick one."
+            "The trap: these metrics are naturally opposed. Push agents faster and they get sloppy, so verification rate drops. Tell them to slow down and time climbs. Most teams pick one."
           ]
         },
         {
           "type": "callout",
           "label": "The harder brief",
-          "value": "Can both opposing metrics improve at once? That ruled out brute force — more people, more time — and forced the solution to come from design decisions themselves."
+          "value": "Can both opposing metrics improve at once? That ruled out brute force (more people, more time) and forced the solution to come from design decisions themselves."
         }
       ]
     },
@@ -110,34 +110,34 @@
               "type": "text",
               "value": [
                 "With no researcher and a lean team, I used the lowest-cost, highest-signal method: live agent shadowing.",
-                "Sitting beside agents on real cases, I watched them bounce across five or six systems — the legacy Agent Desktop, the Admin console, LoanPro, LexisNexis, raw spreadsheets — cross-checking the same data by hand, on tribal knowledge, with no single source of truth."
+                "Sitting beside agents on real cases, I watched them bounce across five or six systems (the legacy Agent Desktop, the Admin console, LoanPro, LexisNexis, raw spreadsheets), cross-checking the same data by hand, on tribal knowledge, with no single source of truth."
               ]
             },
             {
               "type": "image",
               "src": "/images/frame-427319454-27c3bf.png",
-              "label": "The legacy reality — one verification, five systems"
+              "label": "The legacy reality: one verification, five systems"
             },
             {
               "type": "text",
               "value": [
-                "I mapped the journey across five stages — Triage, Review & Verification, Investigation, Decision & Documentation, Outcome — and the emotional low points lined up exactly with the system gaps: overwhelmed at review, distracted mid-investigation, anxious at close-out, never sure what the scattered data had hidden."
+                "I mapped the journey across five stages: Triage, Review & Verification, Investigation, Decision & Documentation, and Outcome. The emotional low points lined up exactly with the system gaps: overwhelmed at review, distracted mid-investigation, anxious at close-out, never sure what the scattered data had hidden."
               ]
             },
             {
               "type": "image",
               "src": "/images/user-journey-24e5ef.png",
-              "label": "Five-stage journey map — emotion curve, verbatim quotes, and the design response per stage"
+              "label": "Five-stage journey map: emotion curve, verbatim quotes, and the design response per stage"
             },
             {
               "type": "honest-note",
               "label": "The insight",
-              "value": "The 3.2 days weren't lost inside any one screen — they were lost in the gaps between systems. Agents were human middleware, reconciling data by hand."
+              "value": "The 3.2 days weren't lost inside any one screen. They were lost in the gaps between systems. Agents were human middleware, reconciling data by hand."
             },
             {
               "type": "text",
               "value": [
-                "So my first decision wasn't \"make a page prettier.\" It was eliminate the middleware — consolidating scattered tools and data into one workspace: centralized application management across loan and card products, plus a Manager's Menu holding the customer data agents kept leaving for."
+                "So my first decision wasn't \"make a page prettier.\" It was to eliminate the middleware, consolidating scattered tools and data into one workspace: centralized application management across loan and card products, plus a Manager's Menu holding the customer data agents kept leaving for."
               ]
             }
           ]
@@ -161,7 +161,7 @@
                 {
                   "emoji": "↔️",
                   "title": "Left–right split",
-                  "desc": "Data to read on the left, actions on the right — \"read, then decide\" made spatial."
+                  "desc": "Data to read on the left, actions on the right: \"read, then decide\" made spatial."
                 },
                 {
                   "emoji": "✅",
@@ -195,7 +195,7 @@
             {
               "type": "text",
               "value": [
-                "Same information, zero removed — but the structure now carried the attention, serving speed and accuracy at once. And because the layout is structural rather than role-specific, the same logic held across every agent role: one mental model, many permission levels."
+                "Same information, zero removed, but the structure now carried the attention, serving speed and accuracy at once. And because the layout is structural rather than role-specific, the same logic held across every agent role: one mental model, many permission levels."
               ]
             }
           ]
@@ -208,8 +208,8 @@
             {
               "type": "text",
               "value": [
-                "Every agent click is irreversible — an approval or rejection deciding a real person's credit outcome, with compliance weight.",
-                "Auto-resolving checklist items felt great, but over-automation risks complacency — agents blindly trusting the system. So I drew a line:"
+                "Every agent click is irreversible: an approval or rejection deciding a real person's credit outcome, with compliance weight.",
+                "Auto-resolving checklist items felt great, but over-automation risks complacency, with agents blindly trusting the system. So I drew a line:"
               ]
             },
             {
@@ -220,7 +220,7 @@
             {
               "type": "text",
               "value": [
-                "I also added a Preview/Edit mode — a final review before submission. On the surface it adds a step and fights the speed goal. My argument: in irreversible decisions, the rework a preview prevents is worth far more than the two seconds it costs. Slowing this one step makes the whole flow faster.",
+                "I also added a Preview/Edit mode, a final review before submission. On the surface it adds a step and fights the speed goal. My argument: in irreversible decisions, the rework a preview prevents is worth far more than the two seconds it costs. Slowing this one step makes the whole flow faster.",
                 "That's friction in the right place, inside compliance lines that forbid one-click batch actions or skipped steps."
               ]
             },
@@ -237,7 +237,7 @@
             },
             {
               "type": "honest-note",
-              "value": "Preview/Edit only works if the agent actually reads it — nothing forces attention, only presence. It lowers the error rate; it doesn't zero it."
+              "value": "Preview/Edit only works if the agent actually reads it. Nothing forces attention, only presence. It lowers the error rate; it doesn't zero it."
             }
           ]
         },
@@ -251,7 +251,7 @@
               "value": [
                 "The Manager's Menu applied decision one's consolidation logic to the manager tier. That raised a harder question than \"what's in the workspace\": should every agent see everything in it? Compliance said no. Different agent types carry different decision authority, and access has to match it exactly.",
                 "So I designed permissions as a first-class layer of the workspace, not a settings-page afterthought.",
-                "Junior agents get the baseline — application data, checklist, notes. Managers layer the Manager's Menu on top: cross-account visibility, override authority, and the tools to unblock a case an agent can't resolve. Same interface, different ceiling."
+                "Junior agents get the baseline: application data, checklist, notes. Managers layer the Manager's Menu on top: cross-account visibility, override authority, and the tools to unblock a case an agent can't resolve. Same interface, different ceiling."
               ]
             },
             {
@@ -267,7 +267,7 @@
             },
             {
               "type": "honest-note",
-              "value": "Role boundaries were set with Compliance, not measured — there's no dataset proving the right cutoff between agent and manager access, only a defensible one."
+              "value": "Role boundaries were set with Compliance, not measured. There's no dataset proving the right cutoff between agent and manager access, only a defensible one."
             }
           ]
         }
@@ -276,7 +276,7 @@
     {
       "id": "results",
       "kicker": "Outcome",
-      "title": "Both opposing metrics improved — together",
+      "title": "Both opposing metrics improved, together",
       "blocks": [
         {
           "type": "stats",

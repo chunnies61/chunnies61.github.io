@@ -12,7 +12,7 @@
   "meta": [
     {
       "label": "Role",
-      "value": "Lead Designer — vision to shipped product"
+      "value": "Lead Designer, from vision to shipped product"
     },
     {
       "label": "Team",
@@ -44,7 +44,7 @@
         {
           "type": "image",
           "src": "/images/problem-space.svg",
-          "label": "Before — shared branding, nothing else"
+          "label": "Before: shared branding, nothing else"
         }
       ]
     },
@@ -57,7 +57,7 @@
           "type": "text",
           "value": [
             "The obvious problem was fragmentation. The real one was quieter: ==no one owned the word \"unified.\"==",
-            "Each product line had its own PM, KPIs, and roadmap. Everyone agreed unification mattered — then nothing moved. The vision floated, and no one caught it.",
+            "Each product line had its own PM, KPIs, and roadmap. Everyone agreed unification mattered, then nothing moved. The vision floated, and no one caught it.",
             "That vacuum was exactly where design should step in. Only design could turn an abstract word into something everyone could point at."
           ]
         },
@@ -70,7 +70,7 @@
           "type": "image",
           "src": "/images/stakeholder-tension-map.png",
           "variant": "square",
-          "label": "Stakeholder tension map — three product lines, three KPI sets, and an unowned \"Unified?\" in the middle"
+          "label": "Stakeholder tension map: three product lines, three KPI sets, and an unowned \"Unified?\" in the middle"
         }
       ]
     },
@@ -95,7 +95,7 @@
         {
           "type": "image",
           "src": "/images/image-06aefa.png",
-          "label": "Market scan — how competing platforms handle multi-product servicing"
+          "label": "Market scan: how competing platforms handle multi-product servicing"
         },
         {
           "type": "text",
@@ -104,16 +104,16 @@
         {
           "type": "image",
           "src": "/images/card-sorting-3fc988.png",
-          "label": "Card sorting — features grouped into overlapping and account-specific sets"
+          "label": "Card sorting: features grouped into overlapping and account-specific sets"
         },
         {
           "type": "text",
-          "value": "That split became the architecture: one top-level and sub-navigation system giving consistent access to shared features while preserving each account's own flows — less friction, shorter tasks, one place to do the banking work."
+          "value": "That split became the architecture: one top-level and sub-navigation system giving consistent access to shared features while preserving each account's own flows. Less friction, shorter tasks, one place to do the banking work."
         },
         {
           "type": "image",
           "src": "/images/ia-641b91.png",
-          "label": "Information architecture — Customer Hub across Personal Loan, Credit Card, Financial Health, Offers, Profile, and Notifications"
+          "label": "Information architecture: Customer Hub across Personal Loan, Credit Card, Financial Health, Offers, Profile, and Notifications"
         }
       ]
     },
@@ -132,11 +132,11 @@
         {
           "type": "image",
           "src": "/images/wireframes-1434a2.png",
-          "label": "The two-week proposal — desktop and mobile flows end to end"
+          "label": "The two-week proposal: desktop and mobile flows end to end"
         },
         {
           "type": "text",
-          "value": "The vision finally had a shape — and I became the de-facto driver of a project that never had an owner."
+          "value": "The vision finally had a shape, and I became the de-facto driver of a project that never had an owner."
         }
       ]
     },
@@ -148,9 +148,9 @@
         {
           "type": "text",
           "value": [
-            "Engineering pushed back: bringing the third-party Credit Card in-house meant 6+ months and risk to live servicing — the vision was unbuildable.",
+            "Engineering pushed back: bringing the third-party Credit Card in-house meant 6+ months and risk to live servicing. The vision was unbuildable.",
             "I didn't debate it; I mapped the complexity with them.",
-            "With Engineering and PM, I charted every account state — single, multi-product, past-due, pending activation, missing data — in one table.",
+            "With Engineering and PM, I charted every account state in one table: single, multi-product, past-due, pending activation, missing data.",
             "Only a few high-frequency shared surfaces were truly interconnected; the rest could wait."
           ]
         },
@@ -175,7 +175,7 @@
         },
         {
           "type": "text",
-          "value": "Progress isn't everyone loving the same reason — it's each person nodding from their own angle."
+          "value": "Progress isn't everyone loving the same reason. It's each person nodding from their own angle."
         },
         {
           "type": "cards",
@@ -210,7 +210,7 @@
       "blocks": [
         {
           "type": "text",
-          "value": "Three products × ownership combinations × account states = combinatorial explosion. Miss one state and a user hits a blank page. So I didn't draw screens — I built systems."
+          "value": "Three products × ownership combinations × account states = combinatorial explosion. Miss one state and a user hits a blank page. So I didn't draw screens. I built systems."
         },
         {
           "type": "step",
@@ -249,7 +249,7 @@
             {
               "type": "video",
               "src": "/videos/customer-hub-prototype.mp4",
-              "label": "Prototype walkthrough — loan → credit score → cross-sell"
+              "label": "Prototype walkthrough: loan → credit score → cross-sell"
             }
           ]
         },
@@ -262,7 +262,7 @@
               "type": "text",
               "value": [
                 "With Marketing and a researcher, I tested cross-sell placements on UserTesting: banners and in-feature messages worked best; modals felt intrusive, fit only for critical alerts.",
-                "I codified that into a reusable \"message urgency ↔ placement\" map — which message, where, at what motion intensity — so any team could place messages by rule, not by asking me."
+                "I codified that into a reusable \"message urgency ↔ placement\" map (which message, where, at what motion intensity), so any team could place messages by rule, not by asking me."
               ]
             },
             {
@@ -290,14 +290,14 @@
             {
               "type": "text",
               "value": [
-                "Best Egg keeps launching products, so the Best Egg Design System — 2,000+ modular components — was built pluggable, reserving room in navigation, shared modules and messaging for what comes next.",
-                "The platform could grow new products — the same extensibility that later enabled AI-driven personalization."
+                "Best Egg keeps launching products, so the Best Egg Design System, with 2,000+ modular components, was built pluggable, reserving room in navigation, shared modules and messaging for what comes next.",
+                "The platform could grow new products, and that same extensibility later enabled AI-driven personalization."
               ]
             },
             {
               "type": "image",
               "src": "/images/best-egg-design-system.png",
-              "label": "Best Egg Design System — 2,000+ modular components"
+              "label": "Best Egg Design System: 2,000+ modular components"
             }
           ]
         }
@@ -331,7 +331,7 @@
         },
         {
           "type": "text",
-          "value": "Launched August 2022. The gains showed up immediately and kept compounding: in the first week, ==credit score activation post-login rose 94%== and Financial Health daily active users more than doubled — proof the unified entry point was doing its job, getting customers to the products that mattered before they asked."
+          "value": "Launched August 2022. The gains showed up immediately and kept compounding: in the first week, ==credit score activation post-login rose 94%== and Financial Health daily active users more than doubled. That was proof the unified entry point was doing its job, getting customers to the products that mattered before they asked."
         },
         {
           "type": "image",
@@ -347,7 +347,7 @@
           "type": "image",
           "src": "/images/fs-2-b3ea46.png",
           "variant": "outlined",
-          "label": "Final product — desktop and mobile"
+          "label": "Final product: desktop and mobile"
         }
       ]
     }

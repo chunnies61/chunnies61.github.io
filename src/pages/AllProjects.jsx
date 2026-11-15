@@ -100,7 +100,7 @@ export default function AllProjects() {
                 {item.desc && item.desc.length ? (
                   item.desc.map((p, pi) => <p key={pi}>{p}</p>)
                 ) : (
-                  <p>Project description placeholder — details coming soon.</p>
+                  <p>Project description placeholder. Details coming soon.</p>
                 )}
                 {item.link && (
                   <a className="ap-learn-more" href={item.link} target="_blank" rel="noreferrer">
