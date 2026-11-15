@@ -932,19 +932,19 @@
           "columns": 3,
           "items": [
             {
-              "emoji": "🧱",
+              "emoji": "🗺️",
               "label": "Move 1",
               "title": "Build the source of truth",
               "desc": "My IA and personas still anchor how the team works."
             },
             {
-              "emoji": "🎯",
+              "emoji": "🔍",
               "label": "Move 2",
               "title": "Make the problem undeniable",
               "desc": "Six in ten requests bounced; after that, nobody argued."
             },
             {
-              "emoji": "🔭",
+              "emoji": "🧪",
               "label": "Move 3",
               "title": "Design upstream",
               "desc": "Prototypes gave leadership something to decide against."
