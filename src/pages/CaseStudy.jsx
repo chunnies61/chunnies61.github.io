@@ -12,6 +12,7 @@ const VisionPrototype = lazy(() => import("../components/vision/VisionPrototype"
 const WorkspacePrototype = lazy(() => import("../components/workspace/WorkspacePrototype"));
 import "./CaseStudy.css";
 import PasswordGate, { useUnlocked } from "../components/PasswordGate";
+import InViewVideo from "../components/InViewVideo";
 
 
 function QuoteAttribution({ value }) {
@@ -496,14 +497,7 @@ function Block({ block }) {
               key={item.title}
             >
               <div className="cs-surface-media">
-                <video
-                  className="cs-surface-video"
-                  src={item.video}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
+                <InViewVideo className="cs-surface-video" src={item.video} />
               </div>
               <div className="cs-surface-text">
                 {item.label && <span className="cs-surface-label">{item.label}</span>}
@@ -531,13 +525,9 @@ function Block({ block }) {
     case "video":
       if (!block.src) return <VideoPlaceholder label={block.label} />;
       return (
-        <video
+        <InViewVideo
           className={"cs-video" + (block.variant ? " cs-video--" + block.variant : "")}
           src={block.src}
-          autoPlay
-          loop
-          muted
-          playsInline
         />
       );
 
