@@ -56,7 +56,7 @@
         {
           "type": "text",
           "value": [
-            "The obvious problem was fragmentation. The real one was quieter: no one owned the word \"unified.\"",
+            "The obvious problem was fragmentation. The real one was quieter: ==no one owned the word \"unified.\"==",
             "Each product line had its own PM, KPIs, and roadmap. Everyone agreed unification mattered — then nothing moved. The vision floated, and no one caught it.",
             "That vacuum was exactly where design should step in. Only design could turn an abstract word into something everyone could point at."
           ]
@@ -126,7 +126,7 @@
           "type": "text",
           "value": [
             "Instead of pitching a deck, I spent two weeks building a clickable, high-fidelity prototype of a real flow: pay off a loan, jump to your credit score, land on a cross-sell entry point.",
-            "In the review, I didn't argue we should unify. I let stakeholders click it themselves."
+            "In the review, I didn't argue we should unify. ==I let stakeholders click it themselves.=="
           ]
         },
         {
@@ -215,7 +215,7 @@
         {
           "type": "step",
           "num": "6.1",
-          "title": "The shipped surfaces",
+          "title": "==The shipped surfaces==",
           "blocks": [
             {
               "type": "surface-showcase",
@@ -256,7 +256,7 @@
         {
           "type": "step",
           "num": "6.2",
-          "title": "A messaging framework, not one-off designs",
+          "title": "==A messaging framework, not one-off designs==",
           "blocks": [
             {
               "type": "text",
@@ -285,7 +285,7 @@
         {
           "type": "step",
           "num": "6.3",
-          "title": "Designing for products that didn't exist yet",
+          "title": "==Designing for products that didn't exist yet==",
           "blocks": [
             {
               "type": "text",
@@ -331,7 +331,7 @@
         },
         {
           "type": "text",
-          "value": "Launched August 2022. The gains showed up immediately and kept compounding: in the first week, credit score activation post-login rose 94% and Financial Health daily active users more than doubled — proof the unified entry point was doing its job, getting customers to the products that mattered before they asked."
+          "value": "Launched August 2022. The gains showed up immediately and kept compounding: in the first week, ==credit score activation post-login rose 94%== and Financial Health daily active users more than doubled — proof the unified entry point was doing its job, getting customers to the products that mattered before they asked."
         },
         {
           "type": "image",

@@ -107,7 +107,7 @@
         {
           "type": "step",
           "num": "1",
-          "title": "Build the missing source of truth",
+          "title": "==Build the missing source of truth==",
           "blocks": [
             {
               "type": "text",
@@ -663,7 +663,7 @@
         {
           "type": "step",
           "num": "2",
-          "title": "Trace one real deal",
+          "title": "==Trace one real deal==",
           "blocks": [
             {
               "type": "text",
@@ -681,7 +681,7 @@
             },
             {
               "type": "text",
-              "value": "The dots clustered at the same three seams, every time. The most consistent: requests reached Credit without the collateral and entity details the Banker was never asked for — the asset basis and ownership structure needed to size the facility."
+              "value": "==The dots clustered at the same three seams, every time.== The most consistent: requests reached Credit without the collateral and entity details the Banker was never asked for — the asset basis and ownership structure needed to size the facility."
             },
             {
               "type": "cards",
@@ -726,13 +726,13 @@
         {
           "type": "text",
           "value": [
-            "The evidence was clear; the owner wasn't. The workflow crossed four teams in USPB and IPB, each with its own regulators and roadmap. POs owned their slices deeply, but nobody owned the seams — so \"fix the intake\" bounced between the Loan Request App and Credit."
+            "The evidence was clear; the owner wasn't. The workflow crossed four teams in USPB and IPB, each with its own regulators and roadmap. POs owned their slices deeply, but ==nobody owned the seams== — so \"fix the intake\" bounced between the Loan Request App and Credit."
           ]
         },
         {
           "type": "step",
           "num": "1",
-          "title": "Make alignment a habit, not a meeting",
+          "title": "==Make alignment a habit, not a meeting==",
           "blocks": [
             {
               "type": "text",
@@ -769,7 +769,7 @@
         {
           "type": "step",
           "num": "2",
-          "title": "Bring design upstream of the roadmap",
+          "title": "==Bring design upstream of the roadmap==",
           "blocks": [
             {
               "type": "text",
@@ -899,7 +899,7 @@
           "type": "text",
           "value": [
             "The new Loan Request App is live and in use globally. Clients usually finish the new e-CQ credit questionnaire in about 5 minutes, and sometimes in as little as 3.",
-            "Validate-at-source intake brought new-ticket NIGO — not in good order, the firm's own term for the bounce-back rework I set out to reduce — down to ~22% from ~60%. It's a programme-level result: the redesign contributed alongside process and training changes."
+            "Validate-at-source intake brought new-ticket NIGO — not in good order, the firm's own term for the bounce-back rework I set out to reduce — ==down to ~22% from ~60%==. It's a programme-level result: the redesign contributed alongside process and training changes."
           ]
         },
         {
@@ -932,21 +932,21 @@
           "columns": 3,
           "items": [
             {
-              "emoji": "🧱",
+              "emoji": "🗺️",
               "label": "Move 1",
-              "title": "When there's no source of truth, build it",
+              "title": "Build the source of truth",
               "desc": "My IA and personas still anchor how the team works."
             },
             {
-              "emoji": "🎯",
+              "emoji": "🔍",
               "label": "Move 2",
-              "title": "When no one owns a problem, make it undeniable",
-              "desc": "Then hold it through presence, not authority."
+              "title": "Make the problem undeniable",
+              "desc": "Six in ten requests bounced; after that, nobody argued."
             },
             {
-              "emoji": "🔭",
+              "emoji": "🧪",
               "label": "Move 3",
-              "title": "When priority stalls, bring design upstream",
+              "title": "Design upstream",
               "desc": "Prototypes gave leadership something to decide against."
             }
           ]

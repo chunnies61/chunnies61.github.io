@@ -38,7 +38,7 @@
           "type": "text",
           "value": [
             "ClinicMind is an all-in-one healthcare SaaS platform for practice retention, provider burnout and revenue across the care lifecycle. I joined as the second designer ever hired, leading redesign across its five core products — practice management, patient portal, EHR, credentialing and billing.",
-            "After twenty years, every product decision had been made by engineers. Design was a newborn function, so day one wasn't a design problem but a trust deficit: no authority, no collaboration process, no language to prove design was useful.",
+            "After twenty years, every product decision had been made by engineers. Design was a newborn function, so day one wasn't a design problem but ==a trust deficit==: no authority, no collaboration process, no language to prove design was useful.",
             "Opening Figma and restyling buttons would only brand me \"the person who makes things pretty.\""
           ]
         },
@@ -62,7 +62,7 @@
         {
           "type": "step",
           "num": "1",
-          "title": "Make the team see a problem they'd stopped noticing",
+          "title": "==Make the team see a problem they'd stopped noticing==",
           "blocks": [
             {
               "type": "text",
@@ -91,14 +91,14 @@
         {
           "type": "step",
           "num": "2",
-          "title": "Sell \"slow down to speed up\" to a team hungry to ship",
+          "title": "==Sell \"slow down to speed up\" to a team hungry to ship==",
           "blocks": [
             {
               "type": "text",
               "value": [
                 "Next, a harder sell: stop piling on features and build a design system first.",
                 "Deeply counter-intuitive at the time: the team wanted output, and I was asking for a foundation with no short-term deliverable — in a regulated clinical domain whose vocabulary I was still learning.",
-                "My argument wasn't \"it'll look better.\" It was ROI math: with two designers against 7+ engineers, negotiating every page from scratch means we never catch up. With an Atomic Design component library and clear documentation, every feature becomes assembly."
+                "My argument wasn't \"it'll look better.\" ==It was ROI math==: with two designers against 7+ engineers, negotiating every page from scratch means we never catch up. With an Atomic Design component library and clear documentation, every feature becomes assembly."
               ]
             },
             {
@@ -111,7 +111,7 @@
         {
           "type": "step",
           "num": "3",
-          "title": "Turn \"talked about\" into \"seen\"",
+          "title": "==Turn \"talked about\" into \"seen\"==",
           "blocks": [
             {
               "type": "text",
@@ -165,7 +165,7 @@
         {
           "type": "step",
           "num": "4",
-          "title": "The finish line is a 1:1 build, not an approved mock",
+          "title": "==The finish line is a 1:1 build, not an approved mock==",
           "blocks": [
             {
               "type": "text",
@@ -251,7 +251,7 @@
         },
         {
           "type": "text",
-          "value": "The real result wasn't how well I designed — it was making communication a team capability."
+          "value": "The real result wasn't how well I designed — it was ==making communication a team capability==."
         }
       ]
     },

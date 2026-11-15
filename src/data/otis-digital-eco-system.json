@@ -33,34 +33,12 @@
       "title": "A slogan, not a brief",
       "blocks": [
         {
-          "type": "stats",
-          "items": [
-            {
-              "value": "−70%",
-              "label": "Task completion time"
-            },
-            {
-              "value": "−45%",
-              "label": "Error rate"
-            },
-            {
-              "value": "Millions",
-              "label": "Active users",
-              "desc": "Pilot → millions of users"
-            },
-            {
-              "value": "−50%",
-              "label": "Support tickets & training time"
-            }
-          ]
-        },
-        {
           "type": "text",
           "value": [
             "Otis's clients manage complex properties worldwide, but legacy on-premise infrastructure made real-time monitoring nearly impossible. That opacity forced reactive maintenance — waiting for elevators to fail — driving up downtime, cost, and friction.",
             "The hypothesis: real-time health data and predictive alerts could cut emergency repair calls by 20%.",
             "I was brought in as Lead Designer to move this rigid system to a cloud-native, globally scalable ecosystem. But the mandate arrived as a slogan — \"move our legacy system to the cloud, and make it scale globally\" — with no user, no scenario, no definition of success.",
-            "\"Cloud\" is a technical action, not a user need.",
+            "==\"Cloud\" is a technical action, not a user need.==",
             "So my first move wasn't visual. It was turning the slogan back into an answerable question."
           ]
         },
@@ -98,7 +76,7 @@
         {
           "type": "step",
           "num": "1",
-          "title": "Strip the solution back to the problem",
+          "title": "==Strip the solution back to the problem==",
           "blocks": [
             {
               "type": "text",
@@ -129,7 +107,7 @@
         {
           "type": "step",
           "num": "2",
-          "title": "Go to the field — every need I had was second-hand",
+          "title": "==Go to the field — every need I had was second-hand==",
           "blocks": [
             {
               "type": "text",
@@ -141,16 +119,16 @@
             },
             {
               "type": "image",
-              "src": "/images/otis-img2411.png",
+              "src": "/images/otis-control-room.jpg",
               "variant": "w80",
-              "label": "Field visit — the front-desk workstation at One Columbus Circle, where the legacy system actually lives"
+              "label": "Field visit — a property's security control room, where operators watch every floor and entrance at once"
             }
           ]
         },
         {
           "type": "step",
           "num": "3",
-          "title": "The insight: efficiency vs. fear",
+          "title": "==The insight: efficiency vs. fear==",
           "blocks": [
             {
               "type": "text",
@@ -168,7 +146,7 @@
               "type": "text",
               "value": [
                 "That was the moment. We were designing for efficiency; users were stuck in fear.",
-                "I named it consequence anxiety: the dread of an irreversible, catastrophic mistake. It made them offload even simple tasks to engineers — which meant our usage data was a false positive. The real pain point was invisible in the data, and only surfaced on-site."
+                "I named it ==consequence anxiety==: the dread of an irreversible, catastrophic mistake. It made them offload even simple tasks to engineers — which meant our usage data was a false positive. The real pain point was invisible in the data, and only surfaced on-site."
               ]
             },
             {
@@ -181,7 +159,7 @@
         {
           "type": "step",
           "num": "4",
-          "title": "Translate emotion into shippable requirements",
+          "title": "==Translate emotion into shippable requirements==",
           "blocks": [
             {
               "type": "text",
@@ -322,9 +300,9 @@
               "label": "Error rate"
             },
             {
-              "value": "3×",
+              "value": "Millions",
               "label": "Active users",
-              "desc": "300+ → 1,000+"
+              "desc": "Pilot → millions of users"
             },
             {
               "value": "−50%",
@@ -336,7 +314,7 @@
           "type": "text",
           "value": [
             "Cloud EMS 2.0 launched in early September, modernizing elevator management across 10+ core workflows and three user roles, and automating complex edge cases.",
-            "Beyond the numbers, the shift was behavioral: building managers began operating the system themselves instead of defaulting to Otis engineers. The platform went from a dreaded chore to a high-velocity tool — and became the mandate for my next initiative: reimagining enterprise security controls."
+            "Beyond the numbers, the shift was behavioral: ==building managers began operating the system themselves== instead of defaulting to Otis engineers. The platform went from a dreaded chore to a high-velocity tool — and became the mandate for my next initiative: reimagining enterprise security controls."
           ]
         },
         {
