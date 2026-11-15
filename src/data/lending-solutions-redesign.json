@@ -870,7 +870,7 @@
     {
       "id": "outcome",
       "kicker": "Outcome",
-      "title": "Faster requests, less rework, and the right people adopting",
+      "title": "Faster requests and less rework",
       "blocks": [
         {
           "type": "stats",
@@ -888,106 +888,21 @@
             {
               "value": "~22%",
               "label": "New-ticket NIGO rate",
-              "desc": "Against a ~60% discovery baseline"
-            },
-            {
-              "value": "~190",
-              "label": "Weekly active users",
-              "desc": "19-week average, peak 307"
+              "desc": "Down from ~60% in discovery"
             }
           ]
         },
         {
           "type": "text",
-          "value": "The results are early but point the same way: requests get submitted faster, come back less often, and reach the roles the work was designed for."
-        },
-        {
-          "type": "cards",
-          "columns": 3,
-          "items": [
-            {
-              "emoji": "📝",
-              "label": "Loan Request App",
-              "title": "Live, and already booking deals",
-              "desc": "13 new requests submitted, 5 in progress and 2 booked so far."
-            },
-            {
-              "emoji": "⏱️",
-              "label": "Credit Questionnaire",
-              "title": "Done in about 5 minutes",
-              "desc": "Clients usually finish the e-CQ in about 5 minutes, and sometimes in as little as 3."
-            },
-            {
-              "emoji": "🧭",
-              "label": "Lending Workspace",
-              "title": "In pilot with real users",
-              "desc": "16 users demoed and 5 given pilot access, with their feedback folded into launch planning."
-            }
+          "value": [
+            "The new Loan Request App is live and already booking deals: 13 requests submitted, 5 in progress and 2 booked so far. Clients usually finish the new e-CQ credit questionnaire in about 5 minutes, and sometimes in as little as 3.",
+            "Validate-at-source intake brought new-ticket NIGO — not in good order, the firm's own term for the bounce-back rework I set out to reduce — down to ~22% from ~60%. It's a programme-level result: the redesign contributed alongside process and training changes."
           ]
         },
         {
           "type": "quote",
           "value": "Much smoother… super easy to use… a big improvement.",
           "attribution": "Pilot users, on the new Loan Request App"
-        },
-        {
-          "type": "text",
-          "value": [
-            "Validate-at-source intake shipped with provenance chips and reason-coded overrides. New-ticket NIGO now sits at ~22%, down from ~60% in discovery.",
-            "NIGO — not in good order — is the firm's own term for the bounce-back rework I set out to reduce, so it's the metric closest to the work. It's a programme-level result: the redesign contributed alongside process and training changes."
-          ]
-        },
-        {
-          "type": "honest-note",
-          "label": "What the usage mix confirms",
-          "value": "Lenders (43.8%), Analysts (16.9%) and Credit Middle Office (16.3%) — the exact roles, in the exact order, the personas were built around."
-        },
-        {
-          "type": "scorecard",
-          "title": "The pilot scorecard",
-          "caption": "NIGO, adoption, and the weekly-active role mix",
-          "nigo": {
-            "label": "New-ticket NIGO rate",
-            "unit": "%",
-            "baseline": {
-              "label": "Discovery baseline",
-              "value": 60
-            },
-            "current": {
-              "label": "Pilot",
-              "value": 22
-            },
-            "note": "Lower is better"
-          },
-          "adoption": {
-            "label": "Overall adoption",
-            "value": 24,
-            "note": "USPB scorecard, still mid-pilot"
-          },
-          "roleMix": {
-            "label": "Weekly active users",
-            "value": 190,
-            "note": "19-week average, peak 307",
-            "segments": [
-              {
-                "name": "Lenders",
-                "value": 43.8
-              },
-              {
-                "name": "Analysts",
-                "value": 16.9
-              },
-              {
-                "name": "Credit Middle Office",
-                "value": 16.3
-              },
-              {
-                "name": "Other roles",
-                "value": 23.0,
-                "other": true
-              }
-            ]
-          }
         },
         {
           "type": "text",
