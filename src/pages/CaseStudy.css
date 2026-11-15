@@ -727,7 +727,7 @@ a.cs-index-item.is-active:hover {
   background: none;
   color: inherit;
   text-decoration-line: underline;
-  text-decoration-color: #ffb068;
+  text-decoration-color: #ffe785; /* the original marker yellow */
   text-decoration-thickness: 3px;
   text-underline-offset: 3px;
   text-decoration-skip-ink: auto;
