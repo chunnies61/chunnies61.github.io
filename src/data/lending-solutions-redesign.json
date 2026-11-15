@@ -907,11 +907,6 @@
         {
           "type": "text",
           "value": "The Workspace gained coherence too: the Deal Journey Tracker now integrates the eCQ credit questionnaire and covers IPB SBL and Custom deals — end-to-end visibility across the seams I mapped. And the IA and personas remain the team's source of truth."
-        },
-        {
-          "type": "honest-note",
-          "label": "What's next",
-          "value": "A manual Credit Questionnaire workflow, targeting automation of half of all manual questionnaires and cutting internal handling from ~20 minutes to ~5 for the ones it covers. It's a target, not a result yet."
         }
       ]
     },
