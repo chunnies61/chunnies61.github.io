@@ -44,7 +44,7 @@
         },
         {
           "type": "text",
-          "value": "What I inherited wasn't a product — it was a box of puzzle pieces. Each screen looked fine alone, but Dashboard to Profile to Scholarships didn't add up to a journey. And underneath there was no foundation: no design system, no component states, none of the error and empty states real users hit."
+          "value": "What I inherited wasn't a product — ==it was a box of puzzle pieces==. Each screen looked fine alone, but Dashboard to Profile to Scholarships didn't add up to a journey. And underneath there was no foundation: no design system, no component states, none of the error and empty states real users hit."
         },
         {
           "type": "image",
@@ -70,14 +70,14 @@
         {
           "type": "step",
           "num": "1",
-          "title": "Build the foundation before the surface",
+          "title": "==Build the foundation before the surface==",
           "blocks": [
             {
               "type": "text",
               "value": [
                 "With business screens under pressure, I made a counter-intuitive call: pause and build the design system first. As one person guarding consistency across dozens of screens, manual pixel-matching would drift. I needed the system to hold consistency, not my discipline.",
                 "I consolidated scattered brand assets into one style guide, defined base components with every state, and abstracted reusable patterns: College Bridge, Nitro Outlook Tooltip, Offers.",
-                "The hard part was calibrating abstraction — too abstract and a pattern is unusable, too shallow and it fits one page. My rule: serve at least three real scenarios, or I'd abstracted wrong. After that, every new page became assembly."
+                "The hard part was calibrating abstraction — too abstract and a pattern is unusable, too shallow and it fits one page. My rule: ==serve at least three real scenarios==, or I'd abstracted wrong. After that, every new page became assembly."
               ]
             },
             {
@@ -95,7 +95,7 @@
         {
           "type": "step",
           "num": "2",
-          "title": "Treat the least glamorous work as the quality bar",
+          "title": "==Treat the least glamorous work as the quality bar==",
           "blocks": [
             {
               "type": "text",
@@ -113,14 +113,14 @@
             },
             {
               "type": "text",
-              "value": "A product's reliability lives in its most awkward screen, not its prettiest. For an anxious parent, those boundary moments are where trust is won or lost."
+              "value": "==A product's reliability lives in its most awkward screen, not its prettiest.== For an anxious parent, those boundary moments are where trust is won or lost."
             }
           ]
         },
         {
           "type": "step",
           "num": "3",
-          "title": "One adaptive system for two different users",
+          "title": "==One adaptive system for two different users==",
           "blocks": [
             {
               "type": "text",
@@ -205,7 +205,7 @@
         {
           "type": "step",
           "num": "4",
-          "title": "Ship \"complete,\" not \"everything\"",
+          "title": "==Ship \"complete,\" not \"everything\"==",
           "blocks": [
             {
               "type": "text",
