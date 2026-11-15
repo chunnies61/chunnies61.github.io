@@ -28,12 +28,13 @@ body:has(.home) .nav.is-scrolled {
 }
 
 /* Type comes from .md-label-large on each link; only layout and colour here.
-   Neutral 60 from the tonal palettes (src/data/tonal-palettes.json). */
+   Gray 800 from the neutral ramp in index.css: dark enough to read over the
+   home hero's gradient as well as on white. */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 32px;
-  color: #8b919f;
+  color: var(--gray-800);
 }
 
 .nav-links a:hover {
