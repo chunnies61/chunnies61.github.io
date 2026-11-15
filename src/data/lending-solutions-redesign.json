@@ -900,9 +900,9 @@
           ]
         },
         {
-          "type": "quote",
-          "value": "Much smoother… super easy to use… a big improvement.",
-          "attribution": "Pilot users, on the new Loan Request App"
+          "type": "honest-note",
+          "label": "In their words",
+          "value": "Pilot users called the new Loan Request App “much smoother” and “super easy to use” — “a big improvement” on the old one."
         },
         {
           "type": "text",
