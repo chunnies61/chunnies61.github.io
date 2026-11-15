@@ -7,7 +7,7 @@
   transition: background 0.25s ease;
 }
 
-/* Home only: the hero's aurora runs up behind the bar, so let it show through
+/* Home only: the hero's gradient runs up behind the bar, so let it show through
    while the page sits at the top. Every other page keeps a white nav. */
 body:has(.home) .nav {
   background: transparent;
@@ -28,12 +28,13 @@ body:has(.home) .nav.is-scrolled {
 }
 
 /* Type comes from .md-label-large on each link; only layout and colour here.
-   Neutral 60 from the tonal palettes (src/data/tonal-palettes.json). */
+   Gray 800 from the neutral ramp in index.css: dark enough to read over the
+   home hero's gradient as well as on white. */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 32px;
-  color: #8b919f;
+  color: var(--gray-800);
 }
 
 .nav-links a:hover {

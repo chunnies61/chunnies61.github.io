@@ -13,48 +13,39 @@
   justify-content: center;
 }
 
-/* A soft aurora behind the hero: nine overlapping radial blobs, heavily
-   blurred so no individual circle reads as a shape. The layer runs past the
-   hero above and below, because `blur()` fades toward transparent at its own
-   edges and would otherwise leave a visible seam. As the pseudo element is
-   the hero's first child it paints behind the text and the falling tools
-   without needing a z-index on either. */
+/* The hero's backdrop: a vertical wash from soft green at the top, through warm
+   white behind the headline, to blue and lavender at the bottom, with a faint
+   horizontal grain over it like brushed paper. It starts 72px above the hero so it
+   runs behind the transparent nav, and carries on 140px past it while it fades
+   out, so the colour never ends on a hard line against the next section. As the pseudo element is
+   the hero's first child it paints behind the text and the falling tools. */
 .hero::before {
   content: "";
   position: absolute;
-  /* Reaches 232px above the hero — 160px of room for the blur, plus the 72px
-     sticky nav, so the colour runs behind the nav instead of starting under
-     it. Left and right stay at 0 so the oversized layer can't widen the page.
-     The nav's own z-index (50) keeps it painting on top of this. */
-  top: -232px;
-  bottom: -160px;
+  top: -72px;
+  bottom: -140px;
   left: 0;
   right: 0;
   z-index: 0;
   pointer-events: none;
-  /* Nine lobes of uneven size, offset from one another so their union is
-     lumpy rather than round. Each one stays a circle, but none of them is the
-     silhouette — the blur below fuses them into one organic mass. */
   background:
-    /* the bright core */
-    radial-gradient(circle 144px at 72% 47%, rgba(255, 255, 255, 0.95), transparent 70%),
-    /* primary blue — the main body, plus two lobes pulling it off-round */
-    radial-gradient(circle 228px at 73% 50%, rgba(69, 117, 231, 0.4), transparent 72%),
-    radial-gradient(circle 154px at 80% 40%, rgba(69, 117, 231, 0.31), transparent 74%),
-    radial-gradient(circle 125px at 62% 55%, rgba(69, 117, 231, 0.26), transparent 76%),
-    /* violet — the smallest and faintest lobe, just a hint under the blue */
-    radial-gradient(circle 100px at 64% 57%, rgba(124, 92, 240, 0.18), transparent 76%),
-    /* cyan — a tail of four lobes, each smaller and fainter than the last, so
-       it tapers away to the lower left instead of stopping */
-    radial-gradient(circle 180px at 83% 57%, rgba(86, 190, 255, 0.26), transparent 76%),
-    radial-gradient(circle 132px at 77% 65%, rgba(86, 190, 255, 0.21), transparent 78%),
-    radial-gradient(circle 106px at 71% 73%, rgba(86, 190, 255, 0.16), transparent 80%),
-    radial-gradient(circle 86px at 65% 80%, rgba(86, 190, 255, 0.12), transparent 82%);
-  filter: blur(72px);
-  /* Fades out before the next section, so the colour never ends on a hard
-     horizontal seam at the section boundary. */
-  -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 92%);
-  mask-image: linear-gradient(to bottom, #000 70%, transparent 92%);
+    /* grain: noise that only varies top to bottom, so it reads as fine
+       horizontal streaks and tiles with no visible seams */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0 0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.55 -0.12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") 0 0 / 600px 300px repeat,
+    linear-gradient(
+      to bottom,
+      #dcebaa 0%,
+      #e7f1c8 16%,
+      #f3f7e6 30%,
+      #faf8f1 44%,
+      #fbf6f2 56%,
+      #dde9f8 70%,
+      #bfd6f6 82%,
+      #c3c4f3 92%,
+      #cdbff2 100%
+    );
+  -webkit-mask-image: linear-gradient(to bottom, #000 74%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 74%, transparent 100%);
 }
 
 .hero-inner {

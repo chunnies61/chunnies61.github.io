@@ -182,20 +182,38 @@ function Alignment() {
   );
 }
 
-/* A layout builds itself block by block; a spark lands when it's done */
+/* A prompt is typed, the sparkle generates, an interface assembles itself, and a
+   cursor clicks its button: a prototype that actually works. Every piece sits in
+   its finished place; the animation only brings it in, so a still frame (reduced
+   motion) shows the finished, clicked state. */
 function Prototyping() {
   return (
     <g>
       <rect x="22" y="12" width="196" height="126" rx="16" fill={WHITE} opacity="0.6" stroke={INK} strokeWidth="3" />
-      <rect className="ks-build" style={{ "--d": "0s" }} x="40" y="30" width="96" height="14" rx="7" fill={INK} />
-      <rect className="ks-build" style={{ "--d": "0.35s" }} x="40" y="56" width="160" height="42" rx="10" fill={INK} opacity="0.88" />
-      <rect className="ks-build" style={{ "--d": "0.7s" }} x="40" y="108" width="64" height="16" rx="8" fill={INK} />
+      {/* the prompt bar, its typed line, and the sparkle that sends it */}
+      <rect x="34" y="24" width="172" height="24" rx="12" fill={WHITE} stroke={INK} strokeWidth="2.5" />
+      <rect className="ks-type" x="46" y="33" width="104" height="6" rx="3" fill={INK} />
       <path
-        className="ks-twinkle"
-        d="M176 108 L180 117 L189 121 L180 125 L176 134 L172 125 L163 121 L172 117 Z"
+        className="ks-gen"
+        d="M188 27 L191 33 L197 36 L191 39 L188 45 L185 39 L179 36 L185 33 Z"
+        fill={INK}
+        strokeLinejoin="round"
+      />
+      {/* the generated interface: an image card, two lines of text and a button */}
+      <rect className="ks-pop" style={{ "--d": "0s" }} x="34" y="58" width="94" height="66" rx="10" fill={INK} />
+      <rect className="ks-pop" style={{ "--d": "0.25s" }} x="138" y="60" width="68" height="9" rx="4.5" fill={INK} />
+      <rect className="ks-pop" style={{ "--d": "0.4s" }} x="138" y="76" width="48" height="9" rx="4.5" fill={INK} fillOpacity="0.45" />
+      <g className="ks-pop" style={{ "--d": "0.55s" }}>
+        <rect className="ks-press" x="138" y="98" width="68" height="24" rx="12" fill={INK} />
+      </g>
+      <circle className="ks-ripple" cx="172" cy="110" r="16" fill="none" stroke={INK} strokeWidth="2.5" opacity="0" />
+      {/* the cursor, resting on the button once it has clicked */}
+      <path
+        className="ks-cursor"
+        d="M170 106 L170 128 L176 122 L180 131 L184 129 L180 120 L188 120 Z"
         fill={WHITE}
         stroke={INK}
-        strokeWidth="3"
+        strokeWidth="2.5"
         strokeLinejoin="round"
       />
     </g>
