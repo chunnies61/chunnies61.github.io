@@ -1,7 +1,7 @@
 {
   "slug": "otis-digital-eco-system",
   "title": "Otis Cloud EMS 2.0",
-  "subtitle": "Turning a legacy monitoring system into a proactive cloud platform — by designing for fear, not efficiency",
+  "subtitle": "Turning a legacy monitoring system into a proactive cloud platform by designing for fear, not efficiency",
   "summary": "A legacy monitoring system made proactive",
   "tags": [
     "Property Management",
@@ -35,9 +35,9 @@
         {
           "type": "text",
           "value": [
-            "Otis's clients manage complex properties worldwide, but legacy on-premise infrastructure made real-time monitoring nearly impossible. That opacity forced reactive maintenance — waiting for elevators to fail — driving up downtime, cost, and friction.",
+            "Otis's clients manage complex properties worldwide, but legacy on-premise infrastructure made real-time monitoring nearly impossible. That opacity forced reactive maintenance (waiting for elevators to fail), driving up downtime, cost, and friction.",
             "The hypothesis: real-time health data and predictive alerts could cut emergency repair calls by 20%.",
-            "I was brought in as Lead Designer to move this rigid system to a cloud-native, globally scalable ecosystem. But the mandate arrived as a slogan — \"move our legacy system to the cloud, and make it scale globally\" — with no user, no scenario, no definition of success.",
+            "I was brought in as Lead Designer to move this rigid system to a cloud-native, globally scalable ecosystem. But the mandate arrived as a slogan, \"move our legacy system to the cloud, and make it scale globally,\" with no user, no scenario, no definition of success.",
             "==\"Cloud\" is a technical action, not a user need.==",
             "So my first move wasn't visual. It was turning the slogan back into an answerable question."
           ]
@@ -98,7 +98,7 @@
                 {
                   "emoji": "🎯",
                   "label": "The actual problem",
-                  "desc": "Clients are trapped in a reactive firefighting model — and can't move to proactive prevention."
+                  "desc": "Clients are trapped in a reactive firefighting model and can't move to proactive prevention."
                 }
               ]
             }
@@ -107,13 +107,13 @@
         {
           "type": "step",
           "num": "2",
-          "title": "==Go to the field — every need I had was second-hand==",
+          "title": "==Go to the field: every need I had was second-hand==",
           "blocks": [
             {
               "type": "text",
               "value": [
-                "Before committing, I hit the brakes on one realization: every \"user need\" I had was second-hand, relayed to HQ in New York through sales, support, and engineering — layers of distortion.",
-                "The user described in a conference room and the one standing in a machine room could easily be two different people. I couldn't even follow the vocabulary — car call, hall call, group dispatch.",
+                "Before committing, I hit the brakes on one realization: every \"user need\" I had was second-hand, relayed to HQ in New York through layers of distortion: sales, support, and engineering.",
+                "The user described in a conference room and the one standing in a machine room could easily be two different people. I couldn't even follow the vocabulary: car call, hall call, group dispatch.",
                 "With no researcher and a lean team (me + 2 UI designers), a months-long study was off the table. So I took the lowest-cost path to the highest-fidelity truth: on-site contextual inquiry at high-traffic NYC properties, standing behind users as they worked."
               ]
             },
@@ -121,7 +121,7 @@
               "type": "image",
               "src": "/images/otis-control-room.jpg",
               "variant": "w80",
-              "label": "Field visit — a property's security control room, where operators watch every floor and entrance at once"
+              "label": "Field visit: a property's security control room, where operators watch every floor and entrance at once"
             }
           ]
         },
@@ -146,13 +146,13 @@
               "type": "text",
               "value": [
                 "That was the moment. We were designing for efficiency; users were stuck in fear.",
-                "I named it ==consequence anxiety==: the dread of an irreversible, catastrophic mistake. It made them offload even simple tasks to engineers — which meant our usage data was a false positive. The real pain point was invisible in the data, and only surfaced on-site."
+                "I named it ==consequence anxiety==: the dread of an irreversible, catastrophic mistake. It made them offload even simple tasks to engineers, which meant our usage data was a false positive. The real pain point was invisible in the data, and only surfaced on-site."
               ]
             },
             {
               "type": "callout",
               "label": "The trap",
-              "value": "Usage data looked healthy because engineers did the work managers feared to touch. The metric wasn't measuring adoption — it was measuring avoidance."
+              "value": "Usage data looked healthy because engineers did the work managers feared to touch. The metric wasn't measuring adoption. It was measuring avoidance."
             }
           ]
         },
@@ -165,7 +165,7 @@
               "type": "text",
               "value": [
                 "The hard part: fear doesn't fit in a PRD, and engineers can't sprint-plan an emotion.",
-                "So my final discovery move was translating the feeling into testable requirements. I codified \"users operate in fear\" into a principle — psychological safety before efficiency — and broke it into three things engineering could build and validate:"
+                "So my final discovery move was translating the feeling into testable requirements. I codified \"users operate in fear\" into a principle, psychological safety before efficiency, and broke it into three things engineering could build and validate:"
               ]
             },
             {
@@ -185,7 +185,7 @@
                 {
                   "emoji": "🏷️",
                   "title": "Plain-language labels",
-                  "desc": "Jargon like \"car call\" swapped for plain words — unlabeled call types caused guesswork in testing."
+                  "desc": "Jargon like \"car call\" swapped for plain words, because unlabeled call types caused guesswork in testing."
                 }
               ]
             },
@@ -214,7 +214,7 @@
             {
               "type": "callout",
               "label": "The alignment",
-              "value": "For the first time the business goals — cloud, adoption, cost reduction — and the user goal — don't let me make a catastrophic mistake — shared one definition of success."
+              "value": "For the first time, the business goals (cloud, adoption, cost reduction) and the user goal (don't let me make a catastrophic mistake) shared one definition of success."
             }
           ]
         }
@@ -250,7 +250,7 @@
             },
             {
               "title": "Health & Energy",
-              "desc": "AI insights on health and energy — early risks, predicted maintenance, lower consumption.",
+              "desc": "AI insights on health and energy: early risks, predicted maintenance, lower consumption.",
               "video": "/videos/otis-health-energy.mp4"
             },
             {
@@ -270,7 +270,7 @@
       "blocks": [
         {
           "type": "text",
-          "value": "With my two UI designers I extended the design system with the pieces the old platform never had — a full charting library and a plain-spoken empty-state and iconography set — so \"safe and legible\" scaled beyond the screens I touched, and every new surface inherited the same guardrails."
+          "value": "With my two UI designers I extended the design system with the pieces the old platform never had: a full charting library and a plain-spoken empty-state and iconography set. That way \"safe and legible\" scaled beyond the screens I touched, and every new surface inherited the same guardrails."
         },
         {
           "type": "slideshow",
@@ -314,14 +314,14 @@
           "type": "text",
           "value": [
             "Cloud EMS 2.0 launched in early September, modernizing elevator management across 10+ core workflows and three user roles, and automating complex edge cases.",
-            "Beyond the numbers, the shift was behavioral: ==building managers began operating the system themselves== instead of defaulting to Otis engineers. The platform went from a dreaded chore to a high-velocity tool — and became the mandate for my next initiative: reimagining enterprise security controls."
+            "Beyond the numbers, the shift was behavioral: ==building managers began operating the system themselves== instead of defaulting to Otis engineers. The platform went from a dreaded chore to a high-velocity tool, and it became the mandate for my next initiative: reimagining enterprise security controls."
           ]
         },
         {
           "type": "award",
           "logo": "/images/red-dot-winner-2026.png",
-          "title": "2026 Red Dot Award — Brands & Communication Design",
-          "desc": "Named a winner in the 2026 Red Dot Award: Brands & Communication Design — one of the world's most respected recognitions for design quality."
+          "title": "2026 Red Dot Award: Brands & Communication Design",
+          "desc": "Named a winner in the 2026 Red Dot Award: Brands & Communication Design, one of the world's most respected recognitions for design quality."
         }
       ]
     }

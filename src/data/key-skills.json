@@ -1,13 +1,7 @@
 {
-  "eyebrow": "Key skills",
-  "title": "What I bring to the work",
+  "eyebrow": "How I work",
+  "title": "What I bring to the table",
   "skills": [
-    {
-      "id": "prototyping",
-      "title": "AI-native prototyping",
-      "desc": "Building polished, working prototypes fast.",
-      "bg": "#cbf26c"
-    },
     {
       "id": "empathy",
       "title": "Empathy",
@@ -15,9 +9,15 @@
       "bg": "#ffc9dd"
     },
     {
+      "id": "prototyping",
+      "title": "AI-native prototyping",
+      "desc": "Building polished, working prototypes fast.",
+      "bg": "#cbf26c"
+    },
+    {
       "id": "problem-solving",
       "title": "Problem solving",
-      "desc": "Untangling messy workflows to find the real problem.",
+      "desc": "Finding the piece that makes it all fit.",
       "bg": "#fde9a8"
     },
     {
@@ -41,13 +41,13 @@
     {
       "id": "influence",
       "title": "Alignment",
-      "desc": "Moving four teams the same way, without authority.",
+      "desc": "I lead through clarity, not authority.",
       "bg": "#dacfff"
     },
     {
       "id": "finance",
       "title": "Business fluency",
-      "desc": "Complex business problems don't scare me.",
+      "desc": "Finance-trained, so I design with the P&L in mind.",
       "bg": "#a9c8e6"
     }
   ]

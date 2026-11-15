@@ -13,7 +13,7 @@
   "meta": [
     {
       "label": "Role",
-      "value": "UX/UI Designer — second design hire"
+      "value": "UX/UI Designer, second design hire"
     },
     {
       "label": "Team",
@@ -37,7 +37,7 @@
         {
           "type": "text",
           "value": [
-            "ClinicMind is an all-in-one healthcare SaaS platform for practice retention, provider burnout and revenue across the care lifecycle. I joined as the second designer ever hired, leading redesign across its five core products — practice management, patient portal, EHR, credentialing and billing.",
+            "ClinicMind is an all-in-one healthcare SaaS platform for practice retention, provider burnout and revenue across the care lifecycle. I joined as the second designer ever hired, leading redesign across its five core products: practice management, patient portal, EHR, credentialing and billing.",
             "After twenty years, every product decision had been made by engineers. Design was a newborn function, so day one wasn't a design problem but ==a trust deficit==: no authority, no collaboration process, no language to prove design was useful.",
             "Opening Figma and restyling buttons would only brand me \"the person who makes things pretty.\""
           ]
@@ -50,7 +50,7 @@
         {
           "type": "image",
           "src": "/images/safari-light-262759.png",
-          "label": "ClinicMind's platform — a 20-year, all-in-one healthcare SaaS"
+          "label": "ClinicMind's platform: a 20-year, all-in-one healthcare SaaS"
         }
       ]
     },
@@ -67,7 +67,7 @@
             {
               "type": "text",
               "value": [
-                "Engineers couldn't feel the problem. The system was complex and the flows convoluted — but after twenty years, that was just \"how it is.\" You can't push a problem nobody can see.",
+                "Engineers couldn't feel the problem. The system was complex and the flows convoluted, but after twenty years, that was just \"how it is.\" You can't push a problem nobody can see.",
                 "So I didn't argue about design. I ran discovery calls with physicians, whose time is scarce and hard to get. One fact landed: our doctors spend a huge share of the day not on patient care, but on notes, scheduling and fighting with insurers.",
                 "I brought that back untouched. Instead of \"your design is bad,\" I said:"
               ]
@@ -84,7 +84,7 @@
             {
               "type": "image",
               "src": "/images/clinicmind-user-research.svg",
-              "label": "Discovery calls with physicians — synthesis boards from the care-plan and daily-task sessions"
+              "label": "Discovery calls with physicians: synthesis boards from the care-plan and daily-task sessions"
             }
           ]
         },
@@ -97,7 +97,7 @@
               "type": "text",
               "value": [
                 "Next, a harder sell: stop piling on features and build a design system first.",
-                "Deeply counter-intuitive at the time: the team wanted output, and I was asking for a foundation with no short-term deliverable — in a regulated clinical domain whose vocabulary I was still learning.",
+                "Deeply counter-intuitive at the time: the team wanted output, and I was asking for a foundation with no short-term deliverable, in a regulated clinical domain whose vocabulary I was still learning.",
                 "My argument wasn't \"it'll look better.\" ==It was ROI math==: with two designers against 7+ engineers, negotiating every page from scratch means we never catch up. With an Atomic Design component library and clear documentation, every feature becomes assembly."
               ]
             },
@@ -116,7 +116,7 @@
             {
               "type": "text",
               "value": [
-                "What actually accelerated collaboration was changing how the team communicated. With no prototypes or specs, everything lived in words — everyone pictured something different, and reviews spun. So I did two high-leverage things:"
+                "What actually accelerated collaboration was changing how the team communicated. With no prototypes or specs, everything lived in words. Everyone pictured something different, and reviews spun. So I did two high-leverage things:"
               ]
             },
             {
@@ -139,7 +139,7 @@
             },
             {
               "type": "text",
-              "value": "With the product owners, we aimed that effort at the highest-impact parts of the system — Care Plans and Daily Task Management — where sketches and prototypes let us gather feedback and iterate fast."
+              "value": "With the product owners, we aimed that effort at the highest-impact parts of the system, Care Plans and Daily Task Management, where sketches and prototypes let us gather feedback and iterate fast."
             },
             {
               "type": "image",
@@ -149,7 +149,7 @@
             {
               "type": "image",
               "src": "/images/21-a159b1.svg",
-              "label": "Interactive prototypes — the thing everyone points at"
+              "label": "Interactive prototypes, the thing everyone points at"
             },
             {
               "type": "text",
@@ -158,7 +158,7 @@
             {
               "type": "image",
               "src": "/images/image-16-445ef6.svg",
-              "label": "The demo library — 30+ recorded walkthroughs, always available to the dev and business teams"
+              "label": "The demo library: 30+ recorded walkthroughs, always available to the dev and business teams"
             }
           ]
         },
@@ -191,12 +191,12 @@
         {
           "type": "image",
           "src": "/images/atomic-design-graphic-ee5e60.svg",
-          "label": "Atomic Design — the methodology behind the Vericle Design System",
+          "label": "Atomic Design, the methodology behind the Vericle Design System",
           "variant": "padded"
         },
         {
           "type": "text",
-          "value": "The system itself: color, typography, effects and radii, spacing, and the component library — each specified on real EHR surfaces rather than in the abstract, so engineering had something concrete to build against."
+          "value": "The system itself: color, typography, effects and radii, spacing, and the component library. Each was specified on real EHR surfaces rather than in the abstract, so engineering had something concrete to build against."
         },
         {
           "type": "slideshow",
@@ -226,7 +226,7 @@
             {
               "emoji": "🧱",
               "title": "A design system from scratch",
-              "desc": "Atomic Design, clearly documented — the team's shared language."
+              "desc": "Atomic Design, clearly documented: the team's shared language."
             },
             {
               "emoji": "📼",
@@ -247,11 +247,11 @@
         {
           "type": "video",
           "src": "/videos/clinicmind-hero.mp4",
-          "label": "The redesigned appointment dashboard — cleaner and more organized"
+          "label": "The redesigned appointment dashboard, cleaner and more organized"
         },
         {
           "type": "text",
-          "value": "The real result wasn't how well I designed — it was ==making communication a team capability==."
+          "value": "The real result wasn't how well I designed. It was ==making communication a team capability==."
         }
       ]
     },
@@ -263,13 +263,13 @@
         {
           "type": "text",
           "value": [
-            "In a place with no design culture, a designer's biggest output isn't mockups — it's getting the team thinking in terms of design. Not through authority, but by letting everyone see the same truth."
+            "In a place with no design culture, a designer's biggest output isn't mockups. It's getting the team thinking in terms of design. Not through authority, but by letting everyone see the same truth."
           ]
         },
         {
           "type": "callout",
           "label": "What I take with me",
-          "value": "Advocating for design quality starts before you have any formal power — and building that influence from the ground up is where I'm at my best."
+          "value": "Advocating for design quality starts before you have any formal power, and building that influence from the ground up is where I'm at my best."
         }
       ]
     }

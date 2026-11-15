@@ -62,7 +62,7 @@ export default function PasswordGate({ onUnlock }) {
             Unlock
           </button>
         </form>
-        {error && <p className="cs-password-error">Incorrect password — try again.</p>}
+        {error && <p className="cs-password-error">Incorrect password. Try again.</p>}
       </div>
     </main>
   );

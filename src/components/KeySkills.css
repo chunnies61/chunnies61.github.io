@@ -152,6 +152,71 @@
   }
 }
 
+/* --- Problem solving: the missing piece floats in and snaps into place ------- */
+.ks-piece {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ks-piece 7s cubic-bezier(0.45, 0, 0.2, 1) infinite both;
+}
+
+@keyframes ks-piece {
+  0%,
+  12% {
+    transform: translate(46px, -26px) rotate(22deg);
+    opacity: 1;
+  }
+  24% {
+    transform: translate(48px, -31px) rotate(16deg);
+  }
+  50% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  54% {
+    transform: translate(0, 1px) rotate(0deg) scale(0.95);
+  }
+  58%,
+  86% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  93% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 0;
+  }
+  94% {
+    transform: translate(46px, -26px) rotate(22deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(46px, -26px) rotate(22deg);
+    opacity: 1;
+  }
+}
+
+.ks-piece-spark {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ks-piece-spark 7s ease-in-out infinite both;
+}
+
+@keyframes ks-piece-spark {
+  0%,
+  54% {
+    transform: scale(0) rotate(-40deg);
+  }
+  63% {
+    transform: scale(1.25) rotate(0deg);
+  }
+  70%,
+  86% {
+    transform: scale(1) rotate(0deg);
+  }
+  93%,
+  100% {
+    transform: scale(0) rotate(30deg);
+  }
+}
+
 /* --- Systems thinking: two rings turning against each other ------------------ */
 .ks-turn {
   transform-box: view-box;

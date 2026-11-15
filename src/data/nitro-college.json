@@ -12,7 +12,7 @@
   "meta": [
     {
       "label": "Role",
-      "value": "Solo Product Designer — end-to-end ownership"
+      "value": "Solo Product Designer, end-to-end ownership"
     },
     {
       "label": "Team",
@@ -40,11 +40,11 @@
         {
           "type": "image",
           "src": "/images/nitro-marketing-site.png",
-          "label": "Nitro College by Sallie Mae — the brand families arrived through, before a planning platform existed behind it"
+          "label": "Nitro College by Sallie Mae: the brand families arrived through, before a planning platform existed behind it"
         },
         {
           "type": "text",
-          "value": "What I inherited wasn't a product — ==it was a box of puzzle pieces==. Each screen looked fine alone, but Dashboard to Profile to Scholarships didn't add up to a journey. And underneath there was no foundation: no design system, no component states, none of the error and empty states real users hit."
+          "value": "What I inherited wasn't a product. ==It was a box of puzzle pieces==. Each screen looked fine alone, but Dashboard to Profile to Scholarships didn't add up to a journey. And underneath there was no foundation: no design system, no component states, none of the error and empty states real users hit."
         },
         {
           "type": "image",
@@ -77,13 +77,13 @@
               "value": [
                 "With business screens under pressure, I made a counter-intuitive call: pause and build the design system first. As one person guarding consistency across dozens of screens, manual pixel-matching would drift. I needed the system to hold consistency, not my discipline.",
                 "I consolidated scattered brand assets into one style guide, defined base components with every state, and abstracted reusable patterns: College Bridge, Nitro Outlook Tooltip, Offers.",
-                "The hard part was calibrating abstraction — too abstract and a pattern is unusable, too shallow and it fits one page. My rule: ==serve at least three real scenarios==, or I'd abstracted wrong. After that, every new page became assembly."
+                "The hard part was calibrating abstraction. Too abstract and a pattern is unusable; too shallow and it fits one page. My rule: ==serve at least three real scenarios==, or I'd abstracted wrong. After that, every new page became assembly."
               ]
             },
             {
               "type": "image",
               "src": "/images/style-guide-ac6b80.png",
-              "label": "The style guide — colors, typography, full UI palette, and buttons in every state"
+              "label": "The style guide: colors, typography, full UI palette, and buttons in every state"
             },
             {
               "type": "callout",
@@ -99,17 +99,17 @@
           "blocks": [
             {
               "type": "text",
-              "value": "Then I did what many skip: completing every edge case. The original designs drew only the \"happy path.\" Real users live in the unhappy ones — no data, a failed load, zero matches — and the old screens dropped into blank pages."
+              "value": "Then I did what many skip: completing every edge case. The original designs drew only the \"happy path.\" Real users live in the unhappy ones (no data, a failed load, zero matches), and the old screens dropped into blank pages."
             },
             {
               "type": "image",
               "src": "/images/frame-427319519-0babba.png",
               "variant": "square",
-              "label": "The gap audit — empty states and missing screens flagged across College Savings and Extra Contributions"
+              "label": "The gap audit: empty states and missing screens flagged across College Savings and Extra Contributions"
             },
             {
               "type": "text",
-              "value": "So I ran every page through the three fates of data. Has data is the happy path — the only state originally drawn. No data gets guidance on what the page is and what to do next. Bad data gets a plain-language error, not a dead end."
+              "value": "So I ran every page through the three fates of data. Has data is the happy path, the only state originally drawn. No data gets guidance on what the page is and what to do next. Bad data gets a plain-language error, not a dead end."
             },
             {
               "type": "text",
@@ -125,7 +125,7 @@
             {
               "type": "text",
               "value": [
-                "The platform serves two primary users — parents and students — with different goals, financial literacy, and priorities. Rather than build two interfaces, unmaintainable for one designer, I made one system adapt."
+                "The platform serves two primary users, parents and students, with different goals, financial literacy, and priorities. Rather than build two interfaces, unmaintainable for one designer, I made one system adapt."
               ]
             },
             {
@@ -198,7 +198,7 @@
             {
               "type": "callout",
               "label": "Where the split lives",
-              "value": "Commonality lives in the shared system; difference is handled by dynamic content — consistency and personalization at different layers."
+              "value": "Commonality lives in the shared system; difference is handled by dynamic content. Consistency and personalization live at different layers."
             }
           ]
         },
@@ -210,7 +210,7 @@
             {
               "type": "text",
               "value": [
-                "Finally, scope. Nine months solo — I couldn't build every feature. But an MVP's value isn't how much it does; it's whether it closes a loop.",
+                "Finally, scope. Nine months solo meant I couldn't build every feature. But an MVP's value isn't how much it does; it's whether it closes a loop.",
                 "I led a cross-functional feature-canvas workshop to pin down each feature's problem, value, and feasibility. Then, with the PM, Impact vs. Effort mapping cut low-value work and protected the core path: understand costs → find aid → plan funding.",
                 "The result was deliberately scoped but experientially complete, not feature-full and half-finished. And because the foundation was a design system, post-MVP additions could grow on top of it rather than force a rebuild."
               ]
@@ -218,12 +218,12 @@
             {
               "type": "image",
               "src": "/images/feature-canvas-d39df0.png",
-              "label": "Feature-canvas workshop — Dashboard & Bridge, Outlook, Help, Shared Accounts, Recommendation Engine, Authentication"
+              "label": "Feature-canvas workshop: Dashboard & Bridge, Outlook, Help, Shared Accounts, Recommendation Engine, Authentication"
             },
             {
               "type": "image",
               "src": "/images/impact-over-effort-mapping-61f2d3.png",
-              "label": "Impact vs. Effort — where the MVP line was drawn"
+              "label": "Impact vs. Effort: where the MVP line was drawn"
             }
           ]
         }
@@ -242,13 +242,13 @@
           "type": "image",
           "src": "/images/before-after-1-0801a3.svg",
           "variant": "square",
-          "label": "Before / after — layout restructured on the new system"
+          "label": "Before / after: layout restructured on the new system"
         },
         {
           "type": "image",
           "src": "/images/before-after-2-d689a1.svg",
           "variant": "square",
-          "label": "Before / after — edge cases and hierarchy completed"
+          "label": "Before / after: edge cases and hierarchy completed"
         },
         {
           "type": "text",
@@ -276,7 +276,7 @@
             },
             {
               "title": "College Savings & Extra Contributions",
-              "desc": "A complete funding picture — college savings including 529s, plus contributions beyond Nitro's estimates.",
+              "desc": "A complete funding picture: college savings including 529s, plus contributions beyond Nitro's estimates.",
               "video": "/videos/nitro-college-savings.mp4"
             }
           ]
@@ -291,7 +291,7 @@
         {
           "type": "text",
           "value": [
-            "We validated on usertesting.com: 20-minute recorded sessions across up to 15 tasks — 10 parents and guardians on desktop, 10 returning undergraduates on mobile — measured with SUS, NPS, CSAT, and mission-alignment surveys, plus moderated reviews with three Sallie Mae financial-aid advisors."
+            "We validated on usertesting.com with 20-minute recorded sessions across up to 15 tasks: 10 parents and guardians on desktop and 10 returning undergraduates on mobile. We measured with SUS, NPS, CSAT, and mission-alignment surveys, plus moderated reviews with three Sallie Mae financial-aid advisors."
           ]
         },
         {
@@ -302,12 +302,12 @@
         {
           "type": "image",
           "src": "/images/findings-recommendations-195c90.png",
-          "label": "Findings — usability and satisfaction scorecards"
+          "label": "Findings: usability and satisfaction scorecards"
         },
         {
           "type": "text",
           "value": [
-            "Most participants found the product intuitive and aligned with the mission, and the advisors endorsed it. NPS was the honest signal, shaping the post-MVP plan: an app tour, shared parent/student access, and scholarship tracking — all absorbable without a rebuild.",
+            "Most participants found the product intuitive and aligned with the mission, and the advisors endorsed it. NPS was the honest signal, shaping the post-MVP plan: an app tour, shared parent/student access, and scholarship tracking, all absorbable without a rebuild.",
             "I delivered not a design version, but an extensible system and a complete journey."
           ]
         },
@@ -332,7 +332,7 @@
         {
           "type": "callout",
           "label": "What I take with me",
-          "value": "A high bar of execution lives precisely in the details others skip — and those details are where I'm most exacting."
+          "value": "A high bar of execution lives precisely in the details others skip, and those details are where I'm most exacting."
         }
       ]
     }

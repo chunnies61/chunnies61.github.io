@@ -14,10 +14,9 @@ import "./PersonaTabs.css";
 
 function ListItem({ item, inline }) {
   if (typeof item === "string") return <li>{item}</li>;
-  // Inline items read "Label — text" when the text continues the label
-  // ("Drive business growth — expand loan originations…") and "Label: text"
-  // when it is its own sentence. Wide multi-column lists stack the label.
-  const sep = /^[a-z]/.test(item.text) ? " — " : ": ";
+  // Inline items read "Label: text" ("Drive business growth: expand loan
+  // originations…"). Wide multi-column lists stack the label instead.
+  const sep = ": ";
   return (
     <li>
       <strong className={"cs-pt-item-label" + (inline ? "" : " is-block")}>{item.label}</strong>
