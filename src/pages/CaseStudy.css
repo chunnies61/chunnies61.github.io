@@ -868,8 +868,8 @@ a.cs-index-item.is-active:hover {
   letter-spacing: 0.05em;
   color: #ffe785;
 }
-/* Type comes from .md-headline-small on the element — same as the style guide
-   sample, so the two cannot drift. Only colour lives here. */
+/* Font and weight come from .md-headline-small on the element; the size is set
+   to 16px below. Colour lives here. */
 .cs-callout p {
   color: #fff;
 }
@@ -879,12 +879,10 @@ a.cs-index-item.is-active:hover {
   color: #bfdbfe;
 }
 
-/* Phones: the callout's main line steps down to 16px so it stays a few lines long */
-@media (max-width: 640px) {
-  .cs-callout p.md-headline-small {
-    font-size: 16px;
-    line-height: 22px;
-  }
+/* The callout's main line is 16px on every screen */
+.cs-callout p.md-headline-small {
+  font-size: 16px;
+  line-height: 22px;
 }
 
 
