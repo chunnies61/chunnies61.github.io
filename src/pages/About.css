@@ -17,4 +17,12 @@
   .about-page .about-hero-text h1 {
     font-size: 32px;
   }
+
+  /* Phones: a tighter gap under the nav and less padding inside the panel, so the
+     heading starts near the top of the screen instead of 120px down. */
+  .about-page .about-hero {
+    margin-top: 16px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
 }
