@@ -934,19 +934,19 @@
             {
               "emoji": "🧱",
               "label": "Move 1",
-              "title": "When there's no source of truth, build it",
+              "title": "Build the source of truth",
               "desc": "My IA and personas still anchor how the team works."
             },
             {
               "emoji": "🎯",
               "label": "Move 2",
-              "title": "When no one owns a problem, make it undeniable",
-              "desc": "Then hold it through presence, not authority."
+              "title": "Make the problem undeniable",
+              "desc": "Six in ten requests bounced; after that, nobody argued."
             },
             {
               "emoji": "🔭",
               "label": "Move 3",
-              "title": "When priority stalls, bring design upstream",
+              "title": "Design upstream",
               "desc": "Prototypes gave leadership something to decide against."
             }
           ]
