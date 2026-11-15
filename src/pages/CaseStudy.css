@@ -860,7 +860,7 @@ a.cs-index-item.is-active:hover {
 }
 .cs-callout-label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   font-family: var(--font-ui);
   font-size: 12px;
   font-weight: 600;
