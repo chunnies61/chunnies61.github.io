@@ -70,7 +70,8 @@ function ProjectMedia({ images, ratio }) {
 
 export default function AllProjects() {
   const { home } = site;
-  const projects = home.otherWork.slice(0, PROJECT_LIMIT);
+  // Unfinished entries (still titled "Project title") stay in the data but never show
+  const projects = home.otherWork.filter((p) => p.title !== "Project title").slice(0, PROJECT_LIMIT);
 
   return (
     <article className="all-projects">
