@@ -149,9 +149,10 @@ def build():
     sizes = [16, 32, 48]
     frames = [raster(DEPTH, ROUND_OUT, ROUND_IN, 256)]
     frames[0].save(ROOT / "public/favicon.ico", sizes=[(s, s) for s in sizes])
-    # iOS fills transparency with black, so the touch icon gets a white ground and some air
-    touch = raster(DEPTH, ROUND_OUT, ROUND_IN, 180, background=(255, 255, 255, 255), scale=0.74)
-    touch.convert("RGB").save(ROOT / "public/apple-touch-icon.png")
+    # The touch icon keeps a transparent ground and some air. iOS shows black behind it on
+    # the Home Screen; that's a deliberate choice over a white tile.
+    touch = raster(DEPTH, ROUND_OUT, ROUND_IN, 180, scale=0.74)
+    touch.save(ROOT / "public/apple-touch-icon.png")
     print("wrote public/favicon.svg, favicon.ico (16/32/48), apple-touch-icon.png")
 
 
