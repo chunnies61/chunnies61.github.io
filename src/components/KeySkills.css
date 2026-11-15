@@ -58,9 +58,40 @@
   }
 }
 
+/* Phones keep two tiles a row: four rows for all eight, with tighter padding and
+   type so a half-width square still fits its title, line and drawing */
 @media (max-width: 560px) {
   .ks-grid {
-    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .ks-tile {
+    padding: 14px 14px 6px;
+    border-radius: 18px;
+  }
+
+  .ks-tile h3 {
+    font-size: 15px;
+    line-height: 19px;
+  }
+
+  .ks-tile p {
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+/* The narrowest phones: a square is too small for the words and the drawing, so the
+   tiles grow taller instead, each row matching its tallest tile */
+@media (max-width: 379px) {
+  .ks-tile {
+    aspect-ratio: auto;
+  }
+
+  .ks-art {
+    flex: none;
+    height: 64px;
   }
 }
 
