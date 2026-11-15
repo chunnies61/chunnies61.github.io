@@ -1,0 +1,25 @@
+.arrow-btn {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  color: var(--text);
+  background: transparent;
+  border: 2px solid var(--text);
+  border-radius: 54% 46% 52% 48% / 48% 54% 46% 52%;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.arrow-btn.is-next {
+  border-radius: 47% 53% 46% 54% / 53% 47% 55% 45%;
+}
+
+.arrow-btn:hover,
+.arrow-btn:focus-visible {
+  color: #fff;
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+}

@@ -133,10 +133,12 @@ a.cs-index-item.is-active:hover {
     padding: 36px 24px 40px;
   }
 
+  /* The hero images are 3:2; a 16:9 frame cropped their top edge, logo included.
+     Show them whole at their own shape. */
   .cs-hero-image {
     height: auto;
     min-height: 0;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 3 / 2;
   }
 }
 
@@ -629,7 +631,8 @@ a.cs-index-item.is-active:hover {
 @media (max-width: 760px) {
   .case-study--nitro-college .cs-surface-showcase--portrait .cs-surface-media {
     flex: none;
-    max-width: 100%;
+    max-width: 90%;
+    margin-inline: auto;
   }
 }
 
@@ -640,10 +643,11 @@ a.cs-index-item.is-active:hover {
   max-width: 31.5%;
 }
 @media (max-width: 760px) {
-  /* On phones the shared split rule already lets media fill the row; keep that */
+  /* On phones the recordings run at 90% of the row, centred */
   .case-study--unified-customer-hub .cs-surface-showcase--portrait .cs-surface-media {
     flex: none;
-    max-width: 100%;
+    max-width: 90%;
+    margin-inline: auto;
   }
 }
 
@@ -864,8 +868,8 @@ a.cs-index-item.is-active:hover {
   letter-spacing: 0.05em;
   color: #ffe785;
 }
-/* Type comes from .md-headline-small on the element — same as the style guide
-   sample, so the two cannot drift. Only colour lives here. */
+/* Font and weight come from .md-headline-small on the element; the size is set
+   to 16px below. Colour lives here. */
 .cs-callout p {
   color: #fff;
 }
@@ -873,6 +877,12 @@ a.cs-index-item.is-active:hover {
 /* Optional light-blue body text on a callout */
 .cs-callout--light-blue p {
   color: #bfdbfe;
+}
+
+/* The callout's main line is 16px on every screen */
+.cs-callout p.md-headline-small {
+  font-size: 16px;
+  line-height: 22px;
 }
 
 

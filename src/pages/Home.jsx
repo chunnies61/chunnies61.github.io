@@ -4,6 +4,7 @@ import site from "../data/site.json";
 import Tag from "../components/Tag";
 import ContactCta from "../components/ContactCta";
 import FallingTools from "../components/falling-tools/FallingTools";
+import ArrowButton from "../components/ArrowButton";
 import "./Home.css";
 
 export default function Home() {
@@ -93,22 +94,8 @@ export default function Home() {
 
           <div className="more-controls">
             <div className="more-arrows">
-              <button
-                type="button"
-                className="more-arrow"
-                onClick={() => scrollProjects(-1)}
-                aria-label="Scroll to previous projects"
-              >
-                ←
-              </button>
-              <button
-                type="button"
-                className="more-arrow"
-                onClick={() => scrollProjects(1)}
-                aria-label="Scroll to next projects"
-              >
-                →
-              </button>
+              <ArrowButton dir="prev" onClick={() => scrollProjects(-1)} aria-label="Scroll to previous projects" />
+              <ArrowButton dir="next" onClick={() => scrollProjects(1)} aria-label="Scroll to next projects" />
             </div>
           </div>
         </div>

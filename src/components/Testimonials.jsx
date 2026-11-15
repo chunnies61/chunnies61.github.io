@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import site from "../data/site.json";
 import usePrefersReducedMotion from "../hooks/usePrefersReducedMotion";
+import ArrowButton from "./ArrowButton";
 import "./Testimonials.css";
 
 /* "In their words": quote cards in a row that drifts on by itself and can be taken over by hand.
@@ -12,14 +13,6 @@ const AUTO_MS = 6500;
 const SWIPE_PX = 48;
 
 const pad = (n) => String(n).padStart(2, "0");
-
-function Arrow({ dir }) {
-  return (
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d={dir === "prev" ? "M19 12H5m6-6-6 6 6 6" : "M5 12h14m-6-6 6 6-6 6"} />
-    </svg>
-  );
-}
 
 export default function Testimonials() {
   const { testimonialsEyebrow, testimonialsTitle, testimonials } = site.about;
@@ -160,9 +153,9 @@ export default function Testimonials() {
       </div>
 
       <div className="tm-controls">
-        <button type="button" className="tm-btn" aria-label="Previous testimonial" onClick={() => go(active - 1)}><Arrow dir="prev" /></button>
+        <ArrowButton dir="prev" aria-label="Previous testimonial" onClick={() => go(active - 1)} />
         <span className="tm-count" aria-live="polite">{pad(active + 1)} / {pad(n)}</span>
-        <button type="button" className="tm-btn alt" aria-label="Next testimonial" onClick={() => go(active + 1)}><Arrow dir="next" /></button>
+        <ArrowButton dir="next" aria-label="Next testimonial" onClick={() => go(active + 1)} />
       </div>
     </section>
   );
