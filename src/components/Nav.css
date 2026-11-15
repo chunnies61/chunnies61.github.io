@@ -33,7 +33,7 @@ body:has(.home) .nav.is-scrolled {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 48px;
   color: var(--gray-800);
 }
 
@@ -43,6 +43,6 @@ body:has(.home) .nav.is-scrolled {
 
 @media (max-width: 640px) {
   .nav-links {
-    gap: 16px;
+    gap: 24px;
   }
 }
