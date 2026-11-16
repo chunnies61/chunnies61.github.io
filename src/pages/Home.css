@@ -204,9 +204,6 @@
 .more-card {
   flex: 0 0 calc((100% - 48px) / 3);
   scroll-snap-align: start;
-  padding: 20px;
-  border: 1px solid var(--gray-100);
-  border-radius: calc(var(--radius-media) + 8px);
 }
 
 /* Match the project frame exactly so images fill the well with no
