@@ -106,7 +106,7 @@
    gray, with the image inset by the card's padding. */
 .case-card {
   display: block;
-  padding: 16px 16px 24px;
+  padding: 20px;
   border: 1px solid var(--gray-100);
   border-radius: calc(var(--radius-media) + 8px);
   transition: transform 0.3s ease;
@@ -204,9 +204,9 @@
 .more-card {
   flex: 0 0 calc((100% - 48px) / 3);
   scroll-snap-align: start;
-  padding: 12px 12px 16px;
+  padding: 20px;
   border: 1px solid var(--gray-100);
-  border-radius: calc(var(--radius-media) + 6px);
+  border-radius: calc(var(--radius-media) + 8px);
 }
 
 /* Match the project frame exactly so images fill the well with no
