@@ -131,6 +131,16 @@
   transform: scale(1.03);
 }
 
+/* A light gray outline drawn over the image, so it stays crisp when the image zooms */
+.case-card-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--gray-100);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
 .case-card-body {
   padding-top: 16px;
 }
