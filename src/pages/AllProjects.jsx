@@ -103,10 +103,20 @@ export default function AllProjects() {
                 ) : (
                   <p>Project description placeholder. Details coming soon.</p>
                 )}
-                {item.link && (
-                  <a className="ap-learn-more" href={item.link} target="_blank" rel="noreferrer">
-                    View website →
-                  </a>
+                {(item.link || item.award?.link) && (
+                  <div className="ap-links">
+                    {item.link && (
+                      <a className="ap-learn-more" href={item.link} target="_blank" rel="noreferrer">
+                        View website →
+                      </a>
+                    )}
+                    {/* The project's official Red Dot winner page, once its link is in the data */}
+                    {item.award?.link && (
+                      <a className="ap-learn-more" href={item.award.link} target="_blank" rel="noreferrer">
+                        See the Red Dot award →
+                      </a>
+                    )}
+                  </div>
                 )}
               </div>
               <ProjectMedia

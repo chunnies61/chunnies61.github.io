@@ -83,6 +83,13 @@
   text-decoration: underline;
 }
 
+/* "View website" and "See the Red Dot award" sit side by side, wrapping on narrow screens */
+.ap-links {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 24px;
+}
+
 .ap-media {
   position: relative;
   aspect-ratio: 2489 / 1652;
