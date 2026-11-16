@@ -74,7 +74,11 @@ export default function IAMap({ block }) {
           <ul className="cs-ia-legend md-label-small" aria-label="Legend">
             <li>
               <span className="cs-ia-key is-node" aria-hidden="true" />
-              Product / App node
+              Product
+            </li>
+            <li>
+              <span className="cs-ia-key is-app" aria-hidden="true" />
+              App
             </li>
             <li>
               <span className="cs-ia-key is-page" aria-hidden="true" />

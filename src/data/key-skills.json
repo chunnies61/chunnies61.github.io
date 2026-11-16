@@ -15,28 +15,28 @@
       "bg": "#cbf26c"
     },
     {
-      "id": "problem-solving",
-      "title": "Problem solving",
-      "desc": "Finding the piece that makes it all fit.",
-      "bg": "#fde9a8"
-    },
-    {
       "id": "systems",
       "title": "Systems thinking",
       "desc": "Seeing the whole chain, not just the screen.",
       "bg": "#bfe6fb"
     },
     {
-      "id": "creativity",
-      "title": "Creativity",
-      "desc": "Exploring many ideas, keeping the one that feels right.",
-      "bg": "#ffa583"
+      "id": "problem-solving",
+      "title": "Problem solving",
+      "desc": "Finding the piece that makes it all fit.",
+      "bg": "#fde9a8"
     },
     {
       "id": "data",
       "title": "Data-driven",
       "desc": "Settling debates with evidence, not opinion.",
       "bg": "#c4ecd6"
+    },
+    {
+      "id": "creativity",
+      "title": "Creativity",
+      "desc": "Exploring many ideas, keeping the one that feels right.",
+      "bg": "#ffa583"
     },
     {
       "id": "influence",

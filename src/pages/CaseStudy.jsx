@@ -694,9 +694,21 @@ export default function CaseStudy() {
       <header className="cs-header">
         <div className="cs-header-panel">
           <div className="cs-header-copy">
-            {study.tags && study.tags.length > 0 && (
-              <p className="cs-header-eyebrow">{study.tags.join(" · ")}</p>
-            )}
+            {/* Role and timeline moved up here from the meta row that used to
+                sit under the hero — the only two facts worth knowing before
+                the title. */}
+            {(() => {
+              const byLabel = (l) => (study.meta || []).find((m) => m.label === l)?.value;
+              const facts = [
+                byLabel("Role") || study.role,
+                byLabel("Timeline") || study.timeline,
+              ].filter(Boolean);
+              return (
+                facts.length > 0 && (
+                  <p className="cs-header-facts">{facts.join(" · ")}</p>
+                )
+              );
+            })()}
             <h2 className="cs-header-title md-display-medium">{study.title}</h2>
             {study.subtitle && <p className="cs-header-subtitle md-title-small">{study.subtitle}</p>}
           </div>
@@ -732,29 +744,9 @@ export default function CaseStudy() {
           </nav>
 
           <div className="cs-body-main">
-          {(() => {
-            const metaItems =
-              study.meta ||
-              [
-                study.role && { label: "Role", value: study.role },
-                study.timeline && { label: "Timeline", value: study.timeline },
-                study.team && { label: "Team", value: study.team },
-                study.platform && { label: "Platform", value: study.platform },
-              ].filter(Boolean);
-
-            return (
-              metaItems.length > 0 && (
-                <div className="cs-meta-row" style={{ "--cs-meta-count": metaItems.length }}>
-                  {metaItems.map((m) => (
-                    <div className="cs-meta-item" key={m.label}>
-                      <span className="cs-meta-label">{m.label}</span>
-                      <span className="cs-meta-value">{m.value}</span>
-                    </div>
-                  ))}
-                </div>
-              )
-            );
-          })()}
+          {/* The meta row that used to sit here is gone: role and timeline
+              moved into the hero card, the rest was detail the reader
+              didn't need before the story. */}
 
           {study.indexedSections &&
             study.indexedSections.map((s) => <IndexedSection key={s.id} section={s} />)}

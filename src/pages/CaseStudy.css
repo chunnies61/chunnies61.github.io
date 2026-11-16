@@ -96,6 +96,15 @@ a.cs-index-item.is-active:hover {
   color: var(--gray-600);
 }
 
+/* Role · timeline, directly above the title */
+.cs-header-facts {
+  margin: 0 0 12px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-600);
+}
+
 /* Type comes from .md-display-medium; only spacing and colour live here */
 .cs-header-title {
   margin-bottom: 12px;
@@ -879,10 +888,18 @@ a.cs-index-item.is-active:hover {
   color: #bfdbfe;
 }
 
-/* The callout's main line is 16px on every screen */
+/* The callout's main line: 20px on desktop, easing down on phones so it
+   doesn't crowd the 20px padding. */
 .cs-callout p.md-headline-small {
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+@media (max-width: 640px) {
+  .cs-callout p.md-headline-small {
+    font-size: 18px;
+    line-height: 26px;
+  }
 }
 
 

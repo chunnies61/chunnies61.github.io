@@ -13,7 +13,7 @@
   "meta": [
     {
       "label": "Role",
-      "value": "Lead Product Designer, from discovery to delivery"
+      "value": "Lead Product Designer"
     },
     {
       "label": "Team",
@@ -720,7 +720,7 @@
     },
     {
       "id": "alignment",
-      "kicker": "Stakeholder Alignment",
+      "kicker": "Alignment",
       "title": "Manufacturing an owner for an unowned problem",
       "blocks": [
         {

@@ -12,7 +12,7 @@
   "meta": [
     {
       "label": "Role",
-      "value": "Lead Designer, from vision to shipped product"
+      "value": "Lead Designer"
     },
     {
       "label": "Team",
@@ -119,7 +119,7 @@
     },
     {
       "id": "move-one",
-      "kicker": "Stakeholder Alignment",
+      "kicker": "Alignment",
       "title": "Show, don't tell",
       "blocks": [
         {
