@@ -15,10 +15,10 @@
       "bg": "#cbf26c"
     },
     {
-      "id": "systems",
-      "title": "Systems thinking",
-      "desc": "Seeing the whole chain, not just the screen.",
-      "bg": "#bfe6fb"
+      "id": "finance",
+      "title": "Business fluency",
+      "desc": "Finance-trained, so I design with the P&L in mind.",
+      "bg": "#a9c8e6"
     },
     {
       "id": "problem-solving",
@@ -45,10 +45,10 @@
       "bg": "#dacfff"
     },
     {
-      "id": "finance",
-      "title": "Business fluency",
-      "desc": "Finance-trained, so I design with the P&L in mind.",
-      "bg": "#a9c8e6"
+      "id": "systems",
+      "title": "Systems thinking",
+      "desc": "Seeing the whole chain, not just the screen.",
+      "bg": "#bfe6fb"
     }
   ]
 }
