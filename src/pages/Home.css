@@ -102,8 +102,13 @@
   gap: 100px;
 }
 
+/* Each card is outlined as a whole (image, tags, title and description) in light
+   gray, with the image inset by the card's padding. */
 .case-card {
   display: block;
+  padding: 16px 16px 24px;
+  border: 1px solid var(--gray-100);
+  border-radius: calc(var(--radius-media) + 8px);
   transition: transform 0.3s ease;
 }
 
@@ -129,17 +134,6 @@
 
 .case-card:hover .case-card-image img {
   transform: scale(1.03);
-}
-
-/* A light gray outline drawn over the image, so it stays crisp when the image zooms.
-   The Side projects cards below use the same one. */
-.case-card-image::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 1px solid var(--gray-100);
-  border-radius: inherit;
-  pointer-events: none;
 }
 
 .case-card-body {
@@ -210,12 +204,14 @@
 .more-card {
   flex: 0 0 calc((100% - 48px) / 3);
   scroll-snap-align: start;
+  padding: 12px 12px 16px;
+  border: 1px solid var(--gray-100);
+  border-radius: calc(var(--radius-media) + 6px);
 }
 
 /* Match the project frame exactly so images fill the well with no
    letterbox bands (same ratio the /projects carousel uses). */
 .more-card-media {
-  position: relative;
   width: 100%;
   aspect-ratio: 2489 / 1652;
   border-radius: var(--radius-media);
@@ -232,16 +228,6 @@
 
 .more-card:hover .more-card-media img {
   transform: scale(1.03);
-}
-
-/* Same light gray outline as the case study cards */
-.more-card-media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 1px solid var(--gray-100);
-  border-radius: inherit;
-  pointer-events: none;
 }
 
 .more-card-title {
