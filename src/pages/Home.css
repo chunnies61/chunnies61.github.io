@@ -131,7 +131,8 @@
   transform: scale(1.03);
 }
 
-/* A light gray outline drawn over the image, so it stays crisp when the image zooms */
+/* A light gray outline drawn over the image, so it stays crisp when the image zooms.
+   The Side projects cards below use the same one. */
 .case-card-image::after {
   content: "";
   position: absolute;
@@ -214,6 +215,7 @@
 /* Match the project frame exactly so images fill the well with no
    letterbox bands (same ratio the /projects carousel uses). */
 .more-card-media {
+  position: relative;
   width: 100%;
   aspect-ratio: 2489 / 1652;
   border-radius: var(--radius-media);
@@ -230,6 +232,16 @@
 
 .more-card:hover .more-card-media img {
   transform: scale(1.03);
+}
+
+/* Same light gray outline as the case study cards */
+.more-card-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--gray-100);
+  border-radius: inherit;
+  pointer-events: none;
 }
 
 .more-card-title {
