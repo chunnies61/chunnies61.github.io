@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import site from "../data/site.json";
 import Tag from "../components/Tag";
@@ -10,6 +10,20 @@ import "./Home.css";
 export default function Home() {
   const { home } = site;
   const scrollerRef = useRef(null);
+  /* The arrows only earn their place when the row actually overflows. Measured
+     rather than counted, so they still show on a narrow screen where even
+     three cards don't fit. */
+  const [canScroll, setCanScroll] = useState(false);
+
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const measure = () => setCanScroll(el.scrollWidth > el.clientWidth + 1);
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   function scrollProjects(direction) {
     const el = scrollerRef.current;
@@ -92,12 +106,14 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="more-controls">
-            <div className="more-arrows">
-              <ArrowButton dir="prev" onClick={() => scrollProjects(-1)} aria-label="Scroll to previous projects" />
-              <ArrowButton dir="next" onClick={() => scrollProjects(1)} aria-label="Scroll to next projects" />
+          {canScroll && (
+            <div className="more-controls">
+              <div className="more-arrows">
+                <ArrowButton dir="prev" onClick={() => scrollProjects(-1)} aria-label="Scroll to previous projects" />
+                <ArrowButton dir="next" onClick={() => scrollProjects(1)} aria-label="Scroll to next projects" />
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
 

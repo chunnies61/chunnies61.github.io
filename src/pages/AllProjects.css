@@ -15,7 +15,9 @@
 
 .ap-row {
   display: grid;
-  grid-template-columns: 2fr 3fr 6fr;
+  /* Media takes 66% of the row, up from the original 54.5% — the images render
+     ~21% larger, with the two text columns giving up the difference. */
+  grid-template-columns: 2fr 3fr 9.7fr;
   gap: 32px;
   align-items: start;
   padding: 68px 0;
@@ -194,4 +196,22 @@
   .ap-link {
     text-align: left;
   }
+}
+
+/* Outbound links carry the icon set's openInNew glyph, sized to the text */
+.ap-learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ap-learn-more .lra-icon {
+  flex: none;
+}
+
+/* The icon is a 24px glyph shown at 16px, which would thin its 1.5 stroke
+   down to 1px. non-scaling-stroke keeps it at a true 1.5px on screen. */
+.ap-learn-more .lra-icon path {
+  vector-effect: non-scaling-stroke;
+  stroke-width: 1.5;
 }

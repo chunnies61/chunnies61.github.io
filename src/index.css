@@ -297,16 +297,13 @@ button {
 .cs-section,
 .cs-row,
 .cs-step,
-.ap-row,
 .hero + .section {
   position: relative;
 }
 
 .cs-section::after,
 .cs-row::after,
-.ap-row::after,
-.cs-step::before,
-.ap-row:first-child::before {
+.cs-step::before {
   content: "";
   position: absolute;
   left: 0;
@@ -324,14 +321,12 @@ button {
 
 /* Below an element, straddling its bottom edge */
 .cs-section::after,
-.cs-row::after,
-.ap-row::after {
+.cs-row::after {
   bottom: calc(var(--wave-height) / -2);
 }
 
 /* Above an element, straddling its top edge */
-.cs-step::before,
-.ap-row:first-child::before {
+.cs-step::before {
   top: calc(var(--wave-height) / -2);
 }
 

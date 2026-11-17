@@ -26,8 +26,9 @@
     "otherWorkTitle": "Side projects",
     "otherWork": [
       {
-        "thumb": "/images/sora-1.png",
+        "thumb": "/images/sora-1.jpg",
         "title": "Sora",
+        "ratio": "16 / 9",
         "award": {
           "image": "/images/reddot-winner-2026.svg",
           "alt": "Red Dot Winner 2026",
@@ -38,15 +39,19 @@
         ],
         "link": "https://ziyi0619.github.io/sora/",
         "images": [
-          "/images/sora-1.png",
-          "/images/sora-2.png",
-          "/images/sora-3.png",
-          "/images/sora-4.png"
+          "/images/sora-1.jpg",
+          "/images/sora-2.jpg",
+          "/images/sora-3.jpg",
+          "/images/sora-4.jpg",
+          "/images/sora-5.jpg",
+          "/images/sora-6.jpg",
+          "/images/sora-7.jpg"
         ]
       },
       {
         "thumb": "/images/pawpath-1.png",
         "title": "PawPath",
+        "ratio": "16 / 9",
         "award": {
           "image": "/images/reddot-winner-2026.svg",
           "alt": "Red Dot Winner 2026",
@@ -60,49 +65,31 @@
           "/images/pawpath-1.png",
           "/images/pawpath-2.png",
           "/images/pawpath-3.png",
-          "/images/pawpath-4.jpg",
+          "/images/pawpath-4.png",
           "/images/pawpath-5.png",
           "/images/pawpath-6.png"
         ]
       },
       {
-        "thumb": "/images/afterwards-cover.png",
+        "thumb": "/images/afterwards-1.jpg",
         "title": "Afterwards",
+        "ratio": "16 / 9",
         "award": {
           "image": "/images/reddot-winner-2026.svg",
           "alt": "Red Dot Winner 2026",
           "link": "https://www.red-dot.org/project/afterwards-92726"
         },
         "desc": [
-          "Afterwards is a two-sided platform for what follows a death: one side lets someone organize documents, assign trusted people to tasks, and leave personal messages while still alive; the other guides the person they chose through it all, urgent matters first, at a pace calibrated for grief. It reframes end-of-life planning as anticipatory care, turning a frantic hunt for hidden documents into a final, considered act of love."
+          "No one wants to think about what comes after, so almost no one does — and the people we love are left searching in the worst week of their lives. Afterwards does that thinking early: what to leave, who to tell, what to say. Not paperwork. A last act of love."
         ],
         "link": "https://afterwards-app.webflow.io/",
         "images": [
-          "/images/afterwards-cover.png",
-          "/images/afterwards-1.png",
-          "/images/afterwards-2.png",
-          "/images/afterwards-3.png"
-        ]
-      },
-      {
-        "thumb": "/images/yana-1.png",
-        "title": "YANA (You Are Not Alone)",
-        "desc": [
-          "Mental health challenges affect 1 in 10 people worldwide, often in isolation. YANA makes support visible by building a safe digital community that connects users with both compassionate peers and certified mental health professionals."
-        ],
-        "images": [
-          "/images/yana-1.png",
-          "/images/yana-2.png"
-        ]
-      },
-      {
-        "thumb": "/images/bookworm-1.png",
-        "title": "Bookworm",
-        "desc": [
-          "Readers spend significant time immersed in books, but lack dedicated spaces to connect over shared literary tastes. Bookworm is a community platform that transforms solo reading into a shared social experience, enabling users to exchange reviews, discuss insights, and connect with fellow readers."
-        ],
-        "images": [
-          "/images/bookworm-1.png"
+          "/images/afterwards-1.jpg",
+          "/images/afterwards-2.jpg",
+          "/images/afterwards-3.jpg",
+          "/images/afterwards-4.jpg",
+          "/images/afterwards-5.jpg",
+          "/images/afterwards-6.jpg"
         ]
       },
       {"thumb": "/images/other-work-2-f4140b.png", "title": "Project title"},

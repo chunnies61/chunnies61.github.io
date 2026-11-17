@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import site from "../data/site.json";
 import ContactCta from "../components/ContactCta";
+import { Icon } from "../components/lra/ui";
 import "./AllProjects.css";
 
 const PROJECT_LIMIT = 6;
@@ -107,13 +108,15 @@ export default function AllProjects() {
                   <div className="ap-links">
                     {item.link && (
                       <a className="ap-learn-more" href={item.link} target="_blank" rel="noreferrer">
-                        View website →
+                        View website
+                        <Icon name="openInNew" size={16} />
                       </a>
                     )}
                     {/* The project's official Red Dot winner page, once its link is in the data */}
                     {item.award?.link && (
                       <a className="ap-learn-more" href={item.award.link} target="_blank" rel="noreferrer">
-                        See the Red Dot award →
+                        View on Red Dot
+                        <Icon name="openInNew" size={16} />
                       </a>
                     )}
                   </div>
