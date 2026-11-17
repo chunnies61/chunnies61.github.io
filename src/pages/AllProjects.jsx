@@ -88,14 +88,32 @@ export default function AllProjects() {
             <div className="ap-row" key={`${item.thumb}-${i}`}>
               <div className="ap-title">
                 <h3 className="md-headline-small">{item.title}</h3>
-                {item.award && (
-                  <img
-                    className="ap-award"
-                    src={item.award.image}
-                    alt={item.award.alt}
-                    loading="lazy"
-                  />
-                )}
+                {item.award &&
+                  (() => {
+                    const badge = (
+                      <img
+                        className="ap-award"
+                        src={item.award.image}
+                        alt={item.award.alt}
+                        loading="lazy"
+                      />
+                    );
+                    /* Linked to the official Red Dot entry where there is one,
+                       so the award is verifiable rather than just claimed. */
+                    return item.award.url ? (
+                      <a
+                        className="ap-award-link"
+                        href={item.award.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${item.award.alt} — see the entry on red-dot.org`}
+                      >
+                        {badge}
+                      </a>
+                    ) : (
+                      badge
+                    );
+                  })()}
               </div>
               <div className="ap-desc">
                 {item.desc && item.desc.length ? (

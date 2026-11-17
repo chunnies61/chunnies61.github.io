@@ -188,3 +188,19 @@
     text-align: left;
   }
 }
+
+/* The Red Dot label links to the official entry on red-dot.org */
+.ap-award-link {
+  display: inline-block;
+  flex: none;
+  border-radius: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.ap-award-link:hover {
+  opacity: 0.72;
+}
+
+.ap-award-link .ap-award {
+  display: block;
+}

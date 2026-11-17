@@ -416,9 +416,13 @@ function Block({ block }) {
         </div>
       );
 
-    case "award":
+    case "award": {
+      const AwardTag = block.url ? "a" : "div";
+      const awardProps = block.url
+        ? { href: block.url, target: "_blank", rel: "noreferrer" }
+        : {};
       return (
-        <div className="cs-award">
+        <AwardTag className={"cs-award" + (block.url ? " is-link" : "")} {...awardProps}>
           {block.logo ? (
             <img
               className="cs-award-logo"
@@ -435,8 +439,9 @@ function Block({ block }) {
               {block.desc && <p>{block.desc}</p>}
             </div>
           )}
-        </div>
+        </AwardTag>
       );
+    }
 
     case "slideshow":
       if (block.variant === "grid")
@@ -863,9 +868,6 @@ export default function CaseStudy() {
                 to={`/case-studies/${cs.slug}`}
                 className={"cs-pager-card cs-pager-card--" + dir}
               >
-                <span className="cs-pager-thumb">
-                  <img src={cs.thumb || cs.heroImage} alt="" loading="lazy" />
-                </span>
                 <span className="cs-pager-body">
                   <span className="cs-pager-label">
                     {dir === "prev" ? (
