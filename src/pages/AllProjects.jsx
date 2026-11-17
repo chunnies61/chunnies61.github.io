@@ -88,32 +88,14 @@ export default function AllProjects() {
             <div className="ap-row" key={`${item.thumb}-${i}`}>
               <div className="ap-title">
                 <h3 className="md-headline-small">{item.title}</h3>
-                {item.award &&
-                  (() => {
-                    const badge = (
-                      <img
-                        className="ap-award"
-                        src={item.award.image}
-                        alt={item.award.alt}
-                        loading="lazy"
-                      />
-                    );
-                    /* Linked to the official Red Dot entry where there is one,
-                       so the award is verifiable rather than just claimed. */
-                    return item.award.url ? (
-                      <a
-                        className="ap-award-link"
-                        href={item.award.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={`${item.award.alt} — see the entry on red-dot.org`}
-                      >
-                        {badge}
-                      </a>
-                    ) : (
-                      badge
-                    );
-                  })()}
+                {item.award && (
+                  <img
+                    className="ap-award"
+                    src={item.award.image}
+                    alt={item.award.alt}
+                    loading="lazy"
+                  />
+                )}
               </div>
               <div className="ap-desc">
                 {item.desc && item.desc.length ? (
@@ -121,10 +103,20 @@ export default function AllProjects() {
                 ) : (
                   <p>Project description placeholder. Details coming soon.</p>
                 )}
-                {item.link && (
-                  <a className="ap-learn-more" href={item.link} target="_blank" rel="noreferrer">
-                    View website →
-                  </a>
+                {(item.link || item.award?.link) && (
+                  <div className="ap-links">
+                    {item.link && (
+                      <a className="ap-learn-more" href={item.link} target="_blank" rel="noreferrer">
+                        View website →
+                      </a>
+                    )}
+                    {/* The project's official Red Dot winner page, once its link is in the data */}
+                    {item.award?.link && (
+                      <a className="ap-learn-more" href={item.award.link} target="_blank" rel="noreferrer">
+                        See the Red Dot award →
+                      </a>
+                    )}
+                  </div>
                 )}
               </div>
               <ProjectMedia

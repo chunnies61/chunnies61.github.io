@@ -102,8 +102,13 @@
   gap: 100px;
 }
 
+/* Each card is outlined as a whole (image, tags, title and description) in light
+   gray, with the image inset by the card's padding. */
 .case-card {
   display: block;
+  padding: 20px;
+  border: 1px solid var(--gray-100);
+  border-radius: calc(var(--radius-media) + 8px);
   transition: transform 0.3s ease;
 }
 

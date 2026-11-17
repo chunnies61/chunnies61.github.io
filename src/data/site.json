@@ -31,7 +31,7 @@
         "award": {
           "image": "/images/reddot-winner-2026.svg",
           "alt": "Red Dot Winner 2026",
-          "url": "https://www.red-dot.org/de/project/sora-92728"
+          "link": "https://www.red-dot.org/project/sora-92728"
         },
         "desc": [
           "SORA is a women's personal safety companion paired with Apple Watch, offering mode-based protection, safe-word detection, and trusted-circle check-ins for the 1 in 3 women worldwide who don't feel safe in their own community. SORA does not surveil. It accompanies."
@@ -50,7 +50,7 @@
         "award": {
           "image": "/images/reddot-winner-2026.svg",
           "alt": "Red Dot Winner 2026",
-          "url": "https://www.red-dot.org/de/project/pawpath-92758"
+          "link": "https://www.red-dot.org/project/pawpath-92758"
         },
         "desc": [
           "PawPath is an automated post-adoption monitoring platform that replaces manual shelter follow-up with scheduled adopter check-ins and a real-time staff dashboard. It surfaces flagged cases, declining wellbeing scores, and overdue check-ins early, so shelters can intervene before an animal is returned."
@@ -71,7 +71,7 @@
         "award": {
           "image": "/images/reddot-winner-2026.svg",
           "alt": "Red Dot Winner 2026",
-          "url": "https://www.red-dot.org/de/project/afterwards-92726"
+          "link": "https://www.red-dot.org/project/afterwards-92726"
         },
         "desc": [
           "Afterwards is a two-sided platform for what follows a death: one side lets someone organize documents, assign trusted people to tasks, and leave personal messages while still alive; the other guides the person they chose through it all, urgent matters first, at a pace calibrated for grief. It reframes end-of-life planning as anticipatory care, turning a frantic hunt for hidden documents into a final, considered act of love."
@@ -129,7 +129,6 @@
     "testimonialsTitle": "In their words",
     "testimonials": [
       {"quote": "I've really enjoyed getting to know Yichun this year, both through our work together and the opportunities I've had to spend time with her in person. She has a very collaborative personality and is quick to take feedback and translate it into changes to the experience.", "name": "Susan Weese", "title": "VP, Lending Product at J.P. Morgan", "initials": "SW", "avatarBg": "#fbdcd6", "avatarInk": "#8a3a2a"},
-      {"quote": "Yichun has been a great partner to work with this year. Her ability to quickly diagnose requirements and turn them into tangible design has been key to the Product and technology teams' successes. She accepts and understands positive and constructive feedback to her design and asks questions to clarify and reassess within her designs when needed.", "name": "Aaron Lance", "title": "VP, Lending Product at J.P. Morgan", "initials": "AL", "avatarBg": "#fdedc0", "avatarInk": "#7a5a0a"},
       {"quote": "Yichun consistently delivers outstanding work, seamlessly translating stakeholder requirements into exceptional user experiences. Her proficiency with our design system enables her to identify opportunities for innovative solutions, and her contributions are consistently impressive. We are truly fortunate to have her as part of our team.", "name": "Kevin Kruger", "title": "Director of Product Design at Best Egg", "photo": "/images/profile-664c9f.png"},
       {"quote": "She is a high-performing designer and has been doing a fantastic job gathering the requirements/asks and turning them into great designs. She has had to juggle through Marlette's transitions of the design board and taking requests from multiple areas/people. Her work and her attitude are exceptional.", "name": "Marylou Mcaskill", "title": "Senior Program Manager at Kellton", "photo": "/images/profile-2-2c176f.png"},
       {"quote": "She will ask the right questions for the requirements, analyze the situation and express her ideas well, craft user-centric design solutions based on the current branding and design system, present the solutions with clarity, and create well-made use cases (or demo videos) and deliver them elegantly to the developers or stakeholders.", "name": "Dominic Camba", "title": "Product Design Lead at ClinicMind", "photo": "/images/profile-1-0238da.png"}
