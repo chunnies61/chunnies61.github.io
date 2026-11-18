@@ -1,4 +1,6 @@
 .case-study {
+  /* Secondary text in case studies is gray-800, one step darker than the site's soft text */
+  --text-soft: var(--gray-800);
   background: #ffffff;
 }
 
@@ -93,7 +95,7 @@ a.cs-index-item.is-active:hover {
   font-family: var(--font-ui);
   font-size: 14px;
   font-weight: 500;
-  color: var(--gray-600);
+  color: var(--gray-800);
 }
 
 /* Role · timeline, directly above the title */
@@ -102,7 +104,7 @@ a.cs-index-item.is-active:hover {
   font-family: var(--font-ui);
   font-size: 14px;
   font-weight: 500;
-  color: var(--gray-600);
+  color: var(--gray-800);
 }
 
 /* Type comes from .md-display-medium; only spacing and colour live here */
@@ -113,7 +115,7 @@ a.cs-index-item.is-active:hover {
 
 /* Type comes from .md-title-small; only colour lives here */
 .cs-header-subtitle {
-  color: var(--gray-600);
+  color: var(--gray-800);
 }
 
 .cs-hero-image {

@@ -175,21 +175,21 @@ button {
 .md-display-large {
   font-family: var(--font-display);
   font-size: 56px;
-  line-height: 84px; /* 150% */
+  line-height: 78.4px; /* 140% */
   letter-spacing: 0;
   font-weight: 800;
 }
 .md-display-medium {
   font-family: var(--font-display);
   font-size: 45px;
-  line-height: 67.5px; /* 150% */
+  line-height: 63px; /* 140% */
   letter-spacing: 0;
   font-weight: 800;
 }
 .md-display-small {
   font-family: var(--font-display);
   font-size: 36px;
-  line-height: 54px; /* 150% */
+  line-height: 50.4px; /* 140% */
   letter-spacing: 0;
   font-weight: 800;
 }
@@ -198,21 +198,21 @@ button {
 .md-headline-large {
   font-family: var(--font-display);
   font-size: 32px;
-  line-height: 48px; /* 150% */
+  line-height: 44.8px; /* 140% */
   letter-spacing: 0;
   font-weight: 700;
 }
 .md-headline-medium {
   font-family: var(--font-display);
   font-size: 28px;
-  line-height: 42px; /* 150% */
+  line-height: 39.2px; /* 140% */
   letter-spacing: 0;
   font-weight: 700;
 }
 .md-headline-small {
   font-family: var(--font-display);
   font-size: 20px;
-  line-height: 30px; /* 150% */
+  line-height: 28px; /* 140% */
   letter-spacing: 0;
   font-weight: 700;
 }
@@ -341,7 +341,7 @@ button {
   display: none;
 }
 
-/* ===== One line height: 150% =====
+/* ===== One line height: 150% (140% for display and headline) =====
    Every piece of site text sets its line height to 1.5 times its own font size, whatever
    the component's stylesheet says. The type-scale roles above already do; this covers the
    rest (page-specific headings, captions, buttons, case-study copy). It is scoped to the
@@ -350,4 +350,17 @@ button {
    boxes are sized by hand. */
 :is(main, .nav, .footer) *:not(svg, svg *, [class*="emoji"], [class*="avatar"], [class*="portrait"], [class*="star"], .lra, .lra *, .ws, .ws *, .vp, .vp *, .cs-proto-stage *) {
   line-height: 1.5 !important;
+}
+
+/* ...except display and headline text, which sits at 140%: the .md-display-* and
+   .md-headline-* roles, every h1 to h6, and the few big Bricolage Grotesque numbers and
+   names that aren't headings (outcome values, pager titles, persona values, project
+   card titles, the testimonial name). */
+:is(main, .nav, .footer) :is(h1, h2, h3, h4, h5, h6, [class*="md-display-"], [class*="md-headline-"], .cs-outcome-value, .cs-pager-title, .cs-pt-attr-value, .more-card-title, .tm-name):not(.lra *, .ws *, .vp *, .cs-proto-stage *) {
+  line-height: 1.4 !important;
+}
+
+/* Inline highlights sit inside a line of text and take that line's height. */
+:is(main, .nav, .footer) mark {
+  line-height: inherit !important;
 }
