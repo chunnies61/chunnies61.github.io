@@ -1,0 +1,29 @@
+/* Sits behind the page content, over the grid painted on <body>.has-grid. */
+.grid-trail {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.grid-trail-cell {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 34px;
+  background: rgba(69, 117, 231, 0.16);
+  animation: grid-trail-fade 1.2s ease-out forwards;
+}
+
+.grid-trail-cell.is-strong {
+  background: rgba(69, 117, 231, 0.3);
+  animation-duration: 1.8s;
+}
+
+@keyframes grid-trail-fade {
+  to {
+    opacity: 0;
+  }
+}
