@@ -20,8 +20,8 @@
 /* Item states follow the M3 reference index: the pill fills on hover
    (on-surface at 8%) and a touch darker when pressed (10%); keyboard focus
    draws a 2px ink ring with an inset white hairline; the selected item
-   keeps the same type and turns Primary, with no fill. */
-/* Type comes from .md-label-medium in every state; selection is shown by colour alone */
+   keeps the same type and gets a dark outline in the darkest gray, with no fill. */
+/* Type comes from .md-label-medium in every state */
 .cs-index-item {
   display: block;
   padding: 8px 16px;
@@ -48,14 +48,15 @@ a.cs-index-item:focus-visible {
 }
 
 .cs-index-item.is-active {
-  color: #1e57c8; /* Primary, tone 40 — the M3 light Primary role */
-  /* Inset ring so the outline adds no size and the list doesn't shift */
-  box-shadow: inset 0 0 0 1px #1e57c8;
+  color: var(--gray-900);
+  /* Inset ring so the outline adds no size and the list doesn't shift; same 1.5px dark
+     line as the chips and the other outlined controls */
+  box-shadow: inset 0 0 0 1.5px var(--gray-900);
 }
 
 /* a.cs-index-item:hover outranks .is-active, so keep the selected ink on hover */
 a.cs-index-item.is-active:hover {
-  color: #1e57c8;
+  color: var(--gray-900);
 }
 
 /* Page header — tinted copy panel beside the hero, equal halves */
