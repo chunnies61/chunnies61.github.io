@@ -12,6 +12,11 @@ body.has-grid {
     linear-gradient(90deg, rgba(69, 117, 231, 0.055) 1px, transparent 1px),
     linear-gradient(rgba(69, 117, 231, 0.055) 1px, transparent 1px);
   background-size: 31px 31px;
+
+  /* Trying Inter for the home page's body and UI text (headings stay Bricolage Grotesque).
+     The home page sets these on <body>, so the nav and footer follow. */
+  --font-body: "Inter", sans-serif;
+  --font-ui: "Inter", sans-serif;
 }
 
 .hero {
