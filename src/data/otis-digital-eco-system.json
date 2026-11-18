@@ -293,12 +293,14 @@
             {
               "value": "−70%",
               "label": "Task completion time",
-              "icon": "hourglass"
+              "icon": "hourglass",
+              "desc": "Less time to finish a task in Cloud EMS 2.0."
             },
             {
               "value": "−45%",
               "label": "Error rate",
-              "icon": "exclamation-triangle"
+              "icon": "exclamation-triangle",
+              "desc": "Fewer mistakes made while completing those tasks."
             },
             {
               "value": "Millions",
@@ -309,7 +311,8 @@
             {
               "value": "−50%",
               "label": "Support tickets & training time",
-              "icon": "headphone-mic"
+              "icon": "headphone-mic",
+              "desc": "Less help needed to learn and use the platform."
             }
           ]
         },

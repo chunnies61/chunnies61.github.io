@@ -314,17 +314,20 @@
             {
               "value": "150K / 211K",
               "label": "Unique users / sessions, first week",
-              "icon": "user-circle"
+              "icon": "user-circle",
+              "desc": "How many people came, and how often, in the first week after the August 2022 launch."
             },
             {
               "value": "+328%",
               "label": "Financial Health engagement",
-              "icon": "heartbeat"
+              "icon": "heartbeat",
+              "desc": "More customers reaching Financial Health straight from the unified entry point."
             },
             {
               "value": "411K+",
               "label": "Monthly users by early 2024 (FullStory)",
-              "icon": "bar-chart-analysis"
+              "icon": "bar-chart-analysis",
+              "desc": "Adoption kept compounding long after launch."
             }
           ]
         },
