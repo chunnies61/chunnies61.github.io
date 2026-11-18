@@ -277,7 +277,9 @@ body.has-grid {
   padding: var(--space-section) 0;
   margin: var(--space-title-gap) 40px;
   scroll-margin-top: 88px;
-  background: var(--accent-dark);
+  /* Primary 90, a pale blue-lilac, with text in the darkest gray */
+  --about-ink: var(--gray-900);
+  background: #dae2ff;
   border-radius: 40px;
 }
 
@@ -300,12 +302,12 @@ body.has-grid {
   font-size: 40px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: var(--about-ink);
 }
 
 /* Type comes from .md-body-medium on the element; only colour and spacing here. */
 .about-hero-text p {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--about-ink);
   margin-bottom: 16px;
 }
 
