@@ -1658,11 +1658,15 @@ a.cs-index-item.is-active:hover {
   border-radius: var(--radius-card);
   /* Same tinted surface as the outcome tiles and the card blocks */
   background: var(--surface-tint);
-  transition: background 0.15s ease;
+  outline: 1.5px solid transparent;
+  outline-offset: 0;
+  transition: outline-color 0.15s ease;
 }
 
-.cs-pager-card:hover {
-  background: #f4f2f8;
+/* Hover and keyboard focus draw a dark outline; the card colour stays put */
+.cs-pager-card:hover,
+.cs-pager-card:focus-visible {
+  outline-color: var(--gray-900);
 }
 
 /* Cover thumbnail — same crop ratio as the homepage case cards */
