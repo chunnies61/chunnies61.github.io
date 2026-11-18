@@ -1,5 +1,5 @@
 {
-  "note": "Material Design 3 type scale, 15 roles. Sizes, line-heights and letter-spacings are the MD3 values. Weights and families are this site's: Bricolage Grotesque 800 for Display, 700 for Headline, Poppins 500 for Title, Body and Label. Line height is 130% of the size for Display and Headline, 160% for Title, Body and Label. Mirrored as .md-* classes in src/index.css — change both together.",
+  "note": "Material Design 3 type scale, 15 roles. Sizes, line-heights and letter-spacings are the MD3 values. Weights and families are this site's: Bricolage Grotesque 800 for Display, 700 for Headline, DM Sans 500 for Title, Body and Label. Line height is 130% of the size for Display and Headline, 160% for Title, Body and Label. Mirrored as .md-* classes in src/index.css — change both together.",
   "groups": [
     {
       "name": "Display",
@@ -63,7 +63,7 @@
     },
     {
       "name": "Title",
-      "family": "Poppins",
+      "family": "DM Sans",
       "familyToken": "--font-ui",
       "weight": 500,
       "use": "Card, panel and list-item headings — shorter than a headline, heavier than body. Line height runs 160% of the size.",
@@ -93,7 +93,7 @@
     },
     {
       "name": "Body",
-      "family": "Poppins",
+      "family": "DM Sans",
       "familyToken": "--font-ui",
       "weight": 500,
       "use": "Running prose. Body Large is the default reading size. Line height runs 160% of the size.",
@@ -123,7 +123,7 @@
     },
     {
       "name": "Label",
-      "family": "Poppins",
+      "family": "DM Sans",
       "familyToken": "--font-ui",
       "weight": 600,
       "use": "Buttons, tabs, eyebrows, captions — text attached to a control or a thing. Line height runs 160% of the size.",

@@ -4,7 +4,7 @@
    (untitledui.com/react/components): semantic foreground / background /
    border roles, shadows and radii, coloured with the Connect palette and
    its generated 25–950 scales. The main colour is #0056A6 (brand-700); type
-   is the site's Poppins. Everything is scoped under .lra. */
+   is the site's DM Sans. Everything is scoped under .lra. */
 
 .lra {
   /* Colour comes from the Connect Design System palette (JPMC). Each brand
@@ -136,7 +136,7 @@
   --ui-ring: 0 0 0 4px var(--ui-brand-100);
   --ui-ring-error: 0 0 0 4px var(--ui-error-100);
 
-  --ui-font: var(--font-ui); /* the site's Poppins */
+  --ui-font: var(--font-ui); /* the site's DM Sans */
 
   position: relative;
   font-family: var(--ui-font);
@@ -197,7 +197,7 @@
 
 /* --- Prototype switch: the black toggle ------------------------------------
    Sits above the window, on the portfolio page rather than in the app, so
-   it's set in the site's Poppins. Equal-width options on a gray-800
+   it's set in the site's DM Sans. Equal-width options on a gray-800
    track; a white thumb slides to the selected option. No visible caption —
    the group is named with aria-label. It reads as a tab of the frame's
    outline: flush left, square along the bottom, sitting on the frame's

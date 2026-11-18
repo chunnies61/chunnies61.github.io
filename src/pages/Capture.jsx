@@ -22,7 +22,7 @@ function OgCard() {
     <div className="og">
       <style>{`
         ${CHROME}
-        .og { position: relative; display: flex; width: 1200px; height: 630px; overflow: hidden; background: #fff; font-family: "Poppins", sans-serif; color: #333945; }
+        .og { position: relative; display: flex; width: 1200px; height: 630px; overflow: hidden; background: #fff; font-family: "DM Sans", sans-serif; color: #333945; }
         .og-copy { display: flex; flex: 0 0 660px; flex-direction: column; justify-content: center; padding: 64px 56px 64px 72px; }
         .og-logo { width: 150px; height: auto; margin-bottom: 44px; }
         .og-name { margin: 0; font-family: "Bricolage Grotesque", sans-serif; font-size: 72px; line-height: 1.02; font-weight: 700; letter-spacing: -0.02em; color: #1b1f28; }

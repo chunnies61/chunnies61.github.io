@@ -285,7 +285,7 @@ export default function PrototypeDesignSystem() {
             {[
               ["Built on", "Untitled UI React components"],
               ["Colour", "Connect palette · main #0056A6"],
-              ["Typeface", "Poppins"],
+              ["Typeface", "DM Sans"],
               ["Canvas", "1920 × 1080, scaled to fit"],
               ["Tokens", "--ui-*, scoped to .lra"],
             ].map(([k, v]) => (
@@ -421,7 +421,7 @@ export default function PrototypeDesignSystem() {
             </p>
           </Block>
 
-          <Block title="Typography" note="Poppins, the portfolio's own face, at Untitled UI's scale. No letter-spacing. Every style is weight 500. Display and Regular text are separate groups; case-study copy is Regular text md, 16/24.">
+          <Block title="Typography" note="DM Sans, the portfolio's own face, at Untitled UI's scale. No letter-spacing. Every style is weight 500. Display and Regular text are separate groups; case-study copy is Regular text md, 16/24.">
             <Specimen>
               {TYPE.map(([group, rows]) => (
                 <div key={group} className="pds-type-set">
@@ -680,7 +680,7 @@ export default function PrototypeDesignSystem() {
                 </div>
               </div>
             </Specimen>
-            <Specimen label="Prototype toggle — a tab on the frame's outline, flush left, in the site's Poppins">
+            <Specimen label="Prototype toggle — a tab on the frame's outline, flush left, in the site's DM Sans">
               <Toggle
                 label="Variant"
                 value={demoToggle}
