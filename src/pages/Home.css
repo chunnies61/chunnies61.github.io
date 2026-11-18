@@ -134,7 +134,7 @@ body.has-grid {
 
 /* Type comes from .md-body-medium on the element; only colour here. */
 .case-card-desc {
-  color: var(--text-soft);
+  color: var(--gray-800);
 }
 
 /* ===== More projects ===== */
