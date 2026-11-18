@@ -193,6 +193,15 @@ a.cs-index-item.is-active:hover {
   color: var(--gray-900);
 }
 
+/* ...but not inside a prototype. The highlighter reads as part of that
+   product's own design there, so the prototypes (.lra roots all three) keep
+   the browser's selection colour. */
+.cs-body .lra::selection,
+.cs-body .lra ::selection {
+  background: Highlight;
+  color: HighlightText;
+}
+
 .cs-body {
   display: grid;
   grid-template-columns: 1fr 160px;
