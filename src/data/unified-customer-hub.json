@@ -313,15 +313,18 @@
           "items": [
             {
               "value": "150K / 211K",
-              "label": "Unique users / sessions, first week"
+              "label": "Unique users / sessions, first week",
+              "icon": "user-circle"
             },
             {
               "value": "+328%",
-              "label": "Financial Health engagement"
+              "label": "Financial Health engagement",
+              "icon": "heartbeat"
             },
             {
               "value": "411K+",
-              "label": "Monthly users by early 2024 (FullStory)"
+              "label": "Monthly users by early 2024 (FullStory)",
+              "icon": "bar-chart-analysis"
             }
           ]
         },

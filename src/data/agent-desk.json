@@ -284,16 +284,19 @@
             {
               "value": "47%",
               "label": "Reduced application verification time",
+              "icon": "clock",
               "desc": "3.2 days → 1.7 days"
             },
             {
               "value": "11.6%",
               "label": "Increased verification rate",
+              "icon": "check-circle",
               "desc": "80.4% → 92%"
             },
             {
               "value": "+30%",
               "label": "Agent confidence & satisfaction",
+              "icon": "face-smile",
               "desc": "Reported post-launch, against the pre-defined UX metric"
             }
           ]

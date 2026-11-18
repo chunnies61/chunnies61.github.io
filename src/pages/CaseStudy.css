@@ -1280,12 +1280,14 @@ a.cs-index-item.is-active:hover {
 /* Outcome tile extensions */
 .cs-outcome-label-strong {
   font-weight: 600;
-  color: var(--text);
+  color: var(--gray-900);
 }
+/* Subtext: smaller and regular weight, in the case studies' secondary gray */
 .cs-outcome-desc {
-  margin-top: 8px;
-  font-size: 13px;
-  color: var(--text-soft);
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-800);
 }
 
 .cs-image-placeholder-icon {
@@ -1469,17 +1471,14 @@ a.cs-index-item.is-active:hover {
   color: var(--text-soft);
 }
 
-/* Outcomes — white metric cards on a light gray sheet. After the pricing cards on loopsii.com:
-   a small colour chip top-left, what the number is in the middle, the big number at the
-   bottom. One equal column per stat, so any count fills the row rather than leaving an
-   empty track at the end of a fixed four-column grid. */
+/* Outcomes — metric cards. After the pricing cards on loopsii.com: a small colour chip with
+   an icon top-left, what the number is in the middle (a main line and a lighter subtext),
+   the big number at the bottom. One equal column per stat, so any count fills the row
+   rather than leaving an empty track at the end of a fixed four-column grid. */
 .cs-outcomes-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  padding: 12px;
-  border-radius: calc(var(--radius-card) + 12px);
-  background: var(--gray-50);
+  gap: 16px;
 }
 .cs-outcomes-2 {
   grid-template-columns: repeat(2, 1fr);
@@ -1494,11 +1493,12 @@ a.cs-index-item.is-active:hover {
   min-height: 208px;
   padding: 24px;
   border-radius: calc(var(--radius-card) + 4px);
-  background: #fff;
+  background: var(--surface-tint);
 }
 
-/* The chip: a small rounded square in one of the Key skills pastels. It carries the
-   tile's emoji when the data has one, and is a plain colour swatch otherwise. */
+/* The chip: a small rounded square in one of the Key skills pastels, holding the metric's
+   filled icon in a deeper shade of the same hue (an emoji, or nothing, if the data has no
+   icon). */
 .cs-outcome-chip {
   display: flex;
   align-items: center;
@@ -1509,13 +1509,14 @@ a.cs-index-item.is-active:hover {
   margin-bottom: 14px;
   border-radius: 10px;
   background: #bfe6fb;
+  color: #2b7fae;
   font-size: 18px;
 }
-.cs-outcome-tile:nth-child(6n + 2) .cs-outcome-chip { background: #fde9a8; }
-.cs-outcome-tile:nth-child(6n + 3) .cs-outcome-chip { background: #c4ecd6; }
-.cs-outcome-tile:nth-child(6n + 4) .cs-outcome-chip { background: #dacfff; }
-.cs-outcome-tile:nth-child(6n + 5) .cs-outcome-chip { background: #ffc9dd; }
-.cs-outcome-tile:nth-child(6n + 6) .cs-outcome-chip { background: #cbf26c; }
+.cs-outcome-tile:nth-child(6n + 2) .cs-outcome-chip { background: #fde9a8; color: #b07d0a; }
+.cs-outcome-tile:nth-child(6n + 3) .cs-outcome-chip { background: #c4ecd6; color: #2f8a5f; }
+.cs-outcome-tile:nth-child(6n + 4) .cs-outcome-chip { background: #dacfff; color: #6a52c9; }
+.cs-outcome-tile:nth-child(6n + 5) .cs-outcome-chip { background: #ffc9dd; color: #c2467a; }
+.cs-outcome-tile:nth-child(6n + 6) .cs-outcome-chip { background: #cbf26c; color: #6b8f0a; }
 
 /* The number sits on the bottom edge whatever the label's length */
 .cs-outcome-value {
@@ -1531,9 +1532,10 @@ a.cs-index-item.is-active:hover {
   font-size: 36px;
 }
 
+/* Main line of the card */
 .cs-outcome-label {
   margin: 0;
-  font-size: 14px;
+  font-size: 18px;
   color: var(--text-soft);
 }
 

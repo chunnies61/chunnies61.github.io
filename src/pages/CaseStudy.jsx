@@ -1,3 +1,4 @@
+import { METRIC_ICONS } from "../components/metricIcons.generated";
 import { lazy, Suspense, useEffect, useState } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { getCaseStudy, caseStudies } from "../data/caseStudies";
@@ -48,12 +49,31 @@ function Row({ label, children }) {
   );
 }
 
+/* The colour chip on a metric card: a filled Iconstica icon picked by name in the data
+   (see scripts/build-metric-icons.mjs), or an emoji, or just the colour. */
+function MetricChip({ icon, emoji }) {
+  const parts = icon && METRIC_ICONS[icon];
+  return (
+    <span className="cs-outcome-chip" aria-hidden="true">
+      {parts ? (
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+          {parts.map((p, i) => (
+            <path key={i} {...p} />
+          ))}
+        </svg>
+      ) : (
+        emoji
+      )}
+    </span>
+  );
+}
+
 function StatGrid({ stats }) {
   return (
     <div className="cs-outcomes-grid">
       {stats.map((stat) => (
         <div className="cs-outcome-tile" key={stat.label}>
-          <span className="cs-outcome-chip" aria-hidden="true">{stat.emoji}</span>
+          <MetricChip icon={stat.icon} emoji={stat.emoji} />
           <p className="cs-outcome-label cs-outcome-label-strong">{stat.label}</p>
           <p className="cs-outcome-value">{stat.value}</p>
         </div>
@@ -473,7 +493,7 @@ function Block({ block }) {
         <div className={"cs-outcomes-grid cs-outcomes-" + block.items.length}>
           {block.items.map((item) => (
             <div className="cs-outcome-tile" key={item.label}>
-              <span className="cs-outcome-chip" aria-hidden="true">{item.emoji}</span>
+              <MetricChip icon={item.icon} emoji={item.emoji} />
               <p className="cs-outcome-label cs-outcome-label-strong">{item.label}</p>
               {item.desc && <p className="cs-outcome-desc">{item.desc}</p>}
               {item.value && <p className="cs-outcome-value">{item.value}</p>}

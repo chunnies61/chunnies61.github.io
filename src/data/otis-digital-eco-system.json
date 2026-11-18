@@ -292,20 +292,24 @@
           "items": [
             {
               "value": "−70%",
-              "label": "Task completion time"
+              "label": "Task completion time",
+              "icon": "hourglass"
             },
             {
               "value": "−45%",
-              "label": "Error rate"
+              "label": "Error rate",
+              "icon": "exclamation-triangle"
             },
             {
               "value": "Millions",
               "label": "Active users",
+              "icon": "user-circle",
               "desc": "Pilot → millions of users"
             },
             {
               "value": "−50%",
-              "label": "Support tickets & training time"
+              "label": "Support tickets & training time",
+              "icon": "headphone-mic"
             }
           ]
         },

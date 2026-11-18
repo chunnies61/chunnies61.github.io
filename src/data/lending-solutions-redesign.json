@@ -877,20 +877,20 @@
           "items": [
             {
               "value": "14 min",
-              "emoji": "⏱️",
               "label": "Faster loan request submission",
+              "icon": "bolt",
               "desc": "New Loan Request App vs. the old one"
             },
             {
               "value": "~3×",
-              "emoji": "📝",
               "label": "Faster credit questionnaire",
+              "icon": "pen-to-square",
               "desc": "e-CQ vs. DocuSign, ~5 min typical"
             },
             {
               "value": "~22%",
-              "emoji": "✅",
               "label": "New-ticket NIGO rate",
+              "icon": "check-circle",
               "desc": "Down from ~60% in discovery"
             }
           ]
