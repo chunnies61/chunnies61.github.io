@@ -5,7 +5,7 @@ import Tag from "../components/Tag";
 import ContactCta from "../components/ContactCta";
 import FallingTools from "../components/falling-tools/FallingTools";
 import ArrowButton from "../components/ArrowButton";
-import GridTrail from "../components/GridTrail";
+import GridGlow from "../components/GridGlow";
 import "./Home.css";
 
 export default function Home() {
@@ -41,7 +41,7 @@ export default function Home() {
 
   return (
     <div className="home">
-      <GridTrail />
+      <GridGlow />
       <section className="hero">
         <div className="wrap hero-inner">
           <h1 className="hero-title">{home.heroTitle}</h1>

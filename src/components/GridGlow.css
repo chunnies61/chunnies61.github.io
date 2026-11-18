@@ -1,0 +1,21 @@
+/* Sits behind the page content, over the grid painted on <body>.has-grid (Home.css).
+   Same 34px grid and the same origin, in a deeper blue, shown only near the pointer. */
+.grid-glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background-image:
+    linear-gradient(90deg, rgba(69, 117, 231, 0.55) 1px, transparent 1px),
+    linear-gradient(rgba(69, 117, 231, 0.55) 1px, transparent 1px);
+  background-size: 34px 34px;
+  -webkit-mask-image: radial-gradient(circle 150px at var(--gx, -999px) var(--gy, -999px), #000 0%, transparent 100%);
+  mask-image: radial-gradient(circle 150px at var(--gx, -999px) var(--gy, -999px), #000 0%, transparent 100%);
+}
+
+.grid-glow.is-on {
+  opacity: 1;
+}
