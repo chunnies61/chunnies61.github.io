@@ -9,8 +9,8 @@ body.has-grid {
   /* gray-50 thinned halfway toward white */
   background-color: color-mix(in srgb, var(--gray-50) 50%, #fff);
   background-image:
-    linear-gradient(90deg, rgba(69, 117, 231, 0.08) 1px, transparent 1px),
-    linear-gradient(rgba(69, 117, 231, 0.08) 1px, transparent 1px);
+    linear-gradient(90deg, rgba(69, 117, 231, 0.055) 1px, transparent 1px),
+    linear-gradient(rgba(69, 117, 231, 0.055) 1px, transparent 1px);
   background-size: 31px 31px;
 }
 
