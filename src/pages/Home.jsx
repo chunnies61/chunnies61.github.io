@@ -6,6 +6,7 @@ import ContactCta from "../components/ContactCta";
 import FallingTools from "../components/falling-tools/FallingTools";
 import ArrowButton from "../components/ArrowButton";
 import GridGlow from "../components/GridGlow";
+import Reveal from "../components/Reveal";
 import "./Home.css";
 
 export default function Home() {
@@ -68,8 +69,11 @@ export default function Home() {
           <p className="eyebrow center">{home.sectionEyebrow}</p>
           <h2 className="section-title center">{home.sectionTitle}</h2>
           <div className="case-grid">
-            {home.caseStudies.map((cs) => (
-              <Link
+            {home.caseStudies.map((cs, i) => (
+              <Reveal
+                as={Link}
+                index={i}
+                cols={2}
                 key={cs.slug}
                 to={`/case-studies/${cs.slug}`}
                 className="case-card"
@@ -86,7 +90,7 @@ export default function Home() {
                   </div>
                   <p className="case-card-desc md-body-medium">{cs.desc}</p>
                 </div>
-              </Link>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -106,12 +110,12 @@ export default function Home() {
 
           <div className="more-scroller" ref={scrollerRef}>
             {home.otherWork.filter((p) => p.title !== "Project title").slice(0, 6).map((item, i) => (
-              <div className="more-card" key={`${item.thumb}-${i}`}>
+              <Reveal className="more-card" index={i} key={`${item.thumb}-${i}`}>
                 <div className="more-card-media">
                   <img src={item.thumb} alt="" loading="lazy" />
                 </div>
                 <p className="more-card-title">{item.title}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
 
