@@ -13,10 +13,10 @@ body.has-grid {
     linear-gradient(rgba(69, 117, 231, 0.055) 1px, transparent 1px);
   background-size: 31px 31px;
 
-  /* Trying Instrument Sans for the home page's body and UI text (headings stay Bricolage
+  /* Trying DM Sans for the home page's body and UI text (headings stay Bricolage
      Grotesque). The home page sets these on <body>, so the nav and footer follow. */
-  --font-body: "Instrument Sans", sans-serif;
-  --font-ui: "Instrument Sans", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+  --font-ui: "DM Sans", sans-serif;
 }
 
 .hero {
