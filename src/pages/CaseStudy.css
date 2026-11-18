@@ -17,10 +17,8 @@
   margin-left: -16px;
 }
 
-/* Item states follow the M3 reference index: the pill fills on hover
-   (on-surface at 8%) and a touch darker when pressed (10%); keyboard focus
-   draws a 2px ink ring with an inset white hairline; the selected item
-   keeps the same type and gets a dark outline in the darkest gray, with no fill. */
+/* Item states: hover and the selected item both get a 1.5px outline in the darkest gray, with
+   no fill; keyboard focus draws a heavier 2px ink ring with an inset white hairline. */
 /* Type comes from .md-label-medium in every state */
 .cs-index-item {
   display: block;
@@ -30,13 +28,10 @@
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
+/* Hover draws the same dark outline as the selected item; no fill, no grey overlay */
 a.cs-index-item:hover {
-  background: rgba(51, 57, 69, 0.08);
   color: var(--text);
-}
-
-a.cs-index-item:active {
-  background: rgba(51, 57, 69, 0.1);
+  box-shadow: inset 0 0 0 1.5px var(--gray-900);
 }
 
 a.cs-index-item:focus-visible {
@@ -210,6 +205,10 @@ a.cs-index-item.is-active:hover {
   grid-column: 2;
   grid-row: 1;
   align-self: stretch;
+  /* The first section opens with 60px of padding before its caption. Dropping the rail by
+     that, less the 8px of padding inside each pill, puts the first label ("Context") on
+     the same line as the caption beside it. */
+  padding-top: 52px;
 }
 
 .cs-body-main {
