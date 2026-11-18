@@ -1469,13 +1469,17 @@ a.cs-index-item.is-active:hover {
   color: var(--text-soft);
 }
 
-/* Outcomes — tinted stat tiles */
-/* One equal column per stat, so any count fills the row rather than
-   leaving an empty track at the end of a fixed four-column grid. */
+/* Outcomes — white metric cards on a light gray sheet. After the pricing cards on loopsii.com:
+   a small colour chip top-left, what the number is in the middle, the big number at the
+   bottom. One equal column per stat, so any count fills the row rather than leaving an
+   empty track at the end of a fixed four-column grid. */
 .cs-outcomes-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 12px;
+  padding: 12px;
+  border-radius: calc(var(--radius-card) + 12px);
+  background: var(--gray-50);
 }
 .cs-outcomes-2 {
   grid-template-columns: repeat(2, 1fr);
@@ -1485,21 +1489,51 @@ a.cs-index-item.is-active:hover {
 }
 
 .cs-outcome-tile {
-  background: var(--surface-tint);
-  border-radius: var(--radius-card);
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 208px;
+  padding: 24px;
+  border-radius: calc(var(--radius-card) + 4px);
+  background: #fff;
 }
 
+/* The chip: a small rounded square in one of the Key skills pastels. It carries the
+   tile's emoji when the data has one, and is a plain colour swatch otherwise. */
+.cs-outcome-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  background: #bfe6fb;
+  font-size: 18px;
+}
+.cs-outcome-tile:nth-child(6n + 2) .cs-outcome-chip { background: #fde9a8; }
+.cs-outcome-tile:nth-child(6n + 3) .cs-outcome-chip { background: #c4ecd6; }
+.cs-outcome-tile:nth-child(6n + 4) .cs-outcome-chip { background: #dacfff; }
+.cs-outcome-tile:nth-child(6n + 5) .cs-outcome-chip { background: #ffc9dd; }
+.cs-outcome-tile:nth-child(6n + 6) .cs-outcome-chip { background: #cbf26c; }
+
+/* The number sits on the bottom edge whatever the label's length */
 .cs-outcome-value {
+  margin-top: auto;
+  padding-top: 20px;
   font-family: var(--font-display);
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 800;
   color: var(--primary-700);
 }
+.cs-outcomes-2 .cs-outcome-value,
+.cs-outcomes-3 .cs-outcome-value {
+  font-size: 36px;
+}
 
 .cs-outcome-label {
-  margin-top: 6px;
-  font-size: 13px;
+  margin: 0;
+  font-size: 14px;
   color: var(--text-soft);
 }
 

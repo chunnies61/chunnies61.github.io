@@ -53,8 +53,9 @@ function StatGrid({ stats }) {
     <div className="cs-outcomes-grid">
       {stats.map((stat) => (
         <div className="cs-outcome-tile" key={stat.label}>
+          <span className="cs-outcome-chip" aria-hidden="true">{stat.emoji}</span>
+          <p className="cs-outcome-label cs-outcome-label-strong">{stat.label}</p>
           <p className="cs-outcome-value">{stat.value}</p>
-          <p className="cs-outcome-label">{stat.label}</p>
         </div>
       ))}
     </div>
@@ -472,10 +473,10 @@ function Block({ block }) {
         <div className={"cs-outcomes-grid cs-outcomes-" + block.items.length}>
           {block.items.map((item) => (
             <div className="cs-outcome-tile" key={item.label}>
-              {item.emoji && <span className="cs-card-emoji">{item.emoji}</span>}
-              {item.value && <p className="cs-outcome-value">{item.value}</p>}
+              <span className="cs-outcome-chip" aria-hidden="true">{item.emoji}</span>
               <p className="cs-outcome-label cs-outcome-label-strong">{item.label}</p>
               {item.desc && <p className="cs-outcome-desc">{item.desc}</p>}
+              {item.value && <p className="cs-outcome-value">{item.value}</p>}
             </div>
           ))}
         </div>
