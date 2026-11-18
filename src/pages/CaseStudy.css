@@ -187,6 +187,14 @@ a.cs-index-item.is-active:hover {
   font-weight: 500;
 }
 
+/* Text selected in the body of a case study gets a highlighter-pen background, in the
+   design system's yellow. Only here: the page header and the rest of the site keep the
+   browser's own selection colour. */
+.cs-body ::selection {
+  background: var(--pill-yellow-bg);
+  color: var(--gray-900);
+}
+
 .cs-body {
   display: grid;
   grid-template-columns: 1fr 160px;
