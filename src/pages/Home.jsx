@@ -15,6 +15,13 @@ export default function Home() {
      three cards don't fit. */
   const [canScroll, setCanScroll] = useState(false);
 
+  /* The graph-paper grid is painted on <body> while the home page is showing, so the
+     nav, the page and the footer all sit on one continuous sheet. */
+  useEffect(() => {
+    document.body.classList.add("has-grid");
+    return () => document.body.classList.remove("has-grid");
+  }, []);
+
   useEffect(() => {
     const el = scrollerRef.current;
     if (!el) return;
