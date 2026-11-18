@@ -876,6 +876,9 @@ a.cs-index-item.is-active:hover {
   background: #1e57c8; /* Primary, tone 40 */
   border-radius: var(--radius-card);
   padding: 20px;
+  /* Call-outs are display panels, not copy: their text can't be selected or highlighted */
+  -webkit-user-select: none;
+  user-select: none;
 }
 .cs-callout-label {
   display: block;
@@ -888,7 +891,7 @@ a.cs-index-item.is-active:hover {
   color: #ffe785;
 }
 /* Font and weight come from .md-headline-small on the element; the size is set
-   to 16px below. Colour lives here. */
+   below. Colour lives here. */
 .cs-callout p {
   color: #fff;
 }
@@ -898,17 +901,17 @@ a.cs-index-item.is-active:hover {
   color: #bfdbfe;
 }
 
-/* The callout's main line: 20px on desktop, easing down on phones so it
-   doesn't crowd the 20px padding. */
+/* The callout's main line: 18px on desktop (one step under the 20px Headline Small it
+   comes from), 16px on phones so it doesn't crowd the 20px padding. */
 .cs-callout p.md-headline-small {
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 18px;
+  line-height: 1.4;
 }
 
 @media (max-width: 640px) {
   .cs-callout p.md-headline-small {
-    font-size: 18px;
-    line-height: 26px;
+    font-size: 16px;
+    line-height: 1.4;
   }
 }
 
