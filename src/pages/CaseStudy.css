@@ -188,10 +188,10 @@ a.cs-index-item.is-active:hover {
 }
 
 /* Text selected in the body of a case study gets a highlighter-pen background, in the
-   yellow of the Best Egg case-study thumbnail (#ffdc82) at 50% opacity. Only here: the page header
+   yellow of the Best Egg case-study thumbnail (#ffdc82) at 40% opacity. Only here: the page header
    and the rest of the site keep the browser's own selection colour. */
 .cs-body ::selection {
-  background: rgba(255, 220, 130, 0.5);
+  background: rgba(255, 220, 130, 0.4);
   color: var(--gray-900);
 }
 
