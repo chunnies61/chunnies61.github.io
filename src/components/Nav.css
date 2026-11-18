@@ -67,6 +67,7 @@
 
 .nav-links a {
   text-transform: uppercase;
+  letter-spacing: 0.08em;   /* capitals need a little air */
 }
 
 .nav-links a:hover {
