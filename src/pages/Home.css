@@ -277,24 +277,25 @@ body.has-grid {
   padding: var(--space-section) 0;
   margin: var(--space-title-gap) 40px;
   scroll-margin-top: 88px;
-  /* The primary blue at ~26% over the page: a pale blue-lilac a notch deeper than Primary 90,
+  /* The primary blue at 40% over the page: a soft blue, deeper than Primary 90,
      see-through, with text in the darkest gray */
   --about-ink: var(--gray-900);
-  background: rgba(69, 117, 231, 0.26);
-  border-radius: 40px;
+  background: rgba(69, 117, 231, 0.4);
+  border-radius: 56px;
 }
 
 @media (max-width: 640px) {
   .about-hero {
     margin-left: 24px;
     margin-right: 24px;
-    border-radius: 28px;
+    border-radius: 36px;
   }
 }
 
 .about-hero-inner {
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
+  /* text column 10% narrower than the old 1.3fr, the freed width goes to the photo */
+  grid-template-columns: minmax(0, 1.17fr) minmax(0, 0.83fr);
   gap: 48px;
   align-items: center;
 }
@@ -313,9 +314,11 @@ body.has-grid {
 }
 
 .about-hero-image {
+  /* a touch brighter than the file, without editing it */
+  filter: brightness(1.1);
   border-radius: var(--radius-media);
   width: 100%;
-  max-width: 340px;
+  max-width: 374px;   /* 340px + 10% */
   justify-self: center;
 }
 
