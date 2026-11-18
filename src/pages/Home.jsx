@@ -69,12 +69,12 @@ export default function Home() {
                   <img src={cs.thumb} alt={cs.title} loading="lazy" />
                 </div>
                 <div className="case-card-body">
+                  <h3 className="md-headline-small">{cs.title}</h3>
                   <div className="case-card-tags">
                     {cs.tags.map((tag) => (
                       <Tag key={tag}>{tag}</Tag>
                     ))}
                   </div>
-                  <h3 className="md-headline-small">{cs.title}</h3>
                   <p className="case-card-desc md-body-medium">{cs.desc}</p>
                 </div>
               </Link>
