@@ -1172,14 +1172,19 @@
 /* --- Tables: a card with a gray header row ----------------------------------- */
 .lra-table-wrap {
   overflow-x: auto;
-  border: 1px solid var(--ui-border-secondary);
+  border: 1px solid var(--ui-border);
   border-radius: var(--ui-radius-md);
   background: var(--ui-bg);
   box-shadow: var(--ui-shadow-xs);
 }
 
+/* A table that follows the controls above it, or another table, breaks on the
+   section rhythm — the same 16px the GFG flag below it uses. */
 .lra-section > .lra-table-wrap + .lra-table-wrap,
-.lra-party-row + .lra-table-wrap,
+.lra-party-row + .lra-table-wrap {
+  margin-top: 16px;
+}
+
 .lra-table {
   width: 100%;
   border-collapse: collapse;
@@ -1198,10 +1203,11 @@
   vertical-align: middle;
 }
 
-/* Header row: the same 48px as the rows; neutral-200 fill, text-sm
-   semibold in $text-primary (neutral-800, 8.8:1) so it reads clearly */
+/* Header row: the same 48px as the rows. The fill is the quiet panel tint —
+   enough to separate the header from the rows without reading as a grey band.
+   Text stays text-sm semibold in $text-primary (neutral-800, 8.8:1). */
 .lra-table thead th {
-  background: var(--ui-gray-200);
+  background: var(--ui-bg-secondary);
   font-size: 13px;
   line-height: 18px;
   font-weight: 600;
@@ -1315,7 +1321,7 @@
 .lra-offer,
 .lra-ticket {
   padding: 20px;
-  border: 1px solid var(--ui-border-secondary);
+  border: 1px solid var(--ui-border);
   border-radius: var(--ui-radius-md);
   background: var(--ui-bg);
   box-shadow: var(--ui-shadow-xs);
@@ -1393,7 +1399,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid var(--ui-border-secondary);
+  border: 1px solid var(--ui-border);
   border-radius: var(--ui-radius-md);
   background: var(--ui-bg);
   box-shadow: var(--ui-shadow-xs);
@@ -1700,7 +1706,7 @@
   align-items: center;
   gap: 12px;
   padding: 10px 12px 10px 16px;
-  border: 1px solid var(--ui-border-secondary);
+  border: 1px solid var(--ui-border);
   border-radius: var(--ui-radius-md);
   background: var(--ui-bg);
   box-shadow: var(--ui-shadow-xs);
@@ -1977,7 +1983,7 @@
    down the left edge makes each section easy to find. */
 .lra-review-card {
   overflow: hidden;
-  border: 1px solid var(--ui-border-secondary);
+  border: 1px solid var(--ui-border);
   border-left: 4px solid var(--ui-primary);
   border-radius: var(--ui-radius-md);
   background: var(--ui-bg);
@@ -2032,7 +2038,7 @@
   position: sticky;
   top: 0;
   overflow: hidden;
-  border: 1px solid var(--ui-border-secondary);
+  border: 1px solid var(--ui-border);
   border-radius: var(--ui-radius-md);
   background: var(--ui-bg);
   box-shadow: var(--ui-shadow-xs);
@@ -2464,4 +2470,252 @@
   .lra-snackbar {
     animation: none;
   }
+}
+
+/* --- Credit questionnaire (step 4) -------------------------------------------
+   The questionnaires for this request on the left, the questionnaire itself as
+   one form on the right. Layout only — every colour, radius and shadow below is
+   an existing token. */
+.lra-cq {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+/* The left panel reads as a set of things belonging to this request, not as a
+   picker: a titled panel, then a tree whose branches join the three items. */
+.lra-cq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: var(--ui-bg-secondary);
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius-md);
+}
+
+.lra-cq-list-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.lra-cq-list-head h4 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: var(--ui-fg);
+}
+
+.lra-cq-tree {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 4px 0 0;
+  padding: 0 0 0 18px;
+  list-style: none;
+}
+
+.lra-cq-tree > li {
+  position: relative;
+}
+
+/* The trunk: a segment per item, trimmed at the first and last branch so the
+   line starts and ends on a connection instead of in mid-air. */
+.lra-cq-tree > li::after {
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--ui-border);
+}
+
+.lra-cq-tree > li:first-child::after {
+  top: 24px;
+}
+
+.lra-cq-tree > li:last-child::after {
+  bottom: auto;
+  height: 24px;
+}
+
+/* The branch into each item */
+.lra-cq-tree > li::before {
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: 24px;
+  width: 14px;
+  height: 1px;
+  background: var(--ui-border);
+}
+
+.lra-cq-tree > li:has(.is-open)::before {
+  background: var(--ui-accent);
+}
+
+.lra-cq-item {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+  text-align: left;
+  font: inherit;
+  color: var(--ui-fg-tertiary);
+  background: var(--ui-bg);
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius-md);
+  box-shadow: var(--ui-shadow-xs);
+  cursor: pointer;
+}
+
+.lra-cq-item:hover {
+  background: var(--ui-bg-hover);
+}
+
+.lra-cq-item.is-open {
+  background: var(--ui-row-selected);
+  border-color: var(--ui-accent);
+  box-shadow: inset 3px 0 0 var(--ui-accent);
+}
+
+.lra-cq-item-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.lra-cq-item-top strong {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--ui-fg);
+}
+
+.lra-cq-item-meta,
+.lra-cq-item-msg {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.lra-cq-item-meta {
+  color: var(--ui-fg-quaternary);
+}
+
+/* The right side is one form: everything sits inside a single frame, so the
+   sections read as parts of one questionnaire rather than separate panels. */
+.lra-cq-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+  padding: 24px;
+  background: var(--ui-bg);
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius-md);
+  box-shadow: var(--ui-shadow-xs);
+}
+
+.lra-cq-formhead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--ui-border-secondary);
+}
+
+.lra-cq-formhead-id {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.lra-cq-formhead-id h4 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: var(--ui-fg);
+}
+
+.lra-cq-formhead-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+}
+
+.lra-cq-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* A hairline between sections — they are parts of one form, so they get a
+   divider rather than gaps alone. */
+.lra-cq-form > .lra-section + .lra-section,
+.lra-cq-panel > .lra-section {
+  padding-top: 24px;
+  border-top: 1px solid var(--ui-border-secondary);
+}
+
+.lra-cq-form > .lra-section + .lra-section,
+.lra-cq-panel > .lra-section + .lra-section {
+  margin-top: 0;
+}
+
+/* Stacked blocks inside a section need their own rhythm */
+.lra-cq-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.lra-cq-stack > .lra-field,
+.lra-cq-stack > .lra-table-wrap {
+  width: 100%;
+  max-width: 480px;
+}
+
+.lra-cq-stack > .lra-table-wrap {
+  max-width: none;
+}
+
+/* An answer: the label, the value the client gave, and — in compare mode —
+   last year's figure under it. */
+.lra-cq-prior {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+  color: var(--ui-fg-quaternary);
+}
+
+/* A year-on-year move at or over the exceptional threshold */
+.lra-cq-answer.is-flagged .lra-cq-prior,
+.lra-field.is-flagged .lra-field-hint {
+  color: var(--ui-warning-700);
+  font-weight: 600;
+}
+
+.lra-field.is-flagged input {
+  border-color: var(--ui-warning-300);
+  background: var(--ui-warning-25);
+}
+
+/* Edit / Cancel / Save beside a section title */
+.lra-section-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }

@@ -1,25 +1,24 @@
 import { useEffect, useRef, useState } from "react";
-import { REGIONS, STEPS } from "./data";
+import { EMEA, STEPS } from "./data";
 import { assess, emptyDeal, freshBuilder } from "./rules";
 import StepClient from "./StepClient";
 import StepDetails from "./StepDetails";
 import StepReview from "./StepReview";
+import StepCq from "./StepCq";
 import Submission from "./Submission";
 import { Icon } from "./ui";
 import { ScaledFrame } from "./frame";
 import "./Lra.css";
 
-/* Loan Request App prototype — the origination wizard, by region.
+/* Loan Request App prototype — the EMEA origination wizard.
 
-   LraFlow is one region's wizard in its browser window: Client & facility,
-   Loan details, Loan review, then the submission. The case study shows the EMEA
-   flow (in EUR) only; the APAC and USPB variants stay defined in ./data.js and
-   ./rules.js. The future-vision prototype reuses LraFlow (EMEA) as its Current
-   state. All data is mocked
-   (see ./data.js). */
+   LraFlow is the wizard in its browser window: Client & facility, Loan details,
+   Loan review, Credit questionnaire, then the submission. EMEA (in EUR) is the only flow the
+   prototype covers. The future-vision prototype reuses LraFlow as its Current
+   state. All data is mocked (see ./data.js). */
 
 export function LraFlow({ region, suffix, path }) {
-  const [step, setStep] = useState(0); // 0, 1, 2, or "done"
+  const [step, setStep] = useState(0); // 0, 1, 2, 3, or "done"
   const ccy = region.currency ?? "USD";
   const [deal, setDeal] = useState(() => emptyDeal(ccy));
   const [tried, setTried] = useState(false); // continue was pressed while blocked
@@ -62,7 +61,7 @@ export function LraFlow({ region, suffix, path }) {
       setTried(true);
       return;
     }
-    go(step === 2 ? "done" : step + 1);
+    go(step === STEPS.length - 1 ? "done" : step + 1);
   }
 
   // Adding a party looks the client up first — a short, cancellable load
@@ -84,8 +83,7 @@ export function LraFlow({ region, suffix, path }) {
   const inWizard = step !== "done";
   // The page title matches the current step's label in the stepper
   const pageTitle = step === "done" ? "Request submitted" : STEPS[step];
-  const primaryLabel =
-    step === 2 ? "Submit request" : region.flow === "emea" ? "Save and continue" : "Save & continue";
+  const primaryLabel = step === STEPS.length - 1 ? "Submit request" : "Save and continue";
   const showError = tried && blocked;
 
   return (
@@ -112,7 +110,7 @@ export function LraFlow({ region, suffix, path }) {
         <div className="lra-body" ref={bodyRef}>
           {step !== "done" && <h3 className="lra-page-title">{pageTitle}</h3>}
           {step === 0 && (
-            <StepClient deal={deal} update={update} addParty={addParty} onBuildSbl={buildSbl} region={region} />
+            <StepClient deal={deal} update={update} addParty={addParty} onBuildSbl={buildSbl} />
           )}
           {step === 1 && (
             <StepDetails
@@ -120,12 +118,12 @@ export function LraFlow({ region, suffix, path }) {
               update={update}
               setField={setField}
               verdict={verdict}
-              region={region}
               tried={tried}
               onTried={() => setTried(true)}
             />
           )}
           {step === 2 && <StepReview deal={deal} verdict={verdict} onEdit={go} />}
+          {step === 3 && <StepCq deal={deal} update={update} />}
           {step === "done" && <Submission deal={deal} onRestart={reset} />}
         </div>
 
@@ -146,7 +144,7 @@ export function LraFlow({ region, suffix, path }) {
               )}
             </p>
             <div className="lra-footer-btns">
-              {step === 0 && region.flow === "emea" && (
+              {step === 0 && (
                 <button type="button" className="lra-btn is-ghost is-destructive" onClick={reset}>
                   Abandon
                 </button>
@@ -163,34 +161,15 @@ export function LraFlow({ region, suffix, path }) {
           </div>
         )}
 
-        {/* APAC: CDS on FX/OTC needs an ISDA agreement — shown as a snackbar */}
-        {step === 1 && verdict.showCds && (
-          <div className="lra-snackbar" role="alert">
-            <p>
-              CDS transactions require an ISDA agreement. Consult a member of the SBL team before
-              proceeding.
-            </p>
-            <button
-              type="button"
-              className="lra-icon-btn"
-              aria-label="Dismiss"
-              onClick={() => update({ cdsDismissed: true })}
-            >
-              <Icon name="close" />
-            </button>
-          </div>
-        )}
       </div>
     </ScaledFrame>
   );
 }
 
 export default function LraPrototype({ title = "Loan request prototype" }) {
-  const region = REGIONS[0]; // EMEA
-
   return (
     <div className="lra lra-app" aria-label={title} role="region">
-      <LraFlow region={region} suffix="Loan Request App" path={`/lending/loan-request/new?region=${region.id}`} />
+      <LraFlow region={EMEA} suffix="Loan Request App" path={`/lending/loan-request/new?region=${EMEA.id}`} />
     </div>
   );
 }

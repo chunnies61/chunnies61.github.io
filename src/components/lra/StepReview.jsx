@@ -201,7 +201,6 @@ export default function StepReview({ deal, verdict, onEdit }) {
           <dl className="lra-kv is-review">
             {acting && <Row label="Existing facility" value={`${facility.badge} · ${facility.type}`} />}
             <Row label="Deal type" value={deal.build === "custom" ? "Tailored (Custom)" : "Streamlined (SBL)"} />
-            {deal.gfg && <Row label="GFG deal" value="Yes — routed to the GFG processing team" />}
             <Row label="Facility type" value={deal.facilityType} />
             <Row label="Requested line size" value={num(deal.lineSize) > 0 ? money(deal.lineSize, deal.currency) : ""} />
             <Row label="Asset type" value={deal.assetType} />

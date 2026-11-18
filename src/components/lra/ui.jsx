@@ -26,9 +26,9 @@ export function Icon({ name, size = 24 }) {
 const BANNER_ICON = { info: "info", warning: "warning", success: "checkCircle" };
 
 /* A form field: label above, the control, then an error or a hint */
-export function Field({ label, error, hint, children, id, required = false }) {
+export function Field({ label, error, hint, children, id, required = false, className = "" }) {
   return (
-    <div className={"lra-field" + (error ? " has-error" : "")}>
+    <div className={"lra-field" + (error ? " has-error" : "") + (className ? ` ${className}` : "")}>
       <label htmlFor={id}>
         {label}
         {required && (

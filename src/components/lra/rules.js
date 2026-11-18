@@ -1,9 +1,9 @@
 import {
   COLLATERALS,
-  EQUITY_CONCENTRATION_LIMIT,
   FACILITIES,
-  MAX_TENOR_MONTHS,
   PEAK_LIMIT_USD,
+  TENOR_RULES,
+  UNSECURED_TYPES,
 } from "./data";
 
 export const num = (v) => {
@@ -33,7 +33,6 @@ export function freshBuilder(currency = "USD") {
     note: "",
     offers: null, // the three indicative offers, once created
     offer: null, // the chosen one
-    cdsDismissed: false,
   };
 }
 
@@ -55,7 +54,6 @@ export function emptyDeal(currency = "USD") {
     facilityId: null,
     facilityAction: null,
     build: null, // null | "sbl" | "custom"
-    gfg: false, // USPB: flagged for Global Families Group processing
     ...freshBuilder(currency),
   };
 }
@@ -112,7 +110,6 @@ export function offersFor(deal) {
    continue past Loan details or to submit. Everything else is guidance:
    field errors that explain, and a soft hint per step in the footer. */
 export function assess(deal, region) {
-  const ga = Boolean(region.compliance);
   const ccy = region.currency ?? "USD";
   const f = deal.fields;
   const facility = FACILITIES.find((x) => x.id === deal.facilityId);
@@ -120,23 +117,28 @@ export function assess(deal, region) {
   const building = deal.build === "sbl" || (facility?.kind === "sbl" && Boolean(deal.facilityAction));
   const errors = {};
 
-  if (deal.facilityType === "FX/OTC Derivatives") {
-    if (num(f.peakLimit) > PEAK_LIMIT_USD)
-      errors.peakLimit = `Exceeds the ${ccy} 2.5MM peak limit — handled as a Custom ticket.`;
-    if (num(f.tenor) > MAX_TENOR_MONTHS)
-      errors.tenor = "Exceeds 10 years (120 months) — handled as a Custom ticket.";
-  }
+  if (deal.facilityType === "FX/OTC derivatives" && num(f.peakLimit) > PEAK_LIMIT_USD)
+    errors.peakLimit = `Exceeds the ${ccy} 2.5MM peak limit — handled as a Custom ticket.`;
 
-  const needsComment =
-    ga && deal.facilityType === "Global limit" && num(f.equityConc) > EQUITY_CONCENTRATION_LIMIT;
-  if (needsComment && !String(f.comment ?? "").trim())
-    errors.comment = "Equity concentration is above 40% — a supporting comment is required.";
+  /* Tenor is capped per facility type. Over the cap the facility is no longer
+     SBL-eligible, so it stops being a streamlined deal. */
+  const tenor = TENOR_RULES[deal.facilityType];
+  const tenorOverLimit = Boolean(tenor?.max) && num(f.tenor) > tenor.max;
+  if (tenorOverLimit) errors.tenor = `Enter tenor <= ${tenor.max} months.`;
+
+  // Unsecured facilities carry no collateral and get no detailed results
+  const unsecured = UNSECURED_TYPES.includes(deal.facilityType);
 
   // The required fields
-  const missing = { facilityType: !deal.facilityType, lineSize: num(deal.lineSize) <= 0 };
+  const missing = {
+    facilityType: !deal.facilityType,
+    lineSize: num(deal.lineSize) <= 0,
+    tenor: Boolean(tenor?.required) && !String(f.tenor ?? "").trim(),
+  };
   const required = [];
   if (missing.facilityType) required.push("select a facility type");
   if (missing.lineSize) required.push("enter the requested line size");
+  if (missing.tenor) required.push("enter the tenor");
 
   // Soft hints, one per step — shown in the footer, never blocking
   const hints = [
@@ -151,18 +153,24 @@ export function assess(deal, region) {
         ? "Create an offer to see indicative terms."
         : "",
     "",
+    "Check the returned client data, then submit.",
   ];
 
   return {
     errors,
     missing,
-    needsComment,
     building,
     facility,
     hints,
-    blockers: [[], required, required.length ? ["complete the required fields in Loan details"] : []],
-    showSafCal: ga && building,
-    showCds:
-      ga && deal.facilityType === "FX/OTC Derivatives" && f.txnType === "CDS" && !deal.cdsDismissed,
+    tenor,
+    tenorOverLimit,
+    unsecured,
+    sblEligible: !unsecured && !tenorOverLimit,
+    blockers: [
+      [],
+      required,
+      required.length ? ["complete the required fields in Loan details"] : [],
+      [],
+    ],
   };
 }

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Banner, Icon, Toggle } from "../lra/ui";
 import { ScaledFrame } from "../lra/frame";
-import { REGIONS } from "../lra/data";
+import { EMEA } from "../lra/data";
 import { LraFlow } from "../lra/LraPrototype";
 import { ALL_PARTIES, COLLATERALS, TICKET, VARIANTS } from "./data";
 import { emptyBespoke } from "./builder";
@@ -24,7 +24,6 @@ const FLOWS = { p1, p2, p3 };
 // later steps render with dashes and a note instead of stopping the user
 const NO_OFFER = { kind: "offer", pending: true, facility: "", lineSize: 0, currency: "USD", collateral: [], host: "", product: "–", rate: "–", borrowers: "–" };
 const STEP_ONE = { p1: P1Step, p2: P2Step, p3: P3Step };
-const EMEA = REGIONS[0];
 
 function initialDeal(variant) {
   const b = emptyBespoke();

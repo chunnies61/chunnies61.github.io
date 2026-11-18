@@ -23,7 +23,7 @@ const initials = (name) =>
     .map((w) => w[0])
     .join("");
 
-// Amend is the common path (outlined); Restructure is the quieter one (text)
+// Amendment is the common path (outlined); Replace is the quieter one (text)
 const ACTION_STYLE = ["is-secondary", "is-ghost"];
 
 export default function FacilityCard({ fac, currency, selected, action, onAction }) {

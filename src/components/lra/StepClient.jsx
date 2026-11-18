@@ -1,5 +1,11 @@
 import { useId, useState } from "react";
-import { CLIENTS, FACILITIES, ROLES } from "./data";
+import {
+  CLIENTS,
+  CLIENT_SEARCH_PLACEHOLDER,
+  FACILITIES,
+  FACILITIES_TOOLTIP,
+  ROLES,
+} from "./data";
 import { builderFor } from "./rules";
 import { Banner, Field, Icon, Section } from "./ui";
 import Dropdown from "./dropdown";
@@ -9,15 +15,20 @@ import FacilityCard from "./FacilityCard";
    this request starts: an action on an existing facility, or a new deal.
    Building an SBL deal goes straight on to Loan details. */
 
-export default function StepClient({ deal, update, addParty, onBuildSbl, region }) {
+export default function StepClient({ deal, update, addParty, onBuildSbl }) {
   const uid = useId();
   const ccy = deal.currency;
   const [clientId, setClientId] = useState("");
   const [role, setRole] = useState("");
 
+  /* A client can be found and still be blocked — outside the jurisdiction, or
+     an employee on a platform that can't submit. The block is explained
+     inline and keeps Add party disabled. */
+  const client = CLIENTS.find((c) => c.id === clientId);
   const canAdd =
     clientId &&
     role &&
+    !client?.error &&
     !deal.loading &&
     !deal.parties.some((p) => p.id === clientId && p.role === role);
 
@@ -31,7 +42,7 @@ export default function StepClient({ deal, update, addParty, onBuildSbl, region 
               id={`${uid}-client`}
               value={clientId}
               onChange={setClientId}
-              placeholder="Select a client…"
+              placeholder={CLIENT_SEARCH_PLACEHOLDER}
               options={CLIENTS.map((c) => ({ value: c.id, label: `${c.name} · ECI ${c.eci}` }))}
             />
           </Field>
@@ -59,6 +70,8 @@ export default function StepClient({ deal, update, addParty, onBuildSbl, region 
           </button>
         </div>
 
+        {client?.error && <Banner tone="warning">{client.error}</Banner>}
+
         {deal.loading && (
           <p className="lra-loading" role="status">
             <span className="lra-spinner" aria-hidden="true" />
@@ -71,12 +84,13 @@ export default function StepClient({ deal, update, addParty, onBuildSbl, region 
             <table className="lra-table">
               <thead>
                 <tr>
-                  <th scope="col">Name</th>
+                  <th scope="col">Client name</th>
                   <th scope="col">ECI</th>
-                  <th scope="col">Employee</th>
+                  <th scope="col">Employee indicator</th>
                   <th scope="col">UCN</th>
+                  <th scope="col">Account #</th>
                   <th scope="col">Platform</th>
-                  <th scope="col">KYC</th>
+                  <th scope="col">KYC status</th>
                   <th scope="col">Role</th>
                   <th scope="col">
                     <span className="lra-sr">Remove</span>
@@ -90,11 +104,25 @@ export default function StepClient({ deal, update, addParty, onBuildSbl, region 
                     <td>{p.eci}</td>
                     <td>{p.employee}</td>
                     <td>{p.ucn}</td>
+                    <td>{p.account}</td>
                     <td>{p.platform}</td>
                     <td>
                       <span className="lra-pill is-good">{p.kyc}</span>
                     </td>
-                    <td>{p.role}</td>
+                    <td>
+                      {/* Role stays editable in the row — the common fix is a
+                          party added under the wrong one */}
+                      <Dropdown
+                        compact
+                        value={p.role}
+                        onChange={(v) =>
+                          update((d) => ({
+                            parties: d.parties.map((q, j) => (j === i ? { ...q, role: v } : q)),
+                          }))
+                        }
+                        options={ROLES}
+                      />
+                    </td>
                     <td>
                       <button
                         type="button"
@@ -114,31 +142,30 @@ export default function StepClient({ deal, update, addParty, onBuildSbl, region 
           </div>
         )}
 
-        {/* USPB: flag the deal for Global Families Group processing */}
-        {region.gfg && deal.parties.length > 0 && (
-          <div className="lra-gfg">
-            <label>
-              <input type="checkbox" checked={deal.gfg} onChange={(e) => update({ gfg: e.target.checked })} />
-              GFG (Global Families Group) Deal
-            </label>
-            <span className="lra-info">
-              <button type="button" className="lra-info-btn" aria-label="About GFG deals" aria-describedby={`${uid}-gfg-tip`}>
-                <Icon name="info" size={18} />
-              </button>
-              <span className="lra-tip" role="tooltip" id={`${uid}-gfg-tip`}>
-                Check this box to flag this deal for Global Families Group processing workflow. This will
-                route the ticket to the appropriate GFG processing team.
-              </span>
-            </span>
-          </div>
-        )}
       </Section>
 
       {deal.parties.length > 0 && (
         <>
           {/* Existing facilities — choosing an action fills Loan details
               with the facility's current terms */}
-          <Section title="Existing facilities">
+          <Section
+            title="Existing facilities"
+            aside={
+              <span className="lra-info">
+                <button
+                  type="button"
+                  className="lra-info-btn"
+                  aria-label="About existing facilities"
+                  aria-describedby={`${uid}-fac-tip`}
+                >
+                  <Icon name="info" size={18} />
+                </button>
+                <span className="lra-tip" role="tooltip" id={`${uid}-fac-tip`}>
+                  {FACILITIES_TOOLTIP}
+                </span>
+              </span>
+            }
+          >
             <div className="lra-facilities lra-fac-grid">
               {FACILITIES.map((fac) => (
                 <FacilityCard

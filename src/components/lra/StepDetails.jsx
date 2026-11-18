@@ -30,7 +30,7 @@ const VERB = {
 // Any change to the inputs an offer is built from withdraws the offers
 const NO_OFFER = { offers: null, offer: null };
 
-export default function StepDetails({ deal, update, setField, verdict, region, tried, onTried }) {
+export default function StepDetails({ deal, update, setField, verdict, tried, onTried }) {
   const uid = useId();
   const [over, setOver] = useState(false); // a file is being dragged over the drop zone
   const f = deal.fields;
@@ -76,12 +76,6 @@ export default function StepDetails({ deal, update, setField, verdict, region, t
         <Banner>
           <strong>{VERB[deal.facilityAction] ?? deal.facilityAction}</strong> {facility.type}, facility{" "}
           {facility.facilityId}. Its current terms are filled in below — change what's needed.
-        </Banner>
-      )}
-      {verdict.showSafCal && (
-        <Banner>
-          Please check that the client's Suitability Assessment Form (SAF) and Client Affirmation
-          Letter (CAL) are valid and lodged in Doc Manager.
         </Banner>
       )}
 
@@ -259,7 +253,7 @@ export default function StepDetails({ deal, update, setField, verdict, region, t
             <Dropdown
               id={`${uid}-ftype`}
               value={deal.facilityType}
-              onChange={(v) => update({ facilityType: v, fields: {}, cdsDismissed: false, ...NO_OFFER })}
+              onChange={(v) => update({ facilityType: v, fields: {}, ...NO_OFFER })}
               placeholder="Select a facility type…"
               options={FACILITY_TYPES}
             />
@@ -297,7 +291,27 @@ export default function StepDetails({ deal, update, setField, verdict, region, t
             />
           </Field>
 
-          {deal.facilityType === "FX/OTC Derivatives" && (
+          {/* Tenor, where the facility type has one (see TENOR_RULES) */}
+          {verdict.tenor && (
+            <Field
+              label="Tenor (months)"
+              id={`${uid}-tenor`}
+              error={errors.tenor}
+              hint={verdict.tenor.max ? `Up to ${verdict.tenor.max} months` : undefined}
+            >
+              <input
+                id={`${uid}-tenor`}
+                inputMode="numeric"
+                placeholder={verdict.tenor.default ? undefined : "e.g. 36"}
+                readOnly={verdict.tenor.fixed}
+                value={f.tenor ?? verdict.tenor.default}
+                aria-invalid={Boolean(errors.tenor)}
+                onChange={(e) => setField("tenor", e.target.value)}
+              />
+            </Field>
+          )}
+
+          {deal.facilityType === "FX/OTC derivatives" && (
             <>
               <Field
                 label={`Peak limit (${ccy})`}
@@ -323,16 +337,6 @@ export default function StepDetails({ deal, update, setField, verdict, region, t
                   onChange={(e) => setField("initialMargin", e.target.value)}
                 />
               </Field>
-              <Field label="Tenor (months)" id={`${uid}-tenor`} error={errors.tenor} hint="Up to 120 months">
-                <input
-                  id={`${uid}-tenor`}
-                  inputMode="numeric"
-                  placeholder="e.g. 60"
-                  value={f.tenor ?? ""}
-                  aria-invalid={Boolean(errors.tenor)}
-                  onChange={(e) => setField("tenor", e.target.value)}
-                />
-              </Field>
               <Field label={`Expected notional (${ccy})`} id={`${uid}-notional`}>
                 <input
                   id={`${uid}-notional`}
@@ -346,10 +350,7 @@ export default function StepDetails({ deal, update, setField, verdict, region, t
                 <Dropdown
                   id={`${uid}-txn`}
                   value={f.txnType ?? ""}
-                  onChange={(v) => {
-                    setField("txnType", v);
-                    update({ cdsDismissed: false });
-                  }}
+                  onChange={(v) => setField("txnType", v)}
                   placeholder="Select…"
                   options={TRANSACTION_TYPES}
                 />
@@ -357,7 +358,7 @@ export default function StepDetails({ deal, update, setField, verdict, region, t
             </>
           )}
 
-          {deal.facilityType === "F&O / ETP" && (
+          {deal.facilityType === "F&O/ETP derivatives" && (
             <>
               <Field label="Initial margin (%)" id={`${uid}-fo-im`}>
                 <input
@@ -379,34 +380,19 @@ export default function StepDetails({ deal, update, setField, verdict, region, t
             </>
           )}
 
-          {deal.facilityType === "Commitment – Term loan" && (
-            <>
-              <Field label="Term (months)" id={`${uid}-term`}>
-                <input
-                  id={`${uid}-term`}
-                  inputMode="numeric"
-                  placeholder="e.g. 36"
-                  value={f.term ?? ""}
-                  onChange={(e) => setField("term", e.target.value)}
-                />
-              </Field>
-              <Field label="Repayment" id={`${uid}-repay`}>
-                <Dropdown
-                  id={`${uid}-repay`}
-                  value={f.repayment ?? REPAYMENTS[0]}
-                  onChange={(v) => setField("repayment", v)}
-                  options={REPAYMENTS}
-                />
-              </Field>
-            </>
+          {deal.facilityType === "Committed term loan" && (
+            <Field label="Repayment" id={`${uid}-repay`}>
+              <Dropdown
+                id={`${uid}-repay`}
+                value={f.repayment ?? REPAYMENTS[0]}
+                onChange={(v) => setField("repayment", v)}
+                options={REPAYMENTS}
+              />
+            </Field>
           )}
 
-          {deal.facilityType === "Global limit" && (
-            <Field
-              label="Equity concentration (%)"
-              id={`${uid}-eq`}
-              hint={region.compliance ? "Above 40% needs a supporting comment" : undefined}
-            >
+          {deal.facilityType === "Advised line" && (
+            <Field label="Equity concentration (%)" id={`${uid}-eq`}>
               <input
                 id={`${uid}-eq`}
                 inputMode="decimal"
@@ -417,19 +403,6 @@ export default function StepDetails({ deal, update, setField, verdict, region, t
             </Field>
           )}
         </div>
-
-        {verdict.needsComment && (
-          <Field label="Supporting comment" id={`${uid}-comment`} error={errors.comment}>
-            <textarea
-              id={`${uid}-comment`}
-              rows={3}
-              placeholder="Explain why the concentration is acceptable for this client…"
-              value={f.comment ?? ""}
-              aria-invalid={Boolean(errors.comment)}
-              onChange={(e) => setField("comment", e.target.value)}
-            />
-          </Field>
-        )}
       </Section>
 
       {/* Supporting documents */}
