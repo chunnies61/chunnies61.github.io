@@ -1285,7 +1285,7 @@ a.cs-index-item.is-active:hover {
 /* Subtext: smaller and regular weight, in the case studies' secondary gray */
 .cs-outcome-desc {
   margin-top: 6px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--gray-800);
 }
@@ -1478,7 +1478,7 @@ a.cs-index-item.is-active:hover {
 .cs-outcomes-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 12px;
 }
 .cs-outcomes-2 {
   grid-template-columns: repeat(2, 1fr);
@@ -1504,7 +1504,7 @@ a.cs-index-item.is-active:hover {
   flex: none;
   width: 36px;
   height: 36px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   border-radius: 10px;
   background: #bfe6fb;
   color: var(--gray-900);
@@ -1519,7 +1519,7 @@ a.cs-index-item.is-active:hover {
 /* The number follows the text at an ordinary distance, so the card is only as tall as its
    content */
 .cs-outcome-value {
-  margin-top: 16px;
+  margin-top: 12px;
   font-family: var(--font-display);
   font-size: 32px;
   font-weight: 800;
@@ -1533,7 +1533,7 @@ a.cs-index-item.is-active:hover {
 /* Main line of the card */
 .cs-outcome-label {
   margin: 0;
-  font-size: 17px;
+  font-size: 16px;
   color: var(--text-soft);
 }
 
