@@ -188,10 +188,10 @@ a.cs-index-item.is-active:hover {
 }
 
 /* Text selected in the body of a case study gets a highlighter-pen background, in the
-   primary blue, light enough for the dark text to stay readable. Only here: the page header
-   and the rest of the site keep the browser's own selection colour. */
+   lime of loopsii.com's selection (#e0f661), for now. Only here: the page header and the
+   rest of the site keep the browser's own selection colour. */
 .cs-body ::selection {
-  background: color-mix(in srgb, var(--accent) 32%, transparent);
+  background: #e0f661;
   color: var(--gray-900);
 }
 
