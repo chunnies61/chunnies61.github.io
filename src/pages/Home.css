@@ -1,40 +1,34 @@
 .home {
-  background: #ffffff;
-}
-
-.hero {
   position: relative;
-  /* No `overflow: hidden` here: the aurora below has to reach up past the hero
-     to sit behind the sticky nav. The falling tools don't need it either —
-     .falling-tools clips its own stage. */
-  padding: var(--space-page-top) 0 var(--space-section);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  isolation: isolate;
 }
 
-/* The hero's backdrop: light gray graph paper, a very faint grid of primary-blue lines
-   every 34px (the recipe loopsii.com uses, in this site's colours). It starts 72px
-   above the hero so it runs behind the transparent nav, and carries on 140px past it
-   while it fades out, so the grey never ends on a hard line against the next section.
-   As the pseudo element is the hero's first child it paints behind the text and the
-   falling tools. */
-.hero::before {
+/* Light gray graph paper behind the whole page: a very faint grid of primary-blue
+   lines every 34px (the recipe loopsii.com uses, in this site's colours). It starts
+   72px above the page so it also runs behind the transparent nav. */
+.home::before {
   content: "";
   position: absolute;
   top: -72px;
-  bottom: -140px;
   left: 0;
   right: 0;
-  z-index: 0;
+  bottom: 0;
+  z-index: -1;
   pointer-events: none;
   background-color: var(--gray-50);
   background-image:
     linear-gradient(90deg, rgba(69, 117, 231, 0.08) 1px, transparent 1px),
     linear-gradient(rgba(69, 117, 231, 0.08) 1px, transparent 1px);
   background-size: 34px 34px;
-  -webkit-mask-image: linear-gradient(to bottom, #000 74%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 74%, transparent 100%);
+}
+
+.hero {
+  position: relative;
+  /* The falling tools don't need `overflow: hidden` — .falling-tools clips its own stage. */
+  padding: var(--space-page-top) 0 var(--space-section);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .hero-inner {
