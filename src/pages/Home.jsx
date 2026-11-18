@@ -70,12 +70,12 @@ export default function Home() {
                 </div>
                 <div className="case-card-body">
                   <h3 className="md-headline-small">{cs.title}</h3>
+                  <p className="case-card-desc md-body-medium">{cs.desc}</p>
                   <div className="case-card-tags">
                     {cs.tags.map((tag) => (
                       <Tag key={tag}>{tag}</Tag>
                     ))}
                   </div>
-                  <p className="case-card-desc md-body-medium">{cs.desc}</p>
                 </div>
               </Link>
             ))}
