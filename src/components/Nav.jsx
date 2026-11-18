@@ -4,9 +4,7 @@ import site from "../data/site.json";
 import "./Nav.css";
 
 export default function Nav() {
-  // The home page runs its aurora up behind this bar, so the nav is
-  // transparent there — but only while the page is at the top. Once anything
-  // scrolls under the sticky bar it needs its background back.
+  // The floating capsule tightens into a smaller one once the page scrolls.
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -18,7 +16,7 @@ export default function Nav() {
 
   return (
     <header className={"nav" + (scrolled ? " is-scrolled" : "")}>
-      <div className="wrap nav-inner">
+      <div className="nav-inner">
         <Link
           to="/"
           className="nav-logo"

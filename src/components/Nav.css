@@ -1,40 +1,68 @@
+/* ===== Header: a floating capsule =====
+   Shape and behaviour after loopsii.com's header: a rounded pill with a thin outline that
+   floats over the page. Its background is see-through and blurred, not white, so whatever
+   scrolls underneath stays visible but soft. Once the page scrolls it tightens into a
+   smaller pill.
+
+   The <header> itself stays a sticky 72px strip, as before, so the page layout under it
+   doesn't move; only the pill inside is drawn. */
 .nav {
-  padding: 20px 0;
-  background: #ffffff;
   position: sticky;
   top: 0;
   z-index: 50;
-  transition: background 0.25s ease;
-}
-
-/* Home only: the hero's gradient runs up behind the bar, so let it show through
-   while the page sits at the top. Every other page keeps a white nav. */
-body:has(.home) .nav {
-  background: transparent;
-}
-
-body:has(.home) .nav.is-scrolled {
-  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 8px 24px;
+  pointer-events: none;   /* the strip is transparent; only the pill takes the pointer */
 }
 
 .nav-inner {
+  pointer-events: auto;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  max-width: calc(var(--max-width) - 48px);
+  height: 56px;
+  padding: 0 12px 0 24px;
+  border: 1px solid color-mix(in srgb, var(--gray-900) 40%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, #fff 35%, transparent);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  transition: max-width 0.7s cubic-bezier(0.3, 0, 0.2, 1), height 0.5s ease, background-color 0.4s ease;
+}
+
+.nav.is-scrolled .nav-inner {
+  max-width: 560px;
+  height: 48px;
+  background: color-mix(in srgb, #fff 45%, transparent);
 }
 
 .nav-logo img {
+  display: block;
   height: 32px;
+  transition: height 0.5s ease;
+}
+
+.nav.is-scrolled .nav-logo img {
+  height: 26px;
 }
 
 /* Type comes from .md-label-large on each link; only layout and colour here.
-   Gray 800 from the neutral ramp in index.css: dark enough to read over the
-   home hero's gradient as well as on white. */
+   Gray 800 from the neutral ramp in index.css. */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 48px;
+  padding-right: 12px;
   color: var(--gray-800);
+  transition: gap 0.5s ease;
+}
+
+.nav.is-scrolled .nav-links {
+  gap: 32px;
 }
 
 .nav-links a:hover {
@@ -42,7 +70,26 @@ body:has(.home) .nav.is-scrolled {
 }
 
 @media (max-width: 640px) {
+  .nav {
+    padding: 8px 12px;
+  }
+  .nav-inner {
+    padding: 0 8px 0 18px;
+  }
+  .nav.is-scrolled .nav-inner {
+    max-width: 100%;
+  }
+  .nav-links,
+  .nav.is-scrolled .nav-links {
+    gap: 20px;
+    padding-right: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-inner,
+  .nav-logo img,
   .nav-links {
-    gap: 24px;
+    transition: none;
   }
 }
