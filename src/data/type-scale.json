@@ -1,32 +1,32 @@
 {
-  "note": "Material Design 3 type scale, 15 roles. Sizes, line-heights and letter-spacings are the MD3 values. Weights and families are this site's: Bricolage Grotesque 800 for Display, 700 for Headline, DM Sans 500 for Title, Body and Label. Line height is 130% of the size for Display and Headline, 160% for Title, Body and Label. Mirrored as .md-* classes in src/index.css — change both together.",
+  "note": "Material Design 3 type scale, 15 roles. Sizes, line-heights and letter-spacings are the MD3 values. Weights and families are this site's: Bricolage Grotesque 800 for Display, 700 for Headline, DM Sans 500 for Title, Body and Label. Line height is 150% of the size for every role. Mirrored as .md-* classes in src/index.css — change both together.",
   "groups": [
     {
       "name": "Display",
       "family": "Bricolage Grotesque",
       "familyToken": "--font-display",
       "weight": 800,
-      "use": "Hero moments and page headers. Sparingly — one per screen. Line height runs 130% of the size.",
+      "use": "Hero moments and page headers. Sparingly — one per screen. Line height runs 150% of the size.",
       "roles": [
         {
           "role": "Display Large",
           "class": "md-display-large",
           "size": 56,
-          "lineHeight": 72.8,
+          "lineHeight": 84,
           "letterSpacing": 0
         },
         {
           "role": "Display Medium",
           "class": "md-display-medium",
           "size": 45,
-          "lineHeight": 58.5,
+          "lineHeight": 67.5,
           "letterSpacing": 0
         },
         {
           "role": "Display Small",
           "class": "md-display-small",
           "size": 36,
-          "lineHeight": 46.8,
+          "lineHeight": 54,
           "letterSpacing": 0
         }
       ]
@@ -36,27 +36,27 @@
       "family": "Bricolage Grotesque",
       "familyToken": "--font-display",
       "weight": 700,
-      "use": "Section headings — the level a reader scans to find their place. Line height runs 130% of the size.",
+      "use": "Section headings — the level a reader scans to find their place. Line height runs 150% of the size.",
       "roles": [
         {
           "role": "Headline Large",
           "class": "md-headline-large",
           "size": 32,
-          "lineHeight": 41.6,
+          "lineHeight": 48,
           "letterSpacing": 0
         },
         {
           "role": "Headline Medium",
           "class": "md-headline-medium",
           "size": 28,
-          "lineHeight": 36.4,
+          "lineHeight": 42,
           "letterSpacing": 0
         },
         {
           "role": "Headline Small",
           "class": "md-headline-small",
           "size": 20,
-          "lineHeight": 26,
+          "lineHeight": 30,
           "letterSpacing": 0
         }
       ]
@@ -66,27 +66,27 @@
       "family": "DM Sans",
       "familyToken": "--font-ui",
       "weight": 500,
-      "use": "Card, panel and list-item headings — shorter than a headline, heavier than body. Line height runs 160% of the size.",
+      "use": "Card, panel and list-item headings — shorter than a headline, heavier than body. Line height runs 150% of the size.",
       "roles": [
         {
           "role": "Title Large",
           "class": "md-title-large",
           "size": 22,
-          "lineHeight": 35.2,
+          "lineHeight": 33,
           "letterSpacing": 0
         },
         {
           "role": "Title Medium",
           "class": "md-title-medium",
           "size": 16,
-          "lineHeight": 25.6,
+          "lineHeight": 24,
           "letterSpacing": 0.15
         },
         {
           "role": "Title Small",
           "class": "md-title-small",
           "size": 14,
-          "lineHeight": 22.4,
+          "lineHeight": 21,
           "letterSpacing": 0.1
         }
       ]
@@ -96,27 +96,27 @@
       "family": "DM Sans",
       "familyToken": "--font-ui",
       "weight": 500,
-      "use": "Running prose. Body Large is the default reading size. Line height runs 160% of the size.",
+      "use": "Running prose. Body Large is the default reading size. Line height runs 150% of the size.",
       "roles": [
         {
           "role": "Body Large",
           "class": "md-body-large",
           "size": 16,
-          "lineHeight": 25.6,
+          "lineHeight": 24,
           "letterSpacing": 0.5
         },
         {
           "role": "Body Medium",
           "class": "md-body-medium",
           "size": 14,
-          "lineHeight": 22.4,
+          "lineHeight": 21,
           "letterSpacing": 0.25
         },
         {
           "role": "Body Small",
           "class": "md-body-small",
           "size": 12,
-          "lineHeight": 19.2,
+          "lineHeight": 18,
           "letterSpacing": 0.4
         }
       ]
@@ -126,27 +126,27 @@
       "family": "DM Sans",
       "familyToken": "--font-ui",
       "weight": 600,
-      "use": "Buttons, tabs, eyebrows, captions — text attached to a control or a thing. Line height runs 160% of the size.",
+      "use": "Buttons, tabs, eyebrows, captions — text attached to a control or a thing. Line height runs 150% of the size.",
       "roles": [
         {
           "role": "Label Large",
           "class": "md-label-large",
           "size": 14,
-          "lineHeight": 22.4,
+          "lineHeight": 21,
           "letterSpacing": 0.1
         },
         {
           "role": "Label Medium",
           "class": "md-label-medium",
           "size": 12,
-          "lineHeight": 19.2,
+          "lineHeight": 18,
           "letterSpacing": 0.5
         },
         {
           "role": "Label Small",
           "class": "md-label-small",
           "size": 11,
-          "lineHeight": 17.6,
+          "lineHeight": 16.5,
           "letterSpacing": 0.5
         }
       ]

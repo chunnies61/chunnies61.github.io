@@ -65,6 +65,10 @@
   gap: 32px;
 }
 
+.nav-links a {
+  text-transform: uppercase;
+}
+
 .nav-links a:hover {
   color: var(--accent-dark);
 }

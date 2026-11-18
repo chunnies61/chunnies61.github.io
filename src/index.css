@@ -175,21 +175,21 @@ button {
 .md-display-large {
   font-family: var(--font-display);
   font-size: 56px;
-  line-height: 72.8px; /* 130% */
+  line-height: 84px; /* 150% */
   letter-spacing: 0;
   font-weight: 800;
 }
 .md-display-medium {
   font-family: var(--font-display);
   font-size: 45px;
-  line-height: 58.5px; /* 130% */
+  line-height: 67.5px; /* 150% */
   letter-spacing: 0;
   font-weight: 800;
 }
 .md-display-small {
   font-family: var(--font-display);
   font-size: 36px;
-  line-height: 46.8px; /* 130% */
+  line-height: 54px; /* 150% */
   letter-spacing: 0;
   font-weight: 800;
 }
@@ -198,21 +198,21 @@ button {
 .md-headline-large {
   font-family: var(--font-display);
   font-size: 32px;
-  line-height: 41.6px; /* 130% */
+  line-height: 48px; /* 150% */
   letter-spacing: 0;
   font-weight: 700;
 }
 .md-headline-medium {
   font-family: var(--font-display);
   font-size: 28px;
-  line-height: 36.4px; /* 130% */
+  line-height: 42px; /* 150% */
   letter-spacing: 0;
   font-weight: 700;
 }
 .md-headline-small {
   font-family: var(--font-display);
   font-size: 20px;
-  line-height: 26px; /* 130% */
+  line-height: 30px; /* 150% */
   letter-spacing: 0;
   font-weight: 700;
 }
@@ -221,21 +221,21 @@ button {
 .md-title-large {
   font-family: var(--font-ui);
   font-size: 22px;
-  line-height: 35.2px; /* 160% */
+  line-height: 33px; /* 150% */
   letter-spacing: 0;
   font-weight: 500;
 }
 .md-title-medium {
   font-family: var(--font-ui);
   font-size: 16px;
-  line-height: 25.6px; /* 160% */
+  line-height: 24px; /* 150% */
   letter-spacing: 0.15px;
   font-weight: 500;
 }
 .md-title-small {
   font-family: var(--font-ui);
   font-size: 14px;
-  line-height: 22.4px; /* 160% */
+  line-height: 21px; /* 150% */
   letter-spacing: 0.1px;
   font-weight: 500;
 }
@@ -244,21 +244,21 @@ button {
 .md-body-large {
   font-family: var(--font-ui);
   font-size: 16px;
-  line-height: 25.6px; /* 160% */
+  line-height: 24px; /* 150% */
   letter-spacing: 0.5px;
   font-weight: 500;
 }
 .md-body-medium {
   font-family: var(--font-ui);
   font-size: 14px;
-  line-height: 22.4px; /* 160% */
+  line-height: 21px; /* 150% */
   letter-spacing: 0.25px;
   font-weight: 500;
 }
 .md-body-small {
   font-family: var(--font-ui);
   font-size: 12px;
-  line-height: 19.2px; /* 160% */
+  line-height: 18px; /* 150% */
   letter-spacing: 0.4px;
   font-weight: 500;
 }
@@ -267,21 +267,21 @@ button {
 .md-label-large {
   font-family: var(--font-ui);
   font-size: 14px;
-  line-height: 22.4px; /* 160% */
+  line-height: 21px; /* 150% */
   letter-spacing: 0.1px;
   font-weight: 600;
 }
 .md-label-medium {
   font-family: var(--font-ui);
   font-size: 12px;
-  line-height: 19.2px; /* 160% */
+  line-height: 18px; /* 150% */
   letter-spacing: 0.5px;
   font-weight: 600;
 }
 .md-label-small {
   font-family: var(--font-ui);
   font-size: 11px;
-  line-height: 17.6px; /* 160% */
+  line-height: 16.5px; /* 150% */
   letter-spacing: 0.5px;
   font-weight: 600;
 }
@@ -339,4 +339,15 @@ button {
 .cs-section--fullbleed::after,
 .cs-step:first-of-type::before {
   display: none;
+}
+
+/* ===== One line height: 150% =====
+   Every piece of site text sets its line height to 1.5 times its own font size, whatever
+   the component's stylesheet says. The type-scale roles above already do; this covers the
+   rest (page-specific headings, captions, buttons, case-study copy). It is scoped to the
+   site's pages, nav and footer, and skips the embedded prototypes (.lra, .ws, .vp), which
+   keep their own Untitled UI scale, plus icon-like glyphs (emoji, avatars, stars) whose
+   boxes are sized by hand. */
+:is(main, .nav, .footer) *:not(svg, svg *, [class*="emoji"], [class*="avatar"], [class*="portrait"], [class*="star"], .lra, .lra *, .ws, .ws *, .vp, .vp *, .cs-proto-stage *) {
+  line-height: 1.5 !important;
 }
