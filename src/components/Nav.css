@@ -12,7 +12,7 @@
   z-index: 50;
   display: flex;
   justify-content: center;
-  padding: 8px 24px;
+  padding: 12px 24px;
   pointer-events: none;   /* the strip is transparent; only the pill takes the pointer */
 }
 
@@ -24,7 +24,7 @@
   justify-content: space-between;
   width: 100%;
   max-width: calc(var(--max-width) - 48px);
-  height: 56px;
+  height: 48px;
   padding: 0 12px 0 24px;
   border: 1px solid color-mix(in srgb, var(--gray-900) 40%, transparent);
   border-radius: 999px;
@@ -35,19 +35,19 @@
 }
 
 .nav.is-scrolled .nav-inner {
-  max-width: 560px;
-  height: 48px;
+  max-width: 540px;
+  height: 42px;
   background: color-mix(in srgb, #fff 45%, transparent);
 }
 
 .nav-logo img {
   display: block;
-  height: 29px;
+  height: 26px;
   transition: height 0.5s ease;
 }
 
 .nav.is-scrolled .nav-logo img {
-  height: 23px;
+  height: 21px;
 }
 
 /* Type comes from .md-label-medium on each link; only layout and colour here.
@@ -71,7 +71,7 @@
 
 @media (max-width: 640px) {
   .nav {
-    padding: 8px 12px;
+    padding: 12px 12px;
   }
   .nav-inner {
     padding: 0 8px 0 18px;
