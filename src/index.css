@@ -118,6 +118,8 @@ button {
   border-radius: var(--radius-tag);
   background: var(--tag-surface);
   color: var(--text-soft);
+  /* inset ring, so the outline doesn't change the chip's size */
+  box-shadow: inset 0 0 0 1.5px var(--gray-900);
 }
 
 .btn {
