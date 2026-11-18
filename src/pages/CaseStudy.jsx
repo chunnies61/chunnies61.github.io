@@ -868,6 +868,9 @@ export default function CaseStudy() {
                 to={`/case-studies/${cs.slug}`}
                 className={"cs-pager-card cs-pager-card--" + dir}
               >
+                <span className="cs-pager-thumb">
+                  <img src={cs.thumb || cs.heroImage} alt="" loading="lazy" />
+                </span>
                 <span className="cs-pager-body">
                   <span className="cs-pager-label">
                     {dir === "prev" ? (

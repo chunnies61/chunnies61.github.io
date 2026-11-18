@@ -1665,6 +1665,28 @@ a.cs-index-item.is-active:hover {
   background: #f4f2f8;
 }
 
+/* Cover thumbnail — same crop ratio as the homepage case cards */
+.cs-pager-thumb {
+  position: relative;
+  flex: 0 0 168px;
+  aspect-ratio: 470 / 312;
+  border-radius: var(--radius-media);
+  overflow: hidden;
+  background: var(--placeholder-bg);
+}
+
+.cs-pager-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.cs-pager-card:hover .cs-pager-thumb img {
+  transform: scale(1.03);
+}
+
 .cs-pager-body {
   display: flex;
   flex-direction: column;
@@ -1709,6 +1731,17 @@ a.cs-index-item.is-active:hover {
   }
   .cs-pager-empty {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .cs-pager-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cs-pager-thumb {
+    flex-basis: auto;
+    width: 100%;
   }
 }
 
