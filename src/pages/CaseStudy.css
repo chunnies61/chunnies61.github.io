@@ -1497,8 +1497,7 @@ a.cs-index-item.is-active:hover {
 }
 
 /* The chip: a small rounded square in one of the Key skills pastels, holding the metric's
-   filled icon in a deeper shade of the same hue (an emoji, or nothing, if the data has no
-   icon). */
+   filled icon in the darkest gray (an emoji, or nothing, if the data has no icon). */
 .cs-outcome-chip {
   display: flex;
   align-items: center;
@@ -1509,14 +1508,14 @@ a.cs-index-item.is-active:hover {
   margin-bottom: 14px;
   border-radius: 10px;
   background: #bfe6fb;
-  color: #2b7fae;
+  color: var(--gray-900);
   font-size: 18px;
 }
-.cs-outcome-tile:nth-child(6n + 2) .cs-outcome-chip { background: #fde9a8; color: #b07d0a; }
-.cs-outcome-tile:nth-child(6n + 3) .cs-outcome-chip { background: #c4ecd6; color: #2f8a5f; }
-.cs-outcome-tile:nth-child(6n + 4) .cs-outcome-chip { background: #dacfff; color: #6a52c9; }
-.cs-outcome-tile:nth-child(6n + 5) .cs-outcome-chip { background: #ffc9dd; color: #c2467a; }
-.cs-outcome-tile:nth-child(6n + 6) .cs-outcome-chip { background: #cbf26c; color: #6b8f0a; }
+.cs-outcome-tile:nth-child(6n + 2) .cs-outcome-chip { background: #fde9a8; }
+.cs-outcome-tile:nth-child(6n + 3) .cs-outcome-chip { background: #c4ecd6; }
+.cs-outcome-tile:nth-child(6n + 4) .cs-outcome-chip { background: #dacfff; }
+.cs-outcome-tile:nth-child(6n + 5) .cs-outcome-chip { background: #ffc9dd; }
+.cs-outcome-tile:nth-child(6n + 6) .cs-outcome-chip { background: #cbf26c; }
 
 /* The number sits on the bottom edge whatever the label's length */
 .cs-outcome-value {
