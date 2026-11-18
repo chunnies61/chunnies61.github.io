@@ -61,6 +61,14 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Text a visitor selects gets a highlighter-pen background (the lime from the Key skills
+   tiles), with the text kept dark so it stays readable on white, grey and the blue panels alike. */
+::selection {
+  background: #cbf26c;
+  color: var(--gray-900);
+  -webkit-text-fill-color: var(--gray-900);
+}
+
 body {
   margin: 0;
   background: var(--bg);
