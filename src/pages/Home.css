@@ -44,7 +44,7 @@ body.has-grid {
 .hero-subtitle {
   margin: 24px auto 0;
   max-width: 620px;
-  color: var(--gray-700);
+  color: var(--gray-800);
 }
 
 .hero-actions {
