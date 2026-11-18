@@ -1473,7 +1473,7 @@ a.cs-index-item.is-active:hover {
 
 /* Outcomes — metric cards. After the pricing cards on loopsii.com: a small colour chip with
    an icon top-left, what the number is in the middle (a main line and a lighter subtext),
-   the big number at the bottom. One equal column per stat, so any count fills the row
+   the big number below them. One equal column per stat, so any count fills the row
    rather than leaving an empty track at the end of a fixed four-column grid. */
 .cs-outcomes-grid {
   display: grid;
@@ -1490,7 +1490,6 @@ a.cs-index-item.is-active:hover {
 .cs-outcome-tile {
   display: flex;
   flex-direction: column;
-  min-height: 208px;
   padding: 24px;
   border-radius: calc(var(--radius-card) + 4px);
   background: var(--surface-tint);
@@ -1517,10 +1516,10 @@ a.cs-index-item.is-active:hover {
 .cs-outcome-tile:nth-child(6n + 5) .cs-outcome-chip { background: #ffc9dd; }
 .cs-outcome-tile:nth-child(6n + 6) .cs-outcome-chip { background: #cbf26c; }
 
-/* The number sits on the bottom edge whatever the label's length */
+/* The number follows the text at an ordinary distance, so the card is only as tall as its
+   content */
 .cs-outcome-value {
-  margin-top: auto;
-  padding-top: 20px;
+  margin-top: 16px;
   font-family: var(--font-display);
   font-size: 32px;
   font-weight: 800;
@@ -1534,7 +1533,7 @@ a.cs-index-item.is-active:hover {
 /* Main line of the card */
 .cs-outcome-label {
   margin: 0;
-  font-size: 18px;
+  font-size: 17px;
   color: var(--text-soft);
 }
 
