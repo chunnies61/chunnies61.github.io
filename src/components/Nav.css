@@ -42,15 +42,15 @@
 
 .nav-logo img {
   display: block;
-  height: 32px;
+  height: 29px;
   transition: height 0.5s ease;
 }
 
 .nav.is-scrolled .nav-logo img {
-  height: 26px;
+  height: 23px;
 }
 
-/* Type comes from .md-label-large on each link; only layout and colour here.
+/* Type comes from .md-label-medium on each link; only layout and colour here.
    Gray 800 from the neutral ramp in index.css. */
 .nav-links {
   display: flex;
