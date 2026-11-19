@@ -49,14 +49,14 @@ function Row({ label, children }) {
   );
 }
 
-/* The colour chip on a metric card: a filled Iconstica icon picked by name in the data
-   (see scripts/build-metric-icons.mjs), or an emoji, or just the colour. */
+/* The icon on a metric card, in the card's own colour: a filled Iconstica icon picked
+   by name in the data (see scripts/build-metric-icons.mjs), or an emoji. */
 function MetricChip({ icon, emoji }) {
   const parts = icon && METRIC_ICONS[icon];
   return (
     <span className="cs-outcome-chip" aria-hidden="true">
       {parts ? (
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
           {parts.map((p, i) => (
             <path key={i} {...p} />
           ))}

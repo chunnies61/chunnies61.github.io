@@ -1504,26 +1504,26 @@ a.cs-index-item.is-active:hover {
   background: var(--surface-tint);
 }
 
-/* The chip: a small rounded square in one of the Key skills pastels, holding the metric's
-   filled icon in the darkest gray (an emoji, or nothing, if the data has no icon). */
+/* The metric's filled icon, carrying the card's colour itself — no chip behind it.
+   The six hues cycle in the Key skills order; the four that already have a text-weight
+   token on the site use it, so a metric icon and a pill of the same colour match. */
 .cs-outcome-chip {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex: none;
-  width: 36px;
-  height: 36px;
+  align-self: flex-start;
+  height: 24px;
   margin-bottom: 12px;
-  border-radius: 10px;
-  background: #bfe6fb;
-  color: var(--gray-900);
-  font-size: 18px;
+  color: var(--pill-blue-text);
+  font-size: 22px;
+  line-height: 1;
 }
-.cs-outcome-tile:nth-child(6n + 2) .cs-outcome-chip { background: #fde9a8; }
-.cs-outcome-tile:nth-child(6n + 3) .cs-outcome-chip { background: #c4ecd6; }
-.cs-outcome-tile:nth-child(6n + 4) .cs-outcome-chip { background: #dacfff; }
-.cs-outcome-tile:nth-child(6n + 5) .cs-outcome-chip { background: #ffc9dd; }
-.cs-outcome-tile:nth-child(6n + 6) .cs-outcome-chip { background: #cbf26c; }
+.cs-outcome-tile:nth-child(6n + 2) .cs-outcome-chip { color: var(--pill-yellow-text); }
+.cs-outcome-tile:nth-child(6n + 3) .cs-outcome-chip { color: var(--pill-green-text); }
+.cs-outcome-tile:nth-child(6n + 4) .cs-outcome-chip { color: #6442c4; } /* violet */
+.cs-outcome-tile:nth-child(6n + 5) .cs-outcome-chip { color: var(--pill-pink-text); }
+.cs-outcome-tile:nth-child(6n + 6) .cs-outcome-chip { color: #5f7d12; } /* lime */
 
 /* The number follows the text at an ordinary distance, so the card is only as tall as its
    content */
