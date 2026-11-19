@@ -201,7 +201,8 @@ export default function StepDetails({ deal, update, setField, verdict, tried, on
         </div>
         {deal.hostMode === "existing" ? (
           <>
-            <div className="lra-table-wrap">
+            {/* Three short columns — it sizes to them rather than to the row */}
+            <div className="lra-table-wrap is-narrow">
               <table className="lra-table">
                 <thead>
                   <tr>

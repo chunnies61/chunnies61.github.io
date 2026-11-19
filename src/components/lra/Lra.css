@@ -1170,6 +1170,11 @@
 }
 
 /* --- Tables: a card with a gray header row ----------------------------------- */
+/* A table of a few short columns doesn't need the whole row */
+.lra-table-wrap.is-narrow {
+  max-width: 560px;
+}
+
 .lra-table-wrap {
   overflow-x: auto;
   border: 1px solid var(--ui-border);
@@ -2556,7 +2561,7 @@
 }
 
 .lra-cq-tree > li:has(.is-open)::before {
-  background: var(--ui-accent);
+  background: var(--ui-primary);
 }
 
 .lra-cq-item {
@@ -2581,8 +2586,8 @@
 
 .lra-cq-item.is-open {
   background: var(--ui-row-selected);
-  border-color: var(--ui-accent);
-  box-shadow: inset 3px 0 0 var(--ui-accent);
+  border-color: var(--ui-primary);
+  box-shadow: inset 3px 0 0 var(--ui-primary);
 }
 
 .lra-cq-item-top {
