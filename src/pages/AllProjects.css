@@ -85,7 +85,7 @@
   text-decoration: underline;
 }
 
-/* "View website" and "See the Red Dot award" sit side by side, wrapping on narrow screens */
+/* "View project website" and "View on Red Dot" sit side by side, wrapping on narrow screens */
 .ap-links {
   display: flex;
   flex-wrap: wrap;

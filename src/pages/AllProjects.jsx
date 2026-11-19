@@ -108,7 +108,7 @@ export default function AllProjects() {
                   <div className="ap-links">
                     {item.link && (
                       <a className="ap-learn-more" href={item.link} target="_blank" rel="noreferrer">
-                        View website
+                        View project website
                         <Icon name="openInNew" size={16} />
                       </a>
                     )}
