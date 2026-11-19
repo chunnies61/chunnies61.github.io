@@ -52,10 +52,12 @@ function Row({ label, children }) {
 
 /* The icon on a metric card, in the card's own colour: a filled Iconstica icon picked
    by name in the data (see scripts/build-metric-icons.mjs), or an emoji. */
-function MetricChip({ icon, emoji }) {
+/* A metric can set "tone" (e.g. "red") to colour its icon by meaning instead of by
+   its place in the row */
+function MetricChip({ icon, emoji, tone }) {
   const parts = icon && METRIC_ICONS[icon];
   return (
-    <span className="cs-outcome-chip" aria-hidden="true">
+    <span className={"cs-outcome-chip" + (tone ? " is-" + tone : "")} aria-hidden="true">
       {parts ? (
         <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
           {parts.map((p, i) => (
@@ -74,7 +76,7 @@ function StatGrid({ stats }) {
     <div className="cs-outcomes-grid">
       {stats.map((stat) => (
         <div className="cs-outcome-tile" key={stat.label}>
-          <MetricChip icon={stat.icon} emoji={stat.emoji} />
+          <MetricChip icon={stat.icon} emoji={stat.emoji} tone={stat.tone} />
           <p className="cs-outcome-label cs-outcome-label-strong">{stat.label}</p>
           <p className="cs-outcome-value">{stat.value}</p>
         </div>
@@ -503,7 +505,7 @@ function Block({ block }) {
         <div className={"cs-outcomes-grid cs-outcomes-" + block.items.length}>
           {block.items.map((item) => (
             <div className="cs-outcome-tile" key={item.label}>
-              <MetricChip icon={item.icon} emoji={item.emoji} />
+              <MetricChip icon={item.icon} emoji={item.emoji} tone={item.tone} />
               <p className="cs-outcome-label cs-outcome-label-strong">{item.label}</p>
               {item.desc && <p className="cs-outcome-desc">{item.desc}</p>}
               {item.value && <p className="cs-outcome-value">{item.value}</p>}

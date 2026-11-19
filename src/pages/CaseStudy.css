@@ -1524,6 +1524,8 @@ a.cs-index-item.is-active:hover {
 .cs-outcome-tile:nth-child(6n + 4) .cs-outcome-chip { color: #6442c4; } /* violet */
 .cs-outcome-tile:nth-child(6n + 5) .cs-outcome-chip { color: var(--pill-pink-text); }
 .cs-outcome-tile:nth-child(6n + 6) .cs-outcome-chip { color: #5f7d12; } /* lime */
+/* Tone set in the data wins over the place-in-row colour */
+.cs-outcomes-grid .cs-outcome-tile .cs-outcome-chip.is-red { color: #d0342c; }
 
 /* The number sits on the bottom of the card, so the figures line up across a row however
    long each label runs; it keeps at least 12px from the text above it */

@@ -300,6 +300,7 @@
               "value": "−45%",
               "label": "Error rate",
               "icon": "exclamation-triangle",
+              "tone": "red",
               "desc": "Fewer mistakes made while completing those tasks."
             },
             {
