@@ -1999,3 +1999,20 @@ p.cs-proto-prompt {
   transform: translateY(-1px);
   box-shadow: 0 6px 18px rgba(51, 57, 69, 0.1);
 }
+
+/* External-link mark in the top-right corner, so the card reads as a way out */
+.cs-award.is-link {
+  position: relative;
+}
+.cs-award-out {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  color: var(--text-soft);
+  transition: color 0.2s ease;
+}
+.cs-award.is-link:hover .cs-award-out {
+  color: var(--accent-dark);
+}

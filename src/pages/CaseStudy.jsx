@@ -14,6 +14,7 @@ const WorkspacePrototype = lazy(() => import("../components/workspace/WorkspaceP
 import "./CaseStudy.css";
 import PasswordGate, { useUnlocked } from "../components/PasswordGate";
 import InViewVideo from "../components/InViewVideo";
+import { ICONS } from "../components/lra/icons.generated";
 
 
 function QuoteAttribution({ value }) {
@@ -440,7 +441,7 @@ function Block({ block }) {
     case "award": {
       const AwardTag = block.url ? "a" : "div";
       const awardProps = block.url
-        ? { href: block.url, target: "_blank", rel: "noreferrer" }
+        ? { href: block.url, target: "_blank", rel: "noreferrer", "aria-label": `${block.title || "Award"} (opens in a new tab)` }
         : {};
       return (
         <AwardTag className={"cs-award" + (block.url ? " is-link" : "")} {...awardProps}>
@@ -459,6 +460,15 @@ function Block({ block }) {
               {block.subtitle && <span>{block.subtitle}</span>}
               {block.desc && <p>{block.desc}</p>}
             </div>
+          )}
+          {block.url && (
+            <span className="cs-award-out" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                {ICONS.openInNew.map((d, i) => (
+                  <path key={i} {...d} />
+                ))}
+              </svg>
+            </span>
           )}
         </AwardTag>
       );
