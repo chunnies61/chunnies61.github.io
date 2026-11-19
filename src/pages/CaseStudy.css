@@ -1525,10 +1525,11 @@ a.cs-index-item.is-active:hover {
 .cs-outcome-tile:nth-child(6n + 5) .cs-outcome-chip { color: var(--pill-pink-text); }
 .cs-outcome-tile:nth-child(6n + 6) .cs-outcome-chip { color: #5f7d12; } /* lime */
 
-/* The number follows the text at an ordinary distance, so the card is only as tall as its
-   content */
+/* The number sits on the bottom of the card, so the figures line up across a row however
+   long each label runs; it keeps at least 12px from the text above it */
 .cs-outcome-value {
-  margin-top: 12px;
+  margin-top: auto;
+  padding-top: 12px;
   font-family: var(--font-display);
   font-size: 32px;
   font-weight: 800;
