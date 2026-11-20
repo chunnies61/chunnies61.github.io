@@ -14,6 +14,7 @@ const WorkspacePrototype = lazy(() => import("../components/workspace/WorkspaceP
 import "./CaseStudy.css";
 import PasswordGate, { useUnlocked } from "../components/PasswordGate";
 import InViewVideo from "../components/InViewVideo";
+import { track } from "../analytics";
 import { ICONS } from "../components/lra/icons.generated";
 
 
@@ -918,6 +919,7 @@ export default function CaseStudy() {
                 key={dir}
                 to={`/case-studies/${cs.slug}`}
                 className={"cs-pager-card cs-pager-card--" + dir}
+                onClick={() => track("select_case_study", { case_study: cs.title, from: dir === "prev" ? "previous" : "up next" })}
               >
                 <span className="cs-pager-thumb">
                   <img src={cs.thumb || cs.heroImage} alt="" loading="lazy" />

@@ -5,6 +5,7 @@ import Tag from "../components/Tag";
 import ContactCta from "../components/ContactCta";
 import FallingTools from "../components/falling-tools/FallingTools";
 import ArrowButton from "../components/ArrowButton";
+import { track } from "../analytics";
 import GridGlow from "../components/GridGlow";
 import "./Home.css";
 
@@ -73,6 +74,7 @@ export default function Home() {
                 key={cs.slug}
                 to={`/case-studies/${cs.slug}`}
                 className="case-card"
+                onClick={() => track("select_case_study", { case_study: cs.title, from: "home" })}
               >
                 <div className="case-card-image">
                   <img src={cs.thumb} alt={cs.title} loading="lazy" />
