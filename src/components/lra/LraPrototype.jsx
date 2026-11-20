@@ -5,6 +5,7 @@ import StepClient from "./StepClient";
 import StepDetails from "./StepDetails";
 import StepReview from "./StepReview";
 import StepCq from "./StepCq";
+import SectionIndex from "./SectionIndex";
 import Submission from "./Submission";
 import { Icon } from "./ui";
 import { ScaledFrame } from "./frame";
@@ -17,6 +18,18 @@ import "./Lra.css";
    prototype covers. The future-vision prototype reuses LraFlow as its Current
    state. All data is mocked (see ./data.js). */
 
+/* The sections each step grows into, so the index is there before they all are */
+const INDEX_EXPECTED = {
+  0: {
+    sections: ["Parties", "Existing facilities", "Build a new deal"],
+    hint: "Add a party to see the client's facilities and build a new deal.",
+  },
+  1: {
+    sections: ["Collateral", "Host accounts", "Facility", "Supporting documents", "Comments", "Offer"],
+    hint: "Offers appear once you create them.",
+  },
+};
+
 export function LraFlow({ region, suffix, path }) {
   const [step, setStep] = useState(0); // 0, 1, 2, 3, or "done"
   const ccy = region.currency ?? "USD";
@@ -24,6 +37,7 @@ export function LraFlow({ region, suffix, path }) {
   const [tried, setTried] = useState(false); // continue was pressed while blocked
   const timer = useRef(null);
   const bodyRef = useRef(null);
+  const contentRef = useRef(null);
 
   const verdict = assess(deal, region);
   const blockers = step === "done" ? [] : verdict.blockers[step];
@@ -108,23 +122,36 @@ export function LraFlow({ region, suffix, path }) {
         )}
 
         <div className="lra-body" ref={bodyRef}>
-          {step !== "done" && <h3 className="lra-page-title">{pageTitle}</h3>}
-          {step === 0 && (
-            <StepClient deal={deal} update={update} addParty={addParty} onBuildSbl={buildSbl} />
-          )}
-          {step === 1 && (
-            <StepDetails
-              deal={deal}
-              update={update}
-              setField={setField}
-              verdict={verdict}
-              tried={tried}
-              onTried={() => setTried(true)}
-            />
-          )}
-          {step === 2 && <StepReview deal={deal} verdict={verdict} onEdit={go} />}
-          {step === 3 && <StepCq deal={deal} update={update} />}
-          {step === "done" && <Submission deal={deal} onRestart={reset} />}
+          <div className="lra-body-grid">
+            {/* The credit questionnaire has its own list on the left, so it skips the index */}
+            {step !== "done" && step !== 3 && (
+              <SectionIndex
+                bodyRef={bodyRef}
+                contentRef={contentRef}
+                expected={INDEX_EXPECTED[step]?.sections}
+                pendingHint={INDEX_EXPECTED[step]?.hint}
+              />
+            )}
+            <div className="lra-body-main" ref={contentRef}>
+              {step !== "done" && <h3 className="lra-page-title">{pageTitle}</h3>}
+              {step === 0 && (
+                <StepClient deal={deal} update={update} addParty={addParty} onBuildSbl={buildSbl} />
+              )}
+              {step === 1 && (
+                <StepDetails
+                  deal={deal}
+                  update={update}
+                  setField={setField}
+                  verdict={verdict}
+                  tried={tried}
+                  onTried={() => setTried(true)}
+                />
+              )}
+              {step === 2 && <StepReview deal={deal} verdict={verdict} onEdit={go} />}
+              {step === 3 && <StepCq deal={deal} update={update} />}
+              {step === "done" && <Submission deal={deal} onRestart={reset} />}
+            </div>
+          </div>
         </div>
 
         {inWizard && (

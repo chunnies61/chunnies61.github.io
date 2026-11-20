@@ -596,6 +596,88 @@
   overflow: auto;
 }
 
+/* Section index: a rail on the left of a step's form, the form beside it */
+.lra-body-grid {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.lra-body-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.lra-index {
+  position: sticky;
+  top: 0;
+  flex: none;
+  width: 220px;
+}
+
+.lra-index-title {
+  margin: 0 0 8px;
+  padding-left: 14px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ui-fg-tertiary);
+}
+
+.lra-index ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lra-index button {
+  display: block;
+  width: 100%;
+  padding: 8px 14px;
+  border: 0;
+  border-left: 2px solid var(--ui-border-secondary);
+  background: transparent;
+  font-family: var(--ui-font);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  text-align: left;
+  color: var(--ui-fg-tertiary);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.lra-index button:hover {
+  color: var(--ui-fg);
+}
+
+.lra-index button.is-current {
+  border-left-color: var(--ui-primary);
+  font-weight: 600;
+  color: var(--ui-primary);
+}
+
+/* Not on the page yet: dimmed, still focusable and explained, never a dead end */
+.lra-index button.is-pending {
+  color: var(--ui-fg-disabled);
+  cursor: default;
+}
+
+.lra-index-hint {
+  margin: 12px 0 0;
+  padding-left: 14px;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--ui-fg-tertiary);
+}
+
+.lra-index button:focus-visible {
+  outline: 2px solid var(--ui-primary);
+  outline-offset: -2px;
+}
+
 .lra-footer {
   flex: none;
   display: flex;
