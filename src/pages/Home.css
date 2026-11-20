@@ -150,19 +150,6 @@ body.has-grid {
   margin-bottom: 0;
 }
 
-.more-viewall {
-  flex-shrink: 0;
-  font-family: var(--font-ui);
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--text-soft);
-  white-space: nowrap;
-}
-
-.more-viewall:hover {
-  color: var(--accent-dark);
-}
-
 .more-scroller {
   display: flex;
   gap: 24px;
