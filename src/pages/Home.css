@@ -192,15 +192,11 @@ body.has-grid {
   background: var(--placeholder-bg);
 }
 
+/* Side project cards aren't links, so their images stay still on hover */
 .more-card-media img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: transform 0.4s ease;
-}
-
-.more-card:hover .more-card-media img {
-  transform: scale(1.03);
 }
 
 .more-card-title {
@@ -256,13 +252,11 @@ body.has-grid {
 
 @media (prefers-reduced-motion: reduce) {
   .case-card,
-  .case-card-image img,
-  .more-card-media img {
+  .case-card-image img {
     transition: none;
   }
   .case-card:hover,
-  .case-card:hover .case-card-image img,
-  .more-card:hover .more-card-media img {
+  .case-card:hover .case-card-image img {
     transform: none;
   }
 }
