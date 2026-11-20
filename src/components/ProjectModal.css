@@ -1,0 +1,146 @@
+/* ===== Side project pop-up ===== */
+
+.pm {
+  width: min(880px, calc(100% - 40px));
+  max-width: none;
+  max-height: min(90vh, 900px);
+  margin: auto;
+  padding: 0;
+  border: none;
+  border-radius: 24px;
+  background: #fff;
+  color: var(--text);
+  box-shadow: 0 24px 80px rgba(20, 24, 32, 0.28);
+  overflow: hidden;
+}
+
+.pm::backdrop {
+  background: rgba(20, 24, 32, 0.5);
+}
+
+.pm[open] {
+  display: flex;
+  animation: pm-in 0.24s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.pm[open]::backdrop {
+  animation: pm-fade 0.24s ease;
+}
+
+@keyframes pm-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+}
+
+@keyframes pm-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+/* The panel scrolls inside the dialog, so the close button can stay pinned */
+.pm-panel {
+  position: relative;
+  width: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 28px 32px 32px;
+}
+
+.pm-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin: -8px -12px 0 12px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: var(--gray-50);
+  color: var(--gray-800);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.pm-close:hover,
+.pm-close:focus-visible {
+  background: var(--accent-dark);
+  color: #fff;
+}
+
+/* The project name, with its Red Dot label underneath */
+.pm-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 40px;
+  margin-bottom: 20px;
+}
+
+/* Type comes from .md-headline-small */
+.pm-title {
+  margin: 0;
+  color: var(--gray-800);
+}
+
+/* The official Red Dot label, kept above its minimum size (see .ap-award) */
+.pm-award {
+  flex: none;
+  width: 108px;
+  height: auto;
+}
+
+.pm-body {
+  margin-top: 24px;
+  font-size: 15px;
+}
+
+/* Phones: a sheet that rises from the bottom edge */
+@media (max-width: 640px) {
+  .pm {
+    width: 100%;
+    max-height: 92vh;
+    margin: auto 0 0;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .pm[open] {
+    animation-name: pm-sheet;
+  }
+
+  .pm-panel {
+    padding: 20px 20px 28px;
+  }
+
+  .pm-close {
+    margin: -6px -6px 0 12px;
+  }
+
+  .pm-head {
+    gap: 8px;
+  }
+
+  .pm-award {
+    width: 96px;
+  }
+}
+
+@keyframes pm-sheet {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pm[open],
+  .pm[open]::backdrop {
+    animation: none;
+  }
+}

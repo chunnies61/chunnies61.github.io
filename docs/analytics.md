@@ -47,14 +47,14 @@ change all sit under "Yichun Liu - Staff Product Designer"; switch that report's
 | `select_case_study` | A case study card on the home page, or Previous / Up next | `case_study`, `from` (`home`, `previous`, `up next`) |
 | `case_study_section_view` | Once per visit, when a case study section reaches the middle of the screen | `case_study`, `section`, `section_number` |
 | `case_study_nav_click` | A click in a case study's side index | `case_study`, `section` |
-| `view_all_side_projects` | "View all" on the home page | none |
-| `side_project_link` | "View project website" / "View on Red Dot" | `project`, `link` (`website`, `red dot`) |
+| `side_project_open` | A Side projects card on the home page (opens its pop-up) | `project` |
+| `side_project_link` | "View project website" / "View on Red Dot", in the pop-up or on the Side projects page | `project`, `link` (`website`, `red dot`), `from` (`home pop-up`, `side projects page`) |
 | `contact_click` | Email / LinkedIn buttons at the foot of every page | `method` (`email`, `linkedin`), `page` |
 | `cv_open` | CV link in the nav | `page` |
 
 To report on a parameter, register it once under **Admin → Custom definitions → Create custom
 dimension** (scope: Event): `case_study`, `section`, `section_number`, `project`, `link`,
-`method`, `page`. Event totals show in **Reports → Engagement → Events** without that step.
+`from`, `method`, `page`. Event totals show in **Reports → Engagement → Events** without that step.
 
 ## Excluding your own visits
 
