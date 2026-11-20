@@ -37,8 +37,7 @@
           "type": "text",
           "value": [
             "Best Egg offered personal loans, credit cards, and financial-health tools. On paper, one brand. In reality, three products sharing a logo and a color and almost nothing else.",
-            "The business wanted to grow through cross-sell: turn a loan customer into a card customer, nudge a card user to watch their credit score.",
-            "But the products never spoke to each other, and neither did the experiences. Every launch shipped as its own island, eroding cohesion and every cross-sell opportunity with it."
+            "The business wanted to grow through cross-sell: turn a loan customer into a card customer, nudge a card user to watch their credit score. But the products never spoke to each other, and neither did the experiences. Every launch shipped as its own island, eroding cohesion and every cross-sell opportunity with it."
           ]
         },
         {
@@ -56,9 +55,7 @@
         {
           "type": "text",
           "value": [
-            "The obvious problem was fragmentation. The real one was quieter: ==no one owned the word \"unified.\"==",
-            "Each product line had its own PM, KPIs, and roadmap. Everyone agreed unification mattered, then nothing moved. The vision floated, and no one caught it.",
-            "That vacuum was exactly where design should step in. Only design could turn an abstract word into something everyone could point at."
+            "The obvious problem was fragmentation. The real one was quieter: ==no one owned the word \"unified.\"== Each product line had its own PM, KPIs, and roadmap, so everyone agreed unification mattered and then nothing moved. The vision floated, and no one caught it. That vacuum was exactly where design should step in, because only design could turn an abstract word into something everyone could point at."
           ]
         },
         {
@@ -149,9 +146,7 @@
           "type": "text",
           "value": [
             "Engineering pushed back: bringing the third-party Credit Card in-house meant 6+ months and risk to live servicing. The vision was unbuildable.",
-            "I didn't debate it; I mapped the complexity with them.",
-            "With Engineering and PM, I charted every account state in one table: single, multi-product, past-due, pending activation, missing data.",
-            "Only a few high-frequency shared surfaces were truly interconnected; the rest could wait."
+            "I didn't debate it; I mapped the complexity with them. With Engineering and PM, I charted every account state in one table: single, multi-product, past-due, pending activation, missing data. Only a few high-frequency shared surfaces were truly interconnected, and the rest could wait."
           ]
         },
         {
@@ -169,8 +164,7 @@
         {
           "type": "text",
           "value": [
-            "The call: keep Credit Card third-party, build the dashboard, Loan and Financial Health in-house, and stitch the card in until the platform proved its value.",
-            "It was imperfect for everyone, so I told one decision three ways."
+            "The call: keep Credit Card third-party, build the dashboard, Loan, and Financial Health in-house, and stitch the card in once the platform proved its value. Imperfect for everyone, so I told one decision three ways."
           ]
         },
         {
@@ -273,7 +267,7 @@
             },
             {
               "type": "text",
-              "value": "We tested 20 message-placement combinations across 527 users. Banners and in-feature messaging won on engagement and sentiment; modals were reserved for critical alerts."
+              "value": "==We tested 20 message-placement combinations across 527 users.== Banners and in-feature messaging won on engagement and sentiment; modals were reserved for critical alerts."
             },
             {
               "type": "image",
@@ -333,7 +327,7 @@
         },
         {
           "type": "text",
-          "value": "Launched August 2022. The gains showed up immediately and kept compounding: in the first week, ==credit score activation post-login rose 94%== and Financial Health daily active users more than doubled. That was proof the unified entry point was doing its job, getting customers to the products that mattered before they asked."
+          "value": "==Launched August 2022. The gains showed up immediately and kept compounding: in the first week, credit score activation post-login rose 94% and Financial Health daily active users more than doubled.== That was proof the unified entry point was doing its job, getting customers to the products that mattered before they asked."
         },
         {
           "type": "image",

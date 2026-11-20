@@ -37,7 +37,7 @@
         {
           "type": "text",
           "value": [
-            "The Global Private Bank spans USPB (55 U.S. markets) and IPB across APAC, EMEA and LatAm: 1,000+ advisors, clients in 140+ countries, nine languages, 30+ regulators. Lending is one product line inside that footprint.",
+            "==The Global Private Bank spans USPB (55 U.S. markets) and IPB across APAC, EMEA and LatAm: 1,000+ advisors, clients in 140+ countries, nine languages, 30+ regulators.== Lending is one product line inside that footprint.",
             "I own two of its surfaces: where a loan begins, and where it's managed every day."
           ]
         },
@@ -73,13 +73,8 @@
         {
           "type": "text",
           "value": [
-            "The brief arrived narrow: the intake form is bad, so clean it up and cut the rework. It traced back to one complaint Lender Specialists kept repeating."
+            "The brief arrived narrow: the intake form is bad, so clean it up and cut the rework."
           ]
-        },
-        {
-          "type": "quote",
-          "value": "Half my loan requests bounce back. I redo them two or three times before Credit even looks.",
-          "attribution": "Lender Specialist"
         },
         {
           "type": "text",
@@ -667,21 +662,16 @@
           "blocks": [
             {
               "type": "text",
-              "value": "The map showed where the work happened, not where it broke. So instead of more interviews, I put one person from each role in a room with a single anonymised deal printed as a timeline on the wall: a real-estate investor borrowing against existing assets to buy a property."
-            },
-            {
-              "type": "quote",
-              "value": "Don't describe your job. Trace this specific deal, and put a red dot every time you had to stop and ask someone a question.",
-              "attribution": "The workshop instruction"
+              "value": "The map showed where the work happened, not where it broke. So instead of more interviews, I put one person from each role in a room with a single anonymised deal printed as a timeline on the wall: a real-estate investor borrowing against existing assets to buy a property. Nobody described their job. We walked that one deal end to end, and each person marked where their own work stalled."
             },
             {
               "type": "image",
               "src": "/images/lending-userflow.png",
-              "label": "The deal timeline, with every stop-and-ask marked"
+              "label": "One deal on the wall, with every stall marked by the person who hit it"
             },
             {
               "type": "text",
-              "value": "==The dots clustered at the same three seams, every time.== The most consistent: requests reached Credit without the collateral and entity details the Banker was never asked for, the asset basis and ownership structure needed to size the facility."
+              "value": "The same stalls kept recurring, and the most consistent was this: requests reached Credit without the collateral and entity details the Banker was never asked for, the asset basis and ownership structure needed to size the facility."
             },
             {
               "type": "cards",
@@ -691,17 +681,17 @@
                 {
                   "emoji": "⚠️",
                   "title": "NIGO",
-                  "desc": "Not-in-good-order submissions returned downstream"
+                  "desc": "Requests came back not-in-good-order, for the Advisor to fix and resubmit"
                 },
                 {
                   "emoji": "🔄",
                   "title": "Restart",
-                  "desc": "Errors mid-flow forced Advisors to start over"
+                  "desc": "An error partway through meant starting the request over from the top"
                 },
                 {
                   "emoji": "🤝",
                   "title": "Handoffs",
-                  "desc": "Manual back-and-forth with Credit Middle Office"
+                  "desc": "Credit Middle Office chased the missing pieces by email, one at a time"
                 }
               ]
             },
@@ -712,7 +702,7 @@
             {
               "type": "honest-note",
               "label": "The baseline",
-              "value": "I audited 40 recent loan requests with Middle Office: ~60% bounced at least once, and the top two reasons matched two of the three seams."
+              "value": "I audited 40 recent loan requests with Middle Office: ~60% bounced at least once, and missing collateral and entity detail was the reason more often than anything else."
             }
           ]
         }
@@ -792,23 +782,19 @@
               "value": "The three futures I put in front of them:"
             },
             {
-              "type": "cards",
-              "columns": 3,
+              "type": "list",
               "items": [
                 {
-                  "label": "Exploration 1",
                   "title": "One Request, Any Deal",
-                  "desc": "No SBL-vs-Custom fork, the split behind mis-routed intake."
+                  "desc": "no SBL-vs-Custom fork, the split behind mis-routed intake."
                 },
                 {
-                  "label": "Exploration 2",
                   "title": "AI Application Agent",
-                  "desc": "Chat, and the system drafts the ticket."
+                  "desc": "chat, and the system drafts the ticket."
                 },
                 {
-                  "label": "Exploration 3",
                   "title": "Collateral-First Builder",
-                  "desc": "Start from assets; size, rate and headroom update live."
+                  "desc": "start from assets; size, rate and headroom update live."
                 }
               ]
             },
@@ -842,7 +828,7 @@
             {
               "emoji": "🖱️",
               "title": "Prototypes, not specs",
-              "desc": "Clickable flows exposed what specs hid, like an unreadable collateral field. v1 shipped two seams and parked the third."
+              "desc": "Clickable flows exposed what specs hid, like an unreadable collateral field. v1 shipped fixes for the costliest stalls and parked the rest."
             },
             {
               "emoji": "📊",
@@ -885,6 +871,7 @@
               "value": "~3×",
               "label": "Faster credit questionnaire",
               "icon": "pen-to-square",
+              "tone": "violet",
               "desc": "e-CQ vs. DocuSign, ~5 min typical"
             },
             {
@@ -952,13 +939,8 @@
           ]
         },
         {
-          "type": "honest-note",
-          "label": "What I'm still watching",
-          "value": "Adoption is real but early. When Workspace usage dipped 10.8% week over week, I didn't wave it away: seasonality or access provisioning is still an open question, and exactly the kind of signal I want instrumented, not guessed."
-        },
-        {
           "type": "text",
-          "value": "What I'd do differently: wire telemetry into the two targeted seams from day one, so the NIGO improvement attributes cleanly to the design change, and the parked third seam has evidence ready when it's next up for prioritisation."
+          "value": "What I'd do differently: wire telemetry into the stalls we targeted from day one, so the NIGO improvement attributes cleanly to the design change, and the parked work has evidence ready when it's next up for prioritisation."
         }
       ]
     }

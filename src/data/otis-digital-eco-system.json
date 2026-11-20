@@ -35,10 +35,10 @@
         {
           "type": "text",
           "value": [
-            "Otis's clients manage complex properties worldwide, but legacy on-premise infrastructure made real-time monitoring nearly impossible. That opacity forced reactive maintenance (waiting for elevators to fail), driving up downtime, cost, and friction.",
+            "==Otis's clients manage complex properties worldwide, but legacy on-premise infrastructure made real-time monitoring nearly impossible.== That opacity forced reactive maintenance (waiting for elevators to fail), driving up downtime, cost, and friction.",
             "The hypothesis: real-time health data and predictive alerts could cut emergency repair calls by 20%.",
             "I was brought in as Lead Designer to move this rigid system to a cloud-native, globally scalable ecosystem. But the mandate arrived as a slogan, \"move our legacy system to the cloud, and make it scale globally,\" with no user, no scenario, no definition of success.",
-            "==\"Cloud\" is a technical action, not a user need.==",
+            "\"Cloud\" is a technical action, not a user need.",
             "So my first move wasn't visual. It was turning the slogan back into an answerable question."
           ]
         },

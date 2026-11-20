@@ -664,6 +664,12 @@ a.cs-index-item.is-active:hover {
   }
 }
 
+/* The phone recordings end on a cropped device frame, so the copy that follows
+   needs more clearance than the 16px step gap to read as a new thought. */
+.case-study--unified-customer-hub .cs-surface-showcase--portrait {
+  margin-bottom: 48px;
+}
+
 /* Customer Hub's phone recordings run 21% larger than the shared portrait size
    on desktop (26% -> 28.6% -> 31.5%, two 10% steps) */
 .case-study--unified-customer-hub .cs-surface-showcase--portrait .cs-surface-media {
@@ -759,7 +765,7 @@ a.cs-index-item.is-active:hover {
 .cs-highlight {
   background: none;
   color: inherit;
-  text-decoration-line: none;
+  text-decoration-line: underline;
   text-decoration-color: #ffe785; /* the original marker yellow */
   text-decoration-thickness: 3px;
   text-underline-offset: 3px;
@@ -1527,6 +1533,7 @@ a.cs-index-item.is-active:hover {
 .cs-outcome-tile:nth-child(6n + 6) .cs-outcome-chip { color: #5f7d12; } /* lime */
 /* Tone set in the data wins over the place-in-row colour */
 .cs-outcomes-grid .cs-outcome-tile .cs-outcome-chip.is-red { color: #d0342c; }
+.cs-outcomes-grid .cs-outcome-tile .cs-outcome-chip.is-violet { color: #6442c4; }
 
 /* The number sits on the bottom of the card, so the figures line up across a row however
    long each label runs; it keeps at least 12px from the text above it */

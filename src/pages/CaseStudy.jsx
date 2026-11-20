@@ -294,6 +294,24 @@ function Block({ block }) {
     case "text":
       return <Paragraphs value={block.value} />;
 
+    case "list":
+      return (
+        <ul className="cs-list">
+          {block.items.map((item, i) => (
+            <li key={i}>
+              {typeof item === "string" ? (
+                renderHighlighted(item)
+              ) : (
+                <>
+                  <strong>{item.title}</strong>
+                  {item.desc ? ": " + item.desc : ""}
+                </>
+              )}
+            </li>
+          ))}
+        </ul>
+      );
+
     case "cards":
       return (
         <div
