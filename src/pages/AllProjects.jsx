@@ -3,6 +3,7 @@ import site from "../data/site.json";
 import ContactCta from "../components/ContactCta";
 import { Icon } from "../components/lra/ui";
 import "./AllProjects.css";
+import { track } from "../analytics";
 
 const PROJECT_LIMIT = 6;
 const SLIDE_INTERVAL_MS = 3000;
@@ -107,14 +108,26 @@ export default function AllProjects() {
                 {(item.link || item.award?.link) && (
                   <div className="ap-links">
                     {item.link && (
-                      <a className="ap-learn-more" href={item.link} target="_blank" rel="noreferrer">
+                      <a
+                        className="ap-learn-more"
+                        href={item.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={() => track("side_project_link", { project: item.title, link: "website" })}
+                      >
                         View project website
                         <Icon name="openInNew" size={16} />
                       </a>
                     )}
                     {/* The project's official Red Dot winner page, once its link is in the data */}
                     {item.award?.link && (
-                      <a className="ap-learn-more" href={item.award.link} target="_blank" rel="noreferrer">
+                      <a
+                        className="ap-learn-more"
+                        href={item.award.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={() => track("side_project_link", { project: item.title, link: "red dot" })}
+                      >
                         View on Red Dot
                         <Icon name="openInNew" size={16} />
                       </a>

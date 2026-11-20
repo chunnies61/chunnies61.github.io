@@ -14,6 +14,7 @@ const WorkspacePrototype = lazy(() => import("../components/workspace/WorkspaceP
 import "./CaseStudy.css";
 import PasswordGate, { useUnlocked } from "../components/PasswordGate";
 import InViewVideo from "../components/InViewVideo";
+import { track } from "../analytics";
 import { ICONS } from "../components/lra/icons.generated";
 
 
@@ -741,6 +742,35 @@ export default function CaseStudy() {
     return () => observer.disconnect();
   }, [slug]);
 
+  // Analytics: each section counts once per visit when it reaches the middle band of the
+  // screen (the same band that lights up the side index), with its index label.
+  useEffect(() => {
+    const sections = study?.indexedSections;
+    if (!sections?.length) return;
+    const seen = new Set();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting || seen.has(entry.target.id)) return;
+          seen.add(entry.target.id);
+          const i = sections.findIndex((s) => s.id === entry.target.id);
+          if (i < 0) return;
+          track("case_study_section_view", {
+            case_study: study.title,
+            section: sections[i].kicker || sections[i].id,
+            section_number: i + 1,
+          });
+        });
+      },
+      { rootMargin: "-15% 0px -70% 0px", threshold: 0 }
+    );
+    sections.forEach((s) => {
+      const el = document.getElementById(s.id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, [slug]);
+
   if (isLocked) {
     return <PasswordGate key={slug} onUnlock={unlock} />;
   }
@@ -786,6 +816,7 @@ export default function CaseStudy() {
                       key={item.id}
                       href={`#${item.id}`}
                       className={"cs-index-item md-label-medium" + (item.id === activeId ? " is-active" : "")}
+                      onClick={() => track("case_study_nav_click", { case_study: study.title, section: item.label })}
                     >
                       {item.label}
                     </a>
@@ -918,6 +949,7 @@ export default function CaseStudy() {
                 key={dir}
                 to={`/case-studies/${cs.slug}`}
                 className={"cs-pager-card cs-pager-card--" + dir}
+                onClick={() => track("select_case_study", { case_study: cs.title, from: dir === "prev" ? "previous" : "up next" })}
               >
                 <span className="cs-pager-thumb">
                   <img src={cs.thumb || cs.heroImage} alt="" loading="lazy" />
