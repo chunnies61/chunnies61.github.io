@@ -74,10 +74,12 @@
   color: #fff;
 }
 
+/* The project name, with its Red Dot label underneath */
 .pm-head {
   display: flex;
-  align-items: center;
-  gap: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
   min-height: 40px;
   margin-bottom: 20px;
 }
@@ -122,9 +124,7 @@
   }
 
   .pm-head {
-    flex-wrap: wrap;
-    gap: 8px 12px;
-    padding-right: 4px;
+    gap: 8px;
   }
 
   .pm-award {
