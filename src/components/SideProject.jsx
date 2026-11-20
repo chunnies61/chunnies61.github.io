@@ -4,10 +4,10 @@ import { track } from "../analytics";
 // The ap-* styles (media frame, slides, arrows, dots, links) live with the Side projects page
 import "../pages/AllProjects.css";
 
-const SLIDE_INTERVAL_MS = 3000;
+const SLIDE_INTERVAL_MS = 6000;
 
 /* A side project's images: a crossfading slideshow with arrows and dots. It advances
-   on its own every 3s (never with reduced motion) and pauses while the pointer is on it. */
+   on its own every 6s (never with reduced motion) and pauses while the pointer is on it. */
 export function ProjectMedia({ images, ratio }) {
   const [index, setIndex] = useState(0);
   const pausedRef = useRef(false);
