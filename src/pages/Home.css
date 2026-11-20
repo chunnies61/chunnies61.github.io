@@ -277,10 +277,9 @@ body.has-grid {
   padding: var(--space-section) 0;
   margin: var(--space-title-gap) 40px;
   scroll-margin-top: 88px;
-  /* The primary blue at 40% over the page: a soft blue, deeper than Primary 90,
-     see-through, with text in the darkest gray */
+  /* A flat dusty blue panel, with text in the darkest gray */
   --about-ink: var(--gray-900);
-  background: rgba(69, 117, 231, 0.4);
+  background: #9ec3d5;
   border-radius: 56px;
 }
 
