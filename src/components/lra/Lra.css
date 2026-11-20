@@ -210,6 +210,24 @@
   font-family: var(--font-ui);
 }
 
+/* Phones: four variant tabs are wider than the column, so the row scrolls sideways instead of
+   pushing the page wider. Hover tooltips have no touch equivalent and would be clipped. */
+@media (max-width: 600px) {
+  .lra-toggle-row {
+    max-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .lra-toggle-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .vp-tip {
+    display: none;
+  }
+}
+
 .lra-toggle-row + .lra-frame,
 .vp-variants + .lra-frame {
   border-top-left-radius: 0;
@@ -343,6 +361,50 @@
   border: 3px solid var(--ui-gray-800);
   border-radius: 12px;
   box-shadow: 0 12px 32px rgba(20, 32, 61, 0.14);
+}
+
+/* Phones: the canvas stays at a readable size inside a window the visitor drags around
+   (touch scrolls it), and "Open full screen" lifts the frame over the whole viewport. */
+.lra-frame.is-compact {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.lra-frame.is-full {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  width: auto;
+  height: auto;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: #1b1b1d;
+  overflow: auto;
+}
+
+.lra-toggle-row + .lra-frame.is-full,
+.vp-variants + .lra-frame.is-full {
+  border-radius: 0;
+}
+
+.lra-frame-expand {
+  align-self: center;
+  margin-top: 12px;
+}
+
+.lra-frame-bar .btn-secondary {
+  background: #fff;
+}
+
+.lra-frame-bar {
+  position: fixed;
+  right: 12px;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  z-index: 1001;
+  display: flex;
+  gap: 8px;
 }
 
 .lra-frame-canvas {
@@ -1839,7 +1901,7 @@
   font-size: 24px;
   line-height: 32px;
   font-weight: 600;
-  color: var(--ui-fg);
+  color: var(--ui-primary);
   font-variant-numeric: tabular-nums;
 }
 
