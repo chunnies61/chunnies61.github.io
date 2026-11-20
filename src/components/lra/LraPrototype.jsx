@@ -1,10 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import { EMEA, STEPS } from "./data";
-import { assess, emptyDeal, freshBuilder } from "./rules";
+import { EMEA } from "./data";
+import { assess, emptyDeal, flowOf, freshBuilder, stepsFor } from "./rules";
 import StepClient from "./StepClient";
 import StepDetails from "./StepDetails";
 import StepReview from "./StepReview";
 import StepCq from "./StepCq";
+import { CustomDetails, CustomReview } from "./StepCustom";
+import { AmendDetails, AmendReview } from "./StepAmend";
+import AnnualReview from "./AnnualReview";
 import SectionIndex from "./SectionIndex";
 import Submission from "./Submission";
 import { Icon } from "./ui";
@@ -21,12 +24,11 @@ import "./Lra.css";
 /* The sections each step grows into, so the index is there before they all are */
 const INDEX_EXPECTED = {
   0: {
-    sections: ["Parties", "Existing facilities", "Build a new deal"],
-    hint: "Add a party to see the client's facilities and build a new deal.",
+    sections: ["Add parties", "Existing facilities"],
   },
   1: {
-    sections: ["Collateral", "Host accounts", "Facility", "Supporting documents", "Comments", "Offer"],
-    hint: "Offers appear once you create them.",
+    sections: ["Secured collaterals", "Host accounts", "Facility details", "Supporting documents", "Comments", "Select an offer"],
+    hints: { Comments: "Offers appear once you create them." },
   },
 };
 
@@ -40,6 +42,9 @@ export function LraFlow({ region, suffix, path }) {
   const contentRef = useRef(null);
 
   const verdict = assess(deal, region);
+  const steps = stepsFor(deal); // an amendment has no credit questionnaire
+  const flow = verdict.flow;
+  const [annualFor, setAnnualFor] = useState(null); // the facility whose annual review dialog is open
   const blockers = step === "done" ? [] : verdict.blockers[step];
   const blocked = blockers.length > 0;
   const hint = step === "done" ? "" : verdict.hints[step];
@@ -75,7 +80,7 @@ export function LraFlow({ region, suffix, path }) {
       setTried(true);
       return;
     }
-    go(step === STEPS.length - 1 ? "done" : step + 1);
+    go(step === steps.length - 1 ? "done" : step + 1);
   }
 
   // Adding a party looks the client up first — a short, cancellable load
@@ -96,18 +101,26 @@ export function LraFlow({ region, suffix, path }) {
 
   const inWizard = step !== "done";
   // The page title matches the current step's label in the stepper
-  const pageTitle = step === "done" ? "Request submitted" : STEPS[step];
-  const primaryLabel = step === STEPS.length - 1 ? "Submit request" : "Save and continue";
+  const pageTitle = step === "done" ? "Request submitted" : steps[step];
+  const primaryLabel = step === steps.length - 1 ? "Submit request" : "Save and continue";
   const showError = tried && blocked;
 
   return (
     <ScaledFrame title={`${pageTitle} · ${suffix}`} path={path}>
       <div className="lra-window">
+        {/* App header: the product's name, on every screen of the request */}
+        <div className="lra-appbar">
+          <span className="lra-appbar-mark" aria-hidden="true">
+            <Icon name="sparkle" size={28} />
+          </span>
+          <span className="lra-appbar-name">Loan Request App</span>
+        </div>
+
         {/* Header: the stepper — each step is a link */}
         {step !== "done" && (
           <div className="lra-head">
             <ol className="lra-stepper">
-              {STEPS.map((label, i) => (
+              {steps.map((label, i) => (
                 <li key={label} className={i === step ? "is-current" : i < step ? "is-done" : ""}>
                   <button type="button" aria-current={i === step ? "step" : undefined} onClick={() => go(i)}>
                     <span className="lra-step-num" aria-hidden="true">
@@ -122,22 +135,34 @@ export function LraFlow({ region, suffix, path }) {
         )}
 
         <div className="lra-body" ref={bodyRef}>
+          {/* The page title runs across the top, left-aligned with the Steps index beneath it */}
+          {step !== "done" && <h3 className="lra-page-title">{pageTitle}</h3>}
           <div className="lra-body-grid">
-            {/* The credit questionnaire has its own list on the left, so it skips the index */}
-            {step !== "done" && step !== 3 && (
+            {step !== "done" && (
               <SectionIndex
                 bodyRef={bodyRef}
                 contentRef={contentRef}
-                expected={INDEX_EXPECTED[step]?.sections}
-                pendingHint={INDEX_EXPECTED[step]?.hint}
+                expected={step === 0 || (step === 1 && flow === "sbl") ? INDEX_EXPECTED[step]?.sections : undefined}
+                hints={step === 0 || (step === 1 && flow === "sbl") ? INDEX_EXPECTED[step]?.hints : undefined}
               />
             )}
             <div className="lra-body-main" ref={contentRef}>
-              {step !== "done" && <h3 className="lra-page-title">{pageTitle}</h3>}
               {step === 0 && (
-                <StepClient deal={deal} update={update} addParty={addParty} onBuildSbl={buildSbl} />
+                <StepClient
+                  deal={deal}
+                  update={update}
+                  addParty={addParty}
+                  onBuildSbl={buildSbl}
+                  onAnnualReview={setAnnualFor}
+                  tried={tried}
+                  verdict={verdict}
+                />
               )}
-              {step === 1 && (
+              {step === 1 && flow === "custom" && (
+                <CustomDetails deal={deal} update={update} verdict={verdict} tried={tried} onEdit={go} />
+              )}
+              {step === 1 && flow === "amendment" && <AmendDetails deal={deal} update={update} />}
+              {step === 1 && (flow === "sbl" || flow === "annual") && (
                 <StepDetails
                   deal={deal}
                   update={update}
@@ -147,7 +172,11 @@ export function LraFlow({ region, suffix, path }) {
                   onTried={() => setTried(true)}
                 />
               )}
-              {step === 2 && <StepReview deal={deal} verdict={verdict} onEdit={go} />}
+              {step === 2 && flow === "custom" && <CustomReview deal={deal} onEdit={go} />}
+              {step === 2 && flow === "amendment" && <AmendReview deal={deal} onEdit={go} />}
+              {step === 2 && (flow === "sbl" || flow === "annual") && (
+                <StepReview deal={deal} verdict={verdict} onEdit={go} />
+              )}
               {step === 3 && <StepCq deal={deal} update={update} />}
               {step === "done" && <Submission deal={deal} onRestart={reset} />}
             </div>
@@ -188,6 +217,18 @@ export function LraFlow({ region, suffix, path }) {
           </div>
         )}
 
+        {annualFor && (
+          <AnnualReview
+            fac={annualFor}
+            currency={ccy}
+            onCancel={() => setAnnualFor(null)}
+            onSubmit={(annual) => {
+              update({ annual, facilityId: annualFor.id });
+              setAnnualFor(null);
+              go("done");
+            }}
+          />
+        )}
       </div>
     </ScaledFrame>
   );

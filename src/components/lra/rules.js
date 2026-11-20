@@ -1,7 +1,9 @@
 import {
+  AMEND_ORIGINAL,
   COLLATERALS,
   FACILITIES,
   PEAK_LIMIT_USD,
+  STEPS,
   TENOR_RULES,
   UNSECURED_TYPES,
 } from "./data";
@@ -54,8 +56,101 @@ export function emptyDeal(currency = "USD") {
     facilityId: null,
     facilityAction: null,
     build: null, // null | "sbl" | "custom"
+    // A tailored (Custom) deal: the few things Credit's Custom intake needs
+    custom: { facilityType: "Advised line", lineSize: "", teamComment: "", team: "", risk: "" },
+    amend: null, // an amendment's updated terms, started when Amend is chosen
+    annual: null, // a submitted annual review: { newNrd, comment }
     ...freshBuilder(currency),
   };
+}
+
+/* Which flow the request is in. An annual review runs from a dialog and goes straight to its
+   ticket, so it only shows up here once submitted. */
+export function flowOf(deal) {
+  if (deal.annual) return "annual";
+  if (deal.build === "custom") return "custom";
+  if (deal.facilityAction === "Amend") return "amendment";
+  return "sbl";
+}
+
+// An amendment skips the credit questionnaire
+export const stepsFor = (deal) => (flowOf(deal) === "amendment" ? STEPS.slice(0, 3) : STEPS);
+
+/* --- Amendment ------------------------------------------------------------------- */
+
+export const amendFor = () => ({
+  parties: AMEND_ORIGINAL.parties.map((p) => ({ ...p })),
+  pricing: { ...AMEND_ORIGINAL.pricing },
+  collaterals: [...AMEND_ORIGINAL.collaterals],
+  covenants: { ...AMEND_ORIGINAL.covenants },
+});
+
+const partyKey = (p) => `${p.name}|${p.role}`;
+
+/* What an amendment changes, section by section. Each list is the lines that differ; an empty
+   one means the section is unchanged. */
+export function amendDiff(amend) {
+  if (!amend) return { clients: [], pricing: [], collateral: [], covenants: [], total: 0 };
+  const o = AMEND_ORIGINAL;
+  const had = new Set(o.parties.map(partyKey));
+  const has = new Set(amend.parties.map(partyKey));
+  const clients = [
+    ...amend.parties.filter((p) => !had.has(partyKey(p))).map((p) => ({ kind: "new", p })),
+    ...o.parties.filter((p) => !has.has(partyKey(p))).map((p) => ({ kind: "deleted", p })),
+  ];
+  const pricing = [];
+  if (amend.pricing.mode !== o.pricing.mode) pricing.push("mode");
+  if (amend.pricing.mode === "Exception") {
+    if (amend.pricing.baseRate !== o.pricing.baseRate) pricing.push("baseRate");
+    if (amend.pricing.spread !== o.pricing.spread) pricing.push("spread");
+  }
+  const collateral = [
+    ...amend.collaterals.filter((a) => !o.collaterals.includes(a)).map((a) => ({ kind: "new", a })),
+    ...o.collaterals.filter((a) => !amend.collaterals.includes(a)).map((a) => ({ kind: "deleted", a })),
+  ];
+  const covenants = Object.keys(amend.covenants).filter(
+    (id) => (amend.covenants[id] ?? "").trim() !== (o.covenants[id] ?? "").trim()
+  );
+  return {
+    clients,
+    pricing,
+    collateral,
+    covenants,
+    total: clients.length + pricing.length + collateral.length + covenants.length,
+  };
+}
+
+/* --- Annual review --------------------------------------------------------------- */
+
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+export const fmtDate = (iso) => {
+  const [y, m, d] = iso.split("-");
+  return `${d}-${MONTHS[+m - 1]}-${y}`;
+};
+
+// "28-Oct-2027" or "2027-10-28" to an ISO day, or null
+export function parseDate(text) {
+  const t = String(text ?? "").trim();
+  let y, m, d;
+  let hit = t.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+  if (hit) [, y, m, d] = hit;
+  else if ((hit = t.match(/^(\d{1,2})[-\s/]([A-Za-z]{3})[a-z]*[-\s/](\d{4})$/))) {
+    [, d, , y] = hit;
+    m = MONTHS.findIndex((x) => x.toLowerCase() === hit[2].toLowerCase()) + 1;
+  } else return null;
+  const dt = new Date(Date.UTC(+y, +m - 1, +d));
+  if (!m || dt.getUTCMonth() !== +m - 1 || dt.getUTCDate() !== +d) return null;
+  return `${y}-${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+}
+
+// The same day, `n` months on (the month's last day when it is shorter)
+export function addMonths(iso, n) {
+  const [y, m, d] = iso.split("-").map(Number);
+  const first = new Date(Date.UTC(y, m - 1 + n, 1));
+  const last = new Date(Date.UTC(first.getUTCFullYear(), first.getUTCMonth() + 1, 0)).getUTCDate();
+  const out = new Date(Date.UTC(first.getUTCFullYear(), first.getUTCMonth(), Math.min(d, last)));
+  return out.toISOString().slice(0, 10);
 }
 
 export const hasCrf = (deal) => deal.documents.some((d) => d.id === "crf");
@@ -155,6 +250,42 @@ export function assess(deal, region) {
     "",
     "Check the returned client data, then submit.",
   ];
+  let blockers = [
+    [],
+    required,
+    required.length ? ["complete the required fields in Loan details"] : [],
+    [],
+  ];
+
+  const flow = flowOf(deal);
+
+  /* A tailored (Custom) deal: line size, a team comment and a team are needed to start it, and
+     Credit wants the risk and mitigants written up. Missing documents are only a hint. */
+  const c = deal.custom;
+  const customMissing = {
+    lineSize: num(c.lineSize) <= 0,
+    teamComment: !c.teamComment.trim(),
+    team: !c.team,
+    risk: !c.risk.trim(),
+  };
+  if (flow === "custom") {
+    const start = [];
+    if (customMissing.lineSize) start.push("enter a line size greater than 0");
+    if (customMissing.teamComment) start.push("add a team comment");
+    if (customMissing.team) start.push("assign a team");
+    const details = customMissing.risk ? ["enter the risk & mitigants"] : [];
+    blockers = [start, details, details.length ? ["complete the required fields in Loan details"] : [], []];
+    hints[0] = !deal.parties.length ? "Add at least one party." : "";
+    hints[1] = !hasCrf(deal) ? "Attach the Credit Request Form — Credit will ask for it." : "";
+  }
+
+  /* An amendment needs something to amend: the review can't go until a section has changed */
+  const diff = amendDiff(deal.amend);
+  if (flow === "amendment") {
+    blockers = [[], [], diff.total ? [] : ["make at least one change in Loan details"], []];
+    hints[1] = diff.total ? "" : "Edit a section to make a change — an amendment needs at least one.";
+    hints[2] = "";
+  }
 
   return {
     errors,
@@ -166,11 +297,9 @@ export function assess(deal, region) {
     tenorOverLimit,
     unsecured,
     sblEligible: !unsecured && !tenorOverLimit,
-    blockers: [
-      [],
-      required,
-      required.length ? ["complete the required fields in Loan details"] : [],
-      [],
-    ],
+    flow,
+    customMissing,
+    diff,
+    blockers,
   };
 }

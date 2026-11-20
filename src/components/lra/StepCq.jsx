@@ -37,6 +37,63 @@ const priorHint = (row) => {
   return `${CQ_PRIOR_LABEL}: ${amount(row.prior)} · ${pct > 0 ? "+" : ""}${pct.toFixed(1)}%`;
 };
 
+/* Compare with last year, side by side: last year's answers on the left, this year's on the
+   right. Each side reads like the rest of the form, with the label above and the value beneath,
+   and the two lay out identically so an answer sits across from its prior. This year's answers
+   carry a tag with the change; a move of CQ_EXCEPTIONAL_PCT or more is flagged on both sides and
+   the tag turns to a warning. While a section is being corrected, this year's values are fields. */
+function CompareSides({ section, values, editing, onChange, uid }) {
+  const flag = (row) => (isExceptional(row) ? " is-flagged" : "");
+  return (
+    <div className={"lra-cq-sides" + (editing ? " is-editing" : "")}>
+      <div className="lra-cq-side">
+        <h5>{CQ_PRIOR_LABEL}</h5>
+        <dl className="lra-kv is-review">
+          {section.rows.map((row) => (
+            <div key={row.id} className={"lra-cq-answer" + flag(row)}>
+              <dt>{row.label}</dt>
+              <dd>{row.prior ? amount(row.prior) : "–"}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+      <div className="lra-cq-side is-now">
+        <h5>Current</h5>
+        <dl className="lra-kv is-review">
+          {section.rows.map((row) => {
+            const pct = changePct(row);
+            return (
+              <div key={row.id} className={"lra-cq-answer" + flag(row)}>
+                <dt>
+                  <label htmlFor={editing ? `${uid}-${row.id}` : undefined}>{row.label}</label>
+                </dt>
+                <dd>
+                  {editing ? (
+                    <input
+                      id={`${uid}-${row.id}`}
+                      value={values[row.id]}
+                      inputMode={row.text ? undefined : "decimal"}
+                      onChange={(e) => onChange(row.id, e.target.value)}
+                    />
+                  ) : (
+                    values[row.id] || "–"
+                  )}
+                  {pct !== null && (
+                    <span className={"lra-pill " + (isExceptional(row) ? "is-warn" : "is-neutral")}>
+                      {pct > 0 ? "+" : ""}
+                      {pct.toFixed(1)}%
+                    </span>
+                  )}
+                </dd>
+              </div>
+            );
+          })}
+        </dl>
+      </div>
+    </div>
+  );
+}
+
 const initialValues = () =>
   Object.fromEntries(
     CQ_SECTIONS.flatMap((s) => s.rows).map((r) => [r.id, r.text ?? amount(r.value)])
@@ -45,7 +102,7 @@ const initialValues = () =>
 export default function StepCq({ deal, update }) {
   const uid = useId();
   const [openId, setOpenId] = useState(QUESTIONNAIRES[0].id);
-  const [compare, setCompare] = useState(false);
+  const [compare, setCompare] = useState(true); // compare with last year, on until unchecked
   // Only the section being corrected is open; everything else stays read-only
   const [editingId, setEditingId] = useState(null);
   const [dirty, setDirty] = useState(false);
@@ -77,6 +134,107 @@ export default function StepCq({ deal, update }) {
 
   function removeSigner(id) {
     update((d) => ({ signers: (d.signers ?? []).filter((s) => s !== id) }));
+  }
+
+  const hasPrior = (section) => section.rows.some((r) => r.prior);
+
+  function renderSection(section) {
+    const isEditing = editingId === section.id;
+    return (
+      <Section
+        key={section.id}
+        title={section.title}
+        aside={
+          isEditing ? (
+            <span className="lra-section-actions">
+              <span className={"lra-pill " + (dirty ? "is-warn" : "is-good")}>
+                {dirty ? "Not saved" : "Saved"}
+              </span>
+              <button
+                type="button"
+                className="lra-btn is-ghost"
+                onClick={() => {
+                  setValues(initialValues());
+                  setDirty(false);
+                  setEditingId(null);
+                }}
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                className="lra-btn is-secondary"
+                onClick={() => {
+                  setDirty(false);
+                  setEditingId(null);
+                }}
+              >
+                Save
+              </button>
+            </span>
+          ) : (
+            <button
+              type="button"
+              className="lra-btn is-ghost"
+              onClick={() => setEditingId(section.id)}
+            >
+              Edit
+            </button>
+          )
+        }
+      >
+        {/* Answers read as answers. Editing one is the exception,
+            so only the section being corrected turns into fields. */}
+        {compare && hasPrior(section) ? (
+          <CompareSides
+            section={section}
+            values={values}
+            editing={isEditing}
+            onChange={setValue}
+            uid={uid}
+          />
+        ) : isEditing ? (
+          <div className="lra-grid">
+            {section.rows.map((row) => (
+              <Field
+                key={row.id}
+                label={row.label}
+                id={`${uid}-${row.id}`}
+                className={compare && isExceptional(row) ? "is-flagged" : ""}
+                hint={compare ? priorHint(row) : undefined}
+              >
+                <input
+                  id={`${uid}-${row.id}`}
+                  value={values[row.id]}
+                  inputMode={row.text ? undefined : "decimal"}
+                  onChange={(e) => setValue(row.id, e.target.value)}
+                />
+              </Field>
+            ))}
+          </div>
+        ) : (
+          <dl className="lra-kv is-review">
+            {section.rows.map((row) => (
+              <div
+                key={row.id}
+                className={
+                  "lra-cq-answer" +
+                  (compare && isExceptional(row) ? " is-flagged" : "")
+                }
+              >
+                <dt>{row.label}</dt>
+                <dd>
+                  {values[row.id] || "–"}
+                  {compare && priorHint(row) && (
+                    <span className="lra-cq-prior">{priorHint(row)}</span>
+                  )}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        )}
+      </Section>
+    );
   }
 
   return (
@@ -120,8 +278,9 @@ export default function StepCq({ deal, update }) {
           </ul>
         </aside>
 
-        {/* The questionnaire, as one form */}
-        <div className="lra-cq-panel">
+        {/* On the right, two panels: the client's information to review, then who signs */}
+        <div className="lra-cq-main">
+        <div className="lra-cq-panel" data-index="Review client information">
           <div className="lra-cq-formhead">
             <div className="lra-cq-formhead-id">
               <h4>
@@ -139,129 +298,40 @@ export default function StepCq({ deal, update }) {
             </Banner>
           ) : (
             <>
-              {exceptional.length > 0 ? (
-                <Banner tone="warning">
-                  {exceptional.length} exceptional change{exceptional.length === 1 ? "" : "s"} vs
-                  last year
-                </Banner>
-              ) : (
-                <Banner tone="success">No exceptional changes</Banner>
-              )}
-
-              <div className="lra-tabs" role="tablist" aria-label="Client data view">
-                {[
-                  [false, "Current"],
-                  [true, `Compare with ${CQ_PRIOR_LABEL}`],
-                ].map(([value, label]) => (
-                  <button
-                    key={label}
-                    type="button"
-                    role="tab"
-                    aria-selected={compare === value}
-                    className={"lra-tab" + (compare === value ? " is-active" : "")}
-                    onClick={() => setCompare(value)}
-                  >
-                    {label}
-                  </button>
+              {/* The banner is about the comparison, so it goes when the comparison does */}
+              {compare &&
+                (exceptional.length > 0 ? (
+                  <Banner tone="warning">
+                    {exceptional.length} exceptional change{exceptional.length === 1 ? "" : "s"} vs
+                    last year
+                  </Banner>
+                ) : (
+                  <Banner tone="success">No exceptional changes</Banner>
                 ))}
-              </div>
+
+              {/* On by default: this year's answers beside last year's. Off shows this year only. */}
+              <label className="lra-radio lra-cq-compare-toggle">
+                <input type="checkbox" checked={compare} onChange={(e) => setCompare(e.target.checked)} />
+                Compare with last year's data
+              </label>
 
               <div className="lra-cq-form">
-                {CQ_SECTIONS.map((section) => {
-                  const isEditing = editingId === section.id;
-                  return (
-                    <Section
-                      key={section.id}
-                      title={section.title}
-                      aside={
-                        isEditing ? (
-                          <span className="lra-section-actions">
-                            <span className={"lra-pill " + (dirty ? "is-warn" : "is-good")}>
-                              {dirty ? "Not saved" : "Saved"}
-                            </span>
-                            <button
-                              type="button"
-                              className="lra-btn is-ghost"
-                              onClick={() => {
-                                setValues(initialValues());
-                                setDirty(false);
-                                setEditingId(null);
-                              }}
-                            >
-                              Cancel
-                            </button>
-                            <button
-                              type="button"
-                              className="lra-btn is-secondary"
-                              onClick={() => {
-                                setDirty(false);
-                                setEditingId(null);
-                              }}
-                            >
-                              Save
-                            </button>
-                          </span>
-                        ) : (
-                          <button
-                            type="button"
-                            className="lra-btn is-ghost"
-                            onClick={() => setEditingId(section.id)}
-                          >
-                            Edit
-                          </button>
-                        )
-                      }
-                    >
-                      {/* Answers read as answers. Editing one is the exception,
-                          so only the section being corrected turns into fields. */}
-                      {isEditing ? (
-                        <div className="lra-grid">
-                          {section.rows.map((row) => (
-                            <Field
-                              key={row.id}
-                              label={row.label}
-                              id={`${uid}-${row.id}`}
-                              className={compare && isExceptional(row) ? "is-flagged" : ""}
-                              hint={compare ? priorHint(row) : undefined}
-                            >
-                              <input
-                                id={`${uid}-${row.id}`}
-                                value={values[row.id]}
-                                inputMode={row.text ? undefined : "decimal"}
-                                onChange={(e) => setValue(row.id, e.target.value)}
-                              />
-                            </Field>
-                          ))}
-                        </div>
-                      ) : (
-                        <dl className="lra-kv is-review">
-                          {section.rows.map((row) => (
-                            <div
-                              key={row.id}
-                              className={
-                                "lra-cq-answer" +
-                                (compare && isExceptional(row) ? " is-flagged" : "")
-                              }
-                            >
-                              <dt>{row.label}</dt>
-                              <dd>
-                                {values[row.id] || "–"}
-                                {compare && priorHint(row) && (
-                                  <span className="lra-cq-prior">{priorHint(row)}</span>
-                                )}
-                              </dd>
-                            </div>
-                          ))}
-                        </dl>
-                      )}
-                    </Section>
-                  );
-                })}
+                {/* The sections with a figure from last year go in one group while comparing, so a
+                    single divider can run down the middle from the first to the last of them. */}
+                {CQ_SECTIONS.filter((x) => !(compare && hasPrior(x))).map(renderSection)}
+                {compare && (
+                  <div className="lra-cq-group is-compare">
+                    {CQ_SECTIONS.filter(hasPrior).map(renderSection)}
+                  </div>
+                )}
               </div>
             </>
           )}
 
-          {/* Who signs it, and whether it can go out through JPOI */}
+        </div>
+
+        {/* Who signs it, and whether it can go out through JPOI — its own panel */}
+        <div className="lra-cq-panel" data-index="Signers & platform">
           <Section title="Signers & platform">
             <div className="lra-cq-stack">
               <div className="lra-radios" role="radiogroup" aria-label="Signing mode">
@@ -355,6 +425,7 @@ export default function StepCq({ deal, update }) {
               </div>
             </div>
           </Section>
+        </div>
         </div>
       </div>
     </div>

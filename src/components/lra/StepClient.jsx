@@ -6,7 +6,8 @@ import {
   FACILITIES_TOOLTIP,
   ROLES,
 } from "./data";
-import { builderFor } from "./rules";
+import { amendFor, builderFor } from "./rules";
+import { CustomDealFields } from "./StepCustom";
 import { Banner, Field, Icon, Section } from "./ui";
 import Dropdown from "./dropdown";
 import FacilityCard from "./FacilityCard";
@@ -15,7 +16,7 @@ import FacilityCard from "./FacilityCard";
    this request starts: an action on an existing facility, or a new deal.
    Building an SBL deal goes straight on to Loan details. */
 
-export default function StepClient({ deal, update, addParty, onBuildSbl }) {
+export default function StepClient({ deal, update, addParty, onBuildSbl, onAnnualReview, tried, verdict }) {
   const uid = useId();
   const ccy = deal.currency;
   const [clientId, setClientId] = useState("");
@@ -35,7 +36,8 @@ export default function StepClient({ deal, update, addParty, onBuildSbl }) {
   return (
     <div className="lra-step">
       {/* Party search */}
-      <Section title="Parties">
+      <Section title="Add parties">
+        <p className="lra-section-intro">Add a party to see the client's facilities and build a new deal.</p>
         <div className="lra-party-row">
           <Field label="Search clients" id={`${uid}-client`}>
             <Dropdown
@@ -174,25 +176,32 @@ export default function StepClient({ deal, update, addParty, onBuildSbl }) {
                   currency={ccy}
                   selected={deal.facilityId === fac.id}
                   action={deal.facilityAction}
-                  onAction={(a, on) =>
+                  onAction={(a, on) => {
+                    // An annual review runs in its own dialog rather than as a step
+                    if (a === "Annual review") return onAnnualReview(fac);
+                    /* Amend and Replace are parked for now: the buttons are there and clickable, but
+                       nothing happens. The Amend flow is built (StepAmend.jsx, flowOf in rules.js) and
+                       switches back on by removing this line. */
+                    if (a === "Amend" || a === "Replace") return undefined;
                     update((d) =>
                       on
-                        ? { facilityId: null, facilityAction: null }
+                        ? { facilityId: null, facilityAction: null, amend: null }
                         : {
                             facilityId: fac.id,
                             facilityAction: a,
                             build: null,
+                            amend: a === "Amend" ? amendFor() : null,
                             ...(fac.kind === "sbl" && d.facilityId !== fac.id ? builderFor(fac, ccy) : {}),
                           }
-                    )
-                  }
+                    );
+                  }}
                 />
               ))}
             </div>
           </Section>
 
-          {/* Build a new deal */}
-          <Section title="Build a new deal">
+          {/* The two ways to build a new deal: just the buttons, with no section heading of their own */}
+          <div className="lra-build">
             <div className="lra-build-actions">
               <button type="button" className="lra-btn is-primary" onClick={onBuildSbl}>
                 Build your own (SBL) deal
@@ -215,11 +224,9 @@ export default function StepClient({ deal, update, addParty, onBuildSbl }) {
               </button>
             </div>
             {deal.build === "custom" && (
-              <Banner>
-                Tailored (Custom) deals are captured in the Custom intake — outside this prototype.
-              </Banner>
+              <CustomDealFields deal={deal} update={update} tried={tried} missing={verdict.customMissing} />
             )}
-          </Section>
+          </div>
         </>
       )}
     </div>

@@ -97,6 +97,7 @@ export const FACILITIES = [
     maturity: "28-Oct-2027",
     maturityDate: "2027-10-28",
     collateral: "9502050",
+    nrd: "2026-11-30", // the current next review date, which an annual review moves on
   },
 ];
 
@@ -113,10 +114,9 @@ export const HOST_ACCOUNTS = [
   { acct: "500002", internal: "INT-0002" },
 ];
 
-// Actions on an existing facility: the two common paths are buttons, the
-// rest sit behind an overflow menu
-export const FACILITY_ACTIONS = ["Amendment", "Replace"];
-export const FACILITY_MORE_ACTIONS = ["Annual review"];
+// Actions on an existing facility, all shown as buttons on its card. Annual review used to sit
+// behind a More menu, but it was the only thing in it.
+export const FACILITY_ACTIONS = ["Amend", "Replace", "Annual review"];
 
 // Sample documents the upload area attaches, in this order
 export const DOCUMENTS = [
@@ -381,3 +381,36 @@ export const CQ_SIGNERS = [
 
 export const PEAK_LIMIT_USD = 2500000;
 export const MAX_TENOR_MONTHS = 120;
+
+/* --- Custom (tailored) deal (§3.2, §5) ----------------------------------------- */
+
+export const CUSTOM_TEAMS = [
+  "Private credit — Europe",
+  "Structured lending",
+  "Commercial real estate",
+  "Fund finance",
+];
+
+export const CUSTOM_RISK_MAX = 5000;
+
+/* --- Amendment (§8) ------------------------------------------------------------ */
+
+export const AMEND_ROLES = ["Borrower", "Guarantor", "Pledgor"];
+
+// The terms an amendment starts from: what the existing facility has today
+export const AMEND_ORIGINAL = {
+  parties: [
+    { name: "Adam Ross", eci: "9876543210", role: "Borrower" },
+    { name: "Carol Simpson", eci: "9876543211", role: "Borrower" },
+    { name: "David Peterson", eci: "9876543212", role: "Borrower" },
+  ],
+  pricing: { mode: "Standard", baseRate: "Enhanced reference rate", spread: "185" },
+  collaterals: ["9502050"],
+  covenants: {}, // covenant id -> comment; none yet
+};
+
+export const AMEND_UNCHANGED = "No changes have been made in this section.";
+
+/* --- Annual review (§12) ------------------------------------------------------- */
+
+export const NRD_DEFAULT_MONTHS = 12;

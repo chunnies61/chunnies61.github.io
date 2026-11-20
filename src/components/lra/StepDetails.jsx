@@ -80,7 +80,7 @@ export default function StepDetails({ deal, update, setField, verdict, tried, on
       )}
 
       {/* Collateral */}
-      <Section title="Collateral">
+      <Section title="Secured collaterals">
         <div className="lra-tabs" role="tablist" aria-label="Collateral source">
           {[
             ["collaterals", "Collaterals"],
@@ -243,7 +243,7 @@ export default function StepDetails({ deal, update, setField, verdict, tried, on
       </Section>
 
       {/* Facility */}
-      <Section title="Facility" aside={<span className="lra-muted">* Required</span>}>
+      <Section title="Facility details" aside={<span className="lra-muted">* Required</span>}>
         <div className="lra-grid">
           <Field
             label="Facility type"
@@ -501,7 +501,7 @@ export default function StepDetails({ deal, update, setField, verdict, tried, on
       {/* Offers — hidden until asked for; three indicative structures */}
       {deal.offers ? (
         <Section
-          title="Offer"
+          title="Select an offer"
           aside={
             <button type="button" className="lra-btn is-ghost" onClick={() => update(NO_OFFER)}>
               Clear offers

@@ -1,6 +1,5 @@
 import { Icon } from "./ui";
-import Menu from "./menu";
-import { AS_OF, FACILITY_ACTIONS, FACILITY_MORE_ACTIONS } from "./data";
+import { AS_OF, FACILITY_ACTIONS } from "./data";
 
 /* An existing facility, as a card: a title row carrying the facility's type
    and badges, the three figures on one line, a utilisation bar reading the
@@ -23,8 +22,8 @@ const initials = (name) =>
     .map((w) => w[0])
     .join("");
 
-// Amendment is the common path (outlined); Replace is the quieter one (text)
-const ACTION_STYLE = ["is-secondary", "is-ghost"];
+// Amend is the common path (outlined); Replace and Annual review are the quieter ones (text)
+const ACTION_STYLE = ["is-secondary", "is-ghost", "is-ghost"];
 
 export default function FacilityCard({ fac, currency, selected, action, onAction }) {
   const used = fac.drawn / fac.lineValue;
@@ -34,7 +33,6 @@ export default function FacilityCard({ fac, currency, selected, action, onAction
   const borrowers = fac.borrowers.split(", ");
   const accounts = fac.collateral.split(", ");
   const custom = fac.kind === "custom";
-  const moreOn = selected && FACILITY_MORE_ACTIONS.includes(action) ? action : null;
 
   return (
     <article
@@ -125,13 +123,15 @@ export default function FacilityCard({ fac, currency, selected, action, onAction
       {/* Actions */}
       <footer className="lra-fac-actions" role="group" aria-label={`Actions for facility ${fac.facilityId}`}>
         {FACILITY_ACTIONS.map((a, i) => {
-          const on = selected && action === a;
+          // Annual review opens a dialog rather than choosing a path, so it isn't a toggle
+          const toggle = a !== "Annual review";
+          const on = toggle && selected && action === a;
           return (
             <button
               key={a}
               type="button"
               className={`lra-btn ${ACTION_STYLE[i]}` + (on ? " is-on" : "")}
-              aria-pressed={on}
+              aria-pressed={toggle ? on : undefined}
               onClick={() => onAction(a, on)}
             >
               {on && <Icon name="check" size={18} />}
@@ -139,7 +139,6 @@ export default function FacilityCard({ fac, currency, selected, action, onAction
             </button>
           );
         })}
-        <Menu label="More actions" items={FACILITY_MORE_ACTIONS} value={moreOn} onSelect={onAction} />
       </footer>
 
       {selected && custom && (

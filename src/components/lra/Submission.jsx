@@ -1,5 +1,5 @@
 import { FACILITIES, RULES, TICKET } from "./data";
-import { money, num } from "./rules";
+import { amendDiff, flowOf, fmtDate, money, num } from "./rules";
 import { Banner, Icon } from "./ui";
 
 /* Submitted — confirmation, the ticket card and the rules that ran. */
@@ -22,43 +22,111 @@ export default function Submission({ deal, onRestart }) {
         collateral: deal.collaterals.join(", ") || facility?.collateral || "–",
       };
 
+  const flow = flowOf(deal);
+  const diff = amendDiff(deal.amend);
+  const ccy = deal.currency;
+
+  /* What the ticket lists, by kind of request. Only a streamlined (SBL) deal also shows the
+     engine's detailed results; the others go to people rather than through the engine. */
+  const rows =
+    flow === "annual"
+      ? [
+          ["Request type", "Annual review"],
+          ["Facility", `${facility?.type} · ${facility?.facilityId}`],
+          ["Line size", money(facility?.lineValue, ccy)],
+          ["Current NRD", fmtDate(facility?.nrd ?? "")],
+          ["New NRD", deal.annual.newNrd ? fmtDate(deal.annual.newNrd) : "Not set"],
+          ...(deal.annual.comment ? [["Comment", deal.annual.comment]] : []),
+        ]
+      : flow === "amendment"
+        ? [
+            ["Request type", "Amendment"],
+            ["Facility", `${facility?.type} · ${facility?.facilityId}`],
+            [
+              "Amendment type",
+              [
+                diff.clients.length && "Clients",
+                diff.pricing.length && "Pricing",
+                diff.collateral.length && "Collateral",
+                diff.covenants.length && "Covenants",
+              ].filter(Boolean),
+            ],
+            ["Line size", money(facility?.lineValue, ccy)],
+            ["Collateral account(s)", deal.amend.collaterals.join(", ") || "–"],
+            ["Pricing", deal.amend.pricing.mode],
+            ...(deal.amend.pricing.mode === "Exception"
+              ? [
+                  ["Base rate", deal.amend.pricing.baseRate],
+                  ["Spread", `${deal.amend.pricing.spread || "–"} bps`],
+                ]
+              : []),
+          ]
+        : flow === "custom"
+          ? [
+              ["Request type", "Custom deal"],
+              ["Primary borrower", borrower],
+              ["Facility", deal.custom.facilityType],
+              ["Line size", money(deal.custom.lineSize, ccy)],
+              ["Team", deal.custom.team || "–"],
+            ]
+          : [
+              ["Primary borrower", borrower],
+              ["Ticket number", TICKET.number],
+              ["Facility", card.facility],
+              ["Line size", card.lineSize],
+              ["Collateral account(s)", card.collateral],
+            ];
+
+  const message =
+    flow === "annual"
+      ? "Annual review has been successfully submitted. You can view and share ticket information."
+      : flow === "amendment"
+        ? "Amendment request has been successfully submitted. You can view and share ticket information."
+        : "Loan origination request has been successfully submitted. You can view and share ticket information.";
+
   return (
     <div className="lra-step">
-      <Banner tone="success">
-        Loan origination request has been successfully submitted. You can view and share ticket
-        information.
-      </Banner>
-      <Banner>
-        Loan pricing entry was unable to be generated. The pricing request will be completed in
-        Underwriting.
-      </Banner>
+      <Banner tone="success">{message}</Banner>
+      {flow === "sbl" && (
+        <Banner>
+          Loan pricing entry was unable to be generated. The pricing request will be completed in
+          Underwriting.
+        </Banner>
+      )}
+      {flow === "custom" && (
+        <Banner>This request has been routed to Credit's Custom intake. The team will pick it up from the comment you left.</Banner>
+      )}
+      {flow === "annual" && deal.annual.state === "late" && (
+        <Banner tone="warning">
+          The new NRD is after the loan's maturity ({fmtDate(facility?.maturityDate ?? "")}). Credit may ask about it.
+        </Banner>
+      )}
 
       <article className="lra-ticket">
         <h4>Loan request # {TICKET.number}</h4>
         <dl className="lra-kv is-review">
-          <div>
-            <dt>Primary borrower</dt>
-            <dd>{borrower}</dd>
-          </div>
-          <div>
-            <dt>Ticket number</dt>
-            <dd>{TICKET.number}</dd>
-          </div>
-          <div>
-            <dt>Facility</dt>
-            <dd className="is-caps">{card.facility}</dd>
-          </div>
-          <div>
-            <dt>Line size</dt>
-            <dd>{card.lineSize}</dd>
-          </div>
-          <div>
-            <dt>Collateral account(s)</dt>
-            <dd>{card.collateral}</dd>
-          </div>
+          {rows.map(([label, value]) => (
+            <div key={label}>
+              <dt>{label}</dt>
+              <dd className={label === "Facility" && flow === "sbl" ? "is-caps" : undefined}>
+                {Array.isArray(value) ? (
+                  <span className="lra-badges">
+                    {value.map((v) => (
+                      <span key={v} className="lra-pill is-blue">
+                        {v}
+                      </span>
+                    ))}
+                  </span>
+                ) : (
+                  value
+                )}
+              </dd>
+            </div>
+          ))}
         </dl>
       </article>
 
+      {flow === "sbl" && (
       <details className="lra-rules" open>
         <summary>
           Detailed results
@@ -89,6 +157,7 @@ export default function Submission({ deal, onRestart }) {
           </table>
         </div>
       </details>
+      )}
 
       <button type="button" className="lra-btn is-secondary" onClick={onRestart}>
         Start a new request

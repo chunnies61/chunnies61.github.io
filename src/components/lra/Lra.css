@@ -582,10 +582,48 @@
 }
 
 /* App header — 64px, title text-lg semibold */
+/* The two lines under the app header and under the stepper: halfway between the card hairline
+   (#EDEDED) and the field border (#CCCCCC), so they read without shouting */
+.lra {
+  --lra-head-line: color-mix(in srgb, var(--ui-border-secondary) 50%, var(--ui-border));
+}
+
+/* App header: the product's mark and name, above the stepper */
+.lra-appbar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 56px;
+  padding: 0 32px;
+  border-bottom: 1px solid var(--lra-head-line);
+  background: var(--ui-bg);
+}
+
+/* The mark is the sparkle icon itself, filled in the main colour — no tile behind it */
+.lra-appbar-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ui-primary);
+}
+
+.lra-appbar-mark .lra-icon path {
+  fill: currentColor;
+}
+
+.lra-appbar-name {
+  font-family: var(--ui-font);
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 600;
+  color: var(--ui-fg);
+}
+
 .lra-head {
   flex: none;
-  padding: 16px 32px;
-  border-bottom: 1px solid var(--ui-border-secondary);
+  padding: 24px 32px;
+  border-bottom: 1px solid var(--lra-head-line);
 }
 
 .lra-body {
@@ -665,9 +703,10 @@
   cursor: default;
 }
 
-.lra-index-hint {
-  margin: 12px 0 0;
-  padding-left: 14px;
+.lra-index-sub {
+  margin: 0;
+  padding: 0 14px 8px;
+  border-left: 2px solid var(--ui-primary);
   font-size: 12px;
   line-height: 16px;
   color: var(--ui-fg-tertiary);
@@ -827,8 +866,8 @@
 .lra-page-title {
   margin: 0 0 24px;
   font-family: var(--ui-font);
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 20px;
+  line-height: 28px;
   font-weight: 600;
   color: var(--ui-fg);
 }
@@ -1772,6 +1811,11 @@
   color: var(--ui-warning-700);
 }
 
+/* The buttons that start a new deal, under the existing facilities */
+.lra-build {
+  margin-top: 24px;
+}
+
 .lra-build-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1921,6 +1965,11 @@
   font-size: 14px;
   line-height: 20px;
   color: var(--ui-fg-tertiary);
+}
+
+/* the instruction above the party search sits clear of it */
+.lra-section-intro + .lra-party-row {
+  margin-top: 16px;
 }
 
 .lra-offers {
@@ -2639,8 +2688,9 @@
   flex-direction: column;
   gap: 12px;
   padding: 20px;
-  background: var(--ui-bg-secondary);
-  border: 1px solid var(--ui-border);
+  /* the panel's gray, a step lighter than the page's secondary background (#F6F6F6) */
+  background: var(--ui-gray-50);
+  border: 1px solid color-mix(in srgb, var(--ui-border-secondary) 50%, var(--ui-border));
   border-radius: var(--ui-radius-md);
 }
 
@@ -2760,6 +2810,14 @@
 
 /* The right side is one form: everything sits inside a single frame, so the
    sections read as parts of one questionnaire rather than separate panels. */
+/* The right-hand side: the client information panel, then the signers panel beneath it */
+.lra-cq-main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
 .lra-cq-panel {
   display: flex;
   flex-direction: column;
@@ -2767,7 +2825,8 @@
   min-width: 0;
   padding: 24px;
   background: var(--ui-bg);
-  border: 1px solid var(--ui-border);
+  /* a touch lighter than the field border, so the panels recede behind what's in them */
+  border: 1px solid color-mix(in srgb, var(--ui-border-secondary) 50%, var(--ui-border));
   border-radius: var(--ui-radius-md);
   box-shadow: var(--ui-shadow-xs);
 }
@@ -2808,17 +2867,10 @@
   gap: 24px;
 }
 
-/* A hairline between sections — they are parts of one form, so they get a
-   divider rather than gaps alone. */
-.lra-cq-form > .lra-section + .lra-section,
-.lra-cq-panel > .lra-section {
-  padding-top: 24px;
-  border-top: 1px solid var(--ui-border-secondary);
-}
-
-.lra-cq-form > .lra-section + .lra-section,
-.lra-cq-panel > .lra-section + .lra-section {
-  margin-top: 0;
+/* The sections of the client form are separated by space alone: each has its own heading, so a
+   hairline between them would only repeat it. */
+.lra-cq-form > .lra-section + .lra-section {
+  margin-top: 12px;
 }
 
 /* Stacked blocks inside a section need their own rhythm */
@@ -2867,4 +2919,271 @@
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+/* --- Flows: Custom deal, Amendment, Annual review ----------------------------- */
+
+.lra-money-ccy {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ui-fg-tertiary);
+}
+
+.lra-custom-start {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.lra-review-text {
+  max-width: 880px;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--ui-fg);
+  white-space: pre-wrap;
+}
+
+.lra-badges {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.lra-link {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--ui-primary);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Amendment: the editor for a section, then Original beside Updated */
+.lra-amend-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.lra-compare {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.lra-compare-card {
+  padding: 16px 20px;
+  border: 1px solid var(--ui-border-secondary);
+  border-radius: 8px;
+  background: var(--ui-bg);
+}
+
+.lra-compare-card.is-updated {
+  border-color: var(--ui-brand-200);
+  background: var(--ui-brand-25);
+}
+
+.lra-compare-card h5 {
+  margin: 0 0 8px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ui-fg-tertiary);
+}
+
+.lra-compare-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lra-diff-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 12px;
+  padding: 8px 0;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ui-fg);
+}
+
+.lra-diff-line + .lra-diff-line {
+  border-top: 1px solid var(--ui-border-secondary);
+}
+
+.lra-diff-line.is-deleted > span:first-child {
+  color: var(--ui-fg-quaternary);
+  text-decoration: line-through;
+}
+
+.lra-diff-key {
+  display: inline-block;
+  min-width: 120px;
+  color: var(--ui-fg-tertiary);
+}
+
+.lra-diff-sub {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--ui-fg-tertiary);
+}
+
+/* Annual review dialog: over the app window, in canvas coordinates */
+.lra-modal-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 13, 18, 0.45);
+}
+
+.lra-modal {
+  display: flex;
+  flex-direction: column;
+  width: 720px;
+  max-height: calc(100% - 64px);
+  border-radius: 12px;
+  background: var(--ui-bg);
+  box-shadow: var(--ui-shadow-lg);
+  outline: 0;
+}
+
+.lra-modal-head,
+.lra-modal-foot {
+  flex: none;
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+}
+
+.lra-modal-head {
+  justify-content: space-between;
+  border-bottom: 1px solid var(--ui-border-secondary);
+}
+
+.lra-modal-head h4 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 600;
+  color: var(--ui-fg);
+}
+
+.lra-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  overflow: auto;
+}
+
+.lra-modal-reset {
+  align-self: flex-start;
+  margin-top: -8px;
+}
+
+.lra-modal-foot {
+  justify-content: flex-end;
+  gap: 12px;
+  border-top: 1px solid var(--ui-border-secondary);
+}
+
+/* Compare with last year: last year's answers on the left, this year's on the right, each laid
+   out like the rest of the form (label above, value beneath) so an answer sits across from its
+   prior. */
+.lra-cq-sides {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* 32px of room either side of the divider */
+.lra-cq-side:not(.is-now) {
+  padding-right: 32px;
+}
+
+.lra-cq-side.is-now {
+  padding-left: 32px;
+}
+
+/* The compared sections (Assets to Expenditure) share one divider running down the middle, from the
+   top of the first to the bottom of the last, rather than a short line in each */
+.lra-cq-group {
+  position: relative;
+}
+
+.lra-cq-group.is-compare::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: var(--ui-border-secondary);
+}
+
+.lra-cq-form > .lra-cq-group,
+.lra-cq-group > .lra-section + .lra-section {
+  margin-top: 12px;
+}
+
+.lra-cq-side h5 {
+  margin: 0 0 12px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ui-fg-tertiary);
+}
+
+.lra-cq-side.is-now h5 {
+  color: var(--ui-primary);
+}
+
+.lra-cq-side .lra-kv.is-review {
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+}
+
+.lra-cq-side dt label {
+  font: inherit;
+  color: inherit;
+}
+
+/* Every value line is the same height, with its tag or field, so the two sides stay level */
+.lra-cq-side dd {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 24px;
+}
+
+.lra-cq-sides.is-editing .lra-cq-side dd {
+  min-height: 40px;
+}
+
+.lra-cq-side dd input {
+  width: 100%;
+  min-width: 0;
+}
+
+/* a flagged move reads on both sides */
+.lra-cq-sides .lra-cq-answer.is-flagged {
+  margin: -6px -8px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: var(--ui-warning-25);
 }
