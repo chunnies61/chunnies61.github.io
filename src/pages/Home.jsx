@@ -5,6 +5,7 @@ import Tag from "../components/Tag";
 import ContactCta from "../components/ContactCta";
 import FallingTools from "../components/falling-tools/FallingTools";
 import ArrowButton from "../components/ArrowButton";
+import ProjectModal from "../components/ProjectModal";
 import { track } from "../analytics";
 import GridGlow from "../components/GridGlow";
 import "./Home.css";
@@ -16,6 +17,8 @@ export default function Home() {
      rather than counted, so they still show on a narrow screen where even
      three cards don't fit. */
   const [canScroll, setCanScroll] = useState(false);
+  // The side project shown in the pop-up, or null when it's closed
+  const [openProject, setOpenProject] = useState(null);
 
   /* The graph-paper grid is painted on <body> while the home page is showing, so the
      nav, the page and the footer all sit on one continuous sheet. */
@@ -108,12 +111,21 @@ export default function Home() {
 
           <div className="more-scroller" ref={scrollerRef}>
             {home.otherWork.filter((p) => p.title !== "Project title").slice(0, 6).map((item, i) => (
-              <div className="more-card" key={`${item.thumb}-${i}`}>
-                <div className="more-card-media">
+              <button
+                type="button"
+                className="more-card"
+                key={`${item.thumb}-${i}`}
+                aria-haspopup="dialog"
+                onClick={() => {
+                  setOpenProject(item);
+                  track("side_project_open", { project: item.title });
+                }}
+              >
+                <span className="more-card-media">
                   <img src={item.thumb} alt="" loading="lazy" />
-                </div>
-                <p className="more-card-title">{item.title}</p>
-              </div>
+                </span>
+                <span className="more-card-title">{item.title}</span>
+              </button>
             ))}
           </div>
 
@@ -127,6 +139,8 @@ export default function Home() {
           )}
         </div>
       </section>
+
+      <ProjectModal project={openProject} onClose={() => setOpenProject(null)} />
 
       <ContactCta title={home.ctaTitle} subtitle={home.ctaSubtitle} />
     </div>

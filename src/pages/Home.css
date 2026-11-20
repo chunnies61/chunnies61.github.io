@@ -175,14 +175,30 @@ body.has-grid {
   display: none;
 }
 
+/* Each card is a button that opens the project in a pop-up */
 .more-card {
   flex: 0 0 calc((100% - 48px) / 3);
   scroll-snap-align: start;
+  display: block;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+}
+
+.more-card:focus-visible {
+  outline: 2px solid var(--accent-dark);
+  outline-offset: 4px;
+  border-radius: var(--radius-media);
 }
 
 /* Match the project frame exactly so images fill the well with no
    letterbox bands (same ratio the /projects carousel uses). */
 .more-card-media {
+  display: block;
   width: 100%;
   /* Matches the thumbnails' own 16:9 — the old 1.5:1 box letterboxed them
      with white bands above and below. */
@@ -192,7 +208,7 @@ body.has-grid {
   background: var(--placeholder-bg);
 }
 
-/* Side project cards aren't links, so their images stay still on hover */
+/* The image stays still on hover; the title turns blue to show the card opens */
 .more-card-media img {
   width: 100%;
   height: 100%;
@@ -200,11 +216,16 @@ body.has-grid {
 }
 
 .more-card-title {
+  display: block;
   margin-top: 12px;
   font-family: var(--font-display);
   font-size: 16px;
   font-weight: 700;
   color: var(--gray-800);
+}
+
+.more-card:hover .more-card-title {
+  color: var(--accent-dark);
 }
 
 .more-controls {
