@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import site from "../data/site.json";
+import { track } from "../analytics";
 import "./Nav.css";
 
 export default function Nav() {
   // The floating capsule tightens into a smaller one once the page scrolls.
   const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -34,7 +36,13 @@ export default function Nav() {
               {link.label}
             </Link>
           ))}
-          <a className="md-label-medium" href={site.nav.resumeUrl} target="_blank" rel="noreferrer">
+          <a
+            className="md-label-medium"
+            href={site.nav.resumeUrl}
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => track("cv_open", { page: pathname })}
+          >
             CV
           </a>
         </nav>

@@ -101,7 +101,7 @@ export default function Home() {
               <p className="eyebrow">{home.otherWorkEyebrow}</p>
               <h2 className="section-title more-title">{home.otherWorkTitle}</h2>
             </div>
-            <Link to="/projects" className="more-viewall">
+            <Link to="/projects" className="more-viewall" onClick={() => track("view_all_side_projects")}>
               View all →
             </Link>
           </div>
