@@ -49,7 +49,7 @@
         ]
       },
       {
-        "thumb": "/images/pawpath-1.png",
+        "thumb": "/images/pawpath-v2-1.png",
         "title": "PawPath",
         "ratio": "16 / 9",
         "award": {
@@ -62,16 +62,16 @@
         ],
         "link": "https://pawpath.framer.website/",
         "images": [
-          "/images/pawpath-1.png",
-          "/images/pawpath-2.png",
-          "/images/pawpath-3.png",
-          "/images/pawpath-4.png",
-          "/images/pawpath-5.png",
-          "/images/pawpath-6.png"
+          "/images/pawpath-v2-1.png",
+          "/images/pawpath-v2-2.png",
+          "/images/pawpath-v2-3.png",
+          "/images/pawpath-v2-4.png",
+          "/images/pawpath-v2-5.png",
+          "/images/pawpath-v2-6.png"
         ]
       },
       {
-        "thumb": "/images/afterwards-1.jpg",
+        "thumb": "/images/afterwards-v2-1.jpg",
         "title": "Afterwards",
         "ratio": "16 / 9",
         "award": {
@@ -84,12 +84,12 @@
         ],
         "link": "https://afterwards-app.webflow.io/",
         "images": [
-          "/images/afterwards-1.jpg",
-          "/images/afterwards-2.jpg",
-          "/images/afterwards-3.jpg",
-          "/images/afterwards-4.jpg",
-          "/images/afterwards-5.jpg",
-          "/images/afterwards-6.jpg"
+          "/images/afterwards-v2-1.jpg",
+          "/images/afterwards-v2-2.jpg",
+          "/images/afterwards-v2-3.jpg",
+          "/images/afterwards-v2-4.jpg",
+          "/images/afterwards-v2-5.jpg",
+          "/images/afterwards-v2-6.jpg"
         ]
       },
       {"thumb": "/images/other-work-2-f4140b.png", "title": "Project title"},
