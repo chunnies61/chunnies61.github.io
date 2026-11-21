@@ -1,5 +1,5 @@
 import { METRIC_ICONS } from "../components/metricIcons.generated";
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { getCaseStudy, caseStudies } from "../data/caseStudies";
 import site from "../data/site.json";
@@ -15,6 +15,7 @@ import "./CaseStudy.css";
 import PasswordGate, { useUnlocked } from "../components/PasswordGate";
 import InViewVideo from "../components/InViewVideo";
 import { track } from "../analytics";
+import useReveal from "../hooks/useReveal";
 import { ICONS } from "../components/lra/icons.generated";
 
 
@@ -771,12 +772,31 @@ export default function CaseStudy() {
     return () => observer.disconnect();
   }, [slug]);
 
+  /* The page arrives in layers as it scrolls into view: the header's lines one after another and
+     then its image, each section's caption before its title, and each block of the story as it
+     comes up the screen. Marked from here rather than in the blocks, so the layout is untouched. */
+  const rootRef = useRef(null);
+  useReveal(rootRef, {
+    key: slug + (isLocked ? ":locked" : ""),
+    auto: [
+      [".cs-header-facts", 0],
+      [".cs-header-title", 70],
+      [".cs-header-subtitle", 140],
+      [".cs-header > .cs-hero-image", 200],
+      [".cs-section-caption", 0],
+      [".cs-section-title", 70],
+      [".cs-section-content > :not(.cs-section-head)", 0],
+      [".cs-body-main > .cs-row", 0],
+      [".cs-pager", 0],
+    ],
+  });
+
   if (isLocked) {
     return <PasswordGate key={slug} onUnlock={unlock} />;
   }
 
   return (
-    <article className={"case-study case-study--" + study.slug}>
+    <article className={"case-study case-study--" + study.slug} ref={rootRef}>
       <header className="cs-header">
         <div className="cs-header-panel">
           <div className="cs-header-copy">

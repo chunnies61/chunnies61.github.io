@@ -16,11 +16,22 @@ import { useLayoutEffect } from "react";
 
 const LINE = 0.92;
 
-export default function useReveal(rootRef) {
+/* `auto` marks elements without touching the markup: a list of [selector, delayMs] pairs. Use it
+   where the content is rendered from data and wrapping every piece would disturb the layout (the
+   case study pages). `key` re-runs the whole thing when the page's content changes under the same
+   component, e.g. moving from one case study to the next. */
+export default function useReveal(rootRef, { auto = [], key } = {}) {
   useLayoutEffect(() => {
     const root = rootRef.current;
     if (!root) return undefined;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return undefined;
+
+    auto.forEach(([selector, delay]) => {
+      root.querySelectorAll(selector).forEach((el) => {
+        el.setAttribute("data-reveal", "");
+        if (delay) el.style.setProperty("--reveal-delay", `${delay}ms`);
+      });
+    });
 
     const els = [...root.querySelectorAll("[data-reveal]")];
     let pending = els;
@@ -50,5 +61,5 @@ export default function useReveal(rootRef) {
       root.classList.remove("reveal-armed");
       els.forEach((el) => el.classList.remove("is-revealed"));
     };
-  }, [rootRef]);
+  }, [rootRef, key]); // eslint-disable-line react-hooks/exhaustive-deps
 }
