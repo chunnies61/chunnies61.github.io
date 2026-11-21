@@ -277,9 +277,9 @@ body.has-grid {
   padding: var(--space-section) 0;
   margin: var(--space-title-gap) 40px;
   scroll-margin-top: 88px;
-  /* A flat dusty blue panel, with text in the darkest gray */
+  /* A flat dusty blue panel (#9ec3d5, lightened 30% toward white), with text in the darkest gray */
   --about-ink: var(--gray-900);
-  background: #9ec3d5;
+  background: #bbd5e2;
   border-radius: 56px;
 }
 

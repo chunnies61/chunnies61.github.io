@@ -364,3 +364,18 @@ button {
 :is(main, .nav, .footer) mark {
   line-height: inherit !important;
 }
+
+/* --- Reveal on scroll (see hooks/useReveal.js) --------------------------------
+   Marked elements rise 14px into place and fade in, once, with a soft ease-out. Each can be held
+   back with --reveal-delay so the page arrives in layers. Only armed pages hide anything, and the
+   hook never arms for visitors who prefer reduced motion. */
+.reveal-armed [data-reveal] {
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+}
+
+.reveal-armed [data-reveal]:not(.is-revealed) {
+  opacity: 0;
+  transform: translateY(14px);
+}

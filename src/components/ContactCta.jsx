@@ -5,9 +5,11 @@ export default function ContactCta({ title, subtitle }) {
   return (
     <section className="contact-cta">
       <div className="wrap contact-cta-inner">
-        <h2>{title ?? "Have a fun idea?"}</h2>
-        <p className="contact-cta-subtitle">{subtitle ?? "Let's connect."}</p>
-        <div className="contact-cta-actions">
+        <h2 data-reveal>{title ?? "Have a fun idea?"}</h2>
+        <p className="contact-cta-subtitle" data-reveal style={{ "--reveal-delay": "80ms" }}>
+          {subtitle ?? "Let's connect."}
+        </p>
+        <div className="contact-cta-actions" data-reveal style={{ "--reveal-delay": "160ms" }}>
           <a className="btn btn-primary" href={`mailto:${site.contact.email}`}>
             Email
           </a>

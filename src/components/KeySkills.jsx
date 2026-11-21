@@ -326,13 +326,18 @@ function useScrub(tileRef, svgRef, enabled, smilPeriod) {
 // How long one loop of the SMIL-driven drawings lasts, in seconds
 const SMIL_PERIOD = { creativity: 12 };
 
-function Tile({ skill, reduced }) {
+function Tile({ skill, reduced, index }) {
   const tile = useRef(null);
   const svg = useRef(null);
   const Art = ART[skill.id];
   useScrub(tile, svg, !reduced, SMIL_PERIOD[skill.id]);
   return (
-    <article className="ks-tile" ref={tile} style={{ background: skill.bg }}>
+    <article
+      className="ks-tile"
+      ref={tile}
+      data-reveal
+      style={{ background: skill.bg, "--reveal-delay": `${(index % 4) * 90}ms` }}
+    >
       <h3>{skill.title}</h3>
       <p>{skill.desc}</p>
       <svg ref={svg} className="ks-art" viewBox="0 0 240 150" preserveAspectRatio="xMidYMax meet" aria-hidden="true" focusable="false">
@@ -347,11 +352,15 @@ export default function KeySkills() {
   return (
     <section className="section">
       <div className="wrap">
-        <p className="eyebrow center">{data.eyebrow}</p>
-        <h2 className="section-title center">{data.title}</h2>
+        <p className="eyebrow center" data-reveal>
+          {data.eyebrow}
+        </p>
+        <h2 className="section-title center" data-reveal style={{ "--reveal-delay": "70ms" }}>
+          {data.title}
+        </h2>
         <div className={"ks-grid" + (reduced ? " is-still" : "")}>
-          {data.skills.map((s) => (
-            <Tile key={s.id} skill={s} reduced={reduced} />
+          {data.skills.map((s, i) => (
+            <Tile key={s.id} skill={s} reduced={reduced} index={i} />
           ))}
         </div>
       </div>

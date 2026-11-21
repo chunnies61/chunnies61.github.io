@@ -97,8 +97,12 @@ export default function Testimonials() {
       onBlur={() => setPaused(false)}
     >
       <div className="wrap">
-        <p className="eyebrow center">{testimonialsEyebrow}</p>
-        <h2 className="section-title center">{testimonialsTitle}</h2>
+        <p className="eyebrow center" data-reveal>
+          {testimonialsEyebrow}
+        </p>
+        <h2 className="section-title center" data-reveal style={{ "--reveal-delay": "70ms" }}>
+          {testimonialsTitle}
+        </h2>
       </div>
 
       <div
@@ -110,7 +114,8 @@ export default function Testimonials() {
         onPointerUp={onUp}
         onPointerCancel={onUp}
         onPointerLeave={onUp}
-        style={{ "--drag": `${drag}px` }}
+        data-reveal
+        style={{ "--drag": `${drag}px`, "--reveal-delay": "120ms" }}
       >
         {testimonials.map((t, i) => {
           const o = offsets[i];
@@ -152,7 +157,7 @@ export default function Testimonials() {
         })}
       </div>
 
-      <div className="tm-controls">
+      <div className="tm-controls" data-reveal style={{ "--reveal-delay": "200ms" }}>
         <ArrowButton dir="prev" aria-label="Previous testimonial" onClick={() => go(active - 1)} />
         <span className="tm-count" aria-live="polite">{pad(active + 1)} / {pad(n)}</span>
         <ArrowButton dir="next" aria-label="Next testimonial" onClick={() => go(active + 1)} />
