@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import ScrollToHash from "./components/ScrollToHash";
+import PageTitle from "./components/PageTitle";
 import Home from "./pages/Home";
 import CaseStudy from "./pages/CaseStudy";
 import AllProjects from "./pages/AllProjects";
@@ -17,6 +18,7 @@ function App() {
   return (
     <>
       <ScrollToHash />
+      <PageTitle />
       <Nav />
       <main>
         <Routes>

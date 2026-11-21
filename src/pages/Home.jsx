@@ -5,6 +5,8 @@ import Tag from "../components/Tag";
 import ContactCta from "../components/ContactCta";
 import FallingTools from "../components/falling-tools/FallingTools";
 import ArrowButton from "../components/ArrowButton";
+import ProjectModal from "../components/ProjectModal";
+import { track } from "../analytics";
 import GridGlow from "../components/GridGlow";
 import useReveal from "../hooks/useReveal";
 import "./Home.css";
@@ -18,6 +20,8 @@ export default function Home() {
      rather than counted, so they still show on a narrow screen where even
      three cards don't fit. */
   const [canScroll, setCanScroll] = useState(false);
+  // The side project shown in the pop-up, or null when it's closed
+  const [openProject, setOpenProject] = useState(null);
 
   /* The graph-paper grid is painted on <body> while the home page is showing, so the
      nav, the page and the footer all sit on one continuous sheet. */
@@ -79,7 +83,11 @@ export default function Home() {
           <div className="case-grid">
             {home.caseStudies.map((cs) => (
               <div key={cs.slug} data-reveal>
-              <Link to={`/case-studies/${cs.slug}`} className="case-card">
+              <Link
+                to={`/case-studies/${cs.slug}`}
+                className="case-card"
+                onClick={() => track("select_case_study", { case_study: cs.title, from: "home" })}
+              >
                 <div className="case-card-image">
                   <img src={cs.thumb} alt={cs.title} loading="lazy" />
                 </div>
@@ -106,19 +114,25 @@ export default function Home() {
               <p className="eyebrow">{home.otherWorkEyebrow}</p>
               <h2 className="section-title more-title">{home.otherWorkTitle}</h2>
             </div>
-            <Link to="/projects" className="more-viewall">
-              View all →
-            </Link>
           </div>
 
           <div className="more-scroller" ref={scrollerRef} data-reveal style={{ "--reveal-delay": "90ms" }}>
             {home.otherWork.filter((p) => p.title !== "Project title").slice(0, 6).map((item, i) => (
-              <div className="more-card" key={`${item.thumb}-${i}`}>
-                <div className="more-card-media">
+              <button
+                type="button"
+                className="more-card"
+                key={`${item.thumb}-${i}`}
+                aria-haspopup="dialog"
+                onClick={() => {
+                  setOpenProject(item);
+                  track("side_project_open", { project: item.title });
+                }}
+              >
+                <span className="more-card-media">
                   <img src={item.thumb} alt="" loading="lazy" />
-                </div>
-                <p className="more-card-title">{item.title}</p>
-              </div>
+                </span>
+                <span className="more-card-title">{item.title}</span>
+              </button>
             ))}
           </div>
 
@@ -132,6 +146,8 @@ export default function Home() {
           )}
         </div>
       </section>
+
+      <ProjectModal project={openProject} onClose={() => setOpenProject(null)} />
 
       <ContactCta title={home.ctaTitle} subtitle={home.ctaSubtitle} />
     </div>
