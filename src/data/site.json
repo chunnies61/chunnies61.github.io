@@ -26,7 +26,7 @@
     "otherWorkTitle": "Side projects",
     "otherWork": [
       {
-        "thumb": "/images/sora-1.jpg",
+        "thumb": "/images/sora-v2-1.jpg",
         "title": "Sora",
         "ratio": "16 / 9",
         "award": {
@@ -39,13 +39,13 @@
         ],
         "link": "https://ziyi0619.github.io/sora/",
         "images": [
-          "/images/sora-1.jpg",
-          "/images/sora-2.jpg",
-          "/images/sora-3.jpg",
-          "/images/sora-4.jpg",
-          "/images/sora-5.jpg",
-          "/images/sora-6.jpg",
-          "/images/sora-7.jpg"
+          "/images/sora-v2-1.jpg",
+          "/images/sora-v2-2.jpg",
+          "/images/sora-v2-3.jpg",
+          "/images/sora-v2-4.jpg",
+          "/images/sora-v2-5.jpg",
+          "/images/sora-v2-6.jpg",
+          "/images/sora-v2-7.jpg"
         ]
       },
       {
