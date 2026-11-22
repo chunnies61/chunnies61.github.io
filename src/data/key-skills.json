@@ -21,9 +21,9 @@
       "bg": "#a9c8e6"
     },
     {
-      "id": "problem-solving",
-      "title": "Problem solving",
-      "desc": "Finding the piece that makes it all fit.",
+      "id": "ownership",
+      "title": "Ownership",
+      "desc": "When a problem has no owner, I become one.",
       "bg": "#fde9a8"
     },
     {
@@ -33,9 +33,9 @@
       "bg": "#c4ecd6"
     },
     {
-      "id": "creativity",
-      "title": "Creativity",
-      "desc": "Exploring many ideas, keeping the one that feels right.",
+      "id": "critical-thinking",
+      "title": "Critical thinking",
+      "desc": "AI drafts fast and can be wrong. I'm the one who decides.",
       "bg": "#ffa583"
     },
     {
@@ -45,9 +45,9 @@
       "bg": "#dacfff"
     },
     {
-      "id": "systems",
-      "title": "Systems thinking",
-      "desc": "Seeing the whole chain, not just the screen.",
+      "id": "design-systems",
+      "title": "Design systems",
+      "desc": "Reusable parts that keep every screen consistent.",
       "bg": "#bfe6fb"
     }
   ]
