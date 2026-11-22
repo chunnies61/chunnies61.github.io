@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import site from "../data/site.json";
 import ContactCta from "../components/ContactCta";
+import GridGlow from "../components/GridGlow";
 import KeySkills from "../components/KeySkills";
 import Testimonials from "../components/Testimonials";
 import useReveal from "../hooks/useReveal";
@@ -15,7 +16,8 @@ export default function About() {
   const rootRef = useRef(null);
   useReveal(rootRef); // the page arrives in layers as it scrolls into view
 
-  // The same graph-paper background as the home page (styled in Home.css), nav and footer included
+  // The same graph-paper background as the home page (styled in Home.css), nav and footer included;
+  // <GridGlow /> below is its pointer-following highlight
   useEffect(() => {
     document.body.classList.add("has-grid");
     return () => document.body.classList.remove("has-grid");
@@ -23,6 +25,7 @@ export default function About() {
 
   return (
     <div className="about-page" ref={rootRef}>
+      <GridGlow />
       <section className="about-hero" data-reveal>
         <div className="wrap about-hero-inner">
           <div className="about-hero-text">
