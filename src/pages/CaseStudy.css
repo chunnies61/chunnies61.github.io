@@ -1526,7 +1526,7 @@ a.cs-index-item.is-active:hover {
   font-size: 22px;
   line-height: 1;
 }
-.cs-outcome-tile:nth-child(6n + 2) .cs-outcome-chip { color: var(--pill-yellow-text); }
+.cs-outcome-tile:nth-child(6n + 2) .cs-outcome-chip { color: #eab935; } /* a lighter yellow than the pill text */
 .cs-outcome-tile:nth-child(6n + 3) .cs-outcome-chip { color: #3fb68b; } /* a lighter green than the pill text */
 .cs-outcome-tile:nth-child(6n + 4) .cs-outcome-chip { color: #6442c4; } /* violet */
 .cs-outcome-tile:nth-child(6n + 5) .cs-outcome-chip { color: var(--pill-pink-text); }
