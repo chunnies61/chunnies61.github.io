@@ -254,7 +254,7 @@ export default function PersonaTabs({ personas, label, title, intro }) {
                 <span className="cs-pt-tab-avatar" aria-hidden="true">
                   {p.avatar}
                 </span>
-                <span className="cs-pt-tab-name md-label-large">{p.name}</span>
+                <span className="cs-pt-tab-name md-label-medium">{p.name}</span>
               </button>
             ))}
           </div>

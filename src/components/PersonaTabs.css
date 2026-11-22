@@ -5,9 +5,9 @@
 .cs-pt {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--cs-pt-line);
   border-radius: 20px;
-  background: var(--cs-pt-surface);
+  /* the same light gray sheet as the information architecture map above */
+  background: var(--surface-tint);
   /* clip, not hidden: it rounds the corners without creating a scroll
      container, so the tab bar can still stick under the nav */
   overflow: clip;
@@ -15,6 +15,10 @@
   /* One-pager ink: outlined white boxes on a firmer line than the page
      hairline, so the sheet reads as a document. */
   --cs-pt-line: var(--gray-200);
+  /* Bento cards: thick Primary outline, generous corners */
+  --cs-pt-ink: var(--accent-dark);
+  --cs-pt-card-radius: 24px;
+  --cs-pt-card-border: 2px solid var(--cs-pt-ink);
   /* The sheet sits on a half-strength Gray 50 so its white boxes read as
      cards. Mixed with white rather than made translucent: the sticky tab bar
      needs an opaque fill to hide content scrolling beneath it. */
@@ -37,69 +41,54 @@
 }
 
 /* --- Tab bar -----------------------------------------------------------
-   A persona chooser built like the rest of the site's tabs: each role keeps
-   its portrait in a tinted badge, and the chosen one takes Primary ink over
-   a 3px indicator. Sticks under the 72px site nav so a reader deep in a long
-   sheet can still switch persona. */
+   Pills, the same as the persona tabs on the information architecture
+   map above: the portrait emoji and the role's full name, with a Primary
+   outline (and Primary name) on the chosen one only. Sticks under the 72px site nav so a reader deep in a long sheet can still
+   switch persona. */
 .cs-pt-bar {
   position: sticky;
   top: 72px;
   z-index: 10;
-  background: var(--bg);
-  border-bottom: 1px solid var(--cs-pt-line);
+  padding: 24px 24px 8px;
+  /* the sheet's gray as an opaque colour (--surface-tint is see-through), so the bar
+     hides the content scrolling beneath it */
+  background: color-mix(in srgb, var(--gray-50) 80%, #ffffff);
 }
 
-/* Tabs size to their names and share the spare width, so "Credit Risk &
-   Analysis" gets the room it needs instead of an ellipsis. */
 .cs-pt-tabs {
   position: relative;
   display: flex;
-  gap: 0;
+  gap: 2px;
 }
 
 .cs-pt-tab {
   position: relative;
-  flex: 1 1 auto;
+  flex: none;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  gap: 6px;
   min-width: 0;
-  padding: 14px 16px;
-  border: 0;
+  height: 32px;
+  padding: 0 12px;
+  border: 2px solid transparent; /* same weight as the persona cards; keeps the box the same size when the outline appears */
+  border-radius: 999px;
   background: transparent;
   color: var(--text-soft);
   cursor: pointer;
-  transition: color 0.15s ease, background-color 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-/* The indicator sits on the bar's own hairline */
-.cs-pt-tab::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 -1px;
-  height: 3px;
-  border-radius: 3px 3px 0 0;
-  background: var(--accent-dark);
-  opacity: 0;
-  transition: opacity 0.15s ease;
-}
-
-/* Portraits ride a tinted badge — grey until their persona is chosen */
+/* The portrait, small and grey until its persona is chosen */
 .cs-pt-tab-avatar {
   flex: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 999px;
-  background: var(--gray-50);
-  font-size: 17px;
+  font-size: 13px;
   line-height: 1;
   filter: grayscale(1);
   opacity: 0.6;
-  transition: filter 0.15s ease, opacity 0.15s ease, background-color 0.15s ease;
+  transition: filter 0.15s ease, opacity 0.15s ease;
 }
 
 .cs-pt-tab-name {
@@ -110,7 +99,6 @@
 
 .cs-pt-tab:hover {
   color: var(--text);
-  background: var(--cs-pt-surface);
 }
 
 .cs-pt-tab:hover .cs-pt-tab-avatar {
@@ -120,27 +108,23 @@
 
 .cs-pt-tab.is-active {
   color: var(--accent-dark);
-}
-
-.cs-pt-tab.is-active::after {
-  opacity: 1;
+  border-color: var(--accent-dark);
+  font-weight: 700;
 }
 
 .cs-pt-tab.is-active .cs-pt-tab-avatar {
-  background: var(--pill-blue-bg);
   filter: none;
   opacity: 1;
 }
 
 .cs-pt-tab:focus-visible {
   outline: 2px solid var(--text);
-  outline-offset: -2px;
-  border-radius: 8px;
+  outline-offset: 2px;
 }
 
 /* --- Panel ------------------------------------------------------------- */
 .cs-pt-panel {
-  padding: 20px;
+  padding: 4px 24px 24px;
   outline: none;
 }
 
@@ -160,14 +144,19 @@
    long-form detail boxes full width underneath. */
 .cs-pt-sheet {
   display: grid;
-  grid-template-columns: 216px minmax(0, 1fr);
-  gap: 20px;
+  grid-template-columns: 232px minmax(0, 1fr);
+  gap: 12px;
 }
 
+/* The profile is the tall card down the left side of the bento */
 .cs-pt-profile {
   grid-column: 1;
   display: flex;
   flex-direction: column;
+  padding: 20px 18px;
+  border: var(--cs-pt-card-border);
+  border-radius: var(--cs-pt-card-radius);
+  background: var(--bg);
 }
 
 /* When the profile is the taller column, the grid shares the spare height
@@ -177,14 +166,14 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-content: stretch;
-  gap: 10px;
+  gap: 12px;
 }
 
 .cs-pt-detail {
   grid-column: 1 / -1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 /* --- Profile column ---------------------------------------------------- */
@@ -192,17 +181,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
+  width: 56px;
   aspect-ratio: 1;
-  border: 1px solid var(--cs-pt-line);
-  border-radius: var(--radius-card);
+  border: var(--cs-pt-card-border);
+  border-radius: 16px;
   background: var(--bg);
-  font-size: 40px;
+  font-size: 28px;
   line-height: 1;
 }
 
 .cs-pt-id {
-  margin-top: 12px;
+  margin-top: 14px;
+}
+
+/* three dots under the role, like the reference card */
+.cs-pt-id::after {
+  content: "\2022 \2022 \2022";
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 2px;
+  color: var(--cs-pt-ink);
 }
 
 /* index.css only resets h1–h4, so this h5 would otherwise keep the
@@ -210,6 +210,12 @@
 .cs-pt-name {
   margin: 0;
   color: var(--text);
+}
+
+/* a notch smaller than the headline role, so the persona name sits comfortably
+   in the narrow profile card */
+.cs-pt-profile .cs-pt-name {
+  font-size: 17px;
 }
 
 .cs-pt-role {
@@ -281,8 +287,8 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  border: 1px solid var(--cs-pt-line);
-  border-radius: var(--radius-card);
+  border: var(--cs-pt-card-border);
+  border-radius: var(--cs-pt-card-radius);
   background: var(--bg);
 }
 
@@ -304,7 +310,7 @@
   flex-wrap: wrap;
   align-items: baseline;
   column-gap: 8px;
-  padding: 10px 14px 0;
+  padding: 16px 20px 0;
 }
 
 .cs-pt-box-title {
@@ -321,23 +327,7 @@
   vertical-align: -1px;
 }
 
-/* The stripe hugs the title text — not the emoji — under the lower half of
-   the letters. It's an inline background cloned per line, so a title that
-   wraps gets a stripe under each line rather than one under the block. */
-.cs-pt-box-title-text {
-  padding: 0 3px;
-  margin: 0 -3px;
-  border-radius: 2px;
-  background: linear-gradient(
-    to bottom,
-    transparent 50%,
-    var(--hl) 50%,
-    var(--hl) 86%,
-    transparent 86%
-  );
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
+/* Plain bold title: the blue outline carries the style, so no highlighter stripe */
 
 .cs-pt-note {
   flex-basis: 100%;
@@ -348,7 +338,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 6px 14px 12px;
+  padding: 8px 20px 18px;
 }
 
 .cs-pt-text {
@@ -413,8 +403,6 @@
     display: none;
   }
   .cs-pt-tab {
-    flex: 0 0 auto;
-    padding-inline: 12px;
     scroll-snap-align: start;
   }
   .cs-pt-tab-name {
@@ -424,8 +412,11 @@
 
 /* --- Phone: profile becomes a header, everything stacks ----------------- */
 @media (max-width: 760px) {
+  .cs-pt-bar {
+    padding: 16px 16px 8px;
+  }
   .cs-pt-panel {
-    padding: 16px;
+    padding: 4px 16px 16px;
   }
 
   .cs-pt-sheet {

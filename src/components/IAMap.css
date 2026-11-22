@@ -21,17 +21,17 @@
 
   /* Geometry — connectors are placed from these */
   --cs-ia-stroke: 1.5px;
-  --cs-ia-col: 184px;       /* app column width */
-  --cs-ia-gap: 12px;        /* between app columns */
+  --cs-ia-col: 184px;       /* widest an app column grows (fewer apps in a persona view) */
+  --cs-ia-gap: 4px;         /* between app columns */
   --cs-ia-stem: 16px;       /* bus to app header */
-  --cs-ia-node-h: 36px;     /* product and app nodes */
-  --cs-ia-page-h: 28px;     /* page pills */
-  --cs-ia-indent: 12px;     /* page rail inset under the app header */
+  --cs-ia-node-h: 36px;     /* product nodes */
+  --cs-ia-page-h: 24px;     /* page pills, at least */
+  --cs-ia-indent: 3px;      /* page rail inset under the app header */
 
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 24px;
+  padding: 32px 24px;
   border-radius: 20px;
   background: var(--cs-ia-bg);
   color: var(--cs-ia-on-bg);
@@ -51,93 +51,13 @@
   margin-top: -8px;
 }
 
-/* --- Sheet header: legend on the left, persona filter on the right ------- */
-.cs-ia-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px 32px;
-}
-
-/* Persona filter — plain text tabs, the active one underlined */
-.cs-ia-filter {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 4px;
-}
-
-.cs-ia-filter-label {
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-weight: 700;
-  color: var(--cs-ia-on-bg-soft);
-}
-
-.cs-ia-filter-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2px 14px;
-}
-
-.cs-ia-filter-option {
-  position: relative;
-  padding: 4px 0 6px;
-  border: 0;
-  background: transparent;
-  color: var(--cs-ia-on-bg);
-  cursor: pointer;
-}
-
-.cs-ia-filter-option.is-active {
-  font-weight: 700;
-}
-
-.cs-ia-filter-option.is-active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--cs-ia-on-bg);
-}
-
-.cs-ia-filter-option:not(.is-active) {
-  color: var(--cs-ia-on-bg-soft);
-}
-
-.cs-ia-filter-option:not(.is-active):hover {
-  color: var(--cs-ia-on-bg);
-}
-
-.cs-ia-filter-option:focus-visible {
-  outline: 2px solid var(--cs-ia-on-bg);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-
-.cs-ia-filter-count {
-  margin: 2px 0 0;
-  color: var(--cs-ia-on-bg-soft);
-}
-
-.cs-ia-filter-note {
-  max-width: 260px;
-  text-align: right;
-  font-style: italic;
-  color: var(--cs-ia-on-bg-soft);
-}
-
 /* --- Legend -------------------------------------------------------------- */
 .cs-ia-legend {
-  flex: 1 1 320px;
+  flex: none;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 6px 20px;
   margin: 0;
   padding: 4px 0 0;
@@ -193,6 +113,11 @@
 }
 
 /* Level labels — centred pills on the connector path */
+@media (min-width: 861px) {
+  .cs-ia-map .cs-ia-level {
+    font-size: 8px;
+  }
+}
 .cs-ia-level {
   margin: 0;
   padding: 3px 12px;
@@ -227,10 +152,11 @@
 
 .cs-ia-node.is-product,
 .cs-ia-node.is-other {
-  gap: 8px;
-  height: var(--cs-ia-node-h);
-  padding: 0 16px;
-  border-radius: 12px;
+  gap: 6px;
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 10px;
+  font-size: 10px;
   corner-shape: squircle;
 }
 
@@ -247,7 +173,7 @@
 }
 
 .cs-ia-star {
-  font-size: 13px;
+  font-size: 9px;
   line-height: 1;
   color: var(--cs-ia-on-node);
 }
@@ -315,10 +241,14 @@
   );
 }
 
+/* All ten apps share the sheet's width, so the whole map is in view at once; the
+   text steps down and wraps to fit. On narrower screens the row goes back to
+   scrolling sideways at a readable size (see the media query below). */
 .cs-ia-apps {
   display: flex;
+  justify-content: center;
   gap: var(--cs-ia-gap);
-  width: max-content;
+  width: 100%;
   margin: 0 auto;
   padding: var(--cs-ia-stem) 0 0;
   list-style: none;
@@ -326,7 +256,9 @@
 
 .cs-ia-app {
   position: relative;
-  flex: 0 0 var(--cs-ia-col);
+  /* an equal share of the row, less the gaps */
+  flex: 0 0 calc((100% - (var(--cs-ia-n, 10) - 1) * var(--cs-ia-gap)) / var(--cs-ia-n, 10));
+  min-width: 0;
   display: flex;
   flex-direction: column;
 }
@@ -367,10 +299,12 @@
    L1 product the map is actually about. `inset` rather than `border` keeps the
    chip's box identical, so the connector rails stay aligned. */
 .cs-ia-node.is-app {
-  gap: 8px;
-  height: var(--cs-ia-node-h);
-  padding: 0 10px;
-  border-radius: 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: var(--cs-ia-node-h);
+  padding: 6px 8px;
+  border-radius: 10px;
   corner-shape: squircle;
   background: #ffffff;
   color: var(--cs-ia-node);
@@ -379,20 +313,11 @@
 }
 
 .cs-ia-app-name {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.cs-ia-num {
-  flex: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 999px;
-  background: var(--cs-ia-node);
-  color: #ffffff;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  font-size: 8.5px;
+  line-height: 1.25;
 }
 
 /* Pages — stacked under their app on a rail from the header to the last page */
@@ -400,9 +325,9 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   margin: 8px 0 0 var(--cs-ia-indent);
-  padding: 0 0 0 var(--cs-ia-indent);
+  padding: 0 0 0 4px;
   list-style: none;
 }
 
@@ -414,13 +339,19 @@
 }
 
 .cs-ia-node.is-page {
-  height: var(--cs-ia-page-h);
-  padding: 0 12px;
-  border-radius: 12px;
+  min-height: var(--cs-ia-page-h);
+  padding: 4px 3px;
+  border-radius: 8px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  font-size: 8.5px;
+  line-height: 1.25;
   corner-shape: squircle;
   background: #ffffff;
   color: var(--text);
-  box-shadow: 0 0 0 1px var(--gray-200);
+  /* inset, so the outline is inside the pill's box: an outer ring on the last column
+     sat on the edge of the scroll area and was clipped there */
+  box-shadow: inset 0 0 0 1px var(--gray-200);
 }
 
 .cs-ia-node.is-empty {
@@ -429,20 +360,59 @@
   color: var(--text-soft);
 }
 
+/* --- Narrower than the sheet needs: scroll the row sideways at a readable size --- */
+@media (max-width: 860px) {
+  .cs-ia {
+    --cs-ia-gap: 12px;
+    padding: 24px;
+    --cs-ia-page-h: 28px;
+    --cs-ia-indent: 12px;
+  }
+  .cs-ia-apps {
+    justify-content: flex-start;
+    width: max-content;
+  }
+  .cs-ia-app {
+    flex: 0 0 var(--cs-ia-col);
+    max-width: none;
+  }
+  .cs-ia-node.is-app {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    height: var(--cs-ia-node-h);
+    min-height: 0;
+    padding: 0 10px;
+    border-radius: 12px;
+  }
+  .cs-ia-app-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: inherit;
+    line-height: inherit;
+  }
+  .cs-ia-node.is-page {
+    height: var(--cs-ia-page-h);
+    min-height: 0;
+    padding: 0 12px;
+    border-radius: 12px;
+    white-space: nowrap;
+    font-size: inherit;
+    line-height: inherit;
+  }
+}
+
 /* --- Phone --------------------------------------------------------------- */
 @media (max-width: 640px) {
   .cs-ia {
     padding: 16px;
   }
-  .cs-ia-filter {
-    align-items: flex-start;
-  }
-  .cs-ia-filter-note {
-    text-align: left;
-  }
   /* L1 products and L2 apps step down to 13px on phones */
   .cs-ia-node.is-product,
-  .cs-ia-node.is-other,
+  .cs-ia-node.is-other {
+    font-size: 11px;
+  }
   .cs-ia-node.is-app {
     font-size: 13px;
   }

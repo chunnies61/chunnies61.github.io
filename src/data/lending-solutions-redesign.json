@@ -112,16 +112,6 @@
               "type": "ia-map",
               "title": "Lending Workspace Information Architecture",
               "subtitle": "A top-to-bottom map of the navigation hierarchy: L1 products, L2 apps, sub-category tabs, and page-level controls.",
-              "personaFilter": {
-                "options": [
-                  "All",
-                  "Banker",
-                  "Lender",
-                  "Risk",
-                  "Ops"
-                ],
-                "label": "Persona"
-              },
               "products": [
                 {
                   "name": "Lending Workspace",
@@ -364,7 +354,7 @@
                 {
                   "id": "client-advisor",
                   "name": "Client Advisor",
-                  "avatar": "🤝",
+                  "avatar": "🏦",
                   "role": "Manages HNW client relationships across the full balance sheet",
                   "quote": "I take care of all my clients' financial needs and earn their trust.",
                   "traits": [
