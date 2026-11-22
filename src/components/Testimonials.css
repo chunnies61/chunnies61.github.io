@@ -42,11 +42,6 @@
   padding: 32px;
   border-radius: 24px;
   background-color: #fff;
-  /* faint primary-tint grid paper */
-  background-image:
-    linear-gradient(rgba(69, 117, 231, 0.09) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(69, 117, 231, 0.09) 1px, transparent 1px);
-  background-size: 24px 24px;
   border: 1px solid var(--gray-100);
   opacity: 0.5;
   transform: translateX(calc(var(--o) * (var(--tm-w) + var(--tm-gap)) + var(--drag, 0px))) scale(0.95);

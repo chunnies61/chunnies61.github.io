@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import site from "../data/site.json";
 import ContactCta from "../components/ContactCta";
 import KeySkills from "../components/KeySkills";
@@ -14,6 +14,12 @@ export default function About() {
   const { home, about } = site;
   const rootRef = useRef(null);
   useReveal(rootRef); // the page arrives in layers as it scrolls into view
+
+  // The same graph-paper background as the home page (styled in Home.css), nav and footer included
+  useEffect(() => {
+    document.body.classList.add("has-grid");
+    return () => document.body.classList.remove("has-grid");
+  }, []);
 
   return (
     <div className="about-page" ref={rootRef}>
