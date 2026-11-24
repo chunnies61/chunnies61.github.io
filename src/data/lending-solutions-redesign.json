@@ -887,6 +887,52 @@
         {
           "type": "text",
           "value": "The Workspace gained coherence too: the Deal Journey Tracker now integrates the eCQ credit questionnaire and covers IPB SBL and Custom deals, giving end-to-end visibility across the seams I mapped. And the IA and personas remain the team's source of truth."
+        },
+        {
+          "type": "text",
+          "value": "And the people using the Workspace are the people it was designed for: Lenders, Credit Middle Office and Analysts, the three roles the personas were built around, account for about 78% of its use."
+        },
+        {
+          "type": "pie",
+          "title": "Who uses the Lending Workspace",
+          "caption": "Share of use by role",
+          "segments": [
+            {
+              "name": "Lender",
+              "value": 44
+            },
+            {
+              "name": "Credit Middle Office",
+              "value": 18
+            },
+            {
+              "name": "Analyst",
+              "value": 16
+            },
+            {
+              "name": "Other roles",
+              "value": 22,
+              "other": true,
+              "parts": [
+                {
+                  "name": "SC Banker",
+                  "value": 5
+                },
+                {
+                  "name": "Banker",
+                  "value": 2
+                },
+                {
+                  "name": "Investor",
+                  "value": 2
+                },
+                {
+                  "name": "Other",
+                  "value": 13
+                }
+              ]
+            }
+          ]
         }
       ]
     },

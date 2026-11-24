@@ -7,6 +7,7 @@ import ContactCta from "../components/ContactCta";
 import PersonaTabs from "../components/PersonaTabs";
 import IAMap from "../components/IAMap";
 import PilotScorecard from "../components/PilotScorecard";
+import RolePie from "../components/RolePie";
 // Only the locked JPMC study uses the prototype — load it on demand
 const LraPrototype = lazy(() => import("../components/lra/LraPrototype"));
 const VisionPrototype = lazy(() => import("../components/vision/VisionPrototype"));
@@ -625,6 +626,9 @@ function Block({ block }) {
 
     case "scorecard":
       return <PilotScorecard block={block} />;
+
+    case "pie":
+      return <RolePie block={block} />;
 
     case "ia-map":
       return <IAMap block={block} />;
