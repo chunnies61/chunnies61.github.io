@@ -1,11 +1,11 @@
 import { useRef, useState } from "react";
-import "./PilotScorecard.css"; // the card frame, toggle, tooltip, table and series colours
+import "./PilotScorecard.css"; // the card frame, tooltip and series colours
 import "./RolePie.css";
 
 /* Part-to-whole as a pie: who uses a product, by role. Kept to four slices (the
    roles the story is about, then "Other roles"), each with its share printed on it,
    a legend that names every slice with its share (and the roles folded into "Other"),
-   a hover/focus tooltip, and a table view with every role on its own row. */
+   and a hover/focus tooltip. */
 
 const pct = (v) => `${v}%`;
 const R = 100; // pie radius in the 220-unit viewBox
@@ -20,7 +20,6 @@ const at = (share, r = R) => {
 export default function RolePie({ block }) {
   const { title, caption, segments } = block;
   const total = segments.reduce((n, s) => n + s.value, 0);
-  const [asTable, setAsTable] = useState(false);
   const [tip, setTip] = useState(null);
   const figRef = useRef(null);
 
@@ -58,51 +57,9 @@ export default function RolePie({ block }) {
           <span className="cs-sc-title md-title-small">{title}</span>
           {caption && <span className="cs-sc-caption md-body-small">{caption}</span>}
         </figcaption>
-        <button
-          type="button"
-          className="cs-sc-toggle md-label-medium"
-          aria-pressed={asTable}
-          onClick={() => {
-            setAsTable((t) => !t);
-            hideTip();
-          }}
-        >
-          {asTable ? "Show chart" : "Show table"}
-        </button>
       </div>
 
-      {asTable ? (
-        <div className="cs-sc-table-wrap">
-          <table className="cs-sc-table md-body-small">
-            <thead>
-              <tr>
-                <th scope="col">Role</th>
-                <th scope="col" className="is-num">
-                  Share of use
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {segments.flatMap((s) =>
-                s.parts
-                  ? s.parts.map((p) => (
-                      <tr key={p.name}>
-                        <th scope="row">{p.name}</th>
-                        <td className="is-num">{pct(p.value)}</td>
-                      </tr>
-                    ))
-                  : [
-                      <tr key={s.name}>
-                        <th scope="row">{s.name}</th>
-                        <td className="is-num">{pct(s.value)}</td>
-                      </tr>,
-                    ]
-              )}
-            </tbody>
-          </table>
-        </div>
-      ) : (
-        <div className="cs-pie-body">
+      <div className="cs-pie-body">
           <svg className="cs-pie-svg" viewBox="0 0 220 220" role="img" aria-label={`${title}: ${segments.map((s) => `${s.name} ${pct(s.value)}`).join(", ")}`}>
             {slices.map((s) => (
               <path
@@ -144,8 +101,7 @@ export default function RolePie({ block }) {
               </strong>
             </div>
           )}
-        </div>
-      )}
+      </div>
     </figure>
   );
 }

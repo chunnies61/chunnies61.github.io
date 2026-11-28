@@ -43,15 +43,10 @@
 /* --- Tab bar -----------------------------------------------------------
    Pills, the same as the persona tabs on the information architecture
    map above: the portrait emoji and the role's full name, with a Primary
-   outline (and Primary name) on the chosen one only. Sticks under the 72px site nav so a reader deep in a long sheet can still
-   switch persona. */
+   outline (and Primary name) on the chosen one only. The bar scrolls with the
+   sheet: pinned under the site nav it floated over the persona's own cards. */
 .cs-pt-bar {
-  position: sticky;
-  top: 72px;
-  z-index: 10;
   padding: 24px 24px 8px;
-  /* the sheet's gray as an opaque colour (--surface-tint is see-through), so the bar
-     hides the content scrolling beneath it */
   background: color-mix(in srgb, var(--gray-50) 80%, #ffffff);
 }
 

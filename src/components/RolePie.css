@@ -2,7 +2,7 @@
 .cs-pie-body {
   position: relative;
   display: grid;
-  grid-template-columns: 240px minmax(0, 1fr);
+  grid-template-columns: 196px minmax(0, 1fr);
   align-items: center;
   gap: 32px;
 }
@@ -42,7 +42,7 @@
    gray, so every label clears contrast */
 .cs-pie-pct {
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
   pointer-events: none;
 }
@@ -91,23 +91,36 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--text);
 }
 
 .cs-pie-parts {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   color: var(--text-soft);
 }
 
 .cs-pie-val {
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--text);
   font-variant-numeric: tabular-nums;
+}
+
+/* No card frame: the pie sits straight on the page, so only the scorecard that
+   shares these styles keeps the outline. The slice gaps still need a white stroke. */
+.cs-pie {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+}
+
+.cs-pie .cs-sc-head {
+  margin-bottom: 12px;
 }
 
 @media (max-width: 640px) {
@@ -117,7 +130,7 @@
   }
 
   .cs-pie-svg {
-    max-width: 220px;
+    max-width: 190px;
     margin: 0 auto;
   }
 }
