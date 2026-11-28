@@ -25,15 +25,14 @@ function Empathy() {
   );
 }
 
-/* A loose ball drifts about with nobody to catch it. Then a cup rises under it, the ball
-   drops in and stays, and a spark lands: the problem nobody owned now has an owner. A
-   dashed outline of the cup is there from the start, the place where someone should be. */
+/* A ball hangs with nothing under it but a dashed outline, the place where an owner
+   should be. It drops, and the cup draws itself around it: one fall, one stroke. */
 const CUP = "M88 84 L88 104 Q88 124 108 124 L132 124 Q152 124 152 104 L152 84";
 function Ownership() {
   return (
     <g strokeLinecap="round" strokeLinejoin="round">
       <path d={CUP} fill="none" stroke={INK} strokeWidth="3" strokeDasharray="2 8" opacity="0.5" />
-      <path className="ks-cup" d={CUP} fill="none" stroke={INK} strokeWidth="8" />
+      <path className="ks-cup" d={CUP} pathLength="100" fill="none" stroke={INK} strokeWidth="8" />
       <circle className="ks-ball" cx="120" cy="44" r="15" fill={INK} />
       <path
         className="ks-own-spark"
@@ -80,15 +79,15 @@ function DesignSystems() {
   );
 }
 
-/* A road forks. A dot sets off down the wrong branch, is turned back at the fork, takes the
-   other one and arrives at a tick: the draft goes where it likes until someone decides. */
+/* A road forks, one branch faded and crossed out. The dot leans that way at the fork,
+   then turns and takes the other: the drawing holds the argument, the motion the choice. */
 function CriticalThinking() {
   return (
     <g strokeLinecap="round" strokeLinejoin="round" fill="none">
       <path d="M28 96 L100 96" stroke={INK} strokeWidth="8" />
       <path d="M100 96 L150 52 L200 52" stroke={INK} strokeWidth="8" opacity="0.3" />
       <path d="M100 96 L150 120 L200 120" stroke={INK} strokeWidth="8" />
-      <g opacity="0.55">
+      <g className="ks-x" opacity="0.55">
         <circle cx="200" cy="52" r="15" fill={WHITE} stroke={INK} strokeWidth="3" strokeDasharray="4 4" />
         <path d="M194 46 L206 58 M206 46 L194 58" stroke={INK} strokeWidth="4" />
       </g>

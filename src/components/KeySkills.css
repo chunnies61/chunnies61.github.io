@@ -156,48 +156,34 @@
 }
 
 /* --- Ownership: a loose ball drifts, a cup rises, the ball drops in and stays ---- */
+/* --- Ownership: the ball hangs with nothing under it, drops, and the cup draws
+       itself around it. One fall, one stroke; the dashed ghost does the rest. ---- */
 .ks-ball {
-  animation: ks-ball 7s ease-in-out infinite both;
+  animation: ks-ball 7s cubic-bezier(0.55, 0, 0.35, 1) infinite both;
 }
 
 @keyframes ks-ball {
   0% {
-    transform: translate(-56px, 4px);
+    transform: translate(0, -36px);
     opacity: 0;
   }
-  6% {
+  8%,
+  30% {
+    transform: translate(0, -36px);
     opacity: 1;
   }
-  14% {
-    transform: translate(-20px, -14px);
-  }
-  24% {
-    transform: translate(40px, -4px);
-  }
-  32% {
-    transform: translate(62px, 10px);
-  }
-  40% {
-    transform: translate(10px, -16px);
-  }
-  48% {
-    transform: translate(-34px, 0);
-  }
-  56% {
-    transform: translate(0, -6px);
-  }
-  64% {
+  42% {
     transform: translate(0, 61px);
   }
-  68% {
-    transform: translate(0, 53px);
+  48% {
+    transform: translate(0, 47px);
   }
-  72%,
+  54%,
   90% {
     transform: translate(0, 61px);
     opacity: 1;
   }
-  94%,
+  96%,
   100% {
     transform: translate(0, 61px);
     opacity: 0;
@@ -207,35 +193,34 @@
 .ks-cup {
   transform-box: fill-box;
   transform-origin: 50% 100%;
+  stroke-dasharray: 100;
   animation: ks-cup 7s cubic-bezier(0.3, 0, 0.2, 1) infinite both;
 }
 
 @keyframes ks-cup {
   0%,
-  38% {
-    transform: translateY(46px) scaleY(1);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(-4px) scaleY(1);
+  30% {
+    stroke-dashoffset: 100;
+    transform: scaleY(1);
     opacity: 1;
   }
-  56%,
-  62% {
-    transform: translateY(0) scaleY(1);
-    opacity: 1;
+  41% {
+    stroke-dashoffset: 0;
+    transform: scaleY(1);
   }
-  65% {
-    transform: translateY(0) scaleY(0.93);
+  43% {
+    transform: scaleY(0.88);
   }
-  70%,
+  50%,
   90% {
-    transform: translateY(0) scaleY(1);
+    stroke-dashoffset: 0;
+    transform: scaleY(1);
     opacity: 1;
   }
-  94%,
+  96%,
   100% {
-    transform: translateY(0) scaleY(1);
+    stroke-dashoffset: 0;
+    transform: scaleY(1);
     opacity: 0;
   }
 }
@@ -248,13 +233,13 @@
 
 @keyframes ks-own-spark {
   0%,
-  64% {
+  50% {
     transform: scale(0) rotate(-40deg);
   }
-  72% {
+  58% {
     transform: scale(1.25) rotate(0deg);
   }
-  77%,
+  63%,
   90% {
     transform: scale(1) rotate(0deg);
   }
@@ -264,9 +249,11 @@
   }
 }
 
-/* --- Critical thinking: a dot takes the wrong branch, is turned back, then ticks -- */
+/* --- Critical thinking: one pass down the road. The faded branch and the cross are
+       already on the tile, so the motion only has to show the decision: a lean the
+       wrong way at the fork, then the turn. ---------------------------------------- */
 .ks-walk {
-  animation: ks-walk 7s cubic-bezier(0.45, 0, 0.2, 1) infinite both;
+  animation: ks-walk 7s cubic-bezier(0.4, 0, 0.3, 1) infinite both;
 }
 
 @keyframes ks-walk {
@@ -274,39 +261,52 @@
     transform: translate(0, 0);
     opacity: 0;
   }
-  6% {
+  7% {
     transform: translate(0, 0);
     opacity: 1;
   }
   24% {
     transform: translate(72px, 0);
   }
-  36% {
-    transform: translate(122px, -44px);
+  /* a lean up the wrong branch, and no further */
+  33% {
+    transform: translate(90px, -16px);
   }
-  39% {
-    transform: translate(117px, -40px);
-  }
-  42% {
-    transform: translate(124px, -45px);
-  }
-  46% {
-    transform: translate(122px, -44px);
-  }
-  58% {
+  43% {
     transform: translate(72px, 0);
   }
-  76% {
+  58% {
     transform: translate(122px, 24px);
   }
-  84% {
+  70%,
+  90% {
     transform: translate(172px, 24px);
     opacity: 1;
   }
-  86%,
+  96%,
   100% {
     transform: translate(172px, 24px);
     opacity: 0;
+  }
+}
+
+/* The cross answers the lean, then settles back */
+.ks-x {
+  animation: ks-x 7s ease-out infinite both;
+}
+
+@keyframes ks-x {
+  0%,
+  28% {
+    opacity: 0.35;
+  }
+  34%,
+  42% {
+    opacity: 1;
+  }
+  56%,
+  100% {
+    opacity: 0.35;
   }
 }
 
@@ -318,13 +318,13 @@
 
 @keyframes ks-tick {
   0%,
-  82% {
+  70% {
     transform: scale(0) rotate(-30deg);
   }
-  88% {
+  76% {
     transform: scale(1.25) rotate(0deg);
   }
-  91%,
+  80%,
   96% {
     transform: scale(1) rotate(0deg);
   }
@@ -410,7 +410,7 @@
     transform: translateY(61px);
   }
   .ks-walk {
-    opacity: 0;
+    transform: translate(172px, 24px);
   }
   .ks-inst {
     fill: #1f2228;
