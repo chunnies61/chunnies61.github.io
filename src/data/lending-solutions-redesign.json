@@ -880,6 +880,50 @@
           ]
         },
         {
+          "type": "text",
+          "value": "The people using the Workspace are the people it was designed for: Lenders, Credit Middle Office and Analysts, the three roles the personas were built around, make up about 78% of usage."
+        },
+        {
+          "type": "role-bars",
+          "title": "Who uses the Lending Workspace",
+          "caption": "Share of usage by role",
+          "highlightLabel": "Persona roles",
+          "otherLabel": "Other roles",
+          "rows": [
+            {
+              "name": "Lender",
+              "value": 44,
+              "highlight": true
+            },
+            {
+              "name": "Credit Middle Office",
+              "value": 18,
+              "highlight": true
+            },
+            {
+              "name": "Analyst",
+              "value": 16,
+              "highlight": true
+            },
+            {
+              "name": "SC Banker",
+              "value": 5
+            },
+            {
+              "name": "Banker",
+              "value": 2
+            },
+            {
+              "name": "Investor",
+              "value": 2
+            },
+            {
+              "name": "Other",
+              "value": 13
+            }
+          ]
+        },
+        {
           "type": "honest-note",
           "label": "In their words",
           "value": "Pilot users called the new Loan Request App “much smoother,” “super easy to use” and “a big improvement” on the old one."
